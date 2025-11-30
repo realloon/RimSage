@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mote -->
+  <Mote_Bestow.label>赏赐</Mote_Bestow.label>
+  
+  <!-- EN: Mote -->
+  <Mote_CastPsycast.label>尘埃</Mote_CastPsycast.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ProximityScannerActivated.label>尘埃</Mote_ProximityScannerActivated.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ProximityScannerRadius.label>尘埃</Mote_ProximityScannerRadius.label>
+  
+  <!-- EN: Mote -->
+  <Mote_PsychicLinkLine.label>尘埃</Mote_PsychicLinkLine.label>
+  
+  <!-- EN: Mote -->
+  <Mote_PsychicLinkPulse.label>尘埃</Mote_PsychicLinkPulse.label>
+  
+  <!-- EN: Mote -->
+  <Mote_PsyfocusPulse.label>心灵波</Mote_PsyfocusPulse.label>
+  
+  <!-- EN: Mote -->
+  <Mote_WarmupNeuroquake.label>震颤</Mote_WarmupNeuroquake.label>
+  
+  <!-- EN: Mote -->
+  <Mote_WarmupWordOf.label>震颤</Mote_WarmupWordOf.label>
+  
+</LanguageData>

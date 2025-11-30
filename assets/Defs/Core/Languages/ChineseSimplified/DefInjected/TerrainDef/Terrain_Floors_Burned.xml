@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: burned carpet -->
+  <BurnedCarpet.label>被烧毁的地毯</BurnedCarpet.label>
+  <!-- EN: Burned-out carpet. -->
+  <BurnedCarpet.description>被烧毁的地毯。</BurnedCarpet.description>
+  
+  <!-- EN: burned straw matting -->
+  <BurnedStrawMatting.label>被烧毁的草垫</BurnedStrawMatting.label>
+  <!-- EN: Straw matting that has been burned in a fire. -->
+  <BurnedStrawMatting.description>被烧毁的草垫。</BurnedStrawMatting.description>
+  
+  <!-- EN: burned wood floor -->
+  <BurnedWoodPlankFloor.label>被烧毁的木地板</BurnedWoodPlankFloor.label>
+  <!-- EN: Burned-out wood plank flooring. -->
+  <BurnedWoodPlankFloor.description>被烧毁的木地板。</BurnedWoodPlankFloor.description>
+  
+</LanguageData>

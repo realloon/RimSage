@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Miners -->
+
+  <PawnKindDef ParentName="TribalBase">
+    <defName>Tribal_Miner</defName>
+    <label>miner</label>
+    <combatPower>35</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>Tribal</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>TribalMiner</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.5~1.8</gearHealthRange>
+    <apparelMoney>180~350</apparelMoney>
+    <weaponMoney>80~80</weaponMoney>
+    <weaponTags>
+      <li>NeolithicMeleeBasic</li>
+      <li>NeolithicRangedBasic</li>
+    </weaponTags>
+    <techHediffsMoney>50~50</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.03</techHediffsChance>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>17~27</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="OutlanderBase">
+    <defName>Miner</defName>
+    <label>miner</label>
+    <combatPower>40</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Miner</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags>
+      <li>Gun</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <weaponMoney>65~125</weaponMoney>
+    <apparelMoney>200~400</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <techHediffsMoney>1000~1000</techHediffsMoney>
+    <techHediffsTags>
+      <li>DrillArm</li>
+    </techHediffsTags>
+    <techHediffsChance>0.8</techHediffsChance>
+    <techHediffsMaxAmount>1</techHediffsMaxAmount>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+  </PawnKindDef>
+
+  <!-- Hunters -->
+  <PawnKindDef ParentName="OutlanderBase">
+    <defName>Hunter</defName>
+    <label>hunter</label>
+    <combatPower>52</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Hunter</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <apparelRequired>
+      <li>Apparel_Tailcap</li>
+    </apparelRequired>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <weaponMoney>140~250</weaponMoney>
+    <apparelMoney>200~400</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <techHediffsChance>0.06</techHediffsChance>
+    <techHediffsMoney>50~600</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+  </PawnKindDef>
+
+  <!-- Loggers -->
+  <PawnKindDef ParentName="TribalBase">
+    <defName>Tribal_Logger</defName>
+    <label>logger</label>
+    <combatPower>40</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>Tribal</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>TribalLogger</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.5~1.8</gearHealthRange>
+    <apparelMoney>180~350</apparelMoney>
+    <weaponMoney>80~80</weaponMoney>
+    <apparelRequired>
+      <li>Apparel_Shadecone</li>
+    </apparelRequired>
+    <weaponTags>
+      <li>NeolithicMeleeBasic</li>
+      <li>NeolithicRangedBasic</li>
+    </weaponTags>
+    <techHediffsMoney>50~50</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.03</techHediffsChance>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>17~27</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="OutlanderBase">
+    <defName>Logger</defName>
+    <label>logger</label>
+    <combatPower>35</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Logger</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags>
+      <li>Gun</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <weaponMoney>65~125</weaponMoney>
+    <apparelMoney>200~400</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <techHediffsChance>0.06</techHediffsChance>
+    <techHediffsMoney>50~600</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+  </PawnKindDef>
+
+  <!-- Farmer -->
+  <PawnKindDef ParentName="TribalBase">
+    <defName>Tribal_Farmer</defName>
+    <label>farmer</label>
+    <combatPower>35</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>Tribal</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>TribalFarmer</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.5~1.8</gearHealthRange>
+    <apparelMoney>180~350</apparelMoney>
+    <weaponMoney>80~80</weaponMoney>
+    <apparelRequired>
+      <li>Apparel_Shadecone</li>
+    </apparelRequired>
+    <weaponTags>
+      <li>NeolithicMeleeBasic</li>
+      <li>NeolithicRangedBasic</li>
+    </weaponTags>
+    <techHediffsMoney>50~50</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <techHediffsChance>0.03</techHediffsChance>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>17~27</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="OutlanderBase">
+    <defName>Farmer</defName>
+    <label>farmer</label>
+    <combatPower>35</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Farmer</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags>
+      <li>Gun</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <apparelRequired>
+      <li>Apparel_CowboyHat</li>
+    </apparelRequired>
+    <weaponMoney>65~125</weaponMoney>
+    <apparelMoney>200~400</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <techHediffsMoney>1000~1000</techHediffsMoney>
+    <techHediffsTags>
+      <li>FieldHand</li>
+    </techHediffsTags>
+    <techHediffsChance>0.8</techHediffsChance>
+    <techHediffsMaxAmount>1</techHediffsMaxAmount>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+  </PawnKindDef>
+
+</Defs>

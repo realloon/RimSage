@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ShaderTypeDef>
+    <defName>BulletShieldPsychic</defName>
+    <shaderPath>Map/BulletShieldPsychic</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>CloudOverlay</defName>
+    <shaderPath>Map/CloudOverlay</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteBestowWarmup</defName>
+    <shaderPath>Map/MoteBestowWarmup</shaderPath>
+  </ShaderTypeDef>
+  
+</Defs>

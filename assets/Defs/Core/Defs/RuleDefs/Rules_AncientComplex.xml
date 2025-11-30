@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RuleDef>
+    <defName>OutdoorsPath</defName>
+    <symbol>outdoorsPath</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_OutdoorsPath">
+        <minRectSize>(10, 10)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>AncientComplexSketch</defName>
+    <symbol>ancientComplexSketch</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientComplex_Sketch">
+        <minRectSize>(10, 10)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+</Defs>

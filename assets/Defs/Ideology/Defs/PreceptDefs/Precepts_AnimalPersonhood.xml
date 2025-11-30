@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>AnimalConnection</defName>
+    <label>animal connection</label>
+    <iconPath>UI/Issues/AnimalConnection</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>AnimalConnection_Strong</defName>
+    <issue>AnimalConnection</issue>
+    <label>strong</label>
+    <description>We have a strong connection to our animal friends.</description>
+    <impact>Medium</impact>
+    <requiredMemes>
+      <li>AnimalPersonhood</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>AnimalPersonhood</li>
+    </associatedMemes>
+    <statFactors>
+      <TameAnimalChance>2</TameAnimalChance>
+      <BondAnimalChanceFactor>2</BondAnimalChanceFactor>
+    </statFactors>
+  </PreceptDef>
+
+</Defs>

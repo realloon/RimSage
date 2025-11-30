@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Blindness</defName>
+    <label>blindness</label>
+    <iconPath>UI/Issues/Blindness</iconPath>
+  </IssueDef>
+
+  <!-- HistoryEvents -->
+
+  <HistoryEventDef>
+    <defName>GotBlinded</defName>
+    <label>got blinded</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+  <PreceptDef>
+    <defName>Blindness_Respected</defName>
+    <issue>Blindness</issue>
+    <label>respected</label>
+    <description>To be blind is a moral thing worthy of respect.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <defaultSelectionWeight>0</defaultSelectionWeight>
+    <blindPawnChance>0.1</blindPawnChance>
+    <approvesOfBlindness>true</approvesOfBlindness>
+    <requiredMemes>
+      <li>Blindsight</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Respected_Blind</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Respected_Blind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Respected_NonBlind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_ArtificialBlind</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotBlinded</eventDef>
+        <thought>BlindingCeremony_Self_Respected</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>GotBlinded</eventDef>
+        <eventLabel>blinded someone</eventLabel>
+        <points>1</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Blindness_Elevated</defName>
+    <issue>Blindness</issue>
+    <label>elevated</label>
+    <description>The blind stand pure above the sighted.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <defaultSelectionWeight>0</defaultSelectionWeight>
+    <blindPawnChance>0.25</blindPawnChance>
+    <approvesOfBlindness>true</approvesOfBlindness>
+    <requiredMemes>
+      <li>Blindsight</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Elevated_Blind</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Elevated_HalfBlind</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Elevated_NonBlind</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Elevated_Blind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Elevated_HalfBlind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Elevated_NonBlind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_ArtificialBlind</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotBlinded</eventDef>
+        <thought>BlindingCeremony_Self_Elevated</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>GotBlinded</eventDef>
+        <eventLabel>blinded someone</eventLabel>
+        <points>1</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Blindness_Sublime</defName>
+    <issue>Blindness</issue>
+    <label>sublime</label>
+    <description>Only the blind can be truly noble, for the sighted find their minds clouded by physical vision.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <defaultSelectionWeight>0</defaultSelectionWeight>
+    <blindPawnChance>0.5</blindPawnChance>
+    <approvesOfBlindness>true</approvesOfBlindness>
+    <requiredMemes>
+      <li>Blindsight</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Sublime_Blind</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Sublime_HalfBlind</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Sublime_NonBlind</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Sublime_Blind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Sublime_HalfBlind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_Sublime_NonBlind_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Blindness_ArtificialBlind</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotBlinded</eventDef>
+        <thought>BlindingCeremony_Self_Sublime</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>GotBlinded</eventDef>
+        <eventLabel>blinded someone</eventLabel>
+        <points>1</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Blinding_Horrible</defName>
+    <issue>Blindness</issue>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <label>horrible</label>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <description>Blinding people for ideoligious reasons is horrible.</description>
+    <conflictingMemes>
+      <li>Blindsight</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotBlinded</eventDef>
+        <thought>BlindingCeremony_Know_Horrible</thought>
+        <description>someone got blinded</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Ceremony thoughts -->
+
+  <ThoughtDef>
+    <defName>BlindingCeremony_Know_Horrible</defName>
+    <durationDays>4</durationDays>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>blinding ceremony</label>
+        <description>We blinded someone over ideoligious beliefs! This is wrong!</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BlindingCeremony_Self_Respected</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>was blinded</label>
+        <description>I was blinded in a righteous ceremony. Finally, I can start learning to see.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BlindingCeremony_Self_Elevated</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>was blinded</label>
+        <description>I was blinded in a righteous ceremony. Finally, I can start learning to see.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BlindingCeremony_Self_Sublime</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>was blinded</label>
+        <description>I was blinded in a righteous ceremony. Finally, I can start learning to see.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts : Blind -->
+
+  <ThoughtDef>
+    <defName>Blindness_Respected_Blind</defName>
+    <workerClass>ThoughtWorker_Precept_Blind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <stages>
+      <li>
+        <label>blind</label>
+        <description>Now that my sight is gone, I can see clearly.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Elevated_Blind</defName>
+    <workerClass>ThoughtWorker_Precept_Blind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <stages>
+      <li>
+        <label>blind</label>
+        <description>I can explore a greater awareness through my inability to see.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Sublime_Blind</defName>
+    <workerClass>ThoughtWorker_Precept_Blind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <stages>
+      <li>
+        <label>blind</label>
+        <description>I am free to explore the depths of my mind and the true reality without my sight limiting me.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>Blindness_Respected_Blind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_Blind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>blind</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Elevated_Blind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_Blind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>blind</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Sublime_Blind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_Blind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>blind</label>
+        <baseOpinionOffset>30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Artificial blindness -->
+
+  <ThoughtDef>
+    <defName>Blindness_ArtificialBlind</defName>
+    <workerClass>ThoughtWorker_Precept_ArtificialBlind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <stages>
+      <li>
+        <label>vision blocked</label>
+        <description>Blocking my vision gives my mind closer access to true reality. It's not as good as a permanent blinding, but it's acceptable.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+  <!-- Thoughts: half-blind -->
+
+  <ThoughtDef>
+    <defName>Blindness_Elevated_HalfBlind</defName>
+    <workerClass>ThoughtWorker_Precept_HalfBlind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <stages>
+      <li>
+        <label>half-blind</label>
+        <description>I am on my way to enlightment through blindness.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Sublime_HalfBlind</defName>
+    <workerClass>ThoughtWorker_Precept_HalfBlind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>half-blind</label>
+        <description>I am on the verge of true enlightment through blindness.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Elevated_HalfBlind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_HalfBlind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>half-blind</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Sublime_HalfBlind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_HalfBlind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>half-blind</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Not blind -->
+
+  <ThoughtDef>
+    <defName>Blindness_Elevated_NonBlind</defName>
+    <workerClass>ThoughtWorker_Precept_NonBlind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>not blind</label>
+        <description>I wish to be blind so I can connect better with the true reality. Or, at a minimum, I should be blindfolded.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Sublime_NonBlind</defName>
+    <workerClass>ThoughtWorker_Precept_NonBlind</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>not blind</label>
+        <description>I wish to be blind so much. I need these physical sights gone so I can touch the true reality. At a minimum, I should wear a blindfold.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Respected_NonBlind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_NonBlind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>sighted</label>
+        <baseOpinionOffset>-2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Elevated_NonBlind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_NonBlind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>sighted</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Blindness_Sublime_NonBlind_Social</defName>
+    <workerClass>ThoughtWorker_Precept_NonBlind_Social</workerClass>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <stages>
+      <li>
+        <label>sighted</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

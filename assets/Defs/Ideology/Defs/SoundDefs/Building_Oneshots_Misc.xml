@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>AncientSecurityCrate_Opened</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/SecurityCrate/Open</clipPath>
+          </li>
+        </grains>
+        <distRange>25~50</distRange>
+        <volumeRange>14</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AncientSecurityCrate_Alarm</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/SecurityCrate/Alarm</clipPath>
+          </li>
+        </grains>
+        <distRange>25~50</distRange>
+        <volumeRange>100</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Archotech_Invoked</defName>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Exotic/Archonexus/ArchonexusActivation</clipPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Archonexus_Throb</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Exotic/Archonexus/Throb</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <distRange>15~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>InsectsWakeUp</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Insect/InsectsWakeUp</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>40~40</volumeRange>
+        <distRange>10~80</distRange>
+       </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>NeuralSupercharger_Ready</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/NeuralSupercharger/NeuralSupercharge_Ready_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <distRange>15~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>NeuralSupercharger_Injection</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/NeuralSupercharger/NeuralSupercharge_Injection_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <distRange>15~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

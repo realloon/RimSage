@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Mechanitor -->
+  <LetterLabelMechsFeral>Mech(s) gone feral</LetterLabelMechsFeral>
+  <LetterMechsFeral>Some mech(s) which were wandering without an overseer have linked with ancient planet-wide mech control signals. They have joined {0} and become hostile, and appear to be trying to fight their way off the map.\n\nFeral mechanoids cannot be resurrected at a gestator when killed.\n\nThese mechs are involved:\n\n{1}</LetterMechsFeral>
+  <LetterLabelMechlinkInstalled>Mechlink installed</LetterLabelMechlinkInstalled>
+  <LetterMechlinkInstalled>{PAWN_labelShort} has installed a mechlink! {PAWN_pronoun} is now a mechanitor and can create and control mechanoids.\n\nResearch basic mechtech to get started.\n\n(*SectionTitle)Creating mechs:(/SectionTitle) Your mechanitor can create mechs at a production building called a mech gestator.\n\n(*SectionTitle)About bandwidth:(/SectionTitle) Mechanitors can control as many mechs as their total bandwidth allows. Select {PAWN_labelShort} and look at {PAWN_possessive} 'Bandwidth' readout to see how much bandwidth {PAWN_pronoun} is currently using and how much {PAWN_pronoun} has available. Bandwidth can be increased with certain apparel and by building band node buildings.\n\n(*SectionTitle)About control groups:(/SectionTitle) Mechanitors control mechs in groups. Each control group can be set to one of these modes:\n\n- Work\n- Escort\n- Recharge\n- Dormant self-charge\n\nTo learn more about what each mode does, select the work mode icon on one of {PAWN_labelShort}'s control groups and hover over the different work orders. The maximum number of control groups can be increased with apparel and implants.\n\n(*SectionTitle)About threat calling:(/SectionTitle) Mechanitors can signal ancient leader mechs to attack in order to obtain rare items from them. You must do this to improve your mechanitor past certain limits, but beware the danger.</LetterMechlinkInstalled>
+
+  <MentalStateReason_Gene>This happened because of</MentalStateReason_Gene>
+
+  <LetterLabelBossgroupSummoned>{0} summoned</LetterLabelBossgroupSummoned>
+  <LetterBossgroupSummoned>Attracted by your mech-band signals, an ultra-heavy mech from {0} will arrive soon. Be prepared.</LetterBossgroupSummoned>
+
+  <LetterLabelBossgroupArrived>{0} arrived</LetterLabelBossgroupArrived>
+  <LetterBossgroupArrived>An ultra-heavy mech from {0} has come to eradicate you, along with escorts.\n\n{1}\n\nThe assault group is composed of the following {3}:\n\n{4}\n\nThey will prepare for a while before attacking.</LetterBossgroupArrived>
+
+  <LetterLabelCommsConsoleSpawned>Summon {LEADER_label} available</LetterLabelCommsConsoleSpawned>
+  <LetterCommsConsoleSpawned>A mechanitor can use the {PARENT_label} to summon a dangerous and hostile {LEADER_label} mechanoid. Be prepared, {LEADER_label} mechanoids are extremely powerful.\n\nIf you defeat the {LEADER_label}, it will drop the following items:\n\n{REWARDSLIST}</LetterCommsConsoleSpawned>
+
+  <LetterLabelBossgroupCallerUnlocked>Summon {LEADER_label} possible</LetterLabelBossgroupCallerUnlocked>
+  <LetterBossgroupCallerUnlocked>You can now build a {PARENT_label} which a mechanitor can use to summon a {LEADER_label}. If you defeat the {LEADER_label}, it will drop the following items:\n\n{REWARDSLIST}</LetterBossgroupCallerUnlocked>
+
+  <LetterLabelMechanitorCasketOpened>{PAWN_nameDef}'s mechlink available</LetterLabelMechanitorCasketOpened>
+  <LetterMechanitorCasketOpened>You have found the corpse of an ancient mechanitor!\n\nExtract {PAWN_possessive} mechlink by selecting a colonist and right-clicking the corpse.</LetterMechanitorCasketOpened>
+  <LetterLabelMechanitorCasketFound>Mechanitor casket found</LetterLabelMechanitorCasketFound>
+  <LetterMechanitorCasketFound>You have discovered a mechanitor's cryptosleep casket!\n\nOpen it to find them inside.</LetterMechanitorCasketFound>
+  
+  <!-- Pawns lost because map closed (including mechs) -->
+  <LetterPawnsLostIncMechsBecauseMapClosed_Caravan>Your caravan has been lost. The following people, animals and mechanoids have been lost with it</LetterPawnsLostIncMechsBecauseMapClosed_Caravan>
+  <LetterPawnsLostIncMechsBecauseMapClosed_Home>The following people, animals and mechanoids have been abandoned</LetterPawnsLostIncMechsBecauseMapClosed_Home>
+  
+
+  <!-- Children -->
+  <LetterLabelBecameChild>{0_nameDef} became a child</LetterLabelBecameChild>
+  <LetterLabelBecameAdult>{0_nameDef} became an adult</LetterLabelBecameAdult>
+  <LetterBecameChild>Baby {0_nameDef} has grown up and become a child! {0_pronoun} is now old enough to do the following work:</LetterBecameChild>
+  <LetterBecameChildChanges>Children can do various types of work. As they get older, they become able to do more work types.\n\nThey also do various child-specific recreational activities.\n\nChildren need to wear special child-sized apparel.</LetterBecameChildChanges>
+  <LetterChildLegalStatus>By tradition {0_nameDef}, {0_parentage}, is a {0_legalStatus}, but exceptions can be made....  Should {0_nameDef} remain a {0_legalStatus}?</LetterChildLegalStatus>
+  <LetterChildFollowIdeo>{0_labelShort} has decided to become a follower of the ideoligion {1_name}.</LetterChildFollowIdeo>
+  <CannotChangeChildStatusReason>{0_nameDef}'s slave status has already changed since {0_possessive} birthday.</CannotChangeChildStatusReason>
+  <Enslave>enslave</Enslave>
+  <Emancipate>emancipate</Emancipate>
+  <RemainX>remain {0}</RemainX>
+  <LetterLabelAdopted>{BABY_nameDef} adopted</LetterLabelAdopted>
+  <LetterTextAdopted>{BABY_nameDef}, a baby, has been adopted by your colony. You may want to assign colonists to the 'childcare' work type to take care of {BABY_objective}.</LetterTextAdopted>
+
+  <LetterLabelThirdTrimester>{0_nameDef}'s baby prep</LetterLabelThirdTrimester>
+  <LetterTextThirdTrimester>{0_nameDef} is due to give birth in less than 6 days. You can prepare for the baby:\n\n- Build a birth room with a clean floor and good bed.\n- Get a skilled doctor ready.\n- In the work tab, assign at least one person to childcare\n- Prepare a food source for the baby. {0_nameDef} can breastfeed the baby, or you can feed them baby food, milk, or insect jelly.\n- Build a crib. High quality cribs will make a baby happy.\n\nYou can make baby food at a stove or campfire.</LetterTextThirdTrimester>
+
+  <LetterVatBirth>{0} vat birth</LetterVatBirth>
+  <LetterVatHealthyBaby>The embryo of {0_nameDef} and {1_nameDef} has finished gestating in a growth vat and has become a healthy baby!</LetterVatHealthyBaby>
+  <LetterVatHealthyBabyNoParents>An embryo has finished gestating in a growth vat and become a healthy baby!</LetterVatHealthyBabyNoParents>
+  <LetterVatInfantIllness>The embryo of {0_nameDef} and {1_nameDef} has finished gestating in a growth vat and has become a baby. Unfortunately, the baby is sick.</LetterVatInfantIllness>
+  <LetterVatInfantIllnessNoParents>An embryo has finished gestating in a growth vat and has become a baby. Unfortunately, the baby is sick.</LetterVatInfantIllnessNoParents>
+  <LetterVatStillborn>The baby formed in a growth vat from the embryo of {0_nameDef} and {1_nameDef} was stillborn.</LetterVatStillborn>
+  <LetterVatSillbornNoParents>The baby formed in a growth vat was stillborn.</LetterVatSillbornNoParents>
+  <LetterColonistPregnancyLaborLabel>{0_labelShort} in labor!</LetterColonistPregnancyLaborLabel>
+  <LetterColonistPregnancyLabor>{0_labelShort} is about to give birth! She's going to have contractions for a few hours before delivering a baby. The labor may go through several stages of different levels of difficulty and danger.\n\nTo improve the baby's chances, gather a doctor and others to help with the birth. Select {0_labelShort} and press 'Gather for birth' to start the procedure.</LetterColonistPregnancyLabor>
+  <LetterPartColonistDiedAfterChildbirth>{0_labelShort} has died due to complications after giving birth.</LetterPartColonistDiedAfterChildbirth>
+  <LetterPartSurrogacy>The baby was created from in vitro fertilization and has the genetic makeup of {0_labelShort} and {1_labelShort}.</LetterPartSurrogacy>
+  <InbredBabyBorn>The baby shows signs of genetic abnormalities due to inbreeding.</InbredBabyBorn>
+
+  <BabyAlreadyNamed>{0_nameDef} has already been named.</BabyAlreadyNamed>
+  <NameBaby>name baby</NameBaby>
+  <Immediately>immediately</Immediately>
+  <Within>within</Within>
+  <LetterPartTempBabyName>The baby has been given the temporary name {0_nameFull}.</LetterPartTempBabyName>
+  <LetterPartLiveBirthNameDeadline>You can change it until {0} after birth.</LetterPartLiveBirthNameDeadline>
+  <LetterPartStillbirthNameDeadline>Would you like to give the baby another name?</LetterPartStillbirthNameDeadline>
+  <LetterPartNameBabyAdopt>The baby was given the temporary name {0_nameFull}. You can change it as long as the baby is less than {1} old.</LetterPartNameBabyAdopt>
+
+  <BirthdayGrowthMoment>Growth moment for {PAWNNAME}</BirthdayGrowthMoment>
+  <BirthdayBiologicalGrowthMoment>{0_nameFull} has reached the biological age of {1} and has experienced a growth moment!</BirthdayBiologicalGrowthMoment>
+  <BirthdayBiologicalAgeWorkTypes>{0_nameDef} is now old enough to do the following work</BirthdayBiologicalAgeWorkTypes>
+  <BirthdayPickPassion>Choose 1 skill for {0_nameDef} to increase {0_possessive} passion for</BirthdayPickPassion>
+  <BirthdayPickPassions>Choose {1} skills for {0_nameDef} to increase {0_possessive} passion for</BirthdayPickPassions>
+  <BirthdayPickTrait>Choose a trait for {0_nameDef} to gain</BirthdayPickTrait>
+  <BirthdayGrowthTier>When this growth moment happened, {0_nameDef} was at growth tier {1}. Children at higher growth tiers get more trait and passion options to choose from, and more passions overall. Satisfying the learning need helps the child gain growth tiers faster. Growth tiers are reset after each growth moment.</BirthdayGrowthTier>
+  <BirthdayChooseHowPawnWillGrow>Open this letter to choose how {0_nameDef} will grow.</BirthdayChooseHowPawnWillGrow>
+
+  <BirthdayPassionArchive>Passion was increased for {0}.</BirthdayPassionArchive>
+  <BirthdayTraitArchive>The trait {0} was gained.</BirthdayTraitArchive>
+  <BirthdayNoTraitChoice>No trait</BirthdayNoTraitChoice>
+  <BirthdayNoTraitChoiceTooltip>{0} does not gain a trait.</BirthdayNoTraitChoiceTooltip>
+
+  <BirthdayMakeChoices>Make choices to close</BirthdayMakeChoices>
+  <BirthdayNickname>{0} has gained the nickname {1}.</BirthdayNickname>
+  <SelectATrait>Select a trait.</SelectATrait>
+  <SelectPassionSingular>Select a passion.</SelectPassionSingular>
+  <SelectPassionsPlural>Select {0} passions.</SelectPassionsPlural>
+  <Later>Later</Later>
+  
+  <LetterLabelMechlinkAvailable>Mechlink available</LetterLabelMechlinkAvailable>
+  <LetterMechlinkAvailable>An opportunity to acquire the unique mechlink implant has become available via the quest '{0}'.\n\nInstalling a mechlink will turn a colonist into a mechanitor. Mechanitors can create, control, and manipulate mechanoids for use in work and in combat.</LetterMechlinkAvailable>
+
+  <!-- Genes -->
+  <LetterLabelXenogermOrderedImplanted>Xenogerm implantation ordered</LetterLabelXenogermOrderedImplanted>
+  <LetterXenogermOrderedImplanted>You have ordered a xenogerm be implanted in {PAWN_nameDef}. This procedure requires a medical bed and {MEDICINENEEDED} medicine.{BEDINFO}{MEDICINEINFO}\n\nYou can cancel this procedure by going to {PAWN_nameDef}'s health -> operations tab.</LetterXenogermOrderedImplanted>
+  <XenogermOrderedImplantedBedNeeded>\n\nYou do not have any medical beds available for {PAWN_nameDef}. Consider marking a bed as medical.</XenogermOrderedImplantedBedNeeded>
+  <XenogermOrderedImplantedMedicineNeeded>\n\nYou do not have enough medicine to implant the xenogerm. Implanting cannot begin until you get {MEDICINENEEDED} medicine.</XenogermOrderedImplantedMedicineNeeded>
+  <LetterLabelInvoluntaryDeathrest>Involuntary deathrest</LetterLabelInvoluntaryDeathrest>
+  <LetterLabelRegenerationComa>Regeneration coma</LetterLabelRegenerationComa>
+  <LetterTextInvoluntaryDeathrestOrComa>{PAWN_nameDef}'s deathless gene has prevented {PAWN_objective} from dying. {HEDIFFINFO}</LetterTextInvoluntaryDeathrestOrComa>
+  <LetterTextDeathrest>Instead, {PAWN_pronoun} has fallen into a deathrest.</LetterTextDeathrest>
+  <LetterTextRegenerationComa>Instead, {PAWN_pronoun} has fallen into a regeneration coma.</LetterTextRegenerationComa>
+  <DeathrestLostSkill>Due to the neural shock of traumatic deathrest, {PAWN_nameDef} has lost {XPLOSS} XP in {PAWN_possessive} {SKILL} skill.</DeathrestLostSkill>
+  <DeathrestLethalDamage>Lethal damage taken.</DeathrestLethalDamage>
+
+  <LetterLabelSanguophageWaitingToReimplant>Xenogerm implantation</LetterLabelSanguophageWaitingToReimplant>
+  <LetterTextSanguophageWaitingToReimplant>As thanks for allowing {PAWN_objective} and {PAWN_possessive} fellow sanguophages meet here, {PAWN_nameDef} is willing to share a copy of {PAWN_possessive} xenogerm with one of your colonists. This will turn your colonist into a sanguophage.\n\nTo accept, select a colonist and right click on {PAWN_nameDef}.\n\nIf no colonists have claimed the reward in {DURATION}, the sanguophages will leave.</LetterTextSanguophageWaitingToReimplant>
+
+  <LetterLabelGenesImplanted>Genes reimplanted</LetterLabelGenesImplanted>
+  <LetterTextGenesImplanted>{CASTER_nameDef} has implanted a copy of {CASTER_possessive} xenogerm into {TARGET_nameDef}, passing all xenogenes onto {TARGET_objective}.\n\n{TARGET_nameDef} will be in a xenogermination coma for the next {COMADURATION} while {TARGET_possessive} body adjusts to the changes.\n\n{CASTER_nameDef} will suffer from gene loss shock for the next {SHOCKDURATION}. {CASTER_possessive} genes will also need to regrow. This process takes time. If {CASTER_nameDef} implants {CASTER_possessive} xenogerm again before {CASTER_possessive} genes have regrown, {CASTER_pronoun} will die.</LetterTextGenesImplanted>
+  
+  <RefugeePodCrashBaby>A baby named {PAWN_nameDef} from {PAWN_factionName} is crashing in a transport pod nearby.\n\nYou may choose to adopt {PAWN_objective} with the 'adopt' command or ignore {PAWN_objective}.</RefugeePodCrashBaby>
+  <RefugeePodCrashBabyHasParent>The body of {PAWN_nameDef}'s deceased parent is contained within the transport pod as well.</RefugeePodCrashBabyHasParent>
+
+  <LetterPsychicBondCreated>Instinctively seeking a mate, {BONDPAWN_nameDef} has formed a psychically-bonded romantic relationship with {OTHERPAWN_nameDef}. {OTHERPAWN_nameDef} will benefit psychologically from the connection to {BONDPAWN_nameDef}, but if they are separated onto different world tiles, both will suffer from psychic stress. If one dies, the other will be driven to madness.</LetterPsychicBondCreated>
+
+  <LetterPsychicBondCreatedLovinLabel>Psychic bond</LetterPsychicBondCreatedLovinLabel>
+  <LetterPsychicBondCreatedLovinText>{BONDPAWN_nameDef} has formed a psychically-bonded romantic relationship with {OTHERPAWN_nameDef}. {OTHERPAWN_nameDef} will benefit psychologically from the connection to {BONDPAWN_nameDef}, but if they are separated onto different world tiles, both will suffer from psychic stress. If one dies, the other will be driven to madness.</LetterPsychicBondCreatedLovinText>
+
+</LanguageData>

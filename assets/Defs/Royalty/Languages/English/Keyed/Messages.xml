@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Shuttle landing zones -->
+  <ShuttleBlocked>Shuttle could not land on pad: {0}</ShuttleBlocked>
+  <MessageShuttleArrivedContentsLost>The shuttle arrived, but since there were no colonists inside, the contents were lost.</MessageShuttleArrivedContentsLost>
+
+  <ShuttleCannotLand_Fogged>Cannot land in undiscovered area.</ShuttleCannotLand_Fogged>
+  <ShuttleCannotLand_Unwalkable>Area must be walkable.</ShuttleCannotLand_Unwalkable>
+  <ShuttleCannotLand_Unaffordable>Terrain does not support {0}.</ShuttleCannotLand_Unaffordable>
+
+  <MessageBestowerWaiting>Select {BESTOWER_definite} and click 'Begin bestowing ceremony' to commence the ceremony.</MessageBestowerWaiting>
+  <MessageBestowerUnreachable>Cannot reach bestower!</MessageBestowerUnreachable>
+  <MessageBestowingTargetIsBusy>{0} is busy.</MessageBestowingTargetIsBusy>
+  <MessageBestowingSpotUnreachable>The bestower is annoyed with the interference and has decided to leave.</MessageBestowingSpotUnreachable>
+  <MessageBestowingDanger>The bestower is leaving due to life-threatening danger.</MessageBestowingDanger>
+  <MessageBestowingDangerTemperature>The bestower is leaving due to life-threatening temperature.</MessageBestowingDangerTemperature>
+  <MessageBestowingDangerGas>The bestower is leaving due to dangerous gases in the area.</MessageBestowingDangerGas>
+  <MessageBestowingInterrupted>The bestowing ceremony has been interrupted.</MessageBestowingInterrupted>
+
+  <MessageBestowingCeremonyStarted>{PAWN_definite}'s bestowing ceremony has begun.</MessageBestowingCeremonyStarted>
+  <MessageMissionGetBackToShuttle>You defeated the {FACTION_pawnsPlural}! Get back on the shuttle to launch it.</MessageMissionGetBackToShuttle>
+
+  <MessagePermitTransportDrop>{FACTION_name} has dropped resources nearby.</MessagePermitTransportDrop>
+  <MessagePermitTransportDropCaravan>{FACTION_name} has sent resources to {PAWN_nameDef}'s caravan.</MessagePermitTransportDropCaravan>
+
+  <MessageNoFactionForVerbMechCluster>No orbiting mechanoids found.</MessageNoFactionForVerbMechCluster>
+
+</LanguageData>

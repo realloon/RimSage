@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================= Thoughts related to royal titles ============================= -->
+
+  <ThoughtDef>
+    <defName>GainedTitle</defName>
+    <durationDays>7</durationDays>
+    <thoughtClass>Thought_MemoryRoyalTitle</thoughtClass>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <stages>
+      <li>
+        <label>Received {TITLE} title</label>
+        <description>I have been given the title of {TITLE}. I love the recognition!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>LostTitle</defName>
+    <durationDays>7</durationDays>
+    <thoughtClass>Thought_MemoryRoyalTitle</thoughtClass>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <stages>
+      <li>
+        <label>Lost {TITLE} title</label>
+        <description>I lost my {TITLE} title.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TitleApparelRequirementNotMet</defName>
+    <workerClass>ThoughtWorker_RoyalTitleApparelRequirementNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>want {TITLE_label}-specific apparel</label>
+        <description>{TITLE_indefinite} like myself should be covered in apparel appropriate to my stature:\n\n{0}</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TitleApparelMinQualityNotMet</defName>
+    <workerClass>ThoughtWorker_RoyalTitleApparelMinQualityNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <stages>
+      <li>
+        <label>want {TITLE_label}-quality apparel</label>
+        <description>{TITLE_indefinite} like myself should only wear apparel of {QUALITY} quality or better.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TitleThroneroomRequirementsNotMet</defName>
+    <workerClass>ThoughtWorker_ThroneRoomRequirementsNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <stages>
+      <li>
+        <label>undignified throneroom</label>
+        <description>I am {TITLE_indefinite} and I should have these items in my throneroom:\n\n{0}</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TitleBedroomRequirementsNotMet</defName>
+    <workerClass>ThoughtWorker_BedroomRequirementsNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <stages>
+      <li>
+        <label>undignified bedroom</label>
+        <description>{TITLE_indefinite} like myself deserves a bedroom that meets these requirements:\n\n{0}</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TitleNoThroneRoom</defName>
+    <workerClass>ThoughtWorker_NoThroneroom</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <stages>
+      <li>
+        <label>no throne room</label>
+        <description>What is a royal with no throneroom?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TitleNoPersonalBedroom</defName>
+    <workerClass>ThoughtWorker_NoPersonalBedroom</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits><li>Ascetic</li></nullifyingTraits>
+    <stages>
+      <li>
+        <label>no personal bedroom</label>
+        <description>{TITLE_indefinite} should have a personal bedroom.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

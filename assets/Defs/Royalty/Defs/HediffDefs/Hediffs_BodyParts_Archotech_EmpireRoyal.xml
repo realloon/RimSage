@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Psychic sensitizer -->
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>PsychicSensitizer</defName>
+    <label>psychic sensitizer</label>
+    <labelNoun>a psychic sensitizer</labelNoun>
+    <description>An installed psychic sensitizer implant. Stimulates growth in the regions of the brain related to psychic interaction, thus increasing psychic sensitivity.</description>
+    <descriptionHyperlinks><ThingDef>PsychicSensitizer</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>PsychicSensitizer</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>0.25</PsychicSensitivity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartRoyalBase">
+    <defName>PsychicSensitizer</defName>
+    <label>psychic sensitizer</label>
+    <description>This brain implant stimulates growth in the regions of the brain related to psychic interaction, thus increasing psychic sensitivity.</description>
+    <descriptionHyperlinks><RecipeDef>InstallPsychicSensitizer</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallPsychicSensitizer</defName>
+    <label>install psychic sensitizer</label>
+    <description>Install a psychic sensitizer.</description>
+    <descriptionHyperlinks>
+      <ThingDef>PsychicSensitizer</ThingDef>
+      <HediffDef>PsychicSensitizer</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing psychic sensitizer.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PsychicSensitizer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PsychicSensitizer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>PsychicSensitizer</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemovePsychicSensitizer</defName>
+    <label>remove psychic sensitizer</label>
+    <description>Remove psychic sensitizer.</description>
+    <descriptionHyperlinks>
+      <ThingDef>PsychicSensitizer</ThingDef>
+      <HediffDef>PsychicSensitizer</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing psychic sensitizer.</jobString>
+    <removesHediff>PsychicSensitizer</removesHediff>
+  </RecipeDef>
+
+  <!-- Psychic harmonizer -->
+
+  <ThoughtDef>
+    <defName>PsychicHarmonization</defName>
+    <thoughtClass>Thought_PsychicHarmonizer</thoughtClass>
+    <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+    <stackLimit>100</stackLimit>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>psychic harmony: {HARMONIZER_labelShort}</label>
+        <description>The psychic harmonizer implant makes me feel some of the emotions of the person using it as long as we're close together.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>PsychicHarmonizer</defName>
+    <label>psychic harmonizer</label>
+    <labelNoun>a psychic harmonizer</labelNoun>
+    <description>An installed psychic harmonizer implant. Projects the user's mood in a spherical psychic field, forcing others nearby to feel a blurred, simplified version of their emotions. It can be a powerful tool to keep morale high, but if the user becomes unhappy, it can lead to collective disaster.</description>
+    <descriptionHyperlinks><ThingDef>PsychicHarmonizer</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>PsychicHarmonizer</spawnThingOnRemoved>
+    <comps>
+      <li Class="HediffCompProperties_PsychicHarmonizer">
+        <range>30</range>
+        <thought>PsychicHarmonization</thought>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartRoyalBase">
+    <defName>PsychicHarmonizer</defName>
+    <label>psychic harmonizer</label>
+    <description>This brain implant projects the user's mood in a spherical psychic field, forcing others nearby to feel a blurred, simplified version of their emotions. It can be a powerful tool to keep morale high, but if the user becomes unhappy, it can lead to collective disaster.</description>
+    <descriptionHyperlinks><RecipeDef>InstallPsychicHarmonizer</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>800</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallPsychicHarmonizer</defName>
+    <label>install psychic harmonizer</label>
+    <description>Install a psychic harmonizer.</description>
+    <descriptionHyperlinks>
+      <ThingDef>PsychicHarmonizer</ThingDef>
+      <HediffDef>PsychicHarmonizer</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing psychic harmonizer.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PsychicHarmonizer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PsychicHarmonizer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>PsychicHarmonizer</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemovePsychicHarmonizer</defName>
+    <label>remove psychic harmonizer</label>
+    <description>Remove psychic harmonizer.</description>
+    <descriptionHyperlinks>
+      <ThingDef>PsychicHarmonizer</ThingDef>
+      <HediffDef>PsychicHarmonizer</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing psychic harmonizer.</jobString>
+    <removesHediff>PsychicHarmonizer</removesHediff>
+  </RecipeDef>
+
+  <!-- Psychic reader -->
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>PsychicReader</defName>
+    <label>psychic reader</label>
+    <labelNoun>a psychic reader</labelNoun>
+    <description>An installed psychic reader implant. Gives limited mind-reading ability, improving the user's ability to get the upper hand in negotiations and social situations. The effect is proportional to the user's psychic sensitivity.</description>
+    <descriptionHyperlinks><ThingDef>PsychicReader</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>PsychicReader</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <statOffsets>
+          <NegotiationAbility>0.50</NegotiationAbility>
+          <TradePriceImprovement>0.10</TradePriceImprovement>
+        </statOffsets>
+        <statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartRoyalBase">
+    <defName>PsychicReader</defName>
+    <label>psychic reader</label>
+    <description>Gives limited mind-reading ability, improving the user's ability to get the upper hand in negotiations and social situations. The effect is proportional to the user's psychic sensitivity.</description>
+    <descriptionHyperlinks><RecipeDef>InstallPsychicReader</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallPsychicReader</defName>
+    <label>install psychic reader</label>
+    <description>Install a psychic reader.</description>
+    <descriptionHyperlinks>
+      <ThingDef>PsychicReader</ThingDef>
+      <HediffDef>PsychicReader</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing psychic reader.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PsychicReader</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PsychicReader</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>PsychicReader</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemovePsychicReader</defName>
+    <label>remove psychic reader</label>
+    <description>Remove psychic reader.</description>
+    <descriptionHyperlinks>
+      <ThingDef>PsychicReader</ThingDef>
+      <HediffDef>PsychicReader</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing psychic reader.</jobString>
+    <removesHediff>PsychicReader</removesHediff>
+  </RecipeDef>
+
+</Defs>

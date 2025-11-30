@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <ThingDef ParentName="Gun_Revolver">
+    <defName>Gun_Revolver_Unique</defName>
+    <label>unique revolver</label>
+    <description>A revolver with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/Revolver</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Gun</li>
+          <li>Pistol</li>
+          <li>Sighted</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>revolver</li>
+          <li>six-shooter</li>
+          <li>iron</li>
+          <li>hammer</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_Revolver</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_BoltActionRifle">
+    <defName>Gun_BoltActionRifle_Unique</defName>
+    <label>unique bolt-action rifle</label>
+    <description>A bolt-action rifle with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/BoltActionRifle</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Gun</li>
+          <li>Rifle</li>
+          <li>Sighted</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>bolt-action rifle</li>
+          <li>thumper</li>
+          <li>bolt-gun</li>
+          <li>rifle</li>
+          <li>longshot</li>
+          <li>longshooter</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_BoltActionRifle</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_ChainShotgun">
+    <defName>Gun_ChainShotgun_Unique</defName>
+    <label>unique chain shotgun</label>
+    <description>A chain shotgun with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/ChainShotgun</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>PelletFiring</li>
+          <li>Gun</li>
+          <li>Shotgun</li>
+          <li>BurstFire</li>
+          <li>Attachable</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>chain shotgun</li>
+          <li>shotgun</li>
+          <li>chainshot</li>
+          <li>blaster</li>
+          <li>blaststick</li>
+          <li>sweeper</li>
+          <li>gutspewer</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_ChainShotgun</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_HeavySMG">
+    <defName>Gun_HeavySMG_Unique</defName>
+    <label>unique heavy SMG</label>
+    <description>A heavy SMG with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/HeavySMG</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Gun</li>
+          <li>Sighted</li>
+          <li>BurstFire</li>
+          <li>LowStoppingPower</li>
+          <li>Attachable</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>heavy SMG</li>
+          <li>SMG</li>
+          <li>chugger</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_HeavySMG</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_LMG">
+    <defName>Gun_LMG_Unique</defName>
+    <label>unique LMG</label>
+    <description>An LMG with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/LMG</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Gun</li>
+          <li>Sighted</li>
+          <li>BurstFire</li>
+          <li>Attachable</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>LMG</li>
+          <li>machine gun</li>
+          <li>light machine gun</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_LMG</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_AssaultRifle">
+    <defName>Gun_AssaultRifle_Unique</defName>
+    <label>unique assault rifle</label>
+    <description>An assault rifle with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/AssaultRifle</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Gun</li>
+          <li>Sighted</li>
+          <li>Rifle</li>
+          <li>BurstFire</li>
+          <li>LowStoppingPower</li>
+          <li>Attachable</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>assault rifle</li>
+          <li>carbine</li>
+          <li>battle rifle</li>
+          <li>war rifle</li>
+          <li>wargun</li>
+          <li>fusil</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_AssaultRifle</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_SniperRifle">
+    <defName>Gun_SniperRifle_Unique</defName>
+    <label>unique sniper rifle</label>
+    <description>A sniper rifle with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/SniperRifle</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Gun</li>
+          <li>Scoped</li>
+          <li>Rifle</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>sniper rifle</li>
+          <li>precision rifle</li>
+          <li>marksman rifle</li>
+          <li>sniper</li>
+          <li>headshotter</li>
+          <li>snipegun</li>
+          <li>stalker</li>
+          <li>assassinator</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_SniperRifle</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_Minigun">
+    <defName>Gun_Minigun_Unique</defName>
+    <label>unique minigun</label>
+    <description>A minigun with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/Minigun</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Gun</li>
+          <li>BurstFire</li>
+          <li>LowStoppingPower</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>minigun</li>
+          <li>gatling gun</li>
+          <li>six-barrel</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_Minigun</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Bow_Great">
+    <defName>Bow_Great_Unique</defName>
+    <label>unique greatbow</label>
+    <description>A greatbow with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/GreatBow</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseWeaponNeolithic or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>Bow</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>greatbow</li>
+          <li>bow</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Bow_Great</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_ChargeRifle">
+    <defName>Gun_ChargeRifle_Unique</defName>
+    <label>unique charge rifle</label>
+    <description>A charge rifle with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/ChargeRifle</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>Gun</li>
+          <li>Sighted</li>
+          <li>Rifle</li>
+          <li>BurstFire</li>
+          <li>LowStoppingPower</li>
+          <li>PulseCharge</li>
+          <li>Attachable</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>charge rifle</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_ChargeRifle</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_ChargeLance">
+    <defName>Gun_ChargeLance_Unique</defName>
+    <label>unique charge lance</label>
+    <description>A charge lance with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/ChargeLance</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>Gun</li>
+          <li>PulseCharge</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>charge lance</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_ChargeLance</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_HellcatRifle" MayRequire="Ludeon.Rimworld.Anomaly">
+    <defName>Gun_HellcatRifle_Unique</defName>
+    <label>unique hellcat rifle</label>
+    <description>A hellcat rifle with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/HellcatRifle</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable"> <!-- Props are populated by traits -->
+        <abilityDef>HellcatBurner</abilityDef>
+        <maxCharges>2</maxCharges>
+        <soundReload>Standard_Reload</soundReload>
+        <chargeNoun>burner charge</chargeNoun>
+        <ammoDef>Bioferrite</ammoDef>
+        <ammoCountPerCharge>10</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>BulletFiring</li>
+          <li>Sighted</li>
+          <li>Rifle</li>
+          <li>BurstFire</li>
+          <li>LowStoppingPower</li>
+          <li>Gun</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>hellcat rifle</li>
+          <li>hellcat</li>
+          <li>flamer</li>
+          <li>flamegun</li>
+          <li>burner</li>
+          <li>burngun</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_HellcatRifle</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="Gun_BeamRepeater">
+    <defName>Gun_BeamRepeater_Unique</defName>
+    <label>unique beam repeater</label>
+    <description>A beam repeater with customized parts.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/UniqueWeapons/BeamRepeater</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <!-- Can't inherit comps because we need to override CompEquippable with CompEquippableAbility -->
+    <!-- If changes are made to the comps of BaseHumanMakeableGun or parents then they will need to be replicated here -->
+    <comps Inherit="False">
+      <li Class="CompProperties_EquippableAbilityReloadable" /> <!-- Props are populated by traits -->
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Biocodable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+      <li Class="CompProperties_UniqueWeapon">
+        <weaponCategories>
+          <li>Ranged</li>
+          <li>Gun</li>
+          <li>BurstFire</li>
+          <li>BeamWeapon</li>
+        </weaponCategories>
+        <namerLabels>
+          <li>repeater</li>
+          <li>beam repeater</li>
+          <li>beamgun</li>
+        </namerLabels>
+      </li>
+    </comps>
+    <generateAllowChance>0</generateAllowChance>
+    <possessionCount>0</possessionCount>
+    <tradeability>Sellable</tradeability>
+    <thingSetMakerTags Inherit="False" >
+      <li>RewardStandardLowFreq</li>
+      <li>UniqueWeapon</li>
+    </thingSetMakerTags>
+    <recipeMaker Inherit="False" IsNull="True" />
+    <thingCategories Inherit="False">
+      <li>WeaponsUnique</li>
+    </thingCategories>
+    <descriptionHyperlinks>
+      <ThingDef>Gun_BeamRepeater</ThingDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+</Defs>

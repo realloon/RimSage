@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issues -->
+
+  <IssueDef>
+    <defName>Mining</defName>
+    <label>mining</label>
+    <iconPath>UI/Issues/Mining</iconPath>
+  </IssueDef>
+
+  <IssueDef>
+    <defName>MiningYield</defName>
+    <label>mining yield</label>
+    <iconPath>UI/Issues/MiningYield</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Mining_Prohibited</defName>
+    <issue>Mining</issue>
+    <label>prohibited</label>
+    <description>Raping the natural earth with mining tools is a horrifically evil act.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <warnPlayerOnDesignateMine>true</warnPlayerOnDesignateMine>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <opposedWorkTypes>
+      <li>Mining</li>
+    </opposedWorkTypes>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+      <li>Tunneler</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <disallowMiningCamps>true</disallowMiningCamps>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>Mined</eventDef>
+        <description>Mining</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DestroyedMineable</eventDef>
+        <thought>MineableDestroyed_Prohibited</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Know_Prohibited</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Know_Prohibited_Mood</thought>
+        <description>Someone mined a block</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Mining_Horrible</defName>
+    <issue>Mining</issue>
+    <label>horrible</label>
+    <description>Violating the natural earth with mining tools is a horrible act.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <warnPlayerOnDesignateMine>true</warnPlayerOnDesignateMine>
+    <opposedWorkTypes>
+      <li>Mining</li>
+    </opposedWorkTypes>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+      <li>Tunneler</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <disallowMiningCamps>true</disallowMiningCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Horrible</thought>
+        <description>Someone mined a block</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DestroyedMineable</eventDef>
+        <thought>MineableDestroyed_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Know_Horrible_Mood</thought>
+        <description>Someone mined a block</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Mining_Disapproved</defName>
+    <issue>Mining</issue>
+    <label>disapproved</label>
+    <description>Mining into the natural earth is an ugly act.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <warnPlayerOnDesignateMine>true</warnPlayerOnDesignateMine>
+    <opposedWorkTypes>
+      <li>Mining</li>
+    </opposedWorkTypes>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+      <li>Tunneler</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <disallowMiningCamps>true</disallowMiningCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Disapproved</thought>
+        <description>Someone mined a block</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>DestroyedMineable</eventDef>
+        <thought>MineableDestroyed_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>Mined</eventDef>
+        <thought>Mined_Know_Disapproved_Mood</thought>
+        <description>Someone mined a block</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>MiningYield_High</defName>
+    <issue>MiningYield</issue>
+    <label>high</label>
+    <description>Mining is so important that we do it with great focus and respect, and we get more resources because of that.</description>
+    <impact>Medium</impact>
+    <associatedMemes>
+      <li>Tunneler</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>Tunneler</li>
+    </requiredMemes>
+    <statOffsets>
+      <MiningYield>0.1</MiningYield>
+    </statOffsets>
+  </PreceptDef>
+
+  <!-- Thoughts: Mined -->
+
+  <ThoughtDef>
+    <defName>Mined_Know_Prohibited</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>4</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>mined</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Mined_Know_Prohibited_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>mined</label>
+        <description>We mined a hole in the pure earth. What a terrible offense against nature.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MineableDestroyed_Prohibited</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>destroyed natural wall</label>
+        <description>I destroyed a natural wall. What a terrible offense against nature.</description>
+        <baseMoodEffect>-40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Mined_Horrible</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>mined</label>
+        <description>I had to mine a hole. It was an offense against the earth.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Mined_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>mined</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Mined_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>mined</label>
+        <description>Someone mined a hole in the pure earth. It was a horrible violation of nature.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MineableDestroyed_Horrible</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>destroyed natural wall</label>
+        <description>I destroyed a natural wall. It was a horrible violation of nature.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Mined_Disapproved</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>mined</label>
+        <description>I had to mine a hole. I disapprove of harming the earth this way.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Mined_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>mined</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Mined_Know_Disapproved_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>mined</label>
+        <description>Someone mined a hole in the pure earth. It's wrong to scar the world this way.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MineableDestroyed_Disapproved</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>destroyed natural wall</label>
+        <description>I destroyed a natural wall. It's wrong to scar the world this way.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

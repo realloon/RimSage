@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Forbid -->
+  <CommandForbid>Forbid</CommandForbid>
+  <CommandAllow>Allow</CommandAllow>
+  <CommandForbiddenDesc>Forbidden: Your colonists are not allowed to interact with this. Click to allow.</CommandForbiddenDesc>
+  <CommandNotForbiddenDesc>Allowed: Your colonists are allowed to interact with this. Click to forbid.</CommandNotForbiddenDesc>
+
+  <!-- Power -->
+  <CommandTogglePowerLabel>Toggle power</CommandTogglePowerLabel>
+  <CommandTogglePowerDesc>Toggle power.</CommandTogglePowerDesc>
+  
+  <CommandDesignateTogglePowerLabel>Designate toggle power</CommandDesignateTogglePowerLabel>
+  <CommandDesignateTogglePowerDesc>Designate this thing to have power toggled. A colonist will come soon to flick the switch.</CommandDesignateTogglePowerDesc>
+  
+  <CommandTryReconnectLabel>Reconnect</CommandTryReconnectLabel>
+  <CommandTryReconnectDesc>Try to connect to a different power net within my connection radius. This is useful if I'm connected to an unpowered net but there is a powered net nearby.</CommandTryReconnectDesc>
+
+  <CommandGatherSpotToggleLabel>Gather spot</CommandGatherSpotToggleLabel>
+  <CommandGatherSpotToggleDescActive>Active - colonists will gather around this object.</CommandGatherSpotToggleDescActive>
+  <CommandGatherSpotToggleDescInactive>Inactive - colonists will not gather around this object.</CommandGatherSpotToggleDescInactive>
+  
+  <!-- Drafting -->
+  <CommandDraftLabel>Draft</CommandDraftLabel>
+  <CommandUndraftLabel>Undraft</CommandUndraftLabel>
+  <CommandToggleDraftDesc>Toggle military draft.\n\nDrafted people take orders and fight. They will not work, eat, or rest.</CommandToggleDraftDesc>
+  <IsIncapped>{1_labelShort} cannot walk.</IsIncapped>
+  <ParticipatingInRitual>{0_labelShort} is participating in {1}.</ParticipatingInRitual>
+
+  <CommandFireAtWillLabel>Fire at will</CommandFireAtWillLabel>
+  <CommandFireAtWillDesc>Toggle fire at will.\n\nWhen disabled, this character will not automatically shoot at ranged targets. Does not affect melee combat.</CommandFireAtWillDesc>
+  
+  <CommandClearPrioritizedWork>Clear prioritized work</CommandClearPrioritizedWork>
+  <CommandClearPrioritizedWorkDesc>Clear any prioritized work you assigned. The character will go back to their usual self-directed activities.</CommandClearPrioritizedWorkDesc>
+  
+  <CommandCancelConstructionLabel>Cancel</CommandCancelConstructionLabel>
+  <CommandCancelConstructionDesc>Cancel this construction.</CommandCancelConstructionDesc>
+
+  <CommandGetOutOfBedLabel>Get out of bed</CommandGetOutOfBedLabel>
+  <CommandGetOutOfBedDesc>Get out of current bed.</CommandGetOutOfBedDesc>
+
+  <CommandThingSetOwnerLabel>Set owner</CommandThingSetOwnerLabel>
+  <CommandBedSetOwnerDesc>Assign this bed to be owned by a specific {0}.</CommandBedSetOwnerDesc>
+  <CommandThroneSetOwnerDesc>Assign this throne to be owned by a specific colonist.</CommandThroneSetOwnerDesc>
+  <CommandMeditationSpotSetOwnerDesc>Assign this meditation spot to be owned by a specific colonist.</CommandMeditationSpotSetOwnerDesc>
+  <CommandGraveAssignColonistLabel>Assign colonist</CommandGraveAssignColonistLabel>
+  <CommandGraveAssignColonistDesc>Assign this grave to be owned by a specific colonist.</CommandGraveAssignColonistDesc>
+  <BuildingAssign>Assign</BuildingAssign>
+  <BuildingReassign>Reassign</BuildingReassign>
+  <BuildingUnassign>Unassign</BuildingUnassign>
+  <CommandBedSetForPrisonersLabel>For prisoners</CommandBedSetForPrisonersLabel>
+  <CommandBedSetForPrisonersDesc>Whether beds in this room should be used by prisoners.</CommandBedSetForPrisonersDesc>
+  <CommandBedSetForPrisonersFailOutdoors>Only beds in enclosed spaces can be set for prisoners.</CommandBedSetForPrisonersFailOutdoors>
+  <CommandBedSetAsMedicalLabel>Medical</CommandBedSetAsMedicalLabel>
+  <CommandBedSetAsMedicalDesc>Whether this bed is for medical use.</CommandBedSetAsMedicalDesc>
+  <TurningOnPrisonerBedWarning>Turning on prisoner mode affects the whole room (since prisoners and colonists cannot sleep in the same room).\n\nThese people will lose ownership of their beds:</TurningOnPrisonerBedWarning>
+  <TurningOffPrisonerBedWarning>Turning off prisoner mode affects the whole room (since prisoners and colonists cannot sleep in the same room).\n\nThese people will lose ownership of their beds:</TurningOffPrisonerBedWarning>
+  <AreYouSure>Are you sure you want to do this?</AreYouSure>
+  <ChangingOwnerTypeBedWarning>Changing bed use affects the whole room (since prisoners, slaves and colonists cannot sleep in the same room).\n\nThese people will lose ownership of their beds:</ChangingOwnerTypeBedWarning>
+  
+  <CommandDetonateLabel>Detonate</CommandDetonateLabel>
+  <CommandDetonateDesc>Start the countdown to detonation.</CommandDetonateDesc>
+  
+  <CommandHideLabel>Hide</CommandHideLabel>
+  <CommandUnhideLabel>Unhide</CommandUnhideLabel>
+  
+  <CommandHidePlanDesc>Toggle this plan's visibility.\n\nRight-click to hide or unhide all zones.</CommandHidePlanDesc>
+  <CommandHideZoneDesc>Hide/unhide this zone.\n\nRight-click to hide or unhide all zones.</CommandHideZoneDesc>
+  
+  <ShowAllZones>Show all zones</ShowAllZones>
+  <HideAllZones>Hide all zones</HideAllZones>
+  <ShowAllZoneTypes>Show all {0} zones</ShowAllZoneTypes>
+  <HideAllZoneTypes>Hide all {0} zones</HideAllZoneTypes>
+  <Planning>planning</Planning>
+  
+  <CommandChangeColorPlanLabel>Change color</CommandChangeColorPlanLabel>
+  <CommandChangeColorPlanDesc>Change the color of this plan.</CommandChangeColorPlanDesc>
+  
+  <CommandDeletePlanLabel>Delete</CommandDeletePlanLabel>
+  <CommandDeletePlanDesc>Delete this plan.</CommandDeletePlanDesc>
+  
+  <CommandCopyPlanLabel>Copy</CommandCopyPlanLabel>
+  <CommandCopyPlanDesc>Copy this plan.</CommandCopyPlanDesc>
+  
+  <CommandCopyPlanSelectionLabel>Copy selection...</CommandCopyPlanSelectionLabel>
+  <CommandCopyPlanSelectionDesc>Copy all plans within a selected area.</CommandCopyPlanSelectionDesc>
+  <CommandCopyPlanSelectionMouse>Select area to copy</CommandCopyPlanSelectionMouse>
+  <CommandCopyPlanSelectionPasteMouse>Paste selected area</CommandCopyPlanSelectionPasteMouse>
+
+  <CommandDeleteZoneLabel>Delete</CommandDeleteZoneLabel>
+  <CommandDeleteZoneDesc>Delete this zone.</CommandDeleteZoneDesc>
+
+  <CommandCopyZoneSettingsLabel>Copy settings</CommandCopyZoneSettingsLabel>
+  <CommandCopyZoneSettingsDesc>Copy this storage's settings to the clipboard so you can paste them onto another zone.</CommandCopyZoneSettingsDesc>
+
+  <CommandPasteZoneSettingsLabel>Paste settings</CommandPasteZoneSettingsLabel>
+  <CommandPasteZoneSettingsDesc>Overwrite this storage's settings with those previously copied to the clipboard.</CommandPasteZoneSettingsDesc>
+
+  <CommandAllowSow>Allow sowing</CommandAllowSow>
+  <CommandAllowSowDesc>When disabled, colonists will never sow new plants in this zone. They will still harvest.</CommandAllowSowDesc>
+
+  <CommandAllowCut>Allow cutting</CommandAllowCut>
+  <CommandAllowCutDesc>When disabled, colonists will never cut plants in this zone. They will still sow new plants in spaces that are already empty, and harvest plants matching the growing zone plant type.</CommandAllowCutDesc>
+  
+  <CommandSelectStoredThing>Select {0_label}</CommandSelectStoredThing>
+  <CommandSelectStoredThingDesc>Select the item stored in here.</CommandSelectStoredThingDesc>
+
+  <!-- Artillery -->
+  <CommandSetForceAttackTarget>Set forced target</CommandSetForceAttackTarget>
+  <CommandSetForceAttackTargetDesc>Sets a target that this turret must attack continuously as long as it can.</CommandSetForceAttackTargetDesc>
+  <CommandStopForceAttack>Stop forced attack</CommandStopForceAttack>
+  <CommandStopForceAttackDesc>Stops force-attacking and allows the turret to fire as it wishes.</CommandStopForceAttackDesc>
+  <CommandStopAttackFailNotForceAttacking>Not currently force-attacking.</CommandStopAttackFailNotForceAttacking>
+  <CommandExtractShell>Extract shell</CommandExtractShell>
+  <CommandExtractShellDesc>Unloads the current shell so it can be replaced with different ammunition.</CommandExtractShellDesc>
+  <MessageTargetBeyondMaximumRange>Target beyond maximum range.</MessageTargetBeyondMaximumRange>
+  <MessageTargetBelowMinimumRange>Target below minimum range.</MessageTargetBelowMinimumRange>
+  <MessageTurretWontFireBecauseHoldFire>Warning: The mortar won't fire because it's set to "Hold fire".</MessageTurretWontFireBecauseHoldFire>
+  
+  <!-- Ship computer core -->
+  <CommandShipLaunch>Launch ship</CommandShipLaunch>
+  <CommandShipLaunchDesc>Start the ship launch sequence with the current configuration.</CommandShipLaunchDesc>
+  <CommandShipLaunchReport>Show launch report</CommandShipLaunchReport>
+  <CommandShipLaunchReportDesc>Show a readiness report about the ship's launch capability.</CommandShipLaunchReportDesc>
+  <CommandShipStartup>Start ship</CommandShipStartup>
+  <CommandShipStartupDesc>Wake up hibernating ship components.</CommandShipStartupDesc>
+
+  <!-- Pod -->
+  <CommandPodEject>Eject sleeper</CommandPodEject>
+  <CommandPodEjectDesc>Wake up the cryptosleeper and eject them.</CommandPodEjectDesc>
+  <CommandPodEjectFailEmpty>Contains nobody.</CommandPodEjectFailEmpty>
+
+  <!-- Door -->
+  <CommandToggleDoorForbid>Passage forbidden</CommandToggleDoorForbid>
+  <CommandToggleDoorForbidDesc>When a door is forbidden, colonists and allies will not go through it. This doesn't affect how enemies or animals interact with the door.</CommandToggleDoorForbidDesc>
+  <CommandToggleDoorHoldOpen>Hold open</CommandToggleDoorHoldOpen>
+  <CommandToggleDoorHoldOpenDesc>When active, your colonists will not close the door after passing through.</CommandToggleDoorHoldOpenDesc>
+
+  <!-- Temperature control -->
+  <CommandResetTemp>Reset</CommandResetTemp>
+  <CommandResetTempDesc>Reset the target temperature to room temperature.</CommandResetTempDesc>
+  <CommandRaiseTempDesc>Raise the target temperature.</CommandRaiseTempDesc>
+  <CommandLowerTempDesc>Lower the target temperature.</CommandLowerTempDesc>
+
+  <!-- Install/reinstall -->
+  <CommandInstall>Install</CommandInstall>
+  <CommandInstallDesc>This item is currently packaged up for storage and transport. Use this command to install this item in a final location.</CommandInstallDesc>
+  <CommandReinstall>Reinstall at...</CommandReinstall>
+  <CommandReinstallDesc>Designate this item to be uninstalled and reinstalled somewhere else.</CommandReinstallDesc>
+  <CommandReplant>Replant</CommandReplant>
+  <CommandReplantDesc>This tree is currently packaged up for storage and transport. Use this command to replant it in a new location.</CommandReplantDesc>
+  
+  <!-- Trade beacon -->
+  <CommandMakeBeaconStockpileDesc>Create a stockpile around this building exactly matching the shape of the beacon's launch radius.</CommandMakeBeaconStockpileDesc>
+  <CommandMakeBeaconStockpileLabel>Create stockpile</CommandMakeBeaconStockpileLabel>
+
+  <!-- Sun lamp -->
+  <CommandSunLampMakeGrowingZoneDesc>Create a growing zone around this building exactly matching the shape of the lamp's light radius.</CommandSunLampMakeGrowingZoneDesc>
+  <CommandSunLampMakeGrowingZoneLabel>Create growing zone</CommandSunLampMakeGrowingZoneLabel>
+
+  <!-- Trap -->
+  <CommandAutoRearm>Auto rearm</CommandAutoRearm>
+  <CommandAutoRearmDesc>If this is on, this trap will automatically be replaced after it springs.</CommandAutoRearmDesc>
+  
+  <!-- Firefoam popper -->
+  <CommandAutoRebuild_Building>Auto rebuild</CommandAutoRebuild_Building>
+  <CommandAutoRebuild_BuildingDesc>If this is on, {BUILDING_definite} will automatically be replaced after it detonates.</CommandAutoRebuild_BuildingDesc>
+  
+  <!-- Animal control -->
+  <CommandReleaseAnimalsLabel>Animals attack</CommandReleaseAnimalsLabel>
+  <CommandReleaseAnimalsDesc>While this is on, mastered animals are sent forth to attack distant targets. While it is off, they remain near and guard the master.</CommandReleaseAnimalsDesc>
+  <CommandReleaseAnimalsFail_NoAnimals>No animals available.</CommandReleaseAnimalsFail_NoAnimals>
+  
+  <!-- Squad attack -->
+  <CommandSquadAttack>Attack</CommandSquadAttack>
+  <CommandSquadAttackDesc>Order selected colonists to attack designated target.</CommandSquadAttackDesc>
+  
+  <!-- Melee attack -->
+  <CommandMeleeAttack>Melee attack</CommandMeleeAttack>
+  <CommandMeleeAttackDesc>Order selected colonists to attack designated target using only fists and melee weapons.</CommandMeleeAttackDesc>
+
+  <!-- Hold fire -->
+  <CommandHoldFire>Hold fire</CommandHoldFire>
+  <CommandHoldFireDesc>End any ongoing attacks.</CommandHoldFireDesc>
+  
+  <!-- reload -->
+  <CommandReload_NoCharges>No {CHARGENOUN_plural} left.</CommandReload_NoCharges>
+  <CommandReload_Cooldown>{COOLDOWNGERUND} for {TIME}.</CommandReload_Cooldown>
+  <CommandReload_NoAmmo>Needs to be reloaded with {COUNT} {AMMO_label}.</CommandReload_NoAmmo>
+  
+  <!-- Select plant to grow -->
+  <CommandSelectPlantToGrowMulti>Select plant to grow</CommandSelectPlantToGrowMulti>
+  <CommandSelectPlantToGrow>Plant: {0}</CommandSelectPlantToGrow>
+  <CommandSelectPlantToGrowDesc>Determine which plant should be sown here.</CommandSelectPlantToGrowDesc>
+  
+  <!-- Select mineral to scan for (long-range mineral scanner) -->
+  <CommandSelectMineralToScanFor>Tuned to</CommandSelectMineralToScanFor>
+  <CommandSelectMineralToScanForDesc>Select the mineral type to scan for.</CommandSelectMineralToScanForDesc>
+
+  <!-- Build copy -->
+  <CommandBuildCopy>Build copy</CommandBuildCopy>
+  <CommandBuildCopyDesc>Build a copy of this building.</CommandBuildCopyDesc>
+
+  <!-- Form caravan -->
+  <CommandFormCaravan>Form caravan</CommandFormCaravan>
+  <CommandFormCaravanDesc>Form a group of colonists able to travel to new areas. The colonists will gather all the assigned supplies and accompanying animals, leave their current area, and await further orders.</CommandFormCaravanDesc>
+  <CommandFormCaravanDescAtSpot>This spot will be used as a meeting point for the caravan. All goods and animals will be brought here before leaving.</CommandFormCaravanDescAtSpot>
+  
+  <!-- Reform caravan -->
+  <CommandReformCaravan>Reform caravan</CommandReformCaravan>
+  <CommandReformCaravanDesc>Reform a group of colonists. The colonists will leave their current area and await further orders.</CommandReformCaravanDesc>
+  <CommandReformCaravanFailHostilePawns>There are still some enemies in this area.</CommandReformCaravanFailHostilePawns>
+
+  <!-- Send caravan -->
+  <CommandSendCaravan>Send caravan</CommandSendCaravan>
+  <CommandSendCaravanMultiple>Send caravan...</CommandSendCaravanMultiple>
+  <CommandSendCaravanDesc>Send a caravan to this destination from a selected colony which can reach this location.</CommandSendCaravanDesc>
+  <CommandSendCaravanCantReach>Your settlements have no path to this location.</CommandSendCaravanCantReach>
+
+  <!-- Split caravan -->
+  <CommandSplitCaravan>Split</CommandSplitCaravan>
+  <CommandSplitCaravanDesc>Split this caravan into two. The caravans can be later merged back into one as long as they are close to each other.</CommandSplitCaravanDesc>
+  
+  <!-- Merge caravan -->
+  <CommandMergeCaravans>Merge</CommandMergeCaravans>
+  <CommandMergeCaravansDesc>Merge selected caravans.</CommandMergeCaravansDesc>
+  <CommandMergeCaravansFailCaravansNotSelected>Select all caravans which should be merged. The caravans must be close to each other.</CommandMergeCaravansFailCaravansNotSelected>
+  <CommandJoinCaravan>Join</CommandJoinCaravan>
+  
+  <!-- Settle -->
+  <CommandSettle>Settle</CommandSettle>
+  <CommandSettleDesc>Settle in this area. Your colonists will enter this area and you will be able to start building a new home.</CommandSettleDesc>
+  <CommandSettleFailAlreadyHaveBase>Your faction can only have one base.</CommandSettleFailAlreadyHaveBase>
+  <CommandSettleFailReachedMaximumNumberOfBases>Reached maximum number of colonies.</CommandSettleFailReachedMaximumNumberOfBases>
+  <CommandSettleFailNoColonists>There isn't anybody there to claim the area.</CommandSettleFailNoColonists>
+  <CommandSettleFailEnemies>There are enemies in this area.</CommandSettleFailEnemies>
+  <CommandSettleFailGeneric>Cannot settle here.</CommandSettleFailGeneric>
+
+  <!-- Camp -->
+  <CommandCamp>Camp</CommandCamp>
+  <CommandCampDesc>Set up a temporary camp that can quickly be abandoned.</CommandCampDesc>
+  <CommandCampFailExistingWorldObject>Cannot camp here.</CommandCampFailExistingWorldObject>
+  
+  <!-- Abandon home -->
+  <CommandAbandonHome>Abandon</CommandAbandonHome>
+  <CommandAbandonHomeDesc>Abandon this area. The area will become inaccessible and you will not be able to return here ever again. After abandoning your home, you will be able to order one of your caravans to settle in a new area.</CommandAbandonHomeDesc>
+  <CommandAbandonHomeFailAllColonistsThere>All of your colonists are there.</CommandAbandonHomeFailAllColonistsThere>
+  
+  <!-- Cancel forming caravan -->
+  <CommandCancelFormingCaravan>Cancel forming caravan</CommandCancelFormingCaravan>
+  <CommandCancelFormingCaravanDesc>Terminate the caravan formation process.</CommandCancelFormingCaravanDesc>
+
+  <!-- Remove from caravan -->
+  <CommandRemoveFromCaravan>Remove from caravan</CommandRemoveFromCaravan>
+  <CommandRemoveFromCaravanDesc>Remove this person or animal from the caravan.</CommandRemoveFromCaravanDesc>
+  
+  <!-- Add to caravan -->
+  <CommandAddToCaravan>Add to caravan</CommandAddToCaravan>
+  <CommandAddToCaravanDesc>Add this person or animal to the forming caravan.</CommandAddToCaravanDesc>
+  
+  <!-- Force caravan depart -->
+  <CommandForceCaravanDepart>Force caravan departure</CommandForceCaravanDepart>
+  <CommandForceCaravanDepartDesc>Force the caravan to depart immediately with only the currently-loaded items. Anyone unable to travel will be left behind.</CommandForceCaravanDepartDesc>
+  <ConfirmForceDepartIntro>Are you sure you want to depart?</ConfirmForceDepartIntro>
+  <ConfirmForceDepartItemsStillLoading>The following items are still being loaded and will be left behind:</ConfirmForceDepartItemsStillLoading>
+  <ConfirmForceDepartPawnsNotLeaving>The following people won't be a part of the caravan:</ConfirmForceDepartPawnsNotLeaving>
+  <ConfirmForceDepartItemsOnPawnsNotLeaving>The following items are loaded onto creatures who won't be a part of the caravan and will be left behind:</ConfirmForceDepartItemsOnPawnsNotLeaving>
+  
+  <!-- Show map -->
+  <CommandShowMap>Zoom in</CommandShowMap>
+  <CommandShowMapDesc>Zoom in on this area.</CommandShowMapDesc>
+  
+  <!-- Trade -->
+  <CommandTrade>Trade</CommandTrade>
+  <CommandTradeDesc>Trade with this faction.</CommandTradeDesc>
+  <CommandTradeFailNoNegotiator>There isn't any conscious and capable negotiator.</CommandTradeFailNoNegotiator>
+  <CommandTradeFailNeedPermit>None of your people have the required faction permission: {0}</CommandTradeFailNeedPermit>
+
+  <!-- Offer gifts -->
+  <CommandOfferGifts>Offer gifts</CommandOfferGifts>
+  <CommandOfferGiftsDesc>Offer gifts to this faction.</CommandOfferGiftsDesc>
+
+  <!-- Fulfill request -->
+  <CommandFulfillTradeOffer>Fulfill trade offer</CommandFulfillTradeOffer>
+  <CommandFulfillTradeOfferDesc>Fulfill the settlement's request for goods and claim your reward.</CommandFulfillTradeOfferDesc>
+  <CommandFulfillTradeOfferFailInsufficient>Your caravan must have {0} to fulfill this trade offer.</CommandFulfillTradeOfferFailInsufficient>
+  <CommandFulfillTradeOfferConfirm>Give {0}?</CommandFulfillTradeOfferConfirm>
+  
+  <!-- Take off -->
+  <CommandTakeOff>Take off</CommandTakeOff>
+  <CommandTakeOffDesc>Get on board the ship and escape the planet.</CommandTakeOffDesc>
+  <CommandTakeOffConfirmation>Are you sure you want to launch the ship?\n\nEveryone in this area will escape the planet. Everyone else will be left behind.</CommandTakeOffConfirmation>
+
+  <!-- Set target fuel level -->
+  <CommandSetTargetFuelLevel>Set target fuel level</CommandSetTargetFuelLevel>
+  <CommandSetTargetFuelLevelDesc>Set the target fuel level. Colonists will attempt to fill this up to the target fuel level.</CommandSetTargetFuelLevelDesc>
+
+  <!-- Refueling -->
+  <CommandToggleAllowAutoRefuel>Toggle automatic refuel</CommandToggleAllowAutoRefuel>
+  <CommandToggleAllowAutoRefuelDesc>This determines whether colonists will automatically refuel this. If enabled, colonists will fill this up to {0}.\n\nAutomatic refueling is currently {ONOFF}.</CommandToggleAllowAutoRefuelDesc>
+  <CommandToggleAllowAutoRefuelDescMult>This determines whether colonists will automatically refuel these buildings.\n\nAutomatic refueling is currently {ONOFF}.</CommandToggleAllowAutoRefuelDescMult>
+
+  <!-- Cancel load -->
+  <CommandCancelLoad>Cancel load</CommandCancelLoad>
+  <CommandCancelLoadDesc>Cancel loading this with people or items and eject everything already loaded.</CommandCancelLoadDesc>
+  <CommandUnload>Unload all</CommandUnload>
+  <CommandUnloadDesc>Eject all contents from the {0}.</CommandUnloadDesc>
+
+  <!-- Launch group -->
+  <CommandLaunchGroup>Launch</CommandLaunchGroup>
+  <CommandLaunchGroupDesc>Take off and fly to a destination.</CommandLaunchGroupDesc>
+  <CommandLaunchGroupFailNotLoaded>Must be loaded first.</CommandLaunchGroupFailNotLoaded>
+  <CommandLaunchGroupFailNotConnectedToFuelingPort>Some transport pods in this loading group are not connected to a fueling port.</CommandLaunchGroupFailNotConnectedToFuelingPort>
+  <CommandLaunchGroupFailUnderRoof>Roof blocking launch.</CommandLaunchGroupFailUnderRoof>
+  <CommandLaunchGroupFailNoFuel>Not enough fuel to launch.</CommandLaunchGroupFailNoFuel>
+  <CommandLaunchGroupFailOverMassCapacity>Over mass capacity.</CommandLaunchGroupFailOverMassCapacity>
+  <CommandLaunchGroupCooldown>On cooldown.</CommandLaunchGroupCooldown>
+  <MassUsageString>{0} / {1} kg</MassUsageString>
+
+  <!-- Load transporter -->
+  <CommandLoadTransporter>Load launch group of {0}</CommandLoadTransporter>
+  <CommandLoadTransporterDesc>Defines the selected transporter(s) as a launch group. Opens the loading dialog so you can decide who and what should be loaded inside.</CommandLoadTransporterDesc>
+  <CommandLoadTransporterFailNotConnectedToFuelingPort>The transport pod is not connected to a fueling port.</CommandLoadTransporterFailNotConnectedToFuelingPort>
+  <CommandLoadTransporterFailNoFuel>The pod launcher has no fuel.</CommandLoadTransporterFailNoFuel>
+  
+  <!-- Load transporter (single) -->
+  <CommandLoadTransporterSingle>Load</CommandLoadTransporterSingle>
+  <CommandLoadTransporterSingleDesc>Opens the loading dialog so you can decide who and what should be loaded inside.</CommandLoadTransporterSingleDesc>
+  
+  <!-- Transporters set to load -->
+  <CommandSetToLoadTransporter>Set to load</CommandSetToLoadTransporter>
+  <CommandSetToLoadTransporterDesc>Opens the loading dialog so you can decide who and what should be loaded inside.</CommandSetToLoadTransporterDesc>
+  
+  <!-- Autoload transporters -->
+  <CommandAutoloadTransporters>Autoload</CommandAutoloadTransporters>
+  <CommandAutoloadTransportersDesc>Toggle loading all required cargo automatically as soon as they become available.</CommandAutoloadTransportersDesc>
+  
+  <!-- Select previous transporter -->
+  <CommandSelectPreviousTransporter>Select previous in launch group</CommandSelectPreviousTransporter>
+  <CommandSelectPreviousTransporterDesc>Select previous transport pod in this launch group.</CommandSelectPreviousTransporterDesc>
+  
+  <!-- Select all transporters -->
+  <CommandSelectAllTransporters>Select launch group</CommandSelectAllTransporters>
+  <CommandSelectAllTransportersDesc>Select all transport pods in this launch group.</CommandSelectAllTransportersDesc>
+  
+  <!-- Select next transporter -->
+  <CommandSelectNextTransporter>Select next in launch group</CommandSelectNextTransporter>
+  <CommandSelectNextTransporterDesc>Select next transport pod in this launch group.</CommandSelectNextTransporterDesc>
+  
+  <!-- Vent -->
+  <CommandDesignateOpenCloseVentLabel>Designate open/close</CommandDesignateOpenCloseVentLabel>
+  <CommandDesignateOpenCloseVentDesc>Designate this vent to be opened or closed. A colonist will come soon to perform the task.</CommandDesignateOpenCloseVentDesc>
+  
+  <!-- Remove waypoint -->
+  <CommandRemoveWaypointLabel>Remove</CommandRemoveWaypointLabel>
+  <CommandRemoveWaypointDesc>Remove this waypoint.</CommandRemoveWaypointDesc>
+
+  <!-- Pause caravan -->
+  <CommandPauseCaravan>Rest</CommandPauseCaravan>
+  <CommandToggleCaravanPauseDesc>Start resting. This has the following benefits:\n\n  - People can interact socially\n  - Forage for food {0} times faster\n  - Visibility multiplied by {1}</CommandToggleCaravanPauseDesc>
+  
+  <!-- Show sellable items -->
+  <CommandShowSellableItems>Show what will buy</CommandShowSellableItems>
+  <CommandShowSellableItemsDesc>Show everything this trader wants to buy.</CommandShowSellableItemsDesc>
+
+  <!-- Attack settlement -->
+  <CommandAttackSettlement>Attack</CommandAttackSettlement>
+  <CommandAttackSettlementDesc>Attack this settlement.</CommandAttackSettlementDesc>
+
+  <!-- Send shuttle -->
+  <CommandSendShuttle>Send</CommandSendShuttle>
+  <CommandSendShuttleDesc>Initiate takeoff and have the shuttle fly to its destination.</CommandSendShuttleDesc>
+  <CommandSendShuttleFailUnderRoof>The shuttle is under a roof.</CommandSendShuttleFailUnderRoof>
+  <CommandSendShuttleFailMissingRequiredThing>Some of the required items or people are missing.</CommandSendShuttleFailMissingRequiredThing>
+  
+  <!-- Dismiss shuttle -->
+  <CommandShuttleDismiss>Dismiss</CommandShuttleDismiss>
+  <CommandShuttleDismissDesc>Unload all contents and send the shuttle away.</CommandShuttleDismissDesc>
+
+  <!-- Place blueprints -->
+  <CommandPlaceBlueprints>Place blueprints</CommandPlaceBlueprints>
+  <CommandPlaceBlueprintsDesc>Place all required blueprints where possible.</CommandPlaceBlueprintsDesc>
+  <CommandPlaceBlueprintsSpecific>Place {0} blueprints</CommandPlaceBlueprintsSpecific>
+  <CommandPlaceBlueprintsSpecificDesc>Place all {0} blueprints where possible.</CommandPlaceBlueprintsSpecificDesc>
+
+  <!-- Cancel monument marker -->
+  <CommandCancelMonumentMarker>Cancel</CommandCancelMonumentMarker>
+  <CommandCancelMonumentMarkerDesc>Permanently remove this monument marker.</CommandCancelMonumentMarkerDesc>
+
+  <!-- View quest -->
+  <CommandViewQuest>View quest: {0}</CommandViewQuest>
+  <CommandViewQuestDesc>View this quest in quests tab.</CommandViewQuestDesc>
+  <CommandOpenLinkedQuest>Open linked quest</CommandOpenLinkedQuest>
+  <CommandOpenLinkedQuestDesc>Open linked quest in the quests tab.</CommandOpenLinkedQuestDesc>
+
+  <!-- Carry -->
+  <CommandDropPawn>Drop {0_nameDef}</CommandDropPawn>
+  <CommandDropPawnDesc>Drop the person being carried.</CommandDropPawnDesc>
+  <CommandSelectCarriedPawn>Select {0_nameDef}</CommandSelectCarriedPawn>
+  <CommandSelectCarriedPawnDesc>Select the creature being carried.</CommandSelectCarriedPawnDesc>
+  <CommandSelectCarriedThing>Select {0_label}</CommandSelectCarriedThing>
+  <CommandSelectCarriedThingDesc>Select the carried item.</CommandSelectCarriedThingDesc>
+  <CommandSelectContainerThing>Select {0_label}</CommandSelectContainerThing>
+  <CommandSelectContainerThingDesc>Select the containing item.</CommandSelectContainerThingDesc>
+  <CommandSelectCarryingPawn>Select {0_nameDef}</CommandSelectCarryingPawn>
+  <CommandSelectCarryingPawnDesc>Select the carrying creature.</CommandSelectCarryingPawnDesc>
+  <CommandSelectContainedPawn>Select {0_nameDef}</CommandSelectContainedPawn>
+  <CommandSelectContainedPawnDesc>Select the contained creature.</CommandSelectContainedPawnDesc>
+  <CommandSelectContainedThing>Select {0_label}</CommandSelectContainedThing>
+  <CommandSelectContainedThingDesc>Select the contained item.</CommandSelectContainedThingDesc>
+
+  <!-- Take a drug -->
+  <TakeDrug>Take drug...</TakeDrug>
+  <TakeDrugDesc>Choose a drug from inventory to ingest immediately.</TakeDrugDesc>
+
+  <!-- Build X -->
+  <BuildThing>Build {0}</BuildThing>
+
+  <!-- Rituals -->
+  <CommandLeaveRitual>Leave {RITUAL_label}</CommandLeaveRitual>
+  <CommandLeaveRitualDesc>Stop participating in the {RITUAL_labelDef}. The event will continue as long as it has at least one participant.</CommandLeaveRitualDesc>
+  <CommandLeaveLastParticipant>This is the last participant in the {RITUAL_labelDef}.</CommandLeaveLastParticipant>
+
+  <CommandCancelRitual>Cancel {RITUAL_label}</CommandCancelRitual>
+  <CommandCancelRitualDesc>End the {RITUAL_labelDef} immediately. You can restart the event later.</CommandCancelRitualDesc>
+  <CommandCancelRitualConfirm>Are you sure you want to cancel {RITUAL_labelDef}?</CommandCancelRitualConfirm>
+
+  <!-- Storage linking -->
+  <LinkStorageSettings>Link settings</LinkStorageSettings>
+  <LinkStorageSettingsDesc>Link storage settings for multiple selected buildings so that they share storage settings.\n\nThe group will start with the settings of whatever you selected first.</LinkStorageSettingsDesc>
+  <LinkStorageDisabledSelectTwo>You must select two or more buildings to link their storage settings.</LinkStorageDisabledSelectTwo>
+  <AlreadyLinked>Already linked.</AlreadyLinked>
+  <UnlinkStorageSettings>Unlink settings</UnlinkStorageSettings>
+  <UnlinkStorageSettingsDesc>Unlink this from other buildings' storage settings so its settings can be set independently.</UnlinkStorageSettingsDesc>
+  <LinkedStorageSettings>Linked storage settings</LinkedStorageSettings>
+  <OneBuilding>1 building</OneBuilding>
+  <NumBuildings>{0} buildings</NumBuildings>
+  <StoresThings>Stores</StoresThings>
+  <SelectAllLinked>Select all linked</SelectAllLinked>
+  <SelectAllLinkedDesc>Select all storage buildings linked to this.</SelectAllLinkedDesc>
+
+  <CommandDisabledUnconscious>{0_labelShort} is unconscious.</CommandDisabledUnconscious>
+
+  <!-- Study -->
+  <CommandToggleStudy>Toggle study</CommandToggleStudy>
+  <CommandToggleStudyDesc>Determines whether or not wardens will automatically study this. Forbidden things will never be studied.</CommandToggleStudyDesc>
+
+  <!-- Limited use count action -->
+  <CommandNoUsesLeft>No uses left.</CommandNoUsesLeft>
+
+  <!-- Map Portal -->
+  <CommandViewPocketMapLabel>View {0}</CommandViewPocketMapLabel>
+  <CommandViewPocketMapDesc>View the connected {0} map.</CommandViewPocketMapDesc>
+  <CommandViewSurface>View surface</CommandViewSurface>
+  <CommandViewSurfaceDesc>View the connected surface map.</CommandViewSurfaceDesc>
+
+  <!-- Auto-build pod -->
+  <AutoBuildTransportPod>Auto build transport pod</AutoBuildTransportPod>
+  <AutoBuildTransportPodDesc>If on, your colonists will automatically build a new transport pod when possible.</AutoBuildTransportPodDesc>
+  
+  <!-- Hacking gizmo -->
+  <HackGizmo>Hack...</HackGizmo>
+  <CannotChooseHacker>Cannot hack</CannotChooseHacker>
+  <CommandChooseHacker>Choose hacker</CommandChooseHacker>
+  
+</LanguageData>

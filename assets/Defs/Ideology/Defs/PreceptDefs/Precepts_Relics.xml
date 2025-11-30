@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>IdeoRelic</defName>
+    <label>relic</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+  <!-- HistoryEvents -->
+  <HistoryEventDef>
+    <defName>RelicDestroyed</defName>
+    <label>relic destroyed</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>RelicLost</defName>
+    <label>relic lost</label>
+  </HistoryEventDef>
+
+  <!-- Thoughts -->
+  <ThoughtDef>
+    <defName>RelicDestroyed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>30</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>relic destroyed</label>
+        <description>The relic was destroyed! A travesty!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>RelicLost</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>30</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>relic lost</label>
+        <description>The relic has been lost! A travesty!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>IdeoRelic</defName>
+    <label>relic</label>
+    <description>A relic of ideoligious significance.</description>
+    <issue>IdeoRelic</issue>
+    <preceptClass>Precept_Relic</preceptClass>
+    <workerClass>PreceptWorker_Relic</workerClass>
+    <nameMaker>NamerIdeoRelic</nameMaker>
+    <impact>Medium</impact>
+    <classic>true</classic>
+    <classicExtra>true</classicExtra>
+    <preceptInstanceCountCurve>
+      <points>
+        <li>(0.5, 2)</li>
+        <li>(1.0, 3)</li>
+      </points>
+    </preceptInstanceCountCurve>
+    <allowDuplicates>true</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <useChoicesFromBuildingDefs>true</useChoicesFromBuildingDefs>
+    <canUseAlreadyUsedThingDef>true</canUseAlreadyUsedThingDef>
+    <buildingMinExpectations>
+      <li>Low</li>
+      <li>Moderate</li>
+      <li>High</li>
+    </buildingMinExpectations>
+  </PreceptDef>
+</Defs>

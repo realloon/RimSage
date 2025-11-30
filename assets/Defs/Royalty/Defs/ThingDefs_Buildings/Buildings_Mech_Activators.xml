@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MechBuildingBase">
+    <defName>ActivatorCountdown</defName>
+    <label>count-down activator</label>
+    <description>A timed mechanoid activation unit. After counting down, it will wake nearby dormant mechanoids and structures.</description>
+    <size>(1,1)</size>
+    <receivesSignals>true</receivesSignals>
+    <fillPercent>0.25</fillPercent>
+    <pathCost>30</pathCost>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>300</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Mech/ActivatorCountdown</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.6, 0.4, 0.6)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2, 0.2, 0.6, 0.6)</rect>
+      </damageData>
+    </graphicData>
+    <building>
+      <buildingTags>
+        <li>MechClusterActivator</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_SendSignalOnCountdown">
+        <signalTag>CompCanBeDormant.WakeUp</signalTag>
+        <countdownCurveTicks>
+          <points>
+            <!-- Required by Rand.ByCurve -->
+            <li>(599, 0)</li>
+            <!-- 10s realtime -->
+            <li>(600, 1)</li>
+            <!-- 10d ingame time -->
+            <li>(600000, 0.1)</li>
+            <!-- 20d ingame time -->
+            <li>(1200000, 0)</li>
+          </points>
+        </countdownCurveTicks>
+      </li>
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+      <li Class="CompProperties_FleckEmitter">
+        <fleck>ActivatorCountdownFlash</fleck>
+        <emissionInterval>100</emissionInterval>
+        <soundOnEmission>ActivatorCountdown_Ambience</soundOnEmission>
+        <saveKeysPrefix>flash</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_MoteEmitter">
+        <mote>Mote_ActivatorCountdownGlow</mote>
+        <maintain>True</maintain>
+        <saveKeysPrefix>glow</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(55,145,10,0)</glowColor>
+      </li>
+    </comps>
+    <costList>
+      <Plasteel>7</Plasteel>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="MechBuildingBase">
+    <defName>ActivatorProximity</defName>
+    <label>proximity activator</label>
+    <description>A proximity alarm for dormant mechanoids. If it detects a human-like threat nearby, it will awaken any nearby dormant mechanoids or structures.</description>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
+    <fillPercent>0.25</fillPercent>
+    <pathCost>30</pathCost>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>300</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Mech/ActivatorProximity</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.6, 0.4, 0.6)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.3, 0.3, 0.4, 0.4)</rect>
+      </damageData>
+    </graphicData>
+    <building>
+      <buildingTags>
+        <li>MechClusterActivator</li>
+      </buildingTags>
+      <minDistanceToSameTypeOfBuilding>7</minDistanceToSameTypeOfBuilding>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <placeWorkers>
+      <li>PlaceWorker_ShowCompSendSignalOnPawnProximityRadius</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_SendSignalOnMotion">
+        <onlyHumanlike>true</onlyHumanlike>
+        <radius>12.9</radius>
+        <enableAfterTicks>1200</enableAfterTicks>
+        <signalTag>CompCanBeDormant.WakeUp</signalTag>
+      </li>
+      <li Class="CompProperties_MoteEmitterProximityScan">
+        <mote>Mote_ProximityScannerRadius</mote>
+        <emissionInterval>90</emissionInterval>
+        <maintain>True</maintain>
+        <soundEmitting>ActivatorProximity_Ambience</soundEmitting>
+        <saveKeysPrefix>scan</saveKeysPrefix>
+        <warmupPulseFadeInTime>0.12</warmupPulseFadeInTime>
+        <warmupPulseSolidTime>0.15</warmupPulseSolidTime>
+        <warmupPulseFadeOutTime>0.6</warmupPulseFadeOutTime>
+      </li>
+      <li Class="CompProperties_MoteEmitter">
+        <mote>Mote_ActivatorProximityGlow</mote>
+        <maintain>True</maintain>
+        <saveKeysPrefix>glow</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(115,35,20,0)</glowColor>
+      </li>
+    </comps>
+    <costList>
+      <Plasteel>7</Plasteel>
+    </costList>
+  </ThingDef>
+
+</Defs>

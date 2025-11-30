@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: floordrawing. -->
+  <Floordrawing.reportString>正在地上画画。</Floordrawing.reportString>
+  
+  <!-- EN: teaching a lesson. -->
+  <Lessongiving.reportString>正在讲课。</Lessongiving.reportString>
+  
+  <!-- EN: learning a lesson -->
+  <Lessontaking.reportString>正在听课。</Lessontaking.reportString>
+  
+  <!-- EN: nature running. -->
+  <NatureRunning.reportString>正在野游。</NatureRunning.reportString>
+  
+  <!-- EN: radiotalking. -->
+  <Radiotalking.reportString>正在用无线电交流。</Radiotalking.reportString>
+  
+  <!-- EN: skydreaming. -->
+  <Skydreaming.reportString>正在做白日梦。</Skydreaming.reportString>
+  
+  <!-- EN: watching work be performed. -->
+  <Workwatching.reportString>正在观察成年人工作。</Workwatching.reportString>
+  
+</LanguageData>

@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableShellBase">
+    <defName>Shell_Deadlife</defName>
+    <label>deadlife shell</label>
+    <description>An artillery shell packed with a dust-like substance that, after exploding into a cloud, will settle on nearby human and animal corpses and raise them as shamblers. The shamblers will only attack your enemies.\n\nThis can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/Shell_Deadlife</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <tradeTags Inherit="False" />
+    <genericMarketSellable>false</genericMarketSellable>
+    <costList>
+      <Bioferrite>25</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>DeadlifeDust</researchPrerequisite>
+      <displayPriority>0</displayPriority>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="false">
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>DeadlifeDust</explosiveDamageType>
+        <explosiveRadius>4</explosiveRadius>
+        <postExplosionGasType>DeadlifeDust</postExplosionGasType>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>Bullet_Shell_Deadlife</projectileWhenLoaded>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Shell_Deadlife</defName>
+    <label>deadlife capsule</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellDeadlife</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>DeadlifeDust</damageDef>
+      <speed>41</speed>
+      <explosionRadius>0.1</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundExplode>ToxicShellLanded</soundExplode>
+      <postExplosionSpawnThingDef>Shell_Deadlife_Releasing</postExplosionSpawnThingDef>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef>
+    <defName>Shell_Deadlife_Releasing</defName>
+    <label>deadlife capsule</label>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>ThingWithComps</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Things/Projectile/LandedDeadlifeShell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <comps>
+      <li Class="CompProperties_ReleaseGas">
+        <gasType>DeadlifeDust</gasType>
+        <cellsToFill>20</cellsToFill>
+        <durationSeconds>10</durationSeconds>
+        <effecterReleasing>DeadlifeReleasing</effecterReleasing>
+      </li>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>600</delayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Serums -->
+
+  <ThingDef Name="SerumBase" ParentName="ResourceBase" Abstract="True" >
+    <thingClass>ThingWithComps</thingClass>
+    <stackLimit>10</stackLimit>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <orderedTakeGroup>Drug</orderedTakeGroup>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>200</MarketValue>
+      <DeteriorationRate>2.0</DeteriorationRate>
+      <Mass>0.5</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Drugs</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>Serum</li>
+    </tradeTags>
+    <ingestible>
+      <preferability>NeverForNutrition</preferability>
+      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+      <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+      <drugCategory>Medical</drugCategory>
+      <foodType>Processed</foodType>
+      <baseIngestTicks>100</baseIngestTicks>
+      <humanlikeOnly>true</humanlikeOnly>
+      <chairSearchRadius>0</chairSearchRadius>
+      <ingestSound>Ingest_Pill</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Ingest {0}</ingestCommandString>
+      <ingestReportString>Ingesting {0}.</ingestReportString>
+      <showIngestFloatOption>false</showIngestFloatOption> <!-- Useable does this -->
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_UseThing" />
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1200</listOrder>
+        <teetotalerCanConsume>true</teetotalerCanConsume>
+      </li>
+      <li Class="CompProperties_Usable">
+        <useLabel>Use {0_label}</useLabel>
+        <useJob>Ingest</useJob>
+        <showUseGizmo>true</showUseGizmo>
+        <allowedMutants>
+          <li>Ghoul</li>
+        </allowedMutants>
+      </li>
+      <li Class="CompProperties_Serum" />
+    </comps>
+    <recipeMaker>
+      <productCount>1</productCount>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>SerumCentrifuge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="SerumBase">
+    <defName>VoidsightSerum</defName>
+    <label>voidsight serum</label>
+    <description>A capsule of oily black fluid that squirms endlessly inside the glass. When injected into the eye, it suppresses the inhibitory neurons that keep perception focused on the real world, thus lifting dark psychic phenomena into conscious perception. This increases the amount of knowledge gained when studying unnatural entities, as well as psychic sensitivity, but also impacts mood.\n\nThe effect is temporary and does not stack.</description>
+    <graphicData>
+      <texPath>Things/Item/Serum/SerumVoidsight</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>60</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_UseEffectAddHediff">
+        <hediffDef>Voidsight</hediffDef>
+        <allowRepeatedUse>true</allowRepeatedUse>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechSerumUsed</soundOnUsed>
+      </li>
+    </comps>
+    <costList>
+      <Neutroamine>2</Neutroamine>
+      <Bioferrite>10</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workAmount>720</workAmount>
+      <researchPrerequisite>SerumSynthesis</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="SerumBase">
+    <defName>MetalbloodSerum</defName>
+    <label>metalblood serum</label>
+    <description>A syringe full of rust-colored liquid that constantly hardens and liquifies. When injected into the bloodstream, the metalblood substance can harden the flesh when it anticipates a blow, making the user more resistant to damage. However, the bioferrite-based chemistry of this serum also makes the user particularly vulnerable to fire.</description>
+    <graphicData>
+      <texPath>Things/Item/Serum/SerumMetalblood</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_UseEffectAddHediff">
+        <hediffDef>Metalblood</hediffDef>
+        <allowRepeatedUse>true</allowRepeatedUse>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechSerumUsed</soundOnUsed>
+      </li>
+    </comps>
+    <costList>
+      <Meat_Twisted>10</Meat_Twisted>
+      <Bioferrite>20</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workAmount>1080</workAmount>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>MetalbloodSerum</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="SerumBase">
+    <defName>JuggernautSerum</defName>
+    <label>juggernaut serum</label>
+    <description>A syringe of opaque milky-yellow liquid that increases the user's strength and speed, and allows them to recover from injuries faster. The serum is injected into the user's musculature, where it adds energy to various metabolic processes. However, the unstable substance also psychically influences the mind, provoking unsettling thoughts and severely reducing the user's mood.</description>
+    <graphicData>
+      <texPath>Things/Item/Serum/SerumJuggernaut</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_UseEffectAddHediff">
+        <hediffDef>JuggernautSerum</hediffDef>
+        <allowRepeatedUse>true</allowRepeatedUse>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechSerumUsed</soundOnUsed>
+      </li>
+    </comps>
+    <costList>
+      <Meat_Twisted>20</Meat_Twisted>
+      <Bioferrite>10</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workAmount>1080</workAmount>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>JuggernautSerum</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="SerumBase">
+    <defName>MindNumbSerum</defName>
+    <label>mind-numb serum</label>
+    <description>A syringe of clear, viscous fluid. Injected near the brainstem, it deadens the mind, rendering the user unable to feel the highs and lows of human emotion. This temporarily prevents them from having mental breaks and inspirations.</description>
+    <graphicData>
+      <texPath>Things/Item/Serum/SerumMindnumb</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_UseEffectAddHediff">
+        <hediffDef>MindNumbSerum</hediffDef>
+        <allowRepeatedUse>true</allowRepeatedUse>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechSerumUsed</soundOnUsed>
+      </li>
+    </comps>
+    <statBases>
+      <MarketValue>80</MarketValue>
+    </statBases>
+    <costList>
+      <Neutroamine>2</Neutroamine>
+      <Bioferrite>30</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workAmount>1320</workAmount>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>MindNumbSerum</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>GhoulResurrectionSerum</defName>
+    <label>ghoul resurrection serum</label>
+    <description>A capsule of thick grey fluid containing a mixture of deadlife dust and advanced biochemicals. Inject it into the corpse of a ghoul to return them to life. The resurrection process takes several hours.</description>
+    <graphicData>
+      <texPath>Things/Item/Serum/SerumGhoulResurrection</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <thingClass>ThingWithComps</thingClass>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>60</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <tradeTags>
+      <li>Serum</li>
+    </tradeTags>
+    <tradeability>Sellable</tradeability>
+    <stackLimit>10</stackLimit>
+    <thingCategories>
+      <li>Drugs</li>
+    </thingCategories>
+    <costList>
+      <Meat_Twisted>20</Meat_Twisted>
+      <Bioferrite>20</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workAmount>840</workAmount>
+      <researchPrerequisite>GhoulResurrection</researchPrerequisite>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>SerumCentrifuge</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Use {0_label}</useLabel>
+        <useDuration>0</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <li Class="CompProperties_Targetable">
+        <compClass>CompTargetable_SingleCorpse</compClass>
+        <fleshCorpsesOnly>true</fleshCorpsesOnly>
+        <mutantFilter>Ghoul</mutantFilter>
+      </li>
+      <li Class="CompProperties_TargetEffectResurrect">
+        <withSideEffects>false</withSideEffects>
+        <addsHediff>ResurrectionComa</addsHediff>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

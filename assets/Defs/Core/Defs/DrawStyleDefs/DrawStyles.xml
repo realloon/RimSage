@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DrawStyleDef>
+    <defName>Line</defName>
+    <label>line</label>
+    <uiIconPath>UI/Widgets/DrawStyles/StraightLine</uiIconPath>
+    <drawStyleType>DrawStyle_Line</drawStyleType>
+    <drawArea>false</drawArea>
+    <drawShortSideMeasurement>false</drawShortSideMeasurement>
+    <canSnap>false</canSnap>
+  </DrawStyleDef>
+  
+  <DrawStyleDef>
+    <defName>AngledLine</defName>
+    <label>angled line</label>
+    <uiIconPath>UI/Widgets/DrawStyles/AngledLine</uiIconPath>
+    <drawStyleType>DrawStyle_AngledLine</drawStyleType>
+  </DrawStyleDef>
+  
+  <DrawStyleDef>
+    <defName>FilledRectangle</defName>
+    <label>filled rectangle</label>
+    <uiIconPath>UI/Widgets/DrawStyles/RectangleFilled</uiIconPath>
+    <drawStyleType>DrawStyle_FilledRectangle</drawStyleType>
+    <drawOutline>true</drawOutline>
+  </DrawStyleDef>
+  
+  <DrawStyleDef>
+    <defName>EmptyRectangle</defName>
+    <label>empty rectangle</label>
+    <uiIconPath>UI/Widgets/DrawStyles/RectangleEmpty</uiIconPath>
+    <drawStyleType>DrawStyle_EmptyRectangle</drawStyleType>
+    <drawOutline>true</drawOutline>
+  </DrawStyleDef>
+
+  <DrawStyleDef>
+    <defName>FilledOval</defName>
+    <label>filled oval</label>
+    <uiIconPath>UI/Widgets/DrawStyles/OvalFilled</uiIconPath>
+    <drawStyleType>DrawStyle_FilledOval</drawStyleType>
+    <drawOutline>true</drawOutline>
+  </DrawStyleDef>
+
+  <DrawStyleDef>
+    <defName>EmptyOval</defName>
+    <label>empty oval</label>
+    <uiIconPath>UI/Widgets/DrawStyles/OvalEmpty</uiIconPath>
+    <drawStyleType>DrawStyle_EmptyOval</drawStyleType>
+    <drawOutline>true</drawOutline>
+  </DrawStyleDef>
+  
+</Defs>

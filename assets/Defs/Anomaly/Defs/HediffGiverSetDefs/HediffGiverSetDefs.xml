@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <HediffGiverSetDef>
+    <defName>Fleshbeast</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Bleeding">
+        <hediff>BloodLoss</hediff>
+      </li>
+      <li Class="HediffGiver_Hypothermia">
+        <hediff>Hypothermia</hediff>
+        <hediffInsectoid>HypothermicSlowdown</hediffInsectoid>
+      </li>
+      <li Class="HediffGiver_Heat">
+        <hediff>Heatstroke</hediff>
+      </li>
+      <li Class="HediffGiver_Terrain" />
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+  <HediffGiverSetDef>
+    <defName>AnomalyEntity</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Bleeding">
+        <hediff>BloodLoss</hediff>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+</Defs>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Cyclops -->
+
+  <SoundDef>
+    <defName>Pawn_Cyclops_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mech/Cyclops/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>32~36</volumeRange>
+        <pitchRange>0.8~1.2</pitchRange>
+        <distRange>0~30</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Cyclops_Death</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mech/Cyclops/Death</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>38</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~30</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Cyclops_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mech/Cyclops/Pain</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>32~36</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~30</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

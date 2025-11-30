@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Fishing -->
+  <Zone_Fishing>Fishing zone</Zone_Fishing>
+  <FishingGroup>fishing</FishingGroup>
+  <DesignatorFishingZoneDesc>Create an area where your hunters will fish. Must be placed over water containing fish. Larger bodies of water are generally better for fishing.</DesignatorFishingZoneDesc>
+
+  <!-- Override snow clearing => snow and sand clearing -->
+  <DesignatorAreaSnowOrSandClearExpand>Snow and sand removal area</DesignatorAreaSnowOrSandClearExpand>
+  <DesignatorAreaSnowOrSandClearExpandDesc>Create an area which colonists will try to keep clear of snow and sand.</DesignatorAreaSnowOrSandClearExpandDesc>
+  <DesignatorAreaSnowOrSandClearClear>Clear snow and sand removal area</DesignatorAreaSnowOrSandClearClear>
+  <DesignatorAreaSnowOrSandClearClearDesc>Removes a snow and sand removal area. Colonists will no longer try to keep this area clear of snow and sand.</DesignatorAreaSnowOrSandClearClearDesc>
+
+  <DesignatorRemoveFoundation>Remove foundation</DesignatorRemoveFoundation>
+  <DesignatorRemoveFoundationDesc>Remove bridges or gravship substructure to reveal the terrain underneath.</DesignatorRemoveFoundationDesc>
+
+  <DesignatorMoveGravship>Move landing zone</DesignatorMoveGravship>
+  <DesignatorMoveGravshipDesc>Reposition the gravship's landing spot.</DesignatorMoveGravshipDesc>
+</LanguageData>

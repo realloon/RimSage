@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>Space</defName>
+    <label>space</label>
+    <fertility>0</fertility>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>300</renderPrecedence>
+    <dontRender>true</dontRender>
+    <exposesToVacuum>true</exposesToVacuum>
+    <passability>Impassable</passability>
+    <layerable>false</layerable>
+    <pathCost>300</pathCost>
+    <avoidWander>true</avoidWander>
+    <holdSnowOrSand>false</holdSnowOrSand>
+    <preventCraters>true</preventCraters>
+    <designationCategory />
+    <filthAcceptanceMask>
+      <li>None</li>
+    </filthAcceptanceMask>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tags>
+      <li>Space</li>
+    </tags>
+    <affordances>
+      <li>Bridgeable</li>
+    </affordances>
+    <spaceEdgeGraphicData IsNull="True" />
+    <canBePolluted>false</canBePolluted>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>AncientMegastructure</defName>
+    <label>ancient megastructure</label>
+    <texturePath>Terrain/Surfaces/AncientMegastructure</texturePath>
+    <pollutionOverlayTexturePath>Terrain/Surfaces/AncientMegastructure</pollutionOverlayTexturePath>
+    <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughSoftLight</pollutionShaderType>
+    <pollutionColor>(240,240,240)</pollutionColor>
+    <pollutionTintColor>(1,1,1,1)</pollutionTintColor>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>340</renderPrecedence>
+    <fertility>0.05</fertility>
+    <takeFootprints>true</takeFootprints>
+    <preventCraters>true</preventCraters>
+    <pathCost>1</pathCost>
+    <designationCategory />
+    <statBases>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <scatterType>Rocky</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+    </affordances>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>VolcanicRock</defName>
+    <label>volcanic rock</label>
+    <texturePath>Terrain/Surfaces/VolcanicRock</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/VolcanicRockPolluted</pollutedTexturePath>
+    <edgeType>FadeRough</edgeType>
+    <categoryType>Stone</categoryType>
+    <renderPrecedence>205</renderPrecedence>
+    <pathCost>3</pathCost>
+    <scatterType>Rocky</scatterType>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Walkable</li>
+      <li>SmoothableStone</li>
+    </affordances>
+    <generatedFilth>Filth_VolcanicAsh</generatedFilth>
+    <fertility>0</fertility>
+    <smoothedTerrain>VolcanicRock_Smooth</smoothedTerrain>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>VolcanicRock_Smooth</defName>
+    <label>smooth volcanic rock</label>
+    <texturePath>Terrain/Surfaces/SmoothVolcanicRock</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <categoryType>Stone</categoryType>
+    <renderPrecedence>255</renderPrecedence>
+    <pathCost>0</pathCost>
+    <scatterType>Rocky</scatterType>
+    <statBases>
+      <Beauty>2</Beauty>
+      <MarketValue>5</MarketValue>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Walkable</li>
+    </affordances>
+    <fertility>0</fertility>
+  </TerrainDef>
+
+  <TerrainDef Name="LavaBase" ParentName="NaturalTerrainBase" Abstract="True">
+    <edgeType>FadeRough</edgeType>
+    <categoryType>Misc</categoryType>
+    <renderPrecedence>390</renderPrecedence>
+    <statBases>
+      <Cleanliness>0</Cleanliness>
+    </statBases>
+    <generatedFilth>Filth_VolcanicAsh</generatedFilth>
+    <fertility>0</fertility>
+    <avoidWander>true</avoidWander>
+    <dangerous>true</dangerous>
+    <holdSnowOrSand>false</holdSnowOrSand>
+    <glowRadius>3</glowRadius>
+    <glowColor>(214,94,4,0)</glowColor>
+    <meltSnowRadius>4</meltSnowRadius>
+    <heatPerTick>0.25</heatPerTick>
+    <igniteRadius>1.9</igniteRadius>
+    <burnDamage>3</burnDamage>
+    <burnIntervalTicks>120</burnIntervalTicks>
+    <ignitePawnsIntervalTicks>240</ignitePawnsIntervalTicks>
+    <extraDeteriorationFactor>600</extraDeteriorationFactor> <!-- 25 an hour -->
+    <supportsRock>false</supportsRock>
+    <filthAcceptanceMask Inherit="False">
+      <li>None</li>
+    </filthAcceptanceMask>
+  </TerrainDef>
+
+  <TerrainDef ParentName="LavaBase">
+    <defName>LavaDeep</defName>
+    <label>deep lava</label>
+    <texturePath>Terrain/Surfaces/DeepLava</texturePath>
+    <customShader>ShallowLava</customShader>
+    <customShaderParameters>
+      <_NoiseTex>/Other/Perlin</_NoiseTex>
+      <_MaskTex>/Terrain/Surfaces/DeepLavaMask</_MaskTex>
+      <_LavaBrightness>0.2</_LavaBrightness>
+      <_BrightSpotSpeed>0.02</_BrightSpotSpeed>
+      <_BrightSpotScale>1.5</_BrightSpotScale>
+    </customShaderParameters>
+    <pollutedTexturePath>Terrain/Surfaces/PollutedDeepLava</pollutedTexturePath>
+    <passability>Impassable</passability>
+    <gravshipReplacementTerrain>VolcanicRock</gravshipReplacementTerrain>
+    <affordances Inherit="false" />
+    <pathCost>300</pathCost>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>CooledLava</defName>
+    <label>cooled lava</label>
+    <texturePath>Terrain/Surfaces/CooledLava</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/PollutedCooledLava</pollutedTexturePath>
+    <edgeType>FadeRough</edgeType>
+    <categoryType>Misc</categoryType>
+    <renderPrecedence>340</renderPrecedence>
+    <pathCost>3</pathCost>
+    <layerable>true</layerable>
+    <statBases>
+      <Cleanliness>0</Cleanliness>
+      <CleaningTimeFactor>0.8</CleaningTimeFactor>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_VolcanicAsh</generatedFilth>
+    <fertility>0</fertility>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>GlowforestSoil</defName>
+    <label>soil</label>
+    <texturePath>Terrain/Surfaces/GlowforestSoil</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/SoilPolluted</pollutedTexturePath>
+    <edgeType>FadeRough</edgeType>
+    <categoryType>Soil</categoryType>
+    <renderPrecedence>340</renderPrecedence>
+    <pathCost>2</pathCost>
+    <statBases>
+      <Beauty>-3</Beauty>
+      <BeautyOutdoors>0</BeautyOutdoors>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <scatterType>Rocky</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>1.0</fertility>
+    <takeFootprints>True</takeFootprints>
+    <tools>
+      <li>
+        <label>dirt</label>
+        <capacities>
+          <li>KickMaterialInEyes</li>
+        </capacities>
+        <hediff>DirtInEyes</hediff>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+    </tools>
+    <tags>
+      <li>Soil</li>
+    </tags>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>GrasslandSoil</defName>
+    <label>soil</label>
+    <texturePath>Terrain/Surfaces/GrasslandSoil</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/SoilPolluted</pollutedTexturePath>
+    <edgeType>FadeRough</edgeType>
+    <categoryType>Soil</categoryType>
+    <renderPrecedence>340</renderPrecedence>
+    <pathCost>2</pathCost>
+    <statBases>
+      <Beauty>-3</Beauty>
+      <BeautyOutdoors>0</BeautyOutdoors>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <scatterType>Rocky</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>1.0</fertility>
+    <takeFootprints>True</takeFootprints>
+    <tools>
+      <li>
+        <label>dirt</label>
+        <capacities>
+          <li>KickMaterialInEyes</li>
+        </capacities>
+        <hediff>DirtInEyes</hediff>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+    </tools>
+    <tags>
+      <li>Soil</li>
+    </tags>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Sand">
+    <defName>DryLakeBed</defName>
+    <label>dry lake bed</label>
+    <texturePath>Terrain/Surfaces/DryLakeBed</texturePath>
+    <affordances Inherit="false">
+      <li>Light</li>
+      <li>Walkable</li>
+      <li>Diggable</li>
+    </affordances>
+    <fertility>0</fertility>
+  </TerrainDef>
+  
+</Defs>

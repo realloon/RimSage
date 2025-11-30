@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase" Name="RelicBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <techLevel>Archotech</techLevel>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Activate {0_label}</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+      <li Class="CompProperties_Styleable"></li>
+    </comps>
+    <allowedArchonexusCount>0</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicBase" Name="RelicInertBase" Abstract="True">
+    <description>An object with ideoligious significance.</description>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>1</stackLimit>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <thingCategories>
+      <li>InertRelics</li>
+    </thingCategories>
+    <statBases>
+      <Mass>1.5</Mass>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Beauty>1</Beauty>
+      <MarketValue>500</MarketValue>
+    </statBases>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <randomStyleChance>1</randomStyleChance>
+    <relicChance>5</relicChance>
+    <comps Inherit="false">
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable"></li>
+    </comps>
+  </ThingDef>
+
+  <!-- Concrete relics -->
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertCup</defName>
+    <label>chalice</label>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertCup</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertPendant</defName>
+    <label>pendant</label>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertPendant</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertBox</defName>
+    <label>box</label>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertBox</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertTablet</defName>
+    <label>tablet</label>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertTablet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertFragment</defName>
+    <label>fragment</label>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertFragment</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertSwordHandle</defName>
+    <label>hilt</label>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertSwordHandle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertArk</defName>
+    <label>ark</label>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertArk</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="RelicInertBase">
+    <defName>RelicInertCube</defName>
+    <label>cube</label>
+    <description>A hand-sized cube. While now dormant, it was once unnaturally captivating.</description>
+    <graphicData>
+      <texPath>Things/Item/Relic/RelicInertCube</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <PsychicRitual>psychic ritual</PsychicRitual>
+  <CastPsychicRitual>Begin psychic ritual</CastPsychicRitual>
+  <CastPsychicRitualDesc>Select a psychic ritual to perform</CastPsychicRitualDesc>
+  <CannotCastPsychicRitual>{0_labelShort} cannot perform {1} psychic ritual because {2}.</CannotCastPsychicRitual>
+  <PsychicRitualBegun>The {0} psychic ritual has begun.</PsychicRitualBegun>
+  <PsychicRitualCompleted>The {0} psychic ritual has been completed.</PsychicRitualCompleted>
+  <PsychicRitualAttending>attending {RITUALNAME} psychic ritual</PsychicRitualAttending>
+  <ParticipatingInPsychicRitual>{0_labelShort} is participating in the {1} psychic ritual.</ParticipatingInPsychicRitual>
+  <AbilityDisabledInPsychicRitual>{0_labelShort} is participating in the {1} psychic ritual.</AbilityDisabledInPsychicRitual>
+  <PsychicRitual_LocationTargetting>choose a location</PsychicRitual_LocationTargetting>
+  <PsychicRitualExpectedQualityLabel>total quality</PsychicRitualExpectedQualityLabel>
+  <PsychicRitualQualityFactorLabel>quality factors</PsychicRitualQualityFactorLabel>
+  <PsychicRitualExpectedDurationLabel>duration</PsychicRitualExpectedDurationLabel>
+  <PsychicRitualRequiredOffering>required offering</PsychicRitualRequiredOffering>
+  <CausedByPsychicRitual>Caused by psychic ritual</CausedByPsychicRitual>
+  <PsychicRitualCooldownLabel>Cooldown</PsychicRitualCooldownLabel>
+
+  <PsychicRitualSpotObstructed>Psychic ritual area obstructed.</PsychicRitualSpotObstructed>
+  <PsychicRitualOnCooldown>psychic ritual on cooldown. It will be available in {0}.</PsychicRitualOnCooldown>
+  <PsychicRitualCanBeCastAgain>The {0} psychic ritual can be performed again.</PsychicRitualCanBeCastAgain>
+  <NoBasicResearchForPsychicRitual>No basic anomaly research project selected.</NoBasicResearchForPsychicRitual>
+  <CantCastOnPocketMap>Must perform {0} psychic ritual on the surface.</CantCastOnPocketMap>
+
+  <PsychicRitualFactionWarning>Warning: Performing a ritual on {PAWN_nameDef} will anger {PAWN_possessive} faction ({FACTION_name})</PsychicRitualFactionWarning>
+
+  <PsychicRitualWakingPawnWarning>{0} is currently asleep and will wake up when the psychic ritual begins.</PsychicRitualWakingPawnWarning>
+  <PsychicRitualUndraftPawnWarning>{0} is currently drafted and will be un-drafted when the psychic ritual begins.</PsychicRitualUndraftPawnWarning>
+  <PsychicRitualWakingPawnsWarning>{0} are currently asleep and will wake up when the psychic ritual begins.</PsychicRitualWakingPawnsWarning>
+  <PsychicRitualUndraftPawnsWarning>{0} are currently drafted and will be un-drafted when the psychic ritual begins.</PsychicRitualUndraftPawnsWarning>
+
+  <PsychicRitualLeft>{0_labelShort} left the {1} psychic ritual.</PsychicRitualLeft>
+  <PsychicRitualLeftBecause>{0_labelShort} left the {1} psychic ritual because {2}.</PsychicRitualLeftBecause>
+  <PsychicRitualCanceled>The {0} psychic ritual has been canceled.</PsychicRitualCanceled>
+  <PsychicRitualCanceledBecause>The {0} psychic ritual has been canceled because {1}.</PsychicRitualCanceledBecause>
+
+  <PsychicRitualOfferingsInsufficient>{0} is needed but only {1} is available</PsychicRitualOfferingsInsufficient>
+  <PsychicRitualTargetUnreachableByInvoker>{TARGET_labelShort} is unreachable by {INVOKER_labelShort}</PsychicRitualTargetUnreachableByInvoker>
+
+  <CommandLeavePsychicRitual>leave the {0} psychic ritual</CommandLeavePsychicRitual>
+  <CommandLeavePsychicRitualDesc>stop participating in the {0} psychic ritual. The psychic ritual will continue as long as it has at least one participant.</CommandLeavePsychicRitualDesc>
+
+  <CommandCancelPsychicRitual>cancel the {0} psychic ritual</CommandCancelPsychicRitual>
+  <CommandCancelPsychicRitualDesc>end the {0} psychic ritual immediately. You can restart the psychic ritual later.</CommandCancelPsychicRitualDesc>
+  <CommandCancelPsychicRitualConfirm>Are you sure you want to cancel the {0} psychic ritual?</CommandCancelPsychicRitualConfirm>
+
+  <PsychicRitualLeaveReason_Vanished>{PAWN_labelShort} vanished</PsychicRitualLeaveReason_Vanished>
+  <PsychicRitualLeaveReason_Incapped>{PAWN_labelShort} is incapacitated</PsychicRitualLeaveReason_Incapped>
+  <PsychicRitualLeaveReason_Killed>{PAWN_labelShort} is dead</PsychicRitualLeaveReason_Killed>
+  <PsychicRitualLeaveReason_WrongFaction>{PAWN_labelShort} is not part of {FACTION_name}</PsychicRitualLeaveReason_WrongFaction>
+  <PsychicRitualLeaveReason_ExitedMap>{PAWN_labelShort} is no longer on the map</PsychicRitualLeaveReason_ExitedMap>
+  <PsychicRitualLeaveReason_LeftVoluntarily>{PAWN_labelShort} had better things to do</PsychicRitualLeaveReason_LeftVoluntarily>
+  <PsychicRitualLeaveReason_Drafted>{PAWN_labelShort} is drafted</PsychicRitualLeaveReason_Drafted>
+  <PsychicRitualLeaveReason_InMentalState>{PAWN_labelShort} is in a mental state</PsychicRitualLeaveReason_InMentalState>
+  <PsychicRitualLeaveReason_Bleeding>{PAWN_labelShort} is bleeding</PsychicRitualLeaveReason_Bleeding>
+  <PsychicRitualLeaveReason_Burning>{PAWN_labelShort} is on fire</PsychicRitualLeaveReason_Burning>
+  <PsychicRitualLeaveReason_ExtremeTemperature>the temperature near the target is not safe for {PAWN_labelShort}</PsychicRitualLeaveReason_ExtremeTemperature>
+  <PsychicRitualLeaveReason_InsideBuilding>{PAWN_labelShort} cannot participate from inside {BUILDING}</PsychicRitualLeaveReason_InsideBuilding>
+  <PsychicRitualLeaveReason_Humanlike>{PAWN_labelShort} is humanlike</PsychicRitualLeaveReason_Humanlike>
+  <PsychicRitualLeaveReason_NonHumanlike>{PAWN_labelShort} is not humanlike</PsychicRitualLeaveReason_NonHumanlike>
+  <PsychicRitualLeaveReason_Prisoner>{PAWN_labelShort} is a prisoner</PsychicRitualLeaveReason_Prisoner>
+  <PsychicRitualLeaveReason_Slave>{PAWN_labelShort} is a slave</PsychicRitualLeaveReason_Slave>
+  <PsychicRitualLeaveReason_Freeman>{PAWN_labelShort} is free</PsychicRitualLeaveReason_Freeman>
+  <PsychicRitualLeaveReason_DevelopmentalStage>{PAWN_labelShort} is a {STAGE}</PsychicRitualLeaveReason_DevelopmentalStage>
+  <PsychicRitualLeaveReason_CannotReachTarget>{PAWN_labelShort} cannot reach the target location</PsychicRitualLeaveReason_CannotReachTarget>
+  <PsychicRitualLeaveReason_Sleeping>{PAWN_labelShort} is asleep</PsychicRitualLeaveReason_Sleeping>
+  <PsychicRitualLeaveReason_Mutant>{PAWN_labelShort} is not a human</PsychicRitualLeaveReason_Mutant>
+  <PsychicRitualLeaveReason_IdeoUnwilling>{PAWN_labelShort}'s belief in {IDEO_name} prevents participation</PsychicRitualLeaveReason_IdeoUnwilling> 
+  <PsychicRitualLeaveReason_NoPsychicSensitivity>{PAWN_labelShort} is not psychically sensitive</PsychicRitualLeaveReason_NoPsychicSensitivity>
+  <PsychicRitualLeaveReason_TemporaryFactionMember>{PAWN_labelShort} is a temporary faction member</PsychicRitualLeaveReason_TemporaryFactionMember>
+  <PsychicRitualLeaveReason_PawnBusyWithLord>{PAWN_labelShort} has other duties to attend to</PsychicRitualLeaveReason_PawnBusyWithLord>
+  <PsychicRitualLeaveReason_ForcedByQuest>{PAWN_labelShort} has other duties to attend to</PsychicRitualLeaveReason_ForcedByQuest>
+
+  <!-- PsychicRitualToils-->
+  <PsychicRitualToil_Goto_JobReport_Moving>moving into position</PsychicRitualToil_Goto_JobReport_Moving>
+  <PsychicRitualToil_Goto_JobReport_Waiting>waiting for everyone to get into position</PsychicRitualToil_Goto_JobReport_Waiting>
+
+  <PsychicRitualToil_GatherOfferings_OfferingUnavailable>{PAWN_labelShort} was unable to find enough {1}</PsychicRitualToil_GatherOfferings_OfferingUnavailable>
+  <PsychicRitualToil_GatherOfferings_JobReport>gathering offering</PsychicRitualToil_GatherOfferings_JobReport>
+
+  <PsychicRitualToil_InvokeHorax_JobReport_Invoker>leading psychic ritual</PsychicRitualToil_InvokeHorax_JobReport_Invoker>
+  <PsychicRitualToil_InvokeHorax_JobReport_Chanter>channeling power to psychic ritual</PsychicRitualToil_InvokeHorax_JobReport_Chanter>
+  <PsychicRitualToil_InvokeHorax_JobReport_Target>psychic ritual target</PsychicRitualToil_InvokeHorax_JobReport_Target>
+  <PsychicRitualToil_InvokeHorax_MissingRequiredOffering>{0} doesn't have enough {1}</PsychicRitualToil_InvokeHorax_MissingRequiredOffering>
+  <PsychicRitualToil_InvokeHorax_PawnIsOutOfPosition>{PAWN_labelShort} is out of position</PsychicRitualToil_InvokeHorax_PawnIsOutOfPosition>
+  <PsychicRitualToil_InvokeHorax_JobReport_Defender>defending psychic ritual</PsychicRitualToil_InvokeHorax_JobReport_Defender> 
+
+  <PsychicRitualToil_GatherForInvocation_Report>waiting on</PsychicRitualToil_GatherForInvocation_Report>
+  <PsychicRitualToil_InvokeHorax_Report>invoking the void</PsychicRitualToil_InvokeHorax_Report>
+
+  <PsychicRitualDef_TargetDestroyed>{TARGET_labelShort} was destroyed</PsychicRitualDef_TargetDestroyed>
+  <PsychicRitualDef_InvocationCircle_InvokerLost>{INVOKER_labelShort} cannot continue the psychic ritual</PsychicRitualDef_InvocationCircle_InvokerLost>
+
+  <PsychicRitualDef_InvocationCircle_AreaMustBeClear>the area around the target site must be clear of obstructions</PsychicRitualDef_InvocationCircle_AreaMustBeClear>
+  <PsychicRitualDef_InvocationCircle_QualityFactor_PsychicSensitivity>{PAWN_labelShort}'s psychic sensitivity</PsychicRitualDef_InvocationCircle_QualityFactor_PsychicSensitivity>
+  <PsychicRitualDef_InvocationCircle_QualityFactor_PsychicSensitivity_Tooltip>How in-tune {PAWN_labelShort} is with psychic phenomena.</PsychicRitualDef_InvocationCircle_QualityFactor_PsychicSensitivity_Tooltip>
+  <PsychicRitualDef_InvocationCircle_QualityFactor_Increase_Tooltip>These objects help focus the psychic power of the ritual.</PsychicRitualDef_InvocationCircle_QualityFactor_Increase_Tooltip>
+  <PsychicRitualDef_InvocationCircle_QualityFactor_Ideoligion>Ideoligion offset</PsychicRitualDef_InvocationCircle_QualityFactor_Ideoligion>
+  <PsychicRitualDef_InvocationCircle_QualityFactor_Ideoligion_Tooltip>How affected the psychic ritual is by ideoligious beliefs.</PsychicRitualDef_InvocationCircle_QualityFactor_Ideoligion_Tooltip>
+
+  <!-- PsychicRitualDef_InvokationCircle messages -->
+  <PsychicRitualDef_InvocationCircle_PsychicRitualBegunMessage>{0} has begun performing the {1} psychic ritual.</PsychicRitualDef_InvocationCircle_PsychicRitualBegunMessage>
+  <PsychicRitualAreaObstructed>psychic ritual area is obstructed</PsychicRitualAreaObstructed>
+
+  <!-- Animal summoning -->
+  <NotEnoughAnimals>Not enough animals in this biome.</NotEnoughAnimals>
+
+  <!-- Shambler summoning -->
+  <NoNearbyShamblers>No nearby shamblers.</NoNearbyShamblers>
+
+  <!-- Pit gate summoning -->
+  <PitGateAlreadyExists>There is already a pit gate on the map.</PitGateAlreadyExists>
+  
+  <!-- Chronophagy -->
+  <InvokerTooYoung>The invoker must be at least {0} years old.</InvokerTooYoung>
+  <PsychicRitualTargetTooYoung>The target must be at least {0} years old.</PsychicRitualTargetTooYoung>
+  <CronophagyAgeChange>{INVOKER_labelShort} will become {1} years old, and {TARGET_labelShort} will become {3} years old.</CronophagyAgeChange>
+  
+  <!-- Philophagy -->
+  <PhilophagyTransferReport>{INVOKER_labelShort} will steal {1} {SKILL_label} XP from {TARGET_labelShort}.</PhilophagyTransferReport>
+  <NoSkillsToTransfer>{TARGET_labelShort} has no skills to transfer.</NoSkillsToTransfer>
+</LanguageData>

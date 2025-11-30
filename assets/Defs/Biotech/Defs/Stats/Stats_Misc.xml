@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>MaxInstallCount</defName>
+    <label>max install count</label>
+    <description>How many times this can be installed. Each additional installation increases or upgrades the base effect.</description>
+    <category>Basics</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <hideAtValue>0</hideAtValue>
+    <displayPriorityInCategory>4020</displayPriorityInCategory>
+    <forInformationOnly>true</forInformationOnly>
+  </StatDef>
+
+</Defs>

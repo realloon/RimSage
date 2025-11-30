@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <DutyDef>
+    <defName>ShamblerSwarm</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto travel destination if reachable -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <wanderOnArrival>false</wanderOnArrival>
+          <locomotionUrgency>Amble</locomotionUrgency>
+        </li>
+
+        <li Class="JobGiver_ShamblerFight">
+          <targetAcquireRadius>20</targetAcquireRadius>
+          <targetKeepRadius>30</targetKeepRadius>
+        </li>
+
+        <li Class="JobGiver_ShamblerWander">
+          <wanderRadius>5</wanderRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>SightstealerSwarm</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_SightstealerAttack">
+          <targetAcquireRadius>20</targetAcquireRadius>
+        </li>
+        
+        <!-- Goto travel destination if reachable -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <wanderOnArrival>false</wanderOnArrival>
+          <locomotionUrgency>Amble</locomotionUrgency>
+        </li>
+        
+        <li Class="JobGiver_Idle" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>PerformHateChant</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_HateChant"/>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>Goto_NoZeroLengthPaths</defName>
+    <thinkNode Class="JobGiver_GotoTravelDestination">
+      <tag>goto</tag>
+      <exactCell>true</exactCell>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>SightstealerAssault</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+          <ignoreNonCombatants>true</ignoreNonCombatants>
+        </li>
+        <li Class="JobGiver_AIGotoNearestHostile">
+          <ignoreNonCombatants>true</ignoreNonCombatants>
+        </li>
+        <li Class="JobGiver_AIWaitAmbush">
+          <ignoreNonCombatants>true</ignoreNonCombatants>
+          <expireOnNearbyEnemy>true</expireOnNearbyEnemy>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>GorehulkAssault</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Keep distance -->
+        <li Class="JobGiver_FleeForDistance">
+          <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
+          <fleeDistRange>13.5~20</fleeDistRange>
+        </li>
+        <!-- React to close melee threat -->
+        <li Class="JobGiver_ReactToCloseMeleeThreat">
+          <maxDistance>2.9</maxDistance>
+        </li>
+        <!-- Fire spines at a target -->
+        <li Class="JobGiver_AIAbilityFight">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+          <skipIfCantTargetNow>false</skipIfCantTargetNow>
+          <ability>SpineLaunch_Gorehulk</ability>
+          <allowTurrets>true</allowTurrets>
+          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+        </li>
+        <li Class="JobGiver_AITrashColonyClose" />
+        <li Class="JobGiver_AITrashBuildingsDistant" />
+        <li Class="JobGiver_AIGotoNearestHostile">
+          <overrideExpiryInterval>60</overrideExpiryInterval>
+        </li>
+        <li Class="JobGiver_AITrashBuildingsDistant">
+          <attackAllInert>true</attackAllInert>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>DevourerAssault</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Consume leap a target -->
+        <li Class="JobGiver_AIAbilityFight">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+          <ability>ConsumeLeap_Devourer</ability>
+        </li>
+        <!-- Regular fight -->
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+          <allowTurrets>true</allowTurrets>
+        </li>
+        <li Class="JobGiver_AITrashColonyClose" />
+        <li Class="JobGiver_AITrashBuildingsDistant" />
+        <li Class="JobGiver_AIGotoNearestHostile">
+          <overrideExpiryInterval>60</overrideExpiryInterval>
+        </li>
+        <li Class="JobGiver_AITrashBuildingsDistant">
+          <attackAllInert>true</attackAllInert>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>ChimeraStalkFlee</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_FleeImmediateThreat"/>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>ChimeraStalkWander</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_ChimeraAttackNearbyHumans"/>
+        <li Class="JobGiver_WanderHerd">
+          <maxDanger>Some</maxDanger>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>ChimeraAttack</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+        <li Class="JobGiver_AIGotoNearestHostile" />
+        <li Class="JobGiver_Manhunter">
+          <canBashDoors>false</canBashDoors>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>DefendFleshmassHeart</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_AIDefendPoint">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>12</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Walk</locomotionUrgencyOutsideRadius>
+          <expireOnNearbyEnemy>true</expireOnNearbyEnemy>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>VoidAwakeningWander</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>35</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>12</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Walk</locomotionUrgencyOutsideRadius>
+          <expireOnNearbyEnemy>true</expireOnNearbyEnemy>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>FleshbeastAssault</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Abilities_Aggressive</treeDef>
+        </li>
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+        <li Class="JobGiver_AITrashColonyClose" />
+        <li Class="JobGiver_AITrashBuildingsDistant" />
+        <li Class="JobGiver_AIGotoNearestHostile">
+          <overrideExpiryInterval>60</overrideExpiryInterval>
+        </li>
+        <li Class="JobGiver_AITrashBuildingsDistant">
+          <attackAllInert>true</attackAllInert>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+</Defs>

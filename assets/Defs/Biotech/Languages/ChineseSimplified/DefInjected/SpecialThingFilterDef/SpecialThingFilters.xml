@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: allow enemy mech corpses -->
+  <AllowCorpsesMechEnemy.label>允许敌方机械族尸体</AllowCorpsesMechEnemy.label>
+  <!-- EN: Allow the dead bodies of enemy mechanoids. -->
+  <AllowCorpsesMechEnemy.description>允许敌方机械族的尸体。</AllowCorpsesMechEnemy.description>
+  
+  <!-- EN: allow friendly mech corpses -->
+  <AllowCorpsesMechFriendly.label>允许友方机械族尸体</AllowCorpsesMechFriendly.label>
+  <!-- EN: Allow the dead bodies of friendly mechanoids. -->
+  <AllowCorpsesMechFriendly.description>允许友方机械族的尸体。</AllowCorpsesMechFriendly.description>
+  
+</LanguageData>

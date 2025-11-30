@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <ThinkTreeDef>
+    <defName>Gorehulk</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        
+        <!-- Downed -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        
+        <!-- Lord directives -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+        
+        <!-- Escaping-->
+        <li Class="ThinkNodeConditional_EscapingHoldingPlatform">
+          <subNodes>
+            <li Class="JobGiver_EscapingHoldingPlatform" />
+          </subNodes>
+        </li>
+        
+        <!-- Insertion hook for modders -->
+        <li Class="ThinkNode_SubtreesByTag">
+          <insertTag>Gorehulk_PreMain</insertTag>
+        </li>
+
+        <!-- Keep distance -->
+        <li Class="JobGiver_FleeForDistance">
+          <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
+          <fleeDistRange>13.5~20</fleeDistRange>
+        </li>
+        
+        <!-- React to close melee threat -->
+        <li Class="JobGiver_ReactToCloseMeleeThreat">
+          <maxDistance>2.9</maxDistance>
+        </li>
+        
+        <!-- Fire spikes at distant enemies -->
+        <li Class="JobGiver_AIAbilityFight">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+          <skipIfCantTargetNow>false</skipIfCantTargetNow>
+          <ability>SpineLaunch_Gorehulk</ability>
+          <allowTurrets>true</allowTurrets>
+          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+        </li>
+        
+        <!-- Insertion hook for modders -->
+        <li Class="ThinkNode_SubtreesByTag">
+          <insertTag>Gorehulk_PreWander</insertTag>
+        </li>
+        
+        <!-- Wander -->
+        <li Class="JobGiver_WanderHerd">
+          <maxDanger>Deadly</maxDanger>
+          <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <ThinkTreeDef>
+    <defName>GorehulkConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+        
+        <li Class="ThinkNode_ConditionalCanDoLordJobNow">
+          <subNodes>
+            <!-- Lord directives -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>LordDutyConstant</treeDef>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</Defs>

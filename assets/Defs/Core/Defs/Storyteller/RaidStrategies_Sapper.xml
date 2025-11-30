@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--============================ Sappers ============================-->
+
+  <RaidStrategyDef>
+    <defName>ImmediateAttackSappers</defName>
+    <workerClass>RaidStrategyWorker_ImmediateAttackSappers</workerClass>
+    <minPawns>2</minPawns>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 0.85</li>
+        <li>5000, 0.60</li>
+      </points>
+    </pointsFactorCurve>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(700, 0)</li>
+        <li>(1000, 0.4)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <arriveModes>
+      <li>EdgeDrop</li>
+      <li>EdgeWalkIn</li>
+      <li>EdgeDropGroups</li>
+      <li>EdgeWalkInGroups</li>
+    </arriveModes>
+    <letterLabelEnemy>Raid</letterLabelEnemy>
+    <arrivalTextEnemy>It looks like they want to use sappers to tunnel around your defenses.</arrivalTextEnemy>
+  </RaidStrategyDef>
+
+</Defs>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>Shot_HellsphereCannonGun</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapon/HellsphereCannon/Hellsphere_Cannon_Shot</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>80</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Shot_Slugthrower</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <name>Shot</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Slugthrower</clipFolderPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Shot_Spiner</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <name>Shot</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Spiner</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>80</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Shot_ToxicNeedleGun</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <name>Shot</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/ToxicNeedlegun</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>80</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Shot_MiniFlameblaster</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <name>Shot</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/MiniFlameblaster</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>80</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

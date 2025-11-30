@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ShaderTypeDef>
+    <defName>RitualGlow</defName>
+    <shaderPath>Map/RitualGlow</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>RitualGlowSingleRay</defName>
+    <shaderPath>Map/RitualGlowSingleRay</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>RitualSmoke</defName>
+    <shaderPath>Map/RitualSmoke</shaderPath>
+  </ShaderTypeDef>
+  
+  <ShaderTypeDef>
+    <defName>RitualOutline</defName>
+    <shaderPath>Map/RitualOutline</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteBouncingRotating</defName>
+    <shaderPath>Map/MoteBouncingRotating</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>GasRotating</defName>
+    <shaderPath>Map/GasRotating</shaderPath>
+  </ShaderTypeDef>
+
+</Defs>

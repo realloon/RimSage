@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>Newborn79</defName>
+    <title>newborn</title>
+    <titleShort>newborn</titleShort>
+    <description>[PAWN_nameDef] is a baby. [PAWN_possessive] life revolves around milk and naps.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>Newborn</li>
+    </spawnCategories>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Child27</defName>
+    <title>child</title>
+    <titleShort>child</titleShort>
+    <description>[PAWN_nameDef] is a child. The story of [PAWN_possessive] childhood is still being written.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>Child</li>
+    </spawnCategories>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>ChildTribal</defName>
+    <title>child</title>
+    <titleShort>child</titleShort>
+    <description>[PAWN_nameDef] is a child. The story of [PAWN_possessive] childhood is still being written.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>ChildTribal</li><!--set when babies become children, not part of child pool-->
+    </spawnCategories>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>ColonyChild59</defName>
+    <title>colony child</title>
+    <titleShort>colonist</titleShort>
+    <description>[PAWN_nameDef] grew up in our colony.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>AdultColonist</li><!--set when children become adults, not part of child pool-->
+    </spawnCategories>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>TribeChild19</defName>
+    <title>tribe child</title>
+    <titleShort>tribal</titleShort>
+    <description>[PAWN_nameDef] grew up in our tribe.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>AdultTribal</li><!--set when children become adults, not part of child pool-->
+    </spawnCategories>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>VatgrownChild11</defName> 
+    <title>vatgrown child</title>
+    <titleShort>child</titleShort>
+    <description>[PAWN_nameDef] spent most of [PAWN_possessive] childhood in a growth vat.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>VatGrown</li>
+    </spawnCategories>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Colonist97</defName>
+    <title>colonist</title>
+    <titleShort>colonist</titleShort>
+    <description>[PAWN_nameDef] became an adult in our colony. [PAWN_possessive] story is still being written.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+        <li>AdultColonist</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>TribeMember57</defName>
+    <title>tribe member</title>
+    <titleShort>tribal</titleShort>
+    <description>[PAWN_nameDef] became an adult in our tribe. [PAWN_possessive] story is still being written.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>AdultTribal</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+  </BackstoryDef>
+
+</Defs>

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Anti-Empire intro quest. -->
+  <QuestScriptDef>
+    <defName>Intro_Deserter</defName>
+    <rootMinPoints>0</rootMinPoints>
+    <expireDaysRange>4~8</expireDaysRange>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The Deserter</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[asker_nameFull], [asker_titleIndef], is calling from nearby. [asker_pronoun] has deserted the army of [asker_factionName] and is being hunted by (*Threat)a loyalty squad(/Threat). [asker_pronoun] wishes to join you at [map_definite].
+\n[asker_nameDef] knows the location of key outpost containing everything needed to develop psychic powers:\n\n[sitePart1_itemStashContents]
+\nBeware - If you accept [asker_nameDef], you will become an enemy of [asker_factionName]! The pursuing loyalty squad will attack immediately. It is composed of: \n\n[raid/raidPawnKinds]
+\nOnly accept if you wish to fight against [asker_factionName] and develop your psycasters on your own. You will have one year to attack the outpost before it is moved.</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetWalkInSpot" />
+
+        <li Class="QuestNode_Set">
+          <name>raidPoints</name>
+          <value>$points</value>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+        
+        <!-- Get asker -->
+        <li Class="QuestNode_GeneratePawn">
+          <kindDef>Empire_Fighter_Trooper</kindDef>
+          <storeAs>asker</storeAs>
+          <faction>Empire</faction>
+          <forbidAnyTitle>True</forbidAnyTitle>
+        </li>
+        
+        <!-- Empire becomes hostile -->
+        <li Class="QuestNode_ChangeFactionGoodwill">
+          <faction>Empire</faction>
+          <change>-100</change>
+          <canSendLetter>false</canSendLetter>
+          <canSendMessage>false</canSendMessage>
+          <ensureHostile>true</ensureHostile>
+          <reason>AcceptedDeserter</reason>
+        </li>
+        
+        <!-- Spawn joiner -->
+        <li Class="QuestNode_PawnsArrive">
+          <pawns>$asker</pawns>
+          <walkInSpot>$walkInSpot</walkInSpot>
+          <joinPlayer>true</joinPlayer>
+          <customLetterText TKey="LetterLabelAskerBecameHostile">{BASETEXT}\n\nBecause you accepted [asker_nameDef], [asker_factionName] has become hostile.\n\nThe loyalty squad that is hunting [asker_objective] will arrive soon.</customLetterText>
+          <isSingleReward>true</isSingleReward>
+          <rewardDetailsHidden>true</rewardDetailsHidden>
+        </li>
+        
+        <!-- Raid -->
+        <li Class="QuestNode_Set">
+          <name>raidDelayTicks</name>
+          <value>$(roundToTicksRough(randInt(1800, 2400)))</value>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$raidDelayTicks</delayTicks>
+          <node Class="QuestNode_SubScript">
+            <def>Util_Raid</def>
+            <prefix>raid</prefix>
+            <parms>
+              <inSignal>$inSignal</inSignal>
+              <map>$map</map>
+              <enemyFaction>Empire</enemyFaction>
+              <points>$raidPoints</points>
+              <walkInSpot>$walkInSpot</walkInSpot>
+              <customLetterLabel TKey="LetterLabelLoyaltySquad">{BASELABEL}: Loyalty squad</customLetterLabel>
+              <customLetterText TKey="LetterTextLoyaltySquad">{BASETEXT}\n\nThis is the loyalty squad that was hunting [../asker_nameFull].
+              </customLetterText>
+            </parms>
+          </node>
+        </li>
+
+        <!-- Site item stash contents -->
+        <li Class="QuestNode_SetItemStashContents">
+          <items>
+            <li>PsychicAmplifier</li>
+            <li>PsychicAmplifier</li>
+          </items>
+        </li>
+
+        <!-- Imperial site -->
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <sitePartsTags>
+            <li><tag>Outpost</tag></li>
+            <li><tag>ItemStash</tag></li>
+          </sitePartsTags>
+        </li>
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>Empire</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <siteFaction>Empire</siteFaction>
+          </parms>
+        </li>
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+        <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node Class="QuestNode_Notify_PlayerRaidedSomeone">
+            <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+          </node>
+        </li>
+
+        <!-- Site expires -->
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(60*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">The key imperial outpost, containing items needed for secret psychic powers, has packed up and moved on.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_SignalActivable">
+          <inSignal>site.MapRemoved</inSignal>
+          <inSignalEnable>site.MapGenerated</inSignalEnable>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+      </nodes>
+    </root>
+    
+  </QuestScriptDef>
+
+</Defs>

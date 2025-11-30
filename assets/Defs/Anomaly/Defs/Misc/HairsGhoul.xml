@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HairDef Abstract="True" Name="GhoulHairBase">
+    <requiredMutant>Ghoul</requiredMutant>
+    <styleTags>
+      <li>Ghoul</li>
+    </styleTags>
+    <styleGender>Any</styleGender>
+  </HairDef>
+
+  <HairDef ParentName="GhoulHairBase">
+    <defName>Ghoul_Furious</defName>
+    <label>furious</label>
+    <texPath>Things/Pawn/Ghoul/Hairs/GhoulHair_Furious</texPath>
+  </HairDef>
+
+  <HairDef ParentName="GhoulHairBase">
+    <defName>Ghoul_Hungry</defName>
+    <label>hungry</label>
+    <texPath>Things/Pawn/Ghoul/Hairs/GhoulHair_Hungry</texPath>
+  </HairDef>
+
+  <HairDef ParentName="GhoulHairBase">
+    <defName>Ghoul_Ravenous</defName>
+    <label>ravenous</label>
+    <texPath>Things/Pawn/Ghoul/Hairs/GhoulHair_Ravenous</texPath>
+  </HairDef>
+
+  <HairDef ParentName="GhoulHairBase">
+    <defName>Ghoul_Twisted</defName>
+    <label>twisted</label>
+    <texPath>Things/Pawn/Ghoul/Hairs/GhoulHair_Twisted</texPath>
+  </HairDef>
+
+  <HairDef ParentName="GhoulHairBase">
+    <defName>Ghoul_Vengeful</defName>
+    <label>vengeful</label>
+    <texPath>Things/Pawn/Ghoul/Hairs/GhoulHair_Vengeful</texPath>
+  </HairDef>
+
+  <HairDef ParentName="GhoulHairBase">
+    <defName>Ghoul_Warped</defName>
+    <label>warped</label>
+    <texPath>Things/Pawn/Ghoul/Hairs/GhoulHair_Warped</texPath>
+  </HairDef>
+
+  <HairDef ParentName="GhoulHairBase">
+    <defName>Ghoul_Wicked</defName>
+    <label>wicked</label>
+    <texPath>Things/Pawn/Ghoul/Hairs/GhoulHair_Wicked</texPath>
+  </HairDef>
+</Defs>

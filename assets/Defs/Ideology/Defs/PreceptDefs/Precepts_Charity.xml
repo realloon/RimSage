@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Charity</defName>
+    <label>charity</label>
+    <iconPath>UI/Issues/Charity</iconPath>
+  </IssueDef>
+
+  <!-- History events -->
+
+  <HistoryEventDef>
+    <defName>CharityRefused_Beggars</defName>
+    <label>beggars refused</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_Beggars_Betrayed</defName>
+    <label>beggars betrayed</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_WandererJoins</defName>
+    <label>wanderer refused</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_HospitalityRefugees</defName>
+    <label>refugees refused</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_ShuttleCrashRescue</defName>
+    <label>crash survivors refused</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_RefugeePodCrash</defName>
+    <label>refugee pod crash refused</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_IntroWimp</defName>
+    <label>wimp refused</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_Pilgrims</defName>
+    <label>pilgrims refused</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityRefused_Pilgrims_Betrayed</defName>
+    <label>pilgrims betrayed</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityFulfilled_Beggars</defName>
+    <label>beggars helped</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityFulfilled_WandererJoins</defName>
+    <label>wanderer helped</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>CharityFulfilled_HospitalityRefugees</defName>
+    <label>refugees helped</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityFulfilled_ShuttleCrashRescue</defName>
+    <label>crash survivors helped</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityFulfilled_RefugeePodCrash</defName>
+    <label>pod refugee saved</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityFulfilled_IntroWimp</defName>
+    <label>noble saved</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>CharityFulfilled_ThreatReward_Joiner</defName>
+    <label>desperate joiner accepted</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+  <PreceptDef Abstract="True" Name="CharityPositiveBase">
+    <comps>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>CharityFulfilled_Beggars</eventDef>
+        <points>2</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>CharityFulfilled_WandererJoins</eventDef>
+        <points>1</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>CharityFulfilled_HospitalityRefugees</eventDef>
+        <points>2</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>CharityFulfilled_ShuttleCrashRescue</eventDef>
+        <points>3</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>CharityFulfilled_RefugeePodCrash</eventDef>
+        <points>1</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>CharityFulfilled_IntroWimp</eventDef>
+        <points>1</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>CharityFulfilled_ThreatReward_Joiner</eventDef>
+        <points>2</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef ParentName="CharityPositiveBase">
+    <defName>Charity_Essential</defName>
+    <issue>Charity</issue>
+    <label>essential</label>
+    <description>We must always be charitable to those in need. To refuse one would be an inhuman act, no matter the circumstances.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <approvesOfCharity>true</approvesOfCharity>
+    <associatedMemes>
+      <li>Guilty</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>Supremacist</li>
+      <li>PainIsVirtue</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Beggars</eventDef>
+        <thought>CharityRefused_Essential_Beggars</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Beggars_Betrayed</eventDef>
+        <thought>CharityRefused_Essential_Beggars_Betrayed</thought>
+        <removesThought>CharityFulfilled_Essential_Beggars</removesThought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Pilgrims</eventDef>
+        <thought>CharityRefused_Essential_Pilgrims</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Pilgrims_Betrayed</eventDef>
+        <thought>CharityRefused_Essential_Pilgrims_Betrayed</thought>
+        <removesThought>CharityRefused_Essential_Pilgrims</removesThought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_WandererJoins</eventDef>
+        <thought>CharityRefused_Essential_WandererJoins</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_ShuttleCrashRescue</eventDef>
+        <thought>CharityRefused_Essential_ShuttleCrashRescue</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_RefugeePodCrash</eventDef>
+        <thought>CharityRefused_Essential_RefugeePodCrash</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_HospitalityRefugees</eventDef>
+        <thought>CharityRefused_Essential_HospitalityRefugees</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_IntroWimp</eventDef>
+        <thought>CharityRefused_Essential_IntroWimp</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_ThreatReward_Joiner</eventDef>
+        <thought>CharityRefused_Essential_ThreatReward_Joiner</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_Beggars</eventDef>
+        <thought>CharityFulfilled_Essential_Beggars</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_WandererJoins</eventDef>
+        <thought>CharityFulfilled_Essential_WandererJoins</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_ShuttleCrashRescue</eventDef>
+        <thought>CharityFulfilled_Essential_ShuttleCrashRescue</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_RefugeePodCrash</eventDef>
+        <thought>CharityFulfilled_Essential_RefugeePodCrash</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_HospitalityRefugees</eventDef>
+        <thought>CharityFulfilled_Essential_HospitalityRefugees</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_IntroWimp</eventDef>
+        <thought>CharityFulfilled_Essential_IntroWimp</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_ThreatReward_Joiner</eventDef>
+        <thought>CharityFulfilled_Essential_ThreatReward_Joiner</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef ParentName="CharityPositiveBase">
+    <defName>Charity_Important</defName>
+    <issue>Charity</issue>
+    <label>important</label>
+    <description>It's important to be charitable to those in need. Refusing to help is a terrible act.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <approvesOfCharity>true</approvesOfCharity>
+    <associatedMemes>
+      <li>Guilty</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>Supremacist</li>
+      <li>PainIsVirtue</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Beggars</eventDef>
+        <thought>CharityRefused_Important_Beggars</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Beggars_Betrayed</eventDef>
+        <thought>CharityRefused_Important_Beggars_Betrayed</thought>
+        <removesThought>CharityFulfilled_Important_Beggars</removesThought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Pilgrims</eventDef>
+        <thought>CharityRefused_Important_Pilgrims</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Pilgrims_Betrayed</eventDef>
+        <thought>CharityRefused_Important_Pilgrims_Betrayed</thought>
+        <removesThought>CharityRefused_Important_Pilgrims</removesThought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_WandererJoins</eventDef>
+        <thought>CharityRefused_Important_WandererJoins</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_ShuttleCrashRescue</eventDef>
+        <thought>CharityRefused_Important_ShuttleCrashRescue</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_RefugeePodCrash</eventDef>
+        <thought>CharityRefused_Important_RefugeePodCrash</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_HospitalityRefugees</eventDef>
+        <thought>CharityRefused_Important_HospitalityRefugees</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_IntroWimp</eventDef>
+        <thought>CharityRefused_Important_IntroWimp</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_ThreatReward_Joiner</eventDef>
+        <thought>CharityRefused_Important_ThreatReward_Joiner</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_Beggars</eventDef>
+        <thought>CharityFulfilled_Important_Beggars</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_WandererJoins</eventDef>
+        <thought>CharityFulfilled_Important_WandererJoins</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_ShuttleCrashRescue</eventDef>
+        <thought>CharityFulfilled_Important_ShuttleCrashRescue</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_RefugeePodCrash</eventDef>
+        <thought>CharityFulfilled_Important_RefugeePodCrash</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_HospitalityRefugees</eventDef>
+        <thought>CharityFulfilled_Important_HospitalityRefugees</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_IntroWimp</eventDef>
+        <thought>CharityFulfilled_Important_IntroWimp</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_ThreatReward_Joiner</eventDef>
+        <thought>CharityFulfilled_Important_ThreatReward_Joiner</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef ParentName="CharityPositiveBase">
+    <defName>Charity_Worthwhile</defName>
+    <issue>Charity</issue>
+    <label>worthwhile</label>
+    <description>Helping those in need is a good thing. It makes the community stronger.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <approvesOfCharity>true</approvesOfCharity>
+    <associatedMemes>
+      <li>Guilty</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>Supremacist</li>
+      <li>PainIsVirtue</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Beggars</eventDef>
+        <thought>CharityRefused_Worthwhile_Beggars</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Beggars_Betrayed</eventDef>
+        <thought>CharityRefused_Worthwhile_Beggars_Betrayed</thought>
+        <removesThought>CharityFulfilled_Worthwhile_Beggars</removesThought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Pilgrims</eventDef>
+        <thought>CharityRefused_Worthwhile_Pilgrims</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_Pilgrims_Betrayed</eventDef>
+        <thought>CharityRefused_Worthwhile_Pilgrims_Betrayed</thought>
+        <removesThought>CharityRefused_Worthwhile_Pilgrims</removesThought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_WandererJoins</eventDef>
+        <thought>CharityRefused_Worthwhile_WandererJoins</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_RefugeePodCrash</eventDef>
+        <thought>CharityRefused_Worthwhile_RefugeePodCrash</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_HospitalityRefugees</eventDef>
+        <thought>CharityRefused_Worthwhile_HospitalityRefugees</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_IntroWimp</eventDef>
+        <thought>CharityRefused_Worthwhile_IntroWimp</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityRefused_ThreatReward_Joiner</eventDef>
+        <thought>CharityRefused_Worthwhile_ThreatReward_Joiner</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_Beggars</eventDef>
+        <thought>CharityFulfilled_Worthwhile_Beggars</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_WandererJoins</eventDef>
+        <thought>CharityFulfilled_Worthwhile_WandererJoins</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_RefugeePodCrash</eventDef>
+        <thought>CharityFulfilled_Worthwhile_RefugeePodCrash</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_HospitalityRefugees</eventDef>
+        <thought>CharityFulfilled_Worthwhile_HospitalityRefugees</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_IntroWimp</eventDef>
+        <thought>CharityFulfilled_Worthwhile_IntroWimp</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CharityFulfilled_ThreatReward_Joiner</eventDef>
+        <thought>CharityFulfilled_Worthwhile_ThreatReward_Joiner</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Parents -->
+  <ThoughtDef Abstract="True" Name="CharityBase">
+    <durationDays>8</durationDays>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused beggars -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_Beggars</defName>
+    <stages>
+      <li>
+        <label>beggars not helped</label>
+        <description>They begged for help, but we refused. What a violation - am I even human any more?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_Beggars</defName>
+    <stages>
+      <li>
+        <label>beggars not helped</label>
+        <description>They begged for help, but we didn't do anything. It was deeply wrong.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_Beggars</defName>
+    <stages>
+      <li>
+        <label>beggars not helped</label>
+        <description>They asked for help and we did nothing. We should be trying harder.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  
+  <!-- Thoughts: Charity refused beggars betrayed -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_Beggars_Betrayed</defName>
+    <stages>
+      <li>
+        <label>beggars betrayed</label>
+        <description>They begged for help and we betrayed them. Will I ever forgive myself?</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_Beggars_Betrayed</defName>
+    <stages>
+      <li>
+        <label>beggars betrayed</label>
+        <description>They begged for help and we betrayed them. It was horrendous.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_Beggars_Betrayed</defName>
+    <stages>
+      <li>
+        <label>beggars betrayed</label>
+        <description>They begged for help and we betrayed them. We cannot let this happen again.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused pilgrims -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_Pilgrims</defName>
+    <stages>
+      <li>
+        <label>pilgrims not helped</label>
+        <description>They asked to view our sacred relic and we refused. How could we be so selfish?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_Pilgrims</defName>
+    <stages>
+      <li>
+        <label>pilgrims not helped</label>
+        <description>They asked to view our sacred relic and we refused. We need to change our ways.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_Pilgrims</defName>
+    <stages>
+      <li>
+        <label>pilgrims not helped</label>
+        <description>They asked to view our sacred relic and we refused. We should be trying harder.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused pilgrims betrayed -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_Pilgrims_Betrayed</defName>
+    <stages>
+      <li>
+        <label>pilgrims betrayed</label>
+        <description>They came to view our sacred relic and we betrayed them. How did we get this depraved?</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_Pilgrims_Betrayed</defName>
+    <stages>
+      <li>
+        <label>pilgrims betrayed</label>
+        <description>They came to view our sacred relic and we betrayed them. What a monstrous act.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_Pilgrims_Betrayed</defName>
+    <stages>
+      <li>
+        <label>pilgrims betrayed</label>
+        <description>They came to view our sacred relic and we betrayed them. We must do better.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused wanderer joins -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_WandererJoins</defName>
+    <stages>
+      <li>
+        <label>wanderer rejected</label>
+        <description>Someone came looking for help, and we rejected them. What we did was inhuman.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_WandererJoins</defName>
+    <stages>
+      <li>
+        <label>wanderer rejected</label>
+        <description>They were in need, and we rejected them. Only a terrible person does that.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_WandererJoins</defName>
+    <stages>
+      <li>
+        <label>wanderer rejected</label>
+        <description>They were in need, and we turned them away. We should have done better.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+    <!-- Thoughts: Charity refused shuttle crash rescue -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_ShuttleCrashRescue</defName>
+    <stages>
+      <li>
+        <label>crashing shuttle ignored</label>
+        <description>They were crashing, desperate for help, and we said no. How can I live with this?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_ShuttleCrashRescue</defName>
+    <stages>
+      <li>
+        <label>crashing shuttle ignored</label>
+        <description>They were crashing, desperate for help, and we said no. It was so wrong.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_ShuttleCrashRescue</defName>
+    <stages>
+      <li>
+        <label>crashing shuttle ignored</label>
+        <description>They were crashing, desperate for help, and we said no. It wasn't a good thing.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused refugee pod crash -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_RefugeePodCrash</defName>
+    <stages>
+      <li>
+        <label>crashed refugee not helped</label>
+        <description>They were hurt and need of help, and we didn't help. How can I live with that?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_RefugeePodCrash</defName>
+    <stages>
+      <li>
+        <label>crashed refugee not helped</label>
+        <description>They were hurt and need of help, and we didn't help. Am I even a good person?</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_RefugeePodCrash</defName>
+    <stages>
+      <li>
+        <label>crashed refugee not helped</label>
+        <description>They were hurt and need of help, and we didn't help. It wasn't the best.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused hospitality refugees -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_HospitalityRefugees</defName>
+    <stages>
+      <li>
+        <label>refugees not helped</label>
+        <description>They were desperate, and we didn't help. How could I be so inhuman?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_HospitalityRefugees</defName>
+    <stages>
+      <li>
+        <label>refugees not helped</label>
+        <description>They were desperate, and we didn't help. We were obligated to help.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_HospitalityRefugees</defName>
+    <stages>
+      <li>
+        <label>refugees not helped</label>
+        <description>They were desperate, and we didn't help. It wasn't great.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused intro wimp -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_IntroWimp</defName>
+    <stages>
+      <li>
+        <label>noble not helped</label>
+        <description>We refused to help a desperate noble. It was deeply immoral.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_IntroWimp</defName>
+    <stages>
+      <li>
+        <label>noble not helped</label>
+        <description>We refused to help a desperate noble. We should have tried harder.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_IntroWimp</defName>
+    <stages>
+      <li>
+        <label>noble not helped</label>
+        <description>We refused to help a desperate noble. Perhaps I am not as charitable as I thought.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity refused threat reward joiner -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Essential_ThreatReward_Joiner</defName>
+    <stages>
+      <li>
+        <label>rejected joiner in danger</label>
+        <description>We refused to help someone in real danger. I've deeply violated my beliefs.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Important_ThreatReward_Joiner</defName>
+    <stages>
+      <li>
+        <label>rejected joiner in danger</label>
+        <description>We refused to help someone in real danger. This will stick with me for a long time.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityRefused_Worthwhile_ThreatReward_Joiner</defName>
+    <stages>
+      <li>
+        <label>rejected joiner in danger</label>
+        <description>We refused to help someone in real danger. It wasn't great.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity fulfilled beggars -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Essential_Beggars</defName>
+    <stages>
+      <li>
+        <label>beggars helped</label>
+        <description>We helped beggars in need. I really am a good person!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Important_Beggars</defName>
+    <stages>
+      <li>
+        <label>beggars helped</label>
+        <description>We helped beggars in need. It was the right thing to do.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Worthwhile_Beggars</defName>
+    <stages>
+      <li>
+        <label>beggars helped</label>
+        <description>We helped beggars in need. It's good to be good to people.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity fulfilled wanderer joins -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Essential_WandererJoins</defName>
+    <stages>
+      <li>
+        <label>wanderer helped</label>
+        <description>We helped a desperate wanderer survive. I really am a good person!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Important_WandererJoins</defName>
+    <stages>
+      <li>
+        <label>wanderer helped</label>
+        <description>We helped a desperate wanderer survive. Helping others is the right thing to do.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Worthwhile_WandererJoins</defName>
+    <stages>
+      <li>
+        <label>wanderer helped</label>
+        <description>We helped a desperate wanderer survive. That's a good thing.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity fulfilled shuttle crash rescue -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Essential_ShuttleCrashRescue</defName>
+    <stages>
+      <li>
+        <label>shuttle survivors helped</label>
+        <description>We helped shuttle crash survivors. I really am a good person!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Important_ShuttleCrashRescue</defName>
+    <stages>
+      <li>
+        <label>shuttle survivors helped</label>
+        <description>We helped shuttle crash survivors. It was clearly the right thing to do.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Worthwhile_ShuttleCrashRescue</defName>
+    <stages>
+      <li>
+        <label>shuttle survivors helped</label>
+        <description>We helped shuttle crash survivors. It was a good thing.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity fulfilled refugee pod crash -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Essential_RefugeePodCrash</defName>
+    <stages>
+      <li>
+        <label>pod refugee helped</label>
+        <description>We helped a crashed refugee survive. I really am a good person!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Important_RefugeePodCrash</defName>
+    <stages>
+      <li>
+        <label>pod refugee helped</label>
+        <description>We helped a crashed refugee survive. Helping others is important.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Worthwhile_RefugeePodCrash</defName>
+    <stages>
+      <li>
+        <label>pod refugee helped</label>
+        <description>We helped a crashed refugee survive. It was good of me.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity fulfilled hospitality refugees -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Essential_HospitalityRefugees</defName>
+    <stages>
+      <li>
+        <label>refugees hosted</label>
+        <description>We helped refugees. I really am a good person!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Important_HospitalityRefugees</defName>
+    <stages>
+      <li>
+        <label>refugees hosted</label>
+        <description>We helped refugees. Helping others is important.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Worthwhile_HospitalityRefugees</defName>
+    <stages>
+      <li>
+        <label>refugees hosted</label>
+        <description>We helped refugees. It was good of us.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity fulfilled intro wimp -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Essential_IntroWimp</defName>
+    <stages>
+      <li>
+        <label>noble helped</label>
+        <description>We helped a royal in need. We really are good people!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Important_IntroWimp</defName>
+    <stages>
+      <li>
+        <label>noble helped</label>
+        <description>We helped a royal in need. Helping others is important.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Worthwhile_IntroWimp</defName>
+    <stages>
+      <li>
+        <label>noble helped</label>
+        <description>We helped a royal in need. It was good of us.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts: Charity fulfilled threat reward joiner -->
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Essential_ThreatReward_Joiner</defName>
+    <stages>
+      <li>
+        <label>accepted someone in danger</label>
+        <description>We helped someone under threat. We really are good people!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Important_ThreatReward_Joiner</defName>
+    <stages>
+      <li>
+        <label>accepted someone in danger</label>
+        <description>We helped someone under threat. It was the right thing to do.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="CharityBase">
+    <defName>CharityFulfilled_Worthwhile_ThreatReward_Joiner</defName>
+    <stages>
+      <li>
+        <label>accepted someone in danger</label>
+        <description>We helped someone under threat. That was pretty good.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Royalty -->
+  <RequestChangeRoyalHeir>Change heir of {HOLDER_labelShort}'s {TITLE} title from {HEIR_labelShort}</RequestChangeRoyalHeir>
+  <RequestSetRoyalHeir>Designate heir of {HOLDER_labelShort}'s {TITLE} title</RequestSetRoyalHeir>
+  <RequestChangeRoyalHeirAlreadyInProgress>already in progress for {PAWN_labelShort}</RequestChangeRoyalHeirAlreadyInProgress>
+  
+</LanguageData>

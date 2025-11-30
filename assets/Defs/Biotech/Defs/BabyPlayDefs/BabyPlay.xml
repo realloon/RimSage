@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BabyPlayDef>
+    <defName>PlayStatic</defName>
+    <workerClass>BabyPlayGiver_PlayStatic</workerClass>
+    <jobDef>PlayStatic</jobDef>
+  </BabyPlayDef>
+
+  <BabyPlayDef>
+    <defName>PlayWalking</defName>
+    <workerClass>BabyPlayGiver_PlayWalking</workerClass>
+    <jobDef>PlayWalking</jobDef>
+  </BabyPlayDef>
+
+  <BabyPlayDef>
+    <defName>PlayToys</defName>
+    <workerClass>BabyPlayGiver_PlayToys</workerClass>
+    <jobDef>PlayToys</jobDef>
+  </BabyPlayDef>
+
+</Defs>

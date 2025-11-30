@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <!-- Audiovisuals -->
+  <Audiovisuals>Audiovisuals</Audiovisuals>
+  <MasterVolume>Master volume</MasterVolume>
+  <GameVolume>Game volume</GameVolume>
+  <MusicVolume>Music volume</MusicVolume>
+  <AmbientVolume>Ambience volume</AmbientVolume>
+  <UIVolume>UI volume</UIVolume>
+  <MasterVolumeTooltip>Affects all sounds.</MasterVolumeTooltip>
+  <GameVolumeTooltip>Affects all in world sounds, e.g. chopping trees, building walls.</GameVolumeTooltip>
+  <MusicVolumeTooltip>Affects music.</MusicVolumeTooltip>
+  <AmbientVolumeTooltip>Affects all ambient sounds, e.g. wind, insects.</AmbientVolumeTooltip>
+  <UIVolumeTooltip>Affects all interface sounds, e.g. button clicks, messages.</UIVolumeTooltip>
+  <Antialiasing>Anti-aliasing</Antialiasing>
+
+  <!-- Gameplay -->
+  <RememberDrawStyle>Remember draw styles</RememberDrawStyle>
+  <RememberDrawStyle_Tooltip>When enabled, draw styles won't reset to the default draw style when placing new buildings or zones.</RememberDrawStyle_Tooltip>
+  <ZoomSwitchLayer>Zoom switches world map layers</ZoomSwitchLayer>
+  <ZoomSwitchLayer_Tooltip>When enabled, zooming out on the world map will switch to an orbital view. Zooming in will show the planet again.</ZoomSwitchLayer_Tooltip>
+  <EdgeScreenScroll>Screen-edge mouse scroll</EdgeScreenScroll>
+  <ZoomToMouse>Zoom to mouse</ZoomToMouse>
+  <PauseOnLoad>Pause on load</PauseOnLoad>
+  <PauseOnUrgentLetter>Pause on urgent letter</PauseOnUrgentLetter>
+  <AutomaticPauseModeSetting>Pause on letter</AutomaticPauseModeSetting>
+  <CustomCursor>Disable game-specific cursor</CustomCursor>
+  <HatsShownOnlyOnMap>Hide hats on UI</HatsShownOnlyOnMap>
+  <UIScale>UI scale</UIScale>
+  <KeyboardConfig>Keyboard configuration</KeyboardConfig>
+  <ControllerConfig>Controller configuration</ControllerConfig>
+  <ModifyConfig>Modify</ModifyConfig>
+  <ChooseLanguage>Choose language</ChooseLanguage>
+  <ResetAdaptiveTutor>Reset learning helper</ResetAdaptiveTutor>
+  <AdaptiveTutorIsReset>Tutor is reset. You will be now be re-taught all lessons from scratch.</AdaptiveTutorIsReset>
+  <SteamDeckKeyboardMode>Keyboard mode</SteamDeckKeyboardMode>
+  <RunInBackground>Run in background</RunInBackground>
+  <DevelopmentMode>Development mode</DevelopmentMode>
+  <ResetModsConfigOnCrash>Auto-reset mods config on crash</ResetModsConfigOnCrash>
+  <DisableQuickStartCryptoSickness>Quick start has no cryptosleep sickness</DisableQuickStartCryptoSickness>
+  <StartDevPaletteOn>Start game with dev palette on</StartDevPaletteOn>
+  <OpenLogOnWarnings>Open log on warnings</OpenLogOnWarnings>
+  <CloseLogWindowOnEscape>Close log by pressing cancel</CloseLogWindowOnEscape>
+  <LogVerbose>Verbose logging</LogVerbose>
+  <SaveGameDataFolder>Save data folder</SaveGameDataFolder>
+  <SaveGameDataLocation>Save data location</SaveGameDataLocation>
+  <LogFileFolder>Log file folder</LogFileFolder>
+  <LogFileLocation>Log file location</LogFileLocation>
+  <OpenFolder>Open</OpenFolder>
+  <ShowFolder>Show</ShowFolder>
+  <NamesYouWantToSee>Preferred "Name in Game" characters</NamesYouWantToSee>
+  <NamesYouWantToSeeSubText>These characters will be more likely to appear randomly during play.</NamesYouWantToSeeSubText>
+  <AddName>Add name</AddName>
+  <TypeFirstNickOrLastName>Type the first name, nickname, or last name.</TypeFirstNickOrLastName>
+  <MessageAlreadyPreferredName>This name is already on the preferred list.</MessageAlreadyPreferredName>
+  <ChangeStoryteller>Storyteller settings</ChangeStoryteller>
+  <AutosaveInterval>Autosave interval</AutosaveInterval>
+  <AutosaveIntervalTooltip>The number of in game days between each auto save.</AutosaveIntervalTooltip>
+  <TemperatureMode>Temperature unit</TemperatureMode>
+  <ShowRealtimeClock>Show realtime clock</ShowRealtimeClock>
+  <TwelveHourClockMode>Use 12 hour clock</TwelveHourClockMode>
+  <DisableTinyText>Disable tiny font</DisableTinyText>
+  <MaxNumberOfPlayerSettlements>Maximum number of colonies: {0}</MaxNumberOfPlayerSettlements>
+  <AutosavesCount>Autosaves count: {0}</AutosavesCount>
+  <MapDragSensitivity>Map mouse drag sensitivity</MapDragSensitivity>
+  <PlantWindSway>Plant wind sway</PlantWindSway>
+  <EnableTestMapSizes>Enable test map sizes</EnableTestMapSizes>
+  <MaxPermadeathAutosaveIntervalInfo>Maximum autosave interval in permadeath mode is {0} day.</MaxPermadeathAutosaveIntervalInfo>
+  <ModSettings>Mod Settings</ModSettings>
+  <PermanentlyDisableDevMode>Permanently disable development mode</PermanentlyDisableDevMode>
+  <TextureCompression>Texture compression</TextureCompression>
+  <TextureCompression_Tooltip>Turning off texture compression will use much more video memory, but makes textures look slightly better in detailed areas. Only turn this off if you know you have lots of extra video memory.\n\nNote that using certain mods will often consume much more video memory, so you may need to turn this on if you add certain mods.</TextureCompression_Tooltip>
+  <SmoothCameraJumps>Smooth camera jumps</SmoothCameraJumps>
+  <SmoothCameraJumpsDesc>When enabled, the camera will quickly pan when focusing on a new location. When disabled, the camera will jump instantly.</SmoothCameraJumpsDesc>
+
+  <!-- Resolution -->
+  <Resolution>Resolution</Resolution>
+  <Fullscreen>Fullscreen</Fullscreen>
+  <BorderlessFullscreen>Borderless fullscreen</BorderlessFullscreen>
+  <BorderlessFullscreenInstructions>To run RimWorld in borderless fullscreen mode:\n\n1) Open Steam\n2) Go to the "Library" tab at the top\n3) Find RimWorld on the list and right-click it\n4) Choose "Properties..."\n5) Add "-popupwindow" without quotes to "Launch options" in the "General" tab\n6) Restart game\n7) If done correctly, you won't see this window\n\nHint: Use Windows Key + Shift + Left/Right to move the window between your monitors.</BorderlessFullscreenInstructions>
+
+  <!-- Mods -->
+  <SelectMod>Select mod...</SelectMod>
+  <NoConfigurableMods>No configurable mods loaded.</NoConfigurableMods>
+  
+  <!-- Options reset -->
+  <RestoreToDefaultSettingsLabel>Restore all settings to default</RestoreToDefaultSettingsLabel>
+  <RestoreToDefaultSettings>Restore defaults</RestoreToDefaultSettings>
+  <ResetAndRestart>All settings have been reset. The game will now restart automatically.</ResetAndRestart>
+  <ResetAndRestartConfirmationDialog>All settings will be reset to the default and the game will be restarted. Unsaved progress will be lost,\n\nContinue?</ResetAndRestartConfirmationDialog>
+  <ChangedTextureCompressionRestart>Changing texture compression settings requires a restart. Unsaved progress will be lost.\n\nContinue?</ChangedTextureCompressionRestart>
+  
+  <!-- Background image -->
+  <SetBackgroundImage>Menu background</SetBackgroundImage>
+
+</LanguageData>

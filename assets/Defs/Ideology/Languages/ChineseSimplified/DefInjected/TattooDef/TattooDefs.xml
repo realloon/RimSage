@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: buttons -->
+  <Body_Buttons.label>按钮</Body_Buttons.label>
+  
+  <!-- EN: cross -->
+  <Body_Cross.label>十字</Body_Cross.label>
+  
+  <!-- EN: heart -->
+  <Body_Heart.label>心脏</Body_Heart.label>
+  
+  <!-- EN: insect -->
+  <Body_Insect.label>虫子</Body_Insect.label>
+  
+  <!-- EN: jester -->
+  <Body_Jester.label>小丑</Body_Jester.label>
+  
+  <!-- EN: moon -->
+  <Body_Moon.label>月亮</Body_Moon.label>
+  
+  <!-- EN: power -->
+  <Body_Power.label>能量</Body_Power.label>
+  
+  <!-- EN: rings -->
+  <Body_Rings.label>圆环</Body_Rings.label>
+  
+  <!-- EN: royal -->
+  <Body_Royal.label>皇家</Body_Royal.label>
+  
+  <!-- EN: scar -->
+  <Body_Scar.label>疤痕</Body_Scar.label>
+  
+  <!-- EN: skeleton -->
+  <Body_Skeleton.label>骷髅</Body_Skeleton.label>
+  
+  <!-- EN: skull -->
+  <Body_Skull.label>头骨</Body_Skull.label>
+  
+  <!-- EN: spike -->
+  <Body_Spike.label>尖刺</Body_Spike.label>
+  
+  <!-- EN: sun -->
+  <Body_Sun.label>太阳</Body_Sun.label>
+  
+  <!-- EN: tiger -->
+  <Body_Tiger.label>虎</Body_Tiger.label>
+  
+  <!-- EN: wings -->
+  <Body_Wings.label>翅膀</Body_Wings.label>
+  
+  <!-- EN: cobweb -->
+  <Face_Cobweb.label>蛛网</Face_Cobweb.label>
+  
+  <!-- EN: eclipse -->
+  <Face_Eclipse.label>日蚀</Face_Eclipse.label>
+  
+  <!-- EN: headshot -->
+  <Face_Headshot.label>爆头</Face_Headshot.label>
+  
+  <!-- EN: line -->
+  <Face_Line.label>线</Face_Line.label>
+  
+  <!-- EN: love -->
+  <Face_Love.label>爱</Face_Love.label>
+  
+  <!-- EN: oracle -->
+  <Face_Oracle.label>祭司</Face_Oracle.label>
+  
+  <!-- EN: pantheon -->
+  <Face_Pantheon.label>伟人</Face_Pantheon.label>
+  
+  <!-- EN: spider -->
+  <Face_Spider.label>蜘蛛</Face_Spider.label>
+  
+  <!-- EN: stars -->
+  <Face_Stars.label>星</Face_Stars.label>
+  
+  <!-- EN: tear -->
+  <Face_Tear.label>泪</Face_Tear.label>
+  
+  <!-- EN: tiger -->
+  <Face_Tiger.label>虎</Face_Tiger.label>
+  
+  <!-- EN: war paint -->
+  <Face_Warpaint.label>战纹</Face_Warpaint.label>
+  
+  <!-- EN: worried -->
+  <Face_Worried.label>忧愁</Face_Worried.label>
+  
+</LanguageData>

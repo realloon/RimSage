@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <HistoryEventDef>
+    <defName>HarvestedOrgan</defName>
+    <label>harvested organ</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>SoldOrgan</defName>
+    <label>sold organ</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef> <!-- bought or sold -->
+    <defName>TradedOrgan</defName>
+    <label>traded organ</label>
+  </HistoryEventDef>
+
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>OrganUse_Abhorrent</defName>
+    <issue>OrganUse</issue>
+    <label>totally abhorrent</label>
+    <description>Any harvesting, trading, or installing natural organs is an abhorrent evil.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>FleshPurity</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Know_Abhorrent_Mood</thought>
+        <description>Someone harvested an organ</description>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>TradedOrgan</eventDef>
+        <thought>TradedOrgan_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TradedOrgan</eventDef>
+        <thought>TradedOrgan_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>TradedOrgan</eventDef>
+        <thought>TradedOrgan_Know_Abhorrent_Mood</thought>
+        <description>Someone traded an organ</description>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InstalledOrgan</eventDef>
+        <thought>InstalledOrgan_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InstalledOrgan</eventDef>
+        <thought>InstalledOrgan_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InstalledOrgan</eventDef>
+        <thought>InstalledOrgan_Know_Abhorrent_Mood</thought>
+        <description>Someone installed an organ</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>OrganUse_HorribleNoSell</defName>
+    <issue>OrganUse</issue>
+    <label>no harvest or sell</label>
+    <description>Harvesting organs is a horrible thing. Selling any natural organ is pretty bad too. However, it's okay to buy and install them.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>200</displayOrderInImpact>
+    <associatedMemes>
+      <li>FleshPurity</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Know_Horrible_Mood</thought>
+        <description>Someone harvested an organ</description>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>SoldOrgan</eventDef>
+        <thought>SoldOrgan_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldOrgan</eventDef>
+        <thought>SoldOrgan_Know_Horrible_Mood</thought>
+        <description>Someone sold an organ</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldOrgan</eventDef>
+        <thought>SoldOrgan_Know_Disapproved</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>OrganUse_HorribleSellOK</defName>
+    <issue>OrganUse</issue>
+    <label>no harvest</label>
+    <description>Harvesting organs is a horrible thing. However, it's okay to buy, install, or sell them.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>200</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <associatedMemes>
+      <li>Cannibal</li>
+      <li>Raider</li>
+      <li>Collectivist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Know_Horrible_Mood</thought>
+        <description>Someone harvested an organ</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>OrganUse_Acceptable</defName>
+    <issue>OrganUse</issue>
+    <label>acceptable</label>
+    <description>It's okay to harvest, buy, install, or sell organs.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>Cannibal</li>
+      <li>Raider</li>
+      <li>Collectivist</li>
+    </associatedMemes>
+    <comps>
+    </comps>
+  </PreceptDef>
+
+  <!-- Traded organ -->
+
+  <ThoughtDef>
+    <defName>TradedOrgan_Abhorrent</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>traded organ</label>
+        <description>I had to trade someone's organ. It's an abhorrent violation of everything I believe.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TradedOrgan_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>traded organ</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TradedOrgan_Know_Abhorrent_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>organ traded</label>
+        <description>Someone traded an organ! What an abhorrent, disgusting act.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+  <!-- Sold organ -->
+
+  <ThoughtDef>
+    <defName>SoldOrgan_Disapproved</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>sold organ</label>
+        <description>I had to sell someone's organ. I don't approve of such transactions.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldOrgan_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>sold organ</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldOrgan_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>organ sold</label>
+        <description>Someone sold an organ. It's horrible to trade human parts like machinery.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+  <!-- Installed organ -->
+
+  <HistoryEventDef>
+    <defName>InstalledOrgan</defName>
+    <label>installed organ</label>
+  </HistoryEventDef>
+
+  <ThoughtDef>
+    <defName>InstalledOrgan_Abhorrent</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>installed organ</label>
+        <description>I had to install an organ in someone. It's an abhorrent violation of everything I believe.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InstalledOrgan_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>installed organ</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InstalledOrgan_Know_Abhorrent_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>installed organ</label>
+        <description>Someone installed an organ. The body should be sacrosanct!</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+  <!-- Harvested organ -->
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Abhorrent</defName>
+    <durationDays>5</durationDays>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>harvested organ</label>
+        <description>I had to harvest someone's organ. It's an abhorrent violation of everything I believe.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>harvested organ</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Know_Abhorrent_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>organ harvested</label>
+        <description>Someone took body parts from our fellow. It's a horrible thing.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Horrible</defName>
+    <durationDays>5</durationDays>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>harvested organ</label>
+        <description>I had to harvest someone's organ. It's a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>harvested organ</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>organ harvested</label>
+        <description>Someone took body parts from our fellow. It's a horrible thing.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+<!-- Disabled this precept as too exploitable.
+    To make this work, we'd need a hediff to distinguish between natural-grown and installed flesh organs.
+
+  <PreceptDef>
+    <defName>OrganUse_Respected</defName>
+    <issue>OrganUse</issue>
+    <label>respected</label>
+    <conflictingMemes>
+      <li>FleshPurity</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Transhumanist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Respected</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>HarvestedOrgan</eventDef>
+        <thought>HarvestedOrgan_Know_Respected</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Respected</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>harvested organ</label>
+        <description>I harvested someone's organ. I'm proud to do good things like that.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HarvestedOrgan_Know_Respected</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>harvested organ</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+</Defs>

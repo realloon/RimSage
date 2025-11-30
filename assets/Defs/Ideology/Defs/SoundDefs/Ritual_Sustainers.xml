@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef Abstract="True" Name="RitualSustainerBase">
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainFadeoutTime>2.5</sustainFadeoutTime>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Theist</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Theist_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>21</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Morbid</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Morbid_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>17</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>5.0</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Hindu</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Hindu_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Animalist</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Animalist_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>23</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Buddhist</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Buddhist_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>55</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Christian</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Christian_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>21</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Islamic</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Islamic_Loop_01b</clipPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Rustic</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Rustic_Loop_01b</clipPath>
+          </li>
+        </grains>
+        <volumeRange>18</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Spikecore</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Spikecore_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Totemic</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Sustainer_Totemic_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>28</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RitualSustainerBase">
+    <defName>RitualSustainer_Techist</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/RitualSustainers/Ritual_Amb_Techist_Loop_V2</clipPath>
+          </li>
+        </grains>
+        <volumeRange>23</volumeRange>
+        <distRange>30~100</distRange>
+        <sustainAttack>3</sustainAttack>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <!-- Ritual sustainers end -->
+
+  <SoundDef>
+    <defName>Interact_MakeSkylantern</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>10</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Misc/Skylantern/Make</clipPath>
+          </li>
+        </grains>
+        <volumeRange>11~13</volumeRange>
+        <pitchRange>0.9541177~1.068824</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>SkylanternFloating</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>10</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Misc/Skylantern/Float</clipPath>
+          </li>
+        </grains>
+        <volumeRange>16</volumeRange>
+        <sustainLoop>False</sustainLoop>
+        <startDelayRange>0.0~0.5</startDelayRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DuelMusic</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ritual/GladiatorDual_Looped_01</clipPath>
+          </li>
+        </grains>
+        <volumeRange>32</volumeRange>
+        <distRange>12~50</distRange>
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+        <sustainAttack>3</sustainAttack>
+        <sustainRelease>3</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

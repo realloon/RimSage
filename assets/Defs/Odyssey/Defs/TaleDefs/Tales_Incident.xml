@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <TaleDef>
+    <defName>OrbitalDebris</defName>
+    <label>orbital debris</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>50</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->a micrometeorite storm sweeping over [PAWN_nameDef]'s [Community]</li>
+        <li>tale_noun->micrometeorite fragments peppering the area around [PAWN_nameDef]'s [Community]</li>
+        <li>image->a cascade of micrometeorites glimmering with [Color] sparks [airborne_circumstance]</li>
+        <li>image->a scattering of brightly-glowing micrometeorites [airborne_circumstance]</li>
+        <li>image->a shower of [Color] sparks as micrometeorites blaze [airborne_circumstance]</li>
+        <li>airborne_circumstance->racing across the sky</li>
+        <li>airborne_circumstance->tumbling down in a flurry of light</li>
+        <li>airborne_circumstance->dissipating into shimmering dust as they fall</li>
+        <li>image->a cluster of smoldering impact marks, [ground_circumstance]</li>
+        <li>image->a [Color] scorched fragment, [ground_circumstance]</li>
+        <li>image->a [Color] scatter of tiny stones, [ground_circumstance]</li>
+        <li>ground_circumstance->surrounded by a haze of fine dust</li>
+        <li>ground_circumstance->glowing faintly from residual heat</li>
+        <li>ground_circumstance->embedded in a blanket of cracked ground</li>
+        <li>ground_circumstance->scattered across the landscape</li>
+        <li>ground_circumstance->dotted amidst a field of minor craters</li>
+        <li>desc_sentence->[PAWN_nameDef] watches the shower in awe.</li>
+        <li>desc_sentence->[PAWN_nameDef] gazes up in wonder.</li>
+        <li>desc_sentence->[PAWN_nameDef] is startled by the relentless barrage.</li>
+        <li>desc_sentence->[Quantity_adjphrase] figures emerge from a nearby [TerrainFeature] to take shelter.</li>
+        <li>desc_sentence->[Quantity_adjphrase] figures scramble to secure their belongings.</li>
+        <li>desc_sentence->[Quantity_adjphrase] [Animal]s scurry about, seeking cover.</li>
+        <li>desc_sentence->Space is charged with an eerie power.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+</Defs>

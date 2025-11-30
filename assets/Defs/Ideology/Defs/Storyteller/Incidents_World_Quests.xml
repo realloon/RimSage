@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>GiveQuest_EndGame_ArchonexusVictory</defName>
+    <label>archonexus victory</label>
+    <letterLabel>archonexus victory</letterLabel>
+    <questScriptDef>EndGame_ArchonexusVictory</questScriptDef>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+  </IncidentDef>
+
+</Defs>

@@ -1,0 +1,77 @@
+<Defs> 
+  
+  <SoundDef>
+    <defName>BiosculpterPod_Enter</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/BiosculpterPod/Enter</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+        <distRange>10~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BiosculpterPod_Exit</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/BiosculpterPod/Exit</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+        <distRange>10~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BiosculpterPod_Start</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/BiosculpterPod/BiosculpterPod_Start</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+        <distRange>10~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BiosculpterPod_Operating</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/BiosculpterPod/BiosculpterPod_Run</clipPath>
+          </li>
+        </grains>
+        <volumeRange>37</volumeRange>
+        <distRange>10~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

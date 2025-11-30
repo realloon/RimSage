@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+
+  <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>AncientExostriderRemains</defName>
+    <label>ancient exostrider midsection</label>
+    <description>The remains of a massive, ancient exostrider war mechanoid. Long ago, some high-energy weapon shattered the body and fused the parts into an almost-solid mass.\n\nIn its guts, it looks like there is a still-functional transponder. If you could extract the transponder, you could decrypt it to gather valuable information.\n\nThe mech's incendiary weapon cells are intact but unstable, and will likely detonate after you do some damage.</description>
+    <thingClass>Building_AncientMechRemains</thingClass>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientExostrider/AncientExostriderMidsection</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <shadowData>
+        <volume>(1.9, 1, 1.9)</volume>
+        <offset>(-0.2,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(3,2)</size>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>6</ChunkSlagSteel>
+      <MechanoidTransponder>1</MechanoidTransponder>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>589</wickTicks> <!-- Enough time to get out of the way, for novice players who aren't looking when the wick starts -->
+        <explosiveRadius>5</explosiveRadius>
+        <explodeOnKilled>true</explodeOnKilled>
+        <startWickHitPointsPercent>0.166666</startWickHitPointsPercent><!-- ~500 hitpoints -->
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <postExplosionSpawnThingDef>Filth_Fuel</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <applyDamageToExplosionCellsNeighbors>false</applyDamageToExplosionCellsNeighbors>
+        <chanceToStartFire>1</chanceToStartFire>
+        <propagationSpeed>0.6</propagationSpeed>
+        <damageFalloff>false</damageFalloff>
+        <doVisualEffects>false</doVisualEffects>
+        <wickMessages>
+          <li>
+            <wickMessagekey>MessageAboutToExplode</wickMessagekey>
+            <messageType>ThreatBig</messageType>
+            <ticksLeft>589</ticksLeft>
+          </li>
+        </wickMessages>
+      </li>
+      <li Class="CompProperties_FireBurst" />
+      <li Class="CompProperties_ProximityLetter">
+        <radius>4</radius>
+        <letterDef>PositiveEvent</letterDef>
+        <letterLabel>Ancient mech</letterLabel>
+        <letterText>Passing near the remains of an ancient exostrider mechanoid, {PAWN_nameDef} noticed an (*Reward)intact transponder(/Reward) inside.\n\nIf you could get the transponder, you could read valuable information from it. The massive mech is smashed and fused into a solid piece. You must destroy it to retrieve the transponder.\n\nBe careful - the incendiary weapon cells look (*Threat)unstable(/Threat) and will likely detonate after you do some damage.</letterText>
+      </li>
+      <li Class="CompProperties_LeavingsLetter">
+        <letterLabel>Available: {LEAVINGS1_label}</letterLabel>
+        <letterText>A {LEAVINGS1_label} has been left behind after an explosion. It can be decrypted at a research bench.\n\nSelect a colonist and right-click it to decrypt it.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <leavingsFilter>
+          <thingDefs>
+            <li>MechanoidTransponder</li>
+          </thingDefs>
+        </leavingsFilter>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Contains an ancient mechanoid transponder.</inspectString>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+  <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>AncientExostriderHead</defName>
+    <label>ancient exostrider head</label>
+    <description>The remains of the head of a massive, ancient exostrider mechanoid. It was blasted by some kind of high-energy weapon.</description>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientExostrider/AncientExostriderHead</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1.1, 1, 1.1)</volume>
+        <offset>(-0.2,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(2,2)</size>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>1500</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+
+  <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>AncientExostriderLeg</defName>
+    <label>ancient exostrider leg</label>
+    <description>The remains of the leg of a massive, ancient exostrider mechanoid.</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientExostrider/AncientExostriderLeg</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <shadowData>
+        <volume>(1, 1, 0.4)</volume>
+        <offset>(-0.2,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(2,1)</size>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+
+  <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>AncientExostriderCannon</defName>
+    <label>ancient exostrider cannon</label>
+    <description>The remains of the back-mounted energy cannon of a massive, ancient exostrider mechanoid.</description>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientExostrider/AncientExostriderCannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <shadowData>
+        <volume>(1.9, 1, 0.9)</volume>
+        <offset>(-0.2,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(3,2)</size>
+    <fillPercent>0.5</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+    
+</Defs>

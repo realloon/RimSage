@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Waste rat -->
+
+  <ThingDef ParentName="RatThingBase">
+    <defName>WasteRat</defName>
+    <label>waste rat</label>
+    <devNote>squirrel-1</devNote>
+    <description>A toxin-adapted variant of the common rat. Waste rats have evolved to be pollution-resistant, as well as larger, tougher, and more aggressive than standard rats. Their bite infects their attacker with toxic buildup.</description>
+    <statBases>
+      <FilthRate>2</FilthRate>
+      <MinimumHandlingSkill>5</MinimumHandlingSkill>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+    </statBases>
+    <tools Inherit="False">
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3.6</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <chanceFactor>0.8</chanceFactor>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3.6</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <chanceFactor>0.8</chanceFactor>
+      </li>
+      <li>
+        <capacities>
+          <li>ToxicBite</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <baseBodySize>0.3</baseBodySize>
+      <lifeExpectancy>6</lifeExpectancy>
+      <manhunterOnTameFailChance>0.2</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0.5</manhunterOnDamageChance>
+      <trainability>Intermediate</trainability>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.22)</li>
+        <li>(0.08, 0, 0.04)</li>
+        <li>(0, 0, -0.23)</li>
+        <li>(-0.08, 0, 0.04)</li>
+      </headPosPerRotation>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="RatKindBase">
+    <defName>WasteRat</defName>
+    <label>waste rat</label>
+    <race>WasteRat</race>
+    <combatPower>40</combatPower>
+    <ecoSystemWeight>0.20</ecoSystemWeight>
+    <lifeStages Inherit="False">
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/WasteRat/WasteRat</texPath>
+          <drawSize>1</drawSize>
+          <shaderType>Cutout</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/WasteRat/Dessicated_WasteRat</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/WasteRat/WasteRat</texPath>
+          <drawSize>1.1</drawSize>
+          <shaderType>Cutout</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/WasteRat/Dessicated_WasteRat</texPath>
+          <drawSize>1.1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/WasteRat/WasteRat</texPath>
+          <drawSize>1.25</drawSize>
+          <shaderType>Cutout</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/WasteRat/Dessicated_WasteRat</texPath>
+          <drawSize>1.25</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <!-- Toxalope -->
+
+  <ThingDef ParentName="BoomalopeThingBase">
+    <defName>Toxalope</defName>
+    <label>toxalope</label>
+    <devNote>cow-1</devNote>
+    <description>A pollution-adapted cousin of the boomalope, the toxalope grows toxic pouches on its back. When it dies, the toxic material explodes and produces a deadly toxic cloud. Unlike the boomalope, the toxalope cannot be milked.</description>
+    <statBases>
+      <MeatAmount>140</MeatAmount>
+      <FilthRate>20</FilthRate>
+      <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+    </statBases>
+    <race>
+      <deathAction>
+        <workerClass>DeathActionWorker_ToxCloud</workerClass>
+      </deathAction>
+      <lifeExpectancy>10</lifeExpectancy>
+      <baseBodySize>1.4</baseBodySize>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.23)</li>
+        <li>(0.39, 0, -0.07)</li>
+        <li>(0.0, 0, -0.14)</li>
+        <li>(-0.39, 0, -0.07)</li>
+      </headPosPerRotation>
+    </race>
+    <comps Inherit="False" />
+    <tradeTags Inherit="False">
+      <li>AnimalFighter</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BoomalopeKindBase">
+    <defName>Toxalope</defName>
+    <label>toxalope</label>
+    <race>Toxalope</race>
+    <combatPower>80</combatPower>
+    <lifeStages Inherit="False">
+      <li>
+        <label>toxalope calf</label>
+        <labelPlural>toxalope calves</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Toxalope</texPath>
+          <drawSize>1.0</drawSize>
+          <shaderType>Cutout</shaderType>
+          <shadowData>
+            <volume>(0.4, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Dessicated_Toxalope</texPath>
+          <drawSize>1.0</drawSize>
+        </dessicatedBodyGraphicData>
+        <corpseGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Corpse_Toxalope</texPath>
+          <drawSize>1.0</drawSize>
+        </corpseGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Toxalope</texPath>
+          <drawSize>1.6</drawSize>
+          <shaderType>Cutout</shaderType>
+          <shadowData>
+            <volume>(0.6, 0.45, 0.45)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Dessicated_Toxalope</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+        <corpseGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Corpse_Toxalope</texPath>
+          <drawSize>1.5</drawSize>
+        </corpseGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Toxalope</texPath>
+          <drawSize>2.2</drawSize>
+          <shaderType>Cutout</shaderType>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Boomalope/Dessicated_Boomalope</texPath>
+          <drawSize>2.0</drawSize>
+        </dessicatedBodyGraphicData>
+        <corpseGraphicData>
+          <texPath>Things/Pawn/Animal/Toxalope/Corpse_Toxalope</texPath>
+          <drawSize>2.2</drawSize>
+        </corpseGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+
+  <ThingDef Name="SubcoreBase" ParentName="ResourceBase" Abstract="True">
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>10</stackLimit>
+    <graphicData>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>200</MarketValue>
+      <Mass>1</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="SubcoreBase">
+    <defName>SubcoreBasic</defName>
+    <label>basic subcore</label>
+    <description>The simplest possible mechanoid brain, this is a tiny psychodynamic substrate unit housing a dull subpersona. Since this is only a basic-tier subcore, it can only drive the simplest of mechanoids.\n\nLike all mechanoid subcores, it contains a subpersona with a psychic presence, albeit a very faint one.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/SubcoreBasic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techHediffsTags>
+      <li>SubcoreBasic</li>
+    </techHediffsTags>
+    <statBases>
+      <WorkToMake>3000</WorkToMake>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicMechtech</researchPrerequisite>
+      <workSpeedStat>SubcoreEncodingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>SubcoreEncoder</li>
+      </recipeUsers>
+      <mechanitorOnlyRecipe>true</mechanitorOnlyRecipe>
+      <unfinishedThingDef>UnfinishedSubcore</unfinishedThingDef>
+      <soundWorking>SubcoreEncoder_Working</soundWorking>
+    </recipeMaker>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="SubcoreBase">
+    <defName>SubcoreRegular</defName>
+    <label>standard subcore</label>
+    <description>A standard-tier mechanoid brain, this is a psychodynamic substrate unit supporting a thinking subpersona. This particular subcore is strong enough to drive standard-tier mechanoids.\n\nMechanoids are more than robots, and this is more than a silicon computer. Its thinking, psychically-present subpersona makes it more adaptable than silicon systems. However, this also means it can only be produced by analog pattern transfer from another thinking mind.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/SubcoreRegular</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>300</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="SubcoreBase">
+    <defName>SubcoreHigh</defName>
+    <label>high subcore</label>
+    <description>A high-tier mechanoid brain, this is a psychodynamic substrate unit which supports a sophisticated subpersona. This particular subcore is of the strongest tier, and can power complex ultra-heavy mechanoids.\n\nThe subpersona inside this core approaches a live human in its complexity, though it is of a very different nature. Like any such mind, it has a noticeable psychic presence.\n\nThis subcore could only have been produced by rich pattern transfer from another sophisticated mind. The only way to do this without huge facilities is to ripscan a living person's brain, killing them in the process.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/SubcoreHigh</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef Name="MechResourceBase" ParentName="ResourceBase" Abstract="True">
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>10</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>500</MarketValue>
+      <Mass>1</Mass>
+      <Flammability>0.25</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <isTechHediff>true</isTechHediff>
+  </ThingDef>
+
+  <ThingDef ParentName="MechResourceBase">
+    <defName>SignalChip</defName>
+    <label>signal chip</label>
+    <description>A mechanoid-band synchronization micro-organ. It is necessary to produce certain advanced types of mechanoids and equipment.\n\nA mechanitor can study this chip to help unlock higher tiers of mechtech research.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/SignalChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>92349061</analysisID>
+        <requiresMechanitor>true</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Signal chip studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the signal chip, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the signal chip.</activateDescString>
+        <jobString>Analyze signal chip</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MechResourceBase">
+    <defName>PowerfocusChip</defName>
+    <label>powerfocus chip</label>
+    <description>An energy-focusing mechanoid micro-organ. It is necessary to produce certain advanced types of mechanoids and equipment.\n\nA mechanitor can study this chip to help unlock higher tiers of mechtech research.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/PowerfocusChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>652343245</analysisID>
+        <requiresMechanitor>true</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Powerfocus chip studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the powerfocus chip, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the powerfocus chip.</activateDescString>
+        <jobString>Analyze powerfocus chip</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MechResourceBase">
+    <defName>NanostructuringChip</defName>
+    <label>nano structuring chip</label>
+    <description>A molecular-restructing mechanoid micro-organ. It is necessary to produce certain advanced mechanoids and equipment.\n\nA mechanitor can study this chip to help unlock higher tiers of mechtech research.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/NanostructuringChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>123417683</analysisID>
+        <requiresMechanitor>true</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Nano structuring chip studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the nano structuring chip, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the nano structuring chip.</activateDescString>
+        <jobString>Analyze nano structuring chip</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DeathrestCapacitySerum</defName>
+    <label>deathrest capacity serum</label>
+    <description>A serum that permanently increases the number of deathrest buildings a person can connect to during deathrest.\n\nThe serum can only be ingested by individuals with the deathrest gene.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DeathrestCasket</ThingDef>
+      <ThingDef>DeathrestAccelerator</ThingDef>
+      <ThingDef>Hemopump</ThingDef>
+      <ThingDef>HemogenAmplifier</ThingDef>
+      <ThingDef>GlucosoidPump</ThingDef>
+      <ThingDef>PsychofluidPump</ThingDef>
+    </descriptionHyperlinks>
+    <stackLimit>10</stackLimit>
+    <graphicData>
+      <texPath>Things/Item/Resource/DeathrestCapacitySerum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>1000</MarketValue>
+      <DeteriorationRate>5</DeteriorationRate>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Drugs</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Ingest {0_label}</useLabel>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <li Class="CompProperties_UseEffectOffsetDeathrestCapacity">
+        <offset>1</offset>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>DeathrestCapacitySerum_Consume</soundOnUsed>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Wastepack</defName>
+    <label>toxic wastepack</label>
+    <description>A compacted package of toxic waste that will slowly dissolve if not frozen. The surface is heat-sealed for safe transport. Wastepacks will pollute the surrounding terrain if they dissolve, deteriorate, or are otherwise destroyed.\n\nToxic wastepacks are flammable. If burned or damaged, they will release tox gas.</description>
+    <possessionCount>5</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/Wastepack</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>5</stackLimit>
+    <preventGravshipLandingOn>true</preventGravshipLandingOn>
+    <statBases>
+      <Beauty>-40</Beauty>
+      <MarketValue>0</MarketValue>
+      <Mass>6</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>4</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_GasOnDamage">
+        <type>ToxGas</type>
+        <damageFactor>6</damageFactor>
+        <useStackCountAsFactor>true</useStackCountAsFactor>
+      </li>
+      <li Class="CompProperties_Dissolution">
+        <dissolutionAfterDays>8</dissolutionAfterDays>
+        <dissolutinFactorIndoors>0.5</dissolutinFactorIndoors>
+        <dissolutionFactorRain>2</dissolutionFactorRain>
+      </li>
+      <li Class="CompProperties_DissolutionEffectPollution">
+        <cellsToPollutePerDissolution>6</cellsToPollutePerDissolution>
+        <tilePollutionPerDissolution>0.0005</tilePollutionPerDissolution><!-- 2000 wastepacks fill a tile -->
+        <waterTilePollutionFactor>8</waterTilePollutionFactor>
+      </li>
+      <li>
+        <compClass>CompDissolutionEffect_Goodwill</compClass>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+  <ThingDef ParentName="MakeableShellBase">
+    <defName>Shell_Toxic</defName>
+    <label>tox shell</label>
+    <description>An artillery shell containing reagents that, when combined, generate deadly tox gas. When fired, it will stick into the ground and release tox gas for some time before expiring.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup that can be lethal.</description>
+    <possessionCount>2</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/Shell_Toxic</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>10</Steel>
+      <Chemfuel>10</Chemfuel>
+    </costList>
+    <costListForDifficulty>
+      <difficultyVar>classicMortars</difficultyVar>
+      <costList>
+        <Steel>15</Steel>
+        <Chemfuel>15</Chemfuel>
+      </costList>
+    </costListForDifficulty>
+    <recipeMaker>
+      <researchPrerequisite>ToxGas</researchPrerequisite>
+      <displayPriority>120</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>ToxGas</explosiveDamageType>
+        <explosiveRadius>4</explosiveRadius>
+        <postExplosionGasType>ToxGas</postExplosionGasType>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>Bullet_Shell_Tox</projectileWhenLoaded>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Shell_Tox</defName>
+    <label>tox shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellTox</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>ToxGas</damageDef>
+      <speed>41</speed>
+      <explosionRadius>0.1</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>ToxicShellLanded</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <postExplosionSpawnThingDef>Shell_Toxic_Releasing</postExplosionSpawnThingDef>
+      <postExplosionSpawnThingDefWater>Shell_Toxic_Releasing_Water</postExplosionSpawnThingDefWater>
+    </projectile>
+  </ThingDef>
+  <ThingDef Name="Shell_Toxic_Releasing_Base" Abstract="True">
+    <label>tox shell</label>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>ThingWithComps</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <comps>
+      <li Class="CompProperties_ReleaseGas">
+        <gasType>ToxGas</gasType>
+        <cellsToFill>20</cellsToFill>
+        <durationSeconds>10</durationSeconds>
+        <effecterReleasing>ToxGasReleasing</effecterReleasing>
+      </li>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>30000</delayTicks><!-- 1/2 day -->
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="Shell_Toxic_Releasing_Base">
+    <defName>Shell_Toxic_Releasing</defName>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/ToxLanded</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="Shell_Toxic_Releasing_Base">
+    <defName>Shell_Toxic_Releasing_Water</defName>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/ToxLanded_Water</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

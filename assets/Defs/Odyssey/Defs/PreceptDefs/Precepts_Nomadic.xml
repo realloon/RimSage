@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef>
+    <defName>Nomadic</defName>
+    <label>nomadic</label>
+    <iconPath>UI/Issues/Nomadic</iconPath>
+  </IssueDef>
+  
+  <!-- Precepts -->
+  
+  <PreceptDef>
+    <defName>Nomadic_Preferred</defName>
+    <issue>Nomadic</issue>
+    <label>desired</label>
+    <description>Staying in one place makes us weak. Travel makes us strong.</description>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ResettledRecently</thought>
+        <description>Last resettled {DURATION} ago</description>
+        <thoughtStageDescriptions>
+          <li>Just resettled</li>
+          <li>Resettled recently</li>
+          <li>Need to move soon</li>
+          <li>Must move soon</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+    <statOffsets>
+      <CaravanBonusSpeedFactor>0.3</CaravanBonusSpeedFactor>
+    </statOffsets>
+  </PreceptDef>
+  
+  <!-- Thoughts -->
+  
+  <ThoughtDef>
+    <defName>ResettledRecently</defName>
+    <workerClass>ThoughtWorker_Precept_ResettledRecently</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>new location</label>
+        <description>It's great to be somewhere new.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>new location</label>
+        <description>It's good to be somewhere new.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>want new location</label>
+        <description>We've been here long enough. Let's move somewhere new.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>want new location</label>
+        <description>We've been here too long. We need to move as soon as possible.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
+

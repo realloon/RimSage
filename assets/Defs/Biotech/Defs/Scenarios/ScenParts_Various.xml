@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ScenPartDef>
+    <defName>StartingMech</defName>
+    <label>start with mechanoid</label>
+    <scenPartClass>ScenPart_StartingMech</scenPartClass>
+    <category>StartingImportant</category>
+    <selectionWeight>0</selectionWeight>
+    <summaryPriority>100</summaryPriority>
+  </ScenPartDef>
+
+  <ScenPartDef>
+    <defName>ConfigurePawnsKindDefs</defName>
+    <label>starting people</label>
+    <scenPartClass>ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs</scenPartClass>
+    <selectionWeight>0</selectionWeight>
+    <pageClass>Page_ConfigureStartingPawns</pageClass>
+    <summaryPriority>500</summaryPriority>
+    <category>Fixed</category>
+  </ScenPartDef>
+
+  <ScenPartDef>
+    <defName>ConfigurePawnsXenotypes</defName>
+    <label>starting people</label>
+    <scenPartClass>ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes</scenPartClass>
+    <selectionWeight>0</selectionWeight>
+    <pageClass>Page_ConfigureStartingPawns</pageClass>
+    <summaryPriority>500</summaryPriority>
+    <category>Fixed</category>
+  </ScenPartDef>
+
+  <ScenPartDef>
+    <defName>DisableExostriderRemains</defName>
+    <label>disable exostrider remains</label>
+    <scenPartClass>ScenPart_DisableMapGen</scenPartClass>
+    <genStep>AncientExostriderRemains</genStep>
+    <category>Rule</category>
+    <selectionWeight>0</selectionWeight>
+    <summaryPriority>500</summaryPriority>
+    <maxUses>1</maxUses>
+  </ScenPartDef>
+
+</Defs>

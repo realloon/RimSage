@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <LifeStageDef Name="EntityFullyFormed">
+    <defName>EntityFullyFormed</defName>
+    <label>fully-formed</label>
+    <visible>false</visible>
+  </LifeStageDef>
+
+  <LifeStageDef ParentName="EntityFullyFormed">
+    <defName>FullyFormed_Toughspike</defName>
+    <bodyDrawOffset>(0, 0, 0.25)</bodyDrawOffset>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>MetalhorrorLarva</defName>
+    <label>larva</label> 
+    <bodySizeFactor>0.5</bodySizeFactor>
+    <attachPointScaleFactor>.5</attachPointScaleFactor>
+    <healthScaleFactor>0.2</healthScaleFactor>
+    <meleeDamageFactor>0.4</meleeDamageFactor>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>MetalhorrorJuvenile</defName>
+    <label>juvenile</label> 
+    <bodySizeFactor>0.8</bodySizeFactor>
+    <attachPointScaleFactor>.7</attachPointScaleFactor>
+    <healthScaleFactor>0.7</healthScaleFactor>
+    <meleeDamageFactor>0.75</meleeDamageFactor>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>MetalhorrorMature</defName>
+    <label>mature</label>
+    <bodySizeFactor>1.1</bodySizeFactor>
+  </LifeStageDef>
+  
+
+</Defs>

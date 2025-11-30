@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+  <ThingDef ParentName="SculptureBase">
+    <defName>SculptureTerror</defName>
+    <label>terror sculpture</label>
+    <description>A person-sized piece of material sculpted into a threatening form. Slaves who spend time around it will feel terror, which makes them stay suppressed for longer and thus reduces slave rebellions.</description>
+    <castEdgeShadows>true</castEdgeShadows>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/Art/SculptureTerror</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <uiIconScale>0.66</uiIconScale>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>7</Mass>
+      <Beauty>-5</Beauty>
+      <WorkToMake>30000</WorkToMake>
+      <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">0</TerrorSource>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>PawnLend</defName>
+    <rootSelectionWeight>1</rootSelectionWeight>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[worker] Outsourcing</li>
+        <li>questName->Contract [worker]s</li>
+        <li>questName->Temporary Workers</li>
+        <li>questName->[worker] Lending</li>
+        <li>questName->[worker]s for [asker_faction_name]</li>
+        <li>questName->Provisional [worker]s</li>
+        <li>questName->Requesting [worker]s</li>
+
+        <li>worker->Colonist</li>
+        <li>worker->Worker</li>
+        <li>worker->Laborer</li>
+        <li>worker->Helper</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+
+        <!-- Asker is faction leader -->
+        <li>questDescription(asker_factionLeader==True)->[asker_faction_leaderTitle] [asker_nameFull] of [asker_faction_name] needs extra hands to help [dutyDescription].\n\n[asker_pronoun] is asking you to lend [asker_objective] [colonistCountToLend] for [lendForDays] days.\n\n[willSendShuttle]</li>
+
+        <li>disease->flu</li>
+        <li>disease->plague</li>
+        <li>disease->malaria</li>
+        <li>disease->infection</li>
+
+        <!-- Asker is royal -->
+        <li>questDescription(asker_royalInCurrentFaction==True)->[asker_royalTitleInCurrentFaction] [asker_nameFull] of [asker_faction_name] needs people to help [dutyRoyalDescription].\n\n[asker_pronoun] is asking you to lend [colonistCountToLend] to serve [asker_objective] for [lendForDays] days.\n\n[willSendShuttle]</li>
+
+        <li>colonistCountToLend(colonistsToLendCount==1)->1 colonist[minAgeOrOlder]</li>
+        <li>colonistCountToLend(colonistsToLendCount>1)->[colonistsToLendCount] colonists[minAgeOrOlder]</li>
+
+        <li>willSendShuttle->[asker_pronoun] will send a shuttle to pick up the [colonists].</li>
+        <li>colonists(colonistsToLendCount==1)->colonist</li>
+        <li>colonists(colonistsToLendCount>1)->colonists</li>
+        <li>minAgeOrOlder(minAge==0)-></li>
+        <li>minAgeOrOlder(minAge>0)-> [minAge] years old or older</li>
+
+        <li>pawnListHaveConjugation(colonistsToLendCount==1)->has</li>
+        <li>pawnListHaveConjugation(colonistsToLendCount>1)->have</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <!-- Calculate colonist count to lend -->
+        <li Class="QuestNode_GetRandomInRangeForChallengeRating">
+          <storeAs>colonyPercentageToLend</storeAs>
+          <oneStarRange>0.0~0.35</oneStarRange>
+          <twoStarRange>0.36~0.6</twoStarRange>
+          <threeStarRange>0.61~0.75</threeStarRange>
+        </li>
+
+        <li Class="QuestNode_ExpansionActive">
+          <modID>Ludeon.RimWorld.Biotech</modID>
+          <node Class="QuestNode_Set">
+            <name>minAge</name>
+            <value>13</value>
+          </node>
+          <elseNode Class="QuestNode_Set">
+            <name>minAge</name>
+            <value>0</value>
+          </elseNode>
+        </li>
+
+        <li Class="QuestNode_GetColonistCountFromColonyPercentage">
+          <storeAs>colonistsToLendCount</storeAs>
+          <colonyPercentage>$colonyPercentageToLend</colonyPercentage>
+          <mustHaveFreeColonistsAvailableCount>2</mustHaveFreeColonistsAvailableCount>
+          <minAge>$minAge</minAge>
+        </li>
+
+        <li Class="QuestNode_GetMap">
+          <preferMapWithMinFreeColonists>$colonistsToLendCount</preferMapWithMinFreeColonists>
+        </li>
+
+        <!-- End if map removed before the quest is accepted -->
+        <li Class="QuestNode_End">
+          <inSignal>map.MapRemoved</inSignal>
+          <outcome>Fail</outcome>
+          <signalListenMode>NotYetAcceptedOnly</signalListenMode>
+        </li>
+
+        <!-- Get asker and assign some related text
+             There are two cases: Any and royal-only.
+             Each one decides the dutyDescription and dutyRoyalDescriptions so we can use the same text in several letters -->
+        <li Class="QuestNode_RandomNode">
+          <nodes>
+            <li Class="QuestNode_Sequence">
+              <selectionWeight>0.5</selectionWeight>
+              <nodes>
+                <li Class="QuestNode_GetPawn"> <!-- Any faction leader; can be royal too -->
+                  <storeAs>asker</storeAs>
+                  <mustBeFactionLeader>true</mustBeFactionLeader>
+                  <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+                  <minTechLevel>Industrial</minTechLevel>
+                  <hostileWeight>0.15</hostileWeight>
+                </li>
+                <li Class="QuestNode_ResolveTextNow">
+                  <root>dutyDescription</root>
+                  <storeAs>dutyDescription</storeAs>
+                  <rules TKey="DutyRulesAny">
+                    <rulesStrings>
+                      <li>dutyDescription->gather the harvest</li>
+                      <li>dutyDescription->fortify a settlement</li>
+                      <li>dutyDescription->set up a settlement</li>
+                      <li>dutyDescription->watch for raiders</li>
+                      <li>dutyDescription->set up a hospital</li>
+                      <li>dutyDescription->contain an outbreak of [disease]</li>
+                    </rulesStrings>
+                  </rules>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>returnLetterText</name>
+                  <value TKey="LetterTextReturnAfterHelping">{PAWNS} [pawnListHaveConjugation] returned after helping [asker_nameFull] of [asker_faction_name] to [dutyDescription].</value>
+                </li>
+              </nodes>
+            </li>
+            <li Class="QuestNode_Sequence">
+              <selectionWeight>0.5</selectionWeight>
+              <nodes>
+                <li Class="QuestNode_GetPawn"> <!-- Royals; need not be a faction leader -->
+                  <storeAs>asker</storeAs>
+                  <canGeneratePawn>true</canGeneratePawn>
+                  <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+                  <mustHaveRoyalTitleInCurrentFaction>true</mustHaveRoyalTitleInCurrentFaction>
+                  <seniorityRange>250~850</seniorityRange> <!-- Knight to consul inclusive -->
+                  <minTechLevel>Industrial</minTechLevel>
+                  <hostileWeight>0.15</hostileWeight>
+                </li>
+                <li Class="QuestNode_ResolveTextNow">
+                  <root>dutyRoyalDescription</root>
+                  <storeAs>dutyRoyalDescription</storeAs>
+                  <rules TKey="DutyRulesRoyal">
+                    <rulesStrings>
+                      <li>dutyRoyalDescription->prepare a ceremony</li>
+                      <li>dutyRoyalDescription->negotiate with a tribe</li>
+                      <li>dutyRoyalDescription->explore a swamp</li>
+                      <li>dutyRoyalDescription->translate a book</li>
+                      <li>dutyRoyalDescription->set up a training ground</li>
+                      <li>dutyRoyalDescription->harvest crops</li>
+                    </rulesStrings>
+                  </rules>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>returnLetterText</name>
+                  <value TKey="LetterTextReturnAfterRoyalCourt">{PAWNS} [pawnListHaveConjugation] returned after helping [asker_royalTitleInCurrentFaction] [asker_nameFull] of [asker_faction_name] to [dutyRoyalDescription].</value>
+                </li>
+              </nodes>
+            </li>
+          </nodes>
+        </li>
+
+        <!-- Calculate days to lend colonists for -->
+        <li Class="QuestNode_GetRandomInRangeForChallengeRating">
+          <storeAs>lendForDays</storeAs>
+          <oneStarRange>5~10</oneStarRange>
+          <twoStarRange>10~20</twoStarRange>
+          <threeStarRange>20~30</threeStarRange>
+          <roundRandom>true</roundRandom>
+        </li>
+
+        <!-- Calculate reward from colonistsToLendCount * lendForDays -->
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$($colonistsToLendCount*$lendForDays)</value>
+          <storeAs>rewardValue</storeAs>
+          <curve>
+            <points>
+              <li>5, 500</li>
+              <li>50, 1500</li>
+              <li>200, 4000</li>
+            </points>
+          </curve>
+        </li>
+
+        <!-- Shuttle -->
+        <li Class="QuestNode_ShuttleDelay">
+          <delayTicks>3500</delayTicks>
+            <node Class="QuestNode_Sequence">
+              <nodes>
+                <li Class="QuestNode_SubScript">
+                  <def>Util_TransportShip_Pickup</def>
+                  <parms>
+                    <leaveDelayTicks>60000</leaveDelayTicks>
+                    <leaveImmediatelyWhenSatisfied>true</leaveImmediatelyWhenSatisfied>
+                    <acceptColonists>true</acceptColonists>
+                    <acceptChildren>false</acceptChildren>
+                    <onlyAcceptColonists>true</onlyAcceptColonists>
+                    <onlyAcceptHealthy>true</onlyAcceptHealthy>
+                    <requireColonistCount>$colonistsToLendCount</requireColonistCount>
+                    <minAge>$minAge</minAge>
+                  </parms>
+                </li>
+
+                <li Class="QuestNode_Letter">
+                  <label TKey="LetterLabelShuttleArrived">Shuttle arrived</label>
+                  <text TKey="LetterTextShuttleArrived">The shuttle has arrived to collect [colonistsToLendCount] of your colonists.</text>
+                  <lookTargets>$pickupShipThing</lookTargets>
+                </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- Shuttle destroyed -->
+        <li Class="QuestNode_Signal">
+          <inSignal>pickupShipThing.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelShuttleDestroyed">Shuttle destroyed</label>
+                <text TKey="LetterTextShuttleDestroyed">The shuttle sent to collect colonists has been destroyed.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- Shuttle abandoned -->
+        <li Class="QuestNode_Signal">
+          <inSignal>pickupShipThing.LeftBehind</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelShuttleDestroyed">Shuttle abandoned</label>
+                <text TKey="LetterTextShuttleDestroyed">The shuttle sent to collect colonists has been left behind.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- Shuttle sent away -->
+        <li Class="QuestNode_Signal">
+          <inSignal>pickupShipThing.SentSatisfied</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_LendColonistsToFaction">
+                <shuttle>$pickupShipThing</shuttle>
+                <lendColonistsToFactionOf>$asker</lendColonistsToFactionOf>
+                <returnLentColonistsInTicks>$($lendForDays*60000)</returnLentColonistsInTicks>
+                <outSignalComplete>ColonistsReturned</outSignalComplete>
+                <outSignalColonistsDied>ColonistsDied</outSignalColonistsDied>
+              </li>
+              <li Class="QuestNode_Delay">
+                <delayTicks>$(randInt(300,600))</delayTicks>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_GiveRewards">
+                      <parms>
+                        <allowGoodwill>true</allowGoodwill>
+                        <allowRoyalFavor>true</allowRoyalFavor>
+                      </parms>
+                    </li>
+                  </nodes>
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>ColonistsReturned</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelColonistsReturned">Colonists returned</label>
+                <text>$returnLetterText</text>
+                <letterDef>PositiveEvent</letterDef>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+            
+        <li Class="QuestNode_Signal">
+          <inSignal>ColonistsDied</inSignal>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+        
+        <li Class="QuestNode_Signal">
+          <inSignal>pickupShipThing.SentUnsatisfied</inSignal>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+          </node>
+        </li>
+        
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  
+</Defs>

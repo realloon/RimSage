@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>LavaEmergence</defName>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>LavaEmergence</thingClass>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>LavaEmergenceImmediate</defName>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>LavaEmergenceImmediate</thingClass>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>SeasonalFlood</defName>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>SeasonalFlood</thingClass>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>TorrentialRainFlood</defName>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>TorrentialRainFlood</thingClass>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>InsectAmbush</defName>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <thingClass>InsectAmbush</thingClass>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>GravshipLandingMarker</defName>
+    <label>gravship landing zone</label>
+    <description>An outline showing where your gravship will land.</description>
+    <thingClass>GravshipLandingMarker</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <hasCustomRectForSelector>true</hasCustomRectForSelector>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+  </ThingDef>
+
+</Defs>

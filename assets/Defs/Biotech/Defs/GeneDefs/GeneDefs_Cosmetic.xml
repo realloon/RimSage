@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Hair restrictions -->
+
+  <GeneDef Name="GeneHairStyleBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <displayCategory>Cosmetic</displayCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <exclusionTags>
+      <li>HairStyle</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairStyleBase">
+    <defName>Hair_BaldOnly</defName>
+    <label>no hair</label>
+    <labelShortAdj>bald</labelShortAdj>
+    <description>Carriers of this gene grow no hair on the head.</description>
+    <iconPath>UI/Icons/Genes/Gene_HairStyleBaldOnly</iconPath>
+    <displayOrderInCategory>50</displayOrderInCategory>
+    <hairTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>Bald</li>
+      </tags>
+    </hairTagFilter>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>bald</symbol></li>
+        <li><symbol>chrome</symbol></li>
+        <li><symbol>dome</symbol></li>
+        <li><symbol>smooth</symbol></li>
+        <li><symbol>bare</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>dome</symbol></li>
+        <li><symbol>smooth</symbol></li>
+        <li><symbol>bare</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairStyleBase">
+    <defName>Hair_ShortOnly</defName>
+    <label>short-haired</label>
+    <labelShortAdj>crop</labelShortAdj>
+    <description>Carriers of this gene can only grow short hair.</description>
+    <iconPath>UI/Icons/Genes/Gene_HairStyleShortOnly</iconPath>
+    <displayOrderInCategory>55</displayOrderInCategory>
+    <hairTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>HairShort</li>
+      </tags>
+    </hairTagFilter>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>crop</symbol></li>
+        <li><symbol>fuzz</symbol></li>
+        <li><symbol>stub</symbol></li>
+        <li><symbol>patch</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>crop</symbol></li>
+        <li><symbol>fuzz</symbol></li>
+        <li><symbol>stub</symbol></li>
+        <li><symbol>patch</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairStyleBase">
+    <defName>Hair_LongOnly</defName>
+    <label>long-haired</label>
+    <description>Carriers of this gene grow hair on the head very quickly.</description>
+    <iconPath>UI/Icons/Genes/Gene_HairStyleLongOnly</iconPath>
+    <displayOrderInCategory>57</displayOrderInCategory>
+    <hairTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>HairLong</li>
+      </tags>
+    </hairTagFilter>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>Hair_Grayless</defName>
+    <label>grayless hair</label>
+    <description>Carriers of this gene keep their natural hair color as they age.</description>
+    <customEffectDescriptions>
+      <li>No age-related gray hair.</li>
+    </customEffectDescriptions>
+    <iconPath>UI/Icons/Genes/Gene_GreylessHair</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>195</displayOrderInCategory>
+    <neverGrayHair>true</neverGrayHair>
+  </GeneDef>
+
+  <!-- Beard restrictions -->
+
+  <GeneDef Name="GeneBeardStyleBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <displayCategory>Cosmetic</displayCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <exclusionTags>
+      <li>BeardStyle</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBeardStyleBase">
+    <defName>Beard_BushyOnly</defName>
+    <label>only bushy beards</label>
+    <labelShortAdj>bushy</labelShortAdj>
+    <description>Male carriers of this gene experience rapid beard growth and are uncomfortable cutting their beards.</description>
+    <iconPath>UI/Icons/Genes/Gene_BeardStyleBushyOnly</iconPath>
+    <displayOrderInCategory>60</displayOrderInCategory>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>BeardBushy</li>
+      </tags>
+    </beardTagFilter>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>beard</symbol></li>
+        <li><symbol>bush</symbol></li>
+        <li><symbol>lumber</symbol></li>
+        <li><symbol>bristle</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>beard</symbol></li>
+        <li><symbol>bush</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBeardStyleBase">
+    <defName>Beard_NoBeardOnly</defName>
+    <label>beardless</label>
+    <labelShortAdj>beardless</labelShortAdj>
+    <description>Carriers of this gene grow no facial hair.</description>
+    <iconPath>UI/Icons/Genes/Gene_BeardStyleNone</iconPath>
+    <displayOrderInCategory>65</displayOrderInCategory>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>NoBeard</li>
+      </tags>
+    </beardTagFilter>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>smoothchin</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>smooth</symbol></li>
+        <li><symbol>bare</symbol></li>
+        <li><symbol>clean</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>chin</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBeardStyleBase">
+    <defName>Beard_Always</defName>
+    <label>unisex beards</label>
+    <labelShortAdj>bearded</labelShortAdj>
+    <description>Carriers of this gene always have thick facial hair, even women.</description>
+    <iconPath>UI/Icons/Genes/Gene_UnisexBeards</iconPath>
+    <displayOrderInCategory>66</displayOrderInCategory>
+    <womenCanHaveBeards>true</womenCanHaveBeards>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>BeardLong</li>
+        <li>Furskin</li>
+      </tags>
+    </beardTagFilter>
+  </GeneDef>
+
+  <!-- ============= Skin color overrides ============== --> 
+
+  <GeneDef Name="GeneSkinColorOverride" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <displayCategory>Cosmetic_Skin</displayCategory>
+    <iconPath>UI/Icons/Genes/Gene_SkinColorOverride</iconPath>
+    <exclusionTags>
+      <li>SkinColorOverride</li>
+    </exclusionTags>
+    <randomBrightnessFactor>0.18</randomBrightnessFactor>
+  </GeneDef>
+
+  <!-- Skin - exotic monochrome -->
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_InkBlack</defName>
+    <label>ink black skin</label>
+    <labelShortAdj>noir</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a pale black color almost as dark as ink.</description>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+    <skinColorOverride>(55, 55, 55)</skinColorOverride>
+    <displayOrderInCategory>99</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>ink</symbol></li>
+        <li><symbol>dark</symbol></li>
+        <li><symbol>coal</symbol></li>
+        <li><symbol>pitch</symbol></li>
+        <li><symbol>shadow</symbol></li>
+        <li><symbol>raven</symbol></li>
+        <li><symbol>jet</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>shadow</symbol></li>
+        <li><symbol>raven</symbol></li>
+        <li><symbol>jet</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_SlateGray</defName>
+    <label>slate gray skin</label>
+    <labelShortAdj>slate</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin slate gray.</description>
+    <skinColorOverride>(90, 90, 90)</skinColorOverride>
+    <displayOrderInCategory>97</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>gray</symbol></li>
+        <li><symbol>slate</symbol></li>
+        <li><symbol>fog</symbol></li>
+        <li><symbol>gloom</symbol></li>
+        <li><symbol>smoke</symbol></li>
+        <li><symbol>grim</symbol></li>
+        <li><symbol>murk</symbol></li>
+        <li><symbol>mist</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>wisp</symbol></li>
+        <li><symbol>ghost</symbol></li>
+        <li><symbol>murk</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_LightGray</defName>
+    <label>light gray skin</label>
+    <labelShortAdj>gray</labelShortAdj>
+    <description>Carriers of this produce a light-gray pigment in their skin.</description>
+    <skinColorOverride>(200, 200, 200)</skinColorOverride>
+    <displayOrderInCategory>95</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>gray</symbol></li>
+        <li><symbol>pale</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_SheerWhite</defName>
+    <label>sheer white skin</label>
+    <labelShortAdj>pale</labelShortAdj>
+    <description>Carriers of this gene have sheer white skin, unlike natural skin tones, due to a special engineered reflective cell covering.</description>
+    <skinColorOverride>(250, 240, 240)</skinColorOverride>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+    <displayOrderInCategory>93</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>white</symbol></li>
+        <li><symbol>pale</symbol></li>
+        <li><symbol>snow</symbol></li>
+        <li><symbol>glow</symbol></li>
+        <li><symbol>shine</symbol></li>
+        <li><symbol>ala</symbol></li>
+        <li><symbol>bleach</symbol></li>
+        <li><symbol>pearl</symbol></li>
+        <li><symbol>frost</symbol></li>
+        <li><symbol>ice</symbol></li>
+        <li><symbol>milk</symbol></li>
+        <li><symbol>chalk</symbol></li>
+        <li><symbol>salt</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>ghost</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+ <!-- Skin - blue-purples -->
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_Blue</defName>
+    <label>blue skin</label>
+    <labelShortAdj>blue</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a blue color.</description>
+    <skinColorOverride>(100, 165, 193)</skinColorOverride>
+    <displayOrderInCategory>88</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>blue</symbol></li>
+        <li><symbol>ice</symbol></li>
+        <li><symbol>sky</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_Purple</defName>
+    <label>purple skin</label>
+    <labelShortAdj>purple</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that gives their skin a purple color.</description>
+    <skinColorOverride>(97, 87, 195)</skinColorOverride>
+    <displayOrderInCategory>85</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>grape</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <!-- Skin - exotic reds -->
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_PaleRed</defName>
+    <label>pale red skin</label>
+    <labelShortAdj>pink</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a moderate red color.</description>
+    <skinColorOverride>(222, 106, 106)</skinColorOverride>
+    <displayOrderInCategory>78</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>pink</symbol></li>
+        <li><symbol>red</symbol></li>
+        <li><symbol>rose</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_DeepRed</defName>
+    <label>deep red skin</label>
+    <labelShortAdj>red</labelShortAdj>
+    <description>Carriers of this gene produce a deep-red pigment that gives their skin an almost bloody appearance.</description>
+    <skinColorOverride>(150, 62, 62)</skinColorOverride>
+    <displayOrderInCategory>75</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>red</symbol></li>
+        <li><symbol>crim</symbol></li>
+        <li><symbol>fire</symbol></li>
+        <li><symbol>rose</symbol></li>
+        <li><symbol>wine</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <!-- Skin - exotic yellows -->
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_PaleYellow</defName>
+    <label>pale yellow skin</label>
+    <labelShortAdj>cream</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a grayish yellow color.</description>
+    <skinColorOverride>(193, 165, 99)</skinColorOverride>
+    <displayOrderInCategory>68</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>yellow</symbol></li>
+        <li><symbol>banana</symbol></li>
+        <li><symbol>cream</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>banana</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_DeepYellow</defName>
+    <label>deep yellow skin</label>
+    <labelShortAdj>yellow</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that gives their skin a deep yellow color.</description>
+    <skinColorOverride>(204, 199, 65)</skinColorOverride>
+    <displayOrderInCategory>65</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>yellow</symbol></li>
+        <li><symbol>lemon</symbol></li>
+        <li><symbol>gold</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <!-- Skin - misc -->
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_Orange</defName>
+    <label>orange skin</label>
+    <labelShortAdj>orange</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that gives their skin an orange color.</description>
+    <skinColorOverride>(210, 114, 63)</skinColorOverride>
+    <displayOrderInCategory>69</displayOrderInCategory>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>orange</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_Green</defName>
+    <label>green skin</label>
+    <labelShortAdj>green</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that gives their skin a green color.</description>
+    <skinColorOverride>(169,182,108)</skinColorOverride>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>greenskin</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>green</symbol></li>
+        <li><symbol>lime</symbol></li>
+        <li><symbol>jade</symbol></li>
+        <li><symbol>leaf</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <!-- Fur -->
+
+  <GeneDef>
+    <defName>Furskin</defName>
+    <label>furskin</label>
+    <labelShortAdj>furskinned</labelShortAdj>
+    <description>Carriers of this gene grow thick fur all over their body, which protects them from cold temperatures.</description>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>400</displayOrderInCategory>
+    <iconPath>UI/Icons/Genes/Gene_Furskin</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <forcedHeadTypes>
+      <li>Furskin_Average1</li>
+      <li>Furskin_Average2</li>
+      <li>Furskin_Average3</li>
+      <li>Furskin_Narrow1</li>
+      <li>Furskin_Narrow2</li>
+      <li>Furskin_Narrow3</li>
+      <li>Furskin_Heavy1</li>
+      <li>Furskin_Heavy2</li>
+      <li>Furskin_Heavy3</li>
+      <li>Furskin_Gaunt</li>
+    </forcedHeadTypes>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>BeardLong</li>
+        <li>Furskin</li>
+      </tags>
+    </beardTagFilter>
+    <exclusionTags>
+      <li>HairStyle</li>
+      <li>Fur</li>
+      <li>BeardStyle</li>
+    </exclusionTags>
+    <statOffsets>
+      <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+    </statOffsets>
+    <missingGeneRomanceChanceFactor>0.2</missingGeneRomanceChanceFactor>
+    <fur>Furskin</fur>
+    <skinIsHairColor>true</skinIsHairColor>
+    <tattoosVisible>false</tattoosVisible>
+    <renderNodeProperties>
+      <li>
+        <debugLabel>Fur</debugLabel>
+        <nodeClass>PawnRenderNode_Fur</nodeClass>
+        <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+        <baseLayer>5</baseLayer>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <colorType>Hair</colorType>
+        <parentTagDef>Body</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!-- Eyes -->
+
+  <GeneDef Name="GeneEyeColor" Abstract="True">
+    <displayCategory>Cosmetic</displayCategory>
+    <biostatCpx>0</biostatCpx>
+    <exclusionTags>
+      <li>EyeColor</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEyeColor">
+    <defName>Eyes_Red</defName>
+    <label>red eyes</label>
+    <labelShortAdj>red-eyed</labelShortAdj>
+    <description>Carriers of this gene have deeply red-pigmented eyes.</description>
+    <iconPath>UI/Icons/Genes/Gene_RedEyes</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Male/RedEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Female/RedEyes_Female</texPathFemale>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Male/RedEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Female/RedEyes_Female</texPathFemale>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEyeColor">
+    <defName>Eyes_Gray</defName>
+    <label>gray eyes</label>
+    <labelShortAdj>gray-eyed</labelShortAdj>
+    <description>Carriers of this gene have pale white-gray eyes.</description>
+    <iconPath>UI/Icons/Genes/Gene_GrayEyes</iconPath>
+    <displayOrderInCategory>1</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Male/GrayEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Female/GrayEyes_Female</texPathFemale>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Male/GrayEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Female/GrayEyes_Female</texPathFemale>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!-- Brows -->
+
+  <GeneDef>
+    <defName>Brow_Heavy</defName>
+    <label>heavy brow</label>
+    <description>Carriers of this gene have a prominent brow.</description>
+    <biostatCpx>0</biostatCpx>
+    <displayCategory>Cosmetic</displayCategory>
+    <iconPath>UI/Icons/Genes/Gene_HeavyBrow</iconPath>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/HeavyBrow/HeavyBrow</texPath>
+        <parentTagDef>Head</parentTagDef>
+        <visibleFacing>
+          <li>East</li>
+          <li>South</li>
+          <li>West</li>
+        </visibleFacing>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <colorType>Skin</colorType>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <baseLayer>51</baseLayer>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!-- Tails -->
+
+  <GeneDef Name="GeneTailBase" Abstract="True">
+    <displayCategory>Miscellaneous</displayCategory>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>Tail</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneTailBase">
+    <defName>Tail_Furry</defName>
+    <label>furry tail</label>
+    <description>Carriers of this gene grow a fluffy tail which partially protects them from cold temperatures.</description>
+    <iconPath>UI/Icons/Genes/Gene_TailFurry</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>1000</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+    </statOffsets>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <renderNodeProperties>
+      <li>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPath>Things/Pawn/Humanlike/BodyAttachments/FurryTail/FurryTail</texPath>
+        <colorType>Hair</colorType>
+        <overrideMeshSize>(1, 1)</overrideMeshSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <defaultData>
+            <layer>-2</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0.1, 0, -0.25)</offset>
+            <layer>90</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(-0.1, 0, -0.25)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(-0.5, 0, -0.15)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(0.5, 0, -0.15)</offset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneTailBase">
+    <defName>Tail_Smooth</defName>
+    <label>smooth tail</label>
+    <description>Carriers of this gene grow a slender tail that can act as a dexterous fifth limb.</description>
+    <iconPath>UI/Icons/Genes/Gene_TailSmooth</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>1000</displayOrderInCategory>
+    <capMods>
+      <li>
+        <capacity>Manipulation</capacity>
+        <offset>0.05</offset>
+      </li>
+    </capMods>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <renderNodeProperties>
+      <li>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPath>Things/Pawn/Humanlike/BodyAttachments/SmoothTail/SmoothTail</texPath>
+        <colorType>Hair</colorType>
+        <overrideMeshSize>(1, 1)</overrideMeshSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <defaultData>
+            <layer>-2</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, 0, -0.15)</offset>
+            <layer>90</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(-0, 0, -0.15)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(-0.5, 0, -0.15)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(0.5, 0, -0.15)</offset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!-- Facial overlays -->
+
+  <GeneDef>
+    <defName>FacialRidges</defName>
+    <label>facial ridges</label>
+    <description>Carriers of this gene grow raised ridges of skin on their face.</description>
+    <iconPath>UI/Icons/Genes/Gene_FacialRidges</iconPath>
+    <displayCategory>Cosmetic</displayCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>500</displayOrderInCategory>
+    <biostatCpx>0</biostatCpx>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <parentTagDef>Head</parentTagDef>
+        <colorType>Skin</colorType>
+        <useRottenColor>true</useRottenColor>
+        <useSkinShader>true</useSkinShader>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <texPaths>
+          <li>Things/Pawn/Humanlike/HeadAttachments/FacialRidges/FacialRidgesA</li>
+          <li>Things/Pawn/Humanlike/HeadAttachments/FacialRidges/FacialRidgesB</li>
+          <li>Things/Pawn/Humanlike/HeadAttachments/FacialRidges/FacialRidgesC</li>
+        </texPaths>
+        <visibleFacing>
+          <li>East</li>
+          <li>South</li>
+          <li>West</li>
+        </visibleFacing>
+        <narrowCrownHorizontalOffset>0.03</narrowCrownHorizontalOffset>
+        <baseLayer>51</baseLayer>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+</Defs>

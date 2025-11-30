@@ -1,0 +1,1831 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef Name="FurnitureBase" ParentName="BuildingBase" Abstract="True">
+    <designationCategory>Furniture</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef Name="FurnitureWithQualityBase" ParentName="FurnitureBase" Abstract="True">
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="ArtableFurnitureBase" ParentName="FurnitureWithQualityBase" Abstract="True">
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtFurniture</nameMaker>
+        <descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+  </ThingDef>
+
+  <ThingDef Name="ArtableFurnitureRegardlessOfQualityBase" ParentName="FurnitureWithQualityBase" Abstract="True">
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtFurniture</nameMaker>
+        <descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+        <minQualityForArtistic>Awful</minQualityForArtistic>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+  </ThingDef>
+
+
+  <!--============================== Beds ==============================-->
+
+  <ThingDef ParentName="BuildingBase" Name="SleepingSpotBase" Abstract="True">
+    <thingClass>Building_Bed</thingClass>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <Comfort>0.4</Comfort>
+      <SurgerySuccessChanceFactor>0.7</SurgerySuccessChanceFactor>
+    </statBases>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>False</useHitPoints>
+    <designationCategory>Furniture</designationCategory>
+    <uiOrder>2000</uiOrder>
+    <passability>Standable</passability>
+    <drawGUIOverlay>True</drawGUIOverlay>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="SleepingSpotBase">
+    <defName>SleepingSpot</defName>
+    <label>sleeping spot</label>
+    <description>Designates a spot on the ground where people should sleep. Not comfortable.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/SleepSpot</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,4)</drawSize>
+    </graphicData>
+    <size>(1,2)</size>
+    <designationHotKey>Misc1</designationHotKey>
+  </ThingDef>
+
+  <ThingDef ParentName="SleepingSpotBase">
+    <defName>DoubleSleepingSpot</defName>
+    <label>double sleeping spot</label>
+    <description>Designates a spot on the ground where two people should sleep together. Not comfortable.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/DoubleSleepSpot</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureBase" Name="BedBase" Abstract="True">
+    <thingClass>Building_Bed</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <uiIconColorTwo>(161,213,180)</uiIconColorTwo>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <uiOrder>2020</uiOrder>
+    <building>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+    <replaceTags>
+      <li>Bed</li>
+    </replaceTags>
+  </ThingDef>
+
+  <ThingDef Name="BedWithQualityBase" ParentName="BedBase" Abstract="True">
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+    <uiOrder>2020</uiOrder>
+  </ThingDef>
+
+  <ThingDef Name="ArtableBedBase" ParentName="BedWithQualityBase" Abstract="True">
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtFurniture</nameMaker>
+        <descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+  </ThingDef>
+
+  <ThingDef Name="SansComfortBedBase" ParentName="ArtableBedBase" Abstract="True">
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">2</BirthRitualQualityOffset>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <building>
+      <bed_showSleeperBody>False</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>42</pathCost>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <techLevel>Medieval</techLevel>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <uiIconScale>0.90</uiIconScale>
+  </ThingDef>
+
+  <ThingDef Name="BasicBedBase" ParentName="SansComfortBedBase" Abstract="True">
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <statBases>
+      <Comfort>0.75</Comfort>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BasicBedBase" Name="Bed">
+    <defName>Bed</defName>
+    <label>bed</label>
+    <description>A cozy mattress and sheets on a frame for resting.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/Bed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>30</Mass>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+    </statBases>
+    <size>(1,2)</size>
+    <costStuffCount>45</costStuffCount>
+    <designationHotKey>Misc2</designationHotKey>
+    <uiOrder>2010</uiOrder>
+    <building>
+      <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BasicBedBase" Name="DoubleBed">
+    <defName>DoubleBed</defName>
+    <label>double bed</label>
+    <description>A simple double-wide bed that fits two people.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/DoubleBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.05,2.05)</drawSize>
+      <damageData>
+        <rect>(0,0.05,2,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>50</Mass>
+      <Beauty>2</Beauty>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+    </statBases>
+    <size>(2,2)</size>
+    <costStuffCount>85</costStuffCount>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <designationHotKey>Misc3</designationHotKey>
+    <building>
+      <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BasicBedBase">
+    <defName>RoyalBed</defName>
+    <label>royal bed</label>
+    <description>A luxurious gold-inlaid bed fit for the highborn. Very comfy and beautiful, it is a work of art in itself. Fits two.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/RoyalBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.05,2.05)</drawSize>
+      <damageData>
+        <rect>(0,0.05,2,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>50000</WorkToBuild>
+      <Mass>60</Mass>
+      <Beauty>75</Beauty>
+      <BedRestEffectiveness>1.05</BedRestEffectiveness>
+      <Comfort>0.90</Comfort>
+    </statBases>
+    <size>(2,2)</size>
+    <costStuffCount>100</costStuffCount>
+    <costList>
+      <Gold>50</Gold>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <designationHotKey>Misc4</designationHotKey>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <building>
+      <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>HospitalBed</defName>
+    <label>hospital bed</label>
+    <description>A bed specially designed for use in hospitals. Adjustable for a patient and festooned with built-in equipment, it improves medical outcomes over normal beds.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/HospitalBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>2800</WorkToBuild>
+      <Mass>35</Mass>
+      <Flammability>1.0</Flammability>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.80</Comfort>
+      <ImmunityGainSpeedFactor>1.11</ImmunityGainSpeedFactor>
+      <MedicalTendQualityOffset>0.10</MedicalTendQualityOffset>
+      <SurgerySuccessChanceFactor>1.1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">5</BirthRitualQualityOffset>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>VitalsMonitor</li>
+          <li>EndTable</li>
+          <li>Dresser</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <size>(1,2)</size>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>40</costStuffCount>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <building>
+      <bed_showSleeperBody>False</bed_showSleeperBody>
+      <bed_healPerDay>10</bed_healPerDay>
+      <bed_defaultMedical>true</bed_defaultMedical>
+      <buildingSizeCategory>Small</buildingSizeCategory>
+      <paintable>true</paintable>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>42</pathCost>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <designationHotKey>Misc5</designationHotKey>
+    <researchPrerequisites>
+      <li>HospitalBed</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <techLevel>Industrial</techLevel>
+    <uiIconScale>0.90</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>Bedroll</defName>
+    <label>bedroll</label>
+    <description>A simple bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/Bedroll</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Mass>2.5</Mass>
+      <BedRestEffectiveness>0.95</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+      <Comfort>0.68</Comfort>
+      <WorkToBuild>600</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>Dresser</li>
+          <li>EndTable</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <size>(1,2)</size>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>40</costStuffCount>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <bed_caravansCanUse>true</bed_caravansCanUse>
+      <destroySound>BuildingDestroyed_Soft_Medium</destroySound>
+      <destroyShakeAmount>0</destroyShakeAmount>
+    </building>
+    <pathCost>14</pathCost>
+    <passability>Standable</passability>
+    <designationHotKey>Misc2</designationHotKey>
+    <uiOrder>2025</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>BedrollDouble</defName>
+    <label>double bedroll</label>
+    <description>A simple double-wide bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/BedrollDouble</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <Mass>4.5</Mass>
+      <BedRestEffectiveness>0.95</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+      <Comfort>0.68</Comfort>
+      <WorkToBuild>1100</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>Dresser</li>
+          <li>EndTable</li>
+          <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <size>(2,2)</size>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>85</costStuffCount>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <bed_caravansCanUse>true</bed_caravansCanUse>
+      <destroySound>BuildingDestroyed_Soft_Medium</destroySound>
+      <destroyShakeAmount>0</destroyShakeAmount>
+    </building>
+    <pathCost>14</pathCost>
+    <passability>Standable</passability>
+    <designationHotKey>Misc3</designationHotKey>
+    <uiOrder>2025</uiOrder>
+  </ThingDef>
+
+
+
+
+  <!--=========================== Animal beds ===============================-->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AnimalSleepingSpot</defName>
+    <thingClass>Building_Bed</thingClass>
+    <label>animal sleeping spot</label>
+    <description>Designates a spot on the ground where animals should sleep.</description>
+    <size>(1,1)</size>
+    <passability>Standable</passability>
+    <designationCategory>Furniture</designationCategory>
+    <uiOrder>2035</uiOrder>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>False</useHitPoints>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Misc/AnimalBed/AnimalSleepSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>0.80</uiIconScale>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <SurgerySuccessChanceFactor>0.7</SurgerySuccessChanceFactor>
+    </statBases>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <building>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="AnimalBedFurnitureBase" ParentName="FurnitureWithQualityBase">
+    <thingClass>Building_Bed</thingClass>
+    <rotatable>false</rotatable>
+    <fillPercent>0.15</fillPercent>
+    <pathCost>14</pathCost>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <building>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AnimalBedFurnitureBase">
+    <defName>AnimalSleepingBox</defName>
+    <label>animal sleeping box</label>
+    <description>A small box for animals to sleep in. Fits smaller animals like chickens, cats, or small dogs.</description>
+    <uiOrder>2040</uiOrder>
+    <graphicData>
+      <texPath>Things/Building/Misc/AnimalBed/AnimalSleepBox</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.05,0.05,0.9,0.9)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>25</costStuffCount>
+    <building>
+      <bed_maxBodySize>0.55</bed_maxBodySize>
+      <paintable>true</paintable>
+    </building>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>180</WorkToBuild>
+      <Mass>3</Mass>
+      <BedRestEffectiveness>0.93</BedRestEffectiveness>
+      <Comfort>0.60</Comfort>
+      <ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <uiIconScale>0.75</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="AnimalBedFurnitureBase">
+    <defName>AnimalBed</defName>
+    <label>animal bed</label>
+    <description>A soft bed for animals to sleep on. Fits any animal.</description>
+    <uiOrder>2050</uiOrder>
+    <graphicData>
+      <texPath>Things/Building/Misc/AnimalBed/AnimalBed</texPath>
+      <graphicClass>Graphic_Single</graphicClass> 
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <uiIconScale>0.80</uiIconScale>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>40</costStuffCount>
+    <building>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+    </building>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>5</Mass>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.75</Comfort>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+  </ThingDef>
+
+
+  <!--======================= Basic domestic furniture ==============================-->
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>Stool</defName>
+    <label>stool</label>
+    <description>A simple platform on which to sit. Not very comfortable, but much better than nothing. Can be used at tables, work stations, and elsewhere.</description>
+    <replaceTags>
+      <li>Chair</li>
+    </replaceTags>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Stool</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <rectN>(0.125,0.296875,0.734375,0.421875)</rectN>
+        <rectS>(0.125,0.296875,0.734375,0.421875)</rectS>
+        <rectE>(0.234375,0.296875,0.5,0.546875)</rectE>
+        <rectW>(0.234375,0.296875,0.5,0.546875)</rectW>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <shadowData>
+        <volume>(0.18, 0.23, 0.18)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>450</WorkToBuild>
+      <Mass>3</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>0</Beauty>
+      <Comfort>0.5</Comfort>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>25</costStuffCount>
+    <pathCost>30</pathCost>
+    <designationHotKey>Misc6</designationHotKey>
+    <uiOrder>2400</uiOrder>
+    <fillPercent>0.20</fillPercent>
+    <building>
+      <isSittable>true</isSittable>
+      <paintable>true</paintable>
+    </building>
+    <uiIconOffset>(0, -0.05)</uiIconOffset>
+    <comps>
+      <li Class="CompProperties_Styleable" />
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="ArtableFurnitureBase">
+    <defName>DiningChair</defName>
+    <label>dining chair</label>
+    <description>A comfortable and attractive chair. Can be used at tables, work stations, and elsewhere.</description>
+    <replaceTags>
+      <li>Chair</li>
+    </replaceTags>
+    <graphicData>
+      <texPath>Things/Building/Furniture/DiningChair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rectN>(0.25,0.234375,0.5,0.28125)</rectN>
+        <rectS>(0.25,0.234375,0.5,0.28125)</rectS>
+        <rectE>(0.28125,0.25,0.453125,0.25)</rectE>
+        <rectW>(0.28125,0.25,0.453125,0.25)</rectW>
+      </damageData>
+      <shadowData>
+        <volume>(0.23, 0.26, 0.23)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>5</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>8</Beauty>
+      <Comfort>0.70</Comfort>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>45</costStuffCount>
+    <pathCost>30</pathCost>
+    <designationHotKey>Misc7</designationHotKey>
+    <fillPercent>0.35</fillPercent>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <uiOrder>2410</uiOrder>
+    <building>
+      <isSittable>true</isSittable>
+      <paintable>true</paintable>
+    </building>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Styleable" />
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>Armchair</defName>
+    <label>armchair</label>
+    <description>A large, soft, comfy seat. Great for relaxation. Can be used at tables, work stations, and elsewhere.</description>
+    <replaceTags>
+      <li>Chair</li>
+    </replaceTags>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Armchair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rectN>(0,0,1,0.703125)</rectN>
+        <rectS>(0.09375,0,0.84375,1)</rectS>
+        <rectE>(0,0,0.84375,0.625)</rectE>
+        <rectW>(0.15625,0,0.84375,0.625)</rectW>
+      </damageData>
+      <shadowData>
+        <volume>(0.3, 0.33, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.9</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>14000</WorkToBuild>
+      <Mass>35</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>4</Beauty>
+      <Comfort>0.8</Comfort>
+    </statBases>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <costStuffCount>110</costStuffCount>
+    <pathCost>30</pathCost>
+    <fillPercent>0.40</fillPercent>
+    <designationHotKey>Misc8</designationHotKey>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <uiOrder>2420</uiOrder>
+    <building>
+      <isSittable>true</isSittable>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>Couch</defName>
+    <label>couch</label>
+    <description>A large double-wide seat which is cushioned for maximum comfort. Perfect for a luxurious rec room or a homey reading nook.</description>
+    <replaceTags>
+      <li>Chair</li>
+    </replaceTags>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Couch</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <shadowData>
+        <volume>(0.3, 0.33, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.9</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <WorkToBuild>20000</WorkToBuild>
+      <Mass>70</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>8</Beauty>
+      <Comfort>0.85</Comfort>
+    </statBases>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <costStuffCount>200</costStuffCount>
+    <pathCost>30</pathCost>
+    <fillPercent>0.40</fillPercent>
+    <size>(2,1)</size>
+    <designationHotKey>Misc8</designationHotKey>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <uiOrder>2430</uiOrder>
+    <building>
+      <isSittable>true</isSittable>
+      <multiSittable>true</multiSittable>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+    </building>
+  </ThingDef>
+
+
+  <!-- Table base -->
+  <ThingDef Abstract="True" ParentName="FurnitureWithQualityBase" Name="TableBase">
+    <description>People eat off tables when chairs are placed facing them.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <canOverlapZones>false</canOverlapZones>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <surfaceType>Eat</surfaceType>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <uiOrder>2300</uiOrder>
+  </ThingDef>
+
+  <ThingDef Abstract="True" ParentName="TableBase" Name="TableGatherSpotBase">
+    <comps>
+      <li>
+        <compClass>CompGatherSpot</compClass>
+      </li>
+      <li Class="CompProperties_Styleable" />
+    </comps>
+    <building>
+      <buildingTags>
+        <li>RitualFocus</li>
+      </buildingTags>
+    </building>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <placeWorkers>
+      <li>PlaceWorker_RitualFocus</li>
+    </placeWorkers>
+    <replaceTags>
+      <li>Table</li>
+    </replaceTags>
+  </ThingDef>
+
+  <ThingDef ParentName="TableBase">
+    <defName>EndTable</defName>
+    <label>end table</label>
+    <description>A small bedside table which makes nearby beds a little bit more comfortable. Must be placed directly adjacent to the head of the bed. Placing more than one end table near the same bed has no effect.</description>
+    <surfaceType>Item</surfaceType>
+    <uiOrder>2060</uiOrder>
+    <graphicData>
+      <texPath>Things/Building/Furniture/EndTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>5</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>3</Beauty>
+    </statBases>
+    <pathCost>30</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costStuffCount>30</costStuffCount>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead>
+      </li>
+    </comps>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
+  </ThingDef>
+
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>Table1x2c</defName>
+    <label>table (1x2)</label>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Table1x2</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,4)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>750</WorkToBuild>
+      <Mass>5</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>0.5</Beauty>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <size>(1,2)</size>
+    <costStuffCount>28</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>Table2x2c</defName>
+    <label>table (2x2)</label>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Table2x2</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>10</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>1</Beauty>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">10</StyleDominance>
+    </statBases>
+    <size>(2,2)</size>
+    <costStuffCount>50</costStuffCount>
+    <rotatable>false</rotatable>
+  </ThingDef>
+
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>Table2x4c</defName>
+    <label>table (2x4)</label>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Table2x4</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,6)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>3000</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>2</Beauty>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">20</StyleDominance>
+    </statBases>
+    <size>(2,4)</size>
+    <costStuffCount>95</costStuffCount>
+    <building>
+      <buildingSizeCategory>Medium</buildingSizeCategory>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>Table3x3c</defName>
+    <label>table (3x3)</label>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Table3x3</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5, 5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.9</uiIconScale>
+    <statBases>
+      <MaxHitPoints>175</MaxHitPoints>
+      <WorkToBuild>3300</WorkToBuild>
+      <Mass>22</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>2</Beauty>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">20</StyleDominance>
+    </statBases>
+    <size>(3,3)</size>
+    <costStuffCount>100</costStuffCount>
+    <rotatable>false</rotatable>
+    <building>
+      <buildingSizeCategory>Medium</buildingSizeCategory>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>PlantPot</defName>
+    <label>plant pot</label>
+    <description>Plant decorative flowers here to improve the mood of people nearby.</description>
+    <thingClass>Building_PlantGrower</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Furniture/PlantPot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.55, 0.35, 0.3)</volume>
+        <offset>(0, 0, -0.28)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.20</fillPercent>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>250</WorkToBuild>
+      <Mass>2</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Styleable" />
+    </comps>
+    <fertility>1.0</fertility>
+    <designationHotKey>Misc9</designationHotKey>
+    <uiOrder>2600</uiOrder>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <building>
+      <defaultPlantToGrow>Plant_Daylily</defaultPlantToGrow>
+      <sowTag>Decorative</sowTag>
+      <paintable>true</paintable>
+    </building>
+    <rotatable>false</rotatable>
+    <uiIconOffset>(0, -0.05)</uiIconOffset>
+  </ThingDef>
+
+  <!-- ======================== Lighting ======================= -->
+  <ThingDef Name="TorchBase" ParentName="BuildingBase" Abstract="True">
+    <category>Building</category>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>14</pathCost>
+    <constructEffect>ConstructWood</constructEffect>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <fillPercent>0.15</fillPercent>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>100</WorkToBuild>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0.0</MeditationFocusStrength>
+    </statBases>
+    <selectable>true</selectable>
+    <costList>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <building>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <placeWorkers>
+      <li>PlaceWorker_GlowRadius</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>2.0</fuelConsumptionRate>
+        <fuelCapacity>20.0</fuelCapacity>
+        <fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>1</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <functionsInVacuum>false</functionsInVacuum>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>3.5</heatPerSecond>
+        <heatPushMaxTemperature>23</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_FireOverlay">
+        <fireSize>0.4</fireSize>
+        <offset>(0,0,0.2)</offset>
+      </li>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Flame</li>
+        </focusTypes>
+        <offsets>
+          <li Class="FocusStrengthOffset_Lit">
+            <offset>0.1</offset>
+          </li>
+          <li Class="FocusStrengthOffset_BuildingDefsLit">
+            <defs>
+              <li>Campfire</li>
+              <li>TorchLamp</li>
+              <li>TorchWallLamp</li>
+              <li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+              <li MayRequire="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Ideology">DarklightBrazier</li>
+              <li MayRequire="Ludeon.RimWorld.Ideology">Darktorch</li>
+              <li MayRequire="Ludeon.RimWorld.Ideology">DarktorchFungus</li>
+            </defs>
+            <offsetPerBuilding>0.01</offsetPerBuilding>
+            <radius>9.9</radius>
+            <maxBuildings>8</maxBuildings>
+            <explanationKey>MeditationFocusPerFlame</explanationKey>
+            <explanationKeyAbstract>MeditationFocusPerFlameAbstract</explanationKeyAbstract>
+            <drawRingRadius>false</drawRingRadius>
+          </li>
+        </offsets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="TorchLamp" ParentName="TorchBase">
+    <defName>TorchLamp</defName>
+    <label>torch lamp</label>
+    <description>A wooden torch for lighting an area. People need light to move and work at full speed. Can be automatically refueled with wood. Produces a small amount of heat.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/TorchLamp</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawRotated>false</drawRotated>
+      <damageData>
+        <rect>(0.35,0.35,0.3,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Misc/TorchLamp_MenuIcon</uiIconPath>
+    <uiIconScale>0.85</uiIconScale>
+    <statBases>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <placeWorkers>
+      <li>PlaceWorker_Heater</li>
+      <li>PlaceWorker_MeditationOffsetBuildingsNear</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(184,136,83,0)</glowColor>
+      </li>
+    </comps>
+    <designationCategory>Furniture</designationCategory>
+    <uiOrder>2800</uiOrder>
+    <designationHotKey>Misc10</designationHotKey>
+  </ThingDef>
+
+  <ThingDef ParentName="TorchLamp">
+    <defName>TorchWallLamp</defName>
+    <label>wall torch lamp</label>
+    <description>A wall-mounted wooden torch for lighting an area. It is not as bright as a regular torch lamp, but it can be mounted on walls. Produces a small amount of heat.</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Misc/WallTorch/WallTorch</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Misc/WallTorch/WallTorch_MenuIcon</uiIconPath>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <costList>
+      <WoodLog>15</WoodLog>
+    </costList>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+    </statBases>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <comps Inherit="False">
+      <li Class="CompProperties_Glower">
+        <glowRadius>9</glowRadius>
+        <glowColor>(184,136,83,0)</glowColor>
+      </li>
+      <li Class="CompProperties_FireOverlay">
+        <fireSize>0.4</fireSize>
+        <offsetNorth>(0,0,0)</offsetNorth>
+        <offsetSouth>(0,0,0.55)</offsetSouth>
+        <offsetWest>(0.45,0,0.35)</offsetWest>
+        <offsetEast>(-0.45,0,0.35)</offsetEast>
+      </li>
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>2.0</fuelConsumptionRate>
+        <fuelCapacity>15.0</fuelCapacity>
+        <fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>1</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <functionsInVacuum>false</functionsInVacuum>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>3.5</heatPerSecond>
+        <heatPushMaxTemperature>23</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes><li>Flame</li></focusTypes>
+        <offsets>
+          <li Class="FocusStrengthOffset_Lit">
+            <offset>0.1</offset>
+          </li>
+          <li Class="FocusStrengthOffset_BuildingDefsLit">
+            <defs>
+              <li>Campfire</li>
+              <li>TorchLamp</li>
+              <li>TorchWallLamp</li>
+              <li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+              <li MayRequire="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Ideology">DarklightBrazier</li>
+              <li MayRequire="Ludeon.RimWorld.Ideology">Darktorch</li>
+              <li MayRequire="Ludeon.RimWorld.Ideology">DarktorchFungus</li>
+            </defs>
+            <offsetPerBuilding>0.01</offsetPerBuilding>
+            <radius>9.9</radius>
+            <maxBuildings>8</maxBuildings>
+            <explanationKey>MeditationFocusPerFlame</explanationKey>
+            <explanationKeyAbstract>MeditationFocusPerFlameAbstract</explanationKeyAbstract>
+            <drawRingRadius>false</drawRingRadius>
+          </li>
+        </offsets>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef Abstract="True" Name="NonBuildableLampBase" ParentName="BuildingBase">
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <pathCost>14</pathCost>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <rotatable>false</rotatable>
+    <uiIconOffset>(0, 0.03)</uiIconOffset>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef Abstract="True" Name="LampBase" ParentName="NonBuildableLampBase">
+    <designationCategory>Furniture</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <uiOrder>2800</uiOrder>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <statBases>
+      <WorkToBuild>300</WorkToBuild>
+    </statBases>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_GlowRadius</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+
+  <ThingDef ParentName="LampBase">
+    <defName>StandingLamp</defName>
+    <label>standing lamp</label>
+    <description>An electrical standing lamp that lights an area. People need light to move and work at full speed.</description>
+    <designationHotKey>Misc11</designationHotKey>
+    <graphicData>
+      <texPath>Things/Building/Furniture/LampStanding</texPath>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <costList>
+      <Steel>20</Steel>
+    </costList>
+    <statBases>
+      <Mass>4</Mass>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <uiOrder>2990</uiOrder>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>30</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
+      </li>
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Glower">
+        <glowRadius>12</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="LampBase">
+    <defName>SunLamp</defName>
+    <label>sun lamp</label>
+    <description>An industrial lamp which lights an area brightly enough to grow crops, but consumes a huge amount of power. Automatically turns itself off at night.</description>
+    <thingClass>Building_SunLamp</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/LampSun</texPath>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <blockWind>true</blockWind>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <WorkToBuild>330</WorkToBuild>
+      <Mass>4.5</Mass>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+    </costList>
+    <uiOrder>2995</uiOrder>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <overlightRadius>7.0</overlightRadius>
+        <glowRadius>14</glowRadius>
+        <glowColor>(370,370,370,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>2900</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Schedule">
+        <!-- Match plant growing times -->
+        <startTime>0.25</startTime>
+        <endTime>0.8</endTime>
+        <offMessage>Off for plant resting period</offMessage>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>3</heatPerSecond>
+      </li>
+    </comps>
+    <!-- Determined by trial and error
+    This value isn't perfect because these radii use different algorithms
+    but it matches in this case-->
+    <specialDisplayRadius>5.8</specialDisplayRadius>
+  </ThingDef>
+  
+  <ThingDef ParentName="LampBase">
+    <defName>WallLamp</defName>
+    <label>wall lamp</label>
+    <description>A wall-mounted lamp that lights an area using electricity. It is less powerful than a standing lamp, but can be mounted on walls.</description>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Furniture/WallLamp/WallLamp</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Furniture/WallLamp/WallLamp_MenuIcon</uiIconPath>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <statBases>
+      <WorkToBuild>330</WorkToBuild>
+      <MaxHitPoints>35</MaxHitPoints>
+      <Mass>2</Mass>
+    </statBases>
+    <uiOrder>2991</uiOrder>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>30</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
+      </li>
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_Glower">
+        <glowRadius>11</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="LampBase">
+    <defName>FloodLight</defName>
+    <label>flood light</label>
+    <description>A high-intensity light that's good for large outdoor spaces.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/FloodLight</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.5</drawSize>
+      <addTopAltitudeBias>true</addTopAltitudeBias>
+      <shadowData>
+        <volume>(0.2, 0.7, 0.2)</volume>
+        <offset>(0, 0, -0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>600</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Mass>10</Mass>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <uiOrder>2992</uiOrder>
+    <researchPrerequisites>
+      <li>ColoredLights</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <powerUpgrades>
+          <li>
+            <researchProject>ColoredLights</researchProject>
+            <factor>0.5</factor>
+          </li>
+        </powerUpgrades>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>24</glowRadius>
+        <glowColor>(214,148,94,0)</glowColor>
+        <colorPickerEnabled>true</colorPickerEnabled>
+        <darklightToggle>true</darklightToggle>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <!--============================== Storage ==============================-->
+
+  <ThingDef Name="ShelfBase" ParentName="FurnitureBase" Abstract="True">
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>50</pathCost>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <Beauty>0.5</Beauty>
+    </statBases>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>3</maxItemsInCell>
+      <blueprintClass>Blueprint_Storage</blueprintClass>
+      <paintable>true</paintable>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Styleable" />
+    </comps>
+    <uiOrder>2050</uiOrder> <!-- To group with outfit stand -->
+  </ThingDef>
+  
+  <ThingDef Name="StorageShelfBase" ParentName="ShelfBase" Abstract="True">
+    <thingClass>Building_Storage</thingClass>
+    <building>
+      <storageGroupTag>Shelf</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <categories>
+            <li>Root</li>
+          </categories>
+          <disallowedCategories>
+            <li>Chunks</li>
+            <li>Plants</li>
+            <li>Buildings</li>
+          </disallowedCategories>
+          <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
+            <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
+          </disallowedThingDefs>
+          <specialFiltersToDisallow>
+            <li>AllowLargeCorpses</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Preferred</priority>
+        <filter>
+          <categories>
+            <li>Foods</li>
+            <li>Manufactured</li>
+            <li>ResourcesRaw</li>
+            <li>Items</li>
+            <li>Weapons</li>
+            <li>Apparel</li>
+            <li>BodyParts</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <designationHotKey>Misc12</designationHotKey>
+  </ThingDef>
+
+  <ThingDef ParentName="StorageShelfBase">
+    <defName>Shelf</defName>
+    <label>shelf</label>
+    <description>A triple-stack shelf that holds three times as much as empty ground. Items stored inside will never deteriorate and don't affect the beauty of their surroundings.\n\nSince shelf space is limited, shelves cannot hold chunks, buildings, plants and large corpses.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Shelf</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <costStuffCount>20</costStuffCount>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints> 
+      <Mass>8</Mass>
+      <WorkToBuild>500</WorkToBuild>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <size>(2,1)</size>
+    <designationHotKey>Misc12</designationHotKey>
+    <building>
+      <relatedBuildCommands>
+        <li>ShelfSmall</li>
+      </relatedBuildCommands>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="StorageShelfBase">
+    <defName>ShelfSmall</defName>
+    <label>small shelf</label>
+    <description>A small triple-stack shelf that holds three times as much as empty ground. Items stored inside will never deteriorate and don't affect the beauty of their surroundings.\n\nSince shelf space is limited, shelves cannot hold chunks, buildings, plants and large corpses.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/ShelfSmall</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <costStuffCount>10</costStuffCount>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints> 
+      <Mass>4</Mass>
+      <WorkToBuild>250</WorkToBuild>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">2.5</StyleDominance>
+    </statBases>
+    <size>(1,1)</size>
+    <building>
+      <relatedBuildCommands>
+        <li>Shelf</li>
+      </relatedBuildCommands>
+    </building>
+  </ThingDef>
+
+  <!--============================== Bookshelves ==============================-->
+
+  <ThingDef Abstract="True" Name="BookcaseBase" ParentName="ShelfBase">
+    <thingClass>Building_Bookcase</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <deselectedSelectionBracketFactor>0.3</deselectedSelectionBracketFactor>
+    <surfaceType>None</surfaceType>
+    <building>
+      <storageGroupTag>Bookcase</storageGroupTag>
+      <maxItemsInCell>5</maxItemsInCell>
+      <blueprintClass>Blueprint_StorageWithRoomHighlight</blueprintClass>
+      <ignoreStoredThingsBeauty>false</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <categories Inherit="False">
+            <li>Books</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>Books</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_DrawLinesToResearchTablesInRoom</li>
+    </placeWorkers>
+    <inspectorTabs>
+      <li>ITab_ContentsBooks</li>
+    </inspectorTabs>
+  </ThingDef>
+  
+  <ThingDef ParentName="BookcaseBase">
+    <defName>Bookcase</defName>
+    <label>bookcase</label>
+    <description>A wide bookcase for storing and displaying up to ten books. Books stored here will passively enhance academic work done nearby, and increase the beauty of the bookcase. The stored books will never deteriorate.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bookcase/Bookcase</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <costStuffCount>20</costStuffCount>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>8</Mass>
+      <WorkToBuild>500</WorkToBuild>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">6</StyleDominance>
+    </statBases>
+    <size>(2,1)</size>
+    <building>
+      <bookendGraphicEast>
+        <texPath>Things/Building/Furniture/Bookcase/Bookcase_Bookend_east</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <addTopAltitudeBias>true</addTopAltitudeBias>
+        <drawSize>(2,3)</drawSize>
+      </bookendGraphicEast>
+      <bookendGraphicNorth>
+        <texPath>Things/Building/Furniture/Bookcase/Bookcase_Bookend_north</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <addTopAltitudeBias>true</addTopAltitudeBias>
+        <drawSize>(3,2)</drawSize>
+      </bookendGraphicNorth>
+      <relatedBuildCommands>
+        <li>BookcaseSmall</li>
+      </relatedBuildCommands>
+    </building>
+  </ThingDef>
+  
+  <ThingDef ParentName="BookcaseBase">
+    <defName>BookcaseSmall</defName>
+    <label>small bookcase</label>
+    <description>A narrow bookcase for storing and displaying up to five books. Books stored here will passively enhance academic work done nearby, and increase the beauty of the bookcase. The stored books will never deteriorate.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bookcase/BookcaseSmall</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <costStuffCount>10</costStuffCount>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>4</Mass>
+      <WorkToBuild>250</WorkToBuild>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">3</StyleDominance>
+    </statBases>
+    <size>(1,1)</size>
+    <building>
+      <bookendGraphicEast>
+        <texPath>Things/Building/Furniture/Bookcase/BookcaseSmall_Bookend_east</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <addTopAltitudeBias>true</addTopAltitudeBias>
+        <drawSize>(2,2)</drawSize>
+      </bookendGraphicEast>
+      <bookendGraphicNorth>
+        <texPath>Things/Building/Furniture/Bookcase/BookcaseSmall_Bookend_north</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <addTopAltitudeBias>true</addTopAltitudeBias>
+        <drawSize>(2,2)</drawSize>
+      </bookendGraphicNorth>
+      <relatedBuildCommands>
+        <li>Bookcase</li>
+      </relatedBuildCommands>
+    </building>
+  </ThingDef>
+
+  <!--============================== Dressers ==============================-->
+
+  <ThingDef ParentName="ArtableFurnitureBase">
+    <defName>Dresser</defName>
+    <label>dresser</label>
+    <description>A dresser. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Dresser</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>42</pathCost>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costStuffCount>50</costStuffCount>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>15</Mass>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <size>(2,1)</size>
+    <designationHotKey>Misc12</designationHotKey>
+    <uiOrder>2070</uiOrder>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

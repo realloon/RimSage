@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>ExecuteSlave</defName>
+    <label>execute prisoners</label>
+    <giverClass>WorkGiver_Warden_ExecuteSlave</giverClass>
+    <workType>Warden</workType>
+    <verb>execute</verb>
+    <gerund>executing</gerund>
+    <priorityInType>110</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>EmancipateSlave</defName>
+    <label>emancipate slaves</label>
+    <giverClass>WorkGiver_Warden_EmancipateSlave</giverClass>
+    <workType>Warden</workType>
+    <verb>emancipate</verb>
+    <gerund>emancipating</gerund>
+    <priorityInType>105</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>EnslavePrisoner</defName>
+    <label>enslave prisoners</label>
+    <giverClass>WorkGiver_Warden_Enslave</giverClass>
+    <workType>Warden</workType>
+    <verb>enslave</verb>
+    <gerund>enslaving</gerund>
+    <priorityInType>95</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>ImprisonSlave</defName>
+    <label>imprison slaves</label>
+    <giverClass>WorkGiver_Warden_ImprisonSlave</giverClass>
+    <workType>Warden</workType>
+    <verb>imprison</verb>
+    <gerund>imprisoning</gerund>
+    <priorityInType>75</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>SuppressSlave</defName>
+    <label>suppress slaves</label>
+    <giverClass>WorkGiver_Warden_SuppressSlave</giverClass>
+    <workType>Warden</workType>
+    <verb>suppress</verb>
+    <gerund>suppressing</gerund>
+    <priorityInType>65</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>ConvertPrisoner</defName>
+    <label>convert prisoners</label>
+    <giverClass>WorkGiver_Warden_Convert</giverClass>
+    <workType>Warden</workType>
+    <verb>convert</verb>
+    <gerund>converting</gerund>
+    <priorityInType>72</priorityInType>
+    <requiredCapacities>
+      <li>Talking</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>PruneGauranlenTree</defName>
+    <label>prune Gauranlen trees</label>
+    <giverClass>WorkGiver_PruneGauranlenTree</giverClass>
+    <workType>PlantCutting</workType>
+    <verb>prune</verb>
+    <gerund>pruning</gerund>
+    <priorityInType>25</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>ChangeTreeMode</defName>
+    <label>change dryad types</label>
+    <giverClass>WorkGiver_ChangeTreeMode</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>change dryad caste for</verb>
+    <gerund>changing dryad caste for</gerund>
+    <priorityInType>30</priorityInType>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>HaulToBiosculpterPod</defName>
+    <label>carry to biosculpter pod</label>
+    <giverClass>WorkGiver_HaulToBiosculpterPod</giverClass>
+    <workType>Hauling</workType>
+    <verb>fill</verb>
+    <gerund>filling</gerund>
+    <priorityInType>109</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+
+</Defs>

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <InteractionDef>
+    <defName>ConvertIdeoAttempt</defName>
+    <label>convert ideoligion attempt</label>
+    <workerClass>InteractionWorker_ConvertIdeoAttempt</workerClass>
+    <symbolSource>InitiatorIdeo</symbolSource>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] tried to convert [RECIPIENT_nameDef] to [INITIATOR_possessive] own ideoligion.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <RulePackDef>
+    <defName>Sentence_ConvertIdeoAttemptSuccess</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>sent->[RECIPIENT_nameDef] was convinced and changed [RECIPIENT_possessive] ideoligion.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>Sentence_ConvertIdeoAttemptFail</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>sent->[RECIPIENT_nameDef] was not convinced.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>Sentence_ConvertIdeoAttemptFailResentment</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>sent->[RECIPIENT_nameDef] was not convinced and resented the attempt.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>Sentence_ConvertIdeoAttemptFailSocialFight</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>sent->[RECIPIENT_nameDef] reacted in anger and started a social fight.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <InteractionDef>
+    <defName>Counsel_Success</defName>
+    <label>successful counsel</label>
+    <symbol>UI/Abilities/Counsel</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] counseled [RECIPIENT_nameDef] on [problems].</li>
+        <li>r_logentry->[INITIATOR_nameDef] helped [RECIPIENT_nameDef] think through [problems].</li>
+        <li>r_logentry->[INITIATOR_nameDef] gave [RECIPIENT_nameDef] advice on overcoming negativity.</li>
+        <li>problems->[RECIPIENT_possessive] problems</li>
+        <li>problems->[RECIPIENT_possessive] troubles</li>
+        <li>problems->[RECIPIENT_possessive] painful feelings</li>
+        <li>problems->recent difficulties</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Counsel_Failure</defName>
+    <label>failed counsel</label>
+    <symbol>UI/Abilities/Counsel</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] tried to counsel [RECIPIENT_nameDef], but botched the attempt and made things worse.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Convert_Success</defName>
+    <label>successful conversion</label>
+    <symbol>UI/Abilities/Convert</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] tried to convert [RECIPIENT_nameDef] and succeeded.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Convert_Failure</defName>
+    <label>failed conversion</label>
+    <symbol>UI/Abilities/Convert</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] tried to convert [RECIPIENT_nameDef], but failed.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Reassure</defName>
+    <label>reassurance</label>
+    <symbol>UI/Abilities/Reassure</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] reinforced [RECIPIENT_nameDef]'s beliefs.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>PreachHealth</defName>
+    <label>preached health</label>
+    <symbol>UI/Abilities/PreachHealth</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] strengthened [RECIPIENT_nameDef]'s health by preaching about [preaching_topic].</li>
+        <li>preaching_topic->reasons to live</li>
+        <li>preaching_topic->higher ideoligious goals</li>
+        <li>preaching_topic->[RECIPIENT_possessive] purpose of existence</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>WorkDrive</defName>
+    <label>work drive</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>UI/Abilities/WorkDrive</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] called upon [RECIPIENT_nameDef] to work extra hard for the good of the colony.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Trial_Accuse</defName>
+    <label>accuse</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>UI/Icons/Rituals/Trial</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] presented some evidence.</li>
+        <li>r_logentry->[INITIATOR_nameDef] appealed to the emotions of the spectators.</li>
+        <li>r_logentry->[INITIATOR_nameDef] accused [RECIPIENT_nameDef] of [wrongdoing].</li>
+        <li>wrongdoing->sabotaging the colony</li>
+        <li>wrongdoing->being lazy</li>
+        <li>wrongdoing->eating too much</li>
+        <li>wrongdoing->stealing</li>
+        <li>wrongdoing->being a horrible person</li>
+        <li>wrongdoing->disrespecting sacred ideas</li>
+        <li>wrongdoing->disrespecting respected figures</li>
+        <li>wrongdoing->heresy</li>
+        <li>wrongdoing->murder</li>
+        <li>wrongdoing->blasphemy</li>
+        <li>wrongdoing->treason</li>
+        <li>wrongdoing->hateful thinking</li>
+        <li>wrongdoing->disloyalty</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Trial_Defend</defName>
+    <label>defend</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>UI/Icons/Rituals/TrialDefend</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] deflected the accusation.</li>
+        <li>r_logentry->[INITIATOR_nameDef] presented another interpretation.</li>
+        <li>r_logentry->[INITIATOR_nameDef] pleaded to jury.</li>
+        <li>r_logentry->[INITIATOR_nameDef] called for mercy.</li>
+        <li>r_logentry->[INITIATOR_nameDef] stalled the proceedings.</li>
+        <li>r_logentry->[INITIATOR_nameDef] dismissed the allegations.</li>
+        <li>r_logentry->[INITIATOR_nameDef] called the trial a sham.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+</Defs>

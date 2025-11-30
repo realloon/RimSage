@@ -1,0 +1,24 @@
+﻿
+//Simple colors only, no mauve and puce
+
+
+红
+橙
+黄
+绿
+青
+蓝
+紫
+黑
+白
+灰
+褐
+金
+银
+赤
+玄
+粉
+茶
+肉
+棕
+米

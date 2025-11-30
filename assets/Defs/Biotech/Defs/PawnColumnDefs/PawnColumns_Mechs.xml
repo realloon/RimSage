@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnColumnDef>
+    <defName>Energy</defName>
+    <label>energy</label>
+    <workerClass>PawnColumnWorker_Energy</workerClass>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>AutoRepair</defName>
+    <label>auto repair</label>
+    <workerClass>PawnColumnWorker_AutoRepair</workerClass>
+    <paintable>true</paintable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>Overseer</defName>
+    <label>overseer</label>
+    <workerClass>PawnColumnWorker_Overseer</workerClass>
+    <groupable>true</groupable>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>ControlGroup</defName>
+    <label>control group</label>
+    <workerClass>PawnColumnWorker_ControlGroup</workerClass>
+    <paintable>true</paintable>
+  </PawnColumnDef>
+  
+  <PawnColumnDef>
+    <defName>WorkMode</defName>
+    <label>work mode</label>
+    <workerClass>PawnColumnWorker_WorkMode</workerClass>
+    <groupable>true</groupable>
+  </PawnColumnDef>
+
+  <PawnColumnDef ParentName="AllowedArea">
+    <defName>AllowedAreaMech</defName>
+    <headerTip>Allowed areas only apply for mechs in work and recharge modes.</headerTip>
+    <sortable>false</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>DraftMech</defName>
+    <label>draft</label>
+    <workerClass>PawnColumnWorker_DraftMech</workerClass>
+    <paintable>true</paintable>
+  </PawnColumnDef>
+
+
+</Defs>

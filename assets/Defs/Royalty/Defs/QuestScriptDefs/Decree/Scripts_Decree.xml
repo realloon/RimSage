@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef Abstract="True" Name="DecreeBase">
+    <decreeSelectionWeight>1</decreeSelectionWeight>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <autoAccept>true</autoAccept>
+    <decreeTags>
+      <li>All</li>
+    </decreeTags>
+  </QuestScriptDef>
+
+  <QuestScriptDef ParentName="DecreeBase">
+    <defName>Decree_ProduceItem</defName>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[defToProduce_label] production decree</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[decreeIntro]
+\nYou must produce:
+\n - [thingToProduceLabel]
+\n[decreeThreatInfo]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>DecreeSetup</def>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>decreeDays</name>
+          <value>5</value>
+        </li>
+
+        <li Class="QuestNode_GetThingPlayerCanProduce">
+          <storeProductionItemDefAs>defToProduce</storeProductionItemDefAs>
+          <storeProductionItemStuffAs>stuffToProduce</storeProductionItemStuffAs>
+          <storeProductionItemCountAs>countToProduce</storeProductionItemCountAs>
+          <storeProductionItemLabelAs>thingToProduceLabel</storeProductionItemLabelAs>
+          <workAmountRandomFactorRange>0.75~1.25</workAmountRandomFactorRange>
+          <productionItemCountRandomFactorRange>0.75~1.25</productionItemCountRandomFactorRange>
+          <maxMarketValueFactor>0.85</maxMarketValueFactor>
+          <minStuffCommonality>1</minStuffCommonality> <!-- Common stuff like steel, wood, and cloth. -->
+          <pointsToMaxItemMarketValueCurve>
+            <points>
+              <li>(300, 800)</li>
+              <li>(700, 1500)</li>
+              <li>(5000, 4000)</li>
+            </points>
+          </pointsToMaxItemMarketValueCurve>
+          <pointsToRequiredWorkCurve>
+            <points>
+              <li>(100, 20000)</li>
+              <li>(700, 40000)</li>
+              <li>(1400, 80000)</li>
+              <li>(2800, 120000)</li>
+            </points>
+          </pointsToRequiredWorkCurve>
+        </li>
+
+        <li Class="QuestNode_Delay">
+          <delayTicks>$($decreeDays*60000)</delayTicks>
+          <isQuestTimeout>true</isQuestTimeout>
+          <node Class="QuestNode_SituationalThought">
+            <def>DecreeUnmet</def>
+            <pawn>$asker</pawn>
+            <delayTicks>$($decreeDays*60000)</delayTicks>
+          </node>
+        </li>
+
+        <li Class="QuestNode_ThingsProduced">
+          <def>$defToProduce</def>
+          <stuff>$stuffToProduce</stuff>
+          <count>$countToProduce</count>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Decree_Util_Reward</def>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </li>
+            </nodes>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef ParentName="DecreeBase">
+    <defName>Decree_HarvestCrop</defName>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[plantToHarvest_label] harvest decree</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[decreeIntro]
+\nYou must harvest [plantToHarvest_label] x[harvestItemCount].
+\nYou may need to plant and grow the [plantToHarvest_label] first.
+\n[decreeThreatInfo]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>DecreeSetup</def>
+        </li>
+        
+        <li Class="QuestNode_GetPlantPlayerCanHarvest">
+          <storeHarvestItemDefAs>plantToHarvest</storeHarvestItemDefAs>
+          <storeHarvestItemCountAs>harvestItemCount</storeHarvestItemCountAs>
+          <storeGrowDaysAs>growDays</storeGrowDaysAs>
+          <maxPlantGrowDays>10</maxPlantGrowDays>
+          <workRandomFactorRange>0.75~1.25</workRandomFactorRange>
+          <pointsToRequiredWorkCurve>
+            <points>
+              <li>(100, 2000)</li>
+              <li>(800, 12000)</li>
+              <li>(1500, 20000)</li>
+              <li>(3500, 40000)</li>
+            </points>
+          </pointsToRequiredWorkCurve>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>decreeDays</name>
+          <value>$(($growDays*2)+8)</value>
+        </li>
+
+        <li Class="QuestNode_Delay">
+          <delayTicks>$($decreeDays*60000)</delayTicks>
+          <isQuestTimeout>true</isQuestTimeout>
+          <node Class="QuestNode_SituationalThought">
+            <def>DecreeUnmet</def>
+            <pawn>$asker</pawn>
+            <delayTicks>$($decreeDays*60000)</delayTicks>
+          </node>
+        </li>
+
+        <li Class="QuestNode_PlantsHarvested">
+          <plant>$plantToHarvest</plant>
+          <count>$harvestItemCount</count>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Decree_Util_Reward</def>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </li>
+            </nodes>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef ParentName="DecreeBase">
+    <defName>Decree_HuntAnimal</defName>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[animalToHunt_label] hunting decree</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[decreeIntro]
+\nYou must hunt or slaughter [animalToHuntWithCount].
+\n[decreeThreatInfo]</li>
+        <li>animalToHuntWithCount(countToHunt==1)->[animalToHunt_indefinite]</li>
+        <li>animalToHuntWithCount(countToHunt!=1)->[countToHunt] [animalToHunt_labelPlural]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>DecreeSetup</def>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>decreeDays</name>
+          <value>5</value>
+        </li>
+
+        <li Class="QuestNode_GetAnimalToHunt">
+          <storeAnimalToHuntAs>animalToHunt</storeAnimalToHuntAs>
+          <storeCountToHuntAs>countToHunt</storeCountToHuntAs>
+          <animalsToHuntCountRandomFactorRange>0.85~1.15</animalsToHuntCountRandomFactorRange>
+          <pointsToAnimalsToHuntCountCurve>
+            <points>
+              <li>(100, 1)</li>
+              <li>(1000, 10)</li>
+              <li>(3000, 20)</li>
+            </points>
+          </pointsToAnimalsToHuntCountCurve>
+          <pointsToAnimalDifficultyCurve>
+            <points>
+              <li>(50, 200)</li>
+              <li>(2000, 1500)</li>
+              <li>(4000, 3600)</li>
+            </points>
+          </pointsToAnimalDifficultyCurve>
+        </li>
+
+        <li Class="QuestNode_Delay">
+          <delayTicks>$($decreeDays*60000)</delayTicks>
+          <isQuestTimeout>true</isQuestTimeout>
+          <node Class="QuestNode_SituationalThought">
+            <def>DecreeUnmet</def>
+            <pawn>$asker</pawn>
+            <delayTicks>$($decreeDays*60000)</delayTicks>
+          </node>
+        </li>
+
+        <li Class="QuestNode_PawnsKilled">
+          <race>$animalToHunt</race>
+          <count>$countToHunt</count>
+          <outSignalPawnsNotAvailable>Incompletable</outSignalPawnsNotAvailable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Decree_Util_Reward</def>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Success</outcome>
+                <sendStandardLetter>true</sendStandardLetter>
+              </li>
+            </nodes>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef ParentName="DecreeBase">
+    <defName>Decree_BuildMonument</defName>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->monument decree</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[decreeIntro]
+\nYou must build a monument. It is [monumentSize] in size and will require these resources (total value [monumentRequiredResourcesMarketValue_money]):
+\n[monumentRequiredResources]
+\n[decreeThreatInfo]
+\nYou must keep the monument safe for [keepMonumentTicks_duration] after completion, otherwise [asker_nameDef] will be unhappy.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_Constants_Monuments</def>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>DecreeSetup</def>
+        </li>
+
+        <!-- Factor down points since monuments are hard compared to other decrees -->
+        <li Class="QuestNode_Multiply">
+          <value1>$points</value1>
+          <value2>0.45</value2>
+          <storeAs>points</storeAs>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>decreeDays</name>
+          <value>15</value>
+        </li>
+
+        <!-- Get largest clear area -->
+        <li Class="QuestNode_GetLargestClearArea">
+          <map>$map</map>
+          <storeAs>largestClearArea</storeAs>
+          <failIfSmaller>10</failIfSmaller>
+          <max>70</max>
+        </li>
+
+        <!-- Monument sketch -->
+        <li Class="QuestNode_GetMonumentSketch">
+          <storeAs>sketch</storeAs>
+          <pointsPerArea>8.3</pointsPerArea>
+          <useOnlyResourcesAvailableOnMap>$map</useOnlyResourcesAvailableOnMap>
+          <maxSize>$largestClearArea</maxSize>
+        </li>
+        <li Class="QuestNode_GenerateMonumentMarker">
+          <storeAs>monumentMarker</storeAs>
+          <sketch>$sketch</sketch>
+        </li>
+
+        <!-- Get data for use in text -->
+        <li Class="QuestNode_GetMonumentRequiredResourcesString">
+          <monumentMarker>$monumentMarker</monumentMarker>
+          <storeAs>monumentRequiredResources</storeAs>
+          <storeMarketValueAs>monumentRequiredResourcesMarketValue</storeMarketValueAs>
+        </li>
+        <li Class="QuestNode_GetMonumentSize">
+          <monumentMarker>$monumentMarker</monumentMarker>
+          <storeAs>monumentSize</storeAs>
+        </li>
+
+        <li Class="QuestNode_Delay">
+          <delayTicks>$($decreeDays*60000)</delayTicks>
+          <inSignalDisable>DecreeCompleted</inSignalDisable>
+          <isQuestTimeout>true</isQuestTimeout>
+          <node Class="QuestNode_SituationalThought">
+            <inSignalDisable>DecreeCompleted</inSignalDisable>
+            <def>DecreeUnmet</def>
+            <pawn>$asker</pawn>
+            <delayTicks>$($decreeDays*60000)</delayTicks>
+          </node>
+        </li>
+
+        <!-- Things to drop. Includes minified marker and non-buildable resources -->
+        <li Class="QuestNode_GetMonumentRequiredResourcesString">
+          <monumentMarker>$monumentMarker</monumentMarker>
+          <storeAs>monumentRequiredResources</storeAs>
+        </li>
+        <li Class="QuestNode_MakeMinified">
+          <storeAs>monumentMarkerMinified</storeAs>
+          <thing>$monumentMarker</thing>
+        </li>
+        <li Class="QuestNode_AddToList">
+          <name>thingsToDrop</name>
+          <value>$monumentMarkerMinified</value>
+        </li>
+        <li Class="QuestNode_GenerateNonBuildableMonumentRequiredResources">
+          <addToList>thingsToDrop</addToList>
+          <monumentMarker>$monumentMarker</monumentMarker>
+        </li>
+        <li Class="QuestNode_DropPods">
+          <contents>$thingsToDrop</contents>
+          <useTradeDropSpot>true</useTradeDropSpot>
+        </li>
+
+        <!-- Send another monument marker if destroyed -->
+        <li Class="QuestNode_Signal">
+          <inSignal>monumentMarker.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_DropMonumentMarkerCopy">
+                <outSignalResult>DroppedMonumentMarkerCopy</outSignalResult>
+              </li>
+              <li Class="QuestNode_Letter">
+                <inSignal>DroppedMonumentMarkerCopy</inSignal>
+                <label TKey="LetterLabelNewMonumentMarkerArrived">New monument marker arrived</label>
+                <text TKey="LetterTextNewMonumentMarkerArrived">Since the monument marker has been destroyed, a new one has been sent.</text>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- Success -->
+        <li Class="QuestNode_Signal">
+          <inSignal>monumentMarker.MonumentCompleted</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Decree_Util_Reward</def>
+              </li>
+
+              <li Class="QuestNode_SendSignals">
+                <outSignals>DecreeCompleted</outSignals>
+              </li>
+
+              <li Class="QuestNode_Letter">
+                <inSignal>monumentMarker.MonumentCompleted</inSignal>
+                <label TKey="LetterLabelMonumentCompleted">Monument completed</label>
+                <letterDef>PositiveEvent</letterDef>
+                <text TKey="LetterTextMonumentCompleted">You have completed construction of the monument.\n\nYou must keep it safe for [keepMonumentTicks_duration], otherwise [asker_nameDef] will be displeased.</text>
+              </li>
+
+              <li Class="QuestNode_Signal">
+                <inSignal>monumentMarker.MonumentDestroyed</inSignal>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_Letter">
+                      <text TKey="LetterTextMonumentDestroyed">[asker_nameDef] is offended that you allowed the monument to be ruined so soon after completion.\n\n[asker_pronoun] will be unhappy about this.</text>
+                      <label TKey="LetterLabelMonumentDestroyed">Monument destroyed</label>
+                    </li>
+                    <li Class="QuestNode_AddMemoryThought">
+                      <def>DecreeFailed</def>
+                      <pawns>$asker</pawns>
+                    </li>
+                    <li Class="QuestNode_RemoveMemoryThought"> <!-- Undo mood reward -->
+                      <def>DecreeMet</def>
+                      <count>1</count>
+                      <pawn>$asker</pawn>
+                    </li>
+                    <li Class="QuestNode_End">
+                      <outcome>Fail</outcome>
+                    </li>
+                  </nodes>
+                </node>
+              </li>
+
+              <!-- Wait for monument to survive -->
+              <li Class="QuestNode_Delay">
+                <inSignalEnable>monumentMarker.MonumentCompleted</inSignalEnable>
+                <delayTicks>$keepMonumentTicks</delayTicks>
+                <expiryInfoPart TKey="DontDestroyMonumentForDays">Do not destroy the monument for {0}</expiryInfoPart>
+                <expiryInfoPartTip TKey="DontDestroyMonumentForDaysTip">Do not destroy the monument for {0}</expiryInfoPartTip>
+                <inspectString TKey="KeepMonument">Keep monument {0}</inspectString>
+                <inspectStringTargets>$monumentMarker</inspectStringTargets>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_End">
+                      <outcome>Success</outcome>
+                    </li>
+                  </nodes>
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- End if map removed -->
+        <li Class="QuestNode_End">
+          <inSignal>map.MapRemoved</inSignal>
+          <outcome>Fail</outcome>
+        </li>
+
+        <!-- Destroy monument marker on cleanup -->
+        <li Class="QuestNode_DestroyOrPassToWorldOnCleanup">
+          <things>$monumentMarker</things>
+        </li>
+        
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>ConversionPower</defName>
+    <label>conversion power</label>
+    <description>How effective this person is at converting others to their own ideoligion. When this person attempts to convert someone else, this value multiplies the amount of certainty the other person loses.</description>
+    <category>PawnSocial</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0.4</minValue>
+    <toStringStyle>PercentTwo</toStringStyle>
+    <skillNeedFactors>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Social</skill>
+        <baseValue>0.3</baseValue>
+        <bonusPerLevel>0.0875</bonusPerLevel>
+      </li>
+    </skillNeedFactors>
+    <parts>
+      <li Class="StatPart_RoleConversionPower" />
+    </parts>
+    <capacityFactors>
+      <li>
+        <capacity>Talking</capacity>
+        <weight>0.9</weight>
+        <allowedDefect>0.05</allowedDefect>
+        <max>1</max>
+      </li>
+      <li>
+        <capacity>Hearing</capacity>
+        <weight>0.9</weight>
+        <allowedDefect>0.20</allowedDefect>
+        <max>1</max>
+      </li>
+    </capacityFactors>
+    <displayPriorityInCategory>1901</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>CertaintyLossFactor</defName>
+    <label>global certainty loss factor</label>
+    <description>A multiplier on how much certainty this person loses when someone else tries to convert them away from their ideoligion.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>1900</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>SocialIdeoSpreadFrequencyFactor</defName>
+    <label>ideoligion spread chance</label>
+    <description>A multiplier on the chance that this person will try to convert other people to their own ideoligion.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>1899</displayPriorityInCategory>
+  </StatDef>
+
+  <!-- Darkness combat -->
+  <StatDef Name="DarknessCombat" Abstract="true">
+    <category>PawnCombat</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <alwaysHide>true</alwaysHide>
+  </StatDef>
+
+  <!-- Darkness combat - shooting accuracy -->
+  <StatDef ParentName="DarknessCombat">
+    <defName>ShootingAccuracyOutdoorsDarkOffset</defName>
+    <label>shooting accuracy outdoors dark</label>
+    <description>An offset on shooting accuracy if the target is outdoors at night.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>ShootingAccuracyOutdoorsLitOffset</defName>
+    <label>shooting accuracy outdoors lit</label>
+    <description>An offset on shooting accuracy if the target is outdoors during the day.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>ShootingAccuracyIndoorsDarkOffset</defName>
+    <label>shooting accuracy indoors dark</label>
+    <description>An offset on shooting accuracy if the target is indoors in the dark.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>ShootingAccuracyIndoorsLitOffset</defName>
+    <label>shooting accuracy indoors lit</label>
+    <description>An offset on shooting accuracy if the target is indoors and lit.</description>
+  </StatDef>
+
+  <!-- Darkness combat - melee hit chance -->
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeHitChanceOutdoorsDarkOffset</defName>
+    <label>melee hit chance outdoors dark</label>
+    <description>An offset on melee hit chance if the target is outdoors at night.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeHitChanceOutdoorsLitOffset</defName>
+    <label>melee hit chance outdoors lit</label>
+    <description>An offset on melee hit chance if the target is outdoors during the day.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeHitChanceIndoorsDarkOffset</defName>
+    <label>melee hit chance indoors dark</label>
+    <description>An offset on melee hit chance if the target is indoors in the dark.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeHitChanceIndoorsLitOffset</defName>
+    <label>melee hit chance indoors lit</label>
+    <description>An offset on melee hit chance if the target is indoors and lit.</description>
+  </StatDef>
+
+  <!-- Darkness combat - melee dodge chance -->
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeDodgeChanceOutdoorsDarkOffset</defName>
+    <label>melee dodge chance outdoors night</label>
+    <description>An offset on melee dodge chance if the target is outdoors at night.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeDodgeChanceOutdoorsLitOffset</defName>
+    <label>melee dodge chance outdoors day</label>
+    <description>An offset on melee dodge chance if the target is outdoors during the day.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeDodgeChanceIndoorsDarkOffset</defName>
+    <label>melee dodge chance indoors dark</label>
+    <description>An offset on melee dodge chance if the target is indoors in the dark.</description>
+  </StatDef>
+
+  <StatDef ParentName="DarknessCombat">
+    <defName>MeleeDodgeChanceIndoorsLitOffset</defName>
+    <label>melee dodge chance indoors lit</label>
+    <description>An offset on melee dodge chance if the target is indoors and lit.</description>
+  </StatDef>
+
+  <StatDef>
+    <defName>BiosculpterOccupantSpeed</defName>
+    <label>biosculpter occupant speed</label>
+    <description>A multiplier on how quickly this person will complete a biosculpter pod cycle.</description>
+    <category>PawnMisc</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>1900</displayPriorityInCategory>
+    <parts>
+      <li Class="StatPart_BiosculptingSpeedFactor" />
+    </parts>
+  </StatDef>
+
+</Defs>

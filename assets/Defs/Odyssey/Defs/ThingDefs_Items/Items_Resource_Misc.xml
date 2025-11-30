@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>Gravcore</defName>
+    <label>gravcore</label>
+    <description>An ultratech device that generates an unstructured graviton field. It is useless by itself, but it can be used to construct gravtech buildings.</description>
+    <graphicData>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <texPath>Things/Item/Resource/Gravcore</texPath>
+    </graphicData>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>1250</MarketValue>
+      <Flammability>0</Flammability>
+      <Mass>5</Mass>
+      <Beauty>0</Beauty>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <genericMarketSellable>false</genericMarketSellable>
+    <tradeability>None</tradeability>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stackLimit>5</stackLimit>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>GravlitePanel</defName>
+    <label>gravlite panel</label>
+    <description>A sheet of advanced polymer used in the construction of gravships. It's lightweight and has a high graviton conductance, making it ideal for gravtech structures.\n\nRequires vacstone blocks, which can be obtained from orbital asteroids.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/GravlitePanels</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+      <Mass>0.25</Mass>
+      <Beauty>-2</Beauty>
+      <WorkToMake>1800</WorkToMake>
+      <MarketValue>4</MarketValue>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>NonStandardReward</li>
+    </thingSetMakerTags>
+    <costList>
+      <Plasteel>1</Plasteel>
+      <BlocksVacstone>5</BlocksVacstone>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <researchPrerequisite>AdvancedGravtech</researchPrerequisite>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <tradeTags>
+      <li>GravshipUpgrade</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ShuttleEngine</defName>
+    <label>shuttle engine</label>
+    <description>An engine capable of powering a small shuttle. Shuttle engines can only be manufactured in large specialized factories, making them rare on the rim.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Resource/ShuttleEngine</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>2500</MarketValue>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>10</Mass>
+      <Beauty>0</Beauty>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <genericMarketSellable>false</genericMarketSellable>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stackLimit>5</stackLimit>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+  
+</Defs>

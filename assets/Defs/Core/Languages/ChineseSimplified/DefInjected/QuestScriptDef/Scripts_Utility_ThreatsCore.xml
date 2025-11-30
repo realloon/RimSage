@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: <rulesStrings><li>root(priority=1,sitePart==ClimateAdjuster)->there's (*Threat)a climate adjuster machine(/Threat) there shifting the regional temperature by [temperatureOffset]</li><li>root(priority=1,sitePart==PsychicDroner)->there's (*Threat)a psychic droner machine(/Threat) there tuned to the [affectedGender] gender</li><li>root(priority=1,sitePart==PsychicSuppressor)->there's (*Threat)a psychic suppressor machine(/Threat) there tuned to the [affectedGender] gender</li><li>root(priority=1,sitePart==WeatherController)->there's (*Threat)a weather controller machine(/Threat) there forcing weather in the whole region to [weather_label]</li><li>root(priority=1,sitePart==SmokeSpewer)->there's (*Threat)a smoke spewer machine(/Threat) there belching smoke over the whole region</li><li>root(priority=1,sitePart==SunBlocker)->there's (*Threat)a sun blocker machine(/Threat) there shadowing the whole region</li><li>root(priority=1,sitePart==EMIDynamo)->there's (*Threat)an EMI dynamo machine(/Threat) there which can disable electrical devices across the region</li><li>root(priority=1,sitePart==ToxicSpewer)->there's (*Threat)a toxic spewer machine(/Threat) there blanketing the whole region in poison</li><li>root(priority=1,sitePart==RaidSource)->there's a military staging area guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat) that will launch raids on you every [mtbDays]</li><li>root(priority=1,sitePart==Outpost)->there's an enemy outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li>root(priority=1,sitePart==BanditCamp)->there's a bandit camp at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li>root(priority=1,sitePart==Manhunters,count==1)->(*Threat)a manhunting [kindLabel](/Threat) is wandering nearby</li><li>root(priority=1,sitePart==Manhunters,count>1)->(*Threat)[count] manhunting [kindLabel](/Threat) are wandering nearby</li><li>root(priority=1,sitePart==SleepingMechanoids,count==1)->(*Threat)a mechanoid(/Threat) is sleeping nearby</li><li>root(priority=1,sitePart==SleepingMechanoids,count>1)->(*Threat)[count] mechanoids(/Threat) are sleeping nearby</li><li>root(priority=1,sitePart==Turrets)->(*Threat)[threatsInfo](/Threat) defend the site</li><li>root(priority=1,sitePart==AmbushEdge)->(*Threat)an enemy force(/Threat) is waiting to ambush anyone who comes near</li><li>root(priority=1,sitePart==AmbushHidden)->(*Threat)an enemy force(/Threat) is waiting to ambush anyone who comes near</li><li>root(priority=1,sitePart==MechCluster)->there's (*Threat)a cluster of hostile mechanoid structures(/Threat)</li><li>root(priority=1,sitePart==PossibleUnknownThreatMarker)->there may be an (*Threat)unknown threat(/Threat)</li><li>root->there's a [label]</li></rulesStrings> -->
+  <Util_GenerateSite.root.singleSitePartRules.slateRef>
+    <rulesStrings>
+      <li>root(priority=1,sitePart==ClimateAdjuster)->一台可以将温度调整[temperatureOffset]的(*Threat)气候调节器(/Threat)</li>
+      <li>root(priority=1,sitePart==PsychicDroner)->一台仅对[affectedGender]起效的(*Threat)心灵放射器(/Threat)</li>
+      <li>root(priority=1,sitePart==PsychicSuppressor)->一台仅对[affectedGender]起效的(*Threat)心灵抑制器(/Threat)</li>
+      <li>root(priority=1,sitePart==WeatherController)->一台会将整个区域的天气改变为[weather_label]的(*Threat)气象仪(/Threat)</li>
+      <li>root(priority=1,sitePart==SmokeSpewer)->一台会持续喷射大量烟雾的(*Threat)烟雾产生器(/Threat)</li>
+      <li>root(priority=1,sitePart==SunBlocker)->一台会使整个区域陷入黑暗的(*Threat)黑幕产生器(/Threat)</li>
+      <li>root(priority=1,sitePart==EMIDynamo)->一台会瘫痪整个区域的电力设备的(*Threat)电磁干扰器(/Threat)</li>
+      <li>root(priority=1,sitePart==ToxicSpewer)->一台会持续释放大量毒雾的(*Threat)空气污染器(/Threat)</li>
+      <li>root(priority=1,sitePart==RaidSource)->(*Threat)一块被[enemiesCount]名敌人防守的军事集结区(/Threat)，他们每[mtbDays]就会对你发起袭击</li>
+      <li>root(priority=1,sitePart==Outpost)->(*Threat)一个被[enemiesCount]名敌人防守的哨站(/Threat)</li>
+      <li>root(priority=1,sitePart==BanditCamp)->(*Threat)匪徒营地(/Threat)内共有[enemiesCount]名敌人</li>
+      <li>root(priority=1,sitePart==Manhunters,count==1)->(*Threat)1只猎杀人类的[kindLabel](/Threat)</li>
+      <li>root(priority=1,sitePart==Manhunters,count>1)->(*Threat)[count]只猎杀人类的[kindLabel](/Threat)</li>
+      <li>root(priority=1,sitePart==SleepingMechanoids,count==1)->(*Threat)1台处于休眠状态的机械族(/Threat)</li>
+      <li>root(priority=1,sitePart==SleepingMechanoids,count>1)->(*Threat)[count]台处于休眠状态的机械族(/Threat)</li>
+      <li>root(priority=1,sitePart==Turrets)->(*Threat)一支由[threatsInfo]组成的守卫队(/Threat)</li>
+      <li>root(priority=1,sitePart==AmbushEdge)->(*Threat)一支埋伏起来的敌军(/Threat)</li>
+      <li>root(priority=1,sitePart==AmbushHidden)->(*Threat)一支埋伏起来的敌军(/Threat)</li>
+      <li>root(priority=1,sitePart==MechCluster)->(*Threat)一个机械集群(/Threat)</li>
+      <li>root(priority=1,sitePart==PossibleUnknownThreatMarker)->(*Threat)未知的威胁(/Threat)</li>
+      <li>root->有个[label]</li>
+    </rulesStrings>
+  </Util_GenerateSite.root.singleSitePartRules.slateRef>
+  
+  <!-- EN:
+    <li>threatDescription->a mech cluster will land at [map_definite] containing:\n\n[allThreats]</li>
+  -->
+  <Util_MechCluster.questDescriptionRules.rulesStrings>
+    <li>threatDescription->一个机械集群将会空降至[map_definite]。其中包括：\n\n[allThreats]</li>
+  </Util_MechCluster.questDescriptionRules.rulesStrings>
+  
+  <!-- EN:
+    <li>threatDescription->[enemyFaction_pawnsPlural] from [enemyFaction_name] will attack you. Their group is composed of:\n\n[raidPawnKinds]\n\n[raidArrivalModeInfo]</li>
+  -->
+  <Util_Raid.questDescriptionRules.rulesStrings>
+    <li>threatDescription->来自[enemyFaction_name]的[enemyFaction_pawnsPlural]将会攻击你。他们的组成为：\n\n[raidPawnKinds]\n\n[raidArrivalModeInfo]</li>
+  </Util_Raid.questDescriptionRules.rulesStrings>
+  
+  <!-- EN:
+    <li>pawnKindsParagraph(raidCount==1)->The group of [enemyFaction_pawnsPlural] is composed of: \n\n[raid0/raidPawnKinds]\n\n[raid0/raidArrivalModeInfo]</li>
+    <li>pawnKindsParagraph(raidCount==2)->The first group of [enemyFaction_pawnsPlural] is composed of: \n\n[raid0/raidPawnKinds]\n\nThe second similar-sized group will follow soon after.</li>
+    <li>pawnKindsParagraph(raidCount==3)->The first group of [enemyFaction_pawnsPlural] is composed of: \n\n[raid0/raidPawnKinds]\n\nTwo similar-sized groups will follow soon after.</li>
+    <li>pawnKindsParagraph(raidCount>=4)->The first group of [enemyFaction_pawnsPlural] is composed of: \n\n[raid0/raidPawnKinds]\n\n[raidCountMinusOne] similar-sized groups will follow soon after.</li>
+    <li>numGroupsOf(raidCount==1)-></li>
+    <li>numGroupsOf(raidCount==2)->two groups of</li>
+    <li>numGroupsOf(raidCount==3)->three groups of</li>
+    <li>numGroupsOf(raidCount>=4)->[raidCount] groups of</li>
+  -->
+  <Util_RaidDelayRepeatable.questDescriptionRules.rulesStrings>
+    <li>pawnKindsParagraph(raidCount==1)->这组[enemyFaction_pawnsPlural]的构成为： \n\n[raid0/raidPawnKinds]\n\n[raid0/raidArrivalModeInfo]</li>
+    <li>pawnKindsParagraph(raidCount==2)->第一组[enemyFaction_pawnsPlural]的构成为： \n\n[raid0/raidPawnKinds]\n\n第二支规模相仿的部队即将到来。</li>
+    <li>pawnKindsParagraph(raidCount==3)->第一组[enemyFaction_pawnsPlural]的构成为： \n\n[raid0/raidPawnKinds]\n\n两支规模相仿的部队即将到来。</li>
+    <li>pawnKindsParagraph(raidCount>=4)->第一组[enemyFaction_pawnsPlural]的构成为： \n\n[raid0/raidPawnKinds]\n\n[raidCountMinusOne]支规模相仿的部队即将到来。</li>
+    <li>numGroupsOf(raidCount==1)-></li>
+    <li>numGroupsOf(raidCount==2)->两组</li>
+    <li>numGroupsOf(raidCount==3)->三组</li>
+    <li>numGroupsOf(raidCount>=4)->[raidCount]组</li>
+  </Util_RaidDelayRepeatable.questDescriptionRules.rulesStrings>
+  
+</LanguageData>

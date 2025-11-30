@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: apocriton -->
+  <Mech_Apocriton.label>憎恶毒蜂</Mech_Apocriton.label>
+  
+  <!-- EN: centurion -->
+  <Mech_Centurion.label>百机长</Mech_Centurion.label>
+  
+  <!-- EN: diabolus -->
+  <Mech_Diabolus.label>炼狱魔王</Mech_Diabolus.label>
+  
+  <!-- EN: war queen -->
+  <Mech_Warqueen.label>战争女皇</Mech_Warqueen.label>
+  <!-- EN: war queens -->
+  <Mech_Warqueen.labelPlural>战争女皇</Mech_Warqueen.labelPlural>
+  
+</LanguageData>

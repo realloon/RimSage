@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PreceptDef>
+    <defName>ChildBirth</defName>
+    <label>child birth</label>
+    <description>Gather to help a pregnant woman give birth. A doctor will help deliver a baby. The health of the baby and mother depend on factors including the mother's age, the doctor's medical ability, and how clean and well-equipped the environment is.</description>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <visible>false</visible>
+    <classic>true</classic>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <ritualPatternBase>ChildBirth</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/GiveBirth</iconPath>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <useRepeatPenalty>false</useRepeatPenalty>
+    <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+  </PreceptDef>
+  
+</Defs>

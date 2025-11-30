@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>PreachHealth_Warmup</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/PreachHealth/Warmup</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>8~10</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PreachHealth_Resolve</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/PreachHealth/Resolve</clipPath>
+          </li>
+        </grains>
+        <volumeRange>6</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>WorkDrive_Warmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/WorkDrive</clipPath>
+          </li>
+        </grains>
+        <volumeRange>6</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>CombatCommand_Warmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/CombatCommand</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>6</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MoralistAbility_Warmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <sustain>True</sustain>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/Moralist/Moralist_Ability_Warmup_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>70</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MoralistAbility_Resolve</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/Moralist/Moralist_Ability_Resolve_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>100</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BerserkTrance_Resolve_Male</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/BerserkTrance_Male</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>55</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BerserkTrance_Resolve_Female</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/BerserkTrance_Female</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>55</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ImmunityDrive_Resolve</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <startDelayRange>0.3</startDelayRange>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/ImmunityDrive_Ability_Resolve_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AnimalCalm_Resolve</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <startDelayRange>0.3</startDelayRange>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/AnimalCalm</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>70</volumeRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

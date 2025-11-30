@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GoodwillSituationDef>
+    <defName>SameIdeo</defName>
+    <label>both follow {0_name}</label>
+    <workerClass>GoodwillSituationWorker_SameIdeo</workerClass>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+  </GoodwillSituationDef>
+
+  <!-- Agreement - same -->
+
+  <GoodwillSituationDef>
+    <defName>AnimalPersonhood_AnimalPersonhood</defName>
+    <label>animal personhood agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>AnimalPersonhood</meme>
+    <otherMeme>AnimalPersonhood</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Transhumanist_Transhumanist</defName>
+    <label>transhumanist agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Transhumanist</meme>
+    <otherMeme>Transhumanist</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>FleshPurity_FleshPurity</defName>
+    <label>flesh purity agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>FleshPurity</meme>
+    <otherMeme>FleshPurity</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>PainIsVirtue_PainIsVirtue</defName>
+    <label>pain is virtue agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>PainIsVirtue</meme>
+    <otherMeme>PainIsVirtue</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Cannibal_Cannibal</defName>
+    <label>cannibalism agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Cannibal</meme>
+    <otherMeme>Cannibal</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>HumanPrimacy_HumanPrimacy</defName>
+    <label>human primacy agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>HumanPrimacy</meme>
+    <otherMeme>HumanPrimacy</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>NaturePrimacy_NaturePrimacy</defName>
+    <label>nature primacy agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>NaturePrimacy</meme>
+    <otherMeme>NaturePrimacy</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Individualist_Individualist</defName>
+    <label>individualist agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Individualist</meme>
+    <otherMeme>Individualist</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Collectivist_Collectivist</defName>
+    <label>collectivist agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Collectivist</meme>
+    <otherMeme>Collectivist</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>MaleSupremacy_MaleSupremacy</defName>
+    <label>male supremacy agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>MaleSupremacy</meme>
+    <otherMeme>MaleSupremacy</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>FemaleSupremacy_FemaleSupremacy</defName>
+    <label>female supremacy agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>FemaleSupremacy</meme>
+    <otherMeme>FemaleSupremacy</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Nudism_Nudism</defName>
+    <label>nudism agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Nudism</meme>
+    <otherMeme>Nudism</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>HighLife_HighLife</defName>
+    <label>high life agreement</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>HighLife</meme>
+    <otherMeme>HighLife</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <!-- Agreement - different -->
+
+  <GoodwillSituationDef>
+    <defName>Cannibal_FleshPurity</defName>
+    <label>cannibal vs flesh purity</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Cannibal</meme>
+    <otherMeme>FleshPurity</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Cannibal_PainIsVirtue</defName>
+    <label>cannibal vs pain is virtue</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Cannibal</meme>
+    <otherMeme>PainIsVirtue</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>HumanPrimacy_Transhumanist</defName>
+    <label>human primacy vs transhumanist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>HumanPrimacy</meme>
+    <otherMeme>Transhumanist</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>HumanPrimacy_FleshPurity</defName>
+    <label>human primacy vs flesh purity</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>HumanPrimacy</meme>
+    <otherMeme>FleshPurity</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>NaturePrimacy_AnimalPersonhood</defName>
+    <label>nature primacy vs animal personhood</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>NaturePrimacy</meme>
+    <otherMeme>AnimalPersonhood</otherMeme>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Guilty_All</defName>
+    <label>guilty</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Guilty</meme>
+    <versusAll>true</versusAll>
+    <naturalGoodwillOffset>10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <!-- Disagreement -->
+
+  <GoodwillSituationDef>
+    <defName>FleshPurity_Transhumanist</defName>
+    <label>flesh purity vs transhumanist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>FleshPurity</meme>
+    <otherMeme>Transhumanist</otherMeme>
+    <naturalGoodwillOffset>-20</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>NaturePrimacy_Transhumanist</defName>
+    <label>nature primacy vs transhumanist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>NaturePrimacy</meme>
+    <otherMeme>Transhumanist</otherMeme>
+    <naturalGoodwillOffset>-20</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>HumanPrimacy_AnimalPersonhood</defName>
+    <label>human primacy vs animal personhood</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>HumanPrimacy</meme>
+    <otherMeme>AnimalPersonhood</otherMeme>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Individualist_Cannibal</defName>
+    <label>individualist vs cannibal</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Individualist</meme>
+    <otherMeme>Cannibal</otherMeme>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Individualist_Proselytizer</defName>
+    <label>individualist vs proselytizer</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Individualist</meme>
+    <otherMeme>Proselytizer</otherMeme>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Collectivist_Individualist</defName>
+    <label>collectivist vs individualist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Collectivist</meme>
+    <otherMeme>Individualist</otherMeme>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>MaleSupremacy_Individualist</defName>
+    <label>male supremacy vs individualist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>MaleSupremacy</meme>
+    <otherMeme>Individualist</otherMeme>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>FemaleSupremacy_Individualist</defName>
+    <label>female supremacy vs individualist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>FemaleSupremacy</meme>
+    <otherMeme>Individualist</otherMeme>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Rancher_AnimalPersonhood</defName>
+    <label>rancher vs animal personhood</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Rancher</meme>
+    <otherMeme>AnimalPersonhood</otherMeme>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>NaturePrimacy_HumanPrimacy</defName>
+    <label>nature primacy vs human primacy</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>NaturePrimacy</meme>
+    <otherMeme>HumanPrimacy</otherMeme>
+    <naturalGoodwillOffset>-30</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>FemaleSupremacy_MaleSupremacy</defName>
+    <label>female supremacy vs male supremacy</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>FemaleSupremacy</meme>
+    <otherMeme>MaleSupremacy</otherMeme>
+    <naturalGoodwillOffset>-30</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>HighLife_FleshPurity</defName>
+    <label>high life vs flesh purity</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>HighLife</meme>
+    <otherMeme>FleshPurity</otherMeme>
+    <naturalGoodwillOffset>-30</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Rancher_NaturePrimacy</defName>
+    <label>rancher vs nature primacy</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Rancher</meme>
+    <otherMeme>NaturePrimacy</otherMeme>
+    <naturalGoodwillOffset>-30</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Supremacist_All</defName>
+    <label>supremacist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Supremacist</meme>
+    <versusAll>true</versusAll>
+    <naturalGoodwillOffset>-50</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Raider_All</defName>
+    <label>raider</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Raider</meme>
+    <versusAll>true</versusAll>
+    <naturalGoodwillOffset>-50</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+  <GoodwillSituationDef>
+    <defName>Loyalist_All</defName>
+    <label>loyalist</label>
+    <workerClass>GoodwillSituationWorker_MemeCompatibility</workerClass>
+    <meme>Loyalist</meme>
+    <versusAll>true</versusAll>
+    <naturalGoodwillOffset>-10</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+</Defs>

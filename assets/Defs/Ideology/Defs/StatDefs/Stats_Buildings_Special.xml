@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>BiosculpterPodSpeedFactor</defName>
+    <label>biosculpter pod speed factor</label>
+    <description>A multiplier on the speed of a biosculpter pod. This is affected by the cleanliness of the room - a cleaner room will result in a quicker biosculpting cycle.</description>
+    <category>Building</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <showIfUndefined>false</showIfUndefined>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <parts>
+      <li Class="StatPart_RoomStat">
+        <roomStat>BiosculpterPodSpeedFactor</roomStat>
+        <customLabel>Room cleanliness</customLabel>
+      </li>
+    </parts>
+    <displayPriorityInCategory>4100</displayPriorityInCategory>
+  </StatDef>
+
+</Defs>

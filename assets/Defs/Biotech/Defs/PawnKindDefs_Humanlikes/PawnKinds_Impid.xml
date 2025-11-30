@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef ParentName="TribalArcherBase">
+    <defName>Tribal_Archer_Fire</defName>
+    <weaponTags Inherit="False">
+      <li>NeolithicRangedFlame</li>
+    </weaponTags>
+    <combatPower>75</combatPower>
+    <defaultFactionDef>TribeSavageImpid</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="Tribal_Hunter">
+    <defName>Tribal_Hunter_Fire</defName>
+    <weaponTags>
+      <li>NeolithicRangedFlame</li>
+    </weaponTags>
+    <combatPower>80</combatPower>
+    <defaultFactionDef>TribeSavageImpid</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribalWarriorBase">
+    <defName>Tribal_Warrior_Fire</defName>
+    <weaponTags>
+      <li>NeolithicMeleeDecent</li>
+      <li>GrenadeFlame</li>
+    </weaponTags>
+    <combatPower>75</combatPower>
+    <defaultFactionDef>TribeSavageImpid</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribalPenitentBase">
+    <defName>Tribal_Penitent_Fire</defName>
+    <weaponTags>
+      <li>NeolithicMeleeBasic</li>
+      <li>GrenadeFlame</li>
+    </weaponTags>
+    <combatPower>70</combatPower>
+    <defaultFactionDef>TribeSavageImpid</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribalChildBase">
+    <defName>Tribal_Child_Fire</defName>
+    <defaultFactionDef>TribeSavageImpid</defaultFactionDef>
+  </PawnKindDef>
+
+</Defs>

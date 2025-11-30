@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: blight -->
+  <Blight.label>枯萎</Blight.label>
+  
+  <!-- EN: explosion -->
+  <Explosion.label>爆炸</Explosion.label>
+  
+  <!-- EN: flying -->
+  <PawnFlyer.label>飞行</PawnFlyer.label>
+  
+  <!-- EN: flying -->
+  <PawnFlyer_Stun.label>飞行</PawnFlyer_Stun.label>
+  
+  <!-- EN: disrupted soil -->
+  <PawnGroundSpawner.label>被破坏的土地</PawnGroundSpawner.label>
+  
+  <!-- EN: proximity trigger -->
+  <RadialTrigger.label>接近触发</RadialTrigger.label>
+  
+  <!-- EN: rect trigger -->
+  <RectTrigger.label>触发方块</RectTrigger.label>
+  
+  <!-- EN: tornado -->
+  <Tornado.label>龙卷风</Tornado.label>
+  
+  <!-- EN: trigger container emptied -->
+  <TriggerContainerEmptied.label>清空触发</TriggerContainerEmptied.label>
+  
+  <!-- EN: trigger unfogged -->
+  <TriggerUnfogged.label>触发解除迷雾</TriggerUnfogged.label>
+  
+  <!-- EN: tunnel -->
+  <TunnelHiveSpawner.label>隧道</TunnelHiveSpawner.label>
+  
+</LanguageData>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>Twinkle</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.2</fadeInTime>
+    <solidTime>0.05</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Mote/Twinkle</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>SleepAccelerator</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1.2667</fadeInTime>
+    <solidTime>3.325</solidTime>
+    <fadeOutTime>0.1583</fadeOutTime>
+    <growthRate>0.3158</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <color>(0.65, 0.65, 0.15, 0.6)</color>
+      <shaderType>MoteGlowPulse</shaderType>
+      <shaderParameters>
+        <_Interval>0.475</_Interval>
+      </shaderParameters>
+    </graphicData>
+  </FleckDef>
+
+<!--  <FleckDef ParentName="FleckBase_Thrown">-->
+  <FleckDef ParentName="FleckBase">
+    <defName>NeuralSuperchargerChargedFloor</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0.8</fadeInTime>
+    <solidTime>1.4</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+    <growthRate>0.3</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <drawSize>(1,3)</drawSize>
+      <color>(0.42, 0.6, 0.57, 0.6)</color>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>NeuralSuperchargerUse</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.5</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+    <growthRate>2</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <color>(0.42, 0.6, 0.57, 0.9)</color>
+      <shaderType>MoteGlowPulse</shaderType>
+      <shaderParameters>
+        <_Interval>0.4</_Interval>
+      </shaderParameters>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>BiosculpterScanner_Forward</defName>
+    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayerIncOffset>-0.5</altitudeLayerIncOffset>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1.8</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <drawSize>(3,1)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>BiosculpterScanner_Backward</defName>
+    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayerIncOffset>-1.5</altitudeLayerIncOffset>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.4</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>BiosculpterScanner_Ready</defName>
+    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayerIncOffset>-0.5</altitudeLayerIncOffset>
+    <fadeInTime>1.2</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.8</fadeOutTime>
+    <graphicData>
+      <texPath>UI/Overlays/HighlightAtlas</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>DustPuffFast</defName>
+    <graphicData>
+      <texPath>Things/Mote/DustPuff</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.01</fadeInTime>
+    <solidTime>0.01</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>AutobongSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>20</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <growthRate>0.05</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PreachHealth</defName>
+    <graphicData>
+      <texPath>Things/Mote/HealingCross</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime>
+    <solidTime>1.4</solidTime>
+    <fadeOutTime>1.5</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Steam</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.20</fadeInTime>
+    <solidTime>1.2</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <growthRate>0.1</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>GlimmerSmall</defName>
+    <graphicData>
+      <texPath>Other/GlimmerSmall</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <fadeInTime>0.08</fadeInTime>
+    <solidTime>0.3</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown" Name="FleckBase_GauranlenDebris" Abstract="True">
+    <graphicData>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.01</fadeInTime>
+    <solidTime>0.5</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_GauranlenDebris">
+    <defName>GauranlenDebrisA</defName>
+    <graphicData>
+      <texPath>Things/Mote/GauranlenDebris/GauranlenDebrisA</texPath>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_GauranlenDebris">
+    <defName>GauranlenDebrisB</defName>
+    <graphicData>
+      <texPath>Things/Mote/GauranlenDebris/GauranlenDebrisB</texPath>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_GauranlenDebris">
+    <defName>GauranlenDebrisC</defName>
+    <graphicData>
+      <texPath>Things/Mote/GauranlenDebris/GauranlenDebrisC</texPath>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>GauranlenLeaf</defName>
+    <graphicData>
+      <texPath>Things/Mote/RitualEffects/Leaves/Leaf1</texPath>
+      <drawSize>(0.4, 0.4)</drawSize>
+      <color>(245, 148, 69, 255)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>2.5</solidTime>
+    <fadeInTime>0.05</fadeInTime>
+    <fadeOutTime>0.5</fadeOutTime>
+  </FleckDef>
+
+</Defs>

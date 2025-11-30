@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <DesignationCategoryDef>
+    <defName>Anomaly</defName>
+    <label>anomaly</label>
+    <order>11</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+    <minMonolithLevel>1</minMonolithLevel>
+  </DesignationCategoryDef>
+</Defs>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <CommandBedSetForSlavesLabel>For slaves</CommandBedSetForSlavesLabel>
+  <CommandBedSetForColonistsLabel>For colonists</CommandBedSetForColonistsLabel>
+  <CommandBedSetForOwnerTypeDesc>Whether beds in this room should be used by colonists, prisoners or slaves.</CommandBedSetForOwnerTypeDesc>
+
+  <CommandNeuralSuperchargerNoAutoUse>No auto-use</CommandNeuralSuperchargerNoAutoUse>
+  <CommandNeuralSuperchargerNoAutoUseDescription>None of your people will use this neural supercharger automatically.</CommandNeuralSuperchargerNoAutoUseDescription>
+  <CommandNeuralSuperchargerAutoUseWithDesire>Auto-use with desire</CommandNeuralSuperchargerAutoUseWithDesire>
+  <CommandNeuralSuperchargerAutoUseWithDesireDescription>Your people may use this neural supercharger automatically, if they want to because of their beliefs.</CommandNeuralSuperchargerAutoUseWithDesireDescription>
+  <CommandNeuralSuperchargerAutoForEveryone>Auto-use for everyone</CommandNeuralSuperchargerAutoForEveryone>
+  <CommandNeuralSuperchargerAutoForEveryoneDescription>All of your people will use this neural supercharger if they get the chance.</CommandNeuralSuperchargerAutoForEveryoneDescription>
+  <CommandNeuralSuperchargerAllowGuests>Allow guests</CommandNeuralSuperchargerAllowGuests>
+  <CommandNeuralSuperchargerAllowGuestsDescription>Allow this neural supercharger to be used by temporary faction members.</CommandNeuralSuperchargerAllowGuestsDescription>
+
+  <CommandSelectConnectedTree>Select connected tree</CommandSelectConnectedTree>
+  <CommandHealInHealingPod>Create healing pod</CommandHealInHealingPod>
+  <CommandHealInHealingPodDesc>If this creature is injured, it will return to its connected Gauranlen tree and enter a woody healing pod. After {DAYS} days, the dryad will emerge with its wounds healed.</CommandHealInHealingPodDesc>
+</LanguageData>

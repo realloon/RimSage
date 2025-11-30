@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>Harp</defName>
+    <label>harp</label>
+    <description>Craft the harp, a simple stationary musical instrument popular among nobility in some cultures.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>4.20</researchViewY>
+    <prerequisites>
+      <li>ComplexFurniture</li>
+    </prerequisites>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->harps</li>
+        <li>subject->simple string instruments</li>
+
+        <li>subject_story->trained in the school of music</li>
+        <li>subject_story->constructed a harp from common feral world materials</li>
+        <li>subject_story->performed a harp solo for the Imperial nobility</li>
+        <li>subject_story->practiced glissandos every day</li>
+        <li>subject_story->researched the cultural significance of stringed instrument usage</li>
+
+        <li>subject_gerund->playing the harp</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>Harpsichord</defName>
+    <label>harpsichord</label>
+    <description>Craft the harpsichord, a complex stationary musical instrument.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>4.20</researchViewY>
+    <prerequisites>
+      <li>Harp</li>
+      <li>Smithing</li>
+    </prerequisites>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->harpsichord</li>
+
+        <li>subject_story->led a renaissance in the harpsichord in the coreworld systems</li>
+        <li>subject_story->tuned harpsichords for concert use on Glitterworlds</li>
+        <li>subject_story->took up a role as lead harpischordist for the local philharmonic</li>
+        <li>subject_story->constructed dual-keyboard harpsichords focused on harmonics</li>
+
+        <li>subject_gerund->playing the harpsichord</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>Piano</defName>
+    <label>piano</label>
+    <description>Craft the piano, an advanced stationary musical instrument.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>4.20</researchViewY>
+    <prerequisites>
+      <li>Harpsichord</li>
+    </prerequisites>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->piano</li>
+
+        <li>subject_story->was acquainted with the entire corpus of stringed instruments</li>
+        <li>subject_story->joined a music academy, where the students learned about composers as much as the piano itself</li>
+        <li>subject_story->transported pianos between the coreworlds</li>
+        <li>subject_story->recorded the techniques of several master pianists</li>
+        <li>subject_story->constructed a strange piano</li>
+
+        <li>subject_gerund->playing the piano</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>

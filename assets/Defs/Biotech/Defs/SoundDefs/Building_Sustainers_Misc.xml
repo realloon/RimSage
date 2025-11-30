@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>MechbandDishPrepared_Electronic</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <sustain>True</sustain>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/BurnoutBossgroupCaller/Prep/Electronic</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <sustainIntervalRange>0.8~1.5</sustainIntervalRange>
+        <sustainLoop>false</sustainLoop>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechbandDishPrepared_Mechanical</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <sustain>True</sustain>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/BurnoutBossgroupCaller/Prep/Mechanical</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <sustainIntervalRange>0.5~1</sustainIntervalRange>
+        <sustainLoop>false</sustainLoop>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

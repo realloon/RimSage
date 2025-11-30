@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>globalAdjective->Spacer</li>
+    <li>globalAdjective->Star</li>
+    <li>globalAdjective->Stellar</li>
+    <li>globalAdjective->Interstellar</li>
+    <li>globalHyphenPrefix->astro</li>
+    <li>globalHyphenPrefix->stello</li>
+  -->
+  <CultureSpacer.rulePack.rulesStrings>
+    <li>globalAdjective->星际</li>
+    <li>globalAdjective->恒星</li>
+    <li>globalAdjective->恒星</li>
+    <li>globalAdjective->星际</li>
+    <li>globalHyphenPrefix->宇宙</li>
+    <li>globalHyphenPrefix->星系</li>
+  </CultureSpacer.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>globalAdjective(p=15)->Tribal</li>
+  -->
+  <NamerIdeoCorunan.rulePack.rulesStrings>
+    <li>globalAdjective(p=15)->部落</li>
+  </NamerIdeoCorunan.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>r_ideoName->[keyDeity]ism</li>
+    <li>r_ideoName->[hyphenPrefix]-[keyDeity]ism</li>
+    <li>r_ideoName->[keyDeity]'s [creed]</li>
+    <li>r_ideoName->[creed] of [keyDeity]</li>
+    <li>r_ideoAdjective->[keyDeity]ic</li>
+    <li>r_memberName->[keyDeity]ist</li>
+    <li>r_memberName->[keyDeity]ite</li>
+    <li>r_ideoName(p=6)->[packIdeoName]</li>
+    <li>r_ideoName(p=2,forcePrefix==False)->[hyphenPrefix]-[packIdeoName]</li>
+    <li>r_ideoName(p=2,forcePrefix==False)->[hyphenPrefix]-[packIdeoNameStructure]</li>
+    <li>r_ideoName(p=2)->[memeAdjective] [creed]</li>
+    <li>r_ideoName(p=1)->[creed] of [packTheme]</li>
+    <li>r_ideoName(p=1)->[place_adjective] [creed]</li>
+    <li>r_ideoName(p=0.25)->The [memeCreed]</li>
+    <li>r_ideoAdjective(priority=1)->[packAdjective]</li>
+    <li>r_memberName->[packMember]</li>
+    <li>creed(priority=1)->[memeCreed]</li>
+    <li>creed->[genericCreed]</li>
+    <li>genericCreed->creed</li>
+    <li>genericCreed->doctrine</li>
+    <li>genericCreed->way</li>
+    <li>genericCreed->path</li>
+    <li>hyphenPrefix->[globalHyphenPrefix]</li>
+    <li>hyphenPrefix->[memeHyphenPrefix]</li>
+    <li>globalHyphenPrefix(p=4)->neo</li>
+    <li>globalHyphenPrefix(p=2)->post</li>
+    <li>globalHyphenPrefix->nova</li>
+    <li>globalHyphenPrefix->archaeo</li>
+    <li>globalHyphenPrefix->hyper</li>
+  -->
+  <NamerIdeoGlobal.rulePack.rulesStrings>
+    <li>r_ideoName->[keyDeity]主义</li>
+    <li>r_ideoName->[hyphenPrefix]-[keyDeity]主义</li>
+    <li>r_ideoName->[keyDeity][creed]</li>
+    <li>r_ideoName->[keyDeity][creed]</li>
+    <li>r_ideoAdjective->[keyDeity]的</li>
+    <li>r_memberName->[keyDeity]主义者</li>
+    <li>r_memberName->[keyDeity]主义信徒</li>
+    <li>r_ideoName(p=6)->[packIdeoName]</li>
+    <li>r_ideoName(p=2,forcePrefix==False)->[hyphenPrefix]-[packIdeoName]</li>
+    <li>r_ideoName(p=2,forcePrefix==False)->[hyphenPrefix]-[packIdeoNameStructure]</li>
+    <li>r_ideoName(p=2)->[memeAdjective][creed]</li>
+    <li>r_ideoName(p=1)->[packTheme][creed]</li>
+    <li>r_ideoName(p=1)->[place_adjective][creed]</li>
+    <li>r_ideoName(p=0.25)->[memeCreed]</li>
+    <li>r_ideoAdjective(priority=1)->[packAdjective]</li>
+    <li>r_memberName->[packMember]</li>
+    <li>creed(priority=1)->[memeCreed]</li>
+    <li>creed->[genericCreed]</li>
+    <li>genericCreed->教</li>
+    <li>genericCreed->主义</li>
+    <li>genericCreed->之道</li>
+    <li>genericCreed->之路</li>
+    <li>hyphenPrefix->[globalHyphenPrefix]</li>
+    <li>hyphenPrefix->[memeHyphenPrefix]</li>
+    <li>globalHyphenPrefix(p=4)->新生</li>
+    <li>globalHyphenPrefix(p=2)->后</li>
+    <li>globalHyphenPrefix->新兴</li>
+    <li>globalHyphenPrefix->古</li>
+    <li>globalHyphenPrefix->超</li>
+  </NamerIdeoGlobal.rulePack.rulesStrings>
+  
+</LanguageData>

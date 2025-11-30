@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>Bloodfeeders</defName>
+    <label>bloodfeeders</label>
+    <iconPath>UI/Issues/Bloodfeeders</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>BloodfeederDied</defName>
+    <label>bloodfeeder died</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>PropagateBloodfeederGene</defName>
+    <label>propagate bloodfeeder gene</label>
+  </HistoryEventDef>
+
+  <PreceptDef>
+    <defName>Bloodfeeders_Revered</defName>
+    <issue>Bloodfeeders</issue>
+    <label>revered</label>
+    <description>Bloodfeeders should be worshipped. Believers will be happy if there is a bloodfeeder in the colony and will not mind being fed upon.</description>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Bloodfeeders_Revered_Opinion_Bloodfeeder</thought>
+        <description>Bloodfeeder</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>BloodfeederDied</eventDef>
+        <thought>BloodfeederDied_Revered</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Bloodfeeder_ReveredBloodfeeder</thought>
+        <description>Revered bloodfeeder</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>BloodfeederColonist_Revered</thought>
+        <thoughtStageDescriptions>
+          <li>No bloodfeeders</li>
+          <li>No bloodfeeder master</li>
+          <li>Bloodfeeder master</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Bloodfeeders_Reviled</defName>
+    <issue>Bloodfeeders</issue>
+    <label>reviled</label>
+    <description>Anyone who drinks blood to survive is a monster.</description>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>PropagateBloodfeederGene</eventDef>
+        <description>Propagate bloodfeeder gene</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Bloodfeeders_Reviled_Opinion_Bloodfeeder</thought>
+        <description>Bloodfeeder</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>BloodfeederDied</eventDef>
+        <thought>BloodfeederDied_Reviled</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Bloodfeeder_ReviledBloodfeeder</thought>
+        <description>Bloodfeeder self hatred</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>BloodfeederColonist_Reviled</thought>
+        <description>Bloodfeeder among us</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>Bloodfeeders_Revered_Opinion_Bloodfeeder</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_Bloodfeeder_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>bloodfeeder</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Bloodfeeders_Reviled_Opinion_Bloodfeeder</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_Bloodfeeder_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>bloodfeeder</label>
+        <baseOpinionOffset>-40</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BloodfeederDied_Revered</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>3</stackLimit>
+    <durationDays>10</durationDays>
+    <stages>
+      <li>
+        <label>bloodfeeder died</label>
+        <description>The bloodfeeders stand above us, yet one has died here. We will surely be punished for this.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BloodfeederDied_Reviled</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <durationDays>10</durationDays>
+    <stages>
+      <li>
+        <label>bloodfeeder died</label>
+        <description>The only good bloodfeeder is a dead one.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Bloodfeeder_ReveredBloodfeeder</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IsBloodfeeder</workerClass>
+    <stages>
+      <li>
+        <label>revered bloodfeeder</label>
+        <description>Let them worship me. Feeding upon them places them below me, as animals are below humans.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Bloodfeeder_ReviledBloodfeeder</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IsBloodfeeder</workerClass>
+    <stages>
+      <li>
+        <label>bloodfeeder self hatred</label>
+        <description>I am what I hate. I must rid myself of this curse.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BloodfeederColonist_Revered</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_BloodfeederColonist</workerClass>
+    <nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+    <stages>
+      <li>
+        <label>no bloodfeeders</label>
+        <description>Without a bloodfeeder master, we are undirected and lost. We should make a bloodfeeder our leader.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>no bloodfeeder master</label>
+        <description>Without a bloodfeeder master, we lack proper direction. We should make a bloodfeeder our leader.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>bloodfeeder master</label>
+        <description>The bloodfeeder's presence is a great honor. May they live forever.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BloodfeederColonist_Reviled</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_BloodfeederPresent</workerClass>
+    <nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+    <stages>
+      <li>
+        <label>bloodfeeder among us</label>
+        <description>One of them walks among us. We should expel the bloodfeeder from our home.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

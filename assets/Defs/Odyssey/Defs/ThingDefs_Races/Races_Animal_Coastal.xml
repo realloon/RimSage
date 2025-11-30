@@ -1,0 +1,1186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Walrus</defName>
+    <label>walrus</label>
+    <description>A large marine animal with tusks and whiskers. Its considerable bulk allows it to survive in extremely cold environments. While slow on land, it is relatively quick in water.</description>
+    <statBases>
+      <MoveSpeed>2.3</MoveSpeed>
+      <MarketValue>300</MarketValue>
+      <ComfyTemperatureMin>-55</ComfyTemperatureMin>
+      <FilthRate>16</FilthRate>
+      <Wildness>0.75</Wildness>
+    </statBases>
+    <tools>
+      <li>
+        <label>tusk</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>10.7</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>TuskAttackTool</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>8.5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.6</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>PinnipedWithTusks</body>
+      <herdAnimal>true</herdAnimal>
+      <baseBodySize>2.0</baseBodySize>
+      <baseHealthScale>1.2</baseHealthScale>
+      <baseHungerRate>0.54</baseHungerRate>
+      <foodType>CarnivoreAnimal</foodType>
+      <trainability>None</trainability>
+      <leatherDef>Leather_Sealskin</leatherDef>
+      <gestationPeriodDays>6.66</gestationPeriodDays>
+      <waterSeeker>true</waterSeeker>
+      <waterCellCost>1</waterCellCost>
+      <manhunterOnDamageChance>0.5</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.1</manhunterOnTameFailChance>
+      <canFishForFood>true</canFishForFood>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.5, 1)</li>
+          <li>(2.0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>12</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.1</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3333</minAge>
+          <soundWounded>Pawn_Pinniped_Wounded</soundWounded>
+          <soundDeath>Pawn_Pinniped_Death</soundDeath>
+          <soundCall>Pawn_Pinniped_Call</soundCall>
+          <soundAngry>Pawn_Pinniped_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Walrus</defName>
+    <label>walrus</label>
+    <race>Walrus</race>
+    <combatPower>70</combatPower>
+    <wildGroupSize>2~4</wildGroupSize>
+    <ecoSystemWeight>0.5</ecoSystemWeight>
+    <moveSpeedFactorByTerrainTag>
+      <li>
+        <key>Water</key>
+        <value>2.0</value>
+      </li>
+    </moveSpeedFactorByTerrainTag>
+    <lifeStages>
+      <li>
+        <label>walrus calf</label>
+        <labelPlural>walrus calves</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Walrus</texPath>
+          <drawSize>1.05</drawSize>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Swimming_Walrus</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.05</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Dessicated_Walrus</texPath>
+          <drawSize>1.05</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Walrus</texPath>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Swimming_Walrus</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Dessicated_Walrus</texPath>
+          <drawSize>1.6</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Walrus</texPath>
+          <drawSize>1.85</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Swimming_Walrus</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.85</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Walrus/Dessicated_Walrus</texPath>
+          <drawSize>1.85</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>SeaLion</defName>
+    <label>sea lion</label>
+    <description>A large and intelligent marine animal. Male sea lions have thick fur around their necks, which evoke a lion's mane.</description>
+    <statBases>
+      <MoveSpeed>2.8</MoveSpeed>
+      <MarketValue>320</MarketValue>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <FilthRate>8</FilthRate>
+      <Wildness>0.5</Wildness>
+    </statBases>
+    <tools>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>8.5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.6</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>Pinniped</body>
+      <herdAnimal>true</herdAnimal>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>0.8</baseHealthScale>
+      <baseHungerRate>0.30</baseHungerRate>
+      <foodType>CarnivoreAnimal</foodType>
+      <trainability>Advanced</trainability>
+      <leatherDef>Leather_Sealskin</leatherDef>
+      <gestationPeriodDays>5.661</gestationPeriodDays>
+      <waterSeeker>true</waterSeeker>
+      <waterCellCost>1</waterCellCost>
+      <manhunterOnDamageChance>0.1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <canFishForFood>true</canFishForFood>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.5, 1)</li>
+          <li>(2.0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>12</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.1</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3333</minAge>
+          <soundWounded>Pawn_Pinniped_Wounded</soundWounded>
+          <soundDeath>Pawn_Pinniped_Death</soundDeath>
+          <soundCall>Pawn_Pinniped_Call</soundCall>
+          <soundAngry>Pawn_Pinniped_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>SeaLion</defName>
+    <label>sea lion</label>
+    <race>SeaLion</race>
+    <combatPower>70</combatPower>
+    <wildGroupSize>2~4</wildGroupSize>
+    <ecoSystemWeight>0.5</ecoSystemWeight>
+    <moveSpeedFactorByTerrainTag>
+      <li>
+        <key>Water</key>
+        <value>2.0</value>
+      </li>
+    </moveSpeedFactorByTerrainTag>
+    <lifeStages>
+      <li>
+        <label>sea lion pup</label>
+        <labelPlural>sea lion pups</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/SeaLionMale</texPath>
+          <drawSize>1.05</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Swimming_SeaLionMale</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.05</drawSize>
+        </swimmingGraphicData>
+        <femaleGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/SeaLionFemale</texPath>
+          <drawSize>1.05</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+        </femaleGraphicData>
+        <femaleSwimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Swimming_SeaLionFemale</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.05</drawSize>
+        </femaleSwimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Dessicated_SeaLion</texPath>
+          <drawSize>1.05</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/SeaLionMale</texPath>
+          <drawSize>1.5</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Swimming_SeaLionMale</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </swimmingGraphicData>
+        <femaleGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/SeaLionFemale</texPath>
+          <drawSize>1.5</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </femaleGraphicData>
+        <femaleSwimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Swimming_SeaLionFemale</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </femaleSwimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Dessicated_SeaLion</texPath>
+          <drawSize>1.5</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/SeaLionMale</texPath>
+          <drawSize>1.7</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Swimming_SeaLionMale</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.7</drawSize>
+        </swimmingGraphicData>
+        <femaleGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/SeaLionFemale</texPath>
+          <drawSize>1.7</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </femaleGraphicData>
+        <femaleSwimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Swimming_SeaLionFemale</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.7</drawSize>
+        </femaleSwimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaLion/Dessicated_SeaLion</texPath>
+          <drawSize>1.7</drawSize>
+          <drawOffsetEast>(-0.2, 0.0, 0.0)</drawOffsetEast>
+          <drawOffsetWest>(0.2, 0.0, 0.0)</drawOffsetWest>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Seal</defName>
+    <label>seal</label>
+    <description>A marine mammal with a streamlined body that is adept at hunting fish. While slow on land, seals are relatively quick in water.</description>
+    <statBases>
+      <MoveSpeed>2.6</MoveSpeed>
+      <MarketValue>290</MarketValue>
+      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+      <FilthRate>6</FilthRate>
+      <Wildness>0.5</Wildness>
+    </statBases>
+    <tools>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.6</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>Pinniped</body>
+      <herdAnimal>true</herdAnimal>
+      <baseBodySize>0.8</baseBodySize>
+      <baseHealthScale>0.7</baseHealthScale>
+      <baseHungerRate>0.30</baseHungerRate>
+      <foodType>CarnivoreAnimal</foodType>
+      <trainability>Advanced</trainability>
+      <leatherDef>Leather_Sealskin</leatherDef>
+      <gestationPeriodDays>5.661</gestationPeriodDays>
+      <waterSeeker>true</waterSeeker>
+      <waterCellCost>1</waterCellCost>
+      <nuzzleMtbHours>24</nuzzleMtbHours>
+      <canFishForFood>true</canFishForFood>
+      <specialTrainables>
+        <li>Comfort</li>
+      </specialTrainables>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.5, 1)</li>
+          <li>(2.0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>12</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.1</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3333</minAge>
+          <soundWounded>Pawn_Pinniped_Wounded</soundWounded>
+          <soundDeath>Pawn_Pinniped_Death</soundDeath>
+          <soundCall>Pawn_Pinniped_Call</soundCall>
+          <soundAngry>Pawn_Pinniped_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Seal</defName>
+    <label>seal</label>
+    <race>Seal</race>
+    <combatPower>50</combatPower>
+    <wildGroupSize>2~4</wildGroupSize>
+    <ecoSystemWeight>0.5</ecoSystemWeight>
+    <moveSpeedFactorByTerrainTag>
+      <li>
+        <key>Water</key>
+        <value>2.0</value>
+      </li>
+    </moveSpeedFactorByTerrainTag>
+    <lifeStages>
+      <li>
+        <label>seal pup</label>
+        <labelPlural>seal pups</labelPlural>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Seal</texPath>
+          <drawSize>0.9</drawSize>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Swimming_Seal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.9</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Dessicated_Seal</texPath>
+          <drawSize>0.9</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Seal</texPath>
+          <drawSize>1.2</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Swimming_Seal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.2</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Dessicated_Seal</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Seal</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.4, 0.3)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Swimming_Seal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Seal/Dessicated_Seal</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>HermitCrab</defName>
+    <label>hermit crab</label>
+    <description>A small crustacean found along coastlines. Hermit crabs scavenge various shells to protect themselves.</description>
+    <statBases>
+      <MoveSpeed>2</MoveSpeed>
+      <MarketValue>60</MarketValue>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+      <ComfyTemperatureMin>0</ComfyTemperatureMin>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <LeatherAmount>0</LeatherAmount>
+      <Wildness>0.75</Wildness>
+    </statBases>
+    <tools>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.25</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.25</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>Crab</body>
+      <baseBodySize>0.2</baseBodySize>
+      <baseHungerRate>0.0825</baseHungerRate>
+      <baseHealthScale>0.4</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <lifeExpectancy>12</lifeExpectancy>
+      <waterSeeker>true</waterSeeker>
+      <gestationPeriodDays>5.661</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(2.5, 1)</li>
+          <li>(3, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.15</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.2222</minAge>
+          <soundWounded>Pawn_Crab_Wounded</soundWounded>
+          <soundDeath>Pawn_Crab_Death</soundDeath>
+          <soundCall>Pawn_Crab_Call</soundCall>
+          <soundAngry>Pawn_Crab_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Reptile_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.11)</li>
+        <li>(0.25, 0, 0.02)</li>
+        <li>(0.01, 0, -0.02)</li>
+        <li>(-0.52, 0, 0.02)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>HermitCrab</defName>
+    <label>hermit crab</label>
+    <race>HermitCrab</race>
+    <combatPower>50</combatPower>
+    <ecoSystemWeight>0.2</ecoSystemWeight>
+    <alternateGraphicChance>1</alternateGraphicChance>
+    <alternateGraphics>
+      <li>
+        <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabA</texPath>
+        <dessicatedTexPath>Things/Pawn/Animal/HermitCrab/Dessicated_HermitCrabA</dessicatedTexPath>
+        <stationaryTexPath>Things/Pawn/Animal/HermitCrab/HermitCrabA_Stationary</stationaryTexPath>
+      </li>
+      <li>
+        <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabB</texPath>
+        <dessicatedTexPath>Things/Pawn/Animal/HermitCrab/Dessicated_HermitCrabB</dessicatedTexPath>
+        <stationaryTexPath>Things/Pawn/Animal/HermitCrab/HermitCrabB_Stationary</stationaryTexPath>
+      </li>
+      <li>
+        <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabC</texPath>
+        <dessicatedTexPath>Things/Pawn/Animal/HermitCrab/Dessicated_HermitCrabC</dessicatedTexPath>
+        <stationaryTexPath>Things/Pawn/Animal/HermitCrab/HermitCrabC_Stationary</stationaryTexPath>
+      </li>
+    </alternateGraphics>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabA</texPath>
+          <drawSize>0.4</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/Dessicated_HermitCrabA</texPath>
+          <drawSize>0.4</drawSize>
+        </dessicatedBodyGraphicData>
+        <stationaryGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabA_Stationary</texPath>
+          <drawSize>0.4</drawSize>
+        </stationaryGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabA</texPath>
+          <drawSize>0.55</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/Dessicated_HermitCrabA</texPath>
+          <drawSize>0.55</drawSize>
+        </dessicatedBodyGraphicData>
+        <stationaryGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabA_Stationary</texPath>
+          <drawSize>0.4</drawSize>
+        </stationaryGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabA</texPath>
+          <drawSize>0.7</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/Dessicated_HermitCrabA</texPath>
+          <drawSize>0.7</drawSize>
+        </dessicatedBodyGraphicData>
+        <stationaryGraphicData>
+          <texPath>Things/Pawn/Animal/HermitCrab/HermitCrabA_Stationary</texPath>
+          <drawSize>0.4</drawSize>
+        </stationaryGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>StoneCrab</defName>
+    <label>stone crab</label>
+    <description>A robust crustacean with powerful claws. Stone crabs are a delicacy in some regions.</description>
+    <statBases>
+      <MoveSpeed>2.2</MoveSpeed>
+      <MarketValue>80</MarketValue>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <ComfyTemperatureMin>0</ComfyTemperatureMin>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <LeatherAmount>0</LeatherAmount>
+      <Wildness>0.75</Wildness>
+    </statBases>
+    <tools>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>Crab</body>
+      <baseBodySize>0.3</baseBodySize>
+      <baseHungerRate>0.12</baseHungerRate>
+      <baseHealthScale>0.6</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <lifeExpectancy>8</lifeExpectancy>
+      <waterSeeker>true</waterSeeker>
+      <gestationPeriodDays>5.661</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(2.5, 1)</li>
+          <li>(3, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.15</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.2222</minAge>
+          <soundWounded>Pawn_Crab_Wounded</soundWounded>
+          <soundDeath>Pawn_Crab_Death</soundDeath>
+          <soundCall>Pawn_Crab_Call</soundCall>
+          <soundAngry>Pawn_Crab_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Reptile_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.11)</li>
+        <li>(0.25, 0, 0.02)</li>
+        <li>(0.01, 0, -0.02)</li>
+        <li>(-0.52, 0, 0.02)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>StoneCrab</defName>
+    <label>stone crab</label>
+    <race>StoneCrab</race>
+    <combatPower>70</combatPower>
+    <ecoSystemWeight>0.3</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/StoneCrab/StoneCrab</texPath>
+          <drawSize>0.5</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/StoneCrab/Dessicated_StoneCrab</texPath>
+          <drawSize>0.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/StoneCrab/StoneCrab</texPath>
+          <drawSize>0.7</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/StoneCrab/Dessicated_StoneCrab</texPath>
+          <drawSize>0.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/StoneCrab/StoneCrab</texPath>
+          <drawSize>0.9</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/StoneCrab/Dessicated_StoneCrab</texPath>
+          <drawSize>0.9</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>SeaTurtle</defName>
+    <label>sea turtle</label>
+    <description>A large marine turtle. Their streamlined shell and powerful flippers make them excellent swimmers.</description>
+    <statBases>
+      <MoveSpeed>1.5</MoveSpeed>
+      <MarketValue>250</MarketValue>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+      <ComfyTemperatureMin>0</ComfyTemperatureMin>
+      <ComfyTemperatureMax>50</ComfyTemperatureMax>
+      <Wildness>0.75</Wildness>
+    </statBases>
+    <uiIconScale>1.25</uiIconScale>
+    <tools>
+      <li>
+        <label>beak</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>TurtleBeakAttackTool</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggUnfertilizedDef>EggSeaTurtleUnfertilized</eggUnfertilizedDef>
+        <eggFertilizedDef>EggSeaTurtleFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>6.66</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>1~3</eggCountRange>
+      </li>
+    </comps>
+    <race>
+      <body>TurtleLike</body>
+      <waterSeeker>true</waterSeeker>
+      <waterCellCost>1</waterCellCost>
+      <baseBodySize>0.5</baseBodySize>
+      <baseHungerRate>0.1</baseHungerRate>
+      <baseHealthScale>0.6</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <leatherDef>Leather_Lizard</leatherDef>
+      <lifeExpectancy>80</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.15</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.2222</minAge>
+          <soundWounded>Pawn_Tortoise_Wounded</soundWounded>
+          <soundDeath>Pawn_Tortoise_Death</soundDeath>
+          <soundCall>Pawn_Tortoise_Call</soundCall>
+          <soundAngry>Pawn_Tortoise_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Reptile_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.11)</li>
+        <li>(0.25, 0, 0.02)</li>
+        <li>(0.01, 0, -0.02)</li>
+        <li>(-0.52, 0, 0.02)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>SeaTurtle</defName>
+    <label>sea turtle</label>
+    <race>SeaTurtle</race>
+    <combatPower>70</combatPower>
+    <ecoSystemWeight>0.40</ecoSystemWeight>
+    <moveSpeedFactorByTerrainTag>
+      <li>
+        <key>Water</key>
+        <value>2.0</value>
+      </li>
+    </moveSpeedFactorByTerrainTag>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/SeaTurtle</texPath>
+          <drawSize>0.9</drawSize>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/Swimming_SeaTurtle</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.9</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/Dessicated_SeaTurtle</texPath>
+          <drawSize>0.9</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/SeaTurtle</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/Swimming_SeaTurtle</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.2</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/Dessicated_SeaTurtle</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/SeaTurtle</texPath>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/Swimming_SeaTurtle</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </swimmingGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/SeaTurtle/Dessicated_SeaTurtle</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Otter</defName>
+    <label>otter</label>
+    <description>A playful marine creature. They use tools such as rocks to crack open shellfish.</description>
+    <statBases>
+      <MoveSpeed>3.5</MoveSpeed>
+      <MarketValue>60</MarketValue>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+      <Wildness>0.5</Wildness>
+    </statBases>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3.6</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3.6</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.7</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>QuadrupedAnimalWithPaws</body>
+      <baseBodySize>0.4</baseBodySize>
+      <baseHungerRate>0.15</baseHungerRate>
+      <baseHealthScale>0.5</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <leatherDef>Leather_Light</leatherDef>
+      <trainability>Intermediate</trainability>
+      <petness>0</petness>
+      <mateMtbHours>8</mateMtbHours>
+      <gestationPeriodDays>5.661</gestationPeriodDays>
+      <waterSeeker>true</waterSeeker>
+      <waterCellCost>1</waterCellCost>
+      <soundEating>Rodent_Eat</soundEating>
+      <canFishForFood>true</canFishForFood>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(2.2, 1)</li>
+          <li>(2.8, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>8</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.1</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.2222</minAge>
+          <soundWounded>Pawn_Otter_Wounded</soundWounded>
+          <soundDeath>Pawn_Otter_Death</soundDeath>
+          <soundCall>Pawn_Otter_Call</soundCall>
+          <soundAngry>Pawn_Otter_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.2)</li>
+        <li>(0.33, 0, 0.03)</li>
+        <li>(0.0, 0, -0.28)</li>
+        <li>(-0.33, 0, 0.03)</li>
+      </headPosPerRotation>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>Otter</defName>
+    <label>otter</label>
+    <race>Otter</race>
+    <combatPower>30</combatPower>
+    <ecoSystemWeight>0.20</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/Otter</texPath>
+          <drawSize>0.75</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/Dessicated_Otter</texPath>
+          <drawSize>0.75</drawSize>
+        </dessicatedBodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/SwimmingOtter</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.75</drawSize>
+        </swimmingGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/Otter</texPath>
+          <drawSize>1</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/Dessicated_Otter</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/SwimmingOtter</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+        </swimmingGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/Otter</texPath>
+          <drawSize>1.25</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/Dessicated_Otter</texPath>
+          <drawSize>1.25</drawSize>
+        </dessicatedBodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Things/Pawn/Animal/Otter/SwimmingOtter</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.25</drawSize>
+        </swimmingGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

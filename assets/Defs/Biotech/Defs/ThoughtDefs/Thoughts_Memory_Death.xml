@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThoughtDef>
+    <defName>KilledChild</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <stackLimit>5</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>killed a child</label>
+        <description>Killing one so young feels wrong, no matter the situation.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MyBirthMotherDied</defName>
+    <stages>
+      <li>
+        <label>my birth mother {0} died</label>
+        <description>My birth mother died. She's gone forever. It's like a hole in my life.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledMyBirthMother</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>120</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>killed my birth mother</label>
+        <baseOpinionOffset>-80</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="LostMemoryFamily">
+    <defName>MyBirthMotherLost</defName>
+    <stages>
+      <li>
+        <label>my birth mother {0} lost</label>
+        <description>My birth mother has been lost. I hope she will get back to us someday.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  </Defs>

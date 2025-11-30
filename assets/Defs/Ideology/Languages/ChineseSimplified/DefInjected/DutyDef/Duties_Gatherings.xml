@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: party -->
+  <PartyCloseWander.label>聚会</PartyCloseWander.label>
+  
+  <!-- EN: dance party -->
+  <PartyDance.label>舞会</PartyDance.label>
+  
+  <!-- EN: playing music -->
+  <PlayTargetInstrument.label>演奏音乐</PlayTargetInstrument.label>
+  
+</LanguageData>

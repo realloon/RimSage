@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Build monument within time limit. Get reward on completion. -->
+  <QuestScriptDef>
+    <defName>BuildMonument_Basic</defName>
+    <rootSelectionWeight>1</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <rootMinProgressScore>5</rootMinProgressScore>
+    <expireDaysRange>2~4</expireDaysRange>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <questNameRules>
+      <include><li>QuestConstructionNameCommon</li></include>
+    </questNameRules>
+    <questDescriptionRules>
+      <include><li>QuestConstructionDescriptionCommon</li></include>
+      <rulesStrings>
+
+      <!-- Common ending -->
+      <li>commonEnding->The monument is [monumentSize] in size and will require these resources (total value [monumentRequiredResourcesMarketValue_money]):
+\n[monumentRequiredResources]
+\nConstruction must be completed within [constructionTimeoutTicks_duration] of accepting the task. You'll receive the rewards when you finish construction.[dontDestroyMonument]</li>
+      <li>dontDestroyMonument(priority=-10)-></li>
+      <li>dontDestroyMonument->\n\nIf the monument is destroyed within [keepMonumentTicks_duration] days of construction, your relations with [asker_factionName] will fall by [goodwillChangeIfMonumentDestroyed].</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>rewardOnCompletion</name>
+          <value>true</value>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>BuildMonumentWorker</def>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

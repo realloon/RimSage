@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Traders Guild -->
+
+  <RulePackDef>
+    <defName>NamerFactionTradersGuild</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[tradeAdj] [tradeNoun]</li>
+
+        <li>tradeAdj->merchant's</li>
+        <li>tradeAdj->orbital</li>
+        <li>tradeAdj->trade</li>
+        <li>tradeAdj->spacer's</li>
+        <li>tradeAdj->space</li>
+        <li>tradeAdj->cosmic</li>
+        <li>tradeAdj->skyflight</li>
+        <li>tradeAdj->voidborn</li>
+        <li>tradeAdj->exo</li>
+
+        <li>tradeNoun->guild</li>
+        <li>tradeNoun->consortium</li>
+        <li>tradeNoun->syndicate</li>
+        <li>tradeNoun->alliance</li>
+        <li>tradeNoun->cartel</li>
+        <li>tradeNoun->coalition</li>
+        <li>tradeNoun->federation</li>
+        <li>tradeNoun->conglomerate</li>
+        <li>tradeNoun->corporation</li>
+        <li>tradeNoun->company</li>
+        <li>tradeNoun->network</li>
+        <li>tradeNoun->exchange</li>
+        <li>tradeNoun->bazaar</li>
+        <li>tradeNoun->emporium</li>
+        <li>tradeNoun->nexus</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerSettlementTradersGuild</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[platAdj] [platform]</li>
+        <li>platAdj->starlight</li>
+        <li>platAdj->sunshine</li>
+        <li>platAdj->nebula</li>
+        <li>platAdj->stardust</li>
+        <li>platAdj->orion</li>
+        <li>platAdj->horizon</li>
+        <li>platAdj->galaxy</li>
+        <li>platAdj->cosmos</li>
+        <li>platAdj->void</li>
+        <li>platAdj->asteroid</li>
+        <li>platAdj->comet</li>
+        <li>platAdj->eclipse</li>
+        <li>platAdj->quasar</li>
+        <li>platAdj->pulsar</li>
+        <li>platAdj->meteor</li>
+        <li>platAdj->zenith</li>
+        <li>platAdj->lunar</li>
+        <li>platAdj->solar</li>
+        <li>platAdj->celestial</li>
+        <li>platAdj->moonbeam</li>
+        <li>platAdj->sunburst</li>
+        <li>platAdj->starfield</li>
+        <li>platAdj->cosmic</li>
+        <li>platAdj->astral</li>
+        <li>platAdj->aurora</li>
+        <li>platAdj->luminary</li>
+        <li>platAdj->corona</li>
+
+        <li>platform->platform</li>
+        <li>platform->station</li>
+        <li>platform->hub</li>
+        <li>platform->station</li>
+        <li>platform->base</li>
+        <li>platform->dock</li>
+        <li>platform->ring</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Salvagers -->
+
+  <RulePackDef>
+    <defName>NamerFactionSalvagers</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->The [spaceAdj] Salvagers</li>
+        <li>r_name->The [spaceAdj] Scavengers</li>
+        <li>r_name->[spaceAdj] [AnimalBadass]s</li>
+        <li>r_name->The [spaceAdj] [AnimalBadass]s</li>
+        <li>r_name->The [spaceAdj] [Enemy]s</li>
+        <li>r_name->The [spaceNoun] [Enemy]s</li>
+        <li>r_name->The [spaceNoun] [groupname]</li>
+        <li>r_name->The [spaceAdj] [groupname]</li>
+        <li>r_name->The [ColorBadass] [spaceNoun]</li>
+        <li>r_name->The [AdjectiveBadass] [spaceNoun]</li>
+        <li>r_name->The [ColorBadass] [spaceCollectiveNoun]</li>
+        <li>r_name->The [AdjectiveBadass] [spaceCollectiveNoun]</li>
+        <li>r_name->The [spaceNoun]s of [ConceptBadass]</li>
+        <li>r_name(p=2)->[NamePerson]'s [spaceNoun]s</li>
+        <li>r_name(p=2)->[NamePerson]'s [spaceCollectiveNoun]</li>
+        <li>r_name(p=2)->[NamePerson]'s [spaceAdj] [spaceCollectiveNoun]</li>
+
+        <li>spaceAdj->Orbital</li>
+        <li>spaceAdj->Cosmic</li>
+        <li>spaceAdj->Astral</li>
+        <li>spaceAdj->Solar</li>
+        <li>spaceAdj->Celestial</li>
+
+        <li>spaceNoun->Star</li>
+        <li>spaceNoun->Moon</li>
+        <li>spaceNoun->Comet</li>
+        <li>spaceNoun->Asteroid</li>
+        <li>spaceNoun->Eclipse</li>
+
+        <li>spaceCollectiveNoun->Armada</li>
+        <li>spaceCollectiveNoun->Fleet</li>
+        <li>spaceCollectiveNoun->Flotilla</li>
+        <li>spaceCollectiveNoun->Fleet</li>
+        <li>spaceCollectiveNoun->Corsairs</li>
+        <li>spaceCollectiveNoun->Pirates</li>
+        <li>spaceCollectiveNoun->Marauders</li>
+        <li>spaceCollectiveNoun->Reapers</li>
+      </rulesStrings>
+      <rulesFiles>
+        <li>groupname->Words/Nouns/GroupNames</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

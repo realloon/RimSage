@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LifeStageDef>
+    <defName>MechanoidFullyFormed</defName>
+    <label>fully-formed</label>
+    <visible>false</visible>
+  </LifeStageDef>
+
+  <LifeStageDef Name="HumanlikeAdolescent" Abstract="True">
+    <hairStyleFilter>
+      <whitelist>false</whitelist>
+      <tags>
+        <li>Balding</li>
+      </tags>
+    </hairStyleFilter>
+  </LifeStageDef>
+
+  <LifeStageDef ParentName="HumanlikeAdolescent">
+    <defName>HumanlikeBaby</defName>
+    <label>baby</label>
+    <bodySizeFactor>0.2</bodySizeFactor>
+    <bodyWidth>0.95</bodyWidth>
+    <bodyDrawOffset>(0, 0, -0.03)</bodyDrawOffset>
+    <voxPitch>1.6</voxPitch>
+    <headSizeFactor>0.5</headSizeFactor>
+    <eyeSizeFactor>0.7</eyeSizeFactor>
+    <foodMaxFactor>0.625</foodMaxFactor> <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.125 -->
+    <hungerRateFactor>0.125</hungerRateFactor> <!-- consumes 2x maxFood per day -->
+    <healthScaleFactor>0.2</healthScaleFactor>
+    <marketValueFactor>0.5</marketValueFactor>
+    <meleeDamageFactor>0.5</meleeDamageFactor>
+    <developmentalStage>Baby</developmentalStage>
+    <fallAsleepMaxThresholdOverride>.60</fallAsleepMaxThresholdOverride>
+    <naturalWakeThresholdOverride>1.0</naturalWakeThresholdOverride>
+    <alwaysDowned>true</alwaysDowned>
+    <claimable>true</claimable>
+    <involuntarySleepIsNegativeEvent>false</involuntarySleepIsNegativeEvent> <!-- Babies just fall asleep randomly and they're cool with it. -->
+    <thinkTreeMainOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBaby</thinkTreeMainOverride>
+    <thinkTreeConstantOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBabyConstant</thinkTreeConstantOverride>
+    <canDoRandomMentalBreaks>false</canDoRandomMentalBreaks> <!-- Babies have crying/giggling fits instead of mental breaks. -->
+    <canSleepWhileHeld>true</canSleepWhileHeld>
+    <canVoluntarilySleep>false</canVoluntarilySleep> <!-- Babies fall asleep randomly when they're tired. -->
+    <canSleepWhenStarving>false</canSleepWhenStarving>
+    <canInitiateSocialInteraction>false</canInitiateSocialInteraction>
+    <customMoodTipString>Mood represents how happy or stressed someone is. Babies with low mood are more likely to cry, while babies with a high mood are more likely to giggle.</customMoodTipString>
+    <silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanBaby</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+    <statFactors>
+      <MoveSpeed>0.2</MoveSpeed>
+    </statFactors>
+    <statOffsets>
+      <ComfyTemperatureMin>-46</ComfyTemperatureMin><!--should map to -30C-->
+      <ComfyTemperatureMax>4</ComfyTemperatureMax><!--should map to 30C-->
+    </statOffsets>
+    <involuntarySleepMTBDaysFromRest>
+      <points>
+        <li>(.00, 0)</li>
+        <li>(.01, .01)</li>
+        <li>(.15, .166)</li>
+        <li>(.30, 1)</li>
+        <li>(.59, 10)</li>
+        <li>(.60, Infinity)</li>
+      </points>
+    </involuntarySleepMTBDaysFromRest>
+  </LifeStageDef>
+
+  <LifeStageDef Name="LifeStageHumanlikeChild" ParentName="HumanlikeAdolescent">
+    <defName>HumanlikeChild</defName>
+    <label>child</label>
+    <workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeChild</workerClass>
+    <bodySizeFactor>0.35</bodySizeFactor>
+    <bodyWidth>1.125</bodyWidth>
+    <bodyDrawOffset>(0, 0, -0.1)</bodyDrawOffset>
+    <voxPitch>1.2</voxPitch>
+    <headSizeFactor>0.75</headSizeFactor>
+    <eyeSizeFactor>0.85</eyeSizeFactor>
+    <healthScaleFactor>0.5</healthScaleFactor>
+    <foodMaxFactor>2.286</foodMaxFactor> <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.8 -->
+    <hungerRateFactor>0.8</hungerRateFactor>
+    <marketValueFactor>0.9</marketValueFactor>
+    <meleeDamageFactor>0.7</meleeDamageFactor>
+    <developmentalStage>Child</developmentalStage>
+    <equipmentDrawDistanceFactor>0.55</equipmentDrawDistanceFactor>
+    <sittingOffset>0.3</sittingOffset>
+    <silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+    <statFactors>
+      <MoveSpeed>0.75</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef ParentName="HumanlikeAdolescent">
+    <defName>HumanlikeTeenager</defName>
+    <label>teenager</label>
+    <workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeAdult</workerClass>
+    <adjective>teenage</adjective>
+    <reproductive>true</reproductive>
+    <bodySizeFactor>0.8</bodySizeFactor>
+    <healthScaleFactor>0.90</healthScaleFactor>
+    <foodMaxFactor>1.25</foodMaxFactor> <!-- bodySizeFactor * foodMaxFactor = maxFood = 1.0 -->
+    <meleeDamageFactor>0.75</meleeDamageFactor>
+    <equipmentDrawDistanceFactor>0.65</equipmentDrawDistanceFactor>
+    <sittingOffset>0.23</sittingOffset>
+    <silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+    <statFactors>
+      <MoveSpeed>0.95</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+  
+  <LifeStageDef>
+    <defName>HumanlikeAdult</defName>
+    <label>adult</label>
+    <workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeAdult</workerClass>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <sittingOffset>0.18</sittingOffset>
+    <silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanAdult</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>EusocialInsectLarva</defName>
+    <label>larva</label>
+    <voxPitch>1.6</voxPitch>
+    <voxVolume>0.4</voxVolume>
+    <bodySizeFactor>0.2</bodySizeFactor>
+    <foodMaxFactor>2</foodMaxFactor>
+    <healthScaleFactor>0.25</healthScaleFactor>
+    <hungerRateFactor>0.4</hungerRateFactor>
+    <marketValueFactor>0.4</marketValueFactor>
+    <meleeDamageFactor>0.5</meleeDamageFactor>
+    <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>EusocialInsectJuvenile</defName>
+    <label>immature</label>
+    <voxPitch>1.2</voxPitch>
+    <bodySizeFactor>0.5</bodySizeFactor>
+    <foodMaxFactor>1.5</foodMaxFactor>
+    <healthScaleFactor>0.6</healthScaleFactor>
+    <hungerRateFactor>0.75</hungerRateFactor>
+    <marketValueFactor>0.75</marketValueFactor>
+    <meleeDamageFactor>0.75</meleeDamageFactor>
+    <statFactors>
+      <MoveSpeed>0.9</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>EusocialInsectAdult</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <milkable>true</milkable>
+  </LifeStageDef>
+
+
+
+
+  <LifeStageDef Name="AnimalBaby">
+    <defName>AnimalBaby</defName>
+    <label>baby</label>
+    <voxPitch>1.6</voxPitch>
+    <voxVolume>0.8</voxVolume>
+    <bodySizeFactor>0.2</bodySizeFactor>
+    <foodMaxFactor>3</foodMaxFactor>
+    <healthScaleFactor>0.25</healthScaleFactor>
+    <hungerRateFactor>0.4</hungerRateFactor>
+    <marketValueFactor>0.4</marketValueFactor>
+    <meleeDamageFactor>0.5</meleeDamageFactor>
+    <statFactors>
+      <MoveSpeed>0.5</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+
+  <LifeStageDef ParentName="AnimalBaby">
+    <defName>AnimalBabyTiny</defName>
+    <bodySizeFactor>0.1</bodySizeFactor>
+    <foodMaxFactor>6</foodMaxFactor>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>AnimalJuvenile</defName>
+    <label>juvenile</label>
+    <voxPitch>1.2</voxPitch>
+    <bodySizeFactor>0.5</bodySizeFactor>
+    <foodMaxFactor>1.5</foodMaxFactor>
+    <healthScaleFactor>0.6</healthScaleFactor>
+    <hungerRateFactor>0.75</hungerRateFactor>
+    <marketValueFactor>0.75</marketValueFactor>
+    <meleeDamageFactor>0.75</meleeDamageFactor>
+    <statFactors>
+      <MoveSpeed>0.9</MoveSpeed>
+    </statFactors>
+  </LifeStageDef>
+
+  <LifeStageDef>
+    <defName>AnimalAdult</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <milkable>true</milkable>
+    <shearable>true</shearable>
+    <caravanRideable>true</caravanRideable>
+  </LifeStageDef>
+  
+</Defs>

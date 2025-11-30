@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <RenderSkipFlagDef>
+    <defName>None</defName>
+  </RenderSkipFlagDef>
+  
+  <RenderSkipFlagDef>
+    <defName>Head</defName>
+  </RenderSkipFlagDef>
+
+  <RenderSkipFlagDef>
+    <defName>Hair</defName>
+  </RenderSkipFlagDef>
+
+  <RenderSkipFlagDef>
+    <defName>Beard</defName>
+  </RenderSkipFlagDef>
+
+  <RenderSkipFlagDef>
+    <defName>Eyes</defName>
+  </RenderSkipFlagDef>
+  
+  <RenderSkipFlagDef>
+    <defName>Body</defName>
+  </RenderSkipFlagDef>
+
+</Defs>

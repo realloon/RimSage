@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>JumpPackLand</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Misc/JumpPack/JumpPack_Land</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>JumpPackLaunch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Misc/JumpPack/JumpPack_Launch</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>JumpPackPreLaunch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Misc/JumpPack/JumpPack_PreLaunch</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

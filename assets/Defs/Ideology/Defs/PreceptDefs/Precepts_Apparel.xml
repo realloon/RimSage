@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>ApparelDesire</defName>
+    <label>apparel desire</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>ApparelDesired_Strong_Subordinate</defName>
+    <issue>ApparelDesire</issue>
+    <label>strong</label>
+    <description>{GENDER} members will be pleased when wearing {APPAREL_indefinite}. {GENDER} members will arrive wearing {APPAREL_indefinite} unless it interferes with armor.</description>
+    <preceptClass>Precept_Apparel</preceptClass>
+    <workerClass>PreceptWorker_Apparel</workerClass>
+    <useChoicesFromBuildingDefs>true</useChoicesFromBuildingDefs>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <ignoreLimitsInEditMode>true</ignoreLimitsInEditMode>
+    <apparelPreceptSwapDef>ApparelDesired_Soft_Subordinate</apparelPreceptSwapDef>
+    <comps>
+      <li Class="PreceptComp_Apparel_DesiredStrong">
+        <gender>SubordinateGender</gender>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>WearingDesiredApparel_Strong</thought>
+        <description>Wearing desired apparel</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>ApparelDesired_Soft_Subordinate</defName>
+    <issue>ApparelDesire</issue>
+    <label>relaxed</label>
+    <description>{GENDER} members will be pleased when wearing {APPAREL_indefinite}. {GENDER} members will arrive wearing {APPAREL_indefinite} if it doesn't interfere with any other apparel.</description>
+    <preceptClass>Precept_Apparel</preceptClass>
+    <workerClass>PreceptWorker_Apparel</workerClass>
+    <useChoicesFromBuildingDefs>true</useChoicesFromBuildingDefs>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <ignoreLimitsInEditMode>true</ignoreLimitsInEditMode>
+    <apparelPreceptSwapDef>ApparelDesired_Strong_Subordinate</apparelPreceptSwapDef>
+    <comps>
+      <li Class="PreceptComp_Apparel_Desired">
+        <gender>SubordinateGender</gender>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>WearingDesiredApparel_Soft</thought>
+        <description>Wearing desired apparel</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>WearingDesiredApparel_Soft</defName>
+    <workerClass>ThoughtWorker_Precept_WearingDesiredApparel</workerClass>
+    <thoughtClass>Thought_Situational_WearingDesiredApparel</thoughtClass>
+    <stages>
+      <li>
+        <label>wearing {APPAREL}</label>
+        <description>It's good to be wearing {APPAREL} in accordance with my beliefs.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>WearingDesiredApparel_Strong</defName>
+    <workerClass>ThoughtWorker_Precept_WearingDesiredApparel</workerClass>
+    <thoughtClass>Thought_Situational_WearingDesiredApparel</thoughtClass>
+    <stages>
+      <li>
+        <label>wearing {APPAREL}</label>
+        <description>It's great to be wearing {APPAREL} in accordance with my beliefs.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

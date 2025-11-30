@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaleDef>
+    <defName>KilledChild</defName>
+    <label>child killed</label>
+    <taleClass>Tale_DoublePawn</taleClass>
+    <type>Expirable</type>
+    <firstPawnSymbol>KILLER</firstPawnSymbol>
+    <secondPawnSymbol>CHILD</secondPawnSymbol>
+    <usableForArt>false</usableForArt>
+    <maxPerPawn>1</maxPerPawn>
+    <expireDays>50</expireDays>
+  </TaleDef>
+  
+</Defs>

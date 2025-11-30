@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnColumnDef>
+    <defName>Xenotype</defName>
+    <headerIcon>UI/Icons/PawnXenotype</headerIcon>
+    <workerClass>PawnColumnWorker_Xenotype</workerClass>
+    <headerTip>Xenotype</headerTip>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+</Defs>

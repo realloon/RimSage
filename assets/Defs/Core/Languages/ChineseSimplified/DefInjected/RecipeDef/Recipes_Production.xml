@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: destroy apparel -->
+  <DestroyApparel.label>销毁衣物</DestroyApparel.label>
+  <!-- EN: Use heat to destroy unwanted apparel. This process is faster than smelting, and works on non-smeltable items, but yields no resources. -->
+  <DestroyApparel.description>利用高温将不需要的衣物完全销毁。工作量比熔炼更少。适合处理不可熔炼的物品，但不会产出任何资源。</DestroyApparel.description>
+  <!-- EN: Destroying apparel. -->
+  <DestroyApparel.jobString>正在销毁衣物。</DestroyApparel.jobString>
+  
+  <!-- EN: destroy weapon -->
+  <DestroyWeapon.label>销毁武器</DestroyWeapon.label>
+  <!-- EN: Use heat to destroy unwanted weapons. This process is faster than smelting, and works on non-smeltable items, but yields no resources. -->
+  <DestroyWeapon.description>利用高温将不需要的武器完全销毁。工作量比熔炼更少。适合处理不可熔炼的物品，但不会产出任何资源。</DestroyWeapon.description>
+  <!-- EN: Destroying weapon. -->
+  <DestroyWeapon.jobString>正在销毁武器。</DestroyWeapon.jobString>
+  
+  <!-- EN: smelt metal from slag -->
+  <ExtractMetalFromSlag.label>熔炼钢渣块&amp;机械族残块</ExtractMetalFromSlag.label>
+  <!-- EN: Use heat and strong electromagnets to extract useful metal from slag chunks. -->
+  <ExtractMetalFromSlag.description>利用高温和电磁铁从钢渣块或机械族残块中提炼出有用的金属。</ExtractMetalFromSlag.description>
+  <!-- EN: Smelting metal from slag. -->
+  <ExtractMetalFromSlag.jobString>正在熔炼钢渣块&amp;机械族残块。</ExtractMetalFromSlag.jobString>
+  
+  <!-- EN: make chemfuel from organics -->
+  <Make_ChemfuelFromOrganics.label>用有机物制作化合燃料</Make_ChemfuelFromOrganics.label>
+  <!-- EN: Make a batch of chemfuel by extracting biofuel from organic feedstocks. -->
+  <Make_ChemfuelFromOrganics.description>通过从有机原料中提取生物燃料以制作一组化合燃料。</Make_ChemfuelFromOrganics.description>
+  <!-- EN: feedstock -->
+  <Make_ChemfuelFromOrganics.ingredients.0.filter.customSummary>原料</Make_ChemfuelFromOrganics.ingredients.0.filter.customSummary>
+  <!-- EN: Refining chemfuel from organics. -->
+  <Make_ChemfuelFromOrganics.jobString>正在从有机物中提炼化合燃料。</Make_ChemfuelFromOrganics.jobString>
+  
+  <!-- EN: make chemfuel from wood -->
+  <Make_ChemfuelFromWood.label>用木材制作化合燃料</Make_ChemfuelFromWood.label>
+  <!-- EN: Make a batch of chemfuel by extracting and condensing wood gas from logs. -->
+  <Make_ChemfuelFromWood.description>通过气化木材以制作一组化合燃料。</Make_ChemfuelFromWood.description>
+  <!-- EN: Refining chemfuel from wood. -->
+  <Make_ChemfuelFromWood.jobString>正在从木材中提炼化合燃料。</Make_ChemfuelFromWood.jobString>
+  
+  <!-- EN: make component -->
+  <Make_ComponentIndustrial.label>制作零部件</Make_ComponentIndustrial.label>
+  <!-- EN: Make a component. -->
+  <Make_ComponentIndustrial.description>制作零部件。</Make_ComponentIndustrial.description>
+  <!-- EN: Making component. -->
+  <Make_ComponentIndustrial.jobString>正在制作零部件。</Make_ComponentIndustrial.jobString>
+  
+  <!-- EN: make advanced component -->
+  <Make_ComponentSpacer.label>制作高级零部件</Make_ComponentSpacer.label>
+  <!-- EN: Make an advanced component. -->
+  <Make_ComponentSpacer.description>制作高级零部件。</Make_ComponentSpacer.description>
+  <!-- EN: Making advanced component. -->
+  <Make_ComponentSpacer.jobString>正在制作高级零部件。</Make_ComponentSpacer.jobString>
+  
+  <!-- EN: make patchleather -->
+  <Make_Patchleather.label>缝制杂皮</Make_Patchleather.label>
+  <!-- EN: Combine various types of leather to create weak patchleather. -->
+  <Make_Patchleather.description>将多种皮革混合缝制成劣质的杂皮。</Make_Patchleather.description>
+  <!-- EN: Making patchleather. -->
+  <Make_Patchleather.jobString>正在缝制杂皮。</Make_Patchleather.jobString>
+  
+  <!-- EN: make any stone blocks -->
+  <Make_StoneBlocksAny.label>制作石砖（任意）</Make_StoneBlocksAny.label>
+  <!-- EN: Cut rock chunks into usable stone blocks. -->
+  <Make_StoneBlocksAny.description>将岩石块切割成可用的石砖。</Make_StoneBlocksAny.description>
+  <!-- EN: Cutting stone blocks from chunk. -->
+  <Make_StoneBlocksAny.jobString>正在切割石材。</Make_StoneBlocksAny.jobString>
+  
+  <!-- EN: smelt apparel -->
+  <SmeltApparel.label>熔炼衣物</SmeltApparel.label>
+  <!-- EN: Use heat and strong electromagnets to break down metallic apparel like armor into useful resources. -->
+  <SmeltApparel.description>利用高温和电磁铁将装甲之类的金属衣物分解成有用的资源。</SmeltApparel.description>
+  <!-- EN: Smelting apparel. -->
+  <SmeltApparel.jobString>正在熔炼衣物。</SmeltApparel.jobString>
+  
+  <!-- EN: smelt or destroy thing -->
+  <SmeltOrDestroyThing.label>熔炼&amp;销毁物品</SmeltOrDestroyThing.label>
+  <!-- EN: Use heat and strong electromagnets to break down metallic things like weapons and armor into useful resources, or destroy them if they are not smeltable. -->
+  <SmeltOrDestroyThing.description>利用高温和电磁铁将装甲、武器之类的金属物品分解成有用的资源，或直接销毁不可熔炼的物品。</SmeltOrDestroyThing.description>
+  <!-- EN: Smelting/destroying things. -->
+  <SmeltOrDestroyThing.jobString>正在熔炼&amp;销毁物品。</SmeltOrDestroyThing.jobString>
+  
+  <!-- EN: smelt weapon -->
+  <SmeltWeapon.label>熔炼武器</SmeltWeapon.label>
+  <!-- EN: Use heat and strong electromagnets to break down weapons into useful resources. -->
+  <SmeltWeapon.description>利用高温和电磁铁将武器分解成有用的资源。</SmeltWeapon.description>
+  <!-- EN: Smelting weapon. -->
+  <SmeltWeapon.jobString>正在熔炼武器。</SmeltWeapon.jobString>
+  
+</LanguageData>

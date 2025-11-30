@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Legionary -->
+  <ThingDef ParentName="LancerMechanoidWalker">
+    <defName>Mech_Legionary</defName>
+    <label>legionary</label>
+    <description>A combat support mechanoid with a wide-range bullet shield and mid-range needle gun. Designed to support other mechanoids, the legionary is vulnerable to anyone who can get inside its shield.</description>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MoveSpeed>4.3</MoveSpeed>
+      <EnergyShieldRechargeRate>0.25</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>1.5</EnergyShieldEnergyMax>
+      <BandwidthCost>2</BandwidthCost>
+      <ControlTakingTime>18</ControlTakingTime>
+    </statBases>
+    <race>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Legionary_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Legionary_Death</soundDeath>
+          <soundCall>Pawn_Mech_Legionary_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Legionary_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Legionary_Death</soundDeath>
+          <soundCall>Pawn_Mech_Legionary_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>16</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>1</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>3</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.4, 0.4, 0.4)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>200</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>5400</chargeDurationTicks><!-- 90s -->
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <disarmedByEmpForTicks>1500</disarmedByEmpForTicks>
+        <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>Mech_Legionary</defName>
+    <label>legionary</label>
+    <race>Mech_Legionary</race>
+    <combatPower>150</combatPower>
+    <allowInMechClusters>false</allowInMechClusters>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Legionary</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Legionary</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/LegionaryAncient</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Legionary</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>MechanoidGunNeedleLauncher</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
+  </PawnKindDef>
+
+  <!-- Tesseron -->
+  <ThingDef ParentName="LancerMechanoidWalker">
+    <defName>Mech_Tesseron</defName>
+    <label>tesseron</label>
+    <description>A medium-range combat mechanoid. While it is fairly vulnerable to attacks, the tesseron's sweeping beam graser can pierce thick armor and even ignite shielded targets.</description>
+    <race>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Tesseron_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Tesseron_Death</soundDeath>
+          <soundCall>Pawn_Mech_Tesseron_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Tesseron_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Tesseron_Death</soundDeath>
+          <soundCall>Pawn_Mech_Tesseron_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>1</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <statBases>
+      <BandwidthCost>3</BandwidthCost>
+      <ControlTakingTime>18</ControlTakingTime>
+    </statBases>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>Mech_Tesseron</defName>
+    <label>tesseron</label>
+    <race>Mech_Tesseron</race>
+    <combatPower>150</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Tesseron</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Beamstrider</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/TesseronAncient</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Beamstrider</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>BeamGraserGun</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+  </PawnKindDef>
+
+  <!-- Scorcher -->
+  <ThingDef ParentName="BaseMechanoidWalker">
+    <defName>Mech_Scorcher</defName>
+    <label>scorcher</label>
+    <description>A close-approach war mechanoid that specializes in incendiary attacks. Its flame burst attack has little reach, but once it closes on a group of defenders it can ignite and disrupt them with blasts of searing flame.</description>
+    <statBases>
+      <MoveSpeed>4.5</MoveSpeed>
+      <BandwidthCost>1</BandwidthCost>
+    </statBases>
+    <tools>
+      <li>
+        <label>front left leg</label>
+        <labelNoLocation>leg</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>front right leg</label>
+        <labelNoLocation>leg</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12.0</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8.5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>Scorcher</body>
+      <baseHealthScale>0.7</baseHealthScale>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Scorcher_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Scorcher_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scorcher_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Scorcher_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Scorcher_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scorcher_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <mechWeightClass>Medium</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>11</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>16</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>ChunkMechanoidSlag</def>
+          <texOverrideIndex>1</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>Mech_Scorcher</defName>
+    <label>scorcher</label>
+    <labelPlural>scorchers</labelPlural>
+    <race>Mech_Scorcher</race>
+    <combatPower>75</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Scorcher</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Scorcher</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/ScorcherAncient</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Scorcher</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.8</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>MechanoidGunMiniFlameblaster</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+  </PawnKindDef>  
+
+</Defs>

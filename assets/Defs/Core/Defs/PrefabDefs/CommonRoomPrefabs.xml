@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PrefabDef>
+    <defName>AncientSystemRacks_Rows</defName>
+    <rotations>North</rotations>
+    <size>(5,3)</size>
+    <things>
+      <AncientSystemRack>
+        <positions>
+          <li>(0, 0, 1)</li>
+          <li>(2, 0, 1)</li>
+          <li>(4, 0, 1)</li>
+        </positions>
+      </AncientSystemRack>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientSystemRack</defName>
+    <rotations>North</rotations>
+    <size>(2,4)</size>
+    <things>
+      <AncientSystemRack>
+        <position>(0,0,1)</position>
+      </AncientSystemRack>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientDisplayBank_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(3,1)</size>
+    <things>
+      <AncientDisplayBank>
+        <position>(1,0,0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </AncientDisplayBank>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientMachine_Rows</defName>
+    <size>(5,7)</size>
+    <things>
+      <AncientMachine>
+        <positions>
+          <li>(2, 0, 1)</li>
+          <li>(2, 0, 5)</li>
+        </positions>
+      </AncientMachine>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientEquipmentBlocks_Rows</defName>
+    <size>(4,4)</size>
+    <things>
+      <AncientEquipmentBlocks>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(1, 0, 2)</li>
+        </positions>
+      </AncientEquipmentBlocks>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientStorageCylinder_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(2,1)</size>
+    <things>
+      <AncientStorageCylinder>
+        <position>(1,0,0)</position>
+      </AncientStorageCylinder>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientGenerator_SmallCluster</defName>
+    <size>(5,3)</size>
+    <things>
+      <AncientGenerator>
+        <positions>
+          <li>(0, 0, 1)</li>
+          <li>(3, 0, 1)</li>
+        </positions>
+      </AncientGenerator>
+      <AncientBarrel>
+        <rects>
+          <li>(2,0,2,2)</li>
+          <li>(4,0,4,0)</li>
+        </rects>
+      </AncientBarrel>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientBarrel_Cluster</defName>
+    <size>(3,2)</size>
+    <things>
+      <AncientBarrel>
+        <chance>0.75</chance>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(1, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(0, 0, 1)</li>
+          <li>(1, 0, 1)</li>
+          <li>(2, 0, 1)</li>
+        </positions>
+      </AncientBarrel>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>OperatingTables</defName>
+    <rotations>North</rotations>
+    <size>(5,5)</size>
+    <things>
+      <AncientOperatingTable>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+          <li>(0, 0, 3)</li>
+          <li>(2, 0, 3)</li>
+          <li>(4, 0, 3)</li>
+        </positions>
+      </AncientOperatingTable>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientLockerBank_Row</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(6,1)</size>
+    <things>
+      <AncientLockerBank>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </AncientLockerBank>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>Shelves_Rows</defName>
+    <size>(4,5)</size>
+    <things>
+      <Shelf>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(3, 0, 0)</li>
+          <li>(1, 0, 3)</li>
+          <li>(3, 0, 3)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(0, 0, 1)</li>
+          <li>(2, 0, 1)</li>
+          <li>(0, 0, 4)</li>
+          <li>(2, 0, 4)</li>
+        </positions>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>AncientLamp_Single</defName>
+    <size>(1,1)</size>
+    <things>
+      <AncientLamp>
+        <position>(0, 0, 0)</position>
+      </AncientLamp>
+    </things>
+  </PrefabDef>
+
+</Defs>

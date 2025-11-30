@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualBehaviorDef>
+    <defName>ChildBirth</defName>
+    <durationTicks>-1</durationTicks>
+    <workerClass>RitualBehaviorWorker_ChildBirth</workerClass>
+    <roles>
+      <li Class="RitualRole_Mother">
+        <label>mother</label>
+        <id>mother</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <countsAsParticipant>False</countsAsParticipant>
+        <allowDowned>true</allowDowned>
+        <allowKeepLayingDown>true</allowKeepLayingDown>
+        <blocksSocialInteraction>true</blocksSocialInteraction>
+        <endJobOnRitualCleanup>false</endJobOnRitualCleanup> <!-- mother will have a job to lay down until the doctor brings the baby. -->
+      </li>
+      <li Class="RitualRoleColonist">
+        <id>doctor</id>
+        <label>doctor</label>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <requiredWorkType>Doctor</requiredWorkType>
+        <usedSkill>Medicine</usedSkill>
+        <countsAsParticipant>False</countsAsParticipant>
+        <allowChild>false</allowChild>
+        <blocksSocialInteraction>true</blocksSocialInteraction>
+        <endJobOnRitualCleanup>false</endJobOnRitualCleanup> <!-- doctor will have a job to bring the baby to the mother. -->
+      </li>
+    </roles>
+    <stages>
+      <!-- Mother walks to bed, doctor walks to delivery spot. -->
+      <li>
+        <defaultDuty>SpectateSocial</defaultDuty>
+        <showProgressBar>false</showProgressBar>
+        <endTriggers>
+          <li Class="StageEndTrigger_RoleArrivedOrInTargetBed">
+            <roleIds>
+              <li>mother</li>
+            </roleIds>
+          </li>
+          <li Class="StageEndTrigger_PawnDown">
+            <roleId>mother</roleId>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doctor</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_PreferredAdjacentCellCardinal">
+                <faceThing>true</faceThing>
+                <preferredCellSearchPattern Class="ChildBirthCellSearchPattern"/>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>mother</roleId>
+            <dutyDef>GoToBed</dutyDef>
+          </li>
+        </roleBehaviors>
+        <postAction Class="RitualStageAction_ClearTag">
+          <roleId>doctor</roleId>
+          <tag>Arrived</tag>
+        </postAction>
+      </li>
+      <!-- Doctor carries mom to bed (if she's not in bed already). -->
+      <li Class="RitualStage_InteractWithRole">
+        <showProgressBar>false</showProgressBar>
+        <targetId>mother</targetId>
+        <defaultDuty>SpectateSocial</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_RoleArrivedOrInTargetBed">
+            <roleIds>
+              <li>mother</li>
+            </roleIds>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doctor</roleId>
+            <dutyDef>DeliverPawnToBedForBirth</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_OnInteractionCell"/>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>mother</roleId>
+            <dutyDef>KeepLyingDown</dutyDef>
+          </li>
+        </roleBehaviors>
+        <postAction Class="RitualStageAction_ClearTag">
+          <roleId>doctor</roleId>
+          <tag>Arrived</tag>
+        </postAction>
+      </li>
+      <!-- Doctor moves to delivery position. -->
+      <li>
+        <defaultDuty>SpectateSocial</defaultDuty>
+        <showProgressBar>false</showProgressBar>
+        <endTriggers>
+          <li Class="StageEndTrigger_RolesArrived">
+            <roleIds>
+              <li>doctor</li>
+            </roleIds>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>doctor</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_PreferredAdjacentCellCardinal">
+                <faceThing>true</faceThing>
+                <preferredCellSearchPattern Class="ChildBirthCellSearchPattern"/>
+              </li>
+            </customPositions>
+          </li>
+          <li>
+            <roleId>mother</roleId>
+            <dutyDef>KeepLyingDownForBirth</dutyDef>
+            <jobReportOverride>giving birth</jobReportOverride>
+          </li>
+        </roleBehaviors>
+      </li>
+      <!-- Everyone waits for the birth to happen. -->
+      <li>
+        <showProgressBar>false</showProgressBar>
+        <defaultDuty>SpectateSocial</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_Indefinite">
+            <countsTowardsProgress>true</countsTowardsProgress>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>mother</roleId>
+            <dutyDef>KeepLyingDownForBirth</dutyDef>
+            <jobReportOverride>giving birth</jobReportOverride>
+          </li>
+          <li>
+            <roleId>doctor</roleId>
+            <dutyDef>Idle</dutyDef>
+            <jobReportOverride>delivering baby</jobReportOverride>
+            <customPositions>
+              <li Class="RitualPosition_PreferredAdjacentCellCardinal">
+                <faceThing>true</faceThing>
+                <preferredCellSearchPattern Class="ChildBirthCellSearchPattern"/>
+              </li>
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+</Defs>

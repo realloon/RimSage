@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalFitDef>
+    <defName>Crying</defName>
+    <label>crying</label>
+    <mentalState>Crying</mentalState>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <mtbDaysMoodCurve>
+      <points>
+        <li>(0, .083)</li>
+        <li>(0.25, .166)</li>
+        <li>(0.50, 1)</li>
+        <li>(0.75, 4)</li>
+        <li>(1.00, 8)</li>
+      </points>
+    </mtbDaysMoodCurve>
+  </MentalFitDef>
+
+  <MentalFitDef>
+    <defName>Giggling</defName>
+    <label>giggling</label>
+    <mentalState>Giggling</mentalState>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <mtbDaysMoodCurve>
+      <points>
+        <li>(0, 8)</li>
+        <li>(0.25, 4)</li>
+        <li>(0.50, 1)</li>
+        <li>(0.75, 0.5)</li>
+        <li>(1.00, 0.25)</li>
+      </points>
+    </mtbDaysMoodCurve>
+  </MentalFitDef>
+
+  <MentalStateDef Abstract="True" Name="BaseBabyMentalFit">
+    <category>Misc</category>
+    <downedCanDo>true</downedCanDo>
+    <inCaravanCanDo>true</inCaravanCanDo>
+    <unspawnedNotInCaravanCanDo>true</unspawnedNotInCaravanCanDo>
+    <requiredCapacities>
+      <li>Talking</li>
+    </requiredCapacities>
+    <recoverFromCollapsingExhausted>false</recoverFromCollapsingExhausted>
+    <recoverFromDowned>false</recoverFromDowned>
+    <recoverFromSleep>false</recoverFromSleep>
+    <minTicksBeforeRecovery>1200</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>1200</maxTicksBeforeRecovery>
+    <recoveryMtbDays>Infinity</recoveryMtbDays>
+    <stopsJobs>false</stopsJobs>
+  </MentalStateDef>
+
+  <MentalStateDef ParentName="BaseBabyMentalFit">
+    <defName>Crying</defName>
+    <stateClass>MentalState_BabyCry</stateClass>
+    <baseInspectLine>Mental state: Crying</baseInspectLine>
+    <stateEffecter>BabyCrying</stateEffecter>
+  </MentalStateDef>
+
+  <MentalStateDef ParentName="BaseBabyMentalFit">
+    <defName>Giggling</defName>
+    <stateClass>MentalState_BabyGiggle</stateClass>
+    <baseInspectLine>Mental state: Giggling</baseInspectLine>
+    <stateEffecter>BabyGiggling</stateEffecter>
+  </MentalStateDef>
+
+</Defs>

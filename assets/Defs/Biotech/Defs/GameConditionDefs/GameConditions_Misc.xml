@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GameConditionDef>
+    <defName>NoxiousHaze</defName>
+    <conditionClass>GameCondition_NoxiousHaze</conditionClass>
+    <label>acidic smog</label>
+    <description>Acidic smog is caused by pollution in nearby world tiles. It slows plant growth, deteriorates exposed items, and reduces mood.\n\nThe current world tile has a nearby pollution score of {NEARBYPOLLUTION}, calculated by adding up pollution of nearby world tiles. This means that, on average, acidic smog will occur every {MTB} days.</description>
+    <startMessage>Acidic smog has begun due to pollution in this region of the world.</startMessage>
+    <endMessage>The acidic smog is lifting.</endMessage>
+    <canBePermanent>true</canBePermanent>
+    <silencedByConditions>
+      <li>ToxicFallout</li>
+    </silencedByConditions>
+    <mtbOverNearbyPollutionCurve>
+      <points>
+        <li>(0.05, 240)</li>
+        <li>(1, 180)</li>
+        <li>(5, 120)</li>
+        <li>(10, 60)</li>
+        <li>(20, 30)</li>
+        <li>(40, 15)</li>
+      </points>
+    </mtbOverNearbyPollutionCurve>
+    <minNearbyPollution>0.05</minNearbyPollution>
+    <allowUnderground>false</allowUnderground>
+    <pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+  </GameConditionDef>
+
+</Defs>

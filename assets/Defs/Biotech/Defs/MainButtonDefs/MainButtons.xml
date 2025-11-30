@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MainButtonDef>
+    <defName>Mechs</defName>
+    <label>mechs</label>
+    <description>View and organize the colony's mechanoids.</description>
+    <workerClass>MainButtonWorker_ToggleMechTab</workerClass>
+    <tabWindowClass>MainTabWindow_Mechs</tabWindowClass>
+    <order>45</order>
+    <closesWorldView>true</closesWorldView>
+  </MainButtonDef>
+
+</Defs>

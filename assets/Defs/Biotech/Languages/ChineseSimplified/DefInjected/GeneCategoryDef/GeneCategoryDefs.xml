@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: special abilities -->
+  <Ability.label>特殊能力</Ability.label>
+  
+  <!-- EN: aptitudes -->
+  <Aptitudes.label>天资</Aptitudes.label>
+  
+  <!-- EN: archite -->
+  <Archite.label>超凡</Archite.label>
+  
+  <!-- EN: beauty -->
+  <Beauty.label>魅力</Beauty.label>
+  
+  <!-- EN: cosmetic - body type -->
+  <Cosmetic_Body.label>体型</Cosmetic_Body.label>
+  
+  <!-- EN: drugs -->
+  <Drugs.label>成瘾品</Drugs.label>
+  
+  <!-- EN: health -->
+  <Healing.label>健康</Healing.label>
+  
+  <!-- EN: hemogen -->
+  <Hemogen.label>血原质</Hemogen.label>
+  
+  <!-- EN: mood -->
+  <Mood.label>心情</Mood.label>
+  
+  <!-- EN: movement -->
+  <Movement.label>运动</Movement.label>
+  
+  <!-- EN: pain -->
+  <Pain.label>疼痛</Pain.label>
+  
+  <!-- EN: psychics -->
+  <Psychic.label>心灵</Psychic.label>
+  
+  <!-- EN: reproduction -->
+  <Reproduction.label>繁衍</Reproduction.label>
+  
+  <!-- EN: resistance and sensitivity -->
+  <ResistanceAndWeakness.label>抗性和敏感性</ResistanceAndWeakness.label>
+  
+  <!-- EN: sleep -->
+  <Sleep.label>睡眠</Sleep.label>
+  
+  <!-- EN: temperature -->
+  <Temperature.label>温度</Temperature.label>
+  
+  <!-- EN: violence -->
+  <Violence.label>暴力</Violence.label>
+  
+</LanguageData>

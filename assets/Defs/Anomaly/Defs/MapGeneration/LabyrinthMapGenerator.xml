@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <MapGeneratorDef Name="Labyrinth">
+    <defName>Labyrinth</defName>
+    <label>labyrinth</label>
+    <ignoreAreaRevealedLetter>true</ignoreAreaRevealedLetter>
+    <disableShadows>true</disableShadows>
+    <disableCallAid>true</disableCallAid>
+    <customMapComponents>
+      <li>LabyrinthMapComponent</li>
+    </customMapComponents>
+    <pocketMapProperties>
+      <biome>Labyrinth</biome>
+      <temperature>25</temperature>
+    </pocketMapProperties>
+    <genSteps>
+      <li>Labyrinth</li>
+    </genSteps>
+  </MapGeneratorDef>
+  
+  <GenStepDef>
+    <defName>Labyrinth</defName>
+    <order>10</order>
+    <genStep Class="GenStep_Labyrinth" />
+  </GenStepDef>
+  
+  <BiomeDef>
+    <defName>Labyrinth</defName>
+    <label>labyrinth</label>
+    <description>This place feels disconnected from any familiar environment. The heavy air and crushing silence create a pervasive sense of dread.</description>
+    <generatesNaturally>false</generatesNaturally>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
+    <baseWeatherCommonalities>
+      <Clear>1</Clear>
+    </baseWeatherCommonalities>
+    <diseaseMtbDays>80</diseaseMtbDays>
+    <diseases>
+      <li>
+        <diseaseInc>Disease_Flu</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_Plague</diseaseInc>
+        <commonality>80</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_FibrousMechanites</diseaseInc>
+        <commonality>40</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_SensoryMechanites</diseaseInc>
+        <commonality>40</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_GutWorms</diseaseInc>
+        <commonality>30</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_MuscleParasites</diseaseInc>
+        <commonality>30</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_AnimalFlu</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_AnimalPlague</diseaseInc>
+        <commonality>80</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_OrganDecay</diseaseInc>
+        <commonality>20</commonality>
+      </li>
+    </diseases>
+  </BiomeDef>
+
+</Defs>

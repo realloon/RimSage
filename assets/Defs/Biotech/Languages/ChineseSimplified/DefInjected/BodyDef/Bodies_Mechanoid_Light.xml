@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: light mech with blade -->
+  <Mech_Agrihand.label>园艺机</Mech_Agrihand.label>
+  <!-- EN: sight sensor -->
+  <Mech_Agrihand.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.sight_sensor.customLabel>视觉传感器</Mech_Agrihand.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.sight_sensor.customLabel>
+  <!-- EN: hearing sensor -->
+  <Mech_Agrihand.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.hearing_sensor.customLabel>听觉传感器</Mech_Agrihand.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.hearing_sensor.customLabel>
+  <!-- EN: right shoulder -->
+  <Mech_Agrihand.corePart.parts.right_shoulder.customLabel>右肩</Mech_Agrihand.corePart.parts.right_shoulder.customLabel>
+  <!-- EN: right arm -->
+  <Mech_Agrihand.corePart.parts.right_shoulder.parts.right_arm.customLabel>右臂</Mech_Agrihand.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  <!-- EN: right blade -->
+  <Mech_Agrihand.corePart.parts.right_shoulder.parts.right_arm.parts.right_blade.customLabel>右镰刃</Mech_Agrihand.corePart.parts.right_shoulder.parts.right_arm.parts.right_blade.customLabel>
+  <!-- EN: left leg -->
+  <Mech_Agrihand.corePart.parts.left_leg.customLabel>左腿</Mech_Agrihand.corePart.parts.left_leg.customLabel>
+  <!-- EN: left foot -->
+  <Mech_Agrihand.corePart.parts.left_leg.parts.left_foot.customLabel>左足</Mech_Agrihand.corePart.parts.left_leg.parts.left_foot.customLabel>
+  <!-- EN: right leg -->
+  <Mech_Agrihand.corePart.parts.right_leg.customLabel>右腿</Mech_Agrihand.corePart.parts.right_leg.customLabel>
+  <!-- EN: right foot -->
+  <Mech_Agrihand.corePart.parts.right_leg.parts.right_foot.customLabel>右足</Mech_Agrihand.corePart.parts.right_leg.parts.right_foot.customLabel>
+  
+  <!-- EN: light mech -->
+  <Mech_Light.label>轻型机械族</Mech_Light.label>
+  <!-- EN: sight sensor -->
+  <Mech_Light.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.sight_sensor.customLabel>视觉传感器</Mech_Light.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.sight_sensor.customLabel>
+  <!-- EN: hearing sensor -->
+  <Mech_Light.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.hearing_sensor.customLabel>听觉传感器</Mech_Light.corePart.parts.MechanicalNeck.parts.MechanicalHead.parts.hearing_sensor.customLabel>
+  <!-- EN: left leg -->
+  <Mech_Light.corePart.parts.left_leg.customLabel>左腿</Mech_Light.corePart.parts.left_leg.customLabel>
+  <!-- EN: left foot -->
+  <Mech_Light.corePart.parts.left_leg.parts.left_foot.customLabel>左足</Mech_Light.corePart.parts.left_leg.parts.left_foot.customLabel>
+  <!-- EN: right leg -->
+  <Mech_Light.corePart.parts.right_leg.customLabel>右腿</Mech_Light.corePart.parts.right_leg.customLabel>
+  <!-- EN: right foot -->
+  <Mech_Light.corePart.parts.right_leg.parts.right_foot.customLabel>右足</Mech_Light.corePart.parts.right_leg.parts.right_foot.customLabel>
+  
+</LanguageData>

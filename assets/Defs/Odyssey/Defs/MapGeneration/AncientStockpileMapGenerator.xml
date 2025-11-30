@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MapGeneratorDef>
+    <defName>AncientStockpile</defName>
+    <label>ancient stockpile</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <temperature>15</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>RockChunks</li>
+      <!-- AncientStockpile added by AncientHatch -->
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>AncientStockpile</defName>
+    <order>551</order>
+    <genStep Class="GenStep_AncientStockpile" />
+  </GenStepDef>
+</Defs>

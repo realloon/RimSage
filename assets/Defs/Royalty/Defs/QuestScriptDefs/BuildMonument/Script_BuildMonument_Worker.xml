@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>BuildMonumentWorker</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_Constants_Monuments</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_Set">
+          <name>mustHaveSettlementOnLayer</name>
+          <value>true</value>
+          <convertTo>Boolean</convertTo>
+        </li>
+
+        <!-- Get asker -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_DecideRandomAsker</def>
+        </li>
+
+        <!-- Get largest clear area -->
+        <li Class="QuestNode_GetLargestClearArea">
+          <map>$map</map>
+          <storeAs>largestClearArea</storeAs>
+          <failIfSmaller>10</failIfSmaller>
+          <max>70</max>
+        </li>
+
+        <!-- Get monument sketch
+             The area of the monument is determined by points -->
+        <li Class="QuestNode_GetMonumentSketch">
+          <storeAs>monumentSketch</storeAs>
+          <pointsPerArea>6.0</pointsPerArea>
+          <useOnlyResourcesAvailableOnMap>$map</useOnlyResourcesAvailableOnMap>
+          <maxSize>$largestClearArea</maxSize>
+        </li>
+
+        <!-- Make monument marker -->
+        <li Class="QuestNode_GenerateMonumentMarker">
+          <storeAs>monumentMarker</storeAs>
+          <sketch>$monumentSketch</sketch>
+        </li>
+        <li Class="QuestNode_DestroyOrPassToWorldOnCleanup">
+          <things>$monumentMarker</things>
+        </li>
+
+        <!-- Get data for use in text -->
+        <li Class="QuestNode_GetMonumentRequiredResourcesString">
+          <monumentMarker>$monumentMarker</monumentMarker>
+          <storeAs>monumentRequiredResources</storeAs>
+          <storeMarketValueAs>monumentRequiredResourcesMarketValue</storeMarketValueAs>
+        </li>
+
+        <!-- Calculate rewardValue from the market value of the monument resources -->
+        <li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$($monumentRequiredResourcesMarketValue * randFloat(1.8, 1.9))</value>
+        </li>
+        <li Class="QuestNode_IsTrue"> <!-- Factor up reward value if a punishment is threatened -->
+          <value>$punishmentOnDestroy</value>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Multiply">
+                <value1>$rewardValue</value1>
+                <value2>1.4</value2>
+                <storeAs>rewardValue</storeAs>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- If assigned, reward player on completing monument within the time limit -->
+        <li Class="QuestNode_IsTrue">
+          <value>$rewardOnCompletion</value>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Signal">
+                <inSignal>monumentMarker.MonumentCompleted</inSignal>
+                <node Class="QuestNode_GiveRewards">
+                  <parms>
+                    <allowGoodwill>true</allowGoodwill>
+                    <allowRoyalFavor>true</allowRoyalFavor>
+                  </parms>
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- If assigned, punish player if monument is destroyed -->
+        <li Class="QuestNode_IsTrue">
+          <value>$punishmentOnDestroy</value>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <!-- Must protect for an amount of time depending on challenge rating -->
+              <li Class="QuestNode_Equal">
+                <value1>$challengeRating</value1>
+                <value2>1</value2>
+                <node Class="QuestNode_Set">
+                  <name>haveToProtectForTicks</name>
+                  <value>$(roundToTicksRough(randInt(20, 40)*60000))</value>
+                </node>
+              </li>
+              <li Class="QuestNode_Equal">
+                <value1>$challengeRating</value1>
+                <value2>2</value2>
+                <node Class="QuestNode_Set">
+                  <name>haveToProtectForTicks</name>
+                  <value>$(roundToTicksRough(randInt(41, 60)*60000))</value>
+                </node>
+              </li>
+              <li Class="QuestNode_Equal">
+                <value1>$challengeRating</value1>
+                <value2>3</value2>
+                <node Class="QuestNode_Set">
+                  <name>haveToProtectForTicks</name>
+                  <value>$(roundToTicksRough(randInt(61, 80)*60000))</value>
+                </node>
+              </li>
+
+              <!-- Send threat if monument completed and then destroyed -->
+              <li Class="QuestNode_Signal">
+                <inSignal>monumentMarker.MonumentDestroyed</inSignal>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_SetAndRestore">
+                      <name>points</name>
+                      <value>$($pointsOriginal * 1.75)</value>
+                      <node Class="QuestNode_ViolentQuestsAllowed">
+                        <node Class="QuestNode_RandomNode">
+                          <nodes>
+                           <li Class="QuestNode_SubScript"><def>Util_Raid</def></li>
+                            <li Class="QuestNode_SubScript"><def>Util_ManhunterPack</def></li>
+                            <li Class="QuestNode_SubScript"><def>Util_Infestation</def></li>
+                            <li Class="QuestNode_SubScript"><def>Util_SpawnSiteThreat</def></li>
+                            <li Class="QuestNode_SubScript"><def>Util_GameConditionNegativeRandom</def></li>
+                            <li Class="QuestNode_Subscript"><def>Util_MechCluster</def></li>
+                          </nodes>
+                        </node>
+                        <elseNode Class="QuestNode_SubScript">
+                          <def>Util_GameConditionNegativeRandom</def> <!-- Peaceful difficulty only allows negative game conditions. -->
+                        </elseNode>
+                      </node>
+                    </li>
+                    <li Class="QuestNode_Message">
+                      <text TKey="MessageMonumentViolated">The monument for the quest '[resolvedQuestName]' has been violated. Consequences will follow.</text>
+                      <lookTargets>monumentMarker</lookTargets>
+                      <messageType>NegativeEvent</messageType>
+                    </li>
+                    <li Class="QuestNode_End">
+                      <outcome>Fail</outcome>
+                    </li>
+                  </nodes>
+                </node>
+              </li>
+
+              <!-- End condition for success: Monument completed, then waited haveToProtectForTicks -->
+              <li Class="QuestNode_Delay">
+                <inSignalEnable>monumentMarker.MonumentCompleted</inSignalEnable>
+                <delayTicks>$haveToProtectForTicks</delayTicks>
+                <expiryInfoPart TKey="ProtectMonumentForDays">Protect the monument for {0}</expiryInfoPart>
+                <expiryInfoPartTip TKey="ProtectMonumentForDaysTip">Protect the monument until {0}</expiryInfoPartTip>
+                <inspectString TKey="ProtectMonument">Protect for {0}</inspectString>
+                <inspectStringTargets>$monumentMarker</inspectStringTargets>
+                <node Class="QuestNode_End">
+                  <outcome>Success</outcome>
+                  <sendStandardLetter>true</sendStandardLetter>
+                </node>
+              </li>
+            </nodes>
+          </node>
+          <elseNode Class="QuestNode_IsNull">
+            <value>$asker</value>
+            <node Class="QuestNode_End">
+              <inSignal>monumentMarker.MonumentCompleted</inSignal>
+              <outcome>Success</outcome>
+              <sendStandardLetter>true</sendStandardLetter>
+            </node>
+            <elseNode Class="QuestNode_Sequence">
+              <nodes>
+                <li Class="QuestNode_GetFactionOf">
+                  <thing>$asker</thing>
+                  <storeAs>askerFaction</storeAs>
+                </li>
+                <li Class="QuestNode_IsNull">
+                  <value>$askerFaction</value>
+                  <node Class="QuestNode_End">
+                    <inSignal>monumentMarker.MonumentCompleted</inSignal>
+                    <outcome>Success</outcome>
+                    <sendStandardLetter>true</sendStandardLetter>
+                  </node>
+                  <elseNode Class="QuestNode_IsPermanentEnemy">
+                    <thing>$asker</thing>
+                    <node Class="QuestNode_Sequence">
+                      <nodes>
+                        <!-- Unset to use empty fallback for dontDestroyMonument. -->
+                        <li Class="QuestNode_UnSet">
+                          <name>goodwillChangeIfMonumentDestroyed</name>
+                        </li>
+                        <li Class="QuestNode_End">
+                          <inSignal>monumentMarker.MonumentCompleted</inSignal>
+                          <outcome>Success</outcome>
+                          <sendStandardLetter>true</sendStandardLetter>
+                        </li>
+                      </nodes>
+                    </node>
+                    <elseNode Class="QuestNode_Signal">
+                      <inSignal>monumentMarker.MonumentCompleted</inSignal>
+                      <node Class="QuestNode_Sequence">
+                        <nodes>
+                          <li Class="QuestNode_Letter">
+                            <label TKey="LetterLabelMonumentConstructed">Monument completed</label>
+                            <letterDef>PositiveEvent</letterDef>
+                            <text TKey="LetterTextMonumentConstructed">You completed construction of the monument.\n\nYou must not destroy it for at least [keepMonumentTicks_duration], otherwise you will anger [asker_factionName] ([goodwillChangeIfMonumentDestroyed] goodwill).</text>
+                          </li>
+                          <li Class="QuestNode_Signal">
+                            <inSignal>monumentMarker.MonumentDestroyed</inSignal>
+                            <node Class="QuestNode_Sequence">
+                              <nodes>
+                                <li Class="QuestNode_Letter">
+                                  <text TKey="LetterTextMonumentRuined">[asker_nameDef] is offended that you allowed the monument to be ruined so soon after completion.\n\nYour relations with [asker_faction_name] have fallen by [goodwillChangeIfMonumentDestroyed].</text>
+                                  <label TKey="LetterLabelMonumentRuined">Monument destroyed</label>
+                                </li>
+                                <li Class="QuestNode_ChangeFactionGoodwill">
+                                  <change>$goodwillChangeIfMonumentDestroyed</change>
+                                  <factionOf>$asker</factionOf>
+                                  <reason>MonumentDestroyed</reason>
+                                </li>
+                                <li Class="QuestNode_End">
+                                  <outcome>Fail</outcome>
+                                </li>
+                              </nodes>
+                            </node>
+                          </li>
+                          <!-- Wait for monument to survive -->
+                          <li Class="QuestNode_Delay">
+                            <delayTicks>$keepMonumentTicks</delayTicks>
+                            <expiryInfoPart TKey="DontDestroyMonumentForDays">Do not destroy the monument for {0}</expiryInfoPart>
+                            <expiryInfoPartTip TKey="DontDestroyMonumentForDaysTip">Do not destroy the monument for {0}</expiryInfoPartTip>
+                            <inspectString TKey="KeepMonument">Keep monument {0}</inspectString>
+                            <inspectStringTargets>$monumentMarker</inspectStringTargets>
+                            <node Class="QuestNode_Sequence">
+                              <nodes>
+                                <li Class="QuestNode_End">
+                                  <outcome>Success</outcome>
+                                </li>
+                              </nodes>
+                            </node>
+                          </li>
+                        </nodes>
+                      </node>
+                    </elseNode>
+                  </elseNode>
+                </li>
+              </nodes>
+            </elseNode>
+          </elseNode>
+        </li>
+
+        <!-- End if map removed -->
+        <li Class="QuestNode_End">
+          <inSignal>monumentMarker.LeftBehind</inSignal>
+          <outcome>Fail</outcome>
+          <goodwillChangeAmount>-5</goodwillChangeAmount>
+          <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+          <goodwillChangeReason>MonumentConstructionMapRemoved</goodwillChangeReason>
+        </li>
+
+        <!-- Send another monument marker if destroyed -->
+        <li Class="QuestNode_Signal">
+          <inSignal>monumentMarker.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_DropMonumentMarkerCopy">
+                <outSignalResult>DroppedMonumentMarkerCopy</outSignalResult>
+                <destroyOrPassToWorldOnCleanup>true</destroyOrPassToWorldOnCleanup>
+              </li>
+              <li Class="QuestNode_Letter">
+                <inSignal>DroppedMonumentMarkerCopy</inSignal>
+                <label TKey="LetterLabelMonumentMarkerArrived">New monument marker arrived</label>
+                <text TKey="LetterTextMonumentMarkerArrived">Since the monument marker has been destroyed, a new one has been sent.</text>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- Calculate construction time limit -->
+        <li Class="QuestNode_Set">
+          <name>constructionTimeoutTicks</name>
+          <value>$(roundToTicksRough(randInt(10, 16)*60000))</value> <!-- 8~14 days at minimum -->
+        </li>
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$points</value>
+          <storeAs>timeoutFactorForPoints</storeAs> <!-- Multiply construction time for really big monuments -->
+          <curve>
+            <points>
+              <li>( 800, 1)</li>
+              <li>(2000, 2)</li>
+              <li>(4000, 3)</li>
+            </points>
+          </curve>
+        </li>
+        <li Class="QuestNode_Multiply">
+          <value1>$constructionTimeoutTicks</value1>
+          <value2>$timeoutFactorForPoints</value2>
+          <storeAs>constructionTimeoutTicks</storeAs>
+        </li>
+
+        <!-- End condition for failure: Construction time limit expired -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>$constructionTimeoutTicks</delayTicks>
+          <inSignalDisable>monumentMarker.MonumentCompleted</inSignalDisable>
+          <isQuestTimeout>true</isQuestTimeout>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <!-- Minor problem: This can send at the same moment as the quest completion letter. -->
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelTimeExpired">Monument time expired</label>
+                <text TKey="LetterTextTimeExpired">Your time limit to construct the monument has expired. [failLetterEndingCommon]</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                <goodwillChangeReason>MonumentConstructionExpired</goodwillChangeReason>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- Drop monument marker -->
+        <li Class="QuestNode_MakeMinified">
+          <storeAs>monumentMarkerMinified</storeAs>
+          <thing>$monumentMarker</thing>
+        </li>
+        <li Class="QuestNode_AddToList">
+          <name>thingsToDrop</name>
+          <value>$monumentMarkerMinified</value>
+        </li>
+        <li Class="QuestNode_GenerateNonBuildableMonumentRequiredResources">
+          <addToList>thingsToDrop</addToList>
+          <monumentMarker>$monumentMarker</monumentMarker>
+        </li>
+        <li Class="QuestNode_DropPods">
+          <contents>$thingsToDrop</contents>
+          <useTradeDropSpot>true</useTradeDropSpot>
+          <thingsToExcludeFromHyperlinks>$monumentMarkerMinified</thingsToExcludeFromHyperlinks>
+        </li>
+        
+        <!-- Get data for use in text -->
+        <li Class="QuestNode_GetMonumentSize">
+          <monumentMarker>$monumentMarker</monumentMarker>
+          <storeAs>monumentSize</storeAs>
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

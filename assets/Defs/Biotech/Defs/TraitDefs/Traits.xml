@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <TraitDef>
+    <defName>Delicate</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>delicate</label>
+        <description>{PAWN_nameDef} has fragile skin and bones. {PAWN_pronoun} takes more damage than other people from the same blows.</description>
+        <statFactors>
+          <IncomingDamageFactor>1.15</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </degreeDatas>
+    <exclusionTags>
+      <li>Toughness</li>
+    </exclusionTags>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>Recluse</defName>
+    <commonality>0.5</commonality>
+    <degreeDatas>
+      <li>
+        <label>recluse</label>
+        <description>The fewer people in {PAWN_nameDef}'s faction, the happier {PAWN_pronoun} is. Being alone is best of all.</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

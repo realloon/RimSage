@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <ThingDef ParentName="BookBase">
+    <thingClass>Book</thingClass>
+    <defName>Map</defName>
+    <label>map</label>
+    <description>A map that shows the way to a location of interest.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/Map/Map</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>180</MarketValue>
+    </statBases>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Book">
+        <nameMaker>Namer_Map</nameMaker>
+        <descriptionMaker>Description_Map</descriptionMaker>
+        <ageYearsRange>0~100</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/Map/Map_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.7</drawSize>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/Map/Map_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+        </verticalGraphic>
+        <doers>
+          <li Class="BookOutcomeProperties_GiveQuest">
+            <questChance>1</questChance>
+          </li>
+        </doers>
+      </li>
+    </comps>
+    <possessionCount>1</possessionCount>
+  </ThingDef>
+  
+</Defs>

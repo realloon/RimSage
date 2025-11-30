@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <SpecialThingFilterDef>
+    <defName>AllowCorpsesUnnatural</defName>
+    <label>allow unnatural corpses</label>
+    <description>Allow strange and unnatural dead bodies.</description>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesUnnatural</saveKey>
+    <workerClass>SpecialThingFilterWorker_CorpsesUnnatural</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookResearchFilter">
+    <defName>AllowAnomalyResearch</defName>
+    <label>anomaly research</label>
+    <description>Allow books with information that advances anomaly research.</description>
+    <saveKey>allowAnomalyResearch</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowAnomalyResearch</workerClass>
+  </SpecialThingFilterDef>
+
+</Defs>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TipSetDef>
+    <defName>RoyaltyTips</defName>
+    <tips>
+      <!-- Nobles -->
+      <li TKey="TitleMilitaryAid">Some title permits allow the holder to call for military aid. This can save you in a tough moment.</li>
+      <li TKey="NoblesDemandPrivileges">Nobles from the Empire will demand all the privileges of their title. Your own titled colonists will be more flexible, unless they are greedy or jealous.</li>
+      <li TKey="RoyalArmor">Prestige armor and eltex apparel will also satisfy the apparel requirements of royal titles.</li>
+      <li TKey="TitleInheritance">If a title holder dies, their title goes to their chosen heir.</li>
+      <li TKey="ChangeHeir">You can change the heir of a title holder through the comms console. However, this requires completing a ritual.</li>
+
+      <!-- Implants -->
+      <li TKey="FreePsychicAmplifier">The Empire bestows a free level of psylink upon anyone who earns the title required to use it.</li>
+      <li TKey="IllegalImplantUse">Psylink neuroformers can be acquired through quests. These items can give a person psychic powers.</li>
+      <li TKey="InstallingPsychicAmplifier">Gaining a new level of psylink grants knowledge of one random psychic power.</li>
+
+      <!-- Psycasts -->
+      <li TKey="PsycastAdvantage">Psychic powers can give you significant advantage in combat.</li>
+      <li TKey="PsycastFactionRelations">Using a psychic power on an ally will harm faction relations - but only if it has negative effects.</li>
+      <li TKey="PsycastInvisibility">Psychic invisibility doesn't wear off when you attack.</li>
+      <li TKey="PsychicEntropyLimit">Going over your neural heat limit can save you in a desperate situation - but the psychic breakdown can last a while.</li>
+      <li TKey="PsycastSensitivity">Creatures with higher psychic sensitivity are affected more by psychics.</li>
+      <li TKey="EltexGear">Dressing your psycasters in eltex gear will increase their neural heat limit and dissipation rate.</li>
+
+      <!-- Mech clusters -->
+      <li TKey="MechClusterPowercell">When fighting a mech cluster, try shooting their power cells. They explode, dealing heavy damage to surrounding creatures and structures.</li>
+      <li TKey="MechClusterDormant">Some mech clusters remain dormant until disturbed. Use that time to prepare your attack.</li>
+      
+      <!-- Misc -->
+      <li TKey="RoyalTributeCollector">The Imperial royal tribute collector arrives twice per year, and accepts prisoners and gold in exchange for honor.</li>
+
+      <!-- Added misc -->
+      <li TKey="MechClusterDormantTrigger">You can safely walk right past a dormant mech cluster, as long as you don't attack it or trigger a proximity activator.</li>
+      <li TKey="SkipPsycastsMultiuse">The psychic skip power works on self, allies, enemies, and even items. The tactical possibilities are endless.</li>
+      <li TKey="JumpPackRescue">You can carry a downed ally while using the jump pack. Aerial rescues save lives.</li>
+
+    </tips>
+  </TipSetDef>
+
+</Defs>

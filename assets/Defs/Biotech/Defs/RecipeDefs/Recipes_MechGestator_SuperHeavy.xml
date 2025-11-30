@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Name="SuperHeavyMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
+    <gestationCycles>12</gestationCycles>
+    <researchPrerequisite>UltraMechtech</researchPrerequisite>
+    <displayPriority>400</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SuperHeavyMechanoidRecipe">
+    <defName>Centurion</defName>
+    <label>gestate centurion</label>
+    <description>Gestate a centurion mechanoid.</description>
+    <products>
+      <Mech_Centurion>1</Mech_Centurion>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_Centurion</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PowerfocusChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SuperHeavyMechanoidRecipe">
+    <defName>Warqueen</defName>
+    <label>gestate war queen</label>
+    <description>Gestate a war queen mechanoid.</description>
+    <products>
+      <Mech_Warqueen>1</Mech_Warqueen>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_Warqueen</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>600</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NanostructuringChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+</Defs>

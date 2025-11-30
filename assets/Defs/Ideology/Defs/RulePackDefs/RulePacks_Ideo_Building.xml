@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Root -->
+
+  <RulePackDef>
+    <defName>NamerIdeoBuilding</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ideoBuildingName(p=2)->[memeAdjective] [buildingName]</li>
+        <li>r_ideoBuildingName->[buildingName] of [chosenTheme]</li>
+        <li>r_ideoBuildingName->[chosenAdjective] [buildingName]</li>
+        <li>r_ideoBuildingName->[keyDeity]'s [buildingName]</li>
+        <li>r_ideoBuildingName->[buildingName] of [keyDeity]</li>
+        <li>r_ideoBuildingName->[buildingName] of [memeConcept]</li>
+        <li>r_ideoBuildingName->[buildingName] of [chosenIdeoName]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Building-specific base labels -->
+
+  <RulePackDef>
+    <defName>NamerAltar</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>buildingName->altar</li>
+        <li>buildingName->shrine</li>
+        <li>buildingName->chancel</li>
+        <li>buildingName->platform</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerIdeoSculpture</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>buildingName->statue</li>
+        <li>buildingName->sculpture</li>
+        <li>buildingName->carving</li>
+        <li>buildingName->image</li>
+        <li>buildingName->form</li>
+        <li>buildingName->shape</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerIdeogram</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>buildingName->ideogram</li>
+        <li>buildingName->symbol</li>
+        <li>buildingName->mark</li>
+        <li>buildingName->shape</li>
+        <li>buildingName->emblem</li>
+        <li>buildingName->figure</li>
+        <li>buildingName->image</li>
+        <li>buildingName->logo</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerChristmasTree</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>buildingName->tree</li>
+        <li>buildingName->pine</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerBurnTarget</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>buildingName->totem</li>
+        <li>buildingName->effigy</li>
+        <li>buildingName->pyre</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerSmoker</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>buildingName->smoker</li>
+        <li>buildingName->gasser</li>
+        <li>buildingName->fumer</li>
+        <li>buildingName->smolderer</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerCannibalPlatter</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>buildingName->platter</li>
+        <li>buildingName->dish</li>
+        <li>buildingName->feast</li>
+        <li>buildingName->manpork</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

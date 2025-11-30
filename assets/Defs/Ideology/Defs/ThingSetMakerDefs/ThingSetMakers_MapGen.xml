@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingSetMakerDef>
+    <defName>MapGen_AncientComplexRoomLoot_Default</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Survival meal -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MealSurvivalPack</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~6</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Medicine -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineIndustrial</li>
+                  <li>MedicineHerbal</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~6</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Luciferium -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Luciferium</li>
+                </thingDefs>
+              </filter>
+              <countRange>5~12</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Joywire -->
+        <li>
+          <weight>0.15</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Joywire</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Silver -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Silver</li>
+                </thingDefs>
+              </filter>
+              <countRange>30~100</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Chemfuel -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Chemfuel</li>
+                </thingDefs>
+              </filter>
+              <countRange>10~30</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Uranium -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Uranium</li>
+                </thingDefs>
+              </filter>
+              <countRange>30~50</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        
+        <!-- Hyperweave & plasteel -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Plasteel</li>
+                  <li>Hyperweave</li>
+                </thingDefs>
+              </filter>
+              <countRange>10~20</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Advanced components -->
+        <li>
+          <weight>0.15</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Ultratech meds -->
+        <li>
+          <weight>0.15</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineUltratech</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Techprint -->
+        <li>
+          <weight>0.05</weight> 
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>Techprint</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef>
+    <defName>MapGen_AncientComplexRoomLoot_Better</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Survival meal -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MealSurvivalPack</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~9</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Medicine -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineIndustrial</li>
+                  <li>MedicineHerbal</li>
+                </thingDefs>
+              </filter>
+              <countRange>5~9</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Luciferium -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Luciferium</li>
+                </thingDefs>
+              </filter>
+              <countRange>7~18</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Joywire -->
+        <li>
+          <weight>0.15</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Joywire</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Silver -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Silver</li>
+                </thingDefs>
+              </filter>
+              <countRange>45~150</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Chemfuel -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Chemfuel</li>
+                </thingDefs>
+              </filter>
+              <countRange>15~45</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Uranium -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Uranium</li>
+                </thingDefs>
+              </filter>
+              <countRange>45~75</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Bioferrite -->
+        <li MayRequire="Ludeon.RimWorld.Anomaly">
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Bioferrite</li>
+                </thingDefs>
+              </filter>
+              <countRange>30~50</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        
+        <!-- Hyperweave & plasteel -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Plasteel</li>
+                  <li>Hyperweave</li>
+                </thingDefs>
+              </filter>
+              <countRange>15~35</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Advanced components -->
+        <li>
+          <weight>0.15</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~4</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Ultratech meds -->
+        <li>
+          <weight>0.15</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineUltratech</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~5</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Techprint -->
+        <li>
+          <weight>0.05</weight> 
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>Techprint</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        
+        <!-- Genepack -->
+        <li MayRequire="Ludeon.RimWorld.Biotech">
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Genepack</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Misc high value -->
+        <li>
+          <weight>0.05</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_PsychicInsanityLance</li>
+                  <li>Apparel_PsychicShockLance</li>
+                  <li>ArchotechArm</li>
+                  <li>ArchotechEye</li>
+                  <li>ArchotechLeg</li>
+                  <li>Gun_DoomsdayRocket</li>
+                  <li>Gun_TripleRocket</li>
+                  <li>MechSerumHealer</li>
+                  <li>MechSerumResurrector</li>
+                  <li>OrbitalTargeterBombardment</li>
+                  <li>OrbitalTargeterPowerBeam</li>
+                  <li>PsychicAnimalPulser</li>
+                  <li>PsychicEmanator</li>
+                  <li>PsychicSoothePulser</li>
+                  <li>ReinforcedBarrel</li>
+                  <li>Shell_AntigrainWarhead</li>
+                  <li>TechprofSubpersonaCore</li>
+                  <li>TornadoGenerator</li>
+                  <li>VanometricPowerCell</li>
+                  <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+                  <li MayRequire="Ludeon.RimWorld.Biotech">DeathrestCapacitySerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">BiomutationPulser</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Apparel_BiomutationLance</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Serums -->
+        <li>
+          <weight>0.25</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">VoidsightSerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">MetalbloodSerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">JuggernautSerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">MindNumbSerum</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+   <!-- Books -->
+        <li>
+          <weight>0.7</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Tome</li>
+                  <li>TextBook</li>
+                  <li>Schematic</li>
+                  <li>Novel</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>       
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef>
+    <defName>MapGen_AncientComplex_SecurityCrate</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Gold -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Gold</li>
+                </thingDefs>
+              </filter>
+              <countRange>15~30</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Uranium -->
+        <li>
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Uranium</li>
+                </thingDefs>
+              </filter>
+              <countRange>30~60</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Advanced components -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>4~8</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Ultratech meds -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineUltratech</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~10</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Utility apparel -->
+        <li>
+          <weight>0.1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_ShieldBelt</li>
+                  <li MayRequire="Ludeon.RimWorld.Royalty">Apparel_PackJump</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Apparel_DisruptorFlarePack</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Apparel_PackTurret</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Misc -->
+        <li>
+          <weight>0.75</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>BionicEye</li>
+                  <li>BionicArm</li>
+                  <li>BionicLeg</li>
+                  <li>BionicSpine</li>
+                  <li>BionicHeart</li>
+                  <li>BionicStomach</li>
+                  <li>ReinforcedBarrel</li>
+                  <li>Neurotrainer_Shooting</li>
+                  <li>Neurotrainer_Melee</li>
+                  <li>Neurotrainer_Construction</li>
+                  <li>Neurotrainer_Mining</li>
+                  <li>Neurotrainer_Cooking</li>
+                  <li>Neurotrainer_Plants</li>
+                  <li>Neurotrainer_Animals</li>
+                  <li>Neurotrainer_Crafting</li>
+                  <li>Neurotrainer_Artistic</li>
+                  <li>Neurotrainer_Medicine</li>
+                  <li>Neurotrainer_Social</li>
+                  <li>Neurotrainer_Intellectual</li>
+                  <li MayRequire="Ludeon.RimWorld.Royalty">HealingEnhancer</li>
+                  <li>Apparel_ArmorHelmetRecon</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Misc high value -->
+        <li>
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_PsychicInsanityLance</li>
+                  <li>Apparel_PsychicShockLance</li>
+                  <li>ArchotechArm</li>
+                  <li>ArchotechEye</li>
+                  <li>ArchotechLeg</li>
+                  <li>Gun_DoomsdayRocket</li>
+                  <li>Gun_TripleRocket</li>
+                  <li>MechSerumHealer</li>
+                  <li>MechSerumResurrector</li>
+                  <li>OrbitalTargeterBombardment</li>
+                  <li>OrbitalTargeterPowerBeam</li>
+                  <li>PsychicAnimalPulser</li>
+                  <li>PsychicEmanator</li>
+                  <li>PsychicSoothePulser</li>
+                  <li>ReinforcedBarrel</li>
+                  <li>Shell_AntigrainWarhead</li>
+                  <li>TechprofSubpersonaCore</li>
+                  <li>TornadoGenerator</li>
+                  <li>VanometricPowerCell</li>
+                  <li MayRequire="Ludeon.RimWorld.Biotech">ArchiteCapsule</li>
+                  <li MayRequire="Ludeon.RimWorld.Biotech">DeathrestCapacitySerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">BiomutationPulser</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Apparel_BiomutationLance</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Special -->
+        <li MayRequire="Ludeon.RimWorld.Royalty">
+          <weight>0.05</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_ArmorHelmetReconPrestige</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        
+        <!-- Techprint -->
+        <li>
+          <weight>0.05</weight> 
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>Techprint</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+  <!-- Serums -->
+        <li>
+          <weight>0.25</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">VoidsightSerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">MetalbloodSerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">JuggernautSerum</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">MindNumbSerum</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+  <!-- Shard -->
+        <li>
+          <weight>0.05</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Shard</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+  <!-- Books -->
+        <li>
+          <weight>0.7</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Tome</li>
+                  <li>TextBook</li>
+                  <li>Schematic</li>
+                  <li>Novel</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>     
+        
+      </options>
+    </root>
+  </ThingSetMakerDef>   
+</Defs>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnRelationDef>
+    <defName>Overseer</defName>
+    <label>overseer</label>
+    <workerClass>PawnRelationWorker_Overseer</workerClass>
+    <importance>100</importance>
+    <implied>false</implied>
+    <reflexive>true</reflexive>
+    <removeOnDeath>true</removeOnDeath>
+    <removeOnLeftBehind>true</removeOnLeftBehind>
+  </PawnRelationDef>
+
+</Defs>

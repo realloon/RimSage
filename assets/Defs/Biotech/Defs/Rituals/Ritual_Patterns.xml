@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualPatternDef>
+    <defName>ChildBirth</defName>
+    <beginRitualOverride>gather for {0}</beginRitualOverride>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>ChildBirth</ritualBehavior>
+    <ritualOutcomeEffect>ChildBirth</ritualOutcomeEffect>
+    <ritualObligationTargetFilter>ChildBirth</ritualObligationTargetFilter>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+    <allowOtherInstances>true</allowOtherInstances>
+  </RitualPatternDef>
+
+</Defs>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <SitePartDef ParentName="Outpost">
+    <defName>WorshippedTerminal</defName>
+    <label>worshipful village</label>
+    <description>A village containing an ancient terminal which the locals worship.</description>
+    <arrivedLetter>You may stay here for {TIMER} as long as you do not violate their rules.</arrivedLetter>
+    <approachOrderString>Investigate {0}</approachOrderString>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <workerClass>SitePartWorker_WorshippedTerminal</workerClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/WorshipfulVillage</expandingIconTexture>
+    <gravShipsCanLandOn>false</gravShipsCanLandOn>
+    <tags Inherit="False">
+      <li>WorshippedTerminal</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>WorshippedTerminal</defName>
+    <linkWithSite>WorshippedTerminal</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost">
+      <size>29</size>
+      <requiredWorshippedTerminalRooms>1</requiredWorshippedTerminalRooms>
+      <unfogged>true</unfogged>
+      <attackWhenPlayerBecameEnemy>true</attackWhenPlayerBecameEnemy>
+      <pawnGroupKindDef>Settlement_RangedOnly</pawnGroupKindDef>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorshippedTerminalPower</defName>
+    <linkWithSite>WorshippedTerminal</linkWithSite>
+    <order>401</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+</Defs>

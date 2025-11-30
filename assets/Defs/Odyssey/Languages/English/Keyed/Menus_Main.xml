@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Create/review world -->
+  <PlanetLandmarkDensity>Landmarks</PlanetLandmarkDensity>
+  <PlanetLandmarkDensity_Low>Sparse</PlanetLandmarkDensity_Low>
+  <PlanetLandmarkDensity_Normal>Normal</PlanetLandmarkDensity_Normal>
+  <PlanetLandmarkDensity_High>Crowded</PlanetLandmarkDensity_High>
+  
+  <GeneratingGravship>Preparing for takeoff</GeneratingGravship>
+  <PreparingForLanding>Preparing for landing</PreparingForLanding>
+
+  <Subject>Subject</Subject>
+
+  <Difficulty_FishingYieldFactor_Label>Fishing yield</Difficulty_FishingYieldFactor_Label>
+  <Difficulty_FishingYieldFactor_Info>Adjust how many fish are caught when fishing.</Difficulty_FishingYieldFactor_Info>
+
+  <OdysseyFactionDisabledContentWarning>Disabling {0} will make it impossible to complete major Odyssey quests.</OdysseyFactionDisabledContentWarning>
+</LanguageData>

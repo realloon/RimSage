@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+  <IssueDef>
+    <defName>BlindPsysense</defName>
+    <label>blind psysense</label>
+    <iconPath>UI/Issues/BlindPsysense</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+  <PreceptDef>
+    <defName>Blind_Psysense</defName>
+    <issue>BlindPsysense</issue>
+    <label>strong</label>
+    <description>Our blind have special ways of connecting with the psychic aether.</description>
+    <impact>Low</impact>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <defaultSelectionWeight>0</defaultSelectionWeight>
+    <blindPsychicSensitivityOffset>0.3</blindPsychicSensitivityOffset>
+    <approvesOfBlindness>true</approvesOfBlindness>
+    <requiredMemes>
+      <li>Blindsight</li>
+    </requiredMemes>
+  </PreceptDef>
+
+</Defs>

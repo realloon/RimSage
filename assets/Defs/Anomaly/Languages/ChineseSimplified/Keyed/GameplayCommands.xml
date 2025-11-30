@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Self-resurrect -->
+  <CommandSelfResurrect>自我复活</CommandSelfResurrect>
+  <!-- EN: Command this person to self-resurrect, healing wounds and repairing damaged body parts. The process is not perfect and may cause scarring. -->
+  <CommandSelfResurrectDesc>命令此人自我复活，治愈伤口并修理损坏的身体部件。此过程不是完美的，可能导致疤痕。</CommandSelfResurrectDesc>
+
+  <!-- EN: Study -->
+  <ToggleStudy>调查</ToggleStudy>
+  <!-- EN: When on, a researcher will automatically study the entity restrained on this holding platform. -->
+  <ToggleStudyDesc>激活时，一名调查者将自动调查安置于此收容平台上的实体。</ToggleStudyDesc>
+
+</LanguageData>

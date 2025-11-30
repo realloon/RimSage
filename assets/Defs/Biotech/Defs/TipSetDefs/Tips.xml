@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TipSetDef>
+    <defName>BiotechTips</defName>
+    <tips>
+
+      <!-- Mechanitor -->
+      <li TKey="CallBossgroups">Mechanitors can summon powerful mechs. Fight them yourself - or draw them into your enemies.</li>
+      
+      <!-- Childcare -->
+      <li TKey="ChildrenBarracks">Children can sleep in the same room as parents and other children without any negative mood effect.</li>
+      
+      <!-- Pollution -->
+      <li TKey="NoxiousHaze">The more polluted nearby world tiles are, the more often you'll get acidic smog.</li>
+
+      <!-- Xenotypes -->
+      <li TKey="CustomXenotypes">When starting a new game, you can create custom xenotypes with any genetic combination you want.</li>
+      
+      <!-- Combat -->
+      <li TKey="ArmedChildren">Enemies are less likely to attack children when they are unarmed. Keep kids safer by not giving them weapons.</li>
+      
+    </tips>
+  </TipSetDef>
+
+</Defs>

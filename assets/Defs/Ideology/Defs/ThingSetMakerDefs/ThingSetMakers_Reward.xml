@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingSetMakerDef>
+    <defName>Reward_ReliquaryPilgrims</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingSetMakerTagsToAllow>
+            <li>RewardStandardQualitySuper</li>
+            <li>RewardStandardLowFreq</li>
+          </thingSetMakerTagsToAllow>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>

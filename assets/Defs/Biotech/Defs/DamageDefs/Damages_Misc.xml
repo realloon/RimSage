@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef>
+    <defName>ToxGas</defName>
+    <label>tox gas</label>
+    <canInterruptJobs>false</canInterruptJobs>
+    <makesBlood>false</makesBlood>
+    <defaultDamage>0</defaultDamage>
+    <explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+    <explosionColorEdge>(0.706, 0.839, 0.09, 0.05)</explosionColorEdge>
+    <harmsHealth>false</harmsHealth>
+    <soundExplosion>Explosion_Smoke</soundExplosion>
+    <combatLogRules>Damage_Smoke</combatLogRules>
+  </DamageDef>
+
+</Defs>

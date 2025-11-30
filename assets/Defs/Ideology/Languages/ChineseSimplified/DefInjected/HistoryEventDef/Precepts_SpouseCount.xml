@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: married to five or more spouses -->
+  <GotMarried_SpouseCount_FiveOrMore.label>与五名或更多伴侣结婚了</GotMarried_SpouseCount_FiveOrMore.label>
+  
+  <!-- EN: married to four or more spouses -->
+  <GotMarried_SpouseCount_Four.label>与四名或更多伴侣结婚了</GotMarried_SpouseCount_Four.label>
+  
+  <!-- EN: married to three or more spouses -->
+  <GotMarried_SpouseCount_Three.label>与三名或更多伴侣结婚了</GotMarried_SpouseCount_Three.label>
+  
+</LanguageData>

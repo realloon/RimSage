@@ -1,0 +1,23 @@
+<Defs> 
+  
+  <SoundDef>
+    <defName>SleepAcceleratorActive_Operating</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/SleepAccelerator/Sleep_Accelerator_Loop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+        <distRange>10~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- History events -->
+
+  <HistoryEventDef>
+    <defName>KillWithNobleWeapon</defName>
+    <label>victory with noble weapon</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>UsedNobleWeapon</defName>
+    <label>used noble weapon</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>KillWithDespisedWeapon</defName>
+    <label>victory with despised weapon</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>UsedDespisedWeapon</defName>
+    <label>used despised weapon</label>
+  </HistoryEventDef>
+
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Weapons</defName>
+    <label>weapons</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+
+  <!-- Precept -->
+
+  <PreceptDef>
+    <defName>NobleDespisedWeapons</defName>
+    <issue>Weapons</issue>
+    <label>noble and despised</label>
+    <description>We have preferences on which weapons should or should not be used in combat.</description>
+    <preceptClass>Precept_Weapon</preceptClass>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <ignoreLimitsInEditMode>true</ignoreLimitsInEditMode>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>KillWithNobleWeapon</eventDef>
+        <thought>KillWithNobleWeapon</thought>
+        <description>Victory by noble weapon</description>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>UsedDespisedWeapon</eventDef>
+        <thought>UsedDespisedWeapon</thought>
+        <description>Used despised weapon</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>WieldingNobleOrDespisedWeapon</thought>
+        <thoughtStageDescriptions>
+          <li>Wielding noble weapon</li>
+          <li>Wielding despised weapon</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>KillWithNobleWeapon</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>victory by noble weapon</label>
+        <description>I have claimed victory while wielding a noble weapon!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>UsedDespisedWeapon</defName>
+    <durationDays>2</durationDays>
+    <stages>
+      <li>
+        <label>used despised weapon</label>
+        <description>I used a filthy weapon which ought never to be used. How humiliating.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>WieldingNobleOrDespisedWeapon</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_WieldingNobleOrDespisedWeapon</workerClass>
+    <stages>
+      <li>
+        <label>wielding {WEAPON}</label>
+        <description>I am wielding {WEAPON_indefinite}. Such a noble weapon!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>wielding {WEAPON}</label>
+        <description>I am wielding {WEAPON_indefinite}. Such a detestable weapon!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

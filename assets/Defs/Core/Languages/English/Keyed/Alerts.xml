@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <ClickToJumpToProblem>Click to jump to problem</ClickToJumpToProblem>
+
+  <BreakRiskMinor>Minor break risk</BreakRiskMinor>
+  <BreakRiskMajor>Major break risk</BreakRiskMajor>
+  <BreakRiskExtreme>Extreme break risk</BreakRiskExtreme>
+  <BreakRiskMinorDesc>These colonists are in a poor mood and may have a minor mental break at any time:\n{0}</BreakRiskMinorDesc>
+  <BreakRiskMajorDesc>These colonists are in a very poor mood and may have a major mental break at any time:\n{0}</BreakRiskMajorDesc>
+  <BreakRiskExtremeDesc>These colonists are critically stressed and may have an extreme (and possibly violent) mental break at any moment:\n{0}</BreakRiskExtremeDesc>
+  <BreakRiskDescEnding>Check these colonists' Needs tab to see what's bothering them.\n\nTo make colonists feel better, you can do things like make them fancy meals, give them more recreation hours per day and nicer recreation objects, place them in beautiful environments, have them drink and smoke, and much more.</BreakRiskDescEnding>
+
+  <ColonistNeedsRescue>Colonist needs rescue</ColonistNeedsRescue>
+  <ColonistsNeedRescue>Colonists need rescue</ColonistsNeedRescue>
+  <ColonistsNeedRescueDesc>These colonists are incapacitated on the ground:\n{0}\nSend another colonist to rescue them and carry them back to bed.\n\n(To rescue, select another colonist, then right click on the victim and select Rescue.)</ColonistsNeedRescueDesc>
+  <ColonistsNeedRescueDescController>These colonists are incapacitated on the ground:\n{0}\n\nSend another colonist to rescue them and carry them back to bed.\n\n(To rescue, select another colonist, then press the left trigger button on the victim and select Rescue.)</ColonistsNeedRescueDescController>
+
+  <NeedDefenses>Need defenses</NeedDefenses>
+  <NeedDefensesDesc>You've been here some time and have probably been seen. Pirate raids will start soon.\n\nYou should prepare defenses, like sandbags or traps.</NeedDefensesDesc>
+
+  <NeedDoctor>Need doctor</NeedDoctor>
+  <NeedDoctorDesc>These colonists need medical care, but you have no healthy colonists assigned as doctors.\n{0}\n\nAssign a healthy colonist to the Doctor work type. If left untreated, wounds may never heal properly and may become permanent.</NeedDoctorDesc>
+
+  <NeedMiner>Need miner</NeedMiner>
+  <NeedMinerDesc>You have designated some rocks to be mined, but no colonist has the Mining work type.\n\nAssign a colonist the Mining work type.</NeedMinerDesc>
+
+  <NeedWarden>Need warden</NeedWarden>
+  <NeedWardenDesc>You have a prisoner, but no colonist has the Warden work type.\n\nAssign a colonist the Warden work type.</NeedWardenDesc>
+
+  <LowFood>Low food</LowFood>
+  <LowFoodDesc>You are dangerously low on food.\n\n    Full bars worth of food in storage: {0}\n    Colonists and prisoners getting food: {1}\n    Days worth of food in storage: {2}\n\nGrow, buy, find, or kill some food.</LowFoodDesc>
+
+  <LowMedicine>Low medicine</LowMedicine>
+  <LowMedicineDesc>You only have {0} medications left in storage.\n\nBuy more medicine from traders.</LowMedicineDesc>
+  <NoMedicineDesc>You have no medicine left in storage.\n\nBuy more medicine from traders.</NoMedicineDesc>
+  
+  <NeedColonistBeds>Need colonist beds</NeedColonistBeds>
+  <NeedColonistBedsDesc>You have more colonists than you have colonist beds. Someone will lack a place to sleep.\n\nEither make more beds, or change a prisoner bed to a colonist bed.\n\nIf you have no resources, sleeping spots are free and can be placed instantly.</NeedColonistBedsDesc>
+  
+  <AlertColonistLeftUnburied>Colonist left unburied</AlertColonistLeftUnburied>
+  <AlertColonistLeftUnburiedDesc>A colonist is left unburied.\n\nThis may negatively affect your colonists' mood.</AlertColonistLeftUnburiedDesc>
+
+  <AlertTatteredApparel>Tattered apparel</AlertTatteredApparel>
+  <AlertTatteredApparelDesc>These colonists are wearing tattered apparel, which is making them sad:\n{0}\n\nGet them some apparel that isn't so badly damaged.\n\nYou can tailor apparel at a crafting spot or tailoring table, or buy it from traders.</AlertTatteredApparelDesc>
+
+  <AlertUnhappyNudity>Unhappy nudity</AlertUnhappyNudity>
+  <AlertUnhappyNudityDesc>These colonists are nude and not happy about it:\n{0}\n\nGet them some clothes.\n\nYou can tailor apparel at a crafting spot or tailoring table, or buy it from traders.</AlertUnhappyNudityDesc>
+
+  <Starvation>Starvation</Starvation>
+  <StarvationDesc>These colonists are starving:\n{0}\n\nGet them some food.</StarvationDesc>
+
+  <StarvationAnimals>Animal starvation</StarvationAnimals>
+  <StarvationAnimalsDesc>These colony animals are starving:\n{0}\n\nGet them some food.</StarvationAnimalsDesc>
+
+  <Exhaustion>Exhaustion</Exhaustion>
+  <ExhaustionDesc>These colonists are exhausted and need rest:\n{0}\n\nGet them some rest. They'll need a bed marked for colonist use. Also, make sure they're not drafted.</ExhaustionDesc>
+
+  <NeedFoodHopper>Need food hopper</NeedFoodHopper>
+  <NeedFoodHopperDesc>You have a nutrient dispenser with no hopper next to it.\n\nTo work, paste dispensers must draw from an adjacent hopper filled with raw food.\n\nBuild a hopper adjacent to the dispenser.</NeedFoodHopperDesc>
+
+  <NeedMealSource>Need meal source</NeedMealSource>
+  <NeedMealSourceDesc>You have no way of preparing proper meals from raw food.\n\nBuild a stove, campfire, or nutrient dispenser.\n\n(It cannot be in a prison cell, otherwise colonists cannot use it.)</NeedMealSourceDesc>
+
+  <NeedJoySource>Need recreation variety</NeedJoySource>
+  <NeedJoySourceDesc>There are only {0} different recreation types available in {1}, but at the current expectations level ({2}), colonists need {3} different kinds of recreation to remain satisfied. Provide recreation variety supplying a new, different kind of recreation.\n\n{4}\n\n{5}\n\nNote: You can check the recreation type of any item in its stats page, accessible with the 'i' button.</NeedJoySourceDesc>
+  <AvailableRecreationTypes>Available recreation types</AvailableRecreationTypes>
+  <MissingRecreationTypes>Missing recreation types</MissingRecreationTypes>
+  <CurrentExpectationsAndRecreation>At current expectations ({0}), each tolerance falls by {1} per day awake. Having {2} recreation types is recommended.</CurrentExpectationsAndRecreation>
+  <bored>bored</bored>
+
+  <Boredom>Boredom</Boredom>
+  <BoredomDesc>These people are either in need of recreation or are assigned to recreation, but are bored of every available source of recreation:\n\n{0}\n\nGet them some more recreation variety.\n\nCurrently available recreation types for {PAWN_labelShort}:\n{2}</BoredomDesc>
+
+  <NeedBatteries>Need batteries</NeedBatteries>
+  <NeedBatteriesDesc>You have a solar or wind generator, but no batteries. You'll lose power every time the sun goes down or the wind calms.</NeedBatteriesDesc>
+  <NeedBatteriesResearchedDesc>Build a battery or two to guarantee sustained power.</NeedBatteriesResearchedDesc>
+  <NeedBatteriesNotResearchedDesc>Research batteries and build a couple to guarantee sustained power.</NeedBatteriesNotResearchedDesc>
+
+  <BrawlerHasRangedWeapon>Brawler has ranged weapon</BrawlerHasRangedWeapon>
+  <BrawlerHasRangedWeaponDesc>One of your colonists has the Brawler personality trait, but is carrying a ranged weapon. This will make them very unhappy.</BrawlerHasRangedWeaponDesc>
+
+  <ShieldUserHasRangedWeapon>Shield user has ranged weapon</ShieldUserHasRangedWeapon>
+  <ShieldUserHasRangedWeaponDesc>One of your colonists has a shield belt and is carrying a ranged weapon. They will not be able to fire their weapon through the shield (except at targets who are already touching them).</ShieldUserHasRangedWeaponDesc>
+
+  <NeedResearchProject>Need research project</NeedResearchProject>
+  <NeedResearchProjectDesc>You have the equipment to do research but have not selected a project.\n\n(Click to open the research menu.)</NeedResearchProjectDesc>
+
+  <ColonistIdle>1 colonist idle</ColonistIdle>
+  <ColonistsIdle>{0} colonists idle</ColonistsIdle>
+  <ColonistsIdleDesc>These colonists are wandering idly:\n{0}\n\nYou should probably find them something productive to do.</ColonistsIdleDesc>
+  
+  <CaravanIdle>Caravan idle</CaravanIdle>
+  <CaravanIdleDesc>These caravans are waiting for you to set their next destination:\n{0}</CaravanIdleDesc>
+
+  <ColonistNeedsTreatment>Medical treatment needed</ColonistNeedsTreatment>
+  <ColonistNeedsTreatmentDesc>These people need medical treatment. Without it, they may die of their wounds, or their wounds may become permanent.\n{0}\n\nTreat them by sending them to a medical bed.\n\n(First, assign a medical bed by selecting it and toggling it into a medical bed. Then, select the wounded person and right-click on the medical bed to make them a patient.)</ColonistNeedsTreatmentDesc>
+  <ColonistNeedsTreatmentDescController>These people need medical treatment. Without it, they may die of their wounds, or their wounds may become permanent.\n{0}\n\nTreat them by sending them to a medical bed.\n\n(First, assign a medical bed by selecting it and toggling it into a medical bed. Then, select the wounded person and press the left trigger button on the medical bed to make them a patient.)</ColonistNeedsTreatmentDescController>
+
+  <AlertHypothermia>Hypothermia</AlertHypothermia>
+  <AlertHypothermiaDesc>These colonists are suffering from hypothermia:\n{0}\n\nMake sure their clothing is appropriate for the season and that indoor spaces are properly heated.</AlertHypothermiaDesc>
+  
+  <PatientsAwaitingMedicalOperation>{0} patients await medical operation</PatientsAwaitingMedicalOperation>
+  <PatientsAwaitingMedicalOperationDesc>These patients await medical operation:\n{0}\n\nMake sure you have all necessary medical tools and a free doctor available.</PatientsAwaitingMedicalOperationDesc>
+
+  <FireInHomeArea>Fire!</FireInHomeArea>
+  <FireInHomeAreaDesc>There is a fire in the home area.</FireInHomeAreaDesc>
+
+  <PawnsWithLifeThreateningDisease>Medical emergency</PawnsWithLifeThreateningDisease>
+  <PawnsWithLifeThreateningDiseaseDesc>People are at risk of death because of severe illness:\n{0}\n\nMake sure that they get the best medical care possible.</PawnsWithLifeThreateningDiseaseDesc>
+  <PawnsWithLifeThreateningDiseaseAmputationDesc>People are at risk for death because of severe illness:\n{0}\n\nIf possible, consider amputating or replacing infected limbs in order to keep colonists alive.</PawnsWithLifeThreateningDiseaseAmputationDesc>
+
+  <BilliardsNeedsSpace>Billiards needs space</BilliardsNeedsSpace>
+  <BilliardsNeedsSpaceDesc>One of your billiards table is adjacent to an obstruction that will prevent colonists from using it.\n\nA billiards table needs clear space around it on all sides to be usable.</BilliardsNeedsSpaceDesc>
+
+  <ChessTablesNeedChairs>Chess table needs chairs</ChessTablesNeedChairs>
+  <ChessTablesNeedChairsDesc>One of your chess tables does not have any adjacent chairs.\n\nBuild adjacent chairs or stools to allow your colonists to use the chess table. Up to two people can use a chess table at once.</ChessTablesNeedChairsDesc>
+
+  <PokerTablesNeedChairs>Poker table needs chairs</PokerTablesNeedChairs>
+  <PokerTablesNeedChairsDesc>One of your poker tables does not have any adjacent chairs.\n\nBuild adjacent chairs or stools to allow your colonists to use the poker table. Up to eight people can use a poker table at once.</PokerTablesNeedChairsDesc>
+
+  <HunterHasShieldAndRangedWeapon>Hunter has shield and ranged weapon</HunterHasShieldAndRangedWeapon>
+  <HunterHasShieldAndRangedWeaponDesc>One of your hunters is using a ranged weapon and wearing a shield belt which prevents shooting at range.\n\nThey won't be able to hunt unless the shield is removed.</HunterHasShieldAndRangedWeaponDesc>
+
+  <NeedWarmClothes>Need warm clothes</NeedWarmClothes>
+  <NeedWarmClothesDesc1>At least {0} of your colonists will lack warm clothes when the cold season comes.</NeedWarmClothesDesc1>
+  <NeedWarmClothesDesc1All>All of your colonists will lack warm clothes when the cold season comes.</NeedWarmClothesDesc1All>
+  <NeedWarmClothesDesc2>The outdoor temperature is going to reach {0}.\n\nYou can tailor warm clothes at the tailoring bench, or buy them from traders.</NeedWarmClothesDesc2>
+
+  <ImmobileCaravan>Immobile caravan</ImmobileCaravan>
+  <ImmobileCaravanDesc>One of your caravans is immobile because it carries too much.\n\nYou can make the caravan mobile again by abandoning some items in the ITEMS tab.</ImmobileCaravanDesc>
+
+  <BuildingCantBeUsedRoofed>Building unusable due to roof</BuildingCantBeUsedRoofed>
+  <BuildingCantBeUsedRoofedDesc>One or more of your buildings can only be used if not roofed, but there is a roof over it. The building(s) won't be usable until you remove the roof.</BuildingCantBeUsedRoofedDesc>
+
+  <AlertHeatstroke>Heatstroke</AlertHeatstroke>
+  <AlertHeatstrokeDesc>The following people are suffering from heatstroke:\n{0}\n\nGet them to a cooler area. You can cool down rooms with passive coolers or electrical coolers. Deep underground spaces are also naturally cool, if separated from the outdoors by a door.</AlertHeatstrokeDesc>
+
+  <QuestPartMoodBelowThreshold>Guest unhappy</QuestPartMoodBelowThreshold>
+  <QuestPartMoodBelowThresholdDesc>The quest {0} requires you to keep this person in a good mood. However, their mood is poor. Take some action to make them feel better:\n{1}</QuestPartMoodBelowThresholdDesc>
+  
+  <QuestPartShuttleLeaveDelay>Shuttle leaving in {0}</QuestPartShuttleLeaveDelay>
+  <QuestPartShuttleLeaveDelayDesc>The shuttle will leave in {1}. The quest {0} requires you to load the following people or items onto the shuttle before it leaves:\n{2}</QuestPartShuttleLeaveDelayDesc>
+  <QuestPartShuttleLeaveDelayDescHidden>The shuttle will leave in {0}.</QuestPartShuttleLeaveDelayDescHidden>
+
+  <QuestPartShuttleArriveDelay>Shuttle arriving in {0}</QuestPartShuttleArriveDelay>
+  <QuestPartShuttleArriveDelayDesc>A shuttle will arrive in {1}. The quest {0} requires you to load the following people or items onto the shuttle before it leaves:\n{2}</QuestPartShuttleArriveDelayDesc>
+  <QuestPartShuttleArriveDelayDescHidden>A shuttle will arrive in {0}.</QuestPartShuttleArriveDelayDescHidden>
+
+  <DisallowedBuildingInsideMonument>Monument will be destroyed</DisallowedBuildingInsideMonument>
+  <DisallowedBuildingInsideMonumentDesc>You've built a disallowed building inside one of your monuments. The monument will be considered destroyed in {0}.</DisallowedBuildingInsideMonumentDesc>
+
+  <ActivatorCountdown>Countdown activator {0}</ActivatorCountdown>
+  <ActivatorCountdownDesc>There is a countdown activator ticking down, preparing to awaken nearby mechanoids.</ActivatorCountdownDesc>
+  <ActivatorCountdownMultiple>{0} countdown activators</ActivatorCountdownMultiple>
+  <ActivatorCountdownDescMultiple>There are {0} countdown activators ticking down, preparing to awaken nearby mechanoids.</ActivatorCountdownDescMultiple>
+
+  <QuestExpiresSoon>Quest expires in {0}</QuestExpiresSoon>
+  <QuestExpiresSoonDesc>The quest '{0}' will expire in {1}.</QuestExpiresSoonDesc>
+
+  <AlertAnimalFilth>Animal filth</AlertAnimalFilth>
+  <AlertAnimalFilthDesc>A filth-producing animal is indoors on a clean floor.\n\nAnimals produce a very large amount of filth when moving around on normal floors. Keep filth-producing animals outdoors, or on straw matting where they will produce far less filth.\n\nYou can check an animal's filth production rate in its stats by clicking the 'i' button.\n\nThese animals are the problem:\n{0}</AlertAnimalFilthDesc>
+
+  <AlertAnimalPenNeeded>Pen needed</AlertAnimalPenNeeded>
+  <AlertAnimalPenNeededDesc>Some of your tame animals are roamers. If not kept in a pen or roped to a caravan hitching spot, they will wander away.</AlertAnimalPenNeededDesc>
+  <AlertAnimalPenNeededNoHandlers>You do not have any handlers to take animals to a pen.\n\nAssign a colonist to the Handling work type.</AlertAnimalPenNeededNoHandlers>
+  <AlertAnimalPenNeededDescExplanation>Create an animal pen by building a pen marker inside a fenced, barricaded, or walled area. Select the pen marker to see which animals it accepts and how many its pen can support.\n\nYour animal handlers will bring animals to their assigned pen automatically.\n\nA pen needs a door or gate to admit animals.</AlertAnimalPenNeededDescExplanation>
+  
+  <AlertAnimalPenNotEnclosed>Pen not enclosed</AlertAnimalPenNotEnclosed>
+  <AlertAnimalPenNotEnclosedDesc>An animal pen marker is not enclosed.\n\nEnclose the pen using fences, barricades, gates, walls, or doors to prevent animals from wandering out.\n\nIf you have only unenclosed pen markers, your handlers can still lead wandering animals back home - but this must be repeated from time to time when the animals wander away once again.</AlertAnimalPenNotEnclosedDesc>
+
+  <AlertPredatorInAnimalPen>{ANIMAL_labelShort} in animal pen</AlertPredatorInAnimalPen>
+  <AlertPredatorInAnimalPenDesc>A predatory {ANIMAL_labelShort} has wandered into an animal pen.\n\nIt may decide to hunt your animals.\n\nYou can kill it, or wait and hope it leaves.</AlertPredatorInAnimalPenDesc>
+
+  <AlertAnimalIsRoaming>Animal wandering away</AlertAnimalIsRoaming>
+  <AlertAnimalIsRoamingDesc>Some of your tame animals are roamers and have started to wander. If they reach the edge of the map, they will eventually leave.\n\nIf you have an enclosed animal pen, your animal handlers can bring the animal back. Animals in an animal pen will not roam.\n\nThe following animals are roaming:\n{0}</AlertAnimalIsRoamingDesc>
+
+  <AlertPennedAnimalHungry>Hungry pen animals</AlertPennedAnimalHungry>
+  <AlertPennedAnimalHungryDesc>Some of your penned animals are hungry.\n\nSelect a pen marker and use the Food tab to see more detail.\n\nGrass-eating animals may need a larger pen to provide enough grass. Other animals may need to be supplied with haygrass or similar food using a stockpile.\n\nThe following penned animals are hungry:\n{0}</AlertPennedAnimalHungryDesc>
+
+  <AlertHitchedAnimalHungryNoFood>Hungry hitched animal</AlertHitchedAnimalHungryNoFood>
+  <AlertHitchedAnimalHungryNoFoodDesc>Some animals tied to hitching spots are hungry. There may not be any suitable food within their reach.\n\nBring them food, or remove the hitching spot so they can find food on their own.\n\nThe following hitched animals are hungry:\n{0}</AlertHitchedAnimalHungryNoFoodDesc>
+
+  <AlertTimedRaidsArrivingIn>Raids arriving in {0}</AlertTimedRaidsArrivingIn>
+  <AlertTimedRaidsArrivingInDesc>Enemies have been attracted to the following sites and will start arriving in force soon.\n\n{0}</AlertTimedRaidsArrivingInDesc>
+  <AlertTimedRaidsArrivingAt>Arriving at {0} in {1}</AlertTimedRaidsArrivingAt>
+
+  <FactionWillBecomeHostileIfNotLeavingWithin>Faction will become hostile if you stay</FactionWillBecomeHostileIfNotLeavingWithin>
+  <FactionWillBecomeHostileIfNotLeavingWithinDesc>These factions will become hostile if you stay for longer at their settlement or outpost:\n{0}</FactionWillBecomeHostileIfNotLeavingWithinDesc>
+
+  <AlertMinifiedTreeAboutToDie>{0} trees dying</AlertMinifiedTreeAboutToDie>
+  <AlertMinifiedTreeAboutToDieDesc>{0} extracted trees are going to die is less than a day. This will make some colonists unhappy because of their beliefs.\n\nYou can prevent this by replanting these trees.</AlertMinifiedTreeAboutToDieDesc>
+
+  <NeedResearchBench>Need research bench</NeedResearchBench>
+  <NeedResearchBenchDesc>You have an active research project '{0}'. This project requires you to build {1}.</NeedResearchBenchDesc>
+  
+</LanguageData>

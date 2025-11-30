@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>MoodOffsetVeryHappy</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredGenes>
+      <li>Mood_Sanguine</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>genetic joy</label>
+        <description>Natural bonus from 'very happy' gene.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MoodOffsetHappy</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredGenes>
+      <li>Mood_Optimist</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>genetic optimism</label>
+        <description>Natural bonus from 'happy' gene.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MoodOffsetUnhappy</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredGenes>
+      <li>Mood_Pessimist</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>genetic pessimism</label>
+        <description>Natural penalty from 'unhappy' gene.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MoodOffsetVeryUnhappy</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredGenes>
+      <li>Mood_Depressive</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>genetic depression</label>
+        <description>Natural penalty from 'very unhappy' gene.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

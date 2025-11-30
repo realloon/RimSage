@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>DEV_Unburnable</defName>
+    <label>unburnable</label>
+    <description>Cannot catch fire.</description>
+    <stages>
+      <li>
+        <statFactors>
+          <Flammability>0</Flammability>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

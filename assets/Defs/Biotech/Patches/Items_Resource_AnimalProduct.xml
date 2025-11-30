@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="InsectJelly"]/description</xpath>
+    <value>
+      <description>Jelly stored and used as food by oversized insects. It is smooth, rich, and fulfills the recreation need of those who consume it. Because of its unique biological properties, it can nourish almost any creature and never rots.\n\nOddly, its texture and nutrient balance makes it an ideal baby food.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Milk"]/description</xpath>
+    <value>
+      <description>Milk from an animal.\n\nMilk can be fed to human babies.</description>
+    </value>
+  </Operation>
+
+</Patch>

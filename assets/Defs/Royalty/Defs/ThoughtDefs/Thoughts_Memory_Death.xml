@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>OtherTravelerDied</defName>
+    <durationDays>10</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>traveler died</label>
+        <description>One of our companions died.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

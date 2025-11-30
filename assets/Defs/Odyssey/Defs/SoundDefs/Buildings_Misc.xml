@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef>
+    <defName>GravshipEngine_Ambient</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Building/GravEngine_Idle_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <distRange>5~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechanoidRelay_Ambient</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Building/MechanoidRelayIdle_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechanoidStabilizer_Ambient</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/MechanoidStabilizerIdle_A</clipPath> <!-- This is in core to fix multiple sustainer issue -->
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <distRange>5~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>CerebrexCore_Ambient</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Building/CerebrexCore/CerebrexCoreIdle_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>CerebrexCore_Pain</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Building/CerebrexCore/CerebrexPain_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AncientVent_Ambient</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/AncientVent_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>100</volumeRange>
+        <pitchRange>0.9088235~1</pitchRange>
+        <distRange>5~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BurrowWall_Damaged</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Building/BurrowWall/Damaged</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~25</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BurrowWall_Destroyed</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Building/BurrowWall/Destroyed</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~25</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AncientHatchOpened</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Building/StockpileOpened</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>OxygenPump_Ambient</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxVoices>1</maxVoices>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Buildings/OxygenPump_Idle</clipPath> <!-- This is in core to fix multiple sustainer issue -->
+          </li>
+        </grains>
+        <volumeRange>100</volumeRange>
+        <distRange>5~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>GravshipShieldGenerator_Activate</defName>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxVoices>1</maxVoices>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Building/GravshipShieldGenerator</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

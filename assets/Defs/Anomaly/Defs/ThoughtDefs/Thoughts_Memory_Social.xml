@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>DrainedMySkills</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Child, Adult</socialTargetDevelopmentalStageFilter>
+    <stages>
+      <li>
+        <label>drained my skills</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>UsedMeForPsychicRitual</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>30</durationDays>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Child, Adult</socialTargetDevelopmentalStageFilter>
+    <stages>
+      <li>
+        <label>used me for psychic ritual</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
+

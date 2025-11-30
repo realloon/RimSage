@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SpecialThingFilterDef>
+    <defName>AllowCorpsesMechFriendly</defName>
+    <label>allow friendly mech corpses</label>
+    <description>Allow the dead bodies of friendly mechanoids.</description>
+    <parentCategory>CorpsesMechanoid</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesMechFriendly</saveKey>
+    <workerClass>SpecialThingFilterWorker_CorpsesFriendly</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowCorpsesMechEnemy</defName>
+    <label>allow enemy mech corpses</label>
+    <description>Allow the dead bodies of enemy mechanoids.</description>
+    <parentCategory>CorpsesMechanoid</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesMechEnemy</saveKey>
+    <workerClass>SpecialThingFilterWorker_CorpsesEnemy</workerClass>
+  </SpecialThingFilterDef>
+
+</Defs>

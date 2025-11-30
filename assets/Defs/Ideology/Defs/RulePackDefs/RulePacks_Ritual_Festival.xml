@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Root -->
+
+  <RulePackDef>
+    <defName>NamerRitualFestival</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ritualName->[festivalName]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Re-used content -->
+
+  <RulePackDef>
+    <defName>NamerFestivalGlobal</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>festivalName(p=2)->[memeAdjective] [festival]</li>
+        <li>festivalName->[festival] of [chosenTheme]</li>
+        <li>festivalName->[chosenAdjective] [festival]</li>
+        <li>festivalName->[keyDeity]'s [festival]</li>
+        <li>festivalName->[festival] of [keyDeity]</li>
+        <li>festivalName->[festival] of [memeConcept]</li>
+        <li>festivalName->[festival] of [chosenIdeoName]</li>
+
+        <li>festival->festival</li>
+        <li>festival->celebration</li>
+        <li>festival->party</li>
+        <li>festival->advent</li>
+        <li>festival->fair</li>
+        <li>festival->jubilee</li>
+        <li>festival->fiesta</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Culture-specific -->
+
+  <RulePackDef>
+    <defName>NamerFestivalAstropolitan</defName>
+    <include>
+      <li>NamerFestivalGlobal</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerFestivalRustican</defName>
+    <include>
+      <li>NamerFestivalGlobal</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerFestivalCorunan</defName>
+    <include>
+      <li>NamerFestivalGlobal</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerFestivalKriminul</defName>
+    <include>
+      <li>NamerFestivalGlobal</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerFestivalSophian</defName>
+    <include>
+      <li>NamerFestivalGlobal</li>
+    </include>
+  </RulePackDef>
+
+</Defs>

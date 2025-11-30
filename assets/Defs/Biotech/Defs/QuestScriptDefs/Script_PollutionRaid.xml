@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>PollutionRaid</defName>
+    <root Class="QuestNode_Root_PollutionRaid" />
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultHidden>true</defaultHidden>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questDescription->pollutionraid</li> <!-- hidden -->
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->pollutionraid</li> <!-- hidden -->
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+        
+        <!-- Letter Label -->
+        <li>retaliationLetterLabel->pollution retaliation</li>
+
+        <!-- Letter Text -->
+        <li>retaliationLetterText->A group of [enemyFaction_pawnsPlural] from [enemyFaction_name] have arrived nearby.\n\nThey are attacking to retaliate against you for dumping toxic waste outside your own colony, which they believe has harmed their faction.</li>
+        
+      </rulesStrings>
+    </questContentRules>
+  </QuestScriptDef>
+
+</Defs>

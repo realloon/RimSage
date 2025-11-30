@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <!-- Research -->
+  <KnowledgeCategory>Knowledge category</KnowledgeCategory>
+  <AnomalyResearchDescriptionHelpText>Study unnatural entities to advance this research. If no advanced project is active, advanced research will contribute to a basic project instead.</AnomalyResearchDescriptionHelpText>
+  <MonolithLevel>Monolith level</MonolithLevel>
+
+</LanguageData>

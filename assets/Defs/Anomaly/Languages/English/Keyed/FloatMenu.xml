@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <NoEmptyEntityHolders>No empty containment destination</NoEmptyEntityHolders>
+  <ChooseEntityHolder>choose containment destination</ChooseEntityHolder>
+  <FloatMenuContainmentStrength>Containment strength</FloatMenuContainmentStrength>
+  <FloatMenuContainmentRequires>{0_label} requires</FloatMenuContainmentRequires>
+  <EntityHolderReservedBy>Reserved by</EntityHolderReservedBy>
+
+  <TalkTo>Talk to {0_nameDef}</TalkTo>
+  <CannotTalkTo>Cannot talk to {0_nameDef}</CannotTalkTo>
+  <ZeroSuppressionRate>incapable of suppression</ZeroSuppressionRate>
+  <CannotStandNear>cannot stand next to</CannotStandNear>
+
+  <ExtractBioferrite>extract from {0}</ExtractBioferrite>
+  <BioferriteAlreadyExtracted>bioferrite regenerating</BioferriteAlreadyExtracted>
+
+</LanguageData>

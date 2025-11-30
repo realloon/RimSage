@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PathGridDef>
+    <defName>Normal</defName>
+    <fencePassable>true</fencePassable>
+    <flying>false</flying>
+  </PathGridDef>
+
+  <PathGridDef>
+    <defName>FenceBlocked</defName>
+    <fencePassable>false</fencePassable>
+    <flying>false</flying>
+  </PathGridDef>
+
+  <PathGridDef>
+    <defName>Flying</defName>
+    <fencePassable>true</fencePassable>
+    <flying>true</flying>
+  </PathGridDef>
+
+</Defs>

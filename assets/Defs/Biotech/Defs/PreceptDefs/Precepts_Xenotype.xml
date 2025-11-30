@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>PreferredXenotypes</defName>
+    <label>preferred xenotype</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>BecomeNonPreferredXenotype</defName>
+    <label>become a non-preferred xenotype</label>
+  </HistoryEventDef>
+
+  <PreceptDef>
+    <defName>PreferredXenotype</defName>
+    <issue>PreferredXenotypes</issue>
+    <label>preferred</label>
+    <description>Believers consider this xenotype to hold a higher moral or spiritual status than others. They will be happy if their colony has only preferred xenotypes. However, having any preferred xenotypes means that all other xenotypes are considered disliked and believers will be unhappy living alongside them.</description>
+    <preceptClass>Precept_Xenotype</preceptClass>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <ignoreNameUniqueness>true</ignoreNameUniqueness>
+    <impact>Medium</impact>
+    <maxCount>3</maxCount>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>BecomeNonPreferredXenotype</eventDef>
+        <description>Become a non-preferred xenotype</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>PreferredXenotype</thought>
+        <thoughtStageDescriptions>
+          <li>Preferred xenotype</li>
+          <li>Disliked xenotype</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>PreferredXenotypeMakeup</thought>
+        <thoughtStageDescriptions>
+          <li>All preferred xenotypes</li>
+          <li>Some disliked xenotypes</li>
+          <li>Many disliked xenotypes</li>
+          <li>Tons of disliked xenotypes</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>SelfDislikedXenotype</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>PreferredXenotype</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_PreferredXenotype_Social</workerClass>
+    <stages>
+      <li>
+        <label>preferred xenotype</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+      <li>
+        <label>disliked xenotype</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PreferredXenotypeMakeup</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_ColonyXenotypeMakeup</workerClass>
+    <stages>
+      <li>
+        <label>all preferred xenotypes</label>
+        <description>We've built a community of the good and strong xenotypes only.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>some disliked xenotypes</label>
+        <description>Those xenotypes are in our community. I don't want them here.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>many disliked xenotypes</label>
+        <description>So many of those xenotypes are in our community. They shouldn't be here.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>tons of disliked xenotypes</label>
+        <description>I'm surrounded by those xenotypes. They don't belong here.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SelfDislikedXenotype</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_SelfDislikedXenotype</workerClass>
+    <stages>
+      <li>
+        <label>I am disliked xenotype</label>
+        <description>I'm a {XENOTYPENAME}. I'm not one of the good types.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

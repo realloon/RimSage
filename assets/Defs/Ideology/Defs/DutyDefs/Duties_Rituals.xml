@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>SpeakOnCell</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <ritualSpectateTarget>true</ritualSpectateTarget>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+        
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="JobGiver_GiveSpeechFacingTarget">
+              <soundDefMale>Speech_Ideoligious_Male</soundDefMale>
+              <soundDefFemale>Speech_Ideoligious_Female</soundDefFemale>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>SpeakOnCell_Leader</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <ritualSpectateTarget>true</ritualSpectateTarget>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+        
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="JobGiver_GiveSpeechFacingTarget">
+              <faceSpectatorsIfPossible>true</faceSpectatorsIfPossible>
+              <soundDefMale>Speech_Leader_Male</soundDefMale>
+              <soundDefFemale>Speech_Leader_Female</soundDefFemale>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>SpeakOnCellFuneral</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <ritualSpectateTarget>true</ritualSpectateTarget>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="JobGiver_GiveSpeechFacingTarget">
+              <soundDefMale>Speech_Funeral_Male</soundDefMale>
+              <soundDefFemale>Speech_Funeral_Female</soundDefFemale>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>SpeakOnCellNoSpeechBubbles</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <ritualSpectateTarget>true</ritualSpectateTarget>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="JobGiver_GiveSpeechFacingTarget">
+              <showSpeechBubbles>false</showSpeechBubbles>
+              <soundDefMale>Speech_Ideoligious_Male</soundDefMale>
+              <soundDefFemale>Speech_Ideoligious_Female</soundDefFemale>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>SpeakOnCellFacingSpectators</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <ritualSpectateTarget>true</ritualSpectateTarget>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="JobGiver_GiveSpeechFacingTarget">
+              <showSpeechBubbles>false</showSpeechBubbles>
+              <faceSpectatorsIfPossible>true</faceSpectatorsIfPossible>
+              <soundDefMale>Speech_Ideoligious_Male</soundDefMale>
+              <soundDefFemale>Speech_Ideoligious_Female</soundDefFemale>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>DeliverPawnToAltar</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto pawn -->
+        <li Class="JobGiver_DeliverPawnToAltar">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>DeliverPawnToCellIfAliveThenIdle</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto pawn -->
+        <li Class="JobGiver_DeliverPawnToCell">
+          <addArrivalTagIfInvalidTarget>true</addArrivalTagIfInvalidTarget>
+          <addArrivalTagIfTargetIsDead>true</addArrivalTagIfTargetIsDead>
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+
+        <li Class="JobGiver_Idle">
+          <ticks>60</ticks>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>DeliverPawnToBedIfAliveThenIdle</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto pawn -->
+        <li Class="JobGiver_DeliverPawnToBed">
+          <addArrivalTagIfNoBedAvailable>true</addArrivalTagIfNoBedAvailable>
+          <addArrivalTagIfTargetIsDead>true</addArrivalTagIfTargetIsDead>
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+
+        <li Class="JobGiver_Idle">
+          <ticks>60</ticks>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>Sacrifice</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_Sacrifice"/>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>Scarify</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_Scarify"/>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>Blind</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_Blind"/>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>PrepareSkyLanterns</defName>
+    <hook>HighPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Fetch 4 wood -->
+        <li Class="JobGiver_TakeCountToInventory">
+          <def>WoodLog</def>
+          <count>4</count>
+        </li>
+
+        <li Class="JobGiver_PrepareSkylantern">
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <def>WoodLog</def>
+          <count>4</count>
+          <allowUnroofed>false</allowUnroofed>
+          <desiredRadius>5</desiredRadius>
+          <minDistanceToOtherReservedCell>3</minDistanceToOtherReservedCell>
+        </li>
+        
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>SpectateDirectionSociallyActive</defName>
+    <hook>HighPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_StandAndBeSociallyActive">
+          <lookDirection>NorthWest</lookDirection>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>StandOnCell</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+
+        <li Class="JobGiver_Idle">
+          <ticks>60</ticks>
+        </li>
+        
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>DropWeapon</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+
+        <li Class="JobGiver_DropWeapon" />
+        <li Class="JobGiver_Idle">
+          <ticks>60</ticks>
+        </li>
+        
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <DutyDef>
+    <defName>Duel</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+
+        <li Class="JobGiver_DuelPickupWeapon" />
+
+        <li Class="JobGiver_Duel" />
+
+        <li Class="JobGiver_Idle">
+          <ticks>60</ticks>
+        </li>
+        
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+</Defs>

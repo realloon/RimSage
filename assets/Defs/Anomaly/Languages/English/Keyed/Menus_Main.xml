@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DifficultyAnomalySection>Anomaly</DifficultyAnomalySection>
+  <Difficulty_AnomalyThreats_Label>Anomaly threats</Difficulty_AnomalyThreats_Label>
+  <Difficulty_AnomalyThreats_Info>Adjust the percentage of major threats that will be Anomaly-related.</Difficulty_AnomalyThreats_Info>
+  <Difficulty_AnomalyThreatsInactive_Label>Anomaly threats (inactive)</Difficulty_AnomalyThreatsInactive_Label>
+  <Difficulty_AnomalyThreatsInactive_Info>Adjust the percentage of major threats that will be Anomaly-related when the monolith is not active. Only certain minor Anomaly incidents can occur when the monolith is inactive.</Difficulty_AnomalyThreatsInactive_Info>
+  <Difficulty_AnomalyThreatsActive_Label>Anomaly threats (active)</Difficulty_AnomalyThreatsActive_Label>
+  <Difficulty_AnomalyThreatsActive_Info>Adjust the percentage of major threats that will be Anomaly-related when the monolith is active. With the current settings:\n  - {0} of major threats will be Anomaly-related at monolith level 1 and 5\n  - {1} of major threats will be Anomaly-related at monolith levels 2-4</Difficulty_AnomalyThreatsActive_Info>
+  <Difficulty_StudyEfficiency_Label>Study efficiency</Difficulty_StudyEfficiency_Label>
+  <Difficulty_StudyEfficiency_Info>Add a multiplier to how much research is gained when studying unnatural entities.</Difficulty_StudyEfficiency_Info>
+
+  <Difficulty_ChildShamblersAllowed_Label>Child shamblers</Difficulty_ChildShamblersAllowed_Label>
+  <Difficulty_ChildShamblersAllowed_Info>Reanimated child shamblers will sometimes appear.</Difficulty_ChildShamblersAllowed_Info>
+  
+  <AnomalySettings>Anomaly settings</AnomalySettings>
+  <ChooseAnomalyPlaystyle>Choose how you'd like to integrate Anomaly horror into your game:</ChooseAnomalyPlaystyle>
+  <CanBeEditedInStorytellerSettings>Update Anomaly storyteller settings. These can be modified during the game</CanBeEditedInStorytellerSettings>
+  <SetToStandardPlaystyle>Set to standard playstyle</SetToStandardPlaystyle>
+
+</LanguageData>

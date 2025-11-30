@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneCategoryDef>
+    <defName>Cosmetic</defName>
+    <label>cosmetic</label>
+    <displayPriorityInXenotype>300</displayPriorityInXenotype>
+    <displayPriorityInGenepack>-100</displayPriorityInGenepack>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Cosmetic_Skin</defName>
+    <label>cosmetic - skin</label>
+    <displayPriorityInXenotype>280</displayPriorityInXenotype>
+    <displayPriorityInGenepack>-110</displayPriorityInGenepack>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Cosmetic_Hair</defName>
+    <label>cosmetic - hair</label>
+    <displayPriorityInXenotype>285</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Miscellaneous</defName>
+    <label>miscellaneous</label>
+    <displayPriorityInXenotype>270</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- Hair color -->
+
+  <GeneDef Name="GeneHairColorBase" Abstract="True">
+    <label>hair color</label>
+    <description>Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.</description>
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>HairColor</endogeneCategory>
+    <iconPath>UI/Icons/Genes/Gene_HairColor</iconPath>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <displayCategory>Cosmetic_Hair</displayCategory>
+    <randomBrightnessFactor>0.12</randomBrightnessFactor>
+    <passOnDirectly>false</passOnDirectly>
+    <exclusionTags>
+      <li>HairColor</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_SnowWhite</defName>
+    <label>snow-white hair</label>
+    <hairColorOverride>(250, 250, 250)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_InkBlack</defName>
+    <label>ink-black hair</label>
+    <hairColorOverride>(25, 25, 25)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>130</displayOrderInCategory>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_Gray</defName>
+    <label>gray hair</label>
+    <hairColorOverride>(0.65, 0.65, 0.65)</hairColorOverride>
+    <selectionWeight>0.02</selectionWeight>
+    <displayOrderInCategory>10</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_DarkBlack</defName>
+    <label>dark-black hair</label>
+    <hairColorOverride>(0.2, 0.2, 0.2)</hairColorOverride>
+    <selectionWeight>1.5</selectionWeight>
+    <displayOrderInCategory>120</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_MidBlack</defName>
+    <label>mid-black hair</label>
+    <hairColorOverride>(0.31, 0.28, 0.26)</hairColorOverride>
+    <selectionWeight>1.5</selectionWeight>
+    <displayOrderInCategory>110</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_DarkReddish</defName>
+    <label>dark-reddish hair</label>
+    <hairColorOverride>(0.25, 0.2, 0.15)</hairColorOverride>
+    <selectionWeight>1.5</selectionWeight>
+    <displayOrderInCategory>100</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_DarkSaturatedReddish</defName>
+    <label>dark-brown hair</label>
+    <hairColorOverride>(56, 36, 18)</hairColorOverride>
+    <selectionWeight>1.5</selectionWeight>
+    <displayOrderInCategory>90</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_DarkBrown</defName>
+    <label>brown hair</label>
+    <hairColorOverride>(90, 58, 32)</hairColorOverride>
+    <displayOrderInCategory>80</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_ReddishBrown</defName>
+    <label>reddish-brown hair</label>
+    <hairColorOverride>(132, 83, 47)</hairColorOverride>
+    <displayOrderInCategory>75</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_SandyBlonde</defName>
+    <label>sandy-blonde hair</label>
+    <hairColorOverride>(193, 146, 85)</hairColorOverride>
+    <selectionWeightFactorDarkSkin>0</selectionWeightFactorDarkSkin>
+    <displayOrderInCategory>60</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_Blonde</defName>
+    <label>blonde hair</label>
+    <hairColorOverride>(237, 202, 156)</hairColorOverride>
+    <selectionWeightFactorDarkSkin>0</selectionWeightFactorDarkSkin>
+    <displayOrderInCategory>50</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_Pink</defName>
+    <label>pink hair</label>
+    <hairColorOverride>(191, 86, 149)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>170</displayOrderInCategory>
+    <selectionWeightCultist>0</selectionWeightCultist>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightPurple</defName>
+    <label>purple hair</label>
+    <hairColorOverride>(227, 115, 255)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>180</displayOrderInCategory>
+    <selectionWeightCultist>0</selectionWeightCultist>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightBlue</defName>
+    <label>blue hair</label>
+    <hairColorOverride>(34, 63, 227)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>140</displayOrderInCategory>
+    <selectionWeightCultist>0</selectionWeightCultist>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightTeal</defName>
+    <label>teal hair</label>
+    <hairColorOverride>(52, 191, 182)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>150</displayOrderInCategory>
+    <selectionWeightCultist>0</selectionWeightCultist>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightGreen</defName>
+    <label>green hair</label>
+    <hairColorOverride>(72, 201, 40)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>160</displayOrderInCategory>
+    <selectionWeightCultist>0</selectionWeightCultist>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightOrange</defName>
+    <label>orange hair</label>
+    <hairColorOverride>(189, 133, 49)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>70</displayOrderInCategory>
+    <selectionWeightCultist>0</selectionWeightCultist>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_BrightRed</defName>
+    <label>red hair</label>
+    <hairColorOverride>(191, 86, 86)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>190</displayOrderInCategory>
+    <selectionWeightCultist>0</selectionWeightCultist>
+  </GeneDef>
+
+
+  <!-- Skin color -->
+
+  <GeneDef Name="GeneSkinColorMelanin" Abstract="True">
+    <label>skin color</label>
+    <description>Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.</description>
+    <selectionWeight>0</selectionWeight>
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>Melanin</endogeneCategory>
+    <iconPath>UI/Icons/Genes/Gene_SkinColorOverride</iconPath>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <displayCategory>Cosmetic_Skin</displayCategory>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <passOnDirectly>false</passOnDirectly>
+    <exclusionTags>
+      <li>SkinColor</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin1</defName>
+    <skinColorBase>(242, 237, 224)</skinColorBase>
+    <minMelanin>0</minMelanin>
+    <selectionWeight>0.2</selectionWeight>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin2</defName>
+    <skinColorBase>(255, 239, 213)</skinColorBase>
+    <minMelanin>0.1</minMelanin>
+    <selectionWeight>0.5</selectionWeight>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin3</defName>
+    <skinColorBase>(255, 239, 201)</skinColorBase>
+    <minMelanin>0.25</minMelanin>
+    <selectionWeight>0.5</selectionWeight>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin4</defName>
+    <skinColorBase>(255, 239, 189)</skinColorBase>
+    <minMelanin>0.45</minMelanin>
+    <selectionWeight>0.5</selectionWeight>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin5</defName>
+    <skinColorBase>(249, 219, 165)</skinColorBase>
+    <minMelanin>0.58</minMelanin>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin6</defName>
+    <skinColorBase>(242, 199, 140)</skinColorBase>
+    <minMelanin>0.63</minMelanin>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin7</defName>
+    <skinColorBase>(228, 158, 90)</skinColorBase>
+    <minMelanin>0.75</minMelanin>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin8</defName>
+    <skinColorBase>(130, 91, 48)</skinColorBase>
+    <minMelanin>0.83</minMelanin>
+    <selectionWeight>0.5</selectionWeight>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorMelanin">
+    <defName>Skin_Melanin9</defName>
+    <skinColorBase>(99, 70, 36)</skinColorBase>
+    <minMelanin>0.9</minMelanin>
+    <selectionWeight>0.2</selectionWeight>
+  </GeneDef>
+
+</Defs>

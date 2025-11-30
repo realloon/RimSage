@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerRitualGladiatorDuel</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ritualName->[ritNoun] of [keyDeity]</li>
+        <li>r_ritualName->[ritNoun] of [chosenTheme]</li>
+        <li>r_ritualName->[ritNoun] of [memeConcept]</li>
+        <li>r_ritualName->[memeAdjective] [ritNoun]</li>
+
+        <li>ritNoun->fight</li>
+        <li>ritNoun->duel</li>
+        <li>ritNoun->battle</li>
+        <li>ritNoun->brawl</li>
+        <li>ritNoun->contest</li>
+        
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>

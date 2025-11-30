@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>ServingBoy97</defName>
+    <title>serving boy</title>
+    <titleFemale>serving girl</titleFemale>
+    <titleShort>house boy</titleShort>
+    <titleShortFemale>house girl</titleShortFemale>
+    <description>[PAWN_nameDef] was the child of house servants, and was trained to carry on the family duty.
+\n[PAWN_pronoun] carried things and polished silverware, but was never allowed into the lords' part of the house.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>ImperialCommon</li>
+      <li>ImperialFighter</li>
+    </spawnCategories>
+    <skillGains>
+      <Cooking>2</Cooking>
+      <Construction>1</Construction>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>RoyalBastard64</defName>
+    <title>royal bastard</title>
+    <titleShort>bastard</titleShort>
+    <description>[PAWN_nameDef] was the child of a lord and a prostitute.
+\n[PAWN_possessive] father's line was secure and his holdings strong. Nobody ever came to [PAWN_nameDef] to endorse a bid for the title. [PAWN_pronoun] earned [PAWN_possessive] bread cleaning the brothel, but always felt [PAWN_pronoun] deserved much more.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>ImperialCommon</li>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>2</Social>
+      <Artistic>2</Artistic>
+    </skillGains>
+    <forcedTraits>
+      <Greedy>0</Greedy>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>WarBastard60</defName>
+    <title>war bastard</title>
+    <titleShort>bastard</titleShort>
+    <description>[PAWN_nameDef] was born nine months after [PAWN_possessive] mother's town was conquered by enemy soldiers. The child of violence with no acknowledged father, [PAWN_nameDef] grew up at the bottom of the social pyramid.
+\n[PAWN_possessive] mother instilled her bitterness towards men and war into [PAWN_nameDef]. [PAWN_possessive] pet rabbit offered more warmth than any human in [PAWN_possessive] life.</description>
+    <slot>Childhood</slot>
+    <spawnCategories><li>ImperialCommon</li></spawnCategories>
+    <skillGains>
+      <Animals>3</Animals>
+    </skillGains>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+    <forcedTraits>
+      <DislikesMen>0</DislikesMen>
+    </forcedTraits>
+  </BackstoryDef>
+
+</Defs>

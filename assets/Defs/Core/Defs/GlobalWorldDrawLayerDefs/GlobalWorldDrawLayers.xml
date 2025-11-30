@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GlobalWorldDrawLayerDef>
+    <defName>Stars</defName>
+    <worldDrawLayer>GlobalDrawLayer_Stars</worldDrawLayer>
+  </GlobalWorldDrawLayerDef>
+
+  <GlobalWorldDrawLayerDef>
+    <defName>Sun</defName>
+    <worldDrawLayer>GlobalDrawLayer_Sun</worldDrawLayer>
+  </GlobalWorldDrawLayerDef>
+  
+</Defs>

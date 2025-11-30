@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <DutyDef>
+    <defName>Bestow</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_BestowingCeremony">
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>LinkWithAnimaTree</defName>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_AnimaLinking">
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>LinkWithAnimaTreeSecondary</defName>
+    <hook>MediumPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Spectate -->
+        <li Class="JobGiver_SpectateInCircleDuty" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

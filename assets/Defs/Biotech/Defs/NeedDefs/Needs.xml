@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <NeedDef>
+    <defName>Deathrest</defName>
+    <needClass>Need_Deathrest</needClass>
+    <label>deathrest</label>
+    <description>People with the deathrest gene must deathrest every few days or quadrums. Deathresting means entering a regenerative coma for several days, during which the rester appears dead.\n\nA variety of special buildings can connect to a deathresting person and give them bonuses upon waking.\n\nGoing too long without deathrest will cause deathrest exhaustion, which massively degrades a person's physical capacities.</description>
+    <baseLevel>0.01</baseLevel>
+    <listPriority>600</listPriority>
+    <major>true</major>
+    <minIntelligence>ToolUser</minIntelligence>
+    <onlyIfCausedByGene>true</onlyIfCausedByGene>
+  </NeedDef>
+
+  <NeedDef>
+    <defName>KillThirst</defName>
+    <needClass>Need_KillThirst</needClass>
+    <label>kill satiety</label>
+    <description>Kill satiety fulfills a built-in desire to do violence at close range to human victims. If it isn't satiated, the person will become very unhappy.</description>
+    <baseLevel>0</baseLevel>
+    <minIntelligence>ToolUser</minIntelligence>
+    <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
+    <onlyIfCausedByGene>true</onlyIfCausedByGene>
+  </NeedDef>
+
+  <NeedDef>
+    <defName>Learning</defName>
+    <label>learning</label>
+    <needClass>Need_Learning</needClass>
+    <description>Children need new lessons and experiences to grow up well, and will become unhappy without them.\n\nChildren will only do learning activities when their schedule is set to Recreation or Anything.\n\nActivities that fulfill a child's desire to learn include:\n{ACTIVITIES}\n\nA satisfied learning need helps children gain growth tiers faster, giving them more passions and choices during growth moments.</description>
+    <listPriority>500</listPriority>
+    <developmentalStageFilter>Child</developmentalStageFilter>
+    <colonistsOnly>true</colonistsOnly>
+    <major>true</major>
+  </NeedDef>
+
+  <NeedDef>
+    <defName>Play</defName>
+    <label>play</label>
+    <needClass>Need_Play</needClass>
+    <description>Babies need to be played with by adults. If they aren't played with, they will become unhappy.</description>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
+    <listPriority>550</listPriority>
+    <major>true</major>
+  </NeedDef>
+
+  <NeedDef>
+    <defName>MechEnergy</defName>
+    <needClass>Need_MechEnergy</needClass>
+    <description>A reserve of bioelectric energy needed for a mechanoid to function. It can be recharged at a charging station. If it reaches zero, the mech will go into dormant self-charging mode and recharge very slowly.</description>
+    <label>energy</label>
+    <showOnNeedList>true</showOnNeedList>
+    <minIntelligence>ToolUser</minIntelligence>
+    <playerMechsOnly>true</playerMechsOnly>
+    <listPriority>10000</listPriority>
+    <freezeWhileSleeping>true</freezeWhileSleeping>
+    <showForCaravanMembers>true</showForCaravanMembers>
+    <major>true</major>
+  </NeedDef>
+
+</Defs>

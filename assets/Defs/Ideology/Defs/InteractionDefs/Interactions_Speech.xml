@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>SpeechUtility</defName>
+    <rulePack>
+      <rulesStrings>
+          <li>spokeof->spoke about</li>
+          <li>spokeof->talked about</li>
+          <li>spokeof->offered thoughts on</li>
+          <li>spokeof->discussed</li>
+          <li>spokeof->explained</li>
+          <li>spokeof->described</li>
+
+          <li>praised->gave a speech about</li>
+          <li>praised->spoke about</li>
+          <li>praised->talked about</li>
+          <li>praised->praised</li>
+          <li>praised->extolled the virtues of</li>
+          <li>praised->acclaimed</li>
+          <li>praised->heaped glory on</li>
+          <li>praised->raved about</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <InteractionDef>
+    <defName>Speech_Duel</defName>
+    <label>duel speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [praised] [praisetopic].</li>
+
+        <li>praisetopic->death by blade</li>
+        <li>praisetopic->painful death</li>
+        <li>praisetopic->honorable death</li>
+        <li>praisetopic->honorable combat</li>
+        <li>praisetopic->grit and struggle</li>
+        <li>praisetopic->[AdjectiveBadass] weapons and fighters</li>
+        <li>praisetopic->the purity of physical conflict</li>
+        <li>praisetopic->love through death</li>
+        <li>praisetopic->expelling hate for health</li>
+        <li>praisetopic->strength over others</li>
+        <li>praisetopic->the conflict inherent in the universe</li>
+        <li>praisetopic->blood and dust</li>
+        <li>praisetopic->life and drama</li>
+        <li>praisetopic->anger and hope</li>
+        <li>praisetopic->rage and strength</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_Funeral</defName>
+    <label>funeral speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->the nobility of sacrifice</li>
+        <li>speechtopic->death</li>
+        <li>speechtopic->life after death</li>
+        <li>speechtopic->death and family</li>
+        <li>speechtopic->the concept of a good life</li>
+        <li>speechtopic->death as a path to dignity</li>
+        <li>speechtopic->beginnings and endings</li>
+        <li>speechtopic->what happens after death</li>
+        <li>speechtopic->celebrating the next step</li>
+        <li>speechtopic->absent friends</li>
+        <li>speechtopic->life and joy</li>
+        <li>speechtopic->carrying forward unfinished work</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_DateRitual</defName>
+    <label>celebration speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [praised] [praisetopic].</li>
+
+        <li>praisetopic->the joy of ideological celebrations</li>
+        <li>praisetopic->correct thinking</li>
+        <li>praisetopic->the moral structure of the universe</li>
+        <li>praisetopic->[INITIATOR_possessive] beliefs</li>
+        <li>praisetopic->togetherness</li>
+        <li>praisetopic->being together</li>
+        <li>praisetopic->sharing ideas</li>
+        <li>praisetopic->[INITIATOR_possessive] own group</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_Leader</defName>
+    <label>leader speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->searching for [Vegetable]s</li>
+        <li>speechtopic->how to be [AdjectiveFriendly]</li>
+        <li>speechtopic->avoiding [AnimalBadass]s</li>
+        <li>speechtopic->how life is like [Game]</li>
+        <li>speechtopic->the mind as a [Weapon]</li>
+        <li>speechtopic->exploring through [TerrainFeature]s and [TerrainFeature]s</li>
+        <li>speechtopic->promises to the [Direction]</li>
+        <li>speechtopic->how to be more like [Animal]s</li>
+        <li>speechtopic->the symbolism of the [NaturalObject] and the [NaturalObject]</li>
+        <li>speechtopic->how all are [PersonFamily]s and [PersonFamily]s</li>
+        <li>speechtopic->how to be a good [PersonAlly]</li>
+        <li>speechtopic->the need for [PersonJob]s</li>
+        <li>speechtopic->avoiding [PersonBadass]s</li>
+        <li>speechtopic->defeating [Enemy]s through [ConceptPositive]</li>
+        <li>speechtopic->seeing [Gore] during combat</li>
+        <li>speechtopic->the history of the [Mechanoid]s</li>
+        <li>speechtopic->the meaning of [ConceptPositive]</li>
+        <li>speechtopic->the [ConceptPositive] of the colony</li>
+        <li>speechtopic->how to be [AdjectiveBadass] without being [AdjectiveBadass]</li>
+        <li>speechtopic->how [AdjectiveBadass] the colony is</li>
+        <li>speechtopic->[AdjectiveNatural] [TerrainFeature]s</li>
+        <li>speechtopic->the colony's [AdjectiveLarge] potential</li>
+        <li>speechtopic->the [PersonalCharacteristic] of every colonist</li>
+        <li>speechtopic->the terrible [PersonalCharacteristic] of the colony's enemies</li>
+
+        <li>speechtopic(p=0.25)->sticking together as group</li>
+        <li>speechtopic(p=0.25)->the path forward through tragedy</li>
+        <li>speechtopic(p=0.25)->the community and its importance</li>
+        <li>speechtopic(p=0.25)->survival versus luxury</li>
+        <li>speechtopic(p=0.25)->happiness through hardship</li>
+        <li>speechtopic(p=0.25)->satisfaction through suffering</li>
+        <li>speechtopic(p=0.25)->death as a motivator</li>
+        <li>speechtopic(p=0.25)->strong hands and hearts</li>
+        <li>speechtopic(p=0.25)->the right to survive</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_Sacrifice</defName>
+    <label>sacrifice speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+        <li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
+
+        <li>speechtopic->the meaning and true value of death</li>
+        <li>speechtopic->expressions of pain</li>
+        <li>speechtopic->controlled cruelty</li>
+        <li>speechtopic->the warmth of blood</li>
+        <li>speechtopic->the meaning of death</li>
+        <li>speechtopic->love and death</li>
+        <li>speechtopic->symbolizing pain</li>
+        <li>speechtopic->blades and flesh</li>
+        <li>speechtopic->the art of cutting</li>
+        <li>speechtopic->the seduction of blood</li>
+        <li>speechtopic->the music of screams</li>
+        <li>speechtopic->guts on the floor</li>
+
+        <li>crazy->screamed maniacally</li>
+        <li>crazy->broke into a chant</li>
+        <li>crazy->chanted towards the heavens</li>
+        <li>crazy->spat in the sacrifice's eye</li>
+        <li>crazy->cackled</li>
+        <li>crazy->brandished a blade</li>
+        <li>crazy->muttered repetitively</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_Scarification</defName>
+    <label>scarification speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+        <li>r_logentry(p=0.2)->[INITIATOR_nameDef] [crazy].</li>
+
+        <li>speechtopic->recording pain on the body</li>
+        <li>speechtopic->expressions of pain</li>
+        <li>speechtopic->controlled cruelty</li>
+        <li>speechtopic->the warmth of blood</li>
+        <li>speechtopic->the meaning of the scar</li>
+        <li>speechtopic->love and pain</li>
+        <li>speechtopic->symbolizing pain</li>
+        <li>speechtopic->blades and flesh</li>
+        <li>speechtopic->the art of cutting</li>
+        <li>speechtopic->the seduction of blood</li>
+        <li>speechtopic->the music of screams</li>
+
+        <li>crazy->screamed maniacally</li>
+        <li>crazy->broke into a chant</li>
+        <li>crazy->chanted towards the heavens</li>
+        <li>crazy->cackled</li>
+        <li>crazy->brandished a blade</li>
+        <li>crazy->muttered repetitively</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_Blinding</defName>
+    <label>blinding speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->blindness</li>
+        <li>speechtopic->the purity of blindness</li>
+        <li>speechtopic->the spiritual meaning of the sightless</li>
+        <li>speechtopic->hidden worlds beyond sight</li>
+        <li>speechtopic->the falseness of our visual reality</li>
+        <li>speechtopic->the technique of blinding</li>
+        <li>speechtopic->the curse of sight</li>
+        <li>speechtopic->the jelly inside the eyeball</li>
+        <li>speechtopic->growing up sighted</li>
+        <li>speechtopic->growing up blind</li>
+        <li>speechtopic->exploring without seeing or moving</li>
+        <li>speechtopic->the true layers of reality under the visual</li>
+        <li>speechtopic->psychic connections</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_Execution</defName>
+    <label>exceution speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->life and death</li>
+        <li>speechtopic->the necessity of justice</li>
+        <li>speechtopic->the methods of execution</li>
+        <li>speechtopic->death and cruelty</li>
+        <li>speechtopic->merciful killing</li>
+        <li>speechtopic->the mercy of a correct killing</li>
+        <li>speechtopic->the symbolism of death</li>
+        <li>speechtopic->capital punishment and its history</li>
+        <li>speechtopic->the reasons for the execution</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Speech_TreeConnection</defName>
+    <label>tree connection speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->the trees and the people</li>
+        <li>speechtopic->the trees and psychic powers</li>
+        <li>speechtopic->dryads</li>
+        <li>speechtopic->the Gauranlen life cycle</li>
+        <li>speechtopic->the spiritual presence of Gauranlen trees</li>
+        <li>speechtopic->psychic dendro-pathy</li>
+        <li>speechtopic->how cute dryads are</li>
+        <li>speechtopic->the nobility of the dryads</li>
+        <li>speechtopic->the age of the trees</li>
+        <li>speechtopic->humanity's role below the trees</li>
+        <li>speechtopic->plant life and eternity</li>
+        <li>speechtopic->connecting with nature</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Speech_Conversion</defName>
+    <label>conversion speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/Speech</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->uniting for the greater good</li>
+        <li>speechtopic->the wrongness of apostasy</li>
+        <li>speechtopic->choosing right beliefs</li>
+        <li>speechtopic->the moral structure of the universe</li>
+        <li>speechtopic->right and wrong</li>
+        <li>speechtopic->the purpose of life</li>
+        <li>speechtopic->the meaning of life</li>
+        <li>speechtopic->mankind's history</li>
+        <li>speechtopic->the future of mankind</li>
+        <li>speechtopic->love and hate</li>
+        <li>speechtopic->fear and safety</li>
+        <li>speechtopic->the rightness of belonging</li>
+        <li>speechtopic->joining and belonging</li>
+        <li>speechtopic->false other beliefs</li>
+        <li>speechtopic->progress towards the future</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Speech_AcceptRole</defName>
+    <label>role acceptance speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/RoleChange</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->[INITIATOR_possessive] new role in the community</li>
+        <li>speechtopic->the responsibility of [INITIATOR_possessive] new role</li>
+        <li>speechtopic->the importance of [INITIATOR_possessive] new role</li>
+        <li>speechtopic->[INITIATOR_possessive] good qualities</li>
+        <li>speechtopic->[INITIATOR_possessive] strengths and how to leverage them</li>
+        <li>speechtopic->[INITIATOR_possessive] shortcomings</li>
+        <li>speechtopic->[INITIATOR_possessive] weaknesses and how to overcome them</li>
+        <li>speechtopic->[INITIATOR_possessive] desire to serve the community</li>
+        <li>speechtopic->[INITIATOR_possessive] dedication to [INITIATOR_possessive] beliefs</li>
+        <li>speechtopic->[INITIATOR_possessive] beliefs about the future</li>
+        <li>speechtopic->[INITIATOR_possessive] wish to serve a greater purpose</li>
+        <li>speechtopic->[INITIATOR_possessive] [PersonalCharacteristic] and how it relates to the role</li>
+        <li>speechtopic->how [INITIATOR_possessive] [PersonalCharacteristic] makes [INITIATOR_objective] suited for the role</li>
+        <li>speechtopic->how [INITIATOR_pronoun] will use [INITIATOR_possessive] [PersonalCharacteristic] to overcome obstacles</li>
+        <li>speechtopic->thankfulness</li>
+        <li>speechtopic->showing gratitude</li>
+        <li>speechtopic->life's purpose</li>
+        <li>speechtopic->the future of the colony</li>
+        <li>speechtopic->improving the colony</li>
+        <li>speechtopic->decision-making under stress</li>
+        <li>speechtopic->the social structure of the community</li>
+        <li>speechtopic->taking responsibility</li>
+        <li>speechtopic->putting a role above [INITIATOR_possessive] personal desires</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>Speech_RemoveRole</defName>
+    <label>role removal speech</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/RoleChange</symbol>
+    <logRulesInitiator>
+      <include><li>SpeechUtility</li></include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spokeof] [speechtopic].</li>
+
+        <li>speechtopic->[INITIATOR_possessive] past role in the community</li>
+        <li>speechtopic->the responsibility of [INITIATOR_possessive] old role</li>
+        <li>speechtopic->the difficulty of [INITIATOR_possessive] old role</li>
+        <li>speechtopic->[INITIATOR_possessive] shortcomings</li>
+        <li>speechtopic->[INITIATOR_possessive] weaknesses and how to overcome them</li>
+        <li>speechtopic->[INITIATOR_possessive] frustration with the community</li>
+        <li>speechtopic->[INITIATOR_possessive] dedication to [INITIATOR_possessive] beliefs</li>
+        <li>speechtopic->[INITIATOR_possessive] beliefs about the future</li>
+        <li>speechtopic->[INITIATOR_possessive] wish to pursue [INITIATOR_possessive] own goals</li>
+        <li>speechtopic->[INITIATOR_possessive] lack of [PersonalCharacteristic]</li>
+        <li>speechtopic->[INITIATOR_possessive] past</li>
+        <li>speechtopic->showing humbleness</li>
+        <li>speechtopic->life's purpose</li>
+        <li>speechtopic->the future of the colony</li>
+        <li>speechtopic->improving the colony</li>
+        <li>speechtopic->the social structure of the community</li>
+        <li>speechtopic->better candidates</li>
+        <li>speechtopic->putting community goals above [INITIATOR_possessive] personal ambitions</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+
+</Defs>

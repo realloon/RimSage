@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>OutlanderRefugee</defName>
+    <label>outlander refugee group</label>
+    <pawnSingular>refugee</pawnSingular>
+    <pawnsPlural>refugees</pawnsPlural>
+    <categoryTag>OutlanderRefugee</categoryTag>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <hidden>true</hidden>
+    <description>A group of outlander refugees claiming to have lost their home.</description>
+    <factionIconPath>World/WorldObjects/Expanding/SettlementTemporary</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+    </disallowedMemes>
+    <xenotypeSet>
+      <xenotypeChances>
+      <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.05</Neanderthal>
+      <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.05</Hussar>
+      <Pigskin MayRequire="Ludeon.RimWorld.Biotech">0.05</Pigskin>
+      <Yttakin MayRequire="Ludeon.RimWorld.Biotech">0.05</Yttakin>
+      <Genie MayRequire="Ludeon.RimWorld.Biotech">0.05</Genie>
+      <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.05</Dirtmole>
+      <Highmate MayRequire="Ludeon.RimWorld.Biotech">0.025</Highmate>
+      </xenotypeChances>
+    </xenotypeSet>
+    <colorSpectrum>
+      <li>(0.93, 0.39, 0.32)</li>
+      <li>(0.35, 0.90, 0.57)</li>
+      <li>(0.25, 0.66, 0.94)</li>
+      <li>(0.98, 0.75, 0.37)</li>
+      <li>(0.97, 0.62, 0.52)</li>
+    </colorSpectrum>
+    <generateNewLeaderFromMapMembersOnly>true</generateNewLeaderFromMapMembersOnly>
+    <leaderTitle>leader</leaderTitle>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <mustStartOneEnemy>false</mustStartOneEnemy>
+    <techLevel>Industrial</techLevel>
+    <basicMemberKind>Refugee</basicMemberKind>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Outlander</li>
+        </categories>
+        <commonality>0.95</commonality>
+      </li>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+        <commonality>0.05</commonality>
+      </li>
+    </backstoryFilters>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+  </FactionDef>
+
+</Defs>

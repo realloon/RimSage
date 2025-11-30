@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RitualPatternDef ParentName="SpeechPatternBase">
+    <defName>ThroneSpeech</defName>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>ThroneSpeech</ritualBehavior>
+    <ritualTargetFilter>UsableThrone</ritualTargetFilter>
+    <playsIdeoMusic>false</playsIdeoMusic>
+  </RitualPatternDef>
+
+  <RitualPatternDef>
+    <defName>AnimaTreeLinking</defName>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>AnimaTreeLinking</ritualBehavior>
+    <ritualTargetFilter>SelectedThing</ritualTargetFilter>
+    <ritualObligationTargetFilter>AnimaTree</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>AnimaTreeLinking</ritualOutcomeEffect>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+  </RitualPatternDef>
+  
+</Defs>

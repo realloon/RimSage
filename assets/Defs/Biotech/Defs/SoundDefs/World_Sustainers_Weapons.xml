@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>BeamGraser_Shooting</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>BeamGraser_Shooting_Resolve</sustainStopSound>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Beamgraser/Fire</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>30</volumeRange>
+        <sustainRelease>0.02</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BeamGraser_Shooting_Resolve</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Beamgraser/Resolve</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>30</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HellsphereCannon_Aiming</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapon/HellsphereCannon/Hellsphere_Cannon_Warmup</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

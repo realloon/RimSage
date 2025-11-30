@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>ExtractBioferrite</defName>
+    <label>incubate bioferrite</label>
+    <description>Process a corpse in order to incubate a batch of bioferrite from archites seeded into the flesh and nervous tissue.</description>
+    <jobString>Incubating bioferrite from corpse.</jobString>
+    <workAmount>500</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <formingTicks>30000</formingTicks> <!-- 12 hours -->
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <thingDefs>
+        <li>Corpse_Human</li>
+      </thingDefs>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">AllowCorpsesSlave</li>
+        <li>AllowCorpsesStranger</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+    <products>
+      <Bioferrite>15</Bioferrite>
+    </products>
+  </RecipeDef>
+</Defs>

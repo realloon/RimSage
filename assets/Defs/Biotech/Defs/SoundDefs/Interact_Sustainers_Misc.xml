@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SoundDef>
+    <defName>HemogenPack_Consume</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Food/HemogenPack</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15~15</volumeRange>
+        <distRange>10~40</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DeathrestCapacitySerum_Consume</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Item/DeathrestCapacitySerum/DeathrestCapacitySerum_Ingestion</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <distRange>10~40</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>FireBurst_Warmup</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/FireBurst_Warmup</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <distRange>10~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>SubcoreEncoder_Working</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>Recipe_Drug_Stop</sustainStopSound>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/SubcoreEncoder/Subcore_Encoding_02a_Loop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <distRange>10~30</distRange>
+        <sustainRelease>0.1</sustainRelease>
+      </li>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/SubcoreEncoder/Grains</clipFolderPath>
+          </li>
+        </grains>
+        <sustainIntervalRange>0.25~0.75</sustainIntervalRange>
+        <volumeRange>15</volumeRange>
+        <distRange>10~30</distRange>
+        <repeatMode>NeverTwice</repeatMode>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>SubcoreEncoder_Complete</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/SubcoreEncoder/Subcore_Encoding_02a_End</clipPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <distRange>10~30</distRange>
+        <sustainRelease>0.1</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechGestatorCycle_Initiating</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Work/MechGestatorCycle</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <distRange>10~30</distRange>
+        <sustainLoop>False</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Breastfeeding</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Breastfeeding</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <volumeRange>30~50</volumeRange>
+        <distRange>10~30</distRange>
+        <sustainLoop>False</sustainLoop>
+        <sustainIntervalRange>0~0.5</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

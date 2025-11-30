@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <RoyalFavorTip>You can choose one of your {0} to receive {1} {2} from {3_name}.\n\nBy receiving {2}, you gain titles. Titles bring psylink rewards and special permits like military aid. However, {0} with higher titles will also need specific apparel and bedroom furnishings.</RoyalFavorTip>
+  
+  <!-- Work tab -->
+  <WorkDisabledByRoyalTitle>Disabled by royal title {0}</WorkDisabledByRoyalTitle>
+
+</LanguageData>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualObligationTargetFilterDef>
+    <defName>GraveWithTargetsCorpse</defName>
+    <workerClass>RitualObligationTargetWorker_GraveWithTarget</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>AnyEmptyGrave</defName>
+    <workerClass>RitualObligationTargetWorker_AnyEmptyGrave</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>GatheringSpot</defName>
+    <workerClass>RitualObligationTargetWorker_AnyGatherSpot</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>GatheringSpotOrAltar</defName>
+    <workerClass>RitualObligationTargetWorker_AnyGatherSpotOrAltar</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualTargetFilterDef>
+    <defName>IdeoBuilding</defName>
+    <fallBackToGatherSpot>true</fallBackToGatherSpot>
+    <workerClass>RitualTargetFilter_IdeoBuilding</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualTargetFilterDef>
+    <defName>Altar</defName>
+    <workerClass>RitualTargetFilter_IdeoBuilding</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualTargetFilterDef>
+    <defName>IdeoBuildingOrRitualSpot</defName>
+    <fallBackToGatherSpot>true</fallBackToGatherSpot>
+    <workerClass>RitualTargetFilter_IdeoBuildingOrRitualSpot</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualTargetFilterDef>
+    <defName>AltarOrRitualSpot</defName>
+    <fallbackToRitualSpot>true</fallbackToRitualSpot>
+    <workerClass>RitualTargetFilter_Altar</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualTargetFilterDef>
+    <defName>AltarIdeogramOrRitualSpot</defName>
+    <fallbackToRitualSpot>true</fallbackToRitualSpot>
+    <workerClass>RitualTargetFilter_AltarOrIdeogram</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>RitualSpotOrAltar</defName>
+    <workerClass>RitualObligationTargetWorker_AnyRitualSpotOrAltar</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>AnyRitualSpot</defName>
+    <workerClass>RitualObligationTargetWorker_AnyRitualSpot</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>AnyIdeoBuildingOrRitualSpot</defName>
+    <workerClass>RitualObligationTargetWorker_IdeoBuildingOrRitualSpot</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>RitualSpotIdeogramOrAltar</defName>
+    <workerClass>RitualObligationTargetWorker_AnyRitualSpotIdeogramOrAltar</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>LightBall</defName>
+    <workerClass>RitualObligationTargetWorker_LightBall</workerClass>
+    <maxSpeakerDistance>12</maxSpeakerDistance>
+    <thingDefs>
+      <li>LightBall</li>
+      <li>RitualSpot</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>RitualSpotOrCampfireParty</defName>
+    <workerClass>RitualObligationTargetWorker_CampfireParty</workerClass>
+    <maxDrumDistance>12</maxDrumDistance>
+    <thingDefs>
+      <li>Campfire</li>
+      <li>RitualSpot</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>CampfireSkylanterns</defName>
+    <workerClass>RitualObligationTargetWorker_SkyLanterns</workerClass>
+    <minUnroofedCells>25</minUnroofedCells>
+    <unroofedCellSearchRadius>12</unroofedCellSearchRadius>
+    <woodPerParticipant>4</woodPerParticipant>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>ChristmasTree</defName>
+    <workerClass>RitualObligationTargetWorker_ConsumableBuilding</workerClass>
+    <thingDefs>
+      <li>ChristmasTree</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>BurnTargets</defName>
+    <workerClass>RitualObligationTargetWorker_ConsumableBuilding</workerClass>
+    <thingDefs>
+      <li>Effigy</li>
+      <li>Pyre</li>
+      <li>SacrificialFlag</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>SmokeCircle</defName>
+    <workerClass>RitualObligationTargetWorker_ConsumableBuilding</workerClass>
+    <thingDefs>
+      <li>Burnbong</li>
+      <li>IncenseShrine</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>FeastCannibal</defName>
+    <workerClass>RitualObligationTargetWorker_ConsumableBuilding</workerClass>
+    <thingDefs>
+      <li>CannibalPlatter</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>RitualSpotOrAltar_Scarification</defName>
+    <workerClass>RitualObligationTargetWorker_AnyRitualSpotOrAltar_Scarification</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>RitualSpotOrAltar_Blinding</defName>
+    <workerClass>RitualObligationTargetWorker_AnyRitualSpotOrAltar_Blinding</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>GauranlenTree</defName>
+    <workerClass>RitualObligationTargetWorker_UnconnectedGauranlenTree</workerClass>
+  </RitualObligationTargetFilterDef>
+
+</Defs>

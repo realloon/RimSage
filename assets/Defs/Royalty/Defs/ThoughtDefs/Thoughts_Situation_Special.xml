@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>DecreeUnmet</defName>
+    <workerClass>ThoughtWorker_QuestPart</workerClass>
+    <thoughtClass>Thought_DecreeUnmet</thoughtClass>
+    <stages>
+      <li>
+        <label>decree ignored</label>
+        <description>My decree has been ignored for far too long {0}.</description>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>PsychicEntropyOverloaded</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>PsychicBreakdown</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>minor psychic breakdown</label>
+        <description>There's an electrical pain behind my eyes. It's hard to focus; hard to think.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+      <li>
+        <label>major psychic breakdown</label>
+        <description>My mind has been stir-fried. Dizzy, fuzzy, can't think, always aching.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+      <li>
+        <label>total psychic breakdown</label>
+        <description>I'm spinning, it hurts, I'm dizzy, think, can't think, can't think...</description>
+        <baseMoodEffect>-18</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AnimaScream</defName>
+    <durationDays>5</durationDays>
+    <stackLimit>3</stackLimit>
+    <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>anima scream</label>
+        <description>Such a pain in my head when the tree died. And it keeps echoing...</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Joyfuzz</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Joyfuzz</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>joyfuzz</label>
+        <description>No matter what happens, I feel like I'm okay with it for some reason.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PsychicLove</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
+    <hediff>PsychicLove</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>psychic love</label>
+        <baseOpinionOffset>40</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

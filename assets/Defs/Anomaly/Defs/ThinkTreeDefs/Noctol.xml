@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>NoctolConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoLordJobNow">
+          <subNodes>
+            <!-- Lord directives -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>LordDutyConstant</treeDef>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>Noctol</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Keep lying down if we have to -->
+        <li Class="ThinkNode_ConditionalMustKeepLyingDown">
+          <subNodes>
+            <!-- Do a queued job if possible -->
+            <li Class="ThinkNode_QueuedJob">
+              <inBedOnly>true</inBedOnly>
+            </li>
+
+            <!-- Keep lying down -->
+            <li Class="JobGiver_KeepLyingDown" />
+          </subNodes>
+        </li>
+
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>BurningResponse</treeDef>
+        </li>
+
+        <!-- Escaping-->
+        <li Class="ThinkNodeConditional_EscapingHoldingPlatform">
+          <subNodes>
+            <li Class="JobGiver_EscapingHoldingPlatform" />
+          </subNodes>
+        </li>
+
+        <!-- React to close melee threat -->
+        <li Class="JobGiver_ReactToCloseMeleeThreat" />
+
+        <!-- Do a queued job -->
+        <li Class="ThinkNode_QueuedJob" />
+
+        <!-- Forced goto -->
+        <li Class="ThinkNode_ConditionalForcedGoto">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>Misc</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_ForcedGoto" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Lord directives -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>30</targetAcquireRadius>
+          <targetKeepRadius>35</targetKeepRadius>
+        </li>
+
+        <!-- Wander -->
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+              <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+            </li>
+          </subNodes>
+        </li>
+
+        <li Class="JobGiver_IdleError"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

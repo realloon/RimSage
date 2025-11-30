@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainTemplateDef>
+    <defName>CarpetFine</defName>
+    <label>fine carpet ({0})</label>
+    <description>Luxurious, ornately-patterned carpet made from fibers dyed a single color. Beautiful to look at, but cleaning it is a labor-intensive process.</description>
+    <texturePath>Terrain/Surfaces/CarpetFine</texturePath>
+    <researchPrerequisites>
+      <li>CarpetMaking</li>
+    </researchPrerequisites>
+    <burnedDef>BurnedCarpet</burnedDef>
+    <designatorDropdown>Floor_Carpet_Fine</designatorDropdown>
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+    <costList>
+      <Cloth>35</Cloth>
+    </costList>
+    <statBases>
+      <Beauty>4</Beauty>
+      <Flammability>0.32</Flammability>
+      <WorkToBuild>4000</WorkToBuild>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+    <tags>
+      <li>Floor</li>
+      <li>FineFloor</li>
+    </tags>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <uiOrder>2110</uiOrder>
+    <renderPrecedenceStart>200</renderPrecedenceStart>
+  </TerrainTemplateDef>
+
+</Defs>

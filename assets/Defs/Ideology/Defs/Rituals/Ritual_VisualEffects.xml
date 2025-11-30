@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualVisualEffectDef Abstract="True" Name="RitualGlowAbstract">
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualGlowRays</moteDef>
+        <scaleWithRoom>true</scaleWithRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef ParentName="RitualGlowAbstract">
+    <defName>Basic</defName>
+    <tintColor>(100, 165, 255)</tintColor>
+  </RitualVisualEffectDef>
+  
+  <RitualVisualEffectDef ParentName="RitualGlowAbstract">
+    <defName>Hindu</defName>
+    <tintColor>(222, 85, 101)</tintColor>
+    <comps>
+      <li Class="CompProperties_RitualEffectIntervalSpawnArea">
+        <fleckDef>BlurrySpark</fleckDef>
+        <area>(24, 22)</area>
+        <spawnIntervalTicks>3</spawnIntervalTicks>
+        <spawnCount>2</spawnCount>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+        <onlySpawnInSameRoom>true</onlySpawnInSameRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef ParentName="RitualGlowAbstract">
+    <defName>Islamic</defName>
+    <tintColor>(161, 255, 88)</tintColor>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef ParentName="RitualGlowAbstract">
+    <defName>Christian</defName>
+    <tintColor>(255, 218, 82)</tintColor>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef ParentName="RitualGlowAbstract">
+    <defName>Buddhist</defName>
+    <tintColor>(61, 255, 87)</tintColor>
+    <comps>
+      <li Class="CompProperties_RitualEffectIntervalSpawnArea">
+        <fleckDef>Bokeh</fleckDef>
+        <area>(24, 22)</area>
+        <spawnIntervalTicks>8</spawnIntervalTicks>
+        <spawnCount>1</spawnCount>
+        <rotation>-35~35</rotation>
+        <scale>0.8~1.2</scale>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+        <onlySpawnInSameRoom>true</onlySpawnInSameRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef Abstract="True" Name="RitualSmokeAbstract">
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualSmoke</moteDef>
+        <scaleWithRoom>true</scaleWithRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef ParentName="RitualSmokeAbstract">
+    <defName>Totemic</defName>
+    <tintColor>(64, 255, 195)</tintColor>
+    <comps>
+      <li Class="CompProperties_RitualEffectConstantCircle">
+        <radius>7.0</radius>
+        <numCopies>5</numCopies>
+        <moteDef>Mote_TotemOutline</moteDef>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+        <onlySpawnInSameRoom>true</onlySpawnInSameRoom>
+        <offset>(0, 0, 0.5)</offset>
+        <roomCheckOffset>(0, 0, -1)</roomCheckOffset>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>Morbid</defName>
+    <tintColor>(26, 20, 25)</tintColor>
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualSmokeThick</moteDef>
+        <scaleWithRoom>true</scaleWithRoom>
+      </li>
+      <li Class="CompProperties_RitualEffectIntervalSpawnCircle">
+        <fleckDef>Skull</fleckDef>
+        <area>(27, 28)</area>
+        <radius>6</radius>
+        <concentration>3</concentration>
+        <spawnIntervalTicks>9</spawnIntervalTicks>
+        <spawnCount>1</spawnCount>
+        <rotation>-15~15</rotation>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+        <onlySpawnInSameRoom>true</onlySpawnInSameRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>Rustic</defName>
+    <tintColor>(133, 118, 100)</tintColor>
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualSmokeDust</moteDef>
+        <scaleWithRoom>true</scaleWithRoom>
+      </li>
+      <li Class="CompProperties_RitualEffectIntervalSpawnArea">
+        <fleckDef>Tumbleweed</fleckDef>
+        <area>(8, 22)</area>
+        <offset>(-5, 0, 0)</offset>
+        <spawnIntervalTicks>89</spawnIntervalTicks>
+        <spawnCount>1</spawnCount>
+        <velocityDir>(1, 0, 0)</velocityDir>
+        <velocity>1.8~2.2</velocity>
+        <rotationRate>100</rotationRate>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>Animalist</defName>
+    <tintColor>(115, 135, 120)</tintColor>
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualSmokeDustVague</moteDef>
+        <scaleWithRoom>true</scaleWithRoom>
+      </li>
+      <li Class="CompProperties_RitualEffectIntervalSpawnArea">
+        <fleckDef>LeafFlipped</fleckDef>
+        <area>(5, 6)</area>
+        <offset>(-6, 0, 4)</offset>
+        <spawnIntervalTicks>23</spawnIntervalTicks>
+        <spawnCount>1</spawnCount>
+        <velocityDir>(1, 0, 0)</velocityDir>
+        <velocity>1.8~2.2</velocity>
+        <rotation>190~230</rotation>
+        <overrideColors>
+          <li>(183, 248, 114)</li>
+          <li>(199, 233, 79)</li>
+          <li>(158, 235, 95)</li>
+        </overrideColors>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+      </li>
+      <li Class="CompProperties_RitualEffectIntervalSpawnArea">
+        <fleckDef>Leaf</fleckDef>
+        <area>(5, 6)</area>
+        <offset>(6, 0, -4)</offset>
+        <spawnIntervalTicks>23</spawnIntervalTicks>
+        <spawnCount>1</spawnCount>
+        <velocityDir>(1, 0, 0)</velocityDir>
+        <velocity>-1.8~-2.2</velocity>
+        <rotation>-5~75</rotation>
+        <overrideColors>
+          <li>(183, 248, 114)</li>
+          <li>(199, 233, 79)</li>
+          <li>(158, 235, 95)</li>
+        </overrideColors>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>Spikecore</defName>
+    <tintColor>(24, 21, 27)</tintColor>
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualSmokeThickSlim</moteDef>
+        <scaleWithRoom>true</scaleWithRoom>
+      </li>
+      <li Class="CompProperties_RitualEffectConstantCircle">
+        <radius>7.0</radius>
+        <numCopies>5</numCopies>
+        <moteDef>Mote_SpikePipe</moteDef>
+        <colorOverride>(255, 255, 255, 255)</colorOverride>
+        <offset>(0, 0, -1)</offset>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+        <onlySpawnInSameRoom>true</onlySpawnInSameRoom>
+      </li>
+      <li Class="CompProperties_RitualEffectIntervalSpawnDividedCircle">
+        <radius>7.0</radius>
+        <numCopies>5</numCopies>
+        <offset>(0, 0, -0.2)</offset>
+        <roomCheckOffset>(0, 0, -1)</roomCheckOffset>
+        <effecterDef>SpikecoreSparks</effecterDef>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+        <onlySpawnInSameRoom>true</onlySpawnInSameRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>Techist</defName>
+    <tintColor>(115, 165, 155)</tintColor>
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualSmokeDust</moteDef>
+        <scaleWithRoom>true</scaleWithRoom>
+      </li>
+      <li Class="CompProperties_RitualEffectStaticAreaRandomMote">
+        <moteDefs>
+          <li>Mote_RitualTechLineA</li>
+          <li>Mote_RitualTechLineB</li>
+          <li>Mote_RitualTechLineC</li>
+        </moteDefs>
+        <area>(24, 22)</area>
+        <spawnCount>12</spawnCount>
+        <minDist>2</minDist>
+        <scalePositionWithRoom>true</scalePositionWithRoom>
+        <onlySpawnInSameRoom>true</onlySpawnInSameRoom>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>DanceParty</defName>
+    <comps>
+      <li Class="CompProperties_RitualEffectLightball">
+        <fleckDef>PartyLensFlare</fleckDef>
+        <radius>3</radius>
+        <spawnIntervalTicks>30</spawnIntervalTicks>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>DrumParty</defName>
+    <comps>
+      <li Class="CompProperties_RitualEffectDrum">
+        <fleckDef>DustPuff</fleckDef>
+        <maxDistance>12</maxDistance>
+        <spawnIntervalTicks>45</spawnIntervalTicks>
+        <spawnCount>5</spawnCount>
+        <maxOffset>0.4</maxOffset>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>Funeral</defName>
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_RitualGlowSingleRay</moteDef>
+        <offset>(0.26, 0, 2.25)</offset>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>SacrificePrisoner</defName>
+    <comps>
+      <li Class="CompProperties_RitualEffectSpawnOnRole">
+        <effecterDef>Damage_HitFleshGruesome</effecterDef>
+        <roleId>prisoner</roleId>
+        <maxBursts>1</maxBursts>
+        <delay>34</delay>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>SacrificeAnimal</defName>
+    <comps>
+      <li Class="CompProperties_RitualEffectSpawnOnRole">
+        <effecterDef>Damage_HitFleshGruesome</effecterDef>
+        <roleId>animal</roleId>
+        <maxBursts>1</maxBursts>
+        <delay>34</delay>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+
+  <RitualVisualEffectDef>
+    <defName>Duel</defName>
+    <comps>
+      <li>
+        <compClass>CompRitualEffect_ConstantCenter</compClass>
+        <moteDef>Mote_DuelCircle</moteDef>
+      </li>
+    </comps>
+  </RitualVisualEffectDef>
+  
+</Defs>

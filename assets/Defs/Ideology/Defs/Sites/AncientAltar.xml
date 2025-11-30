@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>AncientAltar</defName>
+    <label>relic complex</label>
+    <description>An ancient complex housing a relic.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <workerClass>SitePartWorker_AncientAltar</workerClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/AncientRelic</expandingIconTexture>
+    <approachOrderString>Investigate {0}</approachOrderString>
+    <approachingReportString>Investigating {0}.</approachingReportString>
+    <arrivedLetter>There is an ancient structure holding a relic in this area.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>AncientAltar</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>AncientAltar</defName>
+    <linkWithSite>AncientAltar</linkWithSite>
+    <order>470</order>
+    <genStep Class="GenStep_AncientAltar" />
+  </GenStepDef>
+
+</Defs>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+  <RuleDef>
+    <defName>AncientComplex_Interior_SleepingInsects</defName>
+    <symbol>ancientComplex_interior_sleepingInsects</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Interior_SleepingInsects">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>AncientComplex_Interior_SleepingMechanoids</defName>
+    <symbol>ancientComplex_interior_sleepingMechanoids</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Interior_SleepingMechanoids">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>AncientComplex_Interior_SleepingAncientSoldiers</defName>
+    <symbol>ancientComplex_interior_sleepingAncientSoldiers</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Interior_SleepingAncientSoldiers">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>Infestation</defName>
+    <symbol>infestation</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Infestation">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>Ambush</defName>
+    <symbol>ambush</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Ambush" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>AncientAltar</defName>
+    <symbol>ancientAltar</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientAltar" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>DesiccatedCorpses</defName>
+    <symbol>desiccatedCorpses</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_DesiccatedCorpses" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>Archonexus</defName>
+    <symbol>archonexus</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Archonexus">
+        <minRectSize>(6, 6)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>ArchonexusResearchBuildings</defName>
+    <symbol>archonexusResearchBuildings</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_ArchonexusResearchBuildings" />
+    </resolvers>
+  </RuleDef>
+
+</Defs>

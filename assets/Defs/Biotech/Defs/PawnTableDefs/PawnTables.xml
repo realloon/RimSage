@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnTableDef>
+    <defName>Mechs</defName>
+    <workerClass>PawnTable_Mechs</workerClass>
+    <columns>
+      <li>LabelWithIcon</li>
+      <li>Energy</li>
+      <li>DraftMech</li>
+      <li>GapTiny</li>
+      <li>AutoRepair</li>
+      <li>Overseer</li>
+      <li>ControlGroup</li>
+      <li>WorkMode</li>
+      <li>AllowedAreaMech</li>
+      <li>RemainingSpace</li>
+    </columns>
+  </PawnTableDef>
+
+</Defs>

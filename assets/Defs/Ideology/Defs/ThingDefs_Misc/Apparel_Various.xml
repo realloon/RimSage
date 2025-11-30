@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Apparel_BodyStrap</defName>
+    <label>slave body strap</label>
+    <description>An uncomfortable arrangement of straps around the torso made for slaves. It reminds the wearer of their slave status and psychologically suppresses them, reducing the chance of a slave rebellion.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/BodyStrap/BodyStrap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <costStuffCount>70</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.5</Mass>
+      <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.10</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <SlaveSuppressionOffset>0.15</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <slaveApparel>true</slaveApparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/BodyStrap/BodyStrap</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Slave</li>
+      </defaultOutfitTags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+    <recipeMaker>
+      <displayPriority>260</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Apparel_Burka</defName>
+    <label>burka</label>
+    <description>A large garment that conceals the wearer's entire head and body.</description>
+    <techLevel>Neolithic</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Burka/Burka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>60</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>4000</WorkToMake>
+      <Mass>1</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+        <li>UpperHead</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Torso</li>
+        <li>Legs</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Burka/Burka</wornGraphicPath>
+      <blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+      <parentTagDef>ApparelBody</parentTagDef>
+      <renderSkipFlags>
+        <li>Head</li>
+      </renderSkipFlags>
+      <drawData>
+        <defaultData>
+          <layer>83</layer>
+        </defaultData>
+      </drawData>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+    <recipeMaker>
+      <displayPriority>170</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>Apparel_TortureCrown</defName>
+    <label>torture crown</label>
+    <description>A crown-like headpiece with stubby inward-facing spikes that poke the head. It is used to induce pain in the wearer.</description>
+    <smeltable>true</smeltable>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>Headgear</li>
+    </thingCategories>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Jade</li>
+          <li>Uranium</li>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">Bioferrite</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+      <memePrerequisitesAny><li>Guilty</li><li>PainIsVirtue</li></memePrerequisitesAny>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/TortureCrown/TortureCrown</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.8, 0.8)</drawSize>
+    </graphicData>
+    <costStuffCount>25</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>1200</WorkToMake>
+      <Mass>0.9</Mass>
+      <StuffEffectMultiplierArmor>0.15</StuffEffectMultiplierArmor>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <parentTagDef>ApparelHead</parentTagDef>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/TortureCrown/TortureCrown</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <scoreOffset>-10</scoreOffset>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_CauseHediff_Apparel">
+        <hediff>TortureCrown</hediff>
+        <part>Head</part>
+      </li>
+    </comps>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+    <tradeTags>
+      <li>Clothing</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>Apparel_Blindfold</defName>
+    <label>blindfold</label>
+    <description>A long strip of cloth that is wrapped over the eyes to block vision.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Blindfold/Blindfold</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.8, 0.8)</drawSize>
+    </graphicData>
+    <costStuffCount>20</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>1200</WorkToMake>
+      <Mass>0.07</Mass>
+      <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.35</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+      </recipeUsers>
+      <memePrerequisitesAny><li>Blindsight</li></memePrerequisitesAny>
+    </recipeMaker>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>Eyes</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Blindfold/Blindfold</wornGraphicPath>
+      <layers>
+        <li>EyeCover</li>
+      </layers>
+      <drawData>
+        <defaultData>
+          <layer>61</layer>
+        </defaultData>
+      </drawData>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <blocksVision>true</blocksVision>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_CauseHediff_Apparel">
+        <hediff>Blindfold</hediff>
+        <part>Head</part>
+      </li>
+    </comps>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+
+</Defs>

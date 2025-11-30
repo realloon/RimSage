@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <IndefiniteArticle>a</IndefiniteArticle>
+  <DefiniteArticle>the</DefiniteArticle>
+  <IndefiniteForm>a {0}</IndefiniteForm>
+  <DefiniteForm>the {0}</DefiniteForm>
+
+  <Proits>its</Proits>
+  <Prohis>his</Prohis>
+  <Proher>her</Proher>
+  <ProitsCap>Its</ProitsCap>
+  <ProhisCap>His</ProhisCap>
+  <ProherCap>Her</ProherCap>
+
+  <ProitObj>it</ProitObj>
+  <ProhimObj>him</ProhimObj>
+  <ProherObj>her</ProherObj>
+  <ProitObjCap>It</ProitObjCap>
+  <ProhimObjCap>Him</ProhimObjCap>
+  <ProherObjCap>Her</ProherObjCap>
+
+  <Prohe>he</Prohe>
+  <Proshe>she</Proshe>
+  <Proit>it</Proit>
+  <ProheCap>He</ProheCap>
+  <ProsheCap>She</ProsheCap>
+  <ProitCap>It</ProitCap>
+
+  <ProHeNoun>man</ProHeNoun>
+  <ProSheNoun>woman</ProSheNoun>
+  <ProItNoun>person</ProItNoun>
+  
+  <ClauseSequence2>{0} and {1}.</ClauseSequence2>
+  <ClauseSequence3>{0}. Also, {1} and {2}.</ClauseSequence3>
+  <ClauseSequence4>{0} and {1}. In addition {2} and {3}.</ClauseSequence4>
+  <ClauseSequence5>{0} and {1}. Additionally, {2} and {3}. Finally, {4}.</ClauseSequence5>
+  <ClauseSequence6>{0}. {1} and {2}. Also, {3} and {4}. Finally, {5}.</ClauseSequence6>
+  <ClauseSequence7>{0} and {1}. {2} and {3}. Also, {4} and {5}. Finally, {6}.</ClauseSequence7>
+  <ClauseSequence8>{0} and {1}. Also, {2} and {3}. {4} and {5}. Finally, {6} and {7}.</ClauseSequence8>
+
+  <XorY>{0} or {1}</XorY>
+
+</LanguageData>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: charge blaster shot -->
+  <Bullet_ChargeBlasterHeavy.label>电荷冲击弹</Bullet_ChargeBlasterHeavy.label>
+  
+  <!-- EN: inferno cannon shell -->
+  <Bullet_InfernoCannon.label>地狱火炮弹</Bullet_InfernoCannon.label>
+  
+  <!-- EN: needle shot -->
+  <Bullet_NeedleGun.label>刺针弹</Bullet_NeedleGun.label>
+  
+  <!-- EN: heavy charge blaster -->
+  <Gun_ChargeBlasterHeavy.label>电荷冲击炮</Gun_ChargeBlasterHeavy.label>
+  <!-- EN: A pulse-charged rapid-fire blaster for area suppressive fire. Heavy cooling allows long, deadly bursts. -->
+  <Gun_ChargeBlasterHeavy.description>发射高能电荷冲击弹的范围压制性武器。重型的冷却装置让它能够在长射程进行致命攻击。</Gun_ChargeBlasterHeavy.description>
+  <!-- EN: barrel -->
+  <Gun_ChargeBlasterHeavy.tools.barrel.label>枪管</Gun_ChargeBlasterHeavy.tools.barrel.label>
+  <!-- EN: heavy charge blaster -->
+  <Gun_ChargeBlasterHeavy.verbs.Verb_Shoot.label>电荷冲击炮</Gun_ChargeBlasterHeavy.verbs.Verb_Shoot.label>
+  
+  <!-- EN: inferno cannon -->
+  <Gun_InfernoCannon.label>地狱火加农炮</Gun_InfernoCannon.label>
+  <!-- EN: An incendiary-shot mini-artillery device. It fires a large incendiary warhead. -->
+  <Gun_InfernoCannon.description>发射大型燃烧弹头的迷你火炮武器。</Gun_InfernoCannon.description>
+  <!-- EN: barrel -->
+  <Gun_InfernoCannon.tools.barrel.label>枪管</Gun_InfernoCannon.tools.barrel.label>
+  <!-- EN: inferno cannon -->
+  <Gun_InfernoCannon.verbs.Verb_Shoot.label>地狱火加农炮</Gun_InfernoCannon.verbs.Verb_Shoot.label>
+  
+  <!-- EN: needle gun -->
+  <Gun_Needle.label>刺针枪</Gun_Needle.label>
+  <!-- EN: A long-range weapon used by mechanoids. Named after its needle-like projectiles, it fires single shots with great accuracy. While it does less damage than charge weapons, it can reach over very long distances. -->
+  <Gun_Needle.description>由机械族使用的远程武器，发射特殊的针形子弹。虽然伤害不如电荷武器，但是它的射程更远，射击精度也极高。</Gun_Needle.description>
+  <!-- EN: barrel -->
+  <Gun_Needle.tools.barrel.label>枪管</Gun_Needle.tools.barrel.label>
+  <!-- EN: needle gun -->
+  <Gun_Needle.verbs.Verb_Shoot.label>刺针枪</Gun_Needle.verbs.Verb_Shoot.label>
+  
+</LanguageData>

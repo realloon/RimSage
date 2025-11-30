@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>PollutionRetaliation</defName>
+    <root Class="QuestNode_Root_PollutionRetaliation" />
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultHidden>true</defaultHidden>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questDescription->pollutionretaliation</li> <!-- hidden -->
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->pollutionretaliation</li> <!-- hidden -->
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+        
+        <!-- Letter Label -->
+        <li>retaliationLetterLabel->wastepack retaliation</li>
+        <li>retaliationLetterLabel(senderIsNull==False)->[sender_faction_pawnSingular] wastepack retaliation</li>
+        <li>retaliationLetterLabel(senderIsNull==False,sender_royalInCurrentFaction==False)->[sender_nameDef]'s wastepack retaliation</li>
+
+        <!-- Sender is null -->
+        <li>retaliationLetterText(senderIsNull==True)->Your off-map dumping of toxic waste has not gone unnoticed. Angered neighbors are retaliating by bombarding your settlement with transport pods full of toxic wastepacks.\n\nIf not kept frozen, toxic wastepacks will dissolve over time, polluting nearby terrain.</li>
+
+        <!-- Normal sender -->
+        <li>retaliationLetterText(sender_factionLeader==True)->[sender_faction_leaderTitle] [sender_nameFull] of [sender_faction_name] claims that your reckless off-map dumping of toxic waste has harmed [sender_possessive] faction. In retaliation, [sender_pronoun] is using transport pods to bombard you with toxic wastepacks.\n\nIf not kept frozen, toxic wastepacks will dissolve over time, polluting nearby terrain.</li>
+
+        <!-- Royal sender -->
+        <li>retaliationLetterText(sender_royalInCurrentFaction==True)->[sender_faction_leaderTitle] [sender_nameFull] of [sender_faction_name] claims that your reckless off-map dumping of toxic waste has harmed [sender_possessive] faction, and [sender_pronoun] believes [sender_pronoun] is honor-bound to retaliate. [sender_pronoun] is using transport pods to bombard you with toxic wastepacks.\n\nIf not kept frozen, toxic wastepacks will dissolve over time, polluting nearby terrain.</li>
+
+      </rulesStrings>
+    </questContentRules>
+  </QuestScriptDef>
+
+</Defs>

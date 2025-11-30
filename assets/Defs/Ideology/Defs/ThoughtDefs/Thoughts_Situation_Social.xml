@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>FailedConvertIdeoAttemptResentment</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>conversion resentment</label>
+        <description>Someone tried to convert me. I hate being proselytized this way.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

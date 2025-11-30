@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SongDef>
+    <clipPath>Songs/Relax/Alignment</clipPath>
+    <volume>0.9</volume>
+  </SongDef>
+
+  <SongDef>
+    <clipPath>Songs/Relax/Architect</clipPath>
+    <volume>1.04</volume>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/Believe</clipPath>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/Block_Universe</clipPath>
+    <volume>1.1</volume>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/Detatched_Viewpoint</clipPath>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/Fealty</clipPath>
+    <volume>1.1</volume>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/Information_Entropy</clipPath>
+  </SongDef>
+
+  <SongDef>
+    <clipPath>Songs/Relax/Meditate</clipPath>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/Mind_Map</clipPath>
+  </SongDef>
+
+  <SongDef>
+    <clipPath>Songs/Relax/On_The_Surface</clipPath>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/String_Theory</clipPath>
+    <minRoyalTitle>Baron</minRoyalTitle>
+  </SongDef>
+  
+  <SongDef>
+    <clipPath>Songs/Relax/Succession</clipPath>
+  </SongDef>
+  
+</Defs>

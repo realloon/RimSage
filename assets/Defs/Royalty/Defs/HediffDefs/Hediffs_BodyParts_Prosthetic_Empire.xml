@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Mindscrew -->
+  
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>Mindscrew</defName>
+    <label>mindscrew</label>
+    <labelNoun>a mindscrew</labelNoun>
+    <description>An installed mindscrew. Inflicts continuous pain on the user. Mindscrews are used by some authorities as a long-term punishment. Some even install them voluntarily as a demonstration of ideological or religious devotion.</description>
+    <descriptionHyperlinks><ThingDef>Mindscrew</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>Mindscrew</spawnThingOnRemoved>
+    <priceOffset>-110</priceOffset>
+    <stages>
+      <li>
+        <painOffset>0.2</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>Mindscrew</defName>
+    <label>mindscrew</label>
+    <description>Inflicts continuous pain on the user. Mindscrews are used by some authorities as a long-term punishment. Some even install them voluntarily as a demonstration of ideological or religious devotion.</description>
+    <descriptionHyperlinks><RecipeDef>InstallMindscrew</RecipeDef></descriptionHyperlinks>
+    <techHediffsTags>
+      <li>PainCauser</li>
+    </techHediffsTags>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>15</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>BrainWiring</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallMindscrew</defName>
+    <label>install mindscrew</label>
+    <description>Install a mindscrew.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Mindscrew</ThingDef>
+      <HediffDef>Mindscrew</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing mindscrew.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Mindscrew</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Mindscrew</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Mindscrew</addsHediff>
+  </RecipeDef>
+
+  <!-- Drill arm -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>DrillArm</defName>
+    <label>drill arm</label>
+    <labelNoun>a drill arm</labelNoun>
+    <description>An installed drill arm. Allows the miner to rapidly find and exploit weak lines in the rock. It also has a general-purpose manipulator. It is somewhat ungainly, which slows down movement slightly.</description>
+    <descriptionHyperlinks><ThingDef>DrillArm</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MiningSpeed>1.60</MiningSpeed>
+          <DeepDrillingSpeed>0.7</DeepDrillingSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.08</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>drill</label>
+            <capacities>
+              <li>Stab</li>
+            </capacities>
+            <power>13</power>
+            <cooldownTime>2</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            <soundMeleeHit>MeleeHit_DrillArm</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_DrillArm</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>DrillArm</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>DrillArm</defName>
+    <label>drill arm</label>
+    <description>A mechanical arm replacement for speeding up mining. It has a built-in snake drill, which allows the miner to rapidly find and exploit weak lines in the rock. It also has a general-purpose manipulator. It is somewhat ungainly, which slows down movement slightly.</description>
+    <descriptionHyperlinks><RecipeDef>InstallDrillArm</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>SpecializedLimbs</researchPrerequisite>
+    </recipeMaker>
+    <techHediffsTags>
+      <li>DrillArm</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartProstheticBase">
+    <defName>InstallDrillArm</defName>
+    <label>install drill arm</label>
+    <description>Install a drill arm.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DrillArm</ThingDef>
+      <HediffDef>DrillArm</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing drill arm.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DrillArm</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DrillArm</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Shoulder</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DrillArm</addsHediff>
+  </RecipeDef>
+
+  <!-- Field hand -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>FieldHand</defName>
+    <label>field hand</label>
+    <labelNoun>a field hand</labelNoun>
+    <description>An installed field hand. Made to speed up the sowing and harvesting tasks of a farmer. Multiple telescoping finger-like protrusions can simultaneously harvest from several points on the same plant, or precisely sow several holes at once. It also has a general-purpose manipulator. It is somewhat ungainly, which slows down movement slightly.</description>
+    <descriptionHyperlinks><ThingDef>FieldHand</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <PlantWorkSpeed>1.60</PlantWorkSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.08</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>knuckle</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+            <alwaysTreatAsWeapon>false</alwaysTreatAsWeapon>
+            <soundMeleeHit>MeleeHit_FieldHand</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_FieldHand</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>FieldHand</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>FieldHand</defName>
+    <label>field hand</label>
+    <description>This mechanical hand replacement is made to speed up the sowing and harvesting tasks of a farmer. Multiple telescoping finger-like protrusions can simultaneously harvest from several points on the same plant, or precisely sow several holes at once. It also has a general-purpose manipulator. It is somewhat ungainly, which slows down movement slightly.</description>
+    <descriptionHyperlinks><RecipeDef>InstallFieldHand</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>SpecializedLimbs</researchPrerequisite>
+    </recipeMaker>
+    <techHediffsTags>
+      <li>FieldHand</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartProstheticBase">
+    <defName>InstallFieldHand</defName>
+    <label>install field hand</label>
+    <description>Install a field hand.</description>
+    <descriptionHyperlinks>
+      <ThingDef>FieldHand</ThingDef>
+      <HediffDef>FieldHand</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing field hand.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FieldHand</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FieldHand</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Hand</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>FieldHand</addsHediff>
+  </RecipeDef>
+
+  <!-- Hand talon -->
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>HandTalon</defName>
+    <label>hand talon</label>
+    <labelNoun>a hand talon</labelNoun>
+    <description>An installed hand talon. Extends from a hidden opening between the middle and ring fingers. The talon is longer than the palm, but it becomes flexible upon retracting, allowing the user to curl it up and conceal it inside the hand. It can perform rapid slashing attacks, but is poor at penetrating armor.</description>
+    <descriptionHyperlinks><ThingDef>HandTalon</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>talon</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>15</power>  <!-- Lower damage means lower AP than other compact weapons, but it's faster with more raw DPS -->
+            <armorPenetration>0.15</armorPenetration>
+            <cooldownTime>1.5</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            <soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>HandTalon</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>HandTalon</defName>
+    <label>hand talon</label>
+    <description>A razor-sharp talon which extends from a hidden opening between the middle and ring fingers. The talon is longer than the palm, but it becomes flexible upon retracting, allowing the user to curl it up and conceal it inside the hand. It can perform rapid slashing attacks, but is poor at penetrating armor.</description>
+    <descriptionHyperlinks><RecipeDef>InstallHandTalon</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CompactWeaponry</researchPrerequisite>
+    </recipeMaker>
+    <violentTechHediff>true</violentTechHediff>
+    <techHediffsTags>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallHandTalon</defName>
+    <label>install hand talon</label>
+    <description>Install a hand talon.</description>
+    <descriptionHyperlinks>
+      <ThingDef>HandTalon</ThingDef>
+      <HediffDef>HandTalon</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing hand talon.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>HandTalon</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>HandTalon</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Hand</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>HandTalon</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveHandTalon</defName>
+    <label>remove hand talon</label>
+    <description>Remove hand talon.</description>
+    <descriptionHyperlinks>
+      <ThingDef>HandTalon</ThingDef>
+      <HediffDef>HandTalon</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing hand talon.</jobString>
+    <removesHediff>HandTalon</removesHediff>
+  </RecipeDef>
+
+  <!-- Elbow blade -->
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>ElbowBlade</defName>
+    <label>elbow blade</label>
+    <labelNoun>an elbow blade</labelNoun>
+    <description>An installed elbow blade. Extends at will from a hidden opening at the end of the ulna. Appearing without warning, it can be used for devastating slice attacks.</description>
+    <descriptionHyperlinks><ThingDef>ElbowBlade</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>blade</label>
+            <capacities>
+              <li>Cut</li>
+            </capacities>
+            <power>18</power>
+            <cooldownTime>2</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            <soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>ElbowBlade</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>ElbowBlade</defName>
+    <label>elbow blade</label>
+    <description>A razor-sharp blade that extends at will from a hidden opening at the end of the ulna. Appearing without warning, it can be used for devastating slice attacks.</description>
+    <descriptionHyperlinks><RecipeDef>InstallElbowBlade</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CompactWeaponry</researchPrerequisite>
+    </recipeMaker>
+    <violentTechHediff>true</violentTechHediff>
+    <techHediffsTags>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallElbowBlade</defName>
+    <label>install elbow blade</label>
+    <description>Install an elbow blade.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ElbowBlade</ThingDef>
+      <HediffDef>ElbowBlade</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing elbow blade.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ElbowBlade</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ElbowBlade</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Arm</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>ElbowBlade</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveElbowBlade</defName>
+    <label>remove elbow blade</label>
+    <description>Remove elbow blade.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ElbowBlade</ThingDef>
+      <HediffDef>ElbowBlade</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing elbow blade.</jobString>
+    <removesHediff>ElbowBlade</removesHediff>
+  </RecipeDef>
+
+  <!-- Knee spike -->
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>KneeSpike</defName>
+    <label>knee spike</label>
+    <labelNoun>a knee spike</labelNoun>
+    <description>An installed knee spike. Extends at will from a hidden opening on the front of the knee. Appearing without warning, it can be used for devastating stabbing attacks which penetrate even thick armor.</description>
+    <descriptionHyperlinks><ThingDef>KneeSpike</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>spike</label>
+            <capacities>
+              <li>Stab</li>
+            </capacities>
+            <power>22</power> <!-- More power and AP but slower than other compact weapons -->
+            <armorPenetration>0.38</armorPenetration>
+            <cooldownTime>2.6</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            <soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>KneeSpike</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>KneeSpike</defName>
+    <label>knee spike</label>
+    <description>A spike that extends at will from a hidden opening on the front of the knee. Appearing without warning, it can be used for devastating stabbing attacks which penetrate even thick armor.</description>
+    <descriptionHyperlinks><RecipeDef>InstallKneeSpike</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>CompactWeaponry</researchPrerequisite>
+    </recipeMaker>
+    <violentTechHediff>true</violentTechHediff>
+    <techHediffsTags>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallKneeSpike</defName>
+    <label>install knee spike</label>
+    <description>Install a knee spike.</description>
+    <descriptionHyperlinks>
+      <ThingDef>KneeSpike</ThingDef>
+      <HediffDef>KneeSpike</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing knee spike.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>KneeSpike</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>KneeSpike</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Leg</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>KneeSpike</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveKneeSpike</defName>
+    <label>remove knee spike</label>
+    <description>Remove knee spike.</description>
+    <descriptionHyperlinks>
+      <ThingDef>KneeSpike</ThingDef>
+      <HediffDef>KneeSpike</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing knee spike.</jobString>
+    <removesHediff>KneeSpike</removesHediff>
+  </RecipeDef>
+
+  <!-- venom fangs -->
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>VenomFangs</defName>
+    <label>venom fangs</label>
+    <labelNoun>a set of venom fangs</labelNoun>
+    <description>An installed set of venom fangs. The user can bite an enemy, extend the injectors, and pump venom into the target.</description>
+    <descriptionHyperlinks><ThingDef>VenomFangs</ThingDef></descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>venom fangs</label>
+            <capacities>
+              <li>ToxicBite</li>
+            </capacities>
+            <power>15</power>
+            <cooldownTime>2</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>VenomFangs</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>VenomFangs</defName>
+    <label>venom fangs</label>
+    <description>A pair of injectors implanted through the canine teeth, connected to a venom pump. The user can bite an enemy, extend the injectors, and pump venom into the target.</description>
+    <descriptionHyperlinks><RecipeDef>InstallVenomFangs</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>VenomSynthesis</researchPrerequisite>
+    </recipeMaker>
+    <violentTechHediff>true</violentTechHediff>
+    <techHediffsTags>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallVenomFangs</defName>
+    <label>install venom fangs</label>
+    <description>Install venom fangs.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VenomFangs</ThingDef>
+      <HediffDef>VenomFangs</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing venom fangs.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VenomFangs</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VenomFangs</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyPartGroups>
+      <li>Teeth</li>
+    </appliedOnFixedBodyPartGroups>
+    <addsHediff>VenomFangs</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveVenomFangs</defName>
+    <label>remove venom fangs</label>
+    <description>Remove venom fangs.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VenomFangs</ThingDef>
+      <HediffDef>VenomFangs</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing venom fangs.</jobString>
+    <removesHediff>VenomFangs</removesHediff>
+  </RecipeDef>
+
+  <!-- venom talon -->
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>VenomTalon</defName>
+    <label>venom talon</label>
+    <labelNoun>a venom talon</labelNoun>
+    <description>An installed venom talon. The user can scratch an enemy while squirting venom into the wound. The talon is designed to be installed in the middle finger. It's fast, but poor at penetrating armor.</description>
+    <descriptionHyperlinks><ThingDef>VenomTalon</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>venom talon</label>
+            <capacities>
+              <li>ScratchToxic</li>
+            </capacities>
+            <power>11</power> <!-- Toxic and fast but with poor armor penetration -->
+            <armorPenetration>0.15</armorPenetration>
+            <cooldownTime>1.5</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            <soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>VenomTalon</spawnThingOnRemoved>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartProstheticImperialBase">
+    <defName>VenomTalon</defName>
+    <label>venom talon</label>
+    <description>A retractable finger talon connected to a venom pump in the lower arm. The user can scratch an enemy while squirting venom into the wound. The talon is designed to be installed in the middle finger. It's fast, but poor at penetrating armor.</description>
+    <descriptionHyperlinks><RecipeDef>InstallVenomTalon</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>VenomSynthesis</researchPrerequisite>
+    </recipeMaker>
+    <violentTechHediff>true</violentTechHediff>
+    <techHediffsTags>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallVenomTalon</defName>
+    <label>install venom talon</label>
+    <description>Install a venom talon.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VenomTalon</ThingDef>
+      <HediffDef>VenomTalon</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing venom talon.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VenomTalon</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VenomTalon</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyPartGroups>
+      <li>MiddleFingers</li>
+    </appliedOnFixedBodyPartGroups>
+    <addsHediff>VenomTalon</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveVenomTalon</defName>
+    <label>remove venom talon</label>
+    <description>Remove venom talon.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VenomTalon</ThingDef>
+      <HediffDef>VenomTalon</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing venom talon.</jobString>
+    <removesHediff>VenomTalon</removesHediff>
+  </RecipeDef>
+
+</Defs>

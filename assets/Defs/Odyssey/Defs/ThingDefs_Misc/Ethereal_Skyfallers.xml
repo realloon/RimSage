@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>LavaRockIncoming</defName>
+    <thingClass>LavaRockIncoming</thingClass>
+    <label>lava rock (incoming)</label>
+    <size>(2, 2)</size>
+    <graphicData>
+      <texPath>Things/Skyfaller/VolcanicDebris</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadowSize>(3, 3)</shadowSize>
+      <explosionRadius>5</explosionRadius>
+      <explosionDamage>Bomb</explosionDamage>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <speed>0.9</speed>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="DropPodLeaving">
+    <defName>DropPodLeavingMechanoid</defName>
+    <label>mechanoid drop pod (leaving)</label>
+    <graphicData>
+      <texPath>Things/Special/DropPodMechanoid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>1.9</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DropPodIncoming">
+    <defName>DropPodIncomingMechanoidSoft</defName>
+    <label>mechanoid drop pod (incoming)</label>
+    <graphicData>
+      <texPath>Things/Special/DropPodMechanoid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>1.9</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DropPodLeaving">
+    <defName>DropPodLeavingAncient</defName>
+    <label>ancient drop pod (leaving)</label> <!-- text_todo -->
+    <graphicData>
+      <texPath>Things/Building/AncientLaunchPod</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DropPodIncoming">
+    <defName>DropPodIncomingAncient</defName>
+    <label>ancient drop pod (incoming)</label>
+    <graphicData>
+      <texPath>Things/Building/AncientLaunchPod</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>PassengerShuttleIncoming</defName>
+    <label>passenger shuttle (incoming)</label>
+    <thingClass>PassengerShuttleIncoming</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/PassengerShuttle/PassengerShuttle</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,5)</drawSize>
+    </graphicData>
+    <size>(3,5)</size>
+    <skyfaller>
+      <anticipationSound>Shuttle_Landing</anticipationSound>
+      <anticipationSoundTicks>250</anticipationSoundTicks>
+      <ticksToImpactRange>200~250</ticksToImpactRange>
+      <shadowSize>(3.5,5.5)</shadowSize>
+      <rotationCurve>
+        <points>
+          <li>(0,30)</li>
+          <li>(0.5,5)</li>
+          <li>(0.9,-5)</li>
+          <li>(0.95,0)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0.95,2.5)</li>
+          <li>(1,0)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0.6,0.6)</li>
+          <li>(0.95,0.1)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="ShuttleSkyfallerBase">
+    <defName>PassengerShuttleLeaving</defName>
+    <label>passenger shuttle (leaving)</label>
+    <thingClass>PassengerShuttleLeaving</thingClass>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/PassengerShuttle/PassengerShuttle</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,5)</drawSize>
+    </graphicData>
+    <size>(3,5)</size>
+    <skyfaller>
+      <reversed>true</reversed>
+      <anticipationSound>Shuttle_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange>-40~-15</ticksToImpactRange>
+      <moteSpawnTime>0.05</moteSpawnTime>
+      <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+      <shadowSize>(3.5,5.5)</shadowSize>
+      <motesPerCell>1</motesPerCell>
+      <rotationCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.15,10)</li>
+          <li>(0.5,-5)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.08,2)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0,0.2)</li>
+          <li>(0.4,0.7)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+  
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>OrbitalDebrisSpawner</defName>
+    <thingClass>OrbitalDebrisSpawner</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+  
+</Defs>

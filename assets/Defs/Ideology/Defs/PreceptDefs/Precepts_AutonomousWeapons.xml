@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>AutonomousWeapons</defName>
+    <label>autonomous weapons</label>
+    <iconPath>UI/Issues/AutonomousWeapons</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>BuiltAutomatedTurret</defName>
+    <label>built automated weapon</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>AutonomousWeapons_Prohibited</defName>
+    <issue>AutonomousWeapons</issue>
+    <label>prohibited</label>
+    <description>Allowing a machine to decide to kill is an absolutely inhuman thing to do.</description>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasAutomatedTurrets_Prohibited</thought>
+        <description>Automated weapon in colony</description>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>BuiltAutomatedTurret</eventDef>
+        <description>Build automated turret</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>AutonomousWeapons_Horrible</defName>
+    <issue>AutonomousWeapons</issue>
+    <label>horrible</label>
+    <description>Allowing a machine to decide to kill is a terrible thing.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasAutomatedTurrets_Horrible</thought>
+        <description>Automated weapon in colony</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>AutonomousWeapons_Disapproved</defName>
+    <issue>AutonomousWeapons</issue>
+    <label>disapproved</label>
+    <description>Allowing a machine to decide to kill is an ugly thing.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasAutomatedTurrets_Disapproved</thought>
+        <description>Automated weapon in colony</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Related: Has automated turrets -->
+
+  <ThoughtDef>
+    <defName>HasAutomatedTurrets_Prohibited</defName>
+    <workerClass>ThoughtWorker_Precept_HasAutomatedTurrets</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>automated weapons</label>
+        <description>We use automated weapons. It's absolutely abhorrent to give life-and-death decisions to a machine.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasAutomatedTurrets_Horrible</defName>
+    <workerClass>ThoughtWorker_Precept_HasAutomatedTurrets</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>automated weapons</label>
+        <description>We use automated weapons. It's horrible to give life-and-death decisions to a machine.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasAutomatedTurrets_Disapproved</defName>
+    <workerClass>ThoughtWorker_Precept_HasAutomatedTurrets</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>automated weapons</label>
+        <description>We use automated weapons. It's really ugly to give life-and-death decision to a machine.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

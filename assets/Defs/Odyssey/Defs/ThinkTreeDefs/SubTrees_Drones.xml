@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <ThinkTreeDef>
+    <defName>HunterDroneConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>            
+            <!-- Beeline straight for the triggerer or the nearest hostile - we'll detonate when we get there. Fight/wander as a fallback -->
+            <li Class="JobGiver_AIGotoTarget" />
+            <li Class="JobGiver_AIGotoNearestHostile" />
+            <li Class="JobGiver_AIFightEnemies">
+              <targetAcquireRadius>65</targetAcquireRadius>
+              <targetKeepRadius>72</targetKeepRadius>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>WaspDroneConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            <li Class="JobGiver_AIFightEnemies">
+              <targetAcquireRadius>65</targetAcquireRadius>
+              <targetKeepRadius>72</targetKeepRadius>
+              <chaseTarget>true</chaseTarget>
+              <humanlikesOnly>true</humanlikesOnly>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <ThinkTreeDef>
+    <defName>SentryDroneConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            
+            <li Class="ThinkNode_ConditionalSentryDroneMode">
+              <mode>Patrol</mode>
+              <subNodes>
+                <li Class="JobGiver_SentryPatrol"/>
+              </subNodes>
+            </li>
+            
+            <li Class="ThinkNode_ConditionalSentryDroneMode">
+              <mode>Attack</mode>
+              <subNodes>
+                <li Class="JobGiver_AIFightEnemies">
+                  <targetAcquireRadius>65</targetAcquireRadius>
+                  <targetKeepRadius>72</targetKeepRadius>
+                  <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+                </li>
+                <li Class="JobGiver_AITrashColonyClose" />
+                <li Class="JobGiver_AIGotoNearestHostile" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>

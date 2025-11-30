@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: dark blood -->
+  <Filth_DarkBlood.label>黑血</Filth_DarkBlood.label>
+  
+  <!-- EN: dark blood smear -->
+  <Filth_DarkBloodSmear.label>黑血污</Filth_DarkBloodSmear.label>
+  
+  <!-- EN: fleshmass debris -->
+  <Filth_Fleshmass.label>血肉残片</Filth_Fleshmass.label>
+  
+  <!-- EN: gray flesh -->
+  <Filth_GrayFlesh.label>灰色血肉</Filth_GrayFlesh.label>
+  
+  <!-- EN: gray flesh -->
+  <Filth_GrayFleshNoticeable.label>灰色血肉</Filth_GrayFleshNoticeable.label>
+  
+  <!-- EN: metalhorror debris -->
+  <Filth_MetalhorrorDebris.label>金属怪形残片</Filth_MetalhorrorDebris.label>
+  
+  <!-- EN: revenant gore pool -->
+  <Filth_RevenantBloodPool.label>幽魂血池</Filth_RevenantBloodPool.label>
+  
+  <!-- EN: revenant smear -->
+  <Filth_RevenantSmear.label>幽魂污垢</Filth_RevenantSmear.label>
+  
+  <!-- EN: twisted flesh -->
+  <Filth_TwistedFlesh.label>扭曲血肉</Filth_TwistedFlesh.label>
+  
+</LanguageData>

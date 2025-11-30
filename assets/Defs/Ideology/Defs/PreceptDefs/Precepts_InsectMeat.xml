@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>InsectMeatEating_Loved</defName>
+    <issue>InsectMeat</issue>
+    <label>loved</label>
+    <description>There is nothing more divine than the succulent, slimy flesh of an insect.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>Tunneler</li>
+    </associatedMemes>
+    <exclusionTags>
+      <li>InsectMeatEatingLoved</li>
+    </exclusionTags>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteInsectMeatDirect</eventDef>
+        <thought>AteInsectMeat_Loved</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteInsectMeatAsIngredient</eventDef>
+        <thought>AteInsectMeatAsIngredient_Loved</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>AteInsectMeat_Loved</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate insect meat</label>
+        <description>I ate some insect meat. So smooth and succulent.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteInsectMeatAsIngredient_Loved</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate cooked insect meat</label>
+        <description>I ate a meal that contained insect meat. I could still taste hints of bug-slime!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef>
+    <defName>DroneTrapSpring</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Building/Drone_Trap_Triggered_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40~50</volumeRange>
+        <pitchRange>1~1.5</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

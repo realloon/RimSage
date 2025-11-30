@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mote -->
+  <CracksShieldBreak.label>护盾破坏</CracksShieldBreak.label>
+  
+  <!-- EN: Mote -->
+  <FlashShieldBreak.label>护盾闪光</FlashShieldBreak.label>
+  
+  <!-- EN: Mote -->
+  <GroundCrackHuge.label>特效</GroundCrackHuge.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ActivatorCountdownGlow.label>光亮</Mote_ActivatorCountdownGlow.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ActivatorProximityGlow.label>光亮</Mote_ActivatorProximityGlow.label>
+  
+  <!-- EN: Mote -->
+  <Mote_AnimalWarcallDistortion.label>特效</Mote_AnimalWarcallDistortion.label>
+  
+  <!-- EN: Mote -->
+  <Mote_AnimalWarcallFlash.label>特效</Mote_AnimalWarcallFlash.label>
+  
+  <!-- EN: Mote -->
+  <Mote_Bombardment.label>特效</Mote_Bombardment.label>
+  
+  <!-- EN: Mote -->
+  <Mote_CocoonBreaking.label>特效</Mote_CocoonBreaking.label>
+  
+  <!-- EN: Mote -->
+  <Mote_CocoonDestroyedFlyingPiece.label>特效</Mote_CocoonDestroyedFlyingPiece.label>
+  
+  <!-- EN: Mote -->
+  <Mote_CocoonDestroyedFlyingSlime.label>特效</Mote_CocoonDestroyedFlyingSlime.label>
+  
+  <!-- EN: Mote -->
+  <Mote_CocoonDestroyedMist.label>特效</Mote_CocoonDestroyedMist.label>
+  
+  <!-- EN: Mote -->
+  <Mote_CookBit.label>特效</Mote_CookBit.label>
+  
+  <!-- EN: Mote -->
+  <Mote_FoodBitMeat.label>特效</Mote_FoodBitMeat.label>
+  
+  <!-- EN: Mote -->
+  <Mote_FoodBitVegetarian.label>特效</Mote_FoodBitVegetarian.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ForcedVisible.label>特效</Mote_ForcedVisible.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ForceJob.label>强制</Mote_ForceJob.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ForceJobMaintained.label>维持</Mote_ForceJobMaintained.label>
+  
+  <!-- EN: Mote -->
+  <Mote_GiantExplosion.label>特效</Mote_GiantExplosion.label>
+  
+  <!-- EN: Mote -->
+  <Mote_GiantExplosionInner.label>特效</Mote_GiantExplosionInner.label>
+  
+  <!-- EN: Mote -->
+  <Mote_Hacking.label>特效</Mote_Hacking.label>
+  
+  <!-- EN: Mote -->
+  <Mote_Leaf.label>特效</Mote_Leaf.label>
+  
+  <!-- EN: Mote -->
+  <Mote_PowerBeam.label>特效</Mote_PowerBeam.label>
+  
+  <!-- EN: Mote -->
+  <Mote_PowerCellBurning.label>电池燃烧</Mote_PowerCellBurning.label>
+  
+  <!-- EN: Mote -->
+  <Mote_PsychicConditionCauserEffect.label>线缆</Mote_PsychicConditionCauserEffect.label>
+  
+  <!-- EN: Mote -->
+  <Mote_PsychicEmanatorEffect.label>发生器</Mote_PsychicEmanatorEffect.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ResurrectAbility.label>复活能力</Mote_ResurrectAbility.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ResurrectFlash.label>复活闪光</Mote_ResurrectFlash.label>
+  
+  <!-- EN: Mote -->
+  <Mote_SparkThrownFastBright.label>特效</Mote_SparkThrownFastBright.label>
+  
+  <!-- EN: Mote -->
+  <Mote_StoneBit.label>特效</Mote_StoneBit.label>
+  
+  <!-- EN: Mote -->
+  <Mote_TerrorHalo.label>特效</Mote_TerrorHalo.label>
+  
+  <!-- EN: Mote -->
+  <Mote_VomitBit.label>特效</Mote_VomitBit.label>
+  
+</LanguageData>

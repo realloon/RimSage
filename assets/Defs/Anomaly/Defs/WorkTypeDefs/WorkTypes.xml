@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkTypeDef>
+    <defName>DarkStudy</defName>
+    <labelShort>dark study</labelShort>
+    <pawnLabel>Studier</pawnLabel>
+    <gerundLabel>studying</gerundLabel>
+    <description>Interact with anomalous entities.</description>
+    <verb>Study at</verb>
+    <naturalPriority>150</naturalPriority>
+    <disabledForSlaves>true</disabledForSlaves>
+    <relevantSkills>
+      <li>Intellectual</li>
+    </relevantSkills>
+    <workTags>
+      <li>Intellectual</li>
+      <li>Commoner</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+
+</Defs>

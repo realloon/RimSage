@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingStyleDef>
+    <defName>PrestigeMarineHelmet_Samurai</defName>
+    <overrideLabel>samurai helmet</overrideLabel>
+    <wornGraphicPath>Things/Pawn/Humanlike/Apparel/SamuraiHelmet/SamuraiHelmet</wornGraphicPath>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/SamuraiHelmet/SamuraiHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+  </ThingStyleDef>
+
+</Defs>

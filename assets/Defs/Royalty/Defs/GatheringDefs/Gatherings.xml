@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GatheringDef>
+    <defName>Concert</defName>
+    <label>concert</label>
+    <randomSelectionWeight>1</randomSelectionWeight>
+    <letterTitle>Concert</letterTitle>
+    <letterText>{ORGANIZER_labelShort} is holding a concert! Everyone who goes will gain recreation and social energy, and a lasting positive mood boost, both from social contact and from the music itself.</letterText>
+    <calledOffMessage>The concert has been cancelled.</calledOffMessage>
+    <finishedMessage>The concert has concluded.</finishedMessage>
+    <duty>Concert</duty>
+    <workerClass>GatheringWorker_Concert</workerClass>
+    <requiredTitleAny>
+      <li>Knight</li>
+      <li>Praetor</li>
+      <li>Baron</li>
+      <li>Count</li>
+    </requiredTitleAny>
+  </GatheringDef>
+  
+</Defs>

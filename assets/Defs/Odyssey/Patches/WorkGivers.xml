@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkGiverDef[defName="ConstructRemoveFoundations"]/label</xpath>
+    <value>
+      <label>remove foundation</label>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkGiverDef[defName="ConstructRemoveFoundations"]/verb</xpath>
+    <value>
+      <verb>remove foundation</verb>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkGiverDef[defName="ConstructRemoveFoundations"]/gerund</xpath>
+    <value>
+      <gerund>removing foundation</gerund>
+    </value>
+  </Operation>
+
+</Patch>

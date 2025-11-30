@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>RelicAtRitual</defName>
+    <thoughtClass>Thought_RelicAtRitual</thoughtClass>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>{RELICNAME} at ritual</label>
+        <description>{RELICNAME} was present during our ritual.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>two relics at ritual</label>
+        <description>Two relics were present during our ritual.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>three relics at ritual</label>
+        <description>Three relics were present during our ritual.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TrialExonerated</defName>
+    <durationDays>10</durationDays>
+    <stages>
+      <li>
+        <label>exonerated</label>
+        <description>They had nothing on me, and I showed them!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TrialFailed</defName>
+    <durationDays>10</durationDays>
+    <stages>
+      <li>
+        <label>failed trial</label>
+        <description>I made an accusation and couldn't even make it stick. This is humiliating.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TrialConvicted</defName>
+    <durationDays>20</durationDays>
+    <stages>
+      <li>
+        <label>convicted</label>
+        <description>I was unjustly convicted of a terrible wrongdoing!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

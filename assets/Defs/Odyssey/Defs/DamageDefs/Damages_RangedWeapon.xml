@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <DamageDef ParentName="Bullet">
+    <defName>Bullet_TraitTox</defName>
+    <label>bullet</label>
+    <additionalHediffs>
+      <li>
+        <hediff>ToxicBuildup</hediff>
+        <severityPerDamageDealt>0.015</severityPerDamageDealt>
+        <victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+        <inverseStatScaling>true</inverseStatScaling>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+      </li>
+    </additionalHediffs>
+    <impactSoundType>Toxic</impactSoundType>
+    <damageEffecter>Impact_Toxic</damageEffecter>
+  </DamageDef>
+
+  <DamageDef ParentName="Bullet">
+    <defName>Bullet_TraitIncendiary</defName>
+    <label>bullet</label>
+    <igniteChanceByTargetFlammability>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.3)</li>
+      </points>
+    </igniteChanceByTargetFlammability>
+  </DamageDef>
+
+  <DamageDef ParentName="Beam">
+    <defName>BeamBypassShields</defName>
+    <ignoreShields>true</ignoreShields>
+  </DamageDef>
+
+</Defs>

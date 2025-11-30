@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_ToxbombLauncher</defName>
+    <label>toxbomb launcher</label>
+    <description>A self-loading low-pressure canister launcher loaded with tox bombs. Upon impact, the tox bombs will stick to the ground and release tox gas for several seconds.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup which can be lethal.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ToxbombLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <generateCommonality>0.3</generateCommonality>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <weaponTags Inherit="False">
+      <li>HeavyTox</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.4</Mass>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>ToxGas</researchPrerequisite>
+      <displayPriority>470</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ToxbombLauncher</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>23.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_ToxbombLauncher</defName>
+    <label>toxbomb launcher shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(140,135,156)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>ToxGas</damageDef>
+      <explosionRadius>1.9</explosionRadius>
+      <explosionRadiusDisplayPadding>2</explosionRadiusDisplayPadding>
+      <postExplosionGasType>ToxGas</postExplosionGasType>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+      <screenShakeFactor>0.5</screenShakeFactor>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMakeableGrenade">
+    <defName>Weapon_GrenadeTox</defName>
+    <label>tox grenades</label>
+    <description>Grenades loaded with liquified tox gas. Upon landing, they stick to the ground and release tox gas for several seconds.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup which can be lethal.</description>
+    <possessionCount>1</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ToxGrenades</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.3</uiIconScale>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <Mass>1</Mass>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+      <WorkToMake>24000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>ToxGas</researchPrerequisite>
+    </recipeMaker>
+    <weaponTags>
+      <li>GrenadeTox</li>
+    </weaponTags>
+    <thingCategories>
+      <li>Grenades</li>
+    </thingCategories>
+    <verbs>
+      <li>
+        <label>throw tox grenade</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>12.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>Proj_GrenadeTox</defaultProjectile>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.66</explosiveRadius>
+        <explosiveDamageType>ToxGas</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+        <postExplosionGasType>ToxGas</postExplosionGasType>
+      </li>
+    </comps>
+    <smeltable>true</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>Proj_GrenadeTox</defName>
+    <label>tox grenade</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/ToxGrenadeThrown</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>ToxGas</damageDef>
+      <explosionDelay>100</explosionDelay>
+      <explosionRadius>1.9</explosionRadius>
+      <explosionRadiusDisplayPadding>2</explosionRadiusDisplayPadding>
+      <postExplosionGasType>ToxGas</postExplosionGasType>
+      <screenShakeFactor>0.5</screenShakeFactor>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>Flamebow</defName>
+    <label>flamebow</label>
+    <description>A simple short selfbow with a load of incendiary arrows. The arrows carry fuel and an igniter. Upon impact, they spray fuel around and ignite it.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Flamebow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Small</soundInteract>
+    <statBases>
+      <Mass>0.8</Mass>
+      <MarketValue>45</MarketValue>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker IsNull="True" />
+    <weaponTags>
+      <li>NeolithicRangedFlame</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Ranged</li>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Proj_FireArrow</defaultProjectile>
+        <warmupTime>1.35</warmupTime>
+        <range>22.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <rotateInShelves>false</rotateInShelves>
+  </ThingDef>
+  <ThingDef>
+    <defName>Proj_FireArrow</defName>
+    <label>fire arrow</label>
+    <thingClass>FireArrow</thingClass>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <texPath>Things/Projectile/FlamebowArrow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>6</damageAmountBase>
+      <speed>44</speed>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+  </ThingDef>
+
+</Defs>

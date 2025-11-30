@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name="BuildingFloorCoveringBase" ParentName="BuildingBase">
+    <altitudeLayer>FloorCoverings</altitudeLayer>
+    <wipesPlants>true</wipesPlants>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <designationCategory>Floors</designationCategory>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <blocksAltitudes>
+      <li>FloorCoverings</li>
+    </blocksAltitudes>
+    <building>
+      <isEdifice>false</isEdifice>
+    </building>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="BuildingFloorCoveringMediumBase" ParentName="BuildingFloorCoveringBase">
+    <size>(3,3)</size>
+    <statBases>
+      <Beauty>15</Beauty>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>100</Mass>
+      <StyleDominance>30</StyleDominance>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="BuildingFloorCoveringBroadBase" ParentName="BuildingFloorCoveringBase">
+    <size>(4,4)</size>
+    <statBases>
+      <Beauty>30</Beauty>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>150</Mass>
+      <StyleDominance>40</StyleDominance>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringMediumBase">
+    <defName>MorbidSlab_Medium</defName>
+    <label>morbid slab (medium)</label>
+    <description>A stone bas relief of morbid imagery for decorating a floor.</description>
+    <dominantStyleCategory>Morbid</dominantStyleCategory>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/SlabMorbidMedium</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringBroadBase">
+    <defName>MorbidSlab_Broad</defName>
+    <label>morbid slab (broad)</label>
+    <description>A stone bas relief of morbid imagery for decorating a floor.</description>
+    <dominantStyleCategory>Morbid</dominantStyleCategory>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/SlabMorbidBroad</texPath>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>150</costStuffCount>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringMediumBase">
+    <defName>TotemicSlab_Medium</defName>
+    <label>totemic slab (medium)</label>
+    <description>A wooden bas relief of totemic imagery for decorating a floor.</description>
+    <dominantStyleCategory>Totemic</dominantStyleCategory>
+    <statBases>
+      <Flammability>0.22</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/SlabTotemicMedium</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringBroadBase">
+    <defName>TotemicSlab_Broad</defName>
+    <label>totemic slab (broad)</label>
+    <description>A wooden bas relief of totemic imagery for decorating a floor.</description>
+    <dominantStyleCategory>Totemic</dominantStyleCategory>
+    <statBases>
+      <Flammability>0.22</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/SlabTotemicBroad</texPath>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>150</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringMediumBase">
+    <defName>SpikecoreFloorStar_Medium</defName>
+    <label>spikecore floor-star (medium)</label>
+    <description>A radial arrangement of metal pieces in a spikecore style, for decorating a floor.</description>
+    <dominantStyleCategory>Spikecore</dominantStyleCategory>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <color>(105,105,105)</color>
+      <texPath>Things/Building/FloorCoverings/SpikecoreStarMedium</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringBroadBase">
+    <defName>SpikecoreFloorStar_Broad</defName>
+    <label>spikecore floor-star (broad)</label>
+    <description>A radial arrangement of metal pieces in a spikecore style, for decorating a floor.</description>
+    <dominantStyleCategory>Spikecore</dominantStyleCategory>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <color>(105,105,105)</color>
+      <texPath>Things/Building/FloorCoverings/SpikecoreStarBroad</texPath>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <costList>
+      <Steel>150</Steel>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringMediumBase">
+    <defName>RusticRug_Medium</defName>
+    <label>rustic rug (medium)</label>
+    <description>A homey rug with a rustic-style pattern, for decorating a floor.</description>
+    <dominantStyleCategory>Rustic</dominantStyleCategory>
+    <statBases>
+      <Flammability>0.32</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/RusticRugMedium</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <useIdeoColor>true</useIdeoColor>
+    </building>
+    <comps>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+    <costList>
+      <Cloth>100</Cloth>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringBroadBase">
+    <defName>RusticRug_Broad</defName>
+    <label>rustic rug (broad)</label>
+    <description>A homey rug with a rustic-style pattern, for decorating a floor.</description>
+    <dominantStyleCategory>Rustic</dominantStyleCategory>
+    <statBases>
+      <Flammability>0.32</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/RusticRugBroad</texPath>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <useIdeoColor>true</useIdeoColor>
+    </building>
+    <comps>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+    <costList>
+      <Cloth>150</Cloth>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringMediumBase">
+    <defName>AnimalistSlab_Medium</defName>
+    <label>animalist slab (medium)</label>
+    <description>A wooden bas relief of animalist imagery for decorating a floor.</description>
+    <dominantStyleCategory>Animalist</dominantStyleCategory>
+    <statBases>
+      <Flammability>0.22</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/SlabAnimalistMedium</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingFloorCoveringBroadBase">
+    <defName>AnimalistSlab_Broad</defName>
+    <label>animalist slab (broad)</label>
+    <description>A wooden bas relief of animalist imagery for decorating a floor.</description>
+    <dominantStyleCategory>Animalist</dominantStyleCategory>
+    <statBases>
+      <Flammability>0.22</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/FloorCoverings/SlabAnimalistBroad</texPath>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>150</costStuffCount>
+  </ThingDef>
+
+</Defs>

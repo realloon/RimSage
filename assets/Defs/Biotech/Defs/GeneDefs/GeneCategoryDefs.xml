@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneCategoryDef>
+    <defName>Archite</defName>
+    <label>archite</label>
+    <displayPriorityInXenotype>1000</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Ability</defName>
+    <label>special abilities</label>
+    <displayPriorityInXenotype>520</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Hemogen</defName>
+    <label>hemogen</label>
+    <displayPriorityInXenotype>510</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Healing</defName>
+    <label>health</label>
+    <displayPriorityInXenotype>500</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Psychic</defName>
+    <label>psychics</label>
+    <displayPriorityInXenotype>490</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Beauty</defName>
+    <label>beauty</label>
+    <displayPriorityInXenotype>310</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Movement</defName>
+    <label>movement</label>
+    <displayPriorityInXenotype>470</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Mood</defName>
+    <label>mood</label>
+    <displayPriorityInXenotype>460</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Temperature</defName>
+    <label>temperature</label>
+    <displayPriorityInXenotype>450</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>ResistanceAndWeakness</defName>
+    <label>resistance and sensitivity</label>
+    <displayPriorityInXenotype>440</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Violence</defName>
+    <label>violence</label>
+    <displayPriorityInXenotype>430</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Sleep</defName>
+    <label>sleep</label>
+    <displayPriorityInXenotype>420</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Pain</defName>
+    <label>pain</label>
+    <displayPriorityInXenotype>410</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Cosmetic_Body</defName>
+    <label>cosmetic - body type</label>
+    <displayPriorityInXenotype>290</displayPriorityInXenotype>
+    <displayPriorityInGenepack>-120</displayPriorityInGenepack>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Aptitudes</defName>
+    <label>aptitudes</label>
+    <displayPriorityInXenotype>200</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Drugs</defName>
+    <label>drugs</label>
+    <displayPriorityInXenotype>0</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Reproduction</defName>
+    <label>reproduction</label>
+    <displayPriorityInXenotype>400</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+</Defs>

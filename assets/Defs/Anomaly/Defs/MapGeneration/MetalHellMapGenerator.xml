@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <MapGeneratorDef>
+    <defName>MetalHell</defName>
+    <label>metal hell</label>
+    <isUnderground>true</isUnderground>
+    <roofDef>VoidmetalRoof</roofDef>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>MetalHell</biome>
+      <temperature>31</temperature>
+    </pocketMapProperties>
+    <genSteps>
+      <li>MetalHell</li>
+      <!-- Disabling fogging metal hell, because it looks bad at the edges and FOW doesn't serve a practical purpose.
+      <li>Fog</li>-->
+    </genSteps>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>MetalHell</defName>
+    <order>10</order>
+    <genStep Class="GenStep_MetalHell" />
+  </GenStepDef>
+
+  <BiomeDef>
+    <defName>MetalHell</defName>
+    <label>metal hell</label>
+    <description>The room is made entirely of gray metal with jagged and twisted shapes that seem to defy human comprehension. The air thrums with dirty energy, accented by the occasional creak of the grinding metal walls.</description>
+    <generatesNaturally>false</generatesNaturally>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
+    <baseWeatherCommonalities>
+      <MetalHell>1</MetalHell>
+    </baseWeatherCommonalities>
+    <diseaseMtbDays>0</diseaseMtbDays>
+  </BiomeDef>
+
+</Defs>

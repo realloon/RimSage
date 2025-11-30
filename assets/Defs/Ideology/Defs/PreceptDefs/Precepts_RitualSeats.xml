@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>IdeoRitualSeat</defName>
+    <label>ritual seat</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>IdeoRitualSeat</defName>
+    <label>ritual seat</label>
+    <description>A building of ideoligious significance. Believers sit or kneel on this while watching rituals.</description>
+    <issue>IdeoRitualSeat</issue>
+    <workerClass>PreceptWorker_RitualSeat</workerClass>
+    <preceptClass>Precept_RitualSeat</preceptClass>
+    <nameMaker>NamerIdeoBuilding</nameMaker>
+    <impact>Medium</impact>
+    <buildingDefChances>
+      <Pew>1</Pew>
+      <KneelSheet>1</KneelSheet>
+      <KneelPillow>1</KneelPillow>
+    </buildingDefChances>
+    <allowDuplicates>false</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canRemoveInUI>false</canRemoveInUI>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+  </PreceptDef>
+  
+</Defs>

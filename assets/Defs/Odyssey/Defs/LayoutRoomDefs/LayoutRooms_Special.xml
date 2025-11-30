@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LayoutRoomDef>
+    <defName>AncientStockpileEntrance</defName>
+    <roomContentsWorkerType>RoomContents_StockpileEntrance</roomContentsWorkerType>
+    <minSingleRectWidth>9</minSingleRectWidth>
+    <minSingleRectHeight>9</minSingleRectHeight>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>AncientStockpileStockpile</defName>
+    <roomContentsWorkerType>RoomContents_Stockpile</roomContentsWorkerType>
+    <parts>
+      <HunterDrone>0.5</HunterDrone>
+      <WaspDrone>0.5</WaspDrone>
+    </parts>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>OrbitalItemStash_ItemRoom</defName>
+    <roomContentsWorkerType>RoomContents_Stockpile</roomContentsWorkerType>
+    <thingSetMakerDef>MapGen_OrbitalItemStash</thingSetMakerDef>
+    <parts>
+      <HunterDrone>0.5</HunterDrone>
+      <WaspDrone>0.5</WaspDrone>
+    </parts>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>Mechhive_Stabilizer</defName>
+    <roomContentsWorkerType>RoomContents_Stabilizer</roomContentsWorkerType>
+    <dontPlaceRandomly>true</dontPlaceRandomly>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <canMergeWithAdjacentRoom>true</canMergeWithAdjacentRoom>
+    <minSingleRectWidth>7</minSingleRectWidth>
+    <minSingleRectHeight>7</minSingleRectHeight>
+    <parts>
+      <AncientBarricades />
+      <DormantMechCluster />
+      <CornerMechPylon>
+        <countRange>1~2</countRange>
+      </CornerMechPylon>
+      <CornerMiniTurret>
+        <countRange>1~2</countRange>
+      </CornerMiniTurret>
+    </parts>
+    <threatPointsScaleCurve>
+      <points>
+        <li>(100, 300)</li>
+        <li>(500, 400)</li>
+        <li>(1000, 600)</li>
+        <li>(2000, 1200)</li>
+        <li>(8000, 2400)</li>
+      </points>
+    </threatPointsScaleCurve>
+    <floorTypes>
+      <li>AncientConcrete</li>
+    </floorTypes>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>AncientRuinsReactor</defName>
+    <roomContentsWorkerType>RoomContents_Reactor</roomContentsWorkerType>
+    <dontPlaceRandomly>true</dontPlaceRandomly>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <minSingleRectWidth>7</minSingleRectWidth>
+    <minSingleRectHeight>7</minSingleRectHeight>
+    <floorTypes>
+      <li>PavedTile</li>
+    </floorTypes>
+    <edgeTerrain>MetalTile</edgeTerrain>
+    <scatter>
+      <AncientLargeCrate>
+        <groupsPerHundredCells>2~4</groupsPerHundredCells>
+        <itemsPerGroup>3~6</itemsPerGroup>
+        <groupDistRange>2~5</groupDistRange>
+      </AncientLargeCrate>
+    </scatter>
+    <scatterTerrain>
+      <Soil>
+        <groupsPerHundredCells>2~3</groupsPerHundredCells>
+        <itemsPerGroup>4~6</itemsPerGroup>
+        <groupDistRange>2~3</groupDistRange>
+      </Soil>
+    </scatterTerrain>
+    <parts>
+      <HunterDrone>0.5</HunterDrone>
+      <WaspDrone>0.5</WaspDrone>
+      <CornerArmoredTurret>
+        <countRange>4~4</countRange>
+      </CornerArmoredTurret>
+    </parts>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>AncientCryptosleepRoom</defName>
+    <roomContentsWorkerType>RoomContents_CryptosleepCaskets</roomContentsWorkerType>
+    <floorTypes>
+      <li>SterileTile</li>
+    </floorTypes>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>AncientCryptosleepRoom_Hostile</defName>
+    <roomContentsWorkerType>RoomContents_CryptosleepCaskets_Hostile</roomContentsWorkerType>
+    <fillInterior>
+      <AncientOperatingTable>
+        <thingsPerHundredCells>1~2</thingsPerHundredCells>
+        <alignWithRect>true</alignWithRect>
+      </AncientOperatingTable>
+    </fillInterior>
+    <floorTypes>
+      <li>SterileTile</li>
+    </floorTypes>
+    <edgeTerrain>AncientTile</edgeTerrain>
+    <parts>
+      <Corpse>0.1</Corpse>
+    </parts>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>AncientEngineRoom</defName>
+    <dontPlaceRandomly>true</dontPlaceRandomly>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <minSingleRectWidth>7</minSingleRectWidth>
+    <minSingleRectHeight>7</minSingleRectHeight>
+    <prefabs>
+      <AncientDestroyedConsole_Small>
+        <countPerTenEdgeCells>2</countPerTenEdgeCells>
+        <minMaxRange>2~8</minMaxRange>
+      </AncientDestroyedConsole_Small>
+      <AncientDestroyedConsole_Large>
+        <countPerTenEdgeCells>5</countPerTenEdgeCells>
+        <minMaxRange>2~8</minMaxRange>
+      </AncientDestroyedConsole_Large>
+      <AncientSpacerCrateWithComponentSpacer>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>1~1</minMaxRange>
+      </AncientSpacerCrateWithComponentSpacer>
+      <AncientDestroyedConsole_Cluster>
+        <countPerHundredCells>1</countPerHundredCells>
+        <minMaxRange>6~12</minMaxRange>
+      </AncientDestroyedConsole_Cluster>
+      <AncientSpacerCrate_Cluster>
+        <countPerHundredCells>10</countPerHundredCells>
+        <minMaxRange>0~5</minMaxRange>
+      </AncientSpacerCrate_Cluster>
+    </prefabs>
+    <parts>
+      <AncientEngine />
+      <AncientBarricades />
+      <WaspDrone>0.5</WaspDrone>
+      <Gore>0.75</Gore>
+      <CornerArmoredTurret>
+        <countRange>2~3</countRange>
+      </CornerArmoredTurret>
+    </parts>
+    <edgeTerrain>AncientTile</edgeTerrain>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>MechanoidEngineRoom</defName>
+    <dontPlaceRandomly>true</dontPlaceRandomly>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+    <minSingleRectWidth>7</minSingleRectWidth>
+    <minSingleRectHeight>7</minSingleRectHeight>
+    <canMergeWithAdjacentRoom>true</canMergeWithAdjacentRoom>
+    <threatPointsScaleCurve>
+      <points>
+        <li>(100, 300)</li>
+        <li>(500, 400)</li>
+        <li>(1000, 600)</li>
+        <li>(2000, 1200)</li>
+        <li>(8000, 2400)</li>
+      </points>
+    </threatPointsScaleCurve>
+    <floorTypes>
+      <li>AncientTile</li>
+    </floorTypes>
+    <prefabs>
+      <MechanoidProcessor>
+        <countPerHundredCells>5</countPerHundredCells>
+        <minMaxRange>1~1</minMaxRange>
+      </MechanoidProcessor>
+      <MechPylon_Structure_Edge>
+        <countPerTenEdgeCells>2</countPerTenEdgeCells>
+        <minMaxRange>3~6</minMaxRange>
+      </MechPylon_Structure_Edge>
+      <AncientFortifiedWall_Edge>
+        <countPerTenEdgeCells>5</countPerTenEdgeCells>
+        <minMaxRange>5~20</minMaxRange>
+      </AncientFortifiedWall_Edge>
+    </prefabs>
+    <parts>
+      <AncientEngine />
+      <AncientBarricades />
+      <CornerMiniTurret />
+      <DormantMechCluster />
+      <CornerMechPylon>
+        <countRange>2~2</countRange>
+      </CornerMechPylon>
+    </parts>
+  </LayoutRoomDef>
+</Defs>

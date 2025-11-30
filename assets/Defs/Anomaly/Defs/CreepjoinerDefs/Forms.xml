@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <CreepJoinerFormKindDef Abstract="True" Name="BaseCreepJoinerKind" ParentName="BasePlayerPawnKind">
+    <race>CreepJoiner</race>
+    <canBeScattered>false</canBeScattered>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <combatPower>55</combatPower>
+    <humanPregnancyChance>0</humanPregnancyChance>
+    <initialResistanceRange>0~0</initialResistanceRange>
+    <invNutrition>10</invNutrition>
+    <studiableAsPrisoner>true</studiableAsPrisoner>
+    <acceptArrestChanceFactor>0.8</acceptArrestChanceFactor>
+    <basePrisonBreakMtbDays>30</basePrisonBreakMtbDays>
+    <initialWillRange>80~90</initialWillRange>
+    <showInDebugSpawner>false</showInDebugSpawner>
+    <apparelIgnoreSeasons>false</apparelIgnoreSeasons>
+    <isFighter>false</isFighter>
+    <generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+    <fixedChildBackstories>
+      <li>UnknownChildhood</li>
+    </fixedChildBackstories>
+    <fixedAdultBackstories>
+      <li>UnknownAdulthood</li>
+    </fixedAdultBackstories>
+  </CreepJoinerFormKindDef>
+
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>LeatheryStranger</defName>
+    <label>leathery stranger</label>
+    <weight>1</weight>
+    <letterLabel>A ragged stranger with leathery skin is approaching your colony.</letterLabel>
+    <letterPrompt>The leathery stranger stares into space and speaks in a monotone, as though {PAWN_pronoun} hardly sees anyone or anything. {PAWN_pronoun} refuses to leave, insisting {PAWN_pronoun} is only interested in your colony. {PAWN_pronoun} says that {PAWN_pronoun} can help.</letterPrompt>
+    <minGenerationAge>35</minGenerationAge>
+    <maxGenerationAge>70</maxGenerationAge>
+    <bodyTypeGraphicPaths>
+      <Male>Things/Pawn/Humanlike/Bodies/Leathery_Male</Male>
+      <Female>Things/Pawn/Humanlike/Bodies/Leathery_Female</Female>
+      <Hulk>Things/Pawn/Humanlike/Bodies/Leathery_Hulk</Hulk>
+      <Fat>Things/Pawn/Humanlike/Bodies/Leathery_Fat</Fat>
+      <Thin>Things/Pawn/Humanlike/Bodies/Leathery_Thin</Thin>
+    </bodyTypeGraphicPaths>
+    <forcedHeadTypes>
+      <li>Leathery_Female</li>
+      <li>Leathery_Male</li>
+    </forcedHeadTypes>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>NoBeard</li>
+      </tags>
+    </beardTagFilter>
+    <fixedInventory>
+      <Gun_BoltActionRifle />
+      <Apparel_BasicShirt>
+        <stuff>WoolBison</stuff>
+        <quality>Poor</quality>
+      </Apparel_BasicShirt>
+      <Apparel_Duster>
+        <stuff>WoolBison</stuff>
+        <quality>Poor</quality>
+      </Apparel_Duster>
+      <Apparel_Pants>
+        <stuff>WoolBison</stuff>
+        <quality>Poor</quality>
+      </Apparel_Pants>
+    </fixedInventory>
+  </CreepJoinerFormKindDef>
+  
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>DarkScholar</defName>
+    <label>dark scholar</label>
+    <weight>1</weight>
+    <letterLabel>A dark scholar covered with twisted scars is approaching the colony.</letterLabel>
+    <letterPrompt>The dark scholar slouches in place, lifeless and silent. Only {PAWN_possessive} eyes seem alive, as if {PAWN_pronoun} could look inside you.\n\n{PAWN_pronoun} says that this is where {PAWN_pronoun} belongs and asks to stay for a while. {PAWN_possessive} tone indicates that {PAWN_pronoun} will not take 'no' for an answer.</letterPrompt>
+    <minGenerationAge>40</minGenerationAge>
+    <maxGenerationAge>70</maxGenerationAge>
+    <forcedHeadTypes>
+      <li>DarkScholar_Male</li>
+      <li>DarkScholar_Female</li>
+    </forcedHeadTypes>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>NoBeard</li>
+      </tags>
+    </beardTagFilter>
+    <skills>
+      <li>
+        <skill>Intellectual</skill>
+        <range>14~20</range>
+      </li>
+    </skills>
+    <existingDamage>
+      <li>
+        <damage>SurgicalCut</damage>
+        <groups>
+          <li>Legs</li>
+          <li>Arms</li>
+          <li>FullHead</li>
+        </groups>
+      </li>
+    </existingDamage>
+    <forcedTraits>
+      <Psychopath/>
+    </forcedTraits>
+    <apparelTags>
+      <li>IndustrialAdvanced</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>Apparel_Robe</li>
+    </apparelRequired>
+    <itemQuality>Poor</itemQuality>
+    <minApparelQuality>Poor</minApparelQuality>
+    <maxApparelQuality>Poor</maxApparelQuality>
+    <forceNormalGearQuality>false</forceNormalGearQuality>
+    <apparelColor>(58,58,58)</apparelColor>
+    <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+    <requires>
+      <li>Occultist</li>
+      <li>DeathRefusal</li>
+      <li>ShamblerOverlord</li>
+      <li>Fleshcrafter</li>
+      <li>PsychicButcher</li>
+    </requires>
+    <excludes>
+      <li>Metalhorror</li>
+      <li>OrganDecay</li>
+      <li>Assault</li>
+    </excludes>
+  </CreepJoinerFormKindDef>
+  
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>DealMaker</defName>
+    <label>deal maker</label>
+    <weight>1</weight>
+    <letterLabel>A stunningly good-looking stranger is approaching the colony.</letterLabel>
+    <letterPrompt>A stunningly good-looking stranger stands in front of you. {PAWN_possessive} face beams with confidence as {PAWN_pronoun} opens {PAWN_possessive} hands in a gesture of fellowship.\n\n{PAWN_pronoun} says {PAWN_pronoun} is here to make a deal and will help you in exchange for simple hospitality. This is {PAWN_possessive} purpose and {PAWN_pronoun} always fulfills {PAWN_possessive} purpose.</letterPrompt>
+    <minGenerationAge>20</minGenerationAge>
+    <maxGenerationAge>40</maxGenerationAge>
+    <skills>
+      <li>
+        <skill>Social</skill>
+        <range>14~20</range>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <range>14~20</range>
+      </li>
+    </skills>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+    <apparelTags>
+      <li>IndustrialAdvanced</li>
+    </apparelTags>
+    <apparelRequired>
+      <li MayRequire="Ludeon.RimWorld.Royalty">Apparel_HatTop</li>
+      <li>Apparel_BasicShirt</li>
+      <li>Apparel_Jacket</li>
+      <li>Apparel_Pants</li>
+    </apparelRequired>
+    <fixedInventory>
+      <Gun_Revolver />
+    </fixedInventory>
+    <itemQuality>Good</itemQuality>
+    <minApparelQuality>Good</minApparelQuality>
+    <maxApparelQuality>Good</maxApparelQuality>
+    <forceNormalGearQuality>false</forceNormalGearQuality>
+    <apparelColor>(156,31,56)</apparelColor>
+    <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+    <requires>
+      <li>Joybringer</li>
+      <li>PerfectHuman</li>
+      <li>BodyMastery</li>
+    </requires>
+  </CreepJoinerFormKindDef>
+  
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>CreepDrifter</defName>
+    <label>drifter</label>
+    <weight>1</weight>
+    <letterLabel>A visitor is approaching the colony.</letterLabel>
+    <letterPrompt>The weary-looking drifter stretches {PAWN_possessive} legs. {PAWN_pronoun} seems very tired.\n\n{PAWN_pronoun} asks to stay in your colony for a while - at least until {PAWN_pronoun} has recovered {PAWN_possessive} strength.</letterPrompt>
+    <minGenerationAge>20</minGenerationAge>
+    <maxGenerationAge>60</maxGenerationAge>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponTags>
+      <li>MedievalMeleeBasic</li>
+      <li>NeolithicMeleeBasic</li>
+    </weaponTags>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <inventoryOptions>
+      <skipChance>0.9</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineHerbal</thingDef>
+          <countRange>1</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+    <invNutrition>0</invNutrition>
+    <itemQuality>Poor</itemQuality>
+    <weaponMoney>60~200</weaponMoney>
+    <apparelMoney>90~280</apparelMoney>
+    <techHediffsMoney>50~50</techHediffsMoney>
+    <techHediffsChance>0.15</techHediffsChance>
+    <gearHealthRange>0.2~0.6</gearHealthRange>
+    <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+  </CreepJoinerFormKindDef>
+  
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>Blindhealer</defName>
+    <label>blind healer</label>
+    <weight>1</weight>
+    <letterLabel>A blind healer is approaching the colony.</letterLabel>
+    <letterPrompt>A small, withered {PAWN_genderNoun} stands in front of you. Where {PAWN_possessive} eyes should be, there are only scar-crusted holes in {PAWN_possessive} flesh. Yet, even without eyes, {PAWN_pronoun} somehow looks at you with kindness. {PAWN_pronoun} says that {PAWN_pronoun} knows that {PAWN_possessive} skills are needed here and wants to stay for a while.</letterPrompt>
+    <minGenerationAge>55</minGenerationAge>
+    <maxGenerationAge>80</maxGenerationAge>
+    <missingParts>
+      <li>
+        <bodyPart>Eye</bodyPart>
+      </li>
+      <li>
+        <bodyPart>Eye</bodyPart>
+      </li>
+    </missingParts>
+    <forcedHair>Bald</forcedHair>
+    <fixedInventory>
+      <MeleeWeapon_Knife>
+        <stuff>Steel</stuff>
+        <quality>Poor</quality>
+      </MeleeWeapon_Knife>
+      <Apparel_BasicShirt>
+        <stuff>Leather_Patch</stuff>
+        <quality>Poor</quality>
+      </Apparel_BasicShirt>
+      <Apparel_Pants>
+        <stuff>Leather_Patch</stuff>
+        <quality>Poor</quality>
+      </Apparel_Pants>
+    </fixedInventory>
+    <requires>
+      <li>UnnaturalHealing</li>
+    </requires>
+  </CreepJoinerFormKindDef>
+  
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>TimelessOne</defName>
+    <label>timeless one</label>
+    <weight>1</weight>
+    <letterLabel>A teenager is approaching the colony. {PAWN_pronoun} has a strange air of confidence around {PAWN_objective}.</letterLabel>
+    <letterPrompt>{PAWN_nameDef} is barely more than a child but in {PAWN_possessive} thoughtful eyes you sense an ancient wisdom. When {PAWN_pronoun} speaks, the words seem to come from an unnatural knowledge of endless time. {PAWN_pronoun} says that the stars brought {PAWN_objective} here to fulfill {PAWN_possessive} destiny. {PAWN_pronoun} wants to stay with you and help.</letterPrompt>
+    <minGenerationAge>13</minGenerationAge>
+    <maxGenerationAge>16</maxGenerationAge>
+    <forcedHeadTypes>
+      <li>TimelessOne</li>
+    </forcedHeadTypes>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>NoBeard</li>
+      </tags>
+    </beardTagFilter>
+    <apparelTags>
+      <li>IndustrialAdvanced</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>Apparel_BasicShirt</li>
+      <li>Apparel_Pants</li>
+    </apparelRequired>
+    <itemQuality>Good</itemQuality>
+    <minApparelQuality>Good</minApparelQuality>
+    <maxApparelQuality>Good</maxApparelQuality>
+    <forceNormalGearQuality>false</forceNormalGearQuality>
+    <apparelColor>(211,211,211)</apparelColor>
+    <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+  </CreepJoinerFormKindDef>
+
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>CultEscapee</defName>
+    <label>cult escapee</label>
+    <weight>1</weight>
+    <letterLabel>A mangled figure is approaching the colony.</letterLabel>
+    <letterPrompt>The mangled stranger stares at you with empty eyes and speaks in a broken voice. {PAWN_pronoun} claims to have escaped from a terrible cult and begs to join your colony.</letterPrompt>
+    <minGenerationAge>18</minGenerationAge>
+    <maxGenerationAge>70</maxGenerationAge>
+    <bodyTypeGraphicPaths>
+      <Male>Things/Pawn/Humanlike/Bodies/CultEscapee_Male</Male>
+      <Female>Things/Pawn/Humanlike/Bodies/CultEscapee_Female</Female>
+      <Hulk>Things/Pawn/Humanlike/Bodies/CultEscapee_Hulk</Hulk>
+      <Fat>Things/Pawn/Humanlike/Bodies/CultEscapee_Fat</Fat>
+      <Thin>Things/Pawn/Humanlike/Bodies/CultEscapee_Thin</Thin>
+    </bodyTypeGraphicPaths>
+    <forcedHeadTypes>
+      <li>CultEscapee</li>
+    </forcedHeadTypes>
+    <hairTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>Bald</li>
+      </tags>
+    </hairTagFilter>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>NoBeard</li>
+      </tags>
+    </beardTagFilter>
+    <missingParts>
+      <li>
+        <bodyPart>Arm</bodyPart>
+        <chance>0.5</chance>
+      </li>
+      <li>
+        <bodyPart>Eye</bodyPart>
+        <chance>0.5</chance>
+      </li>
+      <li>
+        <bodyPart>Eye</bodyPart>
+        <chance>0.5</chance>
+      </li>
+    </missingParts>
+    <startingHediffs>
+      <li>
+        <def>Tentacle</def>
+        <chance>0.5</chance>
+      </li>
+    </startingHediffs>
+    <existingDamage>
+      <li>
+        <damage>SurgicalCut</damage>
+        <chance>0.5</chance>
+        <groups>
+          <li>Arms</li>
+        </groups>
+      </li>
+      <li>
+        <damage>SurgicalCut</damage>
+        <chance>0.5</chance>
+        <groups>
+          <li>Legs</li>
+        </groups>
+      </li>
+    </existingDamage>
+    <fixedInventory>
+      <Apparel_BasicShirt>
+        <stuff>Cloth</stuff>
+        <quality>Poor</quality>
+      </Apparel_BasicShirt>
+      <Apparel_Pants>
+        <stuff>Cloth</stuff>
+        <quality>Poor</quality>
+      </Apparel_Pants>
+      <Apparel_Robe>
+        <stuff>Cloth</stuff>
+        <quality>Poor</quality>
+      </Apparel_Robe>
+    </fixedInventory>
+    <requires>
+      <li>DeathRefusal</li>
+      <li>Occultist</li>
+      <li>ShamblerOverlord</li>
+      <li>Fleshcrafter</li>
+      <li>PsychicButcher</li>
+    </requires>
+    <excludes>
+      <li>Joybringer</li>
+    </excludes>
+  </CreepJoinerFormKindDef>
+
+  <CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+    <defName>LoneGenius</defName>
+    <label>lone genius</label>
+    <weight>1</weight>
+    <letterLabel>A lone figure is approaching the colony.</letterLabel>
+    <letterPrompt>The strange figure keeps muttering about some scientific breakthrough. All {PAWN_pronoun} needs is a laboratory. If you let {PAWN_objective} stay, {PAWN_pronoun} will share {PAWN_possessive} vast knowledge with you. It's hard to tell whether {PAWN_pronoun}'s insane or a genius - or both.</letterPrompt>
+    <minGenerationAge>30</minGenerationAge>
+    <maxGenerationAge>80</maxGenerationAge>
+    <skills>
+      <li>
+        <skill>Intellectual</skill>
+        <range>13~18</range>
+      </li>
+    </skills>
+    <forcedTraits>
+      <TooSmart/>
+      <Abrasive/>
+    </forcedTraits>
+    <fixedInventory>
+      <Gun_ChargeLance />
+      <Apparel_CollarShirt>
+        <stuff>Cloth</stuff>
+        <quality>Good</quality>
+      </Apparel_CollarShirt>
+      <Apparel_Pants>
+        <stuff>Synthread</stuff>
+        <quality>Good</quality>
+      </Apparel_Pants>
+      <Apparel_LabCoat>
+        <stuff>Cloth</stuff>
+        <quality>Good</quality>
+        <color>(240, 240, 240)</color>
+      </Apparel_LabCoat>
+    </fixedInventory>
+    <requires>
+      <li>UnnaturalHealing</li>
+      <li>Alchemist</li>
+      <li>Occultist</li>
+    </requires>
+  </CreepJoinerFormKindDef>
+
+</Defs>

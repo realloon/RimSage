@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>MechSelfShutdown</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Mechanoid/Mech_SelfShutdown</clipPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <distRange>10~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>WarqueenWarUrchinsSpawned</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Warqueen/Spawning</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <distRange>10~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>WarUrchinSpawned</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/WarUrchin/Spawning</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <distRange>10~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechResurrectCast</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/SelfResurrect</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <distRange>10~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+</Defs>

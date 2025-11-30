@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mote -->
+  <Mote_Cards.label>特效</Mote_Cards.label>
+  
+  <!-- EN: Mote -->
+  <Mote_Clean.label>特效</Mote_Clean.label>
+  
+  <!-- EN: Mote -->
+  <Mote_ClearSnow.label>特效</Mote_ClearSnow.label>
+  
+  <!-- EN: Mote -->
+  <Mote_Harvest.label>特效</Mote_Harvest.label>
+  
+  <!-- EN: Mote -->
+  <Mote_Paint.label>特效</Mote_Paint.label>
+  
+  <!-- EN: Mote -->
+  <Mote_Sow.label>特效</Mote_Sow.label>
+  
+</LanguageData>

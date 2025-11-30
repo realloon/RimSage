@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>DrugUse</defName>
+    <label>drug use</label>
+    <iconPath>UI/Issues/DrugUse</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>DrugUse_Prohibited</defName>
+    <issue>DrugUse</issue>
+    <label>prohibited</label>
+    <description>The body should absolutely not be poisoned by chemicals. The only exception is the use of medicine in direct medical care.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>FleshPurity</li>
+      <li>Collectivist</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>HighLife</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>IngestedDrug</eventDef>
+        <description>Ingest drug</description>
+        <nullifyingTraits>
+          <DrugDesire>2</DrugDesire>
+          <DrugDesire>1</DrugDesire>
+        </nullifyingTraits>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>IngestedDrug</eventDef>
+        <thought>IngestedDrug_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>IngestedDrug</eventDef>
+        <thought>IngestedDrug_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AdministeredDrug</eventDef>
+        <thought>AdministeredDrug_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AdministeredDrug</eventDef>
+        <thought>AdministeredDrug_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>AdministeredDrug</eventDef>
+        <description>Administer drug</description>
+        <nullifyingTraits>
+          <DrugDesire>2</DrugDesire>
+          <DrugDesire>1</DrugDesire>
+        </nullifyingTraits>
+      </li>
+    </comps>
+    <defaultDrugPolicyOverride>NoDrugs</defaultDrugPolicyOverride>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>DrugUse_MedicalOnly</defName>
+    <issue>DrugUse</issue>
+    <label>medical only</label>
+    <description>Poisoning the body for recreational purposes is a deeply immoral act.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>Collectivist</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>HighLife</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>IngestedRecreationalDrug</eventDef>
+        <thought>IngestedRecreationalDrug_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>IngestedRecreationalDrug</eventDef>
+        <thought>IngestedRecreationalDrug_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>IngestedRecreationalDrug</eventDef>
+        <description>Ingest recreational drug</description>
+        <nullifyingTraits>
+          <DrugDesire>2</DrugDesire>
+          <DrugDesire>1</DrugDesire>
+        </nullifyingTraits>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AdministeredRecreationalDrug</eventDef>
+        <thought>AdministeredRecreationalDrug_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AdministeredRecreationalDrug</eventDef>
+        <thought>AdministeredRecreationalDrug_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>AdministeredRecreationalDrug</eventDef>
+        <description>Administer recreational drug</description>
+        <nullifyingTraits>
+          <DrugDesire>2</DrugDesire>
+          <DrugDesire>1</DrugDesire>
+        </nullifyingTraits>
+      </li>
+    </comps>
+    <defaultDrugPolicyOverride>NoDrugs</defaultDrugPolicyOverride>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>DrugUse_MedicalOrSocial</defName>
+    <issue>DrugUse</issue>
+    <label>medical or social only</label>
+    <description>A drink with a smoke is fine, especially with friends, but poisoning the body with powerful chemicals is wrong.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>Collectivist</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>HighLife</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>IngestedHardDrug</eventDef>
+        <thought>IngestedHardDrug_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>IngestedHardDrug</eventDef>
+        <thought>IngestedHardDrug_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>IngestedHardDrug</eventDef>
+        <description>Ingest hard drug</description>
+        <nullifyingTraits>
+          <DrugDesire>2</DrugDesire>
+          <DrugDesire>1</DrugDesire>
+        </nullifyingTraits>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AdministeredHardDrug</eventDef>
+        <thought>AdministeredHardDrug_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AdministeredHardDrug</eventDef>
+        <thought>AdministeredHardDrug_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>AdministeredHardDrug</eventDef>
+        <description>Administer hard drug</description>
+        <nullifyingTraits>
+          <DrugDesire>2</DrugDesire>
+          <DrugDesire>1</DrugDesire>
+        </nullifyingTraits>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Related: Ingested drug self thoughts -->
+
+  <ThoughtDef>
+    <defName>IngestedDrug_Horrible</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>used drug</label>
+        <description>I used a drug. Such chemicals in the body are a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IngestedRecreationalDrug_Horrible</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>used recreational drug</label>
+        <description>I used a recreational drug. It was an offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IngestedHardDrug_Horrible</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>used hard drug</label>
+        <description>I used a hard drug - not medical or even social. It was a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <!-- Related: Ingested drug witnessed thoughts -->
+
+  <ThoughtDef>
+    <defName>IngestedDrug_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>used drug</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IngestedRecreationalDrug_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>used recreational drug</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IngestedHardDrug_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>used hard drug</label>
+        <baseOpinionOffset>-8</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+
+  <!-- Related: Administered drug self thoughts -->
+
+  <ThoughtDef>
+    <defName>AdministeredDrug_Horrible</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>administered drug</label>
+        <description>I administered a drug. It was a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AdministeredRecreationalDrug_Horrible</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>administered recreational drug</label>
+        <description>I administered a recreational drug. It was a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AdministeredHardDrug_Horrible</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>administered hard drug</label>
+        <description>I administered a hard drug - not medical or even social. It was a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <!-- Related: Administered drug witnessed thoughts -->
+
+  <ThoughtDef>
+    <defName>AdministeredDrug_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>administered drug</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AdministeredRecreationalDrug_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>administered recreational drug</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AdministeredHardDrug_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>administered hard drug</label>
+        <baseOpinionOffset>-8</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraitDegrees>
+      <DrugDesire>2</DrugDesire>
+      <DrugDesire>1</DrugDesire>
+    </nullifyingTraitDegrees>
+  </ThoughtDef>
+
+
+
+
+<!--
+  <PreceptDef>
+    <defName>DrugUse_Abhorrent</defName>
+    <issue>DrugUse</issue>
+    <label>abhorrent strict</label>
+    <associatedMemes>
+      <li>FleshPurity</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>IngestedDrug</eventDef>
+        <thought>IngestedDrug_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>IngestedDrug</eventDef>
+        <thought>IngestedDrug_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>IngestedDrug</eventDef>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>IngestedDrug_Abhorrent</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>used drug</label>
+        <description>I used a drug. It was an abhorrent violation against everything I believe.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IngestedDrug_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>used drug</label>
+        <baseOpinionOffset>-80</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+
+
+
+
+
+
+</Defs>

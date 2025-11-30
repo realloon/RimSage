@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <SoundDef>
+    <defName>Ability_CallMechanoids</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/CallMechanoids</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+        <distRange>10~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Ability_TerrorRoar</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Animal/Thrumbo/Thrumbo_Angry/Thrumbo_Angry_1b</clipPath>
+          </li>
+        </grains>
+        <pitchRange>1.4~1.6</pitchRange>
+        <volumeRange>90</volumeRange>
+        <distRange>10~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

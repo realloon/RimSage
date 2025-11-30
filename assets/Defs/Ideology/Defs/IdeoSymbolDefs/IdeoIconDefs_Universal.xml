@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoIconDef>
+    <defName>AbstractsA</defName>
+    <iconPath>UI/Ideoligions/Universal/AbstractsA</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AbstractsB</defName>
+    <iconPath>UI/Ideoligions/Universal/AbstractsB</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AbstractsC</defName>
+    <iconPath>UI/Ideoligions/Universal/AbstractsC</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AbstractsD</defName>
+    <iconPath>UI/Ideoligions/Universal/AbstractsD</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AbstractsE</defName>
+    <iconPath>UI/Ideoligions/Universal/AbstractsE</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>CirclesA</defName>
+    <iconPath>UI/Ideoligions/Universal/CirclesA</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>CirclesB</defName>
+    <iconPath>UI/Ideoligions/Universal/CirclesB</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>CirclesC</defName>
+    <iconPath>UI/Ideoligions/Universal/CirclesC</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>CirclesD</defName>
+    <iconPath>UI/Ideoligions/Universal/CirclesD</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>CirclesE</defName>
+    <iconPath>UI/Ideoligions/Universal/CirclesE</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Dotcircle</defName>
+    <iconPath>UI/Ideoligions/Universal/Dotcircle</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>DoubleLoop</defName>
+    <iconPath>UI/Ideoligions/Universal/DoubleLoop</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>PoliticalE</defName>
+    <iconPath>UI/Ideoligions/Universal/PoliticalE</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>RoundA</defName>
+    <iconPath>UI/Ideoligions/Universal/RoundA</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>RoundB</defName>
+    <iconPath>UI/Ideoligions/Universal/RoundB</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>RoundC</defName>
+    <iconPath>UI/Ideoligions/Universal/RoundC</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>RoundD</defName>
+    <iconPath>UI/Ideoligions/Universal/RoundD</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>RoundE</defName>
+    <iconPath>UI/Ideoligions/Universal/RoundE</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpiralsB</defName>
+    <iconPath>UI/Ideoligions/Universal/SpiralsB</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpiralsC</defName>
+    <iconPath>UI/Ideoligions/Universal/SpiralsC</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpiralsD</defName>
+    <iconPath>UI/Ideoligions/Universal/SpiralsD</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpiralsE</defName>
+    <iconPath>UI/Ideoligions/Universal/SpiralsE</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>StarsA</defName>
+    <iconPath>UI/Ideoligions/Universal/StarsA</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>StarsB</defName>
+    <iconPath>UI/Ideoligions/Universal/StarsB</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>StarsC</defName>
+    <iconPath>UI/Ideoligions/Universal/StarsC</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>StarsD</defName>
+    <iconPath>UI/Ideoligions/Universal/StarsD</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>StarsE</defName>
+    <iconPath>UI/Ideoligions/Universal/StarsE</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TripleCross</defName>
+    <iconPath>UI/Ideoligions/Universal/TripleCross</iconPath>
+  </IdeoIconDef>
+
+</Defs>

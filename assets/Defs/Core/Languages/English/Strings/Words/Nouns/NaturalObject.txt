@@ -1,0 +1,30 @@
+﻿//Intended as small-scale objects, not major terrain formations
+//Includes animal, vegetable, and mineral
+rock
+stone
+boulder
+tree
+shrub
+pond
+pool
+lake
+hill
+cave
+stump
+shell
+feather
+seed
+trunk
+fruit
+needle
+beetle
+bug
+hoof
+claw
+tail
+hide
+skin
+horn
+tooth
+wing
+wood

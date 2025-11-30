@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThoughtDef>
+    <defName>AnestheticHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Anesthetic</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>anesthetic wooziness</label>
+        <description>I feel so heavy... and so relaxed...</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <visible>false</visible>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

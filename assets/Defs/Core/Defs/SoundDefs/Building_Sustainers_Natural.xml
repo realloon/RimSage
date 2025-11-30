@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>CocoonWakingUp</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <sustain>True</sustain>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/InsectCocoon/Wakeup</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <sustainLoopDurationRange>0.7166</sustainLoopDurationRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

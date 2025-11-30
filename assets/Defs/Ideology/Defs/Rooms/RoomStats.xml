@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <RoomStatDef>
+    <defName>BiosculpterPodSpeedFactor</defName>
+    <label>biosculpter pod speed factor</label>
+    <workerClass>RoomStatWorker_FromStatByCurve</workerClass>
+    <updatePriority>0</updatePriority>
+    <isHidden>true</isHidden>
+    <roomlessScore>0.7</roomlessScore> <!-- outdoors etc same as dirty room -->
+    <inputStat>Cleanliness</inputStat>
+    <curve>
+      <points>
+        <li>(-5, 0.7)</li>
+        <li>(-1, 0.9</li>
+        <li>(0, 1)</li>
+        <li>(1, 1.25)</li>
+      </points>
+    </curve>
+  </RoomStatDef>
+
+</Defs>

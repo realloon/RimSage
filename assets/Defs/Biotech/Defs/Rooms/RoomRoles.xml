@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <RoomRoleDef>
+    <defName>Nursery</defName>
+    <label>nursery</label>
+    <workerClass>RoomRoleWorker_Nursery</workerClass>
+  </RoomRoleDef>
+
+  <RoomRoleDef>
+    <defName>Playroom</defName>
+    <label>playroom</label>
+    <workerClass>RoomRoleWorker_Playroom</workerClass>
+  </RoomRoleDef>
+
+  <RoomRoleDef>
+    <defName>Classroom</defName>
+    <label>classroom</label>
+    <workerClass>RoomRoleWorker_Classroom</workerClass>
+  </RoomRoleDef>
+
+  <RoomRoleDef>
+    <defName>DeathrestChamber</defName>
+    <label>deathrest chamber</label>
+    <workerClass>RoomRoleWorker_DeathrestChamber</workerClass>
+  </RoomRoleDef>
+  
+</Defs>

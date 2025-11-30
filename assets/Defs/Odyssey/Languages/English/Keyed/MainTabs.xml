@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Research -->
+  <MissingGravEngineInspection>Grav engine must be inspected</MissingGravEngineInspection>
+  <RequiresInspectionof>Requires inspection of</RequiresInspectionof>
+  <RequireGravEngineInspected>Grav engine inspected</RequireGravEngineInspected>
+  
+  <!-- Ancient vents -->
+  <AncientSmokeVentActive>venting smoke.</AncientSmokeVentActive>
+  <AncientToxVentActive>creating toxic fallout.</AncientToxVentActive>
+  <AncientHeatVentActive>venting heat.</AncientHeatVentActive>
+  
+</LanguageData>

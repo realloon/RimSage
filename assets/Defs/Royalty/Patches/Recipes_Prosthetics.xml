@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- These body parts exist in vanilla, but only become craftable in Royalty with Royalty-specific research -->
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>Defs/ThingDef[defName="PowerClaw"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>BodyPartProstheticMakeableBase</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="PowerClaw"]</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite>SpecializedLimbs</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>Defs/ThingDef[defName="Joywire"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>BodyPartProstheticMakeableBase</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Joywire"]</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite>BrainWiring</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>Defs/ThingDef[defName="Painstopper"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>BodyPartProstheticMakeableBase</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Painstopper"]</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite>BrainWiring</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+</Patch>

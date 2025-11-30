@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <TimeAssignmentDef>
+    <defName>Meditate</defName>
+    <label>meditate</label>
+    <color>(85,185,85)</color>
+    <allowRest>false</allowRest>
+  </TimeAssignmentDef>
+
+</Defs>

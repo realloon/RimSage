@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--=============== Psycasts ==============-->
+
+  <ThingDef ParentName="MoteGlowDistorted">
+    <defName>Mote_CastPsycast</defName>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.3</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>9999</solidTime>
+      <needsMaintenance>true</needsMaintenance>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/PsycastCast</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteGlowDistorted">
+    <defName>Mote_PsyfocusPulse</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>PsyfocusMeditationPulse</shaderType>
+      <texPath>Things/Mote/Transparent</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.0055</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+        <_pulseSpeed>0.75</_pulseSpeed>
+      </shaderParameters>
+      <drawSize>2.35</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteGlowDistorted">
+    <defName>Mote_PsychicLinkLine</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/PsychicLinkLine</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.1</_distortionIntensity>
+        <_distortionScale>0.1</_distortionScale>
+        <_wordSpaceDistortionToggle>1</_wordSpaceDistortionToggle>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_PsychicLinkPulse</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <fadeOutTime>0.12</fadeOutTime>
+      <solidTime>0.5</solidTime>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <texPath>Things/Mote/PsychicLinkPulse</texPath>
+      <shaderType>MoteGlowPulseLink</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <!--=============== Misc ==============-->
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_ProximityScannerRadius</defName>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>999999999</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/ActivatorProximityRadius</texPath>
+      <shaderType>MoteProximityScannerRadius</shaderType>
+      <color>(1, 0.1, 0.1, 0.35)</color>
+      <drawSize>26</drawSize>
+      <shaderParameters>
+        <_smokeScrollSpeed>0.1</_smokeScrollSpeed>
+        <_rotationSpeed>0.1</_rotationSpeed>
+        <_smokeAmount>0.5</_smokeAmount>
+        <_MainTex>/Things/Mote/ActivatorProximityRadius</_MainTex>
+        <_ScanTex>/Things/Mote/ActivatorProximityScanning</_ScanTex>
+        <_SmokeTex>/Things/Mote/SmokeTiled</_SmokeTex>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_ProximityScannerActivated</defName>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <color>(1, 0.1, 0.1, 0.5)</color>
+      <shaderType>MoteGlowPulse</shaderType>
+      <shaderParameters>
+        <_Interval>0.04</_Interval>
+      </shaderParameters>
+      <drawSize>4</drawSize>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>0.25</fadeInTime>
+      <solidTime>1.32</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <growthRate>2.0</growthRate>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteGlowDistorted">
+    <defName>Mote_WarmupWordOf</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.6</fadeInTime>
+      <fadeOutTime>0.2</fadeOutTime>
+      <solidTime>1.2</solidTime>
+      <growthRate>-0.12</growthRate>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MotePsychicWarmupWordOf</shaderType>
+      <texPath>Things/Mote/PsychicDistortionRing</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.025</_distortionIntensity>
+        <_brightnessMultiplier>1.5</_brightnessMultiplier>
+        <_pulseSpeed>1</_pulseSpeed>
+      </shaderParameters>
+      <drawSize>5</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_WarmupNeuroquake</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>1.0</fadeInTime>
+      <fadeOutTime>0.2</fadeOutTime>
+      <solidTime>99999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MotePsychicWarmupNeuroquake</shaderType>
+      <texPath>Things/Mote/PsychicDistortionCurrents</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.4</_distortionIntensity>
+        <_brightnessMultiplier>1.3</_brightnessMultiplier>
+        <_pulseSpeed>1</_pulseSpeed>
+      </shaderParameters>
+      <drawSize>6.0</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteGlowDistorted">
+    <defName>Mote_Bestow</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.6</fadeInTime>
+      <fadeOutTime>0.2</fadeOutTime>
+      <solidTime>6.6</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <growthRate>-0.05</growthRate>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBestowWarmup</shaderType>
+      <texPath>Things/Mote/BestowField</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.02</_distortionIntensity>
+        <_brightnessMultiplier>1.3</_brightnessMultiplier>
+        <_pulseSpeed>20</_pulseSpeed>
+      </shaderParameters>
+      <drawSize>7</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+</Defs>

@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issues -->
+  <IssueDef>
+    <defName>Slavery</defName>
+    <label>slavery</label>
+    <iconPath>UI/Issues/Slavery</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>EnslavedPrisoner</defName>
+    <label>enslaved prisoner</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>EnslavedPrisonerNotPreviouslyEnslaved</defName>
+    <label>enslaved prisoner</label>
+  </HistoryEventDef>
+
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Slavery_Abhorrent</defName>
+    <issue>Slavery</issue>
+    <label>abhorrent</label>
+    <description>Owning or trading human beings is deeply evil.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <conflictingMemes>
+      <li>Raider</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Guilty</li>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Slavery_Abhorrent_SlavesInColony</thought>
+        <description>Each slave in colony</description>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SoldSlave</eventDef>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>EnslavedPrisoner</eventDef>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>EnslavedPrisoner</eventDef>
+        <thought>EnslavedPrisoner_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Abhorrent_Mood</thought>
+        <description>Someone sold a slave</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Slavery_Horrible</defName>
+    <issue>Slavery</issue>
+    <label>horrible</label>
+    <description>Owning or trading human beings is a horrible thing.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <conflictingMemes>
+      <li>Raider</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Guilty</li>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Slavery_Horrible_SlavesInColony</thought>
+        <description>Each slave in colony</description>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>EnslavedPrisoner</eventDef>
+        <thought>EnslavedPrisoner_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>EnslavedPrisoner</eventDef>
+        <thought>EnslavedPrisoner_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Horrible_Mood</thought>
+        <description>Someone sold a slave</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>EnslavedPrisoner</eventDef>
+        <thought>EnslavedPrisoner_Know_Horrible_Mood</thought>
+        <description>Someone enslaved a prisoner</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Slavery_Disapproved</defName>
+    <issue>Slavery</issue>
+    <label>disapproved</label>
+    <description>Slavery is part of life, though it is extremely distasteful.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <conflictingMemes>
+      <li>Raider</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Guilty</li>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Slavery_Disapproved_SlavesInColony</thought>
+        <description>Each slave in colony</description>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>EnslavedPrisoner</eventDef>
+        <thought>EnslavedPrisoner_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>EnslavedPrisoner</eventDef>
+        <thought>EnslavedPrisoner_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Disapproved_Mood</thought>
+        <description>Someone sold a slave</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>EnslavedPrisoner</eventDef>
+        <thought>EnslavedPrisoner_Know_Disapproved_Mood</thought>
+        <description>Someone enslaved a prisoner</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Slavery_Acceptable</defName>
+    <issue>Slavery</issue>
+    <label>acceptable</label>
+    <description>Slavery is a normal, unremarkable part of life.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <approvesOfSlavery>true</approvesOfSlavery>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Slavery_Honorable</defName>
+    <issue>Slavery</issue>
+    <label>honorable</label>
+    <description>One who owns and trades slaves should be honored and respected.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>Supremacist</li>
+      <li>Collectivist</li>
+      <li>PainIsVirtue</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>Guilty</li>
+      <li>Individualist</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Slavery_Honorable_SlavesInColony</thought>
+        <description>Each slave in colony</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Slavery_Honorable_NoSlavesInColony</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Honorable</thought>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>EnslavedPrisonerNotPreviouslyEnslaved</eventDef>
+        <thought>EnslavedPrisoner_Honorable</thought>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Honorable</thought>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>EnslavedPrisonerNotPreviouslyEnslaved</eventDef>
+        <thought>EnslavedPrisoner_Know_Honorable</thought>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SoldSlave</eventDef>
+        <thought>SoldSlave_Know_Honorable_Mood</thought>
+        <description>Someone sold a slave</description>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>EnslavedPrisonerNotPreviouslyEnslaved</eventDef>
+        <thought>EnslavedPrisoner_Know_Honorable_Mood</thought>
+        <description>Someone enslaved a prisoner</description>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>EnslavedPrisonerNotPreviouslyEnslaved</eventDef>
+        <eventLabel>enslaved a prisoner</eventLabel>
+        <points>1</points>
+      </li>
+    </comps>
+    <approvesOfSlavery>true</approvesOfSlavery>
+  </PreceptDef>
+  
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>Slavery_Abhorrent_SlavesInColony</defName>
+    <thoughtClass>Thought_Situational_Precept_SlavesInColony</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_SlavesInColony</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>slaves in colony</label>
+        <description>We're keeping slaves. It's barbaric.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>sold slave</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Abhorrent_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>slave sold</label>
+        <description>We sold someone into slavery. It was an abhorrent, barbaric act.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>enslaved prisoner</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+   <ThoughtDef>
+    <defName>Slavery_Horrible_SlavesInColony</defName>
+    <thoughtClass>Thought_Situational_Precept_SlavesInColony</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_SlavesInColony</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>slaves in colony</label>
+        <description>We're keeping slaves. It's wrong.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Horrible</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sold slave</label>
+        <description>I sold a person into slavery. I'm not sure I can forgive myself.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Horrible</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>enslaved prisoner</label>
+        <description>I forced someone into slavery. How can I justify that?</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>sold slave</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>slave sold</label>
+        <description>We sold someone into slavery. What a horrible thing to do.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>enslaved prisoner</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>prisoner enslaved</label>
+        <description>We enslaved someone. What a horrible thing to do to another human.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>Slavery_Disapproved_SlavesInColony</defName>
+    <thoughtClass>Thought_Situational_Precept_SlavesInColony</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_SlavesInColony</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>slaves in colony</label>
+        <description>We're keeping slaves. Even if it's necessary, it's distasteful and I wish we wouldn't.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Disapproved</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sold slave</label>
+        <description>I sold a person into slavery. I hope nothing terrible happens to them.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Disapproved</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>enslaved prisoner</label>
+        <description>I enslaved a person. It's hard to justify such actions.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>sold slave</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Disapproved_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>slave sold</label>
+        <description>We sold a person into slavery. We shouldn't have done that.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>enslaved prisoner</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Know_Disapproved_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>prisoner enslaved</label>
+        <description>We enslaved someone. We shouldn't have done that.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Slavery_Honorable_SlavesInColony</defName>
+    <thoughtClass>Thought_Situational_Precept_SlavesInColony</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_SlavesInColony</workerClass>
+    <stages>
+      <li>
+        <label>slaves in colony</label>
+        <description>We've got slaves. It means we're on the right path.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Slavery_Honorable_NoSlavesInColony</defName>
+    <workerClass>ThoughtWorker_Precept_Slavery_NoSlavesInColony</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <minExpectation>Low</minExpectation>
+    <stages>
+      <li>
+        <label>no slaves in colony</label>
+        <description>Without slaves, nobody will respect us.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Honorable</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sold slave</label>
+        <description>I sold someone into slavery. It'll make people notice my stature.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Honorable</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>enslaved prisoner</label>
+        <description>I took someone into slavery. With no choice, they had to submit to me.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Honorable</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>25</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>sold slave</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SoldSlave_Know_Honorable_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>slave sold</label>
+        <description>We sold someone into slavery! A great display of our honor and power.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Know_Honorable</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>enslaved prisoner</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EnslavedPrisoner_Know_Honorable_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>prisoner enslaved</label>
+        <description>We enslaved someone. Now they know our honor and power!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

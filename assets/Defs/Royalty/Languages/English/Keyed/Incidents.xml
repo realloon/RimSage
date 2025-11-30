@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <LetterLabelTributeCollectorArrival>Royal tribute collector</LetterLabelTributeCollectorArrival>
+  <LetterTributeCollectorArrival>A royal tribute collector from {FACTION_name} is approaching.\n\nThey will accept any prisoners and gold you offer as tribute. The one who gives over the tribute will receive {FACTION_royalFavorLabel} for fulfilling the tradition and supporting the upper houses.\n\nYou can expect a tribute collector to arrive roughly twice per year as long as you are not enemies with {FACTION_name}.</LetterTributeCollectorArrival>
+  
+</LanguageData>

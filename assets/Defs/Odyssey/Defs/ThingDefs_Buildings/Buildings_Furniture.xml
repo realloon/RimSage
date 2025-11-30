@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="FurnitureBase" Name="OutfitStandBase" Abstract="True">
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <pathCost>50</pathCost>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <Beauty>0.5</Beauty>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>3</Mass>
+      <WorkToBuild>350</WorkToBuild>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <minifiedDef IsNull="True" />
+    <thingCategories Inherit="False" />
+    <building>
+      <blueprintClass>Blueprint_StorageWithRoomHighlight</blueprintClass>
+      <ignoreStoredThingsBeauty>false</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <categories Inherit="False">
+            <li>Apparel</li>
+            <li>Weapons</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>Apparel</li>
+          </categories>
+          <disallowedCategories>
+            <li>ApparelUtility</li>
+            <li>Weapons</li>
+          </disallowedCategories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <comps>
+      <li Class="CompProperties_Styleable" />
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+      <li>ITab_ContentsOutfitStand</li>
+    </inspectorTabs>
+    <uiOrder>2050</uiOrder>
+  </ThingDef>
+  
+  <ThingDef ParentName="OutfitStandBase">
+    <defName>Building_OutfitStand</defName>
+    <label>outfit stand</label>
+    <description>A small display that showcases a single outfit. Saves space and can be used to quickly change clothing.</description>
+    <thingClass>Building_OutfitStand</thingClass>
+    <costStuffCount>35</costStuffCount>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/OutfitStand/OutfitStand_MenuIcon</texPath>
+      <drawSize>(1.3, 1.3)</drawSize>
+    </graphicData>
+    <building>
+      <storageGroupTag>OutfitStand</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <specialFiltersToDisallow>
+            <li>AllowChildOnlyApparel</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="OutfitStandBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>Building_KidOutfitStand</defName>
+    <label>kid outfit stand</label>
+    <description>A small display that showcases a single outfit for a child. Saves space and can be used to quickly change clothing.</description>
+    <thingClass>Building_KidOutfitStand</thingClass>
+    <costStuffCount>30</costStuffCount>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/OutfitStand/KidOutfitStand_MenuIcon</texPath>
+      <drawSize>(1.3, 1.3)</drawSize>
+    </graphicData>
+    <building>
+      <storageGroupTag>KidOutfitStand</storageGroupTag>
+      <fixedStorageSettings>
+        <filter>
+          <specialFiltersToDisallow>
+            <li>AllowAdultOnlyApparel</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+    </building>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>Pawn_Megavole_Angry</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Rodent/Rodent_Angry</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15~15</volumeRange>
+        <pitchRange>0.6~0.7</pitchRange>
+        <distRange>0~70</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Megavole_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Rodent/Rodent_Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10~12</volumeRange>
+        <pitchRange>0.6~0.7</pitchRange>
+        <distRange>0~50</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Megavole_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Rodent/Rodent_Pain</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10~10</volumeRange>
+        <pitchRange>0.6~0.7</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Megavole_Death</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Rodent/Rodent_Death</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10~10</volumeRange>
+        <pitchRange>0.6~0.7</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  
+</Defs>

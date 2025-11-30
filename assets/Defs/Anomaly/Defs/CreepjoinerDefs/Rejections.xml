@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <CreepjoinerRejectionDef>
+    <defName>Departure</defName>
+    <label>departure</label>
+    <weight>1</weight>
+    <hasLetter>true</hasLetter>
+    <letterLabel>{PAWN_nameDef} departure</letterLabel>
+    <letterDesc>{PAWN_nameDef} is disappointed by the way that you have treated {PAWN_objective}. {PAWN_pronoun} has decided to leave.</letterDesc>
+    <letterDef>NeutralEvent</letterDef>
+    <workerType>CreepJoinerWorker_DoDepart</workerType>
+  </CreepjoinerRejectionDef>
+  
+  <CreepjoinerRejectionDef>
+    <defName>AggressiveRejection</defName>
+    <label>aggressive</label>
+    <weight>1</weight>
+    <hasLetter>true</hasLetter>
+    <letterLabel>{PAWN_nameDef} hostile</letterLabel>
+    <letterDesc>Upon being rejected, {PAWN_nameDef} flew into a murderous rage and began to attack!</letterDesc>
+    <letterDef>ThreatBig</letterDef>
+    <workerType>CreepJoinerWorker_DoAggressive</workerType>
+  </CreepjoinerRejectionDef>
+  
+</Defs>

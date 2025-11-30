@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: acidic smog -->
+  <NoxiousHaze.label>酸雾</NoxiousHaze.label>
+  <!-- EN:
+    <li>tale_noun->acidic smog sweeping over [PAWN_nameDef]'s [Community]</li>
+    <li>tale_noun->the atmosphere near [PAWN_nameDef]'s [Community] becoming noxious</li>
+    <li>image->an ominous sky, [circumstance_group]</li>
+    <li>image->the air becoming thick and [circumstance_group]</li>
+    <li>circumstance_phrase->with no life in sight</li>
+    <li>circumstance_phrase->waiting for the acidic smog to clear</li>
+    <li>circumstance_phrase->watching the animals flee</li>
+    <li>desc_sentence->[PAWN_nameDef] hides near a [TerrainFeature], gazing out with a [AdjectiveAngsty] look.</li>
+    <li>desc_sentence->[PAWN_nameDef] looks on with a cloth wrapped around [PAWN_possessive] face.</li>
+    <li>desc_sentence->[Quantity_adjphrase] dead [Animal]s lay on the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] dying [Animal]s lay on the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] suffocating [Animal]s lay on the ground.</li>
+    <li>desc_sentence->[Quantity_adjphrase] [Animal]s flee.</li>
+  -->
+  <NoxiousHaze.rulePack.rulesStrings>
+    <li>tale_noun->酸雾席卷了[PAWN_nameDef]的[Community]</li>
+    <li>tale_noun->[PAWN_nameDef]的[Community]附近的气候开始变得充满毒性</li>
+    <li>image->不一样的天空，[circumstance_group]</li>
+    <li>image->空气变得稠密，且[circumstance_group]</li>
+    <li>circumstance_phrase->看不到任何活物</li>
+    <li>circumstance_phrase->正等待着酸雾的消散</li>
+    <li>circumstance_phrase->看着动物们逃离</li>
+    <li>desc_sentence->[PAWN_nameDef]在[TerrainFeature]附近藏起来，带着[AdjectiveAngsty]的表情凝视着外面。</li>
+    <li>desc_sentence->[PAWN_nameDef]用布包裹着[PAWN_possessive]脸。</li>
+    <li>desc_sentence->[Quantity_adjphrase]死亡的[Animal]躺在地上。</li>
+    <li>desc_sentence->[Quantity_adjphrase]正迈向死亡的[Animal]躺在地上。</li>
+    <li>desc_sentence->[Quantity_adjphrase]窒息的[Animal]躺在地上。</li>
+    <li>desc_sentence->[Quantity_adjphrase][Animal]逃离。</li>
+  </NoxiousHaze.rulePack.rulesStrings>
+  
+</LanguageData>

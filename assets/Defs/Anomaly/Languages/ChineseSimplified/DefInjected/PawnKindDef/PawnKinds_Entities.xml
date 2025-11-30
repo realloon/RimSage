@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: chimera -->
+  <Chimera.label>嵌合兽</Chimera.label>
+  
+  <!-- EN: devourer -->
+  <Devourer.label>吞噬兽</Devourer.label>
+  
+  <!-- EN: fleshmass nucleus -->
+  <FleshmassNucleus.label>血肉核心</FleshmassNucleus.label>
+  
+  <!-- EN: gorehulk -->
+  <Gorehulk.label>血棘巨人</Gorehulk.label>
+  
+  <!-- EN: metalhorror -->
+  <Metalhorror.label>金属怪形</Metalhorror.label>
+  
+  <!-- EN: nociosphere -->
+  <Nociosphere.label>苦痛之球</Nociosphere.label>
+  
+  <!-- EN: noctol -->
+  <Noctol.label>夜魇</Noctol.label>
+  
+  <!-- EN: revenant -->
+  <Revenant.label>幽魂</Revenant.label>
+  
+  <!-- EN: sightstealer -->
+  <Sightstealer.label>隐形魔</Sightstealer.label>
+  
+</LanguageData>

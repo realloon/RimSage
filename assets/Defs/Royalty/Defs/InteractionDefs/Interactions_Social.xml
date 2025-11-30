@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <InteractionDef>
+    <defName>WordOfTrust</defName>
+    <label>word of trust</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/WordOfTrust</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] psychically suggested that [RECIPIENT_nameDef] drop [RECIPIENT_possessive] guard.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>WordOfJoy</defName>
+    <label>word of joy</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/WordOfJoy</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] psychically hypnotized [RECIPIENT_nameDef] into a warm, pleasant state of mind.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>WordOfLove</defName>
+    <label>word of love</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/WordOfLove</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] psychically suggested that [RECIPIENT_nameDef] should feel a new romantic desire.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>WordOfSerenity</defName>
+    <label>word of serenity</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/WordOfSerenity</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] psychically suggested that [RECIPIENT_nameDef] calm down, ending [RECIPIENT_possessive] mental break.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+  <InteractionDef>
+    <defName>WordOfInspiration</defName>
+    <label>word of inspiration</label>
+    <workerClass>InteractionWorker</workerClass>
+    <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+    <symbol>Things/Mote/SpeechSymbols/WordOfInspiration</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] used words and psychic suggestion to inspire [RECIPIENT_nameDef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  
+</Defs>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>Flesh</defName>
+    <label>flesh</label>
+    <description>A dense mat of organic flesh that clings loosely to the ground.</description>
+    <texturePath>Terrain/Surfaces/Flesh</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>340</renderPrecedence>
+    <pathCost>2</pathCost>
+    <designationCategory />
+    <statBases>
+      <Beauty>-10</Beauty>
+      <BeautyOutdoors>-5</BeautyOutdoors>
+      <Cleanliness>-3</Cleanliness>
+      <Flammability>0.32</Flammability>
+      <CleaningTimeFactor>1.5</CleaningTimeFactor>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Diggable</li>
+    </affordances>
+    <fertility>0</fertility>
+  </TerrainDef>
+  
+  <TerrainDef ParentName="FloorBase">
+    <defName>GraySurface</defName>
+    <label>gray surface</label>
+    <description>An unnatural gray floor. It is featureless and smooth. It is not concrete, metal, or any other recognizable building material.</description>
+    <texturePath>Terrain/Surfaces/GrayFloor</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>340</renderPrecedence>
+    <layerable>false</layerable>
+    <pathCost>2</pathCost>
+    <designationCategory />
+    <affordances>
+      <li>Light</li>
+    </affordances>
+    <fertility>0</fertility>
+  </TerrainDef>
+
+</Defs>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: suppressing TargetC. -->
+  <ActivitySuppression.reportString>正在抑制TargetC的活跃度。</ActivitySuppression.reportString>
+  
+  <!-- EN: interrogating TargetA. -->
+  <PrisonerInterrogateIdentity.reportString>正在审问TargetA。</PrisonerInterrogateIdentity.reportString>
+  
+</LanguageData>

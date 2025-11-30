@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>IdeoRoleLost</defName>
+    <thoughtClass>Thought_IdeoRoleLost</thoughtClass>
+    <durationDays>10</durationDays>
+    <stages>
+      <li>
+        <label>Lost {ROLE_label} role</label>
+        <description>I lost my role as {ROLE_labelDef}.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoRoleEmpty</defName>
+    <thoughtClass>Thought_IdeoRoleEmpty</thoughtClass>
+    <stages>
+      <li>
+        <label>No {ROLE_label}</label>
+        <description>{0}s must have {ROLE_labelIndef}!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoRoleApparelRequirementNotMet</defName>
+    <thoughtClass>Thought_IdeoRoleApparelRequirementNotMet</thoughtClass>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>Want {ROLE_label} apparel</label>
+        <description>I want to wear apparel appropriate for my role as {ROLE_labelDef}</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef Abstract="True" Name="IdeoLeaderResentmentBase">
+    <label>Leader of different ideoligion</label>
+    <thoughtClass>Thought_IdeoLeaderResentment</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_LeaderResentment</workerClass>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="IdeoLeaderResentmentBase">
+    <defName>IdeoLeaderResentmentStandard</defName>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <description>I don't like having a {0} as a leader.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="IdeoLeaderResentmentBase">
+    <defName>IdeoLeaderResentmentDisapproved</defName>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <description>It's insulting to be ordered around by a {0}.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="IdeoLeaderResentmentBase">
+    <defName>IdeoLeaderResentmentHorrible</defName>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <description>It's shameful to be ordered around by a {0}!</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="IdeoLeaderResentmentBase">
+    <defName>IdeoLeaderResentmentAbhorrent</defName>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <description>To accept direction from a {0} is utterly shameful and abhorrent.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

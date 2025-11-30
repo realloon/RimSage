@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="ApparelBase" Name="PsychicApparelBase" Abstract="True">
+    <techLevel>Ultra</techLevel>
+    <smeltable>false</smeltable>
+    <tradeTags>
+      <li>PsychicApparel</li>
+      <li>Clothing</li>
+    </tradeTags>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <apparel>
+      <tags>
+        <li>Psychic</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName="PsychicApparelBase">
+    <defName>Apparel_PsyfocusHelmet</defName>
+    <label>eltex helmet</label>
+    <description>A lightweight helmet designed for psychic focusing. While it provides little physical protection, its special materials enhance the wearer's psychic sensitivity and dissipate neural heat.</description>
+    <thingCategories>
+      <li>Headgear</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexHelmet/EltexHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Mass>0.8</Mass>
+      <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.09</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.27</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <PsychicSensitivityOffset>0.15</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate>0.066</PsychicEntropyRecoveryRate>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexHelmet/EltexHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <only>(57,87,93)</only>
+        </li>
+        <li>
+          <only>(51,27,49)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef ParentName="PsychicApparelBase">
+    <defName>Apparel_EltexSkullcap</defName>
+    <label>eltex skullcap</label>
+    <description>A tight skullcap designed for psychic focusing. It provides no physical protection, but its special materials enhance the wearer's psychic sensitivity and dissipate neural heat.</description>
+    <thingCategories>
+      <li>Headgear</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Mass>0.8</Mass>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <PsychicSensitivityOffset>0.4</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate>0.091</PsychicEntropyRecoveryRate>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <only>(90,90,90)</only>
+        </li>
+        <li>
+          <only>(135,135,135)</only>
+        </li>
+        <li>
+          <only>(160,160,160)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef ParentName="PsychicApparelBase">
+    <defName>Apparel_PsyfocusShirt</defName>
+    <label>eltex shirt</label>
+    <description>A shirt embedded with special psychic focusing materials. These enhance psychic sensitivity and help dissipate neural heat.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.25</Mass>
+      <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.04</ArmorRating_Heat>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <PsychicSensitivityOffset>0.10</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate>0.033</PsychicEntropyRecoveryRate>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <only>(57,87,93)</only>
+        </li>
+        <li>
+          <only>(51,27,49)</only>
+        </li>
+      </options>
+    </colorGenerator>
+    <thingSetMakerTags Inherit="False">
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <ThingDef ParentName="PsychicApparelBase">
+    <defName>Apparel_PsyfocusVest</defName>
+    <label>eltex vest</label>
+    <description>A thin vest embedded with special psychic focusing materials. These enhance psychic sensitivity and help dissipate neural heat.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+      <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.04</ArmorRating_Heat>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <PsychicSensitivityOffset>0.15</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <only>(57,87,93)</only>
+        </li>
+        <li>
+          <only>(51,27,49)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef ParentName="PsychicApparelBase">
+    <defName>Apparel_PsyfocusRobe</defName>
+    <description>A long robe embedded with special psychic focusing materials. These enhance psychic sensitivity and help dissipate neural heat.</description>
+    <label>eltex robe</label>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexRobe/EltexRobe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>600</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+      <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.04</ArmorRating_Heat>
+      <Insulation_Cold>15</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <PsychicSensitivityOffset>0.20</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate>0.083</PsychicEntropyRecoveryRate>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexRobe/EltexRobe</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <only>(57,87,93)</only>
+        </li>
+        <li>
+          <only>(51,27,49)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+  
+</Defs>

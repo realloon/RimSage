@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>DeathrestCasket</defName>
+    <label>deathrest casket</label>
+    <description>An enclosed med-casket that accelerates the process of deathrest. It can connect to other devices which confer additional bonuses on the deathrester. The number of devices that can connect depends on the person's deathrest capacity, which can be seen by selecting them.\n\nOnly those with the deathrest gene can use the deathrest casket.</description>
+    <thingClass>Building_Bed</thingClass>
+    <tickerType>Rare</tickerType>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>42</pathCost>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <thingCategories Inherit="False">
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Building/Misc/DeathrestCasket/DeathrestCasket</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <building>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <ai_chillDestination>false</ai_chillDestination>
+      <bed_healPerDay>4</bed_healPerDay>
+      <bed_canBeMedical>false</bed_canBeMedical>
+      <bed_DisplayOwnerType>false</bed_DisplayOwnerType>
+      <bed_DisplayOwnersInInspectString>false</bed_DisplayOwnersInInspectString>
+      <bed_countsForBedroomOrBarracks>false</bed_countsForBedroomOrBarracks>
+      <buildingTags>
+        <li>Bed</li>
+        <li>Biotech</li>
+      </buildingTags>
+      <relatedBuildCommands>
+        <li>DeathrestAccelerator</li>
+        <li>Hemopump</li>
+        <li>HemogenAmplifier</li>
+        <li>GlucosoidPump</li>
+        <li>PsychofluidPump</li>
+      </relatedBuildCommands>
+    </building>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2000</uiOrder>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>5</Beauty>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.75</Comfort>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_DeathrestCasket</compClass>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <idlePowerDraw>0</idlePowerDraw>
+        <alwaysDisplayAsUsingPower>true</alwaysDisplayAsUsingPower>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_DeathrestBindable">
+        <stackLimit>1</stackLimit>
+        <countsTowardsBuildingLimit>false</countsTowardsBuildingLimit>
+        <deathrestEffectivenessFactor>1.1</deathrestEffectivenessFactor>
+        <mustBeLayingInToBind>true</mustBeLayingInToBind>
+        <displayTimeActive>false</displayTimeActive>
+        <soundStart>DeathrestCasket_Enter</soundStart>
+        <soundEnd>DeathrestCasket_Exit</soundEnd>
+      </li>
+    </comps>
+    <researchPrerequisites><li>Deathrest</li></researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_DrawLinesToDeathrestBuildings</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase" Name="DeathrestBuildingBase" Abstract="True">
+    <fillPercent>0.4</fillPercent>
+    <pathCost>42</pathCost>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <designationCategory>Biotech</designationCategory>
+    <altitudeLayer>Building</altitudeLayer>
+    <uiOrder>2000</uiOrder>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories Inherit="False">
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <researchPrerequisites>
+      <li>Deathrest</li>
+    </researchPrerequisites>
+    <descriptionHyperlinks>
+      <ThingDef>DeathrestCasket</ThingDef>
+    </descriptionHyperlinks>
+    <building>
+      <relatedBuildCommands>
+        <li>DeathrestCasket</li>
+      </relatedBuildCommands>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_DrawLinesToDeathrestCaskets</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="DeathrestBuildingBase" Name="DeathrestBuildingHemogenFueled" Abstract="True">
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <idlePowerDraw>0</idlePowerDraw>
+        <alwaysDisplayAsUsingPower>true</alwaysDisplayAsUsingPower>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>0.5</fuelConsumptionRate> <!-- Empty in one year -->
+        <fuelCapacity>5</fuelCapacity>
+        <fuelLabel>Hemogen</fuelLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>HemogenPack</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>1</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <externalTicking>true</externalTicking>
+        <autoRefuelPercent>0.05</autoRefuelPercent>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DeathrestBuildingHemogenFueled">
+    <defName>Hemopump</defName>
+    <label>hemopump</label>
+    <description>This blood-refining pump increases the amount of hemogen a deathresting person can store in their body. It must be connected to a deathrest casket to function.\n\nThis building needs to consume hemogen to function.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/Hemopump/Hemopump</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.3, 1.8)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.1,0.1,0.9,1.8)</rect>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.4</Flammability>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <HemogenPack>5</HemogenPack>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_DeathrestBindable">
+        <hemogenLimitOffset>0.25</hemogenLimitOffset>
+        <soundStart>Hemopump_Start</soundStart>
+        <soundEnd>Hemopump_Stop</soundEnd>
+        <soundWorking>Hemopump_Ambience</soundWorking>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DeathrestBuildingHemogenFueled">
+    <defName>HemogenAmplifier</defName>
+    <label>hemogen amplifier</label>
+    <description>This device leaves a deathrester in a hemogen-amplified state so they gain more hemogen from any hemogen source. Using a gland probe and blood analyzer, it links with a deathresting person, stimulating hemogen glands into a more active state. It must be connected to a deathrest casket to function.\n\nThis building needs to consume hemogen to function.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/HemogenAmplifier/HemogenAmplifier</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <shadowData>
+        <volume>(0.85, 0.3, 1.7)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.15,0.15,0.85,1.7)</rect>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.4</Flammability>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <HemogenPack>5</HemogenPack>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <descriptionHyperlinks>
+      <HediffDef>HemogenAmplified</HediffDef>
+    </descriptionHyperlinks>
+    <comps>
+      <li Class="CompProperties_DeathrestBindable">
+        <hediffToApply>HemogenAmplified</hediffToApply>
+        <soundStart>HemogenAmplifier_Start</soundStart>
+        <soundEnd>HemogenAmplifier_Stop</soundEnd>
+        <soundWorking>HemogenAmplifier_Ambience</soundWorking>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DeathrestBuildingHemogenFueled">
+    <defName>GlucosoidPump</defName>
+    <label>glucosoid pump</label>
+    <description>This device allows a deathrester to move faster after deathrest is complete. It pumps the body with extra muscle-signaling factors while cleaning waste products from muscle tissue. The effect lasts until the individual deathrests again. It must be connected to a deathrest casket to function.\n\nThis building must consume hemogen to function.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/GlucosoidPump/GlucosoidPump</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.3, 1.8)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.1,0.1,0.9,1.8)</rect>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0.4</Flammability>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <HemogenPack>5</HemogenPack>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <descriptionHyperlinks>
+      <HediffDef>GlucosoidRush</HediffDef>
+    </descriptionHyperlinks>
+    <comps>
+      <li Class="CompProperties_DeathrestBindable">
+        <stackLimit>4</stackLimit>
+        <hediffToApply>GlucosoidRush</hediffToApply>
+        <soundStart>GlucosoidPump_Start</soundStart>
+        <soundEnd>GlucosoidPump_Stop</soundEnd>
+        <soundWorking>GlucosoidPump_Ambience</soundWorking>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DeathrestBuildingHemogenFueled">
+    <defName>PsychofluidPump</defName>
+    <label>psychofluid pump</label>
+    <description>This device enhances the psychic sensitivity of a deathresting person by rhythmically stimulating neural tissues. It must be connected to a deathrest casket to function.\n\nThis building needs to consume hemogen to function.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/PsychofluidPump/PsychofluidPump</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <shadowData>
+        <volume>(0.6, 0.3, 1.8)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.3,0.2,0.7,1.8)</rect>
+      </damageData>
+    </graphicData>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0.4</Flammability>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>50</Steel>
+      <Plasteel>100</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <HemogenPack>5</HemogenPack>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <descriptionHyperlinks>
+      <HediffDef>PsychofluidRush</HediffDef>
+    </descriptionHyperlinks>
+    <comps>
+      <li Class="CompProperties_DeathrestBindable">
+        <stackLimit>4</stackLimit>
+        <hediffToApply>PsychofluidRush</hediffToApply>
+        <soundStart>PsychofluidPump_Start</soundStart>
+        <soundEnd>PsychofluidPump_Stop</soundEnd>
+        <soundWorking>PsychofluidPump_Ambience</soundWorking>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DeathrestBuildingBase">
+    <defName>DeathrestAccelerator</defName>
+    <label>deathrest accelerator</label>
+    <description>This device connects with a deathresting person and makes deathrest complete quicker. It enhances the effect of the deathrest casket using finer blood analysis and more powerful chemicals. It must be connected to a deathrest casket to function.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/DeathrestAccelerator/DeathrestAccelerator</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <shadowData>
+        <volume>(0.6, 0.3, 1.8)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.3,0.2,0.7,1.8)</rect>
+      </damageData>
+    </graphicData>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0.4</Flammability>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>300</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>800</basePowerConsumption>
+        <idlePowerDraw>0</idlePowerDraw>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_DeathrestBindable">
+        <stackLimit>2</stackLimit>
+        <deathrestEffectivenessFactor>1.2</deathrestEffectivenessFactor>
+        <displayTimeActive>false</displayTimeActive>
+        <soundWorking>DeathrestAccelerator_Ambience</soundWorking>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Hediffs -->
+
+  <HediffDef Name="DeathrestHediffBase" Abstract="True">
+    <hediffClass>Hediff_DeathrestEffect</hediffClass>
+    <removeOnDeathrestStart>true</removeOnDeathrestStart>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <defaultLabelColor>(169, 224, 155, 255)</defaultLabelColor>
+    <extraTooltip>Lasts until the next deathrest.</extraTooltip>
+  </HediffDef>
+
+  <HediffDef ParentName="DeathrestHediffBase">
+    <defName>HemogenAmplified</defName>
+    <label>hemogen amplified</label>
+    <description>All hemogen gains are multiplied up because this person used a hemogen amplifier while deathresting. This effect lasts until the next deathrest.</description>
+    <descriptionHyperlinks>
+      <ThingDef>HemogenAmplifier</ThingDef>
+    </descriptionHyperlinks>
+    <stages>
+      <li>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+        <statOffsets>
+          <HemogenGainFactor>0.25</HemogenGainFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DeathrestHediffBase">
+    <defName>GlucosoidRush</defName>
+    <label>glucosoid rush</label>
+    <description>Move speed is increased because this person used a glucosoid pump while deathresting. This effect lasts until the next deathrest.</description>
+    <descriptionHyperlinks>
+      <ThingDef>GlucosoidPump</ThingDef>
+    </descriptionHyperlinks>
+    <stages>
+      <li>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+        <statFactors>
+          <MoveSpeed>1.12</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DeathrestHediffBase">
+    <defName>PsychofluidRush</defName>
+    <label>psychofluid rush</label>
+    <description>Psychic sensitivity is enhanced because this person used a psychofluid pump while deathresting. This effect lasts until the next deathrest.</description>
+    <descriptionHyperlinks>
+      <ThingDef>PsychofluidPump</ThingDef>
+    </descriptionHyperlinks>
+    <stages>
+      <li>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+        <statOffsets>
+          <PsychicSensitivity>0.25</PsychicSensitivity>
+          <MeditationFocusGain>0.05</MeditationFocusGain>
+          <PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

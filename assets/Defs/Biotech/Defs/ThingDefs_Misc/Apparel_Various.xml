@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ApparelArmorPowerBase">
+    <defName>Apparel_MechlordSuit</defName>
+    <label>mechlord suit</label>
+    <description>A power-assisted armor suit packed with mechanitor-assistance gear. The mechlord suit dramatically amplifies a mechanitor's bandwidth, but is somewhat less protective than dedicated heavy armor.</description>
+    <recipeMaker>
+      <researchPrerequisite>UltraMechtech</researchPrerequisite>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <displayPriority>530</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/MechlordSuit/MechlordSuit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <ArmorRating_Sharp>0.92</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.46</ArmorRating_Heat>
+      <Insulation_Cold>64</Insulation_Cold>
+      <Insulation_Heat>9</Insulation_Heat>
+      <EquipDelay>11</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MechBandwidth>12</MechBandwidth>
+      <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
+      <MeleeHitChance>-0.5</MeleeHitChance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
+    </equippedStatOffsets>
+    <costList>
+      <NanostructuringChip>2</NanostructuringChip>
+      <PowerfocusChip>1</PowerfocusChip>
+      <Plasteel>120</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <apparel>
+      <tags>
+        <li>RoyalTier7</li>
+        <li>Mechlord</li>
+      </tags>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/MechlordSuit/MechlordSuit</wornGraphicPath>
+    </apparel>
+    <tradeability>Sellable</tradeability>
+    <tradeTags Inherit="False">
+      <li>HiTechArmor</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Apparel_Bandolier</defName>
+    <label>heavy bandolier</label>
+    <description>A heavy shoulder-belt for keeping spare munitions close at hand. It allows quick access to bullets, grenades, arrows, or whatever the user needs, reducing their weapon's ranged cooldown. Due to its bulk, it can't be worn under other clothing. It doesn't cover the body, so it can be worn happily by nudists and yttakin.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/HeavyBandolier/HeavyBandolier</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costStuffCount>75</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.5</Mass>
+      <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <RangedCooldownFactor>-0.2</RangedCooldownFactor>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>255</displayPriority>
+    </recipeMaker>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyBandolier/HeavyBandolier</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>Apparel_Yttakin</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+        <li>Nudist</li>
+        <li>Spacefarer</li>
+      </defaultOutfitTags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <tradeTags>
+      <li>Armor</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Apparel_Sash</defName>
+    <label>sash</label>
+    <description>A long strip of material worn over one shoulder. It offers minimal protection from heat, cold, and attacks. Due to its minimalist nature, nudists won't complain about wearing it.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Sash/Sash</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.7</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costStuffCount>25</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToMake>1000</WorkToMake>
+      <Mass>0.5</Mass>
+      <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+      <displayPriority>250</displayPriority>
+    </recipeMaker>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+      </bodyPartGroups>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Sash/Sash</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>Apparel_Yttakin</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+        <li>Nudist</li>
+        <li>Spacefarer</li>
+      </defaultOutfitTags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <tradeTags>
+      <li>Armor</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

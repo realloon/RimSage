@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- History events -->
+
+  <HistoryEventDef>
+    <defName>AteNonCannibalFood</defName>
+    <label>ate non-cannibal food</label>
+  </HistoryEventDef>
+
+  <!-- Abhorrent -->
+
+  <PreceptDef>
+    <defName>Cannibalism_Abhorrent</defName>
+    <issue>Cannibalism</issue>
+    <label>abhorrent</label>
+    <description>Eating human flesh is a deeply abhorrent and disgusting act.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Know_Abhorrent_Opinion</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HumanLeatherApparel_Abhorrent</thought>
+        <description>Humanleather apparel</description>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_Abhorrent</defName>
+    <durationDays>1</durationDays>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <description>I had to eat human meat. This is an offense against everything I believe.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Abhorrent</defName>
+    <durationDays>6</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>I butchered humanlike</label>
+        <description>I butchered a human being. This is an offense against everything I believe.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Know_Abhorrent</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>we butchered humanlike</label>
+        <description>One of us butchered a human being. This is an offense against everything I believe.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Know_Abhorrent_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>butchered humanlike</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HumanLeatherApparel_Abhorrent</defName>
+    <workerClass>ThoughtWorker_Precept_HumanLeatherApparel</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>human leather {0}</label>
+        <description>Wearing human leather is disturbing. Who could do this?</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+1)</label>
+        <description>I'm dressed like an insane person.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+2)</label>
+        <description>I think there may be a face on my clothes. Oh, no... my clothes *are* a face.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} etc</label>
+        <description>I look like a freak from a horror show, and I feel like I'm in a horror show.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+
+  <!-- Horrible -->
+
+  <PreceptDef>
+    <defName>Cannibalism_Horrible</defName>
+    <issue>Cannibalism</issue>
+    <label>horrible</label>
+    <description>Eating human flesh is a horrible thing to do.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Know_Horrible_Opinion</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HumanLeatherApparel_Horrible</thought>
+        <description>Humanleather apparel</description>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_Horrible</defName>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <description>I had to eat human meat. This was a horrible thing.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Horrible</defName>
+    <durationDays>6</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>I butchered humanlike</label>
+        <description>I butchered a human being. This was a horrible thing.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Know_Horrible</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>we butchered humanlike</label>
+        <description>One of us butchered a human being. This was a horrible thing.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Know_Horrible_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>butchered humanlike</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HumanLeatherApparel_Horrible</defName>
+    <workerClass>ThoughtWorker_Precept_HumanLeatherApparel</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>human leather {0}</label>
+        <description>Wearing human leather is wrong.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+1)</label>
+        <description>I feel really uncomfortable with all this human leather apparel.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+2)</label>
+        <description>Why am I wearing so much human leather? This is horrible!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} etc</label>
+        <description>I look like a freak, this is horrifying!</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+
+  <!-- Disapproved -->
+
+  <PreceptDef>
+    <defName>Cannibalism_Disapproved</defName>
+    <issue>Cannibalism</issue>
+    <label>disapproved</label>
+    <description>Eating human flesh is an ugly thing to do.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ButcheredHuman</eventDef>
+        <thought>ButcheredHuman_Know_Disapproved_Opinion</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HumanLeatherApparel_Disapproved</thought>
+        <description>Humanleather apparel</description>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_Disapproved</defName>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <description>I had to eat human meat. I believe such actions are wrong.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Disapproved</defName>
+    <durationDays>6</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>I butchered humanlike</label>
+        <description>I butchered a human being. I believe such actions are wrong.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Know_Disapproved</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>we butchered humanlike</label>
+        <description>One of us butchered a human being. I believe such actions are wrong.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ButcheredHuman_Know_Disapproved_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>butchered humanlike</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HumanLeatherApparel_Disapproved</defName>
+    <workerClass>ThoughtWorker_Precept_HumanLeatherApparel</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>human leather {0}</label>
+        <description>I should not be wearing human leather apparel.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+1)</label>
+        <description>I'm dressed in human skin. I do not like this.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+2)</label>
+        <description>Why am I wearing so much human leather apparel? We should have something else to wear for me...</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} etc</label>
+        <description>I should really wear non-human leather apparel. I look like a crazy person.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+
+  <!-- Acceptable -->
+
+  <PreceptDef>
+    <defName>Cannibalism_Acceptable</defName>
+    <issue>Cannibalism</issue>
+    <label>acceptable</label>
+    <description>Human meat is just meat, like any other.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+    </associatedMemes>
+  </PreceptDef>
+
+  <!-- Preferred -->
+
+  <PreceptDef>
+    <defName>Cannibalism_Preferred</defName>
+    <issue>Cannibalism</issue>
+    <label>preferred</label>
+    <description>To consume human meat is a noble and necessary part of life.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <likesHumanLeatherApparel>true</likesHumanLeatherApparel>
+    <comps>
+      <!-- Ate human meat -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_Preferred</thought>
+      </li>
+
+      <!-- Want human meat -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>NoRecentHumanMeat_Preferred</thought>
+        <description>No human meat for {HUMANMEATREQUIREDINTERVAL} days</description>
+      </li>
+
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HumanLeatherApparel_Preferred</thought>
+        <description>Humanleather apparel</description>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_Preferred</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <description>I ate human meat. It makes me feel noble and strong.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>NoRecentHumanMeat_Preferred</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NoRecentHumanMeat</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want human meat</label>
+        <description>It's been too long since I consumed any human meat. It feels wrong.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>HumanLeatherApparel_Preferred</defName>
+    <workerClass>ThoughtWorker_Precept_HumanLeatherApparel</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>human leather {0}</label>
+        <description>I feel good wearing human leather apparel.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+1)</label>
+        <description>I enjoy wearing the skin of others.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+2)</label>
+        <description>I wear the faces of my enemies. This makes me happy.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} etc</label>
+        <description>I look like a real cannibal. Who could doubt me?</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <!-- Strictly required -->
+
+  <PreceptDef>
+    <defName>Cannibalism_RequiredStrong</defName>
+    <issue>Cannibalism</issue>
+    <label>required (strong)</label>
+    <description>Consuming human flesh is important. It should be in every meal.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <likesHumanLeatherApparel>true</likesHumanLeatherApparel>
+    <requiredMemes>
+      <li>Cannibal</li>
+    </requiredMemes>
+    <comps>
+      <!-- Ate non-human meat -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteNonCannibalFood</eventDef>
+        <thought>AteNonCannibalFood_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AteNonCannibalFood</eventDef>
+        <thought>AteNonCannibalFood_Know_Horrible</thought>
+      </li>
+
+      <!-- Ate human meat -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_RequiredStrong</thought>
+      </li>
+
+      <!-- Want human meat -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>NoRecentHumanMeat_RequiredStrong</thought>
+        <description>No human meat for {HUMANMEATREQUIREDINTERVAL} days</description>
+      </li>
+
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HumanLeatherApparel_RequiredStrong</thought>
+        <description>Humanleather apparel</description>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>AteNonCannibalFood_Horrible</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate non-cannibal food</label>
+        <description>I had to eat food that wasn't taken from a human body. My beliefs strictly forbid such things.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteNonCannibalFood_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>ate non-cannibal food</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_RequiredStrong</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <description>I ate human meat, as every real human should.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>NoRecentHumanMeat_RequiredStrong</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NoRecentHumanMeat</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want human meat</label>
+        <description>It's been far too long since I consumed human. I should have eaten by now.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>HumanLeatherApparel_RequiredStrong</defName>
+    <workerClass>ThoughtWorker_Precept_HumanLeatherApparel</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>human leather {0}</label>
+        <description>I enjoy wearing the faces of others.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+1)</label>
+        <description>This will scare them. All will know my power.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+2)</label>
+        <description>The faces on my clothes aren't smiling, but they make *me* happy.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} etc</label>
+        <description>The flesh! The flesh signals my triumph!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <!-- Absolutely required -->
+
+  <PreceptDef>
+    <defName>Cannibalism_RequiredRavenous</defName>
+    <issue>Cannibalism</issue>
+    <label>required (ravenous)</label>
+    <description>Man-flesh is morality. To eat a meal without it is unthinkable.</description>
+    <impact>High</impact>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <likesHumanLeatherApparel>true</likesHumanLeatherApparel>
+    <requiredMemes>
+      <li>Cannibal</li>
+    </requiredMemes>
+    <comps>
+      <!-- Ate non-human meat -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteNonCannibalFood</eventDef>
+        <thought>AteNonCannibalFood_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>AteNonCannibalFood</eventDef>
+        <thought>AteNonCannibalFood_Know_Abhorrent</thought>
+      </li>
+
+      <!-- Ate human meat -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteHumanMeat</eventDef>
+        <thought>AteHumanMeat_RequiredRavenous</thought>
+      </li>
+
+      <!-- Want human meat -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>NoRecentHumanMeat_RequiredRavenous</thought>
+        <description>No human meat for {HUMANMEATREQUIREDINTERVAL} days</description>
+      </li>
+
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HumanLeatherApparel_RequiredRavenous</thought>
+        <description>Humanleather apparel</description>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>AteNonCannibalFood_Abhorrent</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate non-cannibal food</label>
+        <description>I had to eat food that wasn't taken from a human body. This is absolutely against my beliefs.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteNonCannibalFood_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>ate non-cannibal food</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteHumanMeat_RequiredRavenous</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate human meat</label>
+        <description>I ate human meat! The world is right, and I am as I should be.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>NoRecentHumanMeat_RequiredRavenous</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NoRecentHumanMeat</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want human meat</label>
+        <description>Ravenous! It's been so long since I tasted the true flesh. This is wrong!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>HumanLeatherApparel_RequiredRavenous</defName>
+    <workerClass>ThoughtWorker_Precept_HumanLeatherApparel</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>human leather {0}</label>
+        <description>I enjoy wearing the suffering of others.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+1)</label>
+        <description>This will scare them. All will know my power.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} (+2)</label>
+        <description>The faces on my clothes aren't smiling, but they make *me* happy.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>human leather {0} etc</label>
+        <description>The flesh! The flesh signals my triumph!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+</Defs>

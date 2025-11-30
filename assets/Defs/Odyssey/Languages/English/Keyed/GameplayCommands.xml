@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Grav engine -->
+  <CommandShowSubstructureOverlay>Show substructure overlay</CommandShowSubstructureOverlay>
+  <CommandShowSubstructureOverlayDesc>Display valid substructure in blue and invalid substructure in red.</CommandShowSubstructureOverlayDesc>
+  <CommandInspectGravEngine>Inspect {0_labelShort}</CommandInspectGravEngine>
+  <CommandInspectGravEngineDesc>Choose a colonist to inspect the mysterious grav engine.</CommandInspectGravEngineDesc>
+  <CommandChooseNavigator>Choose navigator</CommandChooseNavigator>
+  <CannotChooseNavigator>Cannot navigate</CannotChooseNavigator>
+
+  <CommandLaunchGravship>Launch</CommandLaunchGravship>
+  <CommandLaunchGravshipDesc>Choose a colonist to pilot the gravship. Anything on gravship substructure will be transported to a new map. Your current map will be abandoned if you don't have a grav anchor.</CommandLaunchGravshipDesc>
+
+  <CommandAllowFish>Allow fishing</CommandAllowFish>
+  <CommandAllowFishDesc>When disabled, colonists will never fish in this zone.</CommandAllowFishDesc>
+  
+  <CommandAllowRemovingApparel>Allow removing items</CommandAllowRemovingApparel>
+  <CommandAllowRemovingApparelDesc>When disabled, haulers won't remove items from the outfit stand and colonists won't equip apparel unless ordered to do so.</CommandAllowRemovingApparelDesc>
+
+  <CommandShuttleNoPilot>No colonist capable of piloting shuttle. Requires minimum piloting ability of 10%.</CommandShuttleNoPilot>
+
+  <ConfirmLandGravship>Confirm landing zone</ConfirmLandGravship>
+  <ConfirmLandGravshipDesc>Land your gravship in the landing zone.</ConfirmLandGravshipDesc>
+  <AbortLandGravship>Abort landing</AbortLandGravship>
+  <AbortLandGravshipDesc>Cancel landing on this map, and force the gravship to land nearby on the world map. Useful if you can't find a landing spot.\n\nWarning: This increases the chance of a mishap when landing.</AbortLandGravshipDesc>
+  <AbortLandConfirmation>Aborting the landing will force your gravship to land in a random nearby location on the world map. This increases the chance of a mishap when landing.\n\nAre you sure you want to continue?</AbortLandConfirmation>
+  <FailedToFindCrashSite>Failed to find crash site.</FailedToFindCrashSite>
+  <GravshipLandingMarkerNotPlaced>You must designate a landing area for your gravship.</GravshipLandingMarkerNotPlaced>
+
+  <CommandRefuelShuttleFromCargo>Refuel from cargo</CommandRefuelShuttleFromCargo>
+  <CommandRefuelShuttleFromCargoDesc>Refuel the passenger shuttle using chemfuel stored within.</CommandRefuelShuttleFromCargoDesc>
+  <NoFuelInCaravan>No fuel in caravan.</NoFuelInCaravan>
+  <NoFuelInShuttle>No fuel in shuttle.</NoFuelInShuttle>
+  <ShuttleFullyFueled>Shuttle is already fully fueled</ShuttleFullyFueled>
+
+  <SealHatch>Seal entrance...</SealHatch>
+  <SealHatchDesc>Choose a colonist to permanently seal the entrance. Anything or anyone left below will be lost forever.</SealHatchDesc>
+
+  <GravshipShieldOrderActivation>Activate</GravshipShieldOrderActivation>
+  <GravshipShieldOrderDeactivation>Deactivate</GravshipShieldOrderDeactivation>
+  <GravshipShieldOrderActivationDesc>Order a pawn to activate the gravship shield generator.</GravshipShieldOrderActivationDesc>
+  <GravshipShieldOrderDeactivationDesc>Order a pawn to deactivate the gravship shield generator.</GravshipShieldOrderDeactivationDesc>
+
+  <ConfirmMergeShuttles>Merging these caravans will cause the following to be lost:\n{0}\n\nAre you sure you want to continue?</ConfirmMergeShuttles>
+</LanguageData>

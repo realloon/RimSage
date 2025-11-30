@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <!-- River Variants -->
+
+  <TileMutatorDef>
+    <defName>Headwater</defName>
+    <label>headwater</label>
+    <description>A river's origin point.</description>
+    <categories>
+      <li>River</li>
+      <li>Lake</li>
+    </categories>
+    <priority>-1</priority> <!-- overridden by lakes -->
+    <workerClass>TileMutatorWorker_Headwater</workerClass>
+    <genOrder>50</genOrder>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>RiverConfluence</defName>
+    <label>river confluence</label>
+    <description>A merging of two rivers.</description>
+    <categories>
+      <li>River</li>
+    </categories>
+    <workerClass>TileMutatorWorker_RiverConfluence</workerClass>
+    <genOrder>50</genOrder>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>RiverIsland</defName>
+    <label>river island</label>
+    <description>A river splitting into two and then merging again.</description>
+    <categories>
+      <li>River</li>
+    </categories>
+    <workerClass>TileMutatorWorker_RiverIsland</workerClass>
+    <canSpawnOnLandmark>false</canSpawnOnLandmark>
+    <genOrder>50</genOrder>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>RiverDelta</defName>
+    <label>delta</label>
+    <description>A river splitting into many branches as it enters the ocean.</description>
+    <categories>
+      <li>River</li>
+    </categories>
+    <workerClass>TileMutatorWorker_RiverDelta</workerClass>
+    <canSpawnOnLandmark>false</canSpawnOnLandmark>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRoad>false</canSpawnOnRoad>
+    <genOrder>50</genOrder>
+  </TileMutatorDef>
+
+  <!-- Lake Variants -->
+
+  <TileMutatorDef Name="BaseLakeMut" Abstract="True">
+    <categories>
+      <li>Lake</li>
+    </categories>
+    <biomeWhitelist>
+      <li>BorealForest</li>
+      <li>GlacialPlain</li>
+      <li>Glowforest</li>
+      <li>TemperateForest</li>
+      <li>TropicalRainforest</li>
+      <li>Grasslands</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+    <coastSidesRange>0~0</coastSidesRange>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseLakeMut">
+    <defName>Lake</defName>
+    <label>lake</label>
+    <description>A large body of fresh water.</description>
+    <workerClass>TileMutatorWorker_Lake</workerClass>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseLakeMut" Name="LakeWithIslandMut">
+    <defName>LakeWithIsland</defName>
+    <label>lake with island</label>
+    <description>A large body of fresh water encircles one or more islands.</description>
+    <workerClass>TileMutatorWorker_LakeWithIsland</workerClass>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="LakeWithIslandMut">
+    <defName>LakeWithIslands</defName>
+    <workerClass>TileMutatorWorker_LakeWithIslands</workerClass>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseLakeMut">
+    <defName>Pond</defName>
+    <label>pond</label>
+    <categories>
+      <li>Groundwater</li>
+    </categories>
+    <description>A small body of fresh water.</description>
+    <workerClass>TileMutatorWorker_Pond</workerClass>
+    <biomeWhitelist Inherit="false">
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>GlacialPlain</li>
+      <li>Glowforest</li>
+      <li>Grasslands</li>
+      <li>TemperateForest</li>
+      <li>TropicalRainforest</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Oasis</defName>
+    <label>oasis</label>
+    <description>A lush spring featuring abundant plant life and water.</description>
+    <categories>
+      <li>Lake</li>
+      <li>Groundwater</li>
+    </categories>
+    <priority>1</priority>
+    <workerClass>TileMutatorWorker_Oasis</workerClass>
+    <additionalWildPlants>
+      <Plant_TreePalm>5</Plant_TreePalm>
+      <Plant_RatPalm MayRequire="Ludeon.RimWorld.Biotech">4</Plant_RatPalm>
+      <Plant_Grass>6</Plant_Grass>
+      <Plant_GrayGrass MayRequire="Ludeon.RimWorld.Biotech">5</Plant_GrayGrass>
+      <Plant_Reeds>1</Plant_Reeds>
+    </additionalWildPlants>
+    <overrideDensityForFertilityCurve>
+      <points>
+        <li>(0, 0.05)</li> <!-- Water plants -->
+        <li>(0.001, -1)</li>
+        <li>(0.999, -1)</li> <!-- Use base plant density -->
+        <li>(1.0, 0.05)</li>
+        <li>(1.4, 0.3)</li>
+      </points>
+    </overrideDensityForFertilityCurve>
+    <biomeWhitelist>
+      <li>Desert</li>
+      <li>ExtremeDesert</li>
+    </biomeWhitelist>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+    <averageTemperatureRange>20~60</averageTemperatureRange>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>DryLake</defName>
+    <label>dry lake</label>
+    <description>The remains of a former lake.</description>
+    <categories>
+      <li>Lake</li>
+    </categories>
+    <priority>2</priority>
+    <workerClass>TileMutatorWorker_DryLake</workerClass>
+    <biomeWhitelist>
+      <li>Desert</li>
+      <li>ExtremeDesert</li>
+      <li>Tundra</li>
+      <li>AridShrubland</li>
+      <li>Grasslands</li>
+    </biomeWhitelist>
+    <coastSidesRange>0~0</coastSidesRange>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>ToxicLake</defName>
+    <label>toxic lake</label>
+    <description>A body of water that has been poisoned by chemicals leaching out of the ground. The water will cause toxic buildup.</description>
+    <categories>
+      <li>Lake</li>
+    </categories>
+    <priority>2</priority>
+    <workerClass>TileMutatorWorker_ToxicLake</workerClass>
+    <biomeWhitelist>
+      <li>Glowforest</li>
+      <li>Scarlands</li>
+    </biomeWhitelist>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Wetland</defName>
+    <label>wetland</label>
+    <description>Large interconnected waterways dominate the area.</description>
+    <workerClass>TileMutatorWorker_Wetland</workerClass>
+    <biomeWhitelist>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li>Glowforest</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <overrideLakeBeachTerrain>Mud</overrideLakeBeachTerrain>
+    <overrideRiverbankTerrain>Mud</overrideRiverbankTerrain>
+    <coastSidesRange>0~0</coastSidesRange>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>HotSprings</defName>
+    <label>hot springs</label>
+    <description>A hot water spring, heated by geothermal activity.</description>
+    <categories>
+      <li>Lake</li>
+    </categories>
+    <workerClass>TileMutatorWorker_HotSprings</workerClass>
+    <biomeWhitelist>
+      <li>BorealForest</li>
+      <li>LavaField</li>
+      <li>TemperateForest</li>
+      <li>Tundra</li>
+      <li>GlacialPlain</li>
+    </biomeWhitelist>
+    <minHilliness>Mountainous</minHilliness>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+    <coastSidesRange>0~0</coastSidesRange>
+  </TileMutatorDef>
+
+  <!-- Mountain Variants -->
+
+  <TileMutatorDef>
+    <defName>Valley</defName>
+    <label>valley</label>
+    <description>A steep valley carved through a mountain.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_Valley</workerClass>
+    <genOrder>-200</genOrder>
+    <minHilliness>Mountainous</minHilliness>
+    <coastSidesRange>0~0</coastSidesRange>
+    <preventNaturalElevation>true</preventNaturalElevation>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Cavern</defName>
+    <label>cavern</label>
+    <description>A network of caves formed by various geological processes.</description>
+    <categories>
+      <li>Caves</li>
+      <li>Mountain</li>
+    </categories>
+    <priority>10</priority>
+    <workerClass>TileMutatorWorker_Cavern</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <minHilliness>Mountainous</minHilliness>
+    <allowRoofedEdgeWalkIn>true</allowRoofedEdgeWalkIn>
+    <blacklistedRaidStrategies>
+      <li>Siege</li>
+    </blacklistedRaidStrategies>
+    <preventNaturalElevation>true</preventNaturalElevation>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Chasm</defName>
+    <label>chasm</label>
+    <description>Geological movement has caused deep fissures in this mountain.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_Chasm</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <minHilliness>Mountainous</minHilliness>
+    <preventNaturalElevation>true</preventNaturalElevation>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Crevasse</defName>
+    <label>crevasse</label>
+    <description>A massive rift created by glacial movement.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <overrideCategories>
+      <li>BaseCaves</li> <!-- Vanilla caves don't generate properly in ice. Uses IceCaves instead. -->
+    </overrideCategories>
+    <biomeWhitelist>
+      <li>GlacialPlain</li>
+    </biomeWhitelist>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_Crevasse</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <maxHilliness>Flat</maxHilliness>
+    <coastSidesRange>0~0</coastSidesRange>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Plateau</defName>
+    <label>plateau</label>
+    <description>A small rise with sharp cliffs and a flat top.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <biomeWhitelist>
+      <li>AridShrubland</li>
+      <li>Grasslands</li>
+      <li>Glowforest</li>
+      <li>Desert</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_Plateau</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <maxHilliness>Flat</maxHilliness>
+    <hillinessForElevationGen>Flat</hillinessForElevationGen> <!-- Don't want natural elevation to mess with the shape of the plateau too much -->
+    <hillinessForOreGeneration>Mountainous</hillinessForOreGeneration>
+    <hillinessLabel>Mountainous</hillinessLabel>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>IceDunes</defName>
+    <label>ice dunes</label>
+    <description>Massive rolling hills made from compacted windswept snow.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <biomeWhitelist>
+      <li>SeaIce</li>
+      <li>IceSheet</li>
+    </biomeWhitelist>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_IceDunes</workerClass>
+    <maxHilliness>Flat</maxHilliness>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Cliffs</defName>
+    <label>cliffs</label>
+    <description>Steep cliffs surround three sides of this area.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <biomeWhitelist>
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li>Desert</li>
+      <li>ExtremeDesert</li>
+      <li>Glowforest</li>
+      <li>Grasslands</li>
+      <li>IceSheet</li>
+      <li>LavaField</li>
+      <li>SeaIce</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_Cliffs</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <minHilliness>Mountainous</minHilliness>
+    <hillinessForElevationGen>Flat</hillinessForElevationGen> <!-- Don't want natural elevation to mess with the shape of the cliffs too much -->
+    <hillinessForOreGeneration>Mountainous</hillinessForOreGeneration> <!-- Since we are setting the hilliness for elevation gen to flat, we need to set this to mountainous so that ore can still generate -->
+    <hillinessLabel>Mountainous</hillinessLabel>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Hollow</defName>
+    <label>hollow</label>
+    <description>A small open area surrounded by cliffs.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_Hollow</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <minHilliness>Mountainous</minHilliness>
+    <preventNaturalElevation>true</preventNaturalElevation>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Basin</defName>
+    <label>basin</label>
+    <description>A natural depression in a mountain range, in which groundwater feeds a small lake.</description>
+    <categories>
+      <li>Mountain</li>
+      <li>Groundwater</li>
+    </categories>
+    <biomeWhitelist>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li>GlacialPlain</li>
+      <li>Glowforest</li>
+      <li>Grasslands</li>
+      <li>LavaField</li>
+      <li>Scarlands</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+    <priority>5</priority>
+    <workerClass>TileMutatorWorker_Basin</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <minHilliness>Mountainous</minHilliness>
+    <preventNaturalElevation>true</preventNaturalElevation>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>TerraformingScar</defName>
+    <label>terraforming scar</label>
+    <description>A misaligned blast from an ancient terraforming device has warped the earth into serpentine spirals. The area has since recovered, though the twisted and deformed hills remain.</description>
+    <categories>
+      <li>Mountain</li>
+    </categories>
+    <workerClass>TileMutatorWorker_TerraformingScar</workerClass>
+    <genOrder>-200</genOrder> <!-- Must be before any mutators that generate caves -->
+    <preventNaturalElevation>true</preventNaturalElevation>
+    <hillinessForOreGeneration>LargeHills</hillinessForOreGeneration>
+    <hillinessLabel>LargeHills</hillinessLabel>
+    <biomeWhitelist>
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li>Desert</li>
+      <li>ExtremeDesert</li>
+      <li>Glowforest</li>
+      <li>Grasslands</li>
+      <li>LavaField</li>
+      <li>Scarlands</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+  </TileMutatorDef>
+
+  <!-- Coastal Variants -->
+
+  <TileMutatorDef>
+    <defName>Lakeshore</defName>
+    <label>lakeshore</label>
+    <description>This tile borders a lake.</description>
+    <categories>
+      <li>Coast</li>
+    </categories>
+    <workerClass>TileMutatorWorker_Lakeshore</workerClass>
+    <genOrder>100</genOrder>
+  </TileMutatorDef>
+
+  <TileMutatorDef Name="BaseCoastMut" Abstract="True">
+    <categories>
+      <li>Coast</li>
+    </categories>
+    <priority>5</priority>
+    <overrideCategories>
+      <li>Mountain</li>
+    </overrideCategories>
+    <coastSidesRange>1~5</coastSidesRange>
+    <genOrder>100</genOrder>
+    <biomeWhitelist>
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li>Desert</li>
+      <li>ExtremeDesert</li>
+      <li>GlacialPlain</li>
+      <li>Glowforest</li>
+      <li>Grasslands</li>
+      <li>LavaField</li>
+      <li>Scarlands</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseCoastMut">
+    <defName>Archipelago</defName>
+    <label>archipelago</label>
+    <description>A network of several small islands dotting the coast.</description>
+    <workerClass>TileMutatorWorker_Archipelago</workerClass>
+    <coastSidesRange>2~5</coastSidesRange>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRoad>false</canSpawnOnRoad>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+    <biomeBlacklist>
+      <li>SeaIce</li>
+    </biomeBlacklist>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseCoastMut">
+    <defName>CoastalIsland</defName>
+    <label>coastal island</label>
+    <description>A large island near the shore.</description>
+    <workerClass>TileMutatorWorker_CoastalIsland</workerClass>
+    <coastSidesRange>3~5</coastSidesRange>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRoad>false</canSpawnOnRoad>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+    <biomeBlacklist>
+      <li>SeaIce</li>
+    </biomeBlacklist>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseCoastMut">
+    <defName>Peninsula</defName>
+    <label>peninsula</label>
+    <description>An outcropping of land surrounded by ocean.</description>
+    <workerClass>TileMutatorWorker_Peninsula</workerClass>
+    <coastSidesRange>3~5</coastSidesRange>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRoad>false</canSpawnOnRoad>
+  </TileMutatorDef>
+
+  <TileMutatorDef Name="Bay" ParentName="BaseCoastMut">
+    <defName>Bay</defName>
+    <label>bay</label>
+    <description>A large indentation in the coastline that provides shelter from strong coastal winds.</description>
+    <workerClass>TileMutatorWorker_Bay</workerClass>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRoad>false</canSpawnOnRoad>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="Bay">
+    <defName>Cove</defName>
+    <workerClass>TileMutatorWorker_Cove</workerClass>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseCoastMut">
+    <defName>CoastalAtoll</defName>
+    <label>coastal atoll</label>
+    <description>An island surrounding a large lagoon. There's very little land to build on here.</description>
+    <workerClass>TileMutatorWorker_CoastalAtoll</workerClass>
+    <biomeWhitelist Inherit="False">
+      <li>AridShrubland</li>
+      <li>Desert</li>
+      <li>Grasslands</li>
+      <li>TemperateForest</li>
+      <li>TropicalRainforest</li>
+    </biomeWhitelist>
+    <coastSidesRange>3~5</coastSidesRange>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <maxHilliness>SmallHills</maxHilliness>
+    <canSpawnOnRoad>false</canSpawnOnRoad>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseCoastMut">
+    <defName>Iceberg</defName>
+    <label>iceberg</label>
+    <description>A floating mass of ice, detached from the larger ice sheet.</description>
+    <workerClass>TileMutatorWorker_Iceberg</workerClass>
+    <biomeWhitelist Inherit="False">
+      <li>SeaIce</li>
+      <li>IceSheet</li>
+      <li>Tundra</li>
+      <li>ColdBog</li>
+      <li>BorealForest</li>
+    </biomeWhitelist>
+    <averageTemperatureRange>-100~0</averageTemperatureRange>
+    <geyserCountFactor>0</geyserCountFactor>
+    <junkDensityFactor>0</junkDensityFactor>
+    <coastSidesRange>3~5</coastSidesRange>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRoad>false</canSpawnOnRoad>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseCoastMut">
+    <defName>Fjord</defName>
+    <label>fjord</label>
+    <description>A long, narrow sea inlet surrounded by steep terrain.</description>
+    <workerClass>TileMutatorWorker_Fjord</workerClass>
+    <minHilliness>Mountainous</minHilliness>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+  </TileMutatorDef>
+
+  <!-- Lava Lake Variants -->
+
+  <TileMutatorDef Name="BaseLavaLakeMut" Abstract="True">
+    <label>lava lake</label>
+    <description>A lake of deep lava terrain surrounded by volcanic rock.</description>
+    <categories>
+      <li>Lake</li>
+    </categories>
+    <priority>2</priority>
+    <biomeWhitelist>
+      <li>LavaField</li>
+    </biomeWhitelist>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+    <coastSidesRange>0~0</coastSidesRange>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseLavaLakeMut">
+    <defName>LavaLake</defName>
+    <workerClass>TileMutatorWorker_LavaLake</workerClass>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BaseLavaLakeMut">
+    <defName>LavaCrater</defName>
+    <workerClass>TileMutatorWorker_LavaCrater</workerClass>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>LavaFlow</defName>
+    <label>lava flow</label>
+    <description>The surrounding landscape routinely funnels large amounts of lava into this area, making it extremely inhospitable.</description>
+    <categories> <!-- Overrides mountain and lake mutators -->
+      <li>Lake</li>
+      <li>Mountain</li>
+    </categories>
+    <priority>3</priority>
+    <workerClass>TileMutatorWorker_LavaFlow</workerClass>
+    <preventsPondGeneration>true</preventsPondGeneration>
+    <canSpawnOnRiver>false</canSpawnOnRiver>
+    <maxHilliness>SmallHills</maxHilliness>
+    <biomeWhitelist>
+      <li>LavaField</li>
+    </biomeWhitelist>
+    <coastSidesRange>0~0</coastSidesRange>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>LavaCaves</defName>
+    <label>lava caves</label>
+    <description>Small lava-filled cave networks can be found here.</description>
+    <categories>
+      <li>Caves</li>
+    </categories>
+    <priority>2</priority> <!-- Higher than regular caves -->
+    <workerClass>TileMutatorWorker_LavaCaves</workerClass>
+    <genOrder>-100</genOrder> <!-- After mountain but before other terrain gen -->
+    <preventGenSteps>
+      <li>CaveHives</li>
+    </preventGenSteps>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>IceCaves</defName>
+    <label>ice caves</label>
+    <description>Small cave networks can be found within the ice.</description>
+    <categories>
+      <li>Caves</li>
+    </categories>
+    <priority>2</priority> <!-- Higher than regular caves -->
+    <workerClass>TileMutatorWorker_IceCaves</workerClass>
+    <genOrder>-100</genOrder> <!-- After mountain but before other terrain gen -->
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>CaveLakes</defName>
+    <label>cave pools</label>
+    <description>Small bodies of water can be found within caves in this area.</description>
+    <categories>
+      <li>Caves</li>
+      <li>Groundwater</li>
+    </categories>
+    <priority>2</priority> <!-- Higher than regular caves -->
+    <workerClass>TileMutatorWorker_CaveLakes</workerClass>
+    <genOrder>-100</genOrder> <!-- After mountain but before other terrain gen -->
+  </TileMutatorDef>
+
+  <TileMutatorDef Abstract="True" Name="BasePatch">
+    <displayPriority>-50</displayPriority>
+    <workerClass>TileMutatorWorker_Patches</workerClass>
+    <genOrder>-150</genOrder> <!-- Very low priority terrain so other mutators have priority -->
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BasePatch">
+    <defName>Marshy</defName>
+    <label>marshy</label>
+    <description>Patches of marsh break up this area.</description>
+    <categories>
+      <li>Groundwater</li>
+    </categories>
+    <chanceOnNonLandmarkTile>0.01</chanceOnNonLandmarkTile>
+    <biomeWhitelist>
+      <li>Grasslands</li>
+      <li>TemperateForest</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+    <overrideLakeBeachTerrain>Marsh</overrideLakeBeachTerrain>
+    <overrideRiverbankTerrain>Marsh</overrideRiverbankTerrain>
+    <overrideMudTerrain>Marsh</overrideMudTerrain>
+    <terrainPatchMakers>
+      <li>
+        <perlinFrequency>0.035</perlinFrequency>
+        <thresholds>
+          <li>
+            <terrain>MarshyTerrain</terrain>
+            <min>0.5</min>
+            <max>0.7</max>
+          </li>
+          <li>
+            <terrain>Marsh</terrain>
+            <min>0.7</min>
+            <max>999</max>
+          </li>
+        </thresholds>
+      </li>
+    </terrainPatchMakers>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BasePatch">
+    <defName>Sandy</defName>
+    <label>sandy</label>
+    <description>Large patches of sand are scattered throughout this area.</description>
+    <chanceOnNonLandmarkTile>0.01</chanceOnNonLandmarkTile>
+    <biomeWhitelist>
+      <li>TropicalRainforest</li>
+      <li>TemperateForest</li>
+      <li>Tundra</li>
+      <li>Grasslands</li>
+      <li>LavaField</li>
+      <li>Glowforest</li>
+      <li>Scarlands</li>
+    </biomeWhitelist>
+    <overrideLakeBeachTerrain>Sand</overrideLakeBeachTerrain>
+    <overrideRiverbankTerrain>Sand</overrideRiverbankTerrain>
+    <overrideMudTerrain>Sand</overrideMudTerrain>
+    <terrainPatchMakers>
+      <li>
+        <perlinFrequency>0.035</perlinFrequency>
+        <thresholds>
+          <li>
+            <terrain>Sand</terrain>
+            <min>0.64</min>
+            <max>999</max>
+          </li>
+        </thresholds>
+      </li>
+    </terrainPatchMakers>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BasePatch">
+    <defName>Fertile</defName>
+    <label>fertile</label>
+    <description>This area contains more fertile soil than normal.</description>
+    <chanceOnNonLandmarkTile>0.01</chanceOnNonLandmarkTile>
+    <pollutionRange>0~0.25</pollutionRange>
+    <biomeWhitelist>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li>Glowforest</li>
+      <li>Grasslands</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+    </biomeWhitelist>
+    <terrainPatchMakers>
+      <li>
+        <perlinFrequency>0.035</perlinFrequency>
+        <thresholds>
+          <li>
+            <terrain>SoilRich</terrain>
+            <min>0.64</min>
+            <max>999</max>
+          </li>
+        </thresholds>
+      </li>
+    </terrainPatchMakers>
+  </TileMutatorDef>
+
+  <TileMutatorDef ParentName="BasePatch">
+    <defName>Muddy</defName>
+    <label>muddy</label>
+    <description>This area is muddier than normal.</description>
+    <categories>
+      <li>Groundwater</li>
+    </categories>
+    <chanceOnNonLandmarkTile>0.01</chanceOnNonLandmarkTile>
+    <biomeWhitelist>
+      <li>Grasslands</li>
+      <li>TemperateForest</li>
+      <li>Tundra</li>
+      <li>ColdBog</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalSwamp</li>
+    </biomeWhitelist>
+    <overrideLakeBeachTerrain>Mud</overrideLakeBeachTerrain>
+    <overrideRiverbankTerrain>Mud</overrideRiverbankTerrain>
+    <overrideMudTerrain>Mud</overrideMudTerrain>
+    <terrainPatchMakers>
+      <li>
+        <perlinFrequency>0.035</perlinFrequency>
+        <thresholds>
+          <li>
+            <terrain>Mud</terrain>
+            <min>0.64</min>
+            <max>999</max>
+          </li>
+        </thresholds>
+      </li>
+    </terrainPatchMakers>
+  </TileMutatorDef>
+
+  <!-- Misc -->
+  <TileMutatorDef>
+    <defName>MixedBiome</defName>
+    <label>mixed biome</label>
+    <description>This area is at the boundary of two distinct biomes and has elements of both.</description>
+    <workerClass>TileMutatorWorker_MixedBiome</workerClass>
+    <preventsLandmarks>true</preventsLandmarks>
+    <biomeWhitelist>
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li>Desert</li>
+      <li>ExtremeDesert</li>
+      <li>GlacialPlain</li>
+      <li>Grasslands</li>
+      <li>IceSheet</li>
+      <li>TemperateForest</li>
+      <li>TemperateSwamp</li>
+      <li>TropicalRainforest</li>
+      <li>TropicalSwamp</li>
+      <li>Tundra</li>
+    </biomeWhitelist>
+  </TileMutatorDef>
+
+  <TileMutatorDef>
+    <defName>Dunes</defName>
+    <label>dunes</label>
+    <description>A barren expanse of sand. This area is extremely inhospitable.</description>
+    <workerClass>TileMutatorWorker_Dunes</workerClass>
+    <preventsLandmarks>true</preventsLandmarks>
+    <biomeWhitelist>
+      <li>ExtremeDesert</li>
+    </biomeWhitelist>
+    <maxHilliness>Flat</maxHilliness>
+    <preventNaturalElevation>true</preventNaturalElevation>
+    <preventPatches>true</preventPatches>
+    <junkDensityFactor>0</junkDensityFactor>
+    <geyserCountFactor>0</geyserCountFactor>
+    <plantDensityFactor>0</plantDensityFactor>
+    <chunkDensityFactor>0.15</chunkDensityFactor>
+    <overrideRiverbankTerrain>Sand</overrideRiverbankTerrain>
+    <preventGenSteps>
+      <li>ScatterRuinsSimple</li>
+      <li>ScatterShrines</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientUtilityBuilding</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientLandingPad</li>
+    </preventGenSteps>
+  </TileMutatorDef>
+
+</Defs>
+

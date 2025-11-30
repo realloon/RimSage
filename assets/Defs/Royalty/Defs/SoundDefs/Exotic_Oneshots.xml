@@ -1,0 +1,89 @@
+<Defs>
+
+  <SoundDef>
+    <defName>AnimaTreeProgress</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/AnimaTree/Progress</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>16</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <distRange>25~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AnimaTreeScream</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/AnimaTree/Scream</clipFolderPath>
+          </li>
+        </grains>
+        <onCamera>True</onCamera>
+        <volumeRange>15</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AnimaTreeLink</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/AnimaTree/AnimaTreeLink2</clipPath>
+          </li>
+        </grains>
+        <volumeRange>3</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <distRange>25~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Bestowing_Start</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/Psycasts/PsyampInstalled_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Bestowing_Finished</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/Psycasts/WordOf/Apply</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>35</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

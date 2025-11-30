@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ImpactSoundTypeDef>
+    <defName>MechBandShockwave</defName>
+    <playOnlyIfHitPawn>true</playOnlyIfHitPawn>
+    <soundDef>MechBandShockwave</soundDef>
+  </ImpactSoundTypeDef>
+
+</Defs>

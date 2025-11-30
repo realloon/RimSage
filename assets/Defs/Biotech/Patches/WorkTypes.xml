@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkTypeDef[defName="Smithing"]/description</xpath>
+    <value>
+      <description>Create weapons and tools from raw materials, either as a blacksmith or by machining. Also repair mechanoids, if the colonist is a mechanitor.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkTypeDef[defName="Cleaning"]/description</xpath>
+    <value>
+      <description>Clear snow, pollution and clean the floor in the home area.</description>
+    </value>
+  </Operation>
+
+</Patch>

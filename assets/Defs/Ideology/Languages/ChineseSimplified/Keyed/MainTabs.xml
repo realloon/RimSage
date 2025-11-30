@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- Ideoligions -->
+  <!-- EN: Deities -->
+  <Deities>神明</Deities>
+  <!-- EN: Show all ideoligions -->
+  <ButtonShowAllIdeoligions>展示所有的文化</ButtonShowAllIdeoligions>
+  <!-- EN: Ideoligion of -->
+  <IdeoligionOf>文化形态</IdeoligionOf>
+  <!-- EN: Memes -->
+  <Memes>模因</Memes>
+  <!-- EN: Narrative -->
+  <CoreNarrative>叙述</CoreNarrative>
+  <!-- EN: The core narrative of your ideoligion. This has no gameplay impact. -->
+  <CoreNarrativeDesc>你的文化形态的核心叙述。这对游戏玩法没有影响。</CoreNarrativeDesc>
+  <!-- EN: Edit narrative -->
+  <EditNarrative>编辑叙述</EditNarrative>
+  <!-- EN: Lock or unlock the ideoligion's narrative. When locked, the narrative text will not auto-regenerate if the ideoligion is changed. -->
+  <LockButtonDesc>锁定或解锁当前的文化叙述。锁定时，如果文化发生变化，叙述文本将不会自动重新生成。</LockButtonDesc>
+  <!-- EN: {0} lock is currently on. The {1} will not auto-regenerate. -->
+  <LockInOn>{0}锁定目前处于开启状态。{1}不会自动再生。</LockInOn>
+  <!-- EN: {0} lock is currently off. The {1} text can auto-regenerate. -->
+  <LockInOff>{0}锁定目前已关闭。{1}文本可以自动重新生成。</LockInOff>
+  <!-- EN: Lock or unlock the name of this precept. When locked, the precept name will not auto-regenerate if the ideoligion is changed. -->
+  <LockPreceptNameButtonDesc>锁定或解锁此戒律的名字。锁定时，戒律的名称不会在改变文化形态时重新生成。</LockPreceptNameButtonDesc>
+  <!-- EN: Precepts -->
+  <Precepts>戒律</Precepts>
+  <!-- EN: Rituals -->
+  <Rituals>仪式</Rituals>
+  <!-- EN: Roles -->
+  <IdeoRoles>职位</IdeoRoles>
+  <!-- EN: Buildings -->
+  <IdeoBuildings>建筑</IdeoBuildings>
+  <!-- EN: Relics -->
+  <IdeoRelics>圣物</IdeoRelics>
+  <!-- EN: Preferred apparel -->
+  <IdeoApparel>偏好服装</IdeoApparel>
+  <!-- EN: apparel desire -->
+  <IdeoApparelDesire>服装偏好</IdeoApparelDesire>
+  <!-- EN: Won't do -->
+  <UnwillingToDoIdeoAction>不会做</UnwillingToDoIdeoAction>
+  <!-- EN: Stats -->
+  <PreceptStats>属性</PreceptStats>
+  <!-- EN: Prohibitions -->
+  <Prohibitions>禁令</Prohibitions>
+  <!-- EN: Opinions -->
+  <Opinions>意见</Opinions>
+  <!-- EN: Mental breaks -->
+  <MentalBreaks>精神崩溃</MentalBreaks>
+  <!-- EN: Randomize name -->
+  <RandomizeName>随机名称</RandomizeName>
+  <!-- EN: Randomize precepts -->
+  <RandomizePrecepts>随机戒律 </RandomizePrecepts>
+  <!-- EN: Randomize deities -->
+  <RandomizeDeities>随机神明</RandomizeDeities>
+  <!-- EN: Add deity -->
+  <AddDeity>添加神明</AddDeity>
+  <!-- EN: Choose memes -->
+  <ChooseMemes>选择模因</ChooseMemes>
+  <!-- EN: Choose starting meme -->
+  <ChooseStartingMeme>选择开局模因</ChooseStartingMeme>
+  <!-- EN: Choose structure -->
+  <ChooseStructure>选择结构</ChooseStructure>
+  <!-- EN: Choose culture -->
+  <ChooseCulture>选择传统</ChooseCulture>
+  <!-- EN: Culture -->
+  <Culture>传统</Culture>
+  <!-- EN: Culture affects names, appearances, and symbols. -->
+  <CultureTip>传统会影响名称、外观和符号。</CultureTip>
+  <!-- EN: Structure -->
+  <StructureMeme>结构</StructureMeme>
+  <!-- EN: An ideoligion's structure determines the kind of entities and forces it sees as important to the moral structure of the universe. It has no direct gameplay effects. -->
+  <StructureMemeTip>一个文化形态的结构决定了它认为对宇宙道德结构很重要的实体和力量的种类。它没有直接影响的游戏效果。</StructureMemeTip>
+  <!-- EN: Adjective -->
+  <Adjective>形容词</Adjective>
+  <!-- EN: Ritual room -->
+  <WorshipRoom>礼堂</WorshipRoom>
+  <!-- EN: Member noun -->
+  <IdeoMembers>成员名称</IdeoMembers>
+  <!-- EN: Member plural -->
+  <IdeoMembersPlural>成员团体</IdeoMembersPlural>
+  <!-- EN: Edit symbols -->
+  <EditSymbols>编辑符号</EditSymbols>
+  <!-- EN: Edit deity -->
+  <EditDeity>编辑神明</EditDeity>
+  <!-- EN: Edit required apparel -->
+  <EditApparelRequirement>编辑需要的服装</EditApparelRequirement>
+  <!-- EN: Edit name -->
+  <EditName>编辑名字</EditName>
+  <!-- EN: Any time -->
+  <StartingCondition_Anytime>任意时候</StartingCondition_Anytime>
+  <!-- EN: Date -->
+  <StartingCondition_Date>日期</StartingCondition_Date>
+  <!-- EN: Starting condition -->
+  <StartingCondition>起始条件</StartingCondition>
+  <!-- EN: Randomize symbols -->
+  <RandomizeSymbols>随机化符号</RandomizeSymbols>
+  <!-- EN: Randomize ideoligion name, icon, narrative, leader title and any other texts like ritual names or role names. This does not affect gameplay elements like memes or precepts. -->
+  <RandomizeSymbolsTooltip>随机化文化形态名称、图标、叙述、领袖头衔和任何其他文本，如仪式名称或职位名称。这并不会影响像模因或戒律这样的游戏元素。</RandomizeSymbolsTooltip>
+  <!-- EN: Click any element to edit it -->
+  <ClickAnyElementToEditIt>单击任何元素进行编辑</ClickAnyElementToEditIt>
+  <!-- EN: Leader title -->
+  <LeaderTitle>领袖称谓</LeaderTitle>
+  <!-- EN: Deity name -->
+  <DeityName>神明名讳</DeityName>
+  <!-- EN: Deity title -->
+  <DeityTitle>神明称谓</DeityTitle>
+  <!-- EN: Deity gender -->
+  <DeityGender>神明性别</DeityGender>
+  <!-- EN: Name -->
+  <Name>名字</Name>
+  <!-- EN: Icon -->
+  <Icon>标志</Icon>
+  <!-- EN: Related to meme -->
+  <RelatedToMeme>相关模因</RelatedToMeme>
+  <!-- EN: This is a charity quest. If you don't fulfill it, believers in {0} will be unhappy due to their charitable beliefs. If you do, believers in {0} will be happy ({1}). -->
+  <IdeoCharityQuestInfo>这是一项慈善事业。 如果你不履行它， {0} 的信徒会因为他们的仁爱信仰而感到不快。 如果你这样做，{0} 的信徒会很高兴 ({1})。</IdeoCharityQuestInfo>
+  <!-- EN: Slaves will not do this work -->
+  <WorkDisabledSlave>奴隶是不会做这项工作的</WorkDisabledSlave>
+  <!-- EN: Disabled by health condition -->
+  <WorkDisabledHealth>因健康状态而被禁用</WorkDisabledHealth>
+  <!-- EN: Disabled by {0} role -->
+  <WorkDisabledRole>因{0}职位被禁用</WorkDisabledRole>
+  <!-- EN: Affected by traits -->
+  <AffectedByTraits>例外特性</AffectedByTraits>
+  <!-- EN: This is a charity quest. People with charitable beliefs will be affected by its outcome. -->
+  <CharityQuestTip>这是一次慈善活动。有仁爱信仰的人会受到其结果的影响。</CharityQuestTip>
+  <!-- EN: formerly -->
+  <Formerly>以前</Formerly>
+  <!-- EN: all -->
+  <All>全部</All>
+  <!-- EN: Relics are objects of spiritual or ideological significance. They can be discovered by completing long and dangerous quests. A relic can be installed in a reliquary to attract pilgrims, enhance rituals, and strengthen an ideoligion's ability to convert outsiders. -->
+  <RelicTip>圣物是具有精神或文化形态意义的物品。他们可以通过完成漫长而危险的任务而被发现。一件圣物可以安装在圣物展台中，以吸引朝圣者，增强仪式效果，并加强文化形态信徒教化外人的能力。</RelicTip>
+  <!-- EN: Relics are objects of spiritual or ideological significance. They can be discovered by completing long and dangerous quests. A relic can be installed in a reliquary to attract pilgrims and enhance rituals. -->
+  <RelicTipClassic>圣物是具有精神或文化形态意义的物品。他们可以通过完成漫长而危险的任务而被发现。一件圣物可以安装在圣物展台中，以吸引朝圣者和增强仪式效果。</RelicTipClassic>
+  <!-- EN: animal -->
+  <Animal>动物</Animal>
+  <!-- EN: Venerated animals -->
+  <VeneratedAnimals>圣兽</VeneratedAnimals>
+  <!-- EN: weapon pair -->
+  <IdeoWeapon>圣器</IdeoWeapon>
+  <!-- EN: Weapons -->
+  <IdeoWeapons>武器</IdeoWeapons>
+  <!-- EN: Swap noble and despised -->
+  <SwapNobleAndDespised>交换推崇和鄙夷</SwapNobleAndDespised>
+  <!-- EN: noble -->
+  <Noble>推崇</Noble>
+  <!-- EN: despised -->
+  <Despised>鄙夷</Despised>
+  <!-- EN: Unlocked craftables -->
+  <UnlockedRecipes>解锁的工艺品</UnlockedRecipes>
+  <!-- EN: Start with research -->
+  <IdeoStartWithResearch>开局科技</IdeoStartWithResearch>
+  <!-- EN: Agreeing traits -->
+  <AgreeableTraits>认同的特性</AgreeableTraits>
+  <!-- EN: Conflicting traits -->
+  <DisagreeableTraits>冲突的特性</DisagreeableTraits>
+  <!-- EN: Shooting -->
+  <Shooting>射击</Shooting>
+  <!-- EN: Impact -->
+  <IdeoImpact>影响</IdeoImpact>
+  <!-- EN: Overall impact -->
+  <IdeoImpactOverall>整体影响</IdeoImpactOverall>
+  <!-- EN: Some memes impact gameplay more than others. The meme's impact score gives a sense of how big of a gameplay impact it has. -->
+  <IdeoImpactOverallDesc>一些模因比其他模因更能影响游戏玩法。模因的影响力得分可以让人了解它对游戏玩法的影响有多大。 </IdeoImpactOverallDesc>
+  <!-- EN: low -->
+  <IdeoMemeImpactLabel_1>低</IdeoMemeImpactLabel_1>
+  <!-- EN: medium -->
+  <IdeoMemeImpactLabel_2>中</IdeoMemeImpactLabel_2>
+  <!-- EN: high -->
+  <IdeoMemeImpactLabel_3>高</IdeoMemeImpactLabel_3>
+  <!-- EN: low -->
+  <IdeoImpactLabel_1>极低</IdeoImpactLabel_1>
+  <!-- EN: low -->
+  <IdeoImpactLabel_2>较低</IdeoImpactLabel_2>
+  <!-- EN: moderate -->
+  <IdeoImpactLabel_3>平缓</IdeoImpactLabel_3>
+  <!-- EN: moderate -->
+  <IdeoImpactLabel_4>平和</IdeoImpactLabel_4>
+  <!-- EN: strong -->
+  <IdeoImpactLabel_5>强烈</IdeoImpactLabel_5>
+  <!-- EN: strong -->
+  <IdeoImpactLabel_6>强力</IdeoImpactLabel_6>
+  <!-- EN: very strong -->
+  <IdeoImpactLabel_7>非常强烈</IdeoImpactLabel_7>
+  <!-- EN: very strong -->
+  <IdeoImpactLabel_8>非常强力</IdeoImpactLabel_8>
+  <!-- EN: extreme -->
+  <IdeoImpactLabel_9>极端</IdeoImpactLabel_9>
+  <!-- EN: This was your colony's starting ideoligion. -->
+  <InitialPlayerIdeo>这是你殖民地的开局文化形态。</InitialPlayerIdeo>
+  
+  
+  <!-- EN: Since this ideoligion is so new and has so few followers on this planet, it is fluid. This means that it can develop over time.\n\nDeveloping the ideoligion costs development points. You can earn development points by completing rituals and quests related to this ideoligion.\n\nWith enough development points, you can reform the ideoligion with new memes, precepts, styles, and more. -->
+  <FluidIdeoTip>这个演进文化形态在此星球上似乎刚诞生不久，追随者十分稀少。它能够随着时间进行发展。\n\n改革文化形态需要消耗发展点数，你可以通过完成和此文化有关的仪式或者任务来获取发展点数。\n\n有了足够的点数，你就可以用新的模因、戒律、风格或者其他内容来改革文化形态。</FluidIdeoTip>
+  <!-- EN: How to get development points -->
+  <FluidIdeoTipGetPoints>如何获取发展点数</FluidIdeoTipGetPoints>
+  <!-- EN: Convert someone to your ideoligion -->
+  <FluidIdeoTipGetPoinsByConversion>教化其他人为你的文化形态</FluidIdeoTipGetPoinsByConversion>
+
+  <!-- EN: {0} unlocks things which you cannot build because they require memes that none of your people believe -->
+  <ResearchProjectHasDefsWithMissingMemes>因为没有人认可相应的模因， {0} 解锁了你无法建造的东西</ResearchProjectHasDefsWithMissingMemes>
+  <!-- EN: Warning: This kind of work is opposed by {0_possessive} ideoligion, so it may make this person unhappy. -->
+  <SelectedWorkTypeOpposedByIdeo>警告：这种工作受到{0_possessive}文化形态的反对，因此可能会使此人不高兴。</SelectedWorkTypeOpposedByIdeo>
+
+  <!-- EN: Development points -->
+  <DevelopmentPoints>发展点数</DevelopmentPoints>
+
+</LanguageData>

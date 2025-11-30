@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <SelfShutdown>Dormant self-charging</SelfShutdown>
+  <CarryToRecharger>Carry to recharger</CarryToRecharger>
+  <MustBeCarriedToRecharger>Must be carried to recharger.</MustBeCarriedToRecharger>
+  <Danger>Danger</Danger>
+  <DamageType>{0} damage</DamageType>
+  <ContainedThings>Contained {0_labelPlural}</ContainedThings>
+  <DurationUntilNextAtomization>Time until next atomization</DurationUntilNextAtomization>
+  <FinishesIn>Finishes in</FinishesIn>
+  <WithLower>with</WithLower>
+  <TilesLower>tiles</TilesLower>
+  <CaravanMech>1 mech</CaravanMech>
+  <CaravanMechsCount>{0} mechs</CaravanMechsCount>
+  <BossWithApparel>{BOSS} with {APPAREL}</BossWithApparel>
+  <ComesFromGene>Resulting from gene</ComesFromGene>
+
+  <!-- Job reports -->
+  <ReportRemovingMechlink>removing {0}.</ReportRemovingMechlink>
+  <ReportTakingLessonFrom>from {TEACHER_labelShort}</ReportTakingLessonFrom>
+
+  <!-- Areas -->
+  <PollutionClear>Pollution clear</PollutionClear>
+
+  <!-- Mechanitor -->
+  <Overseer>Overseer</Overseer>
+  <OverseerNone>None (not under control)</OverseerNone>
+  <MayGoFeral>May go feral at any moment</MayGoFeral>
+  <Bandwidth>Bandwidth</Bandwidth>
+  <BandwidthLower>bandwidth</BandwidthLower>
+  <BandwidthGizmoTip>A mechanitor can only oversee a mech if there is enough bandwidth to do so. Each mech consumes a different amount of bandwidth.\n\nGain more bandwidth by constructing band nodes and tuning the mechanitor to them, or by equipping special mechanitor apparel.</BandwidthGizmoTip>
+  <ControlGroup>Control group</ControlGroup>
+  <CurrentMechWorkMode>Current mode</CurrentMechWorkMode>
+  <AssignedMechs>Assigned mechs</AssignedMechs>
+  <BandNodeTunedTo>Tuned to</BandNodeTunedTo>
+  <BandNodeTuneTo>Tune to</BandNodeTuneTo>
+  <BandNodeTuningTo>Tuning to</BandNodeTuningTo>
+  <BandNodeRetuneTo>Retune</BandNodeRetuneTo>
+  <BandNodeTuningDesc>Tune this band node to a mechanitor. Tuning will take {0} to complete.</BandNodeTuningDesc>
+  <BandNodeRetuningDesc>Retune this band node to another mechanitor. Retuning will take {0} to complete.</BandNodeRetuningDesc>
+  <DropThingBandwidthApparel>Removing {0} will change {1_labelShort}'s bandwidth from {2} to {3}. This will mean the following mechs will no longer be under control</DropThingBandwidthApparel>
+  <NoMechs>no mechs</NoMechs>
+  <Group>Group</Group>
+  <Groups>Groups</Groups>
+  <LoadingMechGestator>Loading mech gestation resources</LoadingMechGestator>
+  <GestatingInspect>Time left this cycle</GestatingInspect>
+  <InitMechGestationCycle>Initiating mech gestation cycle</InitMechGestationCycle>
+  <InitMechBirth>Initiating mech birth</InitMechBirth>
+  <MechEnergy>Mech energy</MechEnergy>
+  <Energy>Energy</Energy>
+  <EnergyLower>energy</EnergyLower>
+  <BandwidthUsage>Bandwidth usage</BandwidthUsage>
+  <MechGestationBandwidthUsed>Mech gestation bandwidth</MechGestationBandwidthUsed>
+  <CannotSummon>Cannot summon {0} threat</CannotSummon>
+  <ReadyToSummonThreat>{0} threat ready to summon</ReadyToSummonThreat>
+  <Summon>Summon {0} threat</Summon>
+  <MechsDisabled>Mechanoids disabled</MechsDisabled>
+  <NoReachableBossgroupCaller>No reachable {0}</NoReachableBossgroupCaller>
+  <NoReservableBossgroupCaller>No reservable {0}</NoReservableBossgroupCaller>
+  <NoPoweredBossgroupCaller>No powered {0}</NoPoweredBossgroupCaller>
+  <AlreadyUsed>already used</AlreadyUsed>
+  <Gestating>Gestating</Gestating>
+  <Escorting>Escorting {TARGET_labelShort}.</Escorting>
+  <Worker>Worker</Worker>
+  <WaitingFor>Waiting for</WaitingFor>
+  <Uncontrolled>Uncontrolled</Uncontrolled>
+  <BossgroupIncoming>incoming {0}</BossgroupIncoming>
+
+  <!-- Sanguophage -->
+  <Hemogen>hemogen</Hemogen>
+  <HemogenDesc>Hemogen is a biological energy source derived from compounds in human blood. Baseliner humans produce it endogenously and consume it over time in their own internal balance. Some human xenotypes use it as a kind of fuel for specific abilities, while others must consume it to survive at all.</HemogenDesc>
+  <DeathrestCapacity>deathrest capacity</DeathrestCapacity>
+  <DeathrestCapacityDesc>This determines how many deathrest buildings a person can connect to while deathresting. Each deathrest building confers a specific benefit, so it's better to be able to connect to more of them.\n\nDeathrest capacity can be increased using deathrest capacity serums. These serums can be purchased from traders.</DeathrestCapacityDesc>
+  <PawnIsConnectedToBuildings>{PAWN_nameDef} is connected to {CURRENT} / {MAX} (max) deathrest buildings.</PawnIsConnectedToBuildings>
+  <Wake>wake now</Wake>
+  <WakeDesc>Wake up from deathrest.\n\n{PAWN_nameDef} has been in deathrest for {DURATION}.</WakeDesc>
+  <WakeExtraDesc_Exhaustion>{PAWN_nameDef} needs to deathrest for at least {TOTAL}. Waking {PAWN_objective} early will make {PAWN_objective} ill, and {PAWN_pronoun} will not benefit from any deathrest buildings.</WakeExtraDesc_Exhaustion>
+  <WakeExtraDesc_Safe>{PAWN_nameDef} can now wake safely.</WakeExtraDesc_Safe>
+  <CannotWakeNotEnoughHemogen>Cannot wake. Need at least {0} hemogen.</CannotWakeNotEnoughHemogen>
+  <AutoWake>Auto-wake</AutoWake>
+  <AutoWakeDesc>When on, {PAWN_nameDef} will automatically wake once {PAWN_possessive} deathrest is complete.\n\nWhile off, {PAWN_pronoun} will continue deathresting until you wake {PAWN_objective} manually.</AutoWakeDesc>
+  <IsDeathresting>{PAWN_nameDef} is deathresting.</IsDeathresting>
+  <CannotDeathrest>cannot deathrest</CannotDeathrest>
+  <StartDeathrest>Start deathrest</StartDeathrest>
+  <ConfirmExitDeathrestUnderMinDays>Safely completing deathrest takes {MINDURATION}, but {PAWN_nameDef} has only been deathresting for {CURDURATION}.\n\nWaking {PAWN_nameDef} now would interrupt {PAWN_possessive} deathrest, throwing {PAWN_possessive} metabolism out of balance and making {PAWN_objective} sick for days to come.\n\nAre you sure you wish to wake {PAWN_objective}?</ConfirmExitDeathrestUnderMinDays>
+  <Deathresting>deathresting</Deathresting>
+  <CanWakeSafely>can wake safely now.</CanWakeSafely>
+  <DisabledByGene>Disabled by gene</DisabledByGene>
+  <WakeDisabledCriticalCondition>{PAWN_nameDef} is in critical condition.</WakeDisabledCriticalCondition>
+  <DrainRate>Drain rate</DrainRate>
+  <RegenerationRate>Regeneration rate</RegenerationRate>
+  <NextDeathrestNeed>{PAWN_nameDef} should deathrest in {DURATION} to avoid exhaustion.</NextDeathrestNeed>
+  <PawnShouldDeathrestNow>{PAWN_nameDef} should deathrest soon to avoid exhaustion.</PawnShouldDeathrestNow>
+  <AutoTakeHemogenDesc>This determines whether {PAWN_nameDef} will automatically ingest hemogen packs when {PAWN_possessive} hemogen is below {MIN}.\n\nAutomatic ingestion is currently {ONOFF}.</AutoTakeHemogenDesc>
+  <ConsumeHemogenBelow>Consume hemogen below</ConsumeHemogenBelow>
+  <NeverConsumeHemogen>Never consume hemogen.</NeverConsumeHemogen>
+  <WillKill>Will kill</WillKill>
+  <WillCauseSeriousBloodloss>Will cause major blood loss</WillCauseSeriousBloodloss>
+  <TooSmall>too small</TooSmall>
+
+  <!-- Deathrest buildings -->
+  <BoundTo>Bound to</BoundTo>
+  <WillBindOnFirstUse>Will bind permanently on first use.</WillBindOnFirstUse>
+  <TimeActiveThisDeathrest>Time active this deathrest</TimeActiveThisDeathrest>
+  <MinimumNeededToApply>Minimum is {0} to apply</MinimumNeededToApply>
+  <CannotAssignBedCannotDeathrest>Cannot deathrest</CannotAssignBedCannotDeathrest>
+  <CannotAssignAlreadyBound>Already bound to {0_nameDef}</CannotAssignAlreadyBound>
+  <CannotAssignBedCannotBindToMoreBuildings>Cannot bind to more {BUILDING_labelPlural}</CannotAssignBedCannotBindToMoreBuildings>
+
+  <!-- Aptitudes -->
+  <Aptitude>aptitude</Aptitude>
+  <Aptitudes>aptitudes</Aptitudes>
+  <AptitudePlural>aptitudes</AptitudePlural>
+  <AptitudesDesc>Aptitude makes an individual perform at a higher or lower level than their learned skill.\n\nFor example, an aptitude of +1 for a skill means that a person with level 5 in that skill will perform as though they were at level 6.\n\nThe total value cannot exceed level 20 or fall below level 1.</AptitudesDesc>
+  <Total>total</Total>
+  
+  <!-- Human pregnancy -->
+  <FatherTip>Father</FatherTip>
+  <MotherTip>Genetic mother</MotherTip>
+  <RitualTargetChildBirth>an unoccupied bed</RitualTargetChildBirth>
+  <NoAppropriateBedChildBirth>No appropriate bed for giving birth.</NoAppropriateBedChildBirth>
+  <NoDoctorChildBirth>No doctor around.</NoDoctorChildBirth>
+  <CantUseThisBed>Can't use this bed.</CantUseThisBed>
+  <NotInLabor>Not in labor.</NotInLabor>
+  <Labor>labor</Labor>
+  <LaborDilation>dilation</LaborDilation>
+  <PregnancyApproach_Normal>normal</PregnancyApproach_Normal>
+  <PregnancyApproach_AvoidPregnancy>avoid pregnancy</PregnancyApproach_AvoidPregnancy>
+  <PregnancyApproach_TryForBaby>try for baby</PregnancyApproach_TryForBaby>
+  <PregnancyChance>pregnancy chance</PregnancyChance>
+  <PregnancyApproach>Pregnancy approach</PregnancyApproach>
+  <ClickToChangePregnancyApproach>Click to change pregnancy approach.</ClickToChangePregnancyApproach>
+  <PregnancyNotPossible>Pregnancy is not possible</PregnancyNotPossible>
+  <BirthRitualHealthyBabyChance>The chance of a healthy birth at this quality level was {0_percentage}.</BirthRitualHealthyBabyChance>
+  <GivingBirth>Giving birth.</GivingBirth>
+
+  <!-- Genes -->
+  <Genes>genes</Genes>
+  <GenesDesc>The genes associated with this xenotype.</GenesDesc>
+  <Suppressed>suppressed</Suppressed>
+  <Active>active</Active>
+  <SuppressedDesc>This trait has been suppressed by a conflicting forced genetic trait or gene. It will not be active until all conflicts are removed</SuppressedDesc>
+  <Trait>trait</Trait>
+  <Gene>gene</Gene>
+  <AddedByGene>Added by gene</AddedByGene>
+  <EjectAll>Eject all</EjectAll>
+  <EjectAllDesc>Drop all contained genepacks onto the ground.</EjectAllDesc>
+  <GenepacksStored>Genepacks stored</GenepacksStored>
+  <GenepackAutoLoad>Auto-load</GenepackAutoLoad>
+  <GenepackAutoLoadDesc>If active, haulers will automatically store this genepack in a gene bank.</GenepackAutoLoadDesc>
+  <ForcedTraits>Forced traits</ForcedTraits>
+  <SuppressedTraits>Suppressed traits</SuppressedTraits>
+  <ForcedTraitsDesc>These traits will be added. All conflicting traits will become suppressed.</ForcedTraitsDesc>
+  <Complexity>Complexity</Complexity>
+  <ComplexityDesc>How much complexity this adds to the process of gene assembly.</ComplexityDesc>
+  <MaxComplexityDesc>Maximum complexity can be increased by building gene processors near the gene assembler.</MaxComplexityDesc>
+  <ComplexityTotal>Total complexity</ComplexityTotal>
+  <ComplexityTotalDesc>The total complexity of all the genes in use.</ComplexityTotalDesc>
+  <Metabolism>metabolic efficiency</Metabolism>
+  <MetabolismDesc>The total metabolic efficiency of these genes when assembled. High efficiency means a person needs less food; low efficiency means they must eat more.</MetabolismDesc>
+  <MetabolismTotal>Metabolic efficiency</MetabolismTotal>
+  <MetabolismTotalDesc>The total metabolic efficiency of all genes in the genome. High efficiency means a person needs less food; low efficiency means they must eat more.</MetabolismTotalDesc>
+  <NumberOfGenes>Number of genes</NumberOfGenes>
+  <GenePriceFactors>Gene price factors</GenePriceFactors>
+  <AnyLower>any</AnyLower>
+  <ArchitesTotal>Archite total</ArchitesTotal>
+  <ArchitesRequired>Archite capsules</ArchitesRequired>
+  <ArchitesRequiredDesc>Archites are archotech mechanites - microscopic devices which can operate directly on cells and molecules, created by superintelligent archotechs. They are capable of unexplainable feats, and some genes only function when supported by the otherworldly machinery of the archotechs. Humans cannot create archites - only find them when an archotech happens to produce some for its own unknowable reason.</ArchitesRequiredDesc>
+  <CancelXenogerm>Cancel xenogerm</CancelXenogerm>
+  <CancelXenogermDesc>Stop all work on the current xenogerm.</CancelXenogermDesc>
+  <AllowAllGenepacks>Allow all genepacks</AllowAllGenepacks> 
+  <AllowAllGenepacksDesc>Whether or not colonists are allowed to automatically store any genepack into this container. Turn this off if you want to specify which specific genepacks should be stored here.</AllowAllGenepacksDesc> 
+  <ContainedGenepacksDesc>The genepacks currently inside this container.</ContainedGenepacksDesc> 
+  <GenepacksToLoadDesc>The genepacks designated to be loaded into this container.</GenepacksToLoadDesc> 
+  <GenepacksIgnoredDesc>Unstored genepacks that are not designated to be loaded into this container.</GenepacksIgnoredDesc> 
+  <GenepacksToLoad>Genepacks to load</GenepacksToLoad> 
+  <GenepacksToIgnore>Genepacks to ignore</GenepacksToIgnore> 
+  <EjectGenepackDesc>Eject this genepack from the container.</EjectGenepackDesc> 
+  <ConfirmRemoveGenepack>Do you really want to eject {0}? It will be immediately ejected onto the ground nearby.</ConfirmRemoveGenepack> 
+  <MissingRequiredResearch>Missing required research</MissingRequiredResearch>
+  <NoGenepacksAvailable>No genepacks available in nearby gene banks.</NoGenepacksAvailable> 
+  <AddToLoadingListDesc>Allow this genepack to be loaded into this container.</AddToLoadingListDesc> 
+  <RemoveFromLoadingListDesc>Remove this genepack from the loading list.</RemoveFromLoadingListDesc> 
+  <Recombine>Recombine</Recombine>
+  <RecombineDesc>Create a new implantable xenogerm using data from genepacks in your gene library.</RecombineDesc>
+  <ContainedGenesDesc>Genes</ContainedGenesDesc>
+  <ImplantXenogerm>Order implantation</ImplantXenogerm>
+  <ImplantXenogermDesc>Implant this into a person to partially override their genetic code.\n\nThis is a surgical operation, so it requires a doctor, medical bed and {MEDICINEAMOUNT} medicine.</ImplantXenogermDesc>
+  <ImplantXenogermWarningDesc>Implanting a xenogerm will put {PAWN_nameDef} in a coma as the xenogerm integrates itself. On average, this lasts for {COMADURATION}. The length of the coma is dependent on the doctor's medical skill and the quality of your medical facilities.</ImplantXenogermWarningDesc>
+  <ImplantXenogermWarningOverwriteXenogenes>Additionally, implanting a xenogerm will overwrite existing xenogenes. {PAWN_nameDef}'s current xenotype is '{XENOTYPE}'. {PAWN_pronoun} has the following xenogenes:\n{XENOGENES}</ImplantXenogermWarningOverwriteXenogenes>
+  <ImplantXenogermWarningNewMetabolism>After implantation, {PAWN_nameDef} will have a metabolism value of {MET} and a food consumption multiplier of {CONSUMPTION}.</ImplantXenogermWarningNewMetabolism>
+  <WouldYouLikeToContinue>Would you like to continue?</WouldYouLikeToContinue>
+  <CancelImplanting>Cancel implanting</CancelImplanting>
+  <CancelImplantingDesc>Cancel implanting this xenogerm into {PAWN_nameDef}.</CancelImplantingDesc>
+  <Xenotype>Xenotype</Xenotype>
+  <Unique>unique</Unique>
+  <UniqueXenotypeDesc>A unique human variant with a set of xenogenes that do not fall into any known xenotype.</UniqueXenotypeDesc>
+  <FactorForMetabolism>Factor for genetic metabolism</FactorForMetabolism>
+  <Progress>Progress</Progress>
+  <InSunlight>In sunlight</InSunlight>
+  <ThingIsSkyExposed>{0_labelShort} is exposed to the sky.</ThingIsSkyExposed>
+  <InsertPerson>Insert person</InsertPerson>
+  <InsertPersonGeneExtractorDesc>Insert a person into the gene extractor. Their genetic material will be extracted and used to create a genepack containing a random selection of their genes.\n\nGene extraction is painful and will leave the subject weak and drowsy for a number of days. The process is lethal for those whose genes are currently regrowing.</InsertPersonGeneExtractorDesc>
+  <ConfirmExtractXenogermWillKill>Warning: {PAWN_nameDef}'s genes are regrowing. Extracting {PAWN_possessive} genes before they are regrown will kill {PAWN_objective}.\n\nAre you sure you wish to continue?</ConfirmExtractXenogermWillKill>
+  <GeneExtractionComplete>Gene extraction complete for {PAWN_nameDef}. Extracted</GeneExtractionComplete>
+  <InsertXenogerm>Insert xenogerm</InsertXenogerm>
+  <InsertXenogermDesc>Insert a xenogerm to apply during growth.</InsertXenogermDesc>
+  <WaitingForPawn>Waiting for {PAWN_nameDef}.</WaitingForPawn>
+  <ExtractingXenogermFrom>Extracting genes from {PAWN_nameDef}.</ExtractingXenogermFrom>
+  <ExtractionPausedNoPower>Extraction paused: No power (interrupt in {TIME})</ExtractionPausedNoPower>
+  <LastIngestedDurationAgo>Last ingested {CHEMICAL_label} {DURATION} ago.</LastIngestedDurationAgo>
+  <NamedXenogerm>{NAME} xenogerm</NamedXenogerm>
+  <InsertedThing>Inserted {0}</InsertedThing>
+  <AssemblyPaused>Assembly paused</AssemblyPaused>
+  <GenebankUnpowered>Required gene bank unpowered</GenebankUnpowered>
+  <Deathless>deathless</Deathless>
+  <GeneDefChemicalNeedDurationDesc>{PAWN_nameDef} needs to ingest {0} on a regular basis to survive. After {DEFICIENCYDURATION} without {0}, {PAWN_pronoun} will suffer from {0} deficiency. After {COMADURATION}, {PAWN_pronoun} will fall into a coma. After {DEATHDURATION}, {PAWN_pronoun} will die.</GeneDefChemicalNeedDurationDesc>
+  <ChemicalDependency>{CHEMICAL_label} dependency</ChemicalDependency>
+  <Xenogerm>Xenogerm</Xenogerm>
+  <PawnWillKeepDeathrestingLethalInjuries>{PAWN_nameDef} will continue deathresting so long as {PAWN_pronoun} has lethal injuries.</PawnWillKeepDeathrestingLethalInjuries>
+  <PawnWillKeepRegeneratingLethalInjuries>{PAWN_nameDef} will remain in a regeneration coma so long as {PAWN_pronoun} has lethal injuries.</PawnWillKeepRegeneratingLethalInjuries>
+  <DeathrestPaused>Deathrest stopped</DeathrestPaused>
+  <LethalInjuries>Lethal injuries</LethalInjuries>
+  <Deathrest>deathrest</Deathrest>
+  <Capacity>capacity</Capacity>
+  <MissingGeneRomanceChance>Non-{GENE} romance chance</MissingGeneRomanceChance>
+  <NotInGeneBank>Not in gene bank</NotInGeneBank>
+
+  <!-- Child birth -->
+  <ChildBirthAlwaysHealthy_Desc>Gather to help a mother give birth. A doctor can help deliver the baby.</ChildBirthAlwaysHealthy_Desc>
+  <UntilBabyIsBorn>until the baby is born</UntilBabyIsBorn>
+
+  <LearningDesireTooltip>Children want to learn from different activities at different times.</LearningDesireTooltip>
+  <DevelopmentHealthGizmoTooltip>Development health is the average of a child's learning need since their last birthday.\n\nChildren with higher development health will have more options during growth moments and will gain more passions for skills.</DevelopmentHealthGizmoTooltip>
+
+  <MustNotBePlacedCloseToAnother>Must not be placed close to another {0_label}</MustNotBePlacedCloseToAnother>
+  <PollutingTerrainProgress>Next terrain pollution in</PollutingTerrainProgress>
+  <PoisonedTerrain>Poisoned {0}</PoisonedTerrain>
+  <AssignMechToControlGroup>Assign to control group {0}</AssignMechToControlGroup>
+  <CurrentMechEnergyFallPerDay>Fall per day</CurrentMechEnergyFallPerDay>
+  <CannotAssignMechToControlGroup>Cannot assign to control group {0}</CannotAssignMechToControlGroup>
+  <AssignMechAlreadyAssigned>Already assigned</AssignMechAlreadyAssigned>
+
+  <!-- Lactation -->
+  <LactatingAddedNutritionPerDay>Consuming an extra {0} nutrition per day to produce milk (milk production speed is {1_percentage} because of the current food level).</LactatingAddedNutritionPerDay>
+  <LactatingStoppedBecauseFull>Lactation is paused because milk fullness is 100%</LactatingStoppedBecauseFull>
+  <LactatingStoppedBecauseHungry>Lactation is paused due to starvation.</LactatingStoppedBecauseHungry>
+
+  <!-- Mech gestating -->
+  <CurrentGestationCycle>Current gestation cycle</CurrentGestationCycle>
+  <RemainingGestationCycles>Gestation cycles remaining</RemainingGestationCycles>
+  <GestationCycles>Gestation cycles</GestationCycles>
+  <GestatingMech>Gestating {0}</GestatingMech>
+  <GestatedMech>Gestated {0}</GestatedMech>
+  <GestatingMechRequiresMechanitor>Requires {PAWN_nameDef} to continue gestating</GestatingMechRequiresMechanitor>
+  <GestatedMechRequiresMechanitor>Requires {PAWN_nameDef} to complete</GestatedMechRequiresMechanitor>
+  <GestationComplete>Gestation complete</GestationComplete>
+  <ResurrectingMech>Resurrecting {0}</ResurrectingMech>
+  <ResurrectedMech>Resurrected {0}</ResurrectedMech>
+
+  <!-- Carrier -->
+  <MechCarrierRelease>Release {0}</MechCarrierRelease>
+  <MechCarrierDesc>Release a swarm of up to {0} {1}. Each {2} costs {3} {4} to build. If the parent is destroyed then all the linked {1} will die. {1} cannot be recharged and will die once their power source runs out.</MechCarrierDesc>
+  <MechCarrierNotEnoughResources>Not enough resources</MechCarrierNotEnoughResources>
+  <MechCarrierAutofillResources>Autofill</MechCarrierAutofillResources>
+  <MechCarrierClickToSetAutofillAmount>Click to set the desired autofill amount.</MechCarrierClickToSetAutofillAmount>
+  <MechCarrierAutofillDesc>This autofill amount determines the maximum amount of resources your colonists will automatically place in this {0}. Resources can be used to create {1}.</MechCarrierAutofillDesc>
+
+  <!-- Mech power cell -->
+  <MechPowerCell>Power cell</MechPowerCell>
+  <MechPowerCellTip>War urchins have a one-time power source. When the power cell runs out, the mechanoid dies.</MechPowerCellTip>
+  
+
+  <!-- Bossgroup -->
+  <BossgroupAvailableIn>available in {0}.</BossgroupAvailableIn>
+  <RequiresMechanitor>requires mechanitor</RequiresMechanitor>
+
+  <!-- Abilities -->
+  <AbilityDisabledNoHemogenGene>{0_labelShort} is not hemogenic.</AbilityDisabledNoHemogenGene>
+  <AbilityDisabledNoHemogen>{0_labelShort} does not have enough hemogen.</AbilityDisabledNoHemogen>
+  <AbilityStartRitualDisabledChild>children cannot do this.</AbilityStartRitualDisabledChild>
+  <AbilityStartRitualNoMembersOfIdeo>need a {0}.</AbilityStartRitualNoMembersOfIdeo>
+  <AbilityHemogenCost>Hemogen cost</AbilityHemogenCost>
+  <AbilityHemogenGain>Base hemogen gain</AbilityHemogenGain>
+  <AbilityMechSmokepopCharged>Smokepop charged</AbilityMechSmokepopCharged>
+  <AbilityMechSmokepopRecharging>Smokepop recharged in {0}</AbilityMechSmokepopRecharging>
+  <AbilityMechFirefoampopCharged>Firefoam pop charged</AbilityMechFirefoampopCharged>
+  <AbilityMechFirefoampopRecharging>Firefoam pop recharged in {0}</AbilityMechFirefoampopRecharging>
+
+  <PollutedTerrain>Polluted {0}</PollutedTerrain>
+
+  <!-- Growth vat -->
+  <Biostarvation>Biostarvation</Biostarvation>
+  <BiostarvationExplanation>One or more growth vats are experiencing biostarvation from lack of nutrition or power.\n\nIf biostarvation reaches 100%, the contained people will die.</BiostarvationExplanation>
+  <InsertPersonGrowthVatDesc>Insert a person into the growth vat. They will age 20 times as fast as normal.</InsertPersonGrowthVatDesc>
+  <InsertEmbryoGrowthVatDesc>Implant an embryo into the growth vat. After gestating for {0} a fully formed baby will be produced by the vat, hopefully in good health.</InsertEmbryoGrowthVatDesc>
+  <ImplantEmbryo>Insert embryo</ImplantEmbryo>
+  <CannotInsertEmbryo>Cannot insert embryo</CannotInsertEmbryo>
+  <EmbryoAlreadyInside>Already contains embryo.</EmbryoAlreadyInside>
+  <ImplantNoEmbryos>No embryos</ImplantNoEmbryos>
+  <EmbryoTimeUntilBirth>Time until birth</EmbryoTimeUntilBirth>
+  <EmbryoBirthQuality>Birth quality</EmbryoBirthQuality>
+  <EmbryoSelected>Embryo selected</EmbryoSelected>
+  <PersonSelected>Person selected</PersonSelected>
+  <NoPawnsCanEnterGrowthVat>No non-biostarving people of acceptable age. To enter the growth vat, the person must be below {0} years old and not currently biostarving.</NoPawnsCanEnterGrowthVat>
+  <AgingSpeed>Aging speed</AgingSpeed>
+
+  <!-- Mech charger -->
+  <WasteLevel>Waste</WasteLevel>
+
+  <!-- Dissolution -->
+  <DissolutionRateIndoors>indoors</DissolutionRateIndoors>
+  <DissolutionRain>raining</DissolutionRain>
+  <DissolvesEvery>One wastepack dissolves every {0}</DissolvesEvery>
+  <DissolutionFrozen>Frozen (won't dissolve).</DissolutionFrozen>
+
+  <CellsPerDay>{0} cells / day</CellsPerDay>
+
+  <WrongDevelopmentalStageForClothing>{0} cannot wear clothing for {1}</WrongDevelopmentalStageForClothing> 
+
+  <!-- Subcore scanner -->
+  <SubcoreScannerStart>Start scanner</SubcoreScannerStart>
+  <SubcoreScannerProduces>Produces</SubcoreScannerProduces>
+  <SubcoreScannerStartDesc>Once the {0} is filled with the required ingredients, {1}, select a colonist and right-click on the {0} or on a downed person to start the scanner.</SubcoreScannerStartDesc>
+  <SubcoreScannerCompletesIn>Completes in</SubcoreScannerCompletesIn>
+  <SubcoreScannerWaitingForOccupant>Waiting for occupant</SubcoreScannerWaitingForOccupant>
+  <SubcoreScannerWaitingForIngredients>Waiting for ingredients</SubcoreScannerWaitingForIngredients>
+  <SubcoreScannerWaitingForIngredientsDesc>The following ingredients must be loaded first</SubcoreScannerWaitingForIngredientsDesc>
+  <SubcoreScannerPawnHasSickness>Has {0}</SubcoreScannerPawnHasSickness>
+  <SubcoreScannerBabyNotAllowed>Babies are not allowed</SubcoreScannerBabyNotAllowed>
+  <InsertPersonSubcoreScannerDesc>Insert a person into the {0}.</InsertPersonSubcoreScannerDesc>
+
+  <DurationHours>Duration (hours)</DurationHours>
+
+  <!-- Age -->
+  <Adult>adult</Adult>
+  <Adults>adults</Adults>
+  <Child>child</Child>
+  <Children>children</Children>
+  <Baby>baby</Baby>
+  <Babies>babies</Babies>
+  <FeralChild>feral child</FeralChild>
+  <WearableBy>Wearable by</WearableBy>
+
+  <Reward_ReimplantXenogerm_Label>Xenogerm implantation</Reward_ReimplantXenogerm_Label>
+  <Reward_ReimplantXenogerm_Desc>One member of the group will reimplant their xenogerm into a colonist of your choice, thus turning your colonist into one of them. Your colonist will remain part of your faction and under your control.</Reward_ReimplantXenogerm_Desc>
+
+  <!-- Mech resurrection -->
+  <MechResurrectionCharges>Mech resurrection charges</MechResurrectionCharges>
+
+  <!-- Mechs -->
+  <MechStunPulseWarning>Mech stun pulse on death</MechStunPulseWarning>
+  <IsLowEnergySelfShutdown>{PAWN_nameDef} is in self-shutdown from low energy.</IsLowEnergySelfShutdown>
+  
+  <!-- Pollution -->
+  <ShowPollutionOverlayToggleButton>Toggle pollution overlay. This displays which areas of terrain are polluted.\n\nExposure to polluted terrain causes toxic buildup which can lead to death. Most plants cannot live on polluted terrain.</ShowPollutionOverlayToggleButton>
+  <TilePollutionNone>None</TilePollutionNone>
+  <TilePollutionLight>Light</TilePollutionLight>
+  <TilePollutionModerate>Moderate</TilePollutionModerate>
+  <TilePollutionExtreme>Extreme</TilePollutionExtreme>
+  <TilePollution>Pollution</TilePollution>
+  <TilePollutionNearby>Nearby pollution</TilePollutionNearby>
+  <NearbyPollutionTip>The sum of pollution levels of all tiles within a {0} tile radius. As the distance from this tile increases, the pollution contribution decreases:\n\n{1}\n\nThe higher the nearby pollution the greater the chance of acidic smog occurring.</NearbyPollutionTip>
+  <NoxiousHazeInterval>This tile will have acidic smog every {0} days on average.</NoxiousHazeInterval>
+  <NoxiousHazeNeverOccurring>This tile will never have acidic smog.</NoxiousHazeNeverOccurring>
+  <NearbyPollutionTilesAway>tiles away</NearbyPollutionTilesAway>
+  <PollutionLower>pollution</PollutionLower>
+  <CannotAbsorbPollution>Cannot absorb pollution: Buildings too close</CannotAbsorbPollution>
+  <CanAbsorbPollution>Can absorb pollution from nearby terrain</CanAbsorbPollution>
+  <AbsorbingPollutionNext>Absorbing pollution: Next in {0}</AbsorbingPollutionNext>
+  <TerrainPollutionTip>How polluted the terrain is on this tile.\n\nExposure to polluted terrain causes toxic buildup which can lead to death. Most crops cannot live on polluted terrain.</TerrainPollutionTip>
+
+  <!-- Research -->
+  <StudyRequirementTip>Requires study of</StudyRequirementTip>
+
+  <!-- Insect -->
+  <TriggerRadius>Trigger radius</TriggerRadius>
+  <DormantCompOpening>Opening</DormantCompOpening>
+  
+  <!-- Fertility -->
+  <SurgeryDisableReasonOvumExtracted>ova extracted recently</SurgeryDisableReasonOvumExtracted>
+  <Fertilize>Fertilize</Fertilize>
+  <FertilizeThing>Fertilize {0_label}</FertilizeThing>
+  <FertilizeCannotFloatOption>Cannot fertilize</FertilizeCannotFloatOption>
+  <FertilizeGizmoDescription>Choose a man to fertilize this ovum to create an embryo. The embryo can then be implanted in a mother to start a pregnancy, or in a growth vat. The biological parents of the resulting child will be the woman who provided the ovum and man who fertilized it.</FertilizeGizmoDescription>
+  <FertilizeCancel>Cancel fertilization by {0}</FertilizeCancel>
+  <CannotSterile>sterile</CannotSterile>
+  <CannotPregnant>pregnant</CannotPregnant>
+  <CannotMustBeAge>must be {0}</CannotMustBeAge>
+  <CannotImplantingOtherEmbryo>already having embryo implanted</CannotImplantingOtherEmbryo>
+  <DisabledOption>{0} ({1})</DisabledOption>
+  <FertilizeDisabledNoMales>No men can fertilize this ovum.</FertilizeDisabledNoMales>
+  
+  <ImplantLabel>Implant embryo</ImplantLabel>
+  <ImplantDescription>Implant this embryo in a surrogate mother to begin a pregnancy.</ImplantDescription>
+  <InsertGrowthVatLabel>Insert in growth vat</InsertGrowthVatLabel>
+
+  <ImplantCannotFloatOption>Cannot implant</ImplantCannotFloatOption>
+  <ImplantDisabledNoWomen>No woman can be a surrogate mother.</ImplantDisabledNoWomen>
+  <ImplantDisabledNoVats>No available growth vats.</ImplantDisabledNoVats>
+  <ImplantSurgeryLabel>Implant {0}</ImplantSurgeryLabel>
+  <ImplantSurgeryConfirm>The implantation success chance for the {0} in {1} is {2}.\n\nThe implantation success chance is dependent on the fertility of the surrogate mother. It will be lower if the mother is too old or too young.</ImplantSurgeryConfirm>
+  <ImplantEmbryoCancelVat>Ejecting the {0} from the growth vat right now will destroy it before a baby is formed.\n\nWould you like to continue?</ImplantEmbryoCancelVat>
+  <ImplantFailedMessage>Implanting the {0} in {1} was unsuccessful.</ImplantFailedMessage>
+  <ImplantEmbryoCancel>Cancel embryo insertion</ImplantEmbryoCancel>
+  <EmbryoEjectedFromGrowthVat>The {0} was ejected from a growth vat and destroyed.</EmbryoEjectedFromGrowthVat>
+  <EmbryoEjectedFromGrowthVatBiostarvation>The {0} was destroyed in a growth vat due to biostarvation.</EmbryoEjectedFromGrowthVatBiostarvation>
+
+  <IvfPregnancyLetterText>{0} has successfully become pregnant from embryo implantation!</IvfPregnancyLetterText>
+  <IvfPregnancyLetterParents>The baby will have the genetic makeup of {0} and {1}.</IvfPregnancyLetterParents>
+
+  <!-- Remote mech shield -->
+  <RemoteMechShieldTip>A remote shield projected by a mechanitor. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It prevents the wearer from firing out, and shuts down instantly if hit by EMP</RemoteMechShieldTip>
+
+  <!-- Thoughtdef fallbacks -->
+  <MyChildIsHappy>my child is happy</MyChildIsHappy>
+  <MyChildIsSad>my child is sad</MyChildIsSad> 
+  
+  <GeneticChemicalDependency_Label>Genetic {CHEMICAL_label} dependency</GeneticChemicalDependency_Label>
+  <GeneticChemicalDependency_Desc>I need {CHEMICAL_label} because of my genetic deficiency. It's been so long since I've had any.</GeneticChemicalDependency_Desc>
+
+</LanguageData>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Tesseron -->
+  <SoundDef>
+    <defName>Pawn_Mech_Tesseron_Wounded</defName>  
+    <context>MapOnly</context>  
+    <maxVoices>1</maxVoices>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Tesseron/Wounded</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Mech_Tesseron_Death</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Tesseron/Death</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Mech_Tesseron_Call</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Tesseron/Call</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Legionary -->
+  <SoundDef>
+    <defName>Pawn_Mech_Legionary_Wounded</defName>  
+    <context>MapOnly</context>  
+    <maxVoices>1</maxVoices>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Legionary/Wounded</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Mech_Legionary_Death</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Legionary/Death</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Mech_Legionary_Call</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Legionary/Call</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Scorcher -->
+  <SoundDef>
+    <defName>Pawn_Mech_Scorcher_Wounded</defName>  
+    <context>MapOnly</context>  
+    <maxVoices>1</maxVoices>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Scorcher/Wounded</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Mech_Scorcher_Death</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Scorcher/Death</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Mech_Scorcher_Call</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/Scorcher/Call</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20</volumeRange>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <!-- Apocriton -->
+    <SoundDef>
+      <defName>Pawn_Mech_Apocriton_Wounded</defName>  
+      <context>MapOnly</context>  
+      <maxVoices>1</maxVoices>  
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Folder">
+              <clipFolderPath>Pawn/Mechanoid/Apocriton/Wounded</clipFolderPath>
+            </li>
+          </grains>      
+          <volumeRange>30</volumeRange>      
+          <pitchRange>0.95~1.05</pitchRange>
+          <sustainLoop>False</sustainLoop>
+          <repeatMode>NeverTwice</repeatMode>
+          <distRange>35~80</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+  
+    <SoundDef>
+      <defName>Pawn_Mech_Apocriton_Death</defName>  
+      <context>MapOnly</context>  
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Folder">
+              <clipFolderPath>Pawn/Mechanoid/Apocriton/Death</clipFolderPath>
+            </li>
+          </grains>      
+          <volumeRange>30</volumeRange>      
+          <pitchRange>0.95~1.05</pitchRange>
+          <sustainLoop>False</sustainLoop>
+          <distRange>35~80</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+  
+    <SoundDef>
+      <defName>Pawn_Mech_Apocriton_Call</defName>  
+      <context>MapOnly</context>  
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Folder">
+              <clipFolderPath>Pawn/Mechanoid/Apocriton/Call</clipFolderPath>
+            </li>
+          </grains>      
+          <volumeRange>30</volumeRange>      
+          <pitchRange>0.95~1.05</pitchRange>
+          <sustainLoop>False</sustainLoop>
+          <distRange>35~80</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+      <defName>Pawn_Mech_Apocriton_Ambience</defName>
+      <context>MapOnly</context>
+      <sustain>True</sustain>
+      <priorityMode>PrioritizeNearest</priorityMode>
+      <subSounds>
+        <li>
+          <muteWhenPaused>True</muteWhenPaused>
+          <grains>
+            <li Class="AudioGrain_Clip">
+              <clipPath>Pawn/Mechanoid/Apocriton/Ambient/Apocriton_Ambience_Loop_01a</clipPath>
+            </li>
+          </grains>
+          <volumeRange>90</volumeRange>
+          <distRange>5~20</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+
+</Defs>

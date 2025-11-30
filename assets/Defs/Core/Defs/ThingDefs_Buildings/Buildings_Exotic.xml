@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ========================= Crashed ship parts ========================= -->
+
+  <ThingDef Abstract="True" Name="CrashedShipPartBase" ParentName="BuildingBase">
+    <size>(6,3)</size>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <receivesSignals>true</receivesSignals>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <neverMultiSelect>true</neverMultiSelect>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-200</Beauty>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <Steel>60</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </killedLeavings>
+    <damageMultipliers>
+      <li>
+        <damageDef>Flame</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+    <building>
+      <combatPower>250</combatPower>
+      <claimable>false</claimable>
+      <roofCollapseDamageMultiplier>0.2</roofCollapseDamageMultiplier>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_WakeUpDormant" />
+    </comps>
+  </ThingDef>
+
+  <!-- ========================= Psychic droner ========================= -->
+  <!-- Note this is a ConditionCauser -->
+
+  <ThingDef ParentName="CrashedShipPartBase">
+    <defName>PsychicDronerShipPart</defName>
+    <label>ship part (psychic droner)</label>
+    <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one contains a psychic disturbance device. Using incomprehensible archotechnologies, it generates a psychic signal that drives people and animals mad within a wide radius around itself.</description>
+    <graphicData>
+      <texPath>Things/Building/Exotic/CrashedShipPart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <shadowData><volume>(0.9, 1.0, 0.9)</volume></shadowData>
+      <damageData><rect>(0.5, 0.1, 5, 2.8)</rect></damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_CausesGameCondition_PsychicEmanation">
+        <conditionDef>PsychicDroner</conditionDef>
+        <compClass>CompCauseGameCondition_PsychicEmanation</compClass>
+        <worldRange>1</worldRange>
+        <droneLevelIncreaseInterval>150000</droneLevelIncreaseInterval>
+        <droneLevel>2</droneLevel>
+      </li>
+      <li Class="CompProperties_AnimalInsanityPulser" />
+      <li Class="CompProperties_AmbientSound">
+        <sound>CrashedShipPart_Ambience</sound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <GameConditionDef>
+    <defName>PsychicDroner</defName>
+    <conditionClass>GameCondition_PsychicEmanation</conditionClass>
+    <label>psychic droner</label>
+    <description>A psychic droner tuned to the {0} gender is driving {0}s mad.</description>
+    <letterText>A psychic droner machine has begun affecting this region.</letterText>
+    <canBePermanent>false</canBePermanent>
+    <natural>false</natural>
+  </GameConditionDef>
+
+  <!-- =============================== Defoliator ship part ============================ -->
+
+  <ThingDef ParentName="CrashedShipPartBase">
+    <defName>DefoliatorShipPart</defName>
+    <label>ship part (defoliator)</label>
+    <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.</description>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected> <!-- Hack to draw defoliant radius -->
+    <placeWorkers>
+      <li>PlaceWorker_ShowPlantHarmRadius</li>
+    </placeWorkers>
+    <graphicData>
+      <texPath>Things/Building/Exotic/CrashedPoisonShipPart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <shadowData><volume>(0.9, 1.0, 0.9)</volume></shadowData>
+      <damageData><rect>(0.5, 0.1, 5, 2.8)</rect></damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_PlantHarmRadius">
+        <radiusPerDayCurve>
+          <points>
+            <li>0  , 5</li>
+            <li>1.5, 18</li>
+            <li>6  , 40</li>
+            <li>20 , 100</li>
+          </points>
+        </radiusPerDayCurve>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="CompProperties_PolluteOverTime">
+        <cellsToPollutePerDay>6</cellsToPollutePerDay>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+
+  <!-- =============================== Misc ============================ -->
+  
+  <ThingDef ParentName="BuildingBase" Name="ShipChunkBase">
+    <defName>ShipChunk</defName>
+    <label>ship chunk</label>
+    <description>A chunk of a spacecraft. It seems to have been torn off either by uncontrolled re-entry forces or some kind of weapon.\n\nHaving landed not long ago, it still contains useful resources which you can acquire by deconstructing it.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/Exotic/ShipChunk</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.1,0.1,1.8,1.8)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(1.39,0.5,1.25)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-20</Beauty>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </killedLeavings>
+    <costList>
+      <ComponentIndustrial>11</ComponentIndustrial>
+      <Steel>40</Steel>
+    </costList>
+    <building>
+      <claimable>false</claimable>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+    </building>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <comps>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Deconstruct for valuable resources.</inspectString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="ShuttleBase" ParentName="BuildingBase">
+    <defName>Shuttle</defName>
+    <label>imperial shuttle</label>
+    <description>A spacer-tech uranium-powered shuttle designed for transit between surface and orbit, or between moons of a planetary system. To prevent unsanctioned use, the shuttle is locked to the pilot's bio-signature.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <fillPercent>1.0</fillPercent>
+    <size>(5,3)</size>
+    <drawHighlight>true</drawHighlight>
+    <highlightColor>(0.56, 0.62, 0.9)</highlightColor>
+    <graphicData>
+      <texPath>Things/Building/Misc/Shuttle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <color>(162,164,149)</color>
+      <shadowData>
+        <volume>(4.1, 1.0, 1.8)</volume>
+        <offset>(0, 0, -0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Flammability>1</Flammability>
+      <Comfort>0.65</Comfort>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>true</canOverlapZones>
+    <killedLeavings>
+      <Plasteel>50</Plasteel>
+      <Uranium>50</Uranium>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>
+    </killedLeavings>
+    <rotatable>false</rotatable>
+    <bringAlongOnGravship>false</bringAlongOnGravship>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0, 0, -2)</interactionCellOffset>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <drawerType>RealtimeOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <uiIconScale>1.4</uiIconScale>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <inspectorTabs>
+      <li>ITab_ContentsTransporter</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Shuttle" />
+      <li Class="CompProperties_Transporter">
+        <massCapacity>2000</massCapacity>
+        <max1PerGroup>true</max1PerGroup>
+        <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+        <showOverallStats>false</showOverallStats>
+        <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+        <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>ShuttleIdle_Ambience</sound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ShuttleBase" Name="ShuttleCrashedBase">
+    <defName>ShuttleCrashed</defName>
+    <label>crashed shuttle</label>
+    <graphicData>
+      <texPath>Things/Building/Misc/CrashedShuttle</texPath>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>1</Flammability>
+      <WorkToBuild>800</WorkToBuild>
+    </statBases>
+    <comps Inherit="False" />
+    <killedLeavings Inherit="False">
+      <Steel>4</Steel>
+      <Plasteel>7</Plasteel>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </killedLeavings>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>70</Plasteel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ShuttleEngine MayRequire="Ludeon.RimWorld.Odyssey">1</ShuttleEngine>
+    </costList>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <building Inherit="False">
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <claimable>false</claimable>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+      <forcedCostLeavings>
+        <li MayRequire="Ludeon.RimWorld.Odyssey">ShuttleEngine</li>
+      </forcedCostLeavings>
+    </building>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Toy</defName>
+    <graphicData>
+      <texPath>Things/Mote/Childcare/Toys</texPath>
+      <graphicClass>Graphic_MoteRandom</graphicClass>
+      <drawSize>(0.65,0.65)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.35</fadeInTime>
+      <fadeOutTime>0.35</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+  </ThingDef>
+
+</Defs>

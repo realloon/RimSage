@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RoofDef>
+    <defName>VoidmetalRoof</defName>
+    <label>void metal ceiling</label>
+    <isThickRoof>true</isThickRoof>
+    <isNatural>true</isNatural>
+    <canCollapse>false</canCollapse>
+    <filthLeaving>Filth_RubbleRock</filthLeaving>
+  </RoofDef>
+
+</Defs>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>BabyBirth</defName>
+    <letterClass>ChoiceLetter_BabyBirth</letterClass>
+  </LetterDef>
+
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>BabyToChild</defName>
+    <letterClass>ChoiceLetter_BabyToChild</letterClass>
+    <arriveSound>BabyBecomesChild</arriveSound>
+  </LetterDef>
+
+  <LetterDef ParentName="ThreatBig">
+    <defName>Bossgroup</defName>
+    <arriveSound>LetterArrive_Bossgroup</arriveSound>
+  </LetterDef>
+
+  <LetterDef ParentName="PositiveEvent">
+    <defName>HumanPregnancy</defName>
+    <arriveSound>HumanPregnancy</arriveSound>
+  </LetterDef>
+
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>ChildBirthday</defName>
+    <letterClass>ChoiceLetter_GrowthMoment</letterClass>
+    <arriveSound>ChildBirthday</arriveSound>
+  </LetterDef>
+
+  <LetterDef ParentName="PositiveEvent">
+    <defName>ChildToAdult</defName>
+    <letterClass>ChoiceLetter_GrowthMoment</letterClass>
+    <arriveSound>ChildBecomesAdult</arriveSound>
+  </LetterDef>
+
+</Defs>

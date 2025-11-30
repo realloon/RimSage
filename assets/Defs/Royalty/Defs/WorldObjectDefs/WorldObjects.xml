@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <WorldObjectDef ParentName="ShuttleWorldObjectBase">
+    <defName>TravelingShuttle</defName>
+    <label>imperial shuttle</label>
+    <description>An imperial shuttle in flight.</description>
+    <expandingIconDrawSize>1</expandingIconDrawSize>
+  </WorldObjectDef>
+
+</Defs>

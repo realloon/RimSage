@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalBreakDef>
+    <defName>WildDecree</defName>
+    <mentalState>Wander_Sad</mentalState>
+    <intensity>Major</intensity>
+    <workerClass>MentalBreakWorker_WildDecree</workerClass>
+  </MentalBreakDef>
+
+</Defs>

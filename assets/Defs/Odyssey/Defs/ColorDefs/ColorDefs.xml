@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ColorDef Name="UniqueWeaponColorBase" Abstract="True">
+    <colorType>Weapon</colorType>
+  </ColorDef>
+  
+  <!-- From WeaponTraitDefs -->
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Gold</defName>
+    <label>gold</label>
+    <color>(207, 157, 2)</color>
+    <randomlyPickable>false</randomlyPickable>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Jade</defName>
+    <label>jade</label>
+    <color>(103, 143, 80)</color>
+    <randomlyPickable>false</randomlyPickable>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Tox</defName>
+    <label>toxic green</label>
+    <color>(89,105,62)</color>
+    <randomlyPickable>false</randomlyPickable>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Fire</defName>
+    <label>fire orange</label>
+    <color>(167, 96, 39)</color>
+    <randomlyPickable>false</randomlyPickable>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_EMP</defName>
+    <label>electric blue</label>
+    <color>(74, 100, 138)</color>
+    <randomlyPickable>false</randomlyPickable>
+  </ColorDef>
+
+  <!-- Random -->
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Red</defName>
+    <label>red</label>
+    <color>(118, 49, 57)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_MutedRed</defName>
+    <label>muted red</label>
+    <color>(101, 67, 71)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Purple</defName>
+    <label>purple</label>
+    <color>(107,86,107)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_MutedPurple</defName>
+    <label>muted purple</label>
+    <color>(80, 64, 80)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Green</defName>
+    <label>green</label>
+    <color>(65, 82, 60)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_MutedGreen</defName>
+    <label>muted green</label>
+    <color>(86, 93, 76)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_IceBlue</defName>
+    <label>ice blue</label>
+    <color>(140, 148, 174)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_MutedBlue</defName>
+    <label>muted blue</label>
+    <color>(67, 81, 101)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_DarkBrown</defName>
+    <label>dark brown</label>
+    <color>(90, 69, 38)</color>
+  </ColorDef>
+  
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_White</defName>
+    <label>white</label>
+    <color>(166, 166, 166)</color>
+    <displayInStylingStationUI>false</displayInStylingStationUI>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Cream</defName>
+    <label>cream</label>
+    <color>(195, 192, 176)</color>
+    <displayInStylingStationUI>false</displayInStylingStationUI>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Limestone</defName>
+    <label>limestone</label>
+    <color>(158, 153, 135)</color>
+    <displayInStylingStationUI>false</displayInStylingStationUI>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Sandstone</defName>
+    <label>sandstone</label>
+    <color>(126, 104, 94)</color>
+    <displayInStylingStationUI>false</displayInStylingStationUI>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Gray</defName>
+    <label>gray</label>
+    <color>(100, 100, 100)</color>
+    <displayInStylingStationUI>false</displayInStylingStationUI>
+  </ColorDef>
+
+  <ColorDef ParentName="UniqueWeaponColorBase">
+    <defName>UniqueWeapon_Black</defName>
+    <label>black</label>
+    <color>(60, 60, 60)</color>
+    <displayInStylingStationUI>false</displayInStylingStationUI>
+  </ColorDef>
+
+</Defs>

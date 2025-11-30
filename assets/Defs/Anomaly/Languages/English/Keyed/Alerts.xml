@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <ActivityMultipleDangerous>Dangerous activity levels</ActivityMultipleDangerous>
+  <ActivityDangerousDesc>These entities are at dangerously high activity levels</ActivityDangerousDesc>  
+  <ActivityDangerousDescAppended>When an entity reaches 100% activity, it will become dangerous.\n\nSend your warden to suppress these entities, or enable automatic suppression using the entity's activity panel.</ActivityDangerousDescAppended>
+
+  <NeedAnomalyProject>Need anomaly project</NeedAnomalyProject>
+  <NeedAnomalyProjectDesc>You have an entity marked for study but don't have a matching anomaly research project selected:</NeedAnomalyProjectDesc>
+  <NeedAnomalyProjectDescLine>Need {NAME} anomaly research project</NeedAnomalyProjectDescLine>
+  <NeedAnomalyProjectDescAppended>Open the research menu and select a project on the anomaly tab.\n\nYou can have a basic and an advanced research project selected at the same time.\n\n(Click to open the research menu.)</NeedAnomalyProjectDescAppended>
+
+  <CreepJoinerTimeout>Visitor ignored</CreepJoinerTimeout>
+  <CreepJoinerTimeoutDesc>The following visitors feel ignored and are becoming increasingly upset</CreepJoinerTimeoutDesc>
+  <CreepJoinerTimeoutDescAppended>Select a colonist and right-click on the visitor.\n\nAct quickly... they don't like being ignored.</CreepJoinerTimeoutDescAppended>
+
+  <Alert_UndercaveUnstable>Undercave unstable</Alert_UndercaveUnstable>
+  <Alert_UndercaveUnstableDesc>The undercave has become unstable and will collapse soon.\n\nGet your colonists out before it's too late.</Alert_UndercaveUnstableDesc>
+
+  <Alert_CultistPsychicRitual>Cultist psychic ritual</Alert_CultistPsychicRitual>
+  <Alert_CultistPsychicRitualDesc>{INVOKER_kindDef} {INVOKER_nameDef} has started to perform {RITUAL_definite} ritual. If you don't interrupt {INVOKER_objective}, the consequences could be dire.</Alert_CultistPsychicRitualDesc>
+
+  <AlertMeatHunger>Ghoul starvation</AlertMeatHunger>
+  <AlertMeatHungerDesc>These ghouls hunger for raw meat</AlertMeatHungerDesc>
+  <AlertMeatHungerDescAppended>They may attack if they're not fed soon. Get them some meat.</AlertMeatHungerDescAppended>
+  
+  <AlertEmergingPitGate>Pit gate opening</AlertEmergingPitGate>
+  <AlertEmergingPitGateDesc>The ground is collapsing in on itself. A pit gate will soon form.</AlertEmergingPitGateDesc>
+
+  <Alert_InsufficientContainment>Insufficient containment</Alert_InsufficientContainment>
+  <Alert_InsufficientContainmentDesc>The following entities are being held in rooms that do not meet their minimum containment strength</Alert_InsufficientContainmentDesc>
+  <Alert_InsufficientContainmentDescAppended>They will escape soon. Build stronger walls, doors, or other containment devices to hold them.</Alert_InsufficientContainmentDescAppended>
+
+  <AlertHoldingPlatform>Need holding platforms</AlertHoldingPlatform>
+  <AlertHoldingPlatformDesc>Build holding platforms or place holding spots to contain and study captured entities.</AlertHoldingPlatformDesc>
+
+  <AlertCubeWithdrawal>Cube withdrawal</AlertCubeWithdrawal>
+  <AlertCubeWithdrawalDesc>The following people are suffering from cube withdrawal</AlertCubeWithdrawalDesc>
+  <AlertCubeWithdrawalDescAppended>Their skin itches and their mind races, craving closeness to the golden cube. Their symptoms will worsen until they can play with the cube.\n\nEnsure that they have free time and can reach the golden cube.</AlertCubeWithdrawalDescAppended>
+
+  <AlertDigestion>Devourer digestion</AlertDigestion>
+  <AlertDigestionDesc>The following people or creatures are being digested by a devourer</AlertDigestionDesc>
+  <AlertDigestionDescAppended>Kill the devourer to release them before it's too late.</AlertDigestionDescAppended>
+  
+  <AlertInhibitorBlocked>Inhibitor blocked</AlertInhibitorBlocked>
+  <AlertInhibitorBlockedDesc>One of your electric inhibitors is not functional because it's blocked by another building.\n\nClear the space in front of the electric inhibitor.</AlertInhibitorBlockedDesc>
+
+  <EntityNeedsTreatment>Entity treatment needed</EntityNeedsTreatment>
+  <EntityNeedsTreatmentDesc>These entities need medical treatment. Without it, they may die in captivity.\n{0}\n\nSend a doctor to treat them.</EntityNeedsTreatmentDesc>
+
+  <AlertGhoulHypothermia>Ghoul hypothermia</AlertGhoulHypothermia>
+  <AlertGhoulHypothermiaDesc>These ghouls are suffering from hypothermia:\n{0}\n\nGet them to warmer temperatures.</AlertGhoulHypothermiaDesc>
+  
+  <AlertGrayFleshSample>Gray flesh</AlertGrayFleshSample>
+  <AlertGrayFleshSampleDesc>You've discovered a strip of fleshy tissue. Analyze it to learn more about the biosignature.</AlertGrayFleshSampleDesc>
+  <AlertNeuralLump>Neural lump</AlertNeuralLump>
+  <AlertNeuralLumpDesc>A fleshmass nerve bundle has dropped a neural lump. Analyze it to learn how to kill the fleshmass heart.</AlertNeuralLumpDesc>
+  <AlertRevenantFlesh>Revenant flesh</AlertRevenantFlesh>
+  <AlertRevenantFleshDesc>The wounded revenant left behind a piece of itself. Analyze it to learn how to track the revenant.</AlertRevenantFleshDesc>
+
+</LanguageData>

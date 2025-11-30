@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnRelationDef>
+    <defName>ParentBirth</defName>
+    <label>birth father</label>
+    <labelFemale>birth mother</labelFemale>
+    <importance>190</importance>
+    <diedThought>MyBirthMotherDied</diedThought>
+    <killedThought>KilledMyBirthMother</killedThought>
+    <lostThought>MyBirthMotherLost</lostThought>
+    <soldThoughts>
+      <li>SoldMyLovedOne</li>
+    </soldThoughts>
+    <opinionOffset>30</opinionOffset>
+    <romanceChanceFactor>0.03</romanceChanceFactor>
+    <incestOpinionOffset>-30</incestOpinionOffset>
+    <inbredChanceOnChild>0</inbredChanceOnChild>
+    <implied>false</implied>
+    <familyByBloodRelation>true</familyByBloodRelation>
+  </PawnRelationDef>
+
+</Defs>

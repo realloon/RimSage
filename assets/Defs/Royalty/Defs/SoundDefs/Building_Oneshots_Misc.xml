@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>MechAssembler_Spawn</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/MechanoidAssembler/NewMechanoidAssembled</clipFolderPath>
+          </li>
+        </grains>
+        <distRange>20~50</distRange>
+        <volumeRange>25</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Harp_Play</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <sustainFadeoutTime>0.25</sustainFadeoutTime>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Buildings/MusicalInstruments/Harp/</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <distRange>5~25</distRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Harpsichord_Play</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <sustainFadeoutTime>0.25</sustainFadeoutTime>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Buildings/MusicalInstruments/Harpsichord/</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <distRange>5~25</distRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Piano_Play</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <sustainFadeoutTime>0.25</sustainFadeoutTime>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Buildings/MusicalInstruments/Piano/</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <distRange>5~25</distRange>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechClusterDefeated</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/MechCluster/Defeat</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>32</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Broadshield_Startup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/Security/Broadshield_Startup</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+        <pitchRange>1.2~1.6</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

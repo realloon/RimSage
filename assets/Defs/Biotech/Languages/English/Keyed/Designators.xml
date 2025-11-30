@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <DesignatorMechControlGroup>Assign to group</DesignatorMechControlGroup>
+  <DesignatorMechControlGroupDesc>Assign the selected mech(s) to another control group under their current mechanitor overseer.</DesignatorMechControlGroupDesc>
+  <MechCanBuildThis>However, a {0} can build this.</MechCanBuildThis>
+
+  <DesignatorAdopt>Adopt</DesignatorAdopt>
+  <DesignatorAdoptDesc>Adopt this baby as a colonist. The baby will instantly become one of yours.</DesignatorAdoptDesc>
+  <ChooseMechColor>Choose mech color...</ChooseMechColor>
+
+  <DesignatorAreaPollutionClearExpand>Pollution removal area</DesignatorAreaPollutionClearExpand>
+  <DesignatorAreaPollutionClearExpandDesc>Designate an area where colonists will manually clean polluted terrain. Cleaning the terrain removes pollution from the ground and packages it into toxic wastepacks which can be carried away.</DesignatorAreaPollutionClearExpandDesc>
+  <DesignatorAreaPollutionClearClear>Clear pollution removal area</DesignatorAreaPollutionClearClear>
+  <DesignatorAreaPollutionClearClearDesc>Removes the pollution removal area. Colonists will no longer manually extract pollution from the terrain in this area.</DesignatorAreaPollutionClearClearDesc>
+
+
+</LanguageData>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: classroom -->
+  <Classroom.label>教室</Classroom.label>
+  
+  <!-- EN: deathrest chamber -->
+  <DeathrestChamber.label>死眠室</DeathrestChamber.label>
+  
+  <!-- EN: nursery -->
+  <Nursery.label>育儿室</Nursery.label>
+  
+  <!-- EN: playroom -->
+  <Playroom.label>游乐室</Playroom.label>
+  
+</LanguageData>

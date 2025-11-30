@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Main menu-->
+  <MainPageCredit>A story generator by Tynan Sylvester</MainPageCredit>
+
+  <!-- Credits -->
+  <Credits_Design>Design</Credits_Design>
+  <Credits_Developers>Engineering</Credits_Developers>
+  <Credit_MusicAndSound>Audio</Credit_MusicAndSound>
+  <Credit_GameArt>Art</Credit_GameArt>
+  <Credit_Testers>Testers</Credit_Testers>
+  <Credits_AdditionalDevelopment>Additional development</Credits_AdditionalDevelopment>
+  <Credit_SpecialThanks>Special thanks</Credit_SpecialThanks>
+
+  <Credits_TitleTester>Volunteer testers</Credits_TitleTester>
+
+  <Credits_TitleMods>Mods</Credits_TitleMods>
+
+  <Credits_TitleLanguage>{0} ({1}) language</Credits_TitleLanguage>
+  <Credits_Localization_Anomaly>Anomaly localization</Credits_Localization_Anomaly>
+  <Credits_Localization_Odyssey>Odyssey localization</Credits_Localization_Odyssey> <!-- text_todo -->
+  <Credits_LeadLocalizationProjectManager>Lead Localization Project Manager</Credits_LeadLocalizationProjectManager>
+  <Credits_LocalizationProjectManager>Localization Project Manager</Credits_LocalizationProjectManager>
+  <Credits_ProjectManager>Project Manager</Credits_ProjectManager>
+  <Credits_Translator>Translator</Credits_Translator>
+  <Credits_Editor>Editor</Credits_Editor>
+  <Credits_French>French</Credits_French>
+  <Credits_Japanese>Japanese</Credits_Japanese>
+  <Credits_Korean>Korean</Credits_Korean>
+  <Credits_Polish>Polish</Credits_Polish>
+  <Credits_Russian>Russian</Credits_Russian>
+  <Credits_Dutch>Dutch</Credits_Dutch> <!-- text_todo -->
+  <Credits_Turkish>Turkish</Credits_Turkish> <!-- text_todo -->
+  <Credits_Ukrainian>Ukrainian</Credits_Ukrainian> <!-- text_todo -->
+  <Credits_ChineseSimplified>Simplified Chinese</Credits_ChineseSimplified>
+  <Credits_ChineseTraditional>Traditional Chinese</Credits_ChineseTraditional>
+
+  <AndOtherVolunteers>and many other gracious volunteers!</AndOtherVolunteers> <!-- text_todo -->
+
+  <!-- Credits - Currently unused -->
+  <Credit_TestLead>Test lead</Credit_TestLead>
+  <Credits_TitleCommunity>Community donations</Credits_TitleCommunity>
+  <Credit_ModDonation>Mod donors</Credit_ModDonation>
+  <Credit_WritingDonation>Writing donor</Credit_WritingDonation>
+
+  <!-- Meta -->
+  <ThanksForPlaying>Thanks for playing!</ThanksForPlaying>
+  <SkipCredits>Skip credits</SkipCredits>
+
+
+
+</LanguageData>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>SleepAccelerator</defName>
+    <label>sleep accelerator</label>
+    <iconPath>UI/Issues/SleepAccelerator</iconPath>
+  </IssueDef>
+
+  <IssueDef>
+    <defName>Biosculpting</defName>
+    <label>biosculpting</label>
+    <iconPath>UI/Issues/BioSculpting</iconPath>
+  </IssueDef>
+
+  <IssueDef>
+    <defName>AgeReversal</defName>
+    <label>age reversal</label>
+    <iconPath>UI/Issues/AgeReversal</iconPath>
+  </IssueDef>
+
+
+  <PreceptDef>
+    <defName>SleepAccelerator_Preferred</defName>
+    <issue>SleepAccelerator</issue>
+    <label>preferred</label>
+    <description>One should always use a sleep accelerator. Slow-sleeping is just foolishly wasting your potential.</description>
+    <impact>Medium</impact>
+    <requiredMemes>
+      <li>Transhumanist</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_BedThought">
+        <thought>SleptUsingSleepAccelerator</thought>
+        <requireFacility>
+          <def>SleepAccelerator</def>
+        </requireFacility>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>SleptUsingSleepAccelerator</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>used sleep accelerator</label>
+        <description>I slept with a sleep accelerator. It's helping me attain my true potential, as one should.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <IssueDef>
+    <defName>NeuralSupercharge</defName>
+    <label>neural supercharge</label>
+    <iconPath>UI/Issues/NeuralSupercharger</iconPath>
+  </IssueDef>
+
+  <PreceptDef>
+    <defName>NeuralSupercharge_Preferred</defName>
+    <issue>NeuralSupercharge</issue>
+    <label>preferred</label>
+    <description>Having a neural supercharge is the new standard. Without it, you're obsolete.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <requiredMemes>
+      <li>Transhumanist</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>NeedNeuralSupercharge</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>NeedNeuralSupercharge</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_NeedNeuralSupercharge</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <minExpectation>Moderate</minExpectation>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want neural supercharge</label>
+        <description>Without a neural supercharge, I'm running below my true capacity. It's depressing.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <PreceptDef>
+    <defName>Biosculpting_Accelerated</defName>
+    <issue>Biosculpting</issue>
+    <label>Accelerated</label>
+    <description>All biosculpting cycles take half the usual time.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <requiredMemes>
+      <li>Transhumanist</li>
+    </requiredMemes>
+    <biosculpterPodCycleSpeedFactor>2</biosculpterPodCycleSpeedFactor>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>AgeReversal_Demanded</defName>
+    <issue>AgeReversal</issue>
+    <label>Demanded</label>
+    <description>Why get old? If over age 25, one must have a once-yearly age reversal treatment in the biosculpter pod.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <requiredMemes>
+      <li>Transhumanist</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>AgeReversalDemanded</thought>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>AgeReversalDemanded</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_AgeReversalDemanded</workerClass>
+    <minExpectation>High</minExpectation>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>harmful aging</label>
+        <description>I'm getting old. I should get an age reversal in a biosculpter pod.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>terrible aging</label>
+        <description>My youth is draining away. I should get an age reversal in a biosculpter pod.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+      <li>
+        <label>horrific aging</label>
+        <description>I am trapped in a decaying prison of flesh! I need to get an age reversal in a biosculpter pod.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li> <!-- Dummy stage for when aging isn't needed yet. -->
+        <visible>false</visible>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AgeReversalReceived</defName>
+    <durationDays>4</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>received age reversal</label>
+        <description>Aging and death have no hold on me. I am forever, as an enhanced human ought to be.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <PreceptDef>
+    <defName>BioSculpter_Despised</defName>
+    <issue>Biosculpting</issue>
+    <label>despised</label>
+    <description>Biosculpter pods violate the purity human flesh and should never be used.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>UsedBiosculpterPod</eventDef>
+        <thought>BioSculpterDespised</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <HistoryEventDef>
+    <defName>UsedBiosculpterPod</defName>
+    <label>used biosculpter pod</label>
+  </HistoryEventDef>
+
+  <ThoughtDef>
+    <defName>BioSculpterDespised</defName>
+    <durationDays>12</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>used biosculpter pod</label>
+        <description>My body was despoiled by the use of a biosculpter pod.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

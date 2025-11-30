@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/StatDef[defName="DeteriorationRate"]/description</xpath>
+    <value>
+      <description>The rate at which this item deteriorates when left outside, in average hit points per day.\n\nDeterioration rate is also affected by things like weather, roofs, toxic fallout, pollution or being left in shallow water.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/StatDef[defName="ToxicEnvironmentResistance"]/description</xpath>
+    <value>
+      <description>How resistant this creature is to the effects of environmental toxins. This protects against tox gas, rot stink, toxic fallout, and polluted terrain, but not against direct attacks with venom or injected poison. When this value is higher, exposure to pollution produces proportionally less toxic buildup in the body.</description>
+    </value>
+  </Operation>
+
+</Patch>

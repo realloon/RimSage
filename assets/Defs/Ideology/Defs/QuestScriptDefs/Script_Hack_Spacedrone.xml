@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>Hack_Spacedrone</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <isRootSpecial>true</isRootSpecial>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <epicParent>RelicHunt</epicParent>
+    <questNameRules>
+      <rulesStrings>
+        
+        <!-- quest name -->
+        <li>questName->[droneAdj] [drone] hack</li>
+        <li>questName->[drone] [data] hack</li>
+
+        <!-- pieces -->
+        <li>droneAdj->orbital</li>
+        <li>droneAdj->data</li>
+        <li>droneAdj->ancient</li>  
+
+        <li>drone->drone</li>
+        <li>drone->spacecraft</li>
+        <li>drone->spacedrone</li>
+        <li>drone->cryptodrone</li>
+
+        <li>data->data</li>
+        <li>data->intel</li>
+        <li>data->info</li>
+
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+      
+        <!-- description -->
+        <li>questDescription->You've detected an orbiting spacedrone that may contain information about [relic_name]. You have the code that will force it to land at [map_definite].\n\nTo get the information, hack into the drone's computer. Hacking takes time, but those strong in intellectual skill can speed up the process.[raidsDescription]\n\nAfter landing, the spacedrone will self-destruct in [destroyDelayTicks_duration].</li>
+        
+        <!-- pieces -->
+        <li>raidsDescription(allowViolence==true)->\n\n[enemyFaction_pawnsPlural] from [enemyFaction_name] will [droneDetectionMethod]. As long as it's present, they'll send attackers approximately every [raidIntervalAvg_duration] to destroy it and steal the wealth they think it contains. You will have some time to prepare defenses around it before they arrive.</li>
+        <li>raidsDescription(allowViolence==false)-></li>
+        
+        <li>droneDetectionMethod(enemyFactionNeolithic==true)->spot the drone during its decent</li>
+        <li>droneDetectionMethod(enemyFactionNeolithic==false)->detect the drone's energy signature</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Root_Hack_Spacedrone" />
+  </QuestScriptDef>
+
+</Defs>

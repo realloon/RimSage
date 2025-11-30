@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: totemic boards -->
+  <Boards_Totemic.label>图腾地板</Boards_Totemic.label>
+  <!-- EN: Fine wood boards decorated in a totemic style. -->
+  <Boards_Totemic.description>装饰着图腾风格图案的精美木地板。</Boards_Totemic.description>
+  
+  <!-- EN: diamond mindbend carpet -->
+  <Carpet_MindbendA.label>思维扭曲地毯（钻石）</Carpet_MindbendA.label>
+  <!-- EN: Fine carpet decorated in a mind-bending style often associated with drug use. -->
+  <Carpet_MindbendA.description>精美的地毯，其装饰风格往往与吸毒有关，令人匪夷所思。</Carpet_MindbendA.description>
+  
+  <!-- EN: purple mindbend carpet -->
+  <Carpet_MindbendB.label>思维扭曲地毯（紫色）</Carpet_MindbendB.label>
+  <!-- EN: Fine carpet decorated in a mind-bending style often associated with drug use. -->
+  <Carpet_MindbendB.description>精美的地毯，其装饰风格往往与吸毒有关，令人匪夷所思。</Carpet_MindbendB.description>
+  
+  <!-- EN: green mindbend carpet -->
+  <Carpet_MindbendC.label>思维扭曲地毯（绿色）</Carpet_MindbendC.label>
+  <!-- EN: Fine carpet decorated in a mind-bending style often associated with drug use. -->
+  <Carpet_MindbendC.description>精美的地毯，其装饰风格往往与吸毒有关，令人匪夷所思。</Carpet_MindbendC.description>
+  
+  <!-- EN: blue mindbend carpet -->
+  <Carpet_MindbendD.label>思维扭曲地毯（蓝色）</Carpet_MindbendD.label>
+  <!-- EN: Fine carpet decorated in a mind-bending style often associated with drug use. -->
+  <Carpet_MindbendD.description>精美的地毯，其装饰风格往往与吸毒有关，令人匪夷所思。</Carpet_MindbendD.description>
+  
+  <!-- EN: yellow mindbend carpet -->
+  <Carpet_MindbendE.label>思维扭曲地毯（黄色）</Carpet_MindbendE.label>
+  <!-- EN: Fine carpet decorated in a mind-bending style often associated with drug use. -->
+  <Carpet_MindbendE.description>精美的地毯，其装饰风格往往与吸毒有关，令人匪夷所思。</Carpet_MindbendE.description>
+  
+  <!-- EN: spikecore plates -->
+  <Plates_Spikecore.label>尖刺地板</Plates_Spikecore.label>
+  <!-- EN: Fine steel plates decorated in an aggressive spikecore style. -->
+  <Plates_Spikecore.description>以激进的颅骨钉刺风格进行装饰的精美的钢板。</Plates_Spikecore.description>
+  
+  <!-- EN: morbid granite tile -->
+  <Tile_MorbidGranite.label>病态风格地砖（花岗岩）</Tile_MorbidGranite.label>
+  <!-- EN: Fine stone tiles in a morbid style. -->
+  <Tile_MorbidGranite.description>病态风格的精美地砖。</Tile_MorbidGranite.description>
+  
+  <!-- EN: morbid limestone tile -->
+  <Tile_MorbidLimestone.label>病态风格地砖（石灰岩）</Tile_MorbidLimestone.label>
+  <!-- EN: Fine stone tiles in a morbid style. -->
+  <Tile_MorbidLimestone.description>病态风格的精美地砖。</Tile_MorbidLimestone.description>
+  
+  <!-- EN: morbid marble tile -->
+  <Tile_MorbidMarble.label>病态风格地砖（大理石）</Tile_MorbidMarble.label>
+  <!-- EN: Fine stone tiles in a morbid style. -->
+  <Tile_MorbidMarble.description>病态风格的精美地砖。</Tile_MorbidMarble.description>
+  
+  <!-- EN: morbid sandstone tile -->
+  <Tile_MorbidSandstone.label>病态风格地砖（砂岩）</Tile_MorbidSandstone.label>
+  <!-- EN: Fine stone tiles in a morbid style. -->
+  <Tile_MorbidSandstone.description>病态风格的精美地砖。</Tile_MorbidSandstone.description>
+  
+  <!-- EN: morbid slate tile -->
+  <Tile_MorbidSlate.label>病态风格地砖（板岩）</Tile_MorbidSlate.label>
+  <!-- EN: Fine stone tiles in a morbid style. -->
+  <Tile_MorbidSlate.description>病态风格的精美地砖。</Tile_MorbidSlate.description>
+  
+  <!-- EN: morbid vacstone tile -->
+  <Tile_MorbidVacstone.label>病态风格地砖（真空岩）</Tile_MorbidVacstone.label>
+  <!-- EN: Fine stone tiles in a morbid style. -->
+  <Tile_MorbidVacstone.description>病态风格的精美地砖。</Tile_MorbidVacstone.description>
+  
+  <!-- EN: granite spikecore tile -->
+  <Tile_SpikecoreGranite.label>尖刺风格地砖（花岗岩）</Tile_SpikecoreGranite.label>
+  <!-- EN: Fine stone tiles in a spikecore style. -->
+  <Tile_SpikecoreGranite.description>尖刺风格的精美地砖。</Tile_SpikecoreGranite.description>
+  
+  <!-- EN: limestone spikecore tile -->
+  <Tile_SpikecoreLimestone.label>尖刺风格地砖（石灰岩）</Tile_SpikecoreLimestone.label>
+  <!-- EN: Fine stone tiles in a spikecore style. -->
+  <Tile_SpikecoreLimestone.description>尖刺风格的精美地砖。</Tile_SpikecoreLimestone.description>
+  
+  <!-- EN: marble spikecore tile -->
+  <Tile_SpikecoreMarble.label>尖刺风格地砖（大理石）</Tile_SpikecoreMarble.label>
+  <!-- EN: Fine stone tiles in a spikecore style. -->
+  <Tile_SpikecoreMarble.description>尖刺风格的精美地砖。</Tile_SpikecoreMarble.description>
+  
+  <!-- EN: sandstone spikecore tile -->
+  <Tile_SpikecoreSandstone.label>尖刺风格地砖（砂岩）</Tile_SpikecoreSandstone.label>
+  <!-- EN: Fine stone tiles in a spikecore style. -->
+  <Tile_SpikecoreSandstone.description>尖刺风格的精美地砖。</Tile_SpikecoreSandstone.description>
+  
+  <!-- EN: slate spikecore tile -->
+  <Tile_SpikecoreSlate.label>尖刺风格地砖（板岩）</Tile_SpikecoreSlate.label>
+  <!-- EN: Fine stone tiles in a spikecore style. -->
+  <Tile_SpikecoreSlate.description>尖刺风格的精美地砖。</Tile_SpikecoreSlate.description>
+  
+  <!-- EN: vacstone spikecore tile -->
+  <Tile_SpikecoreVacstone.label>尖刺风格地砖（真空岩）</Tile_SpikecoreVacstone.label>
+  <!-- EN: Fine stone tiles in a spikecore style. -->
+  <Tile_SpikecoreVacstone.description>尖刺风格的精美地砖。</Tile_SpikecoreVacstone.description>
+  
+  <!-- EN: totemic granite tile -->
+  <Tile_TotemicGranite.label>图腾风格地砖（花岗岩）</Tile_TotemicGranite.label>
+  <!-- EN: Fine stone tiles in a totemic style. -->
+  <Tile_TotemicGranite.description>图腾风格的精美地砖。</Tile_TotemicGranite.description>
+  
+  <!-- EN: totemic limestone tile -->
+  <Tile_TotemicLimestone.label>图腾风格地砖（石灰岩）</Tile_TotemicLimestone.label>
+  <!-- EN: Fine stone tiles in a totemic style. -->
+  <Tile_TotemicLimestone.description>图腾风格的精美地砖。</Tile_TotemicLimestone.description>
+  
+  <!-- EN: totemic marble tile -->
+  <Tile_TotemicMarble.label>图腾风格地砖（大理石）</Tile_TotemicMarble.label>
+  <!-- EN: Fine stone tiles in a totemic style. -->
+  <Tile_TotemicMarble.description>图腾风格的精美地砖。</Tile_TotemicMarble.description>
+  
+  <!-- EN: totemic sandstone tile -->
+  <Tile_TotemicSandstone.label>图腾风格地砖（砂岩）</Tile_TotemicSandstone.label>
+  <!-- EN: Fine stone tiles in a totemic style. -->
+  <Tile_TotemicSandstone.description>图腾风格的精美地砖。</Tile_TotemicSandstone.description>
+  
+  <!-- EN: totemic slate tile -->
+  <Tile_TotemicSlate.label>图腾风格地砖（板岩）</Tile_TotemicSlate.label>
+  <!-- EN: Fine stone tiles in a totemic style. -->
+  <Tile_TotemicSlate.description>图腾风格的精美地砖。</Tile_TotemicSlate.description>
+  
+  <!-- EN: totemic vacstone tile -->
+  <Tile_TotemicVacstone.label>图腾风格地砖（真空岩）</Tile_TotemicVacstone.label>
+  <!-- EN: Fine stone tiles in a totemic style. -->
+  <Tile_TotemicVacstone.description>图腾风格的精美地砖。</Tile_TotemicVacstone.description>
+  
+  <!-- EN: hex tile -->
+  <Tile_Transhumanist.label>六角地砖</Tile_Transhumanist.label>
+  <!-- EN: Fine steel plates with a hexagonal pattern for that ultra-technological look. -->
+  <Tile_Transhumanist.description>六角形图案的精致钢板，具有极致科技的外观风格。</Tile_Transhumanist.description>
+  
+</LanguageData>

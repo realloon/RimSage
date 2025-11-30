@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>Ludeon.RimWorld.Royalty</packageId>
+  <author>Ludeon Studios</author>
+  <steamAppId>1149640</steamAppId>
+  <supportedVersions>
+  	<li>1.6</li>
+  </supportedVersions>
+  <forceLoadAfter>
+    <li>Ludeon.RimWorld</li>
+  </forceLoadAfter>
+  <forceLoadBefore>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+  </forceLoadBefore>
+</ModMetaData>

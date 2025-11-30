@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<StatDef>
+  <defName>WorkSpeedGlobalOffsetMech</defName>
+  <label>mech work speed offset</label>
+  <description>A work speed offset applied to a mechanitor's mechs.</description>
+  <category>Mechanitor</category>
+  <defaultBaseValue>0</defaultBaseValue>
+  <minValue>0</minValue>
+  <hideAtValue>0</hideAtValue>
+  <toStringStyle>PercentZero</toStringStyle>
+  <scenarioRandomizable>true</scenarioRandomizable>
+  <displayPriorityInCategory>5000</displayPriorityInCategory>
+  <showOnMechanoids>false</showOnMechanoids>
+  <showOnAnimals>false</showOnAnimals>
+</StatDef>
+
+</Defs>

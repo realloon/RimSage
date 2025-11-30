@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MemeDef Name="StructureOriginBase" Abstract="True">
+    <category>Structure</category>
+    <impact>0</impact>
+    <selectOneOrNone>
+      <noneChance>0.8</noneChance>
+      <preceptThingPairs>
+        <li>
+          <precept>ApparelDesired_Soft_Subordinate</precept>
+          <thing>Apparel_Headwrap</thing>
+        </li>
+        <li>
+          <precept>ApparelDesired_Soft_Subordinate</precept>
+          <thing>Apparel_Broadwrap</thing>
+        </li>
+      </preceptThingPairs>
+    </selectOneOrNone>
+  </MemeDef>
+
+  <!-- Christian -->
+
+ <MemeDef ParentName="StructureOriginBase">
+    <defName>Structure_OriginChristian</defName>
+    <label>Christian origin</label>
+    <description>This is a variant of the abstract theist structure. This ideoligion is a descendant of ancient Christianity. It may have very different precepts than those of thousands of years ago, but its symbols are similar.</description>
+    <iconPath>UI/Structures/OriginChristian</iconPath>
+    <deityCount>1</deityCount>
+    <deityNameMakerOverride>NamerDeityChristian</deityNameMakerOverride>
+    <deityTypeMakerOverride>DietyTypeMakerAbrahamic</deityTypeMakerOverride>
+    <allowSymbolsFromDeity>false</allowSymbolsFromDeity>
+    <symbolPackOverride>true</symbolPackOverride>
+    <worshipRoomLabel>church</worshipRoomLabel>
+    <groupDef>Theist_Abstract</groupDef>
+    <requiredRituals>
+      <li>
+        <precept>DateRitualConsumable</precept>
+        <pattern>CelebrationTree</pattern>
+        <building>ChristmasTree</building>
+      </li>
+    </requiredRituals>
+    <consumableBuildings>
+      <li>ChristmasTree</li>
+    </consumableBuildings>
+    <requireAnyRitualSeat><li>Pew</li></requireAnyRitualSeat>
+    <generalRules>
+      <rulesStrings>
+        <li>r_ideoName(p=99)->[globalAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[memeAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packIdeoName]</li>
+        <li>memeLeaderNoun->bishop</li>
+        <li>memeLeaderNoun->cardinal</li>
+        <li>memeLeaderNoun->pope</li>
+        <li>memeLeaderNoun->pontiff</li>
+        <li>memeLeaderNoun->legate</li>
+        <li>memeLeaderNoun->nuncio</li>
+        <li>memeLeaderNoun->divus</li>
+        <li>memeLeaderNoun->ecclesiast</li>
+        <li>memeLeaderAdjective->holy</li>
+        <li>memeLeaderAdjective->divine</li>
+        <li>memeLeaderAdjective->Christ's</li>
+        <li>memeLeaderAdjective->God's</li>
+        <li>memeMoralist->priest</li>
+        <li>memeMoralist->pastor</li>
+        <li>memeMoralist->cleric</li>
+        <li>memeMoralist->preacher</li>
+        <li>memeMoralist->rector</li>
+        <li>memeMoralist->abbot</li>
+      </rulesStrings>
+    </generalRules>
+   <descriptionMaker>
+     <patterns>
+       <li><def>TheistMyth</def></li>
+       <li><def>TheistFounder</def></li>
+     </patterns>
+     <constants>
+       <li><key>structure_theist</key><value>true</value></li>
+       <li><key>structure_originChristian</key><value>true</value></li>
+     </constants>
+   </descriptionMaker>
+   <symbolPacks>
+      <li><ideoName>Christianity</ideoName><adjective>Christian</adjective><member>Christian</member><prefix>true</prefix></li>
+      <li><ideoName>Catholicism</ideoName><adjective>Catholic</adjective><member>Catholic</member><prefix>true</prefix></li>
+      <li><ideoName>Protestantism</ideoName><adjective>Protestant</adjective><member>Protestant</member><prefix>true</prefix></li>
+      <li><ideoName>Orthodoxy</ideoName><adjective>Orthodox</adjective><member>Orthodoxist</member><prefix>true</prefix></li>
+      <li><ideoName>Nestorianism</ideoName><adjective>Nestorian</adjective><member>Nestorian</member><prefix>true</prefix></li>
+      <li><ideoName>Anglicanism</ideoName><adjective>Anglican</adjective><member>Anglican</member><prefix>true</prefix></li>
+      <li><ideoName>Baptism</ideoName><adjective>Baptist</adjective><member>Baptist</member><prefix>true</prefix></li>
+      <li><ideoName>Anabaptism</ideoName><adjective>Anabaptist</adjective><member>Anabaptist</member><prefix>true</prefix></li>
+      <li><ideoName>Calvinism</ideoName><adjective>Calvinist</adjective><member>Calvinist</member><prefix>true</prefix></li>
+      <li><ideoName>Lutheranism</ideoName><adjective>Lutheran</adjective><member>Lutheran</member><prefix>true</prefix></li>
+      <li><ideoName>Adventism</ideoName><adjective>Adventist</adjective><member>Adventist</member><prefix>true</prefix></li>
+      <li><ideoName>Methodism</ideoName><adjective>Methodist</adjective><member>Methodist</member><prefix>true</prefix></li>
+      <li><ideoName>Mormonism</ideoName><adjective>Mormon</adjective><member>Mormon</member><prefix>true</prefix></li>
+      <li><ideoName>Theonomy</ideoName><adjective>Theonomic</adjective><member>Theonomist</member></li>
+    </symbolPacks>
+    <thingStyleCategories>
+      <li>
+        <category>Christian</category>
+        <priority>4</priority>
+      </li>
+    </thingStyleCategories>
+  </MemeDef>
+
+  <RulePackDef>
+    <defName>NamerDeityChristian</defName>
+    <include>
+      <li>GlobalUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_deityName(p=3)->God</li>
+        <li>r_deityName->Christ-Lord</li>
+        <li>r_deityName->Christ</li>
+        <li>r_deityName->[color] Jesus</li>
+        <li>r_deityName->[color] Christ</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>DietyTypeMakerAbrahamic</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_deityType->Creator of [all]</li>
+        <li>r_deityType->[adj] god</li>
+
+        <li>all->everything</li>
+        <li>all->all</li>
+        <li>all->the universe</li>
+
+        <li>adj->all-powerful</li>
+        <li>adj->omnipotent</li>
+        <li>adj->universal</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Islamic -->
+
+ <MemeDef ParentName="StructureOriginBase">
+    <defName>Structure_OriginIslamic</defName>
+    <label>Islamic origin</label>
+    <description>This is a variant of the abstract theist structure. This ideoligion is a descendant of ancient Islam. It may have very different precepts than those of thousands of years ago, but its symbols are similar.</description>
+    <iconPath>UI/Structures/OriginIslamic</iconPath>
+    <deityCount>1</deityCount>
+    <deityNameMakerOverride>NamerDeityIslamic</deityNameMakerOverride>
+    <deityTypeMakerOverride>DietyTypeMakerAbrahamic</deityTypeMakerOverride>
+    <allowSymbolsFromDeity>false</allowSymbolsFromDeity>
+    <symbolPackOverride>true</symbolPackOverride>
+    <worshipRoomLabel>mosque</worshipRoomLabel>
+    <groupDef>Theist_Abstract</groupDef>
+    <requireAnyRitualSeat><li>KneelSheet</li></requireAnyRitualSeat>
+    <generalRules>
+      <rulesStrings>
+        <li>r_ideoName(p=99)->[globalAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[memeAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packIdeoName]</li>
+        <li>memeLeaderNoun->mullah</li>
+        <li>memeLeaderNoun->imam</li>
+        <li>memeLeaderNoun->caliph</li>
+        <li>memeLeaderNoun->mufti</li>
+        <li>memeLeaderNoun->almami</li>
+        <li>memeLeaderNoun->kyai</li>
+        <li>memeLeaderNoun->ayatollah</li>
+        <li>memeLeaderAdjective->grand</li>
+        <li>memeMoralist(p=4)->imam</li>
+        <li>memeMoralist->qadi</li>
+        <li>memeMoralist->alim</li>
+        <li>memeMoralist->allamah</li>
+        <li>memeMoralist->muezzin</li>
+        <li>memeMoralist->mujtahid</li>
+        <li>memeMoralist->cleric</li>
+      </rulesStrings>
+    </generalRules>
+   <descriptionMaker>
+     <patterns>
+       <li><def>TheistMyth</def></li>
+       <li><def>TheistFounder</def></li>
+     </patterns>
+     <constants>
+       <li><key>structure_theist</key><value>true</value></li>
+       <li><key>structure_originIslamic</key><value>true</value></li>
+     </constants>
+   </descriptionMaker>
+    <symbolPacks>
+      <li><ideoName>Islam</ideoName><adjective>Islamic</adjective><member>Muslim</member><prefix>true</prefix></li>
+      <li><ideoName>Islamism</ideoName><adjective>Islamist</adjective><member>Islamist</member><prefix>true</prefix></li>
+      <li><ideoName>Shiism</ideoName><adjective>Shiite</adjective><member>Shiite</member><prefix>true</prefix></li>
+      <li><ideoName>Sunnism</ideoName><adjective>Sunni</adjective><member>Sunni</member><prefix>true</prefix></li>
+      <li><ideoName>Ibadism</ideoName><adjective>Ibadi</adjective><member>Ibadi</member><prefix>true</prefix></li>
+      <li><ideoName>Ismailism</ideoName><adjective>Ismaili</adjective><member>Ismaili</member><prefix>true</prefix></li>
+      <li><ideoName>Mustalism</ideoName><adjective>Mustalic</adjective><member>Mustali</member><prefix>true</prefix></li>
+      <li><ideoName>Tayyibism</ideoName><adjective>Tayyibic</adjective><member>Tayyibist</member><prefix>true</prefix></li>
+      <li><ideoName>Nizalism</ideoName><adjective>Nizalist</adjective><member>Nizalist</member><prefix>true</prefix></li>
+      <li><ideoName>Sufrism</ideoName><adjective>Surfrist</adjective><member>Surfist</member><prefix>true</prefix></li>
+      <li><ideoName>Qadirism</ideoName><adjective>Qadirist</adjective><member>Qadirist</member><prefix>true</prefix></li>
+      <li><ideoName>Zahirism</ideoName><adjective>Zahirist</adjective><member>Zahirist</member><prefix>true</prefix></li>
+      <li><ideoName>Azraqism</ideoName><adjective>Azraqi</adjective><member>Azraqi</member><prefix>true</prefix></li>
+      <li><ideoName>Wahhabism</ideoName><adjective>Wahhabi</adjective><member>Wahhabi</member><prefix>true</prefix></li>
+      <li><ideoName>Caliphate</ideoName><adjective>Caliphic</adjective><member>Caliphist</member><prefix>true</prefix></li>
+    </symbolPacks>
+    <thingStyleCategories>
+      <li>
+        <category>Islamic</category>
+        <priority>4</priority>
+      </li>
+    </thingStyleCategories>
+    <styleItemTags>
+      <li>
+        <tag>NoBeard</tag>
+        <weightFactor>0.1</weightFactor>
+      </li>
+    </styleItemTags>
+  </MemeDef>
+
+  <RulePackDef>
+    <defName>NamerDeityIslamic</defName>
+    <include>
+      <li>GlobalUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_deityName(p=8)->Allah</li>
+        <li>r_deityName->Al-Ilah</li>
+        <li>r_deityName->Ar-Rahman</li>
+        <li>r_deityName->Al-Malik</li>
+        <li>r_deityName->Al-Qudus</li>
+        <li>r_deityName->As-Salam</li>
+        <li>r_deityName->Al-Mumin</li>
+        <li>r_deityName->Al-Aziz</li>
+        <li>r_deityName->Al-Jabbar</li>
+        <li>r_deityName->Al-Khaliq</li>
+        <li>r_deityName->Al-Ghaffar</li>
+        <li>r_deityName->Al-Qahar</li>
+        <li>r_deityName->Al-Wahhab</li>
+        <li>r_deityName->Al-Fattah</li>
+        <li>r_deityName->Al-Alim</li>
+        <li>r_deityName->Al-Hakam</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Hindu -->
+
+  <MemeDef ParentName="StructureOriginBase">
+    <defName>Structure_OriginHindu</defName>
+    <label>Hindu origin</label>
+    <description>This is a variant of the embodied theist structure. This ideoligion is a descendant of ancient Hinduism. It may have very different precepts than those of thousands of years ago, but its symbols are similar.</description>
+    <iconPath>UI/Structures/OriginHindu</iconPath>
+    <deityCount>4</deityCount>
+    <symbolPackOverride>true</symbolPackOverride>
+    <worshipRoomLabel>shrine</worshipRoomLabel>
+    <groupDef>Theist_Embodied</groupDef>
+    <requireAnyRitualSeat><li>KneelPillow</li><li>KneelSheet</li></requireAnyRitualSeat>
+    <consumableBuildings>
+      <li>IncenseShrine</li>
+    </consumableBuildings>
+    <generalRules>
+      <rulesStrings>
+        <li>r_ideoName(p=99)->[globalAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[memeAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packIdeoName]</li>
+        <li>memeLeaderNoun->mahatma</li>
+        <li>memeLeaderNoun->ishvara</li>
+        <li>memeLeaderNoun->yogi</li>
+        <li>memeLeaderNoun->pandit</li>
+        <li>memeLeaderNoun->avatar</li>
+        <li>memeLeaderAdjective->sacred</li>
+        <li>memeLeaderAdjective->hindic</li>
+        <li>memeLeaderAdjective->indic</li>
+        <li>memeLeaderAdjective->yogic</li>
+        <li>memeLeaderAdjective->tirth</li>
+        <li>memeMoralist(p=3)->pujari</li>
+        <li>memeMoralist->purohit</li>
+        <li>memeMoralist->archaka</li>
+        <li>memeMoralist->brahmin</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <patterns>
+        <li><def>TheistMyth</def></li>
+        <li><def>TheistFounder</def></li>
+      </patterns>
+      <constants>
+        <li><key>structure_theist</key><value>true</value></li>
+        <li><key>structure_originHindu</key><value>true</value></li>
+      </constants>
+    </descriptionMaker>
+    <symbolPacks>
+      <li><ideoName>Hinduism</ideoName><adjective>Hindu</adjective><member>Hindu</member><prefix>true</prefix></li>
+      <li><ideoName>Induism</ideoName><adjective>Indu</adjective><member>Indu</member><prefix>true</prefix></li>
+      <li><ideoName>Sinduism</ideoName><adjective>Sindu</adjective><member>Sindu</member><prefix>true</prefix></li>
+      <li><ideoName>Tantra</ideoName><adjective>Tantric</adjective><member>Tantran</member><prefix>true</prefix></li>
+      <li><ideoName>Vedism</ideoName><adjective>Vedic</adjective><member>Vedi</member><prefix>true</prefix></li>
+      <li><ideoName>Dharmism</ideoName><adjective>Dharmic</adjective><member>Dharmi</member><prefix>true</prefix></li>
+      <li><ideoName>Vaishmaya</ideoName><adjective>Vaishmayan</adjective><member>Vaishnava</member><prefix>true</prefix></li> <!-- Followers of Vishnu -->
+      <li><ideoName>Shaivmaya</ideoName><adjective>Shaivan</adjective><member>Shaiva</member><prefix>true</prefix></li> <!-- Followers of Shiva -->
+      <li><ideoName>Yoga</ideoName><adjective>Yogic</adjective><member>Yogi</member><prefix>true</prefix></li> <!-- Six Hindu schools -->
+      <li><ideoName>Nyaya</ideoName><adjective>Nyayan</adjective><member>Nyava</member><prefix>true</prefix></li>
+      <li><ideoName>Vaisesika</ideoName><adjective>Vaisesikan</adjective><member>Vaisesikaya</member><prefix>true</prefix></li>
+      <li><ideoName>Samkhya</ideoName><adjective>Samkhyan</adjective><member>Samkhyan</member><prefix>true</prefix></li>
+      <li><ideoName>Mimamsa</ideoName><adjective>Mimamsan</adjective><member>Mimamsan</member><prefix>true</prefix></li>
+      <li><ideoName>Vedanta</ideoName><adjective>Vedantan</adjective><member>Vedantan</member><prefix>true</prefix></li>
+    </symbolPacks>
+    <fixedDeityNameTypes>
+      <li><name>Brahma</name><type>God of Creation</type></li>
+      <li><name>Vishnu</name><type>God of Preservation</type></li>
+      <li><name>Shiva</name><type>God of Destruction</type></li>
+      <li><name>Ushas</name><type>God of Dawn</type></li>
+      <li><name>Devi</name><type>God of Femininity</type></li>
+      <li><name>Lakshmi</name><type>God of Goals</type></li>
+      <li><name>Parvati</name><type>God of Fertility</type></li>
+      <li><name>Kali</name><type>God of Protection</type></li>
+      <li><name>Bhumi</name><type>God of Earth</type></li>
+      <li><name>Saraswati</name><type>God of Wisdom</type></li>
+      <li><name>Gayatri</name><type>God of Life</type></li>
+      <li><name>Annapoorna</name><type>God of Food</type></li>
+      <li><name>Nindra</name><type>God of Sleep</type></li>
+      <li><name>Shashthi</name><type>God of Children</type></li>
+      <li><name>Manasa</name><type>God of Snakes</type></li>
+      <li><name>Svaha</name><type>God of Ash</type></li>
+      <li><name>Bhairava</name><type>God of Annihilation</type></li>
+      <li><name>Krishna</name><type>God of Compassion</type></li>
+      <li><name>Surya</name><type>Sun God</type></li>
+      <li><name>Varuna</name><type>Sky God</type></li>
+      <li><name>Mitra</name><type>God of Friendship</type></li>
+      <li><name>Indra</name><type>God of Heaven</type></li>
+      <li><name>Agni</name><type>Fire God</type></li>
+      <li><name>Soma</name><type>Moon God</type></li>
+      <li><name>Rudra</name><type>God of Wind</type></li>
+      <li><name>Prithvi</name><type>God of Earth</type></li>
+      <li><name>Aditi</name><type>God of Morality</type></li>
+      <li><name>Vac</name><type>God of Sound</type></li>
+      <li><name>Nirrti</name><type>God of Destruction</type></li>
+      <li><name>Ratri</name><type>God of Night</type></li>
+      <li><name>Aranyani</name><type>Forest God</type></li>
+      <li><name>Durga</name><type>Warrior Goddess</type></li>
+    </fixedDeityNameTypes>
+    <thingStyleCategories>
+      <li>
+        <category>Hindu</category>
+        <priority>4</priority>
+      </li>
+    </thingStyleCategories>
+  </MemeDef>
+
+  <!-- Buddhist -->
+
+ <MemeDef ParentName="StructureOriginBase">
+    <defName>Structure_OriginBuddhist</defName>
+    <label>Buddhist origin</label>
+    <description>This ideoligion is a descendant of ancient Buddhism. It may have very different precepts than those of thousands of years ago, but its symbols are similar.</description>
+    <iconPath>UI/Structures/OriginBuddhist</iconPath>
+    <deityCount>0</deityCount>
+    <allowSymbolsFromDeity>false</allowSymbolsFromDeity>
+    <symbolPackOverride>true</symbolPackOverride>
+    <worshipRoomLabel>pagoda</worshipRoomLabel>
+    <requireAnyRitualSeat><li>KneelPillow</li></requireAnyRitualSeat>
+    <consumableBuildings>
+      <li>IncenseShrine</li>
+    </consumableBuildings>
+    <generalRules>
+      <rulesStrings>
+        <li>r_ideoName(p=99)->[globalAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[memeAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packAdjective] [packIdeoName]</li>
+        <li>r_ideoName(p=99)->[packIdeoName]</li>
+        <li>memeLeaderNoun->bodhisattva</li>
+        <li>memeLeaderNoun->sattva</li>
+        <li>memeLeaderNoun->lama</li>
+        <li>memeLeaderAdjective->enlightened</li>
+        <li>memeLeaderAdjective->wise</li>
+        <li>memeLeaderAdjective->spiritual</li>
+        <li>memeLeaderAdjective->bodhi</li>
+        <li>memeLeaderAdjective->dalai</li>
+        <li>memeMoralist(p=2)->bhikkhu</li>
+        <li>memeMoralist->priest</li>
+        <li>memeMoralist->monk</li>
+      </rulesStrings>
+    </generalRules>
+   <descriptionMaker>
+     <patterns>
+       <li><def>IdeologicalFounder</def></li>
+     </patterns>
+     <constants>
+       <li><key>structure_ideological</key><value>true</value></li>
+       <li><key>structure_originBuddhist</key><value>true</value></li>
+     </constants>
+   </descriptionMaker>
+    <symbolPacks>
+      <li><ideoName>Buddhism</ideoName><theme>Buddha</theme><adjective>Buddhist</adjective><member>Buddhist</member><prefix>true</prefix></li>
+      <li><ideoName>Theravada</ideoName><adjective>Theric</adjective><member>Therist</member><prefix>true</prefix></li>
+      <li><ideoName>Mahayana</ideoName><adjective>Mahic</adjective><member>Mahist</member><prefix>true</prefix></li>
+      <li><ideoName>Vajrayana</ideoName><adjective>Vajric</adjective><member>Vajrist</member><prefix>true</prefix></li>
+      <li><ideoName>Zen</ideoName><adjective>Zen</adjective><member>Zenist</member><prefix>true</prefix></li>
+      <li><ideoName>Seon</ideoName><adjective>Seonic</adjective><member>Seonist</member><prefix>true</prefix></li>
+      <li><ideoName>Ekayana</ideoName><adjective>Ekist</adjective><member>Ekist</member><prefix>true</prefix></li>
+      <li><ideoName>Navayana</ideoName><adjective>Navic</adjective><member>Navist</member><prefix>true</prefix></li>
+      <li><ideoName>Tantrayana</ideoName><adjective>Tantric</adjective><member>Tantran</member><prefix>true</prefix></li>
+      <li><ideoName>Gelug</ideoName><adjective>Gelugist</adjective><member>Gelugist</member><prefix>true</prefix></li>
+    </symbolPacks>
+    <thingStyleCategories>
+      <li>
+        <category>Buddhist</category>
+        <priority>4</priority>
+      </li>
+    </thingStyleCategories>
+    <styleItemTags>
+      <li>
+        <tag>NoBeard</tag>
+        <weightFactor>5</weightFactor>
+      </li>
+      <li>
+        <tag>HairShort</tag>
+        <weightFactor>5</weightFactor>
+      </li>
+      <li>
+        <tag>TattoBodyBuddhist</tag>
+        <baseWeight>0.01</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    </styleItemTags>
+  </MemeDef>
+
+</Defs>

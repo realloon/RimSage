@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <WorkTagNone>none</WorkTagNone>
+  <WorkTagIntellectual>intellectual</WorkTagIntellectual>
+  <WorkTagManualDumb>dumb labor</WorkTagManualDumb>
+  <WorkTagManualSkilled>skilled labor</WorkTagManualSkilled>
+  <WorkTagViolent>violent</WorkTagViolent>
+  <WorkTagShooting>shooting</WorkTagShooting>
+  <WorkTagCaring>caring</WorkTagCaring>
+  <WorkTagSocial>social</WorkTagSocial>
+  <WorkTagAnimals>animals</WorkTagAnimals>
+  <WorkTagArtistic>artistic</WorkTagArtistic>
+  <WorkTagCrafting>crafting</WorkTagCrafting>
+  <WorkTagCooking>cooking</WorkTagCooking>
+  <WorkTagFirefighting>firefighting</WorkTagFirefighting>
+  <WorkTagCleaning>cleaning</WorkTagCleaning>
+  <WorkTagHauling>hauling</WorkTagHauling>
+  <WorkTagPlantWork>plant work</WorkTagPlantWork>
+  <WorkTagMining>mining</WorkTagMining>
+  <WorkTagHunting>hunting</WorkTagHunting>
+  <WorkTagConstructing>constructing</WorkTagConstructing>
+  <WorkTagCommoner>commoner work</WorkTagCommoner>
+  <WorkTagAllWork>all work</WorkTagAllWork>
+
+</LanguageData>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Multiplier for enslaved (low motivation) -->
+  <StatsReport_Slave>奴役系数（低心情）</StatsReport_Slave>
+  <!-- EN: Terror offset -->
+  <StatsReport_Terror>恐怖值偏移量</StatsReport_Terror>
+  <!-- EN: Faction leader bonus -->
+  <StatsReport_LeaderOffset>派系领袖奖励</StatsReport_LeaderOffset>
+  <!-- EN: Contains corpse -->
+  <StatsReport_OccupiedCorpseCasket>内含尸体</StatsReport_OccupiedCorpseCasket>
+
+  <!-- EN: Conversion power bonus on map -->
+  <StatsReport_InstalledRelicConvertPowerFactor>地图上的沟通能力加成</StatsReport_InstalledRelicConvertPowerFactor>
+  <!-- EN: Mood bonus for rituals in room -->
+  <StatsReport_RelicAtRitualMoodBonus>室内进行的仪式对心情的加成</StatsReport_RelicAtRitualMoodBonus>
+
+  <!-- EN: Relic of -->
+  <Stat_Thing_RelicOf_Name>圣物：</Stat_Thing_RelicOf_Name>
+  <!-- EN: The ideology this relic belongs to. -->
+  <Stat_Thing_RelicOf_Desc>此圣物所关联的文化。</Stat_Thing_RelicOf_Desc>
+  <!-- EN: Relic status -->
+  <Stat_Thing_RelicStatus>圣物</Stat_Thing_RelicStatus>
+  <!-- EN: A widely sought-after item of religious or ideological significance. -->
+  <Stat_Thing_RelicStatus_Desc>具有宗教或文化意义的广受追捧的物品。</Stat_Thing_RelicStatus_Desc>
+
+  <!-- EN: Related to -->
+  <Stat_Thing_RelatedToIdeos_Name>关联</Stat_Thing_RelatedToIdeos_Name>
+  <!-- EN: The ideoligions this thing belongs to. -->
+  <Stat_Thing_RelatedToIdeos_Desc>此物体所关联的文化。</Stat_Thing_RelatedToIdeos_Desc>
+
+  <!-- EN: Holding relic -->
+  <StatsReports_HasRelic>正持有圣物</StatsReports_HasRelic>
+
+  <!-- EN: Blind bonus -->
+  <StatsReport_BlindPsychicSensitivityOffset>失明加成</StatsReport_BlindPsychicSensitivityOffset>
+  <!-- EN: Sight bonus -->
+  <StatsReport_SightPsychicSensitivityOffset>视觉加成</StatsReport_SightPsychicSensitivityOffset>
+
+  <!-- EN: Dominating style -->
+  <Stat_Thing_StyleDominanceCategory>主流风格</Stat_Thing_StyleDominanceCategory>
+  <!-- EN: The style presented by this object. This style may be associated with some ideoligions. Different people respond differently to certain styles, according to their ideoligious beliefs. -->
+  <Stat_Thing_StyleDominanceCategoryDesc>此物品的风格，风格可能与文化有联系，不同文化信仰的人将对同一风格的事物有着不同的回应。</Stat_Thing_StyleDominanceCategoryDesc>
+  <!-- EN: Satisfies ideoligions -->
+  <Stat_Thing_IdeosSatisfied>令这些文化形态感到满足</Stat_Thing_IdeosSatisfied>
+  <!-- EN: Style -->
+  <Style>风格</Style>
+
+  <!-- EN: Darkness shooting accuracy -->
+  <Stat_Pawn_DarknessCombatShooting_Name>黑暗中射击准度</Stat_Pawn_DarknessCombatShooting_Name>
+  <!-- EN: An offset applied to the chance to hit a target based on the target's light level. -->
+  <Stat_Pawn_DarknessCombatShooting_Desc>基于目标的亮度附加在命中率上的偏移值</Stat_Pawn_DarknessCombatShooting_Desc>
+  <!-- EN: Darkness melee dodge chance -->
+  <Stat_Pawn_DarknessMeleeDodgeChance_Name>黑暗中近战闪避概率</Stat_Pawn_DarknessMeleeDodgeChance_Name>
+  <!-- EN: An offset applied to the melee dodge chance based on the local light level. -->
+  <Stat_Pawn_DarknessMeleeDodgeChance_Desc>基于当前位置亮度附加在近战闪避率上的偏移值</Stat_Pawn_DarknessMeleeDodgeChance_Desc>
+  <!-- EN: Darkness melee hit chance -->
+  <Stat_Pawn_DarknessMeleeHitChance_Name>黑暗中近战命中率</Stat_Pawn_DarknessMeleeHitChance_Name>
+  <!-- EN: An offset applied to the melee hit chance based on the target's light level. -->
+  <Stat_Pawn_DarknessMeleeHitChance_Desc>基于目标的亮度附加在近战命中率上的偏移值</Stat_Pawn_DarknessMeleeHitChance_Desc>
+  <!-- EN: The following offsets can be applied -->
+  <Stat_PawnDarkness_FollowingOffset>以下偏移值可适用</Stat_PawnDarkness_FollowingOffset>
+
+  <!-- EN: Biosculpting speed -->
+  <StatsReport_BiosculptingSpeedFactor>塑形速度</StatsReport_BiosculptingSpeedFactor>
+
+  </LanguageData>

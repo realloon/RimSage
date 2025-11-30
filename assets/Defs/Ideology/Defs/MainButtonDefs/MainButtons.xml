@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MainButtonDef>
+    <defName>Ideos</defName>
+    <label>ideoligions</label>
+    <description>Review known ideoligions in the world.</description>
+    <tabWindowClass>MainTabWindow_Ideos</tabWindowClass>
+    <order>100</order>
+    <validWithoutMap>true</validWithoutMap>
+    <minimized>True</minimized>
+    <validWithClassicIdeo>false</validWithClassicIdeo>
+    <iconPath>UI/Buttons/MainButtons/Ideoligions</iconPath>
+  </MainButtonDef>
+
+</Defs>

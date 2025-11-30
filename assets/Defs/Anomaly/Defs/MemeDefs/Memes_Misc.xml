@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <MemeDef>
+    <defName>Inhuman</defName>
+    <label>inhuman</label>
+    <description>Humanity is a barrier to our connection with the machine god and its pleasurable rewards.</description>
+    <iconPath>UI/Memes/Inhuman</iconPath>
+    <groupDef MayRequire="Ludeon.RimWorld.Ideology">Misc</groupDef>
+    <impact>3</impact>
+    <renderOrder>1100</renderOrder>
+    <styleItemTags>
+      <li>
+        <tag>Cultist</tag>
+        <baseWeight>5</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    </styleItemTags>
+    <requireOne>
+      <li><li>Inhumanizing_Required</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">Execution_RespectedIfGuilty</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_Acceptable</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">Corpses_DontCare</li></li>
+      <li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Abhorrent</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Horrible</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Disapproved</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Standard</li>
+      </li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">NutrientPasteEating_DontMind</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">Skullspike_Desired</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Acceptable</li></li>
+      <li><li>Lovin_Free</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_NoRules</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_NoRules</li></li>
+      <li><li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Acceptable</li></li>
+    </requireOne>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->inhuman</li>
+        <li>memeAdjective->unhuman</li>
+        <li>memeAdjective->machine</li>
+        <li>memeAdjective->dark</li>
+        <li>memeConcept->inhumanity</li>
+        <li>memeConcept->darkness</li>
+        <li>memeConcept->void</li>
+        <li>memeConcept->entities</li>
+        <li>memeConcept->rage</li>
+      </rulesStrings>
+    </generalRules>
+    <factionWhitelist>
+      <li>HoraxCult</li>
+    </factionWhitelist>
+  </MemeDef>
+  
+  <MemeDef>
+    <defName>Ritualist</defName>
+    <label>ritualist</label>
+    <description>There is a greater energy in the universe. Through ritual we can understand it and harness its power.</description>
+    <iconPath>UI/Memes/Ritualist</iconPath>
+    <groupDef MayRequire="Ludeon.RimWorld.Ideology">Misc</groupDef>
+    <impact>2</impact>
+    <renderOrder>1101</renderOrder>
+    <requireOne>
+      <li><li>PsychicRituals_Exalted</li></li>
+      <li><li>VoidStudy_VeryEfficient</li></li>
+      <li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Research_ExtremelySlow</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Research_VerySlow</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Research_Slow</li>
+      </li>
+    </requireOne>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->ritual</li>
+        <li>memeConcept->ritual</li>
+        <li>memeMoralist->ritualist</li>
+      </rulesStrings>
+    </generalRules>
+    <thingStyleCategories>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <category MayRequire="Ludeon.RimWorld.Ideology">Morbid</category>
+        <priority>3</priority>
+      </li>
+    </thingStyleCategories>
+  </MemeDef>
+
+</Defs>

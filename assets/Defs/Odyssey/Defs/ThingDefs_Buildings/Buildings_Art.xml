@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ArtBuildingBase">
+    <defName>Statue</defName>
+    <label>statue</label>
+    <description>A sculpture depicting a specific person. Artists will often make statues depicting friends or loved ones.</description>
+    <minifiedDef>MinifiedThingRealtimeDraw</minifiedDef>
+    <minifiedManualDraw>true</minifiedManualDraw>
+    <costStuffCount>65</costStuffCount>
+    <drawerType>RealtimeOnly</drawerType>
+    <thingCategories>
+      <li>BuildingsArt</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Building/GenericStatue</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <addTopAltitudeBias>true</addTopAltitudeBias>
+      <drawSize>(1.6,1.6)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <SellPriceFactor>1</SellPriceFactor>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>4</Mass>
+      <Beauty>60</Beauty>
+      <WorkToMake>21000</WorkToMake>
+    </statBases>
+    <fillPercent>0.5</fillPercent>
+    <comps>
+      <li Class="CompProperties_Statue">
+        <compClass>CompStatue</compClass>
+        <nameMaker>NamerStatue</nameMaker>
+        <descriptionMaker>ArtDescription_Statue</descriptionMaker>
+        <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+        <statueBaseGraphic>
+          <texPath>Things/Building/StatueBase</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(1.5, 1.5)</drawSize>
+        </statueBaseGraphic>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_MeditationOffsetBuildingsNear</li>
+    </placeWorkers>
+    <tradeTags>
+      <li>Art</li>
+    </tradeTags>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Artistic>4</Artistic>
+      </skillRequirements>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">Bioferrite</li>
+          <li MayRequire="Ludeon.RimWorld.Odyssey">Obsidian</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+<!--    <ideoBuildingNamerBase MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoSculpture</ideoBuildingNamerBase>-->
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+  </ThingDef>
+</Defs>

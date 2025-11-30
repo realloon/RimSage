@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Reading management -->
+  <MaxMentalBreakChance>{0} max mental break chance</MaxMentalBreakChance>
+  <TomePolicy>Tomes</TomePolicy>
+
+  <!-- Caravan -->
+  <EntitiesSection>Entities</EntitiesSection>
+  
+  <!-- Hidden items filter -->
+  <UndiscoveredItemLabel>Undiscovered</UndiscoveredItemLabel>
+  <UndiscoveredItemDesc>This item has not been discovered yet.</UndiscoveredItemDesc>
+
+  <!-- Medical settings -->
+  <MedGroupEntities>Entities</MedGroupEntities>
+  <MedGroupEntitiesDesc>Anomalous entities and their variations.</MedGroupEntitiesDesc>
+
+  <MedGroupGhouls>Ghouls</MedGroupGhouls>
+  <MedGroupGhoulsDesc>Ghouls belonging to your colony.</MedGroupGhoulsDesc>
+
+  <GhoulConfirmation>Turning {PAWN_nameDef} into a ghoul is irreversible. {PAWN_pronoun} will be left in a half-conscious stupor and be incapable of work.\n\nAre you sure you want to turn {PAWN_nameDef} into a ghoul?</GhoulConfirmation>
+
+  <RoomRequirementNoAnomalyBuildings>no anomaly buildings allowed</RoomRequirementNoAnomalyBuildings>
+
+  <EntityCodex>Entity codex</EntityCodex>
+  <EntityCodexGizmoTip>View all discovered entities. Discover new entities to advance the monolith and reveal new research projects.</EntityCodexGizmoTip>
+  <ResearchUnlocks>Research unlocks</ResearchUnlocks>
+  <EntityCodexDesc>This page lists all known entities which are related to the dark void. Discover new entities using the “void provocation” psychic ritual. Discovering new entities reveals new research projects, and allows you to advance the void monolith.</EntityCodexDesc>
+  <UndiscoveredEntity>Undiscovered entity</UndiscoveredEntity>
+  <UndiscoveredEntityDesc>You have not discovered this entity.</UndiscoveredEntityDesc>
+  <ViewEntityCodex>View entity codex</ViewEntityCodex>
+
+</LanguageData>

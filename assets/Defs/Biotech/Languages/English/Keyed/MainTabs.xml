@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <!-- Misc -->
+  <MissingRequiredMechanitor>Need mechanitor colonist</MissingRequiredMechanitor>
+  <NotStudied>{0} not studied</NotStudied>
+  <StudyRequirements>Requires study of</StudyRequirements>
+  <PreferredXenotypes>Preferred xenotypes</PreferredXenotypes>
+
+  <!-- Work tab -->
+  <WorkDisabledAge>{0_nameDef} is only {1} years old. {2} work can only be done from age {3}</WorkDisabledAge>
+  <ClickToChangeWorkMode>Click to change work mode.</ClickToChangeWorkMode>
+
+
+</LanguageData>

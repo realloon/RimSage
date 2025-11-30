@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>AteTwistedMeat</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>ate twisted meat</label>
+        <description>It was so gristly and stringy - like eating cancer. I want to throw up.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PsychicRitualVictim</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>20</durationDays>
+    <stages>
+      <li>
+        <label>psychic ritual victim</label>
+        <description>They used me for their twisted ceremony. I'll never forget that horrid chanting.</description>
+        <baseMoodEffect>-18</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DarknessLifted</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>unnatural darkness lifted</label>
+        <description>It's finally gone! I can breathe again.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>HealedMe</defName>
+    <thoughtClass>Thought_Tale</thoughtClass>
+    <workerClass>ThoughtWorker_TaleDoublePawn</workerClass>
+    <taleDef>HealedMe</taleDef>
+    <stages>
+      <li>
+        <label>healed me</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MutatedMyArm</defName>
+    <thoughtClass>Thought_Tale</thoughtClass>
+    <workerClass>ThoughtWorker_TaleDoublePawn</workerClass>
+    <taleDef>MutatedMyArm</taleDef>
+    <stages>
+      <li>
+        <label>mutated my arm</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>BlissLobotomy</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <stages>
+      <li>
+        <label>bliss lobotomy</label>
+        <description>Happy... good... happy... warm...</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>PlayedWithCube</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>cube joy</label> 
+        <description>My wonderful cube. My precious cube. I love it. It's so beautiful.</description> 
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>UnnaturalCorpseDestroyed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>unnatural corpse is angry</label> 
+        <description>I can still feel the corpse. It's out there. It's thinking of me. It hates me.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ObeliskAbduction</defName>
+    <thoughtClass>ThoughtMemory_Inhumanized</thoughtClass>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>obelisk abduction</label> 
+        <description>That horrible thing imprisoned me!</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>obelisk abduction</label> 
+        <description>The sacred obelisk chose me!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>EmbracedTheVoid</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>60</durationDays>
+    <stages>
+      <li>
+        <label>embraced the void</label>
+        <description>This is just the beginning.</description>
+        <baseMoodEffect>14</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ClosedTheVoid</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>60</durationDays>
+    <stages>
+      <li>
+        <label>closed the void</label>
+        <description>I can't believe it's finally over.</description>
+        <baseMoodEffect>14</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VoidClosed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>30</durationDays>
+    <stages>
+      <li>
+        <label>void closed</label> 
+        <description>We can sleep easier now. Those things won't be coming back any time soon.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ClosedTheVoidOpinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>120</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>closed the void</label>
+        <baseOpinionOffset>30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Chimera</defName>
+    <thoughtClass>Thought_MemoryObservation_Chimera</thoughtClass>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>observed chimera</label>
+        <description>That misshapen creature, the cracked whorled flesh... horrifying.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PsychicRitualGuilt</defName>
+    <thoughtClass>Thought_PsychicRitualGuilt</thoughtClass>
+    <stackLimit>3</stackLimit>
+    <durationDays>6</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingPrecepts>
+      <li>PsychicRituals_Exalted</li>
+    </nullifyingPrecepts>
+    <stages>
+      <li>
+        <label>{RITUAL} guilt</label>
+        <description>It feels wrong to have participated in that ritual.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>{RITUAL} guilt</label>
+        <description>That ritual was a crime against its victim. I shouldn't have been there.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+      <li>
+        <label>{RITUAL} guilt</label>
+        <description>That ritual was nothing short of torture. It's evil!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VoidCatharsis</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>void catharsis</label>
+        <description>There was a madness building in my mind. It's gone, for now.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>HeardInhumanRambling</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>20</stackLimit>
+    <stackLimitForSameOtherPawn>4</stackLimitForSameOtherPawn>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>{0} rambling</label>
+        <description>{OTHERPAWN_nameDef} is talking nonsense. Is {OTHERPAWN_pronoun} insane?</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VoidCuriosity</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>Void curiosity</label>
+        <description>We should perform a void provocation ritual. Who knows what phenomena we might discover?</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VoidCuriositySatisfied</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>Void curiosity satisfied</label>
+        <description>I regret nothing.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BecameGhoul</defName>
+    <durationDays>20.0</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <ignoreSubhumans>false</ignoreSubhumans>
+    <stages>
+      <li>
+        <label>{0} became a ghoul</label>
+        <description>That vacant look... Are they even in there anymore?</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
+

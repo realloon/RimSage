@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: concrete -->
+  <Concrete.label>混凝土地面</Concrete.label>
+  <!-- EN: Rough concrete. It is cheap and quick to build, but is also quite ugly. -->
+  <Concrete.description>粗糙铺设的混凝土地面。铺设方便且成本低廉，但是相当难看。</Concrete.description>
+  
+  <!-- EN: gold tile -->
+  <GoldTile.label>金质地砖</GoldTile.label>
+  <!-- EN: For overbearing extravagance, nothing beats gold tiles. They are exceptionally expensive, and exceptionally beautiful, and people will think you're exceptionally snobbish if you actually live on them. -->
+  <GoldTile.description>没有什么比黄金地砖更加挥霍和傲慢了。它们非常的昂贵和美丽，如果你真的在这上面生活的话，人们会认为你非常势利。</GoldTile.description>
+  
+  <!-- EN: steel tile -->
+  <MetalTile.label>钢质地砖</MetalTile.label>
+  <!-- EN: Steel tiles, for that spaceship look. They are quick to clean and get a bonus to cleanliness for use in medical settings. -->
+  <MetalTile.description>钢质的地砖，拥有宇宙飞船般的外表。它们抛光的表面提高了清洁速度，较高的清洁度很适合用于医疗用途。</MetalTile.description>
+  
+  <!-- EN: paved tile -->
+  <PavedTile.label>铺装地砖</PavedTile.label>
+  <!-- EN: Concrete tiles. Cheap, but neutral in terms of looks and slow to build. -->
+  <PavedTile.description>成本低廉且实用的混凝土地砖。看起来很一般，而且铺设速度较慢。</PavedTile.description>
+  
+  <!-- EN: silver tile -->
+  <SilverTile.label>银质地砖</SilverTile.label>
+  <!-- EN: For a futuristic but royal look, silver tiles fit perfectly into luxurious rooms. They are quick to clean and get a bonus to cleanliness. -->
+  <SilverTile.description>颇具未来主义的豪华观感，银质地砖完美地融入了豪华的房间里。它们容易清洁的同时也提高了房间的清洁度。</SilverTile.description>
+  
+  <!-- EN: sterile tile -->
+  <SterileTile.label>无菌地砖</SterileTile.label>
+  <!-- EN: Sterile tiles with special cleanliness-enhancing properties. Extra-clean rooms improve outcomes in hospitals and research labs. This tile is very slow to build, but quick to clean. -->
+  <SterileTile.description>无菌地砖具有增强清洁度的特殊功能。超洁净的房间非常适合作为医务室和研究室来使用。这种地砖铺设十分缓慢，但很容易清理干净。</SterileTile.description>
+  
+  <!-- EN: straw matting -->
+  <StrawMatting.label>草垫</StrawMatting.label>
+  <!-- EN: Rough straw matting for use in animal barns. It is cheap and accepts very little filth. -->
+  <StrawMatting.description>适合畜棚的粗糙干草垫。成本低廉，人和动物走上去时很少会留下污物。</StrawMatting.description>
+  
+  <!-- EN: wood floor -->
+  <WoodPlankFloor.label>木地板</WoodPlankFloor.label>
+  <!-- EN: Wood plank flooring for that warm, homey feeling. While it is quick to lay, it is also very flammable. -->
+  <WoodPlankFloor.description>看起来如家般温馨的木地板。虽然铺设方便，但非常易燃。</WoodPlankFloor.description>
+  
+</LanguageData>

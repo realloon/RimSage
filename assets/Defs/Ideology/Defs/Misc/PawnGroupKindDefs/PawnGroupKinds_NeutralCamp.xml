@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnGroupKindDef>
+    <defName>Miners</defName>
+    <workerClass>PawnGroupKindWorker_Normal</workerClass>
+  </PawnGroupKindDef>
+
+  <PawnGroupKindDef>
+    <defName>Hunters</defName>
+    <workerClass>PawnGroupKindWorker_Normal</workerClass>
+  </PawnGroupKindDef>
+
+  <PawnGroupKindDef>
+    <defName>Loggers</defName>
+    <workerClass>PawnGroupKindWorker_Normal</workerClass>
+  </PawnGroupKindDef>
+
+  <PawnGroupKindDef>
+    <defName>Farmers</defName>
+    <workerClass>PawnGroupKindWorker_Normal</workerClass>
+  </PawnGroupKindDef>
+  
+</Defs>

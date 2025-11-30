@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Hate chant drone level -->
+  <HateChantDroneLevel_None>none</HateChantDroneLevel_None>
+  <HateChantDroneLevel_VeryLow>whispers</HateChantDroneLevel_VeryLow>
+  <HateChantDroneLevel_Low>quiet</HateChantDroneLevel_Low>
+  <HateChantDroneLevel_Medium>moderate</HateChantDroneLevel_Medium>
+  <HateChantDroneLevel_High>loud</HateChantDroneLevel_High>
+  <HateChantDroneLevel_Extreme>extreme</HateChantDroneLevel_Extreme>
+
+  <MonolithGenerationMethod_Disabled>Disabled</MonolithGenerationMethod_Disabled>
+  <MonolithGenerationMethod_NearColonists>Near colonists</MonolithGenerationMethod_NearColonists>
+
+</LanguageData>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <DamageDef>
+    <defName>VacuumBurn</defName>
+    <label>vacuum burn</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} has died of vacuum burns.</deathMessage>
+    <hediff>VacuumBurn</hediff>
+    <makesBlood>false</makesBlood>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <defaultArmorPenetration>0</defaultArmorPenetration>
+  </DamageDef>
+
+  <DamageDef ParentName="Bomb">
+    <defName>MiningBomb</defName>
+    <buildingDamageFactorImpassable>30</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>5</buildingDamageFactorPassable>
+    <plantDamageFactor>10</plantDamageFactor>
+  </DamageDef>
+
+
+</Defs>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="BodyPartProstheticImperialBase" ParentName="BodyPartProstheticMakeableBase" Abstract="True">
+    <tradeTags>
+      <li>ImplantEmpireCommon</li>
+    </tradeTags>
+    <techHediffsTags>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <ThingDef Name="BodyPartBionicImperialBase" ParentName="BodyPartBionicBase" Abstract="True">
+    <tradeTags>
+      <li>ImplantEmpireCommon</li>
+    </tradeTags>
+    <techHediffsTags>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+  </ThingDef>
+
+  <ThingDef Name="BodyPartRoyalBase" ParentName="BodyPartArchotechBase" Abstract="True">
+    <thingSetMakerTags>
+      <li>ImplantEmpireRoyal</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>ImplantEmpireRoyal</li>
+    </tradeTags>
+    <techHediffsTags>
+      <li>ImplantEmpireRoyal</li>
+    </techHediffsTags>
+  </ThingDef>
+
+</Defs>

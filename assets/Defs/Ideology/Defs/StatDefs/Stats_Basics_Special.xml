@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>SlaveSuppressionOffset</defName>
+    <label>slave suppression offset</label>
+    <description>An offset applied to the wearer's slave suppression. Higher values suppress slaves longer, while lower values make slaves rebel more often.</description>
+    <category>Basics</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <hideAtValue>0</hideAtValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <displayPriorityInCategory>3600</displayPriorityInCategory>
+    <showIfUndefined>false</showIfUndefined>
+    <showOnPawns>false</showOnPawns>
+  </StatDef>
+
+  <StatDef>
+    <defName>TerrorSource</defName>
+    <label>terror</label>
+    <description>The intensity of terror this object induces when viewed.</description>
+    <category>Basics</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <hideAtValue>0</hideAtValue>
+    <toStringStyle>Integer</toStringStyle>
+    <formatString>{0}%</formatString>
+    <showOnPawns>false</showOnPawns>
+    <displayPriorityInCategory>3600</displayPriorityInCategory>
+    <showIfUndefined>false</showIfUndefined>
+    <parts>
+      <li Class="StatPart_Quality_Offset">
+        <offsetAwful>3</offsetAwful>
+        <offsetPoor>6</offsetPoor>
+        <offsetNormal>10</offsetNormal>
+        <offsetGood>15</offsetGood>
+        <offsetExcellent>20</offsetExcellent>
+        <offsetMasterwork>30</offsetMasterwork>
+        <offsetLegendary>40</offsetLegendary>
+        <thingDefs>
+          <li>SculptureTerror</li>
+        </thingDefs>
+      </li>
+      <li Class="StatPart_CorpseCasket">
+        <offsetOccupied>25</offsetOccupied>
+        <thingDefs>
+          <li>GibbetCage</li>
+        </thingDefs>
+      </li>
+    </parts>
+  </StatDef>
+
+</Defs>

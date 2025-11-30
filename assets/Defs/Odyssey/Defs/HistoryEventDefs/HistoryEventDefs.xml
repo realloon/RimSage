@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HistoryEventDef>
+    <defName>OrbitalPollution</defName>
+    <label>orbital pollution</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>PawnKidnappedOnGravShip</defName>
+    <label>member kidnapped on gravship</label>
+  </HistoryEventDef>
+
+</Defs>

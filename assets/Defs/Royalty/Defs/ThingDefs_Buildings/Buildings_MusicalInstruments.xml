@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="MusicalInstrumentBase">
+    <defName>Harp</defName>
+    <label>harp</label>
+    <description>A simple stationary musical instrument. A row of strings are stretched over a frame and plucked directly by a musician's fingers.\n\nIt can be crafted at a crafting spot or smithy.</description>
+    <possessionCount>1</possessionCount>
+    <descriptionHyperlinks>
+      <ThingDef>Harpsichord</ThingDef>
+      <ThingDef>Piano</ThingDef>
+    </descriptionHyperlinks>
+    <size>(1,1)</size>
+    <pathCost>30</pathCost>
+    <minTechLevelToBuild>Medieval</minTechLevelToBuild>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <soundPlayInstrument>Harp_Play</soundPlayInstrument>
+    <researchPrerequisites><li>Harp</li></researchPrerequisites>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>4</Mass>
+      <JoyGainFactor>1</JoyGainFactor>
+      <Beauty>10</Beauty>
+    </statBases>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Harp</researchPrerequisite>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <displayPriority>600</displayPriority>
+    </recipeMaker>
+    <costList>
+      <WoodLog>150</WoodLog>
+    </costList>
+    <building>
+      <instrumentRange>12</instrumentRange>
+    </building>
+    <uiIconOffset>(0, 0.08)</uiIconOffset>
+    <uiIconScale>0.5</uiIconScale>
+    <minifiedDrawScale>0.5</minifiedDrawScale>
+    <graphicData>
+      <texPath>Things/Building/Joy/harp_south</texPath>
+      <drawSize>(3, 3)</drawSize>
+      <drawOffset>(0, 0, 0.2)</drawOffset>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+      <shadowData>
+        <volume>(0.5, 0.5, 0.2)</volume>
+        <offset>(0, 0, -0.12)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2, 0.2, 0.5, 0.5)</rect>
+      </damageData>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="MusicalInstrumentBase">
+    <defName>Harpsichord</defName>
+    <label>harpsichord</label>
+    <description>A complex stationary musical instrument crafted at a smithy. A musician touches a row of keys on the front of the instrument. Each key is attached to an internal mechanism which plucks one of a row of strings stretched over a wooden frame. While it permits more complex composition than the harp, its wooden construction and plucking mechanism limit its output volume and expressiveness.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Harp</ThingDef>
+      <ThingDef>Piano</ThingDef>
+    </descriptionHyperlinks>
+    <size>(2,3)</size>
+    <minTechLevelToBuild>Medieval</minTechLevelToBuild>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <soundPlayInstrument>Harpsichord_Play</soundPlayInstrument>
+    <defaultPlacingRot>West</defaultPlacingRot>
+    <researchPrerequisites><li>Harpsichord</li></researchPrerequisites>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>32000</WorkToMake>
+      <Mass>30</Mass>
+      <JoyGainFactor>1</JoyGainFactor>
+      <Beauty>14</Beauty>
+    </statBases>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Harpsichord</researchPrerequisite>
+      <recipeUsers>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <displayPriority>610</displayPriority>
+    </recipeMaker>
+    <costList>
+      <WoodLog>250</WoodLog>
+    </costList>
+    <building>
+      <instrumentRange>16</instrumentRange>
+    </building>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Joy/Harpsichord</texPath>
+      <drawSize>(3.5,3.5)</drawSize>
+      <drawOffsetNorth>(0,0,0.08)</drawOffsetNorth>
+      <shadowData>
+        <volume>(0.8, 0.3, 1.1)</volume>
+        <offset>(0, 0, 0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.6,0.2,1,1.7)</rect>
+      </damageData>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>UnfinishedPiano</defName>
+    <label>unfinished piano</label>
+    <description>An unfinished piano.</description>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedMusicalInstrument</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="False"/>
+  </ThingDef>
+  
+  <ThingDef ParentName="MusicalInstrumentBase">
+    <defName>Piano</defName>
+    <label>piano</label>
+    <description>An advanced stationary musical instrument. It is played by pressing a row of keys, which causes hammers to strike internal strings stretched over a steel frame. The hammer mechanism and high-tension strings allow the musician to play both very soft and very loud, making the piano a very expressive instrument.\n\nIt can be crafted at a smithy.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Harp</ThingDef>
+      <ThingDef>Harpsichord</ThingDef>
+    </descriptionHyperlinks>
+    <size>(3,3)</size>
+    <minTechLevelToBuild>Industrial</minTechLevelToBuild>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <soundPlayInstrument>Piano_Play</soundPlayInstrument>
+    <defaultPlacingRot>West</defaultPlacingRot>
+    <researchPrerequisites><li>Piano</li></researchPrerequisites>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>60</Mass>
+      <JoyGainFactor>1</JoyGainFactor>
+      <Beauty>18</Beauty>
+    </statBases>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>Piano</researchPrerequisite>
+      <recipeUsers>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedPiano</unfinishedThingDef>
+      <displayPriority>630</displayPriority>
+    </recipeMaker>
+    <costList>
+      <WoodLog>220</WoodLog>
+      <Steel>120</Steel>
+    </costList>
+    <building>
+      <instrumentRange>20</instrumentRange>
+    </building>
+    <uiIconScale>0.9</uiIconScale>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Joy/GrandPiano</texPath>
+      <drawSize>(3.5,3.5)</drawSize>
+      <drawOffsetNorth>(0,0,0.25)</drawOffsetNorth>
+      <shadowData>
+        <volume>(2.2, 0.4, 0.8)</volume>
+        <offset>(0, 0, 0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.6,0.3,2,1.2)</rect>
+      </damageData>
+    </graphicData>
+  </ThingDef>
+</Defs>

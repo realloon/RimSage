@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <StatCategoryDef>
+    <defName>Containment</defName>
+    <label>Containment</label>
+    <displayOrder>600</displayOrder>
+  </StatCategoryDef>
+
+  <StatDef>
+    <defName>ContainmentStrength</defName>
+    <label>containment strength</label>
+    <description>How securely this can contain an entity. This is improved by stronger walls and doors, more light, fewer other entities in the room, and special containment devices. Some entities are easier to contain in cold temperatures.</description>
+    <workerClass>StatWorker_ContainmentStrength</workerClass>
+    <offsetLabel>containment offset</offsetLabel>
+    <category>Containment</category>
+    <showOnDefaultValue>true</showOnDefaultValue>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <cacheable>true</cacheable>
+  </StatDef>
+
+  <StatDef>
+    <defName>MinimumContainmentStrength</defName>
+    <label>min containment strength</label>
+    <description>The containment strength needed to contain this entity properly. An entity in a chamber below its minimum containment strength will have a very high chance to escape.</description>
+    <workerClass>StatWorker_MinimumContainmentStrength</workerClass>
+    <category>Containment</category>
+    <overridesHideStats>true</overridesHideStats>
+    <showOnDefaultValue>false</showOnDefaultValue>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <displayPriorityInCategory>9999</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>ColdContainmentBonus</defName>
+    <label>cold containment bonus</label>
+    <description>This entity is less likely to escape if kept in a very cold room.</description>
+    <workerClass>StatWorker_ColdContainmentBonus</workerClass>
+    <category>Containment</category>
+    <overridesHideStats>true</overridesHideStats>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+  </StatDef>
+
+</Defs>

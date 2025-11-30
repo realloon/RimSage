@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ate fungus -->
+  <AteFungus.label>吃了菌菇</AteFungus.label>
+  
+  <!-- EN: ate meal with fungus -->
+  <AteFungusAsIngredient.label>吃了菌菇制成的食物</AteFungusAsIngredient.label>
+  
+  <!-- EN: ate non-fungus plant meal -->
+  <AteNonFungusMealWithPlants.label>吃了没有菌菇的食物</AteNonFungusMealWithPlants.label>
+  
+  <!-- EN: ate non-fungus crop -->
+  <AteNonFungusPlant.label>吃了不是菌菇的作物</AteNonFungusPlant.label>
+  
+</LanguageData>

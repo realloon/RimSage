@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingSetMakerDef Name="RareFishingCatchesBase" Abstract="True">
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Human corpses -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Pirate</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Villager</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Drifter</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        
+        <!-- Human meat and leather -->
+        <li>
+          <weight>2</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Meat_Human</li>
+                  <li>Leather_Human</li>
+                </thingDefs>
+              </filter>
+              <countRange>10~20</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Skull and organs -->
+        <li>
+          <weight>2</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Skull</li>
+                  <li>Heart</li>
+                  <li>Lung</li>
+                  <li>Kidney</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Gravlite panels -->
+        <li>
+          <weight>2</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>GravlitePanel</li>
+                </thingDefs>
+              </filter>
+              <countRange>15~35</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Unique weapon -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>UniqueWeapon</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Map -->
+        <li>
+          <weight>10</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Map</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Other books -->
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Schematic</li>
+                  <li>TextBook</li>
+                  <li>Novel</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">Tome</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Drugs -->
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Luciferium</li>
+                  <li>Beer</li>
+                  <li>Ambrosia</li>
+                  <li>GoJuice</li>
+                  <li>Flake</li>
+                  <li>Yayo</li>
+                  <li>SmokeleafJoint</li>
+                  <li>WakeUp</li>
+                </thingDefs>
+              </filter>
+              <countRange>5~12</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Vacstone -->
+        <li>
+          <weight>3</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>BlocksVacstone</li>
+                </thingDefs>
+              </filter>
+              <countRange>30~60</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Obsidian -->
+        <li>
+          <weight>3</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Obsidian</li>
+                </thingDefs>
+              </filter>
+              <countRange>50~75</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Seeds -->
+        <li>
+          <weight>3</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Ludeon.RimWorld.Biotech">PoluxSeed</li>
+                  <li MayRequire="Ludeon.RimWorld.Anomaly">HarbingerSeed</li>
+                  <li>ArcheanSeed</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Sentience catalyst -->
+        <li>
+          <weight>3</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>SentienceCatalyst</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Hyperweave & plasteel -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Plasteel</li>
+                  <li>Hyperweave</li>
+                </thingDefs>
+              </filter>
+              <countRange>10~20</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Advanced components -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Ultratech meds -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineUltratech</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Misc cool items -->
+        <li>
+          <weight>2</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>TechprofSubpersonaCore</li>
+                  <li>Shell_AntigrainWarhead</li>
+                  <li>MechSerumHealer</li>
+                  <li>ArchotechEye</li>
+                  <li>ArchotechArm</li>
+                  <li>ArchotechLeg</li>
+                  <li>BionicEye</li>
+                  <li>BionicArm</li>
+                  <li>BionicLeg</li>
+                  <li>BionicSpine</li>
+                  <li>BionicHeart</li>
+                  <li>BionicStomach</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>RewardStandardHighFreq</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>RewardStandardMidFreq</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>RewardStandardLowFreq</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef ParentName="RareFishingCatchesBase">
+    <defName>RareFishingCatches_Hot</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Animal corpses -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Iguana</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Rat</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Vulture</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>MonitorLizard</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+
+        <!-- Apparel -->
+        <li>
+          <weight>6</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_CowboyHat</li>
+                  <li>Apparel_Duster</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef ParentName="RareFishingCatchesBase">
+    <defName>RareFishingCatches_Cold</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Animal corpses -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Seal</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Fox_Arctic</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Snowhare</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+
+        <!-- Apparel -->
+        <li>
+          <weight>7</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_Parka</li>
+                  <li>Apparel_Tuque</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Eggs -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>EggPenguinFertilized</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef ParentName="RareFishingCatchesBase">
+    <defName>RareFishingCatches_Temperate</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Animal corpses -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Sparrow</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Crow</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Porcupine</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Squirrel</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+
+        <!-- Apparel -->
+        <li>
+          <weight>6</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_BasicShirt</li>
+                  <li>Apparel_Pants</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Eggs -->
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>EggDuckFertilized</li>
+                  <li>EggHeronFertilized</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef ParentName="RareFishingCatchesBase">
+    <defName>RareFishingCatches_Tropical</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Animal corpses -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Flamingo</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Capybara</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Cobra</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_Pawn">
+            <pawnKind>Monkey</pawnKind>
+            <alive>false</alive>
+            <corpseAgeRangeDays>5~10</corpseAgeRangeDays>
+          </thingSetMaker>
+        </li>
+
+        <!-- Apparel -->
+        <li>
+          <weight>6</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Apparel_TribalHeaddress</li>
+                  <li>Apparel_WarMask</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Eggs -->
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>EggPeacockFertilized</li>
+                  <li>EggFlamingoFertilized</li>
+                  <li>EggCobraFertilized</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef ParentName="RareFishingCatchesBase">
+    <defName>RareFishingCatches_Glowforest</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+
+        <!-- Psilocap -->
+        <li>
+          <weight>10</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Drug_Psilocap</li>
+                </thingDefs>
+              </filter>
+              <countRange>15~20</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Nutrifungus -->
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>RawFungus</li>
+                </thingDefs>
+              </filter>
+              <countRange>40~60</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+      </options>
+    </root>
+  </ThingSetMakerDef>
+  
+</Defs>

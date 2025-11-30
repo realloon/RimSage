@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>ThreatReward_MechPods_MiscReward</defName> <!-- todo rename to MechCluster_MiscReward -->
+    <rootSelectionWeight>1.3</rootSelectionWeight>
+    <rootMinPoints>400</rootMinPoints> <!-- Same as MechCluster incident minimum points -->
+    <expireDaysRange>4~8</expireDaysRange>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[menace] cluster</li>
+        <li>questName->[menace] pods</li>
+        <li>questName->[nameBased]</li>
+
+        <li>nameBased->[asker_nameDef]'s mechs</li>
+        <li>nameBased->[asker_nameDef]'s mechanoids</li>
+        <li>nameBased->[asker_nameDef]'s mech cluster</li>
+        <li>nameBased->[asker_nameDef]'s mech [menace]</li>
+
+        <li>menace->threat</li>
+        <li>menace->menace</li>
+        <li>menace->scourge</li>
+        <li>menace->danger</li>
+        <li>menace->terror</li>
+        <li>menace->fear</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>dangersDescription(priority=1)->\n\nThe pods contain these dangers:
+\n[allThreats]</li>
+        <li>dangersDescription-></li>
+        <li>questDescription(asker_factionLeader==True)->[asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], is making a request. [commonMainPart]</li>
+        <li>questDescription(asker_royalInCurrentFaction==True)->[asker_nameDef], a [asker_royalTitleInCurrentFaction] of [asker_faction_name], is making a request. [commonMainPart]</li>
+
+        <li>commonMainPart->A mechanoid swarm has been attacking [asker_possessive] settlements. [asker_pronoun] wants you to signal the mechs to distract them while [asker_pronoun] clears the hive. If you do, (*Threat)a mechanoid cluster(/Threat) will land at [map_definite].[dangersDescription]
+\nThe mechanoid cluster will be initially dormant. It may have a countdown activator, or it may stay dormant forever until disturbed.[helpersParagraph]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+        <li Class="QuestNode_GetMap" />
+
+        <!-- Get asker -->
+        <li Class="QuestNode_RandomNode">
+          <nodes>
+            <li Class="QuestNode_GetPawn">
+              <storeAs>asker</storeAs>
+              <selectionWeight>0.5</selectionWeight>
+              <mustBeFactionLeader>true</mustBeFactionLeader>
+              <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+              <hostileWeight>0.15</hostileWeight>
+            </li>
+            <li Class="QuestNode_GetPawn">
+              <storeAs>asker</storeAs>
+              <selectionWeight>0.5</selectionWeight>
+              <canGeneratePawn>true</canGeneratePawn>
+              <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+              <mustHaveRoyalTitleInCurrentFaction>true</mustHaveRoyalTitleInCurrentFaction>
+              <hostileWeight>0.15</hostileWeight>
+            </li>
+          </nodes>
+        </li>
+
+        <!-- Helpers -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_MaybeGenerateHelpers</def>
+          <parms>
+            <helpersChance>0.4</helpersChance>
+            <sendArrivalLetter>true</sendArrivalLetter>
+          </parms>
+        </li>
+
+        <!-- Spawn MechCluster after delay
+             Note: We want to give a few seconds for the helpers to arrive. -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>600</delayTicks>
+          <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+          <node Class="QuestNode_SpawnMechCluster">
+            <tag>cluster</tag>
+            <points>$($points + $helpersPoints)</points>
+          </node>
+        </li>
+
+        <!-- Send rewards and end after a delay once mechs are defeated -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>cluster.AllEnemiesDefeated</li>
+          </inSignals>
+          <node Class="QuestNode_Delay">
+            <delayTicks>300</delayTicks>
+            <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+            <node Class="QuestNode_Sequence">
+              <nodes>
+                <li Class="QuestNode_GiveRewards">
+                  <parms>
+                    <allowGoodwill>true</allowGoodwill>
+                    <allowRoyalFavor>true</allowRoyalFavor>
+                  </parms>
+                </li>
+                <li Class="QuestNode_Less"> <!-- If we have helpers, delay ending the quest for 1 day. -->
+                  <value1>$helpersCount</value1>
+                  <value2>1</value2>
+                  <node Class="QuestNode_End" />
+                  <elseNode Class="QuestNode_Delay">
+                    <delayTicks>60000</delayTicks>
+                    <node Class="QuestNode_End" />
+                  </elseNode>
+                </li>
+              </nodes>
+            </node>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

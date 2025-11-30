@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MusicTransitionDef>
+    <defName>OrbitalRelax</defName>
+    <workerType>OrbitalTransition</workerType>
+    <sequence>OrbitalRelax</sequence>
+    <dangerRequirement>RequiresNoDanger</dangerRequirement>
+    <priority>50</priority>
+  </MusicTransitionDef>
+  
+  <MusicTransitionDef>
+    <defName>OrbitalCombat</defName>
+    <workerType>OrbitalTransition</workerType>
+    <sequence>OrbitalCombat</sequence>
+    <dangerRequirement>RequiresDanger</dangerRequirement>
+    <priority>75</priority>
+  </MusicTransitionDef>
+
+  <MusicTransitionDef>
+    <defName>Mechhive</defName>
+    <workerType>MechhiveTransition</workerType>
+    <sequence>OrbitalCombat</sequence>
+    <dangerRequirement>RequiresDanger</dangerRequirement>
+    <priority>100</priority>
+  </MusicTransitionDef>
+
+</Defs>

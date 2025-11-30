@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LightBall</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>CutoutAnimated</shaderType>
+      <texPath>Things/Building/Misc/Lightball/Lightball_Overlay</texPath>
+      <shaderParameters>
+        <_NumFrames>4</_NumFrames>
+        <_FramesPerSec>7</_FramesPerSec>
+      </shaderParameters>
+      <drawSize>1</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LightBallLights</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>AdditiveChangeHue</shaderType>
+      <texPath>Things/Building/Misc/Lightball/Lightball_Light</texPath>
+      <shaderParameters>
+        <_ChangeSpeed>0.5</_ChangeSpeed>
+      </shaderParameters>
+      <drawSize>12</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LoudspeakerLights</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <unattachedDrawOffset>(0, 0.0, 0.18)</unattachedDrawOffset>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>AdditiveChangeHue</shaderType>
+      <texPath>Things/Building/Misc/Loudspeaker/Loudspeaker_glow</texPath>
+      <shaderParameters>
+        <_ChangeSpeed>0.5</_ChangeSpeed>
+      </shaderParameters>
+      <drawSize>(1.04, 1.32)</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_SkyLanternGlow</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <solidTime>0.35</solidTime>
+      <fadeOutTime>0.25</fadeOutTime>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <texPath>Things/Ethereal/SkyLanternMask</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_SkyLanternOuterGlow</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <solidTime>0.105</solidTime>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <texPath>Things/Mote/LanternGlow</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(185, 176, 162)</color>
+      <drawSize>7</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_SkyLanternSmoke</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>1.4</solidTime>
+      <fadeOutTime>0.6</fadeOutTime>
+      <growthRate>-0.15</growthRate>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <texPath>Things/Mote/SmokeSubtle</texPath>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_DuelCircle</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <solidTime>9999999</solidTime>
+      <needsMaintenance>true</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <texPath>Things/Mote/CombatCommandMask</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(60, 17, 0)</color>
+      <drawSize>9</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_GauranlenCasteChanged</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.8</fadeOutTime>
+      <solidTime>0.2</solidTime>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteGlowPulse</shaderType>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <color>(245, 148, 69, 110)</color>
+      <shaderParameters>
+        <_Interval>1</_Interval>
+      </shaderParameters>
+      <drawSize>5</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+</Defs>

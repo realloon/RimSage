@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Surgery failed on {PATIENT_labelShort} -->
+  <SurgeryOutcomeBase.outcomes.1.letterLabel>{PATIENT_labelShort}手术失败</SurgeryOutcomeBase.outcomes.1.letterLabel>
+  <!-- EN: {SURGEON_labelShort} has committed a fatal error while operating on {PATIENT_labelShort} because of the special challenges of: {RECIPE_label}. -->
+  <SurgeryOutcomeBase.outcomes.1.letterText>{SURGEON_labelShort}在对{PATIENT_labelShort}执行手术时发生了致命性事故（{RECIPE_label}）。</SurgeryOutcomeBase.outcomes.1.letterText>
+  <!-- EN: Surgery failed on {PATIENT_labelShort} -->
+  <SurgeryOutcomeBase.outcomes.2.letterLabel>{PATIENT_labelShort}手术失败</SurgeryOutcomeBase.outcomes.2.letterLabel>
+  <!-- EN: {SURGEON_labelShort} has failed catastrophically while operating on {PATIENT_labelShort} ({RECIPE_label}). -->
+  <SurgeryOutcomeBase.outcomes.2.letterText>{SURGEON_labelShort}在对{PATIENT_labelShort}执行手术时发生了灾难性事故（{RECIPE_label}）。</SurgeryOutcomeBase.outcomes.2.letterText>
+  <!-- EN: Surgery failed on {PATIENT_labelShort} -->
+  <SurgeryOutcomeBase.outcomes.3.letterLabel>{PATIENT_labelShort}手术失败</SurgeryOutcomeBase.outcomes.3.letterLabel>
+  <!-- EN: {SURGEON_labelShort} has failed in a ridiculous way while operating on {PATIENT_labelShort} ({RECIPE_label}). -->
+  <SurgeryOutcomeBase.outcomes.3.letterText>{SURGEON_labelShort}在对{PATIENT_labelShort}执行手术时发生了荒谬事故（{RECIPE_label}）。</SurgeryOutcomeBase.outcomes.3.letterText>
+  <!-- EN: Surgery failed on {PATIENT_labelShort}: Sterilized -->
+  <SurgeryOutcomeBase.outcomes.4.letterLabel>{PATIENT_labelShort}手术失败：已绝育</SurgeryOutcomeBase.outcomes.4.letterLabel>
+  <!-- EN: {SURGEON_labelShort} has failed while operating on {PATIENT_labelShort} ({RECIPE_label}), leaving {PATIENT_objective} sterile. -->
+  <SurgeryOutcomeBase.outcomes.4.letterText>{SURGEON_labelShort}在对{PATIENT_labelShort}执行手术时发生了事故（{RECIPE_label}），导致{PATIENT_objective}被绝育了。</SurgeryOutcomeBase.outcomes.4.letterText>
+  <!-- EN: Surgery failed on {PATIENT_labelShort}: Sterilized -->
+  <SurgeryOutcomeBase.outcomes.5.letterLabel>{PATIENT_labelShort}手术失败：已绝育</SurgeryOutcomeBase.outcomes.5.letterLabel>
+  <!-- EN: {SURGEON_labelShort} has failed while operating on {PATIENT_labelShort} ({RECIPE_label}), leaving {PATIENT_objective} sterile. -->
+  <SurgeryOutcomeBase.outcomes.5.letterText>{SURGEON_labelShort}在对{PATIENT_labelShort}执行手术时发生了事故（{RECIPE_label}），导致{PATIENT_objective}被绝育了。</SurgeryOutcomeBase.outcomes.5.letterText>
+  <!-- EN: Surgery failed on {PATIENT_labelShort} -->
+  <SurgeryOutcomeBase.outcomes.6.letterLabel>{PATIENT_labelShort}手术失败</SurgeryOutcomeBase.outcomes.6.letterLabel>
+  <!-- EN: {SURGEON_labelShort} has failed in a minor way while operating on {PATIENT_labelShort} ({RECIPE_label}). -->
+  <SurgeryOutcomeBase.outcomes.6.letterText>{SURGEON_labelShort}在对{PATIENT_labelShort}执行手术时发生了轻微事故（{RECIPE_label}）。</SurgeryOutcomeBase.outcomes.6.letterText>
+  
+  <!-- EN: Surgery failed on {PATIENT_labelShort} -->
+  <SurgeryOutcomeMinorFailure.outcomes.1.letterLabel>{PATIENT_labelShort}手术失败</SurgeryOutcomeMinorFailure.outcomes.1.letterLabel>
+  <!-- EN: {SURGEON_labelShort} has failed in a minor way while operating on {PATIENT_labelShort} ({RECIPE_label}). -->
+  <SurgeryOutcomeMinorFailure.outcomes.1.letterText>{SURGEON_labelShort}在对{PATIENT_labelShort}执行手术时发生了轻微事故（{RECIPE_label}）。</SurgeryOutcomeMinorFailure.outcomes.1.letterText>
+  
+</LanguageData>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SongDef>
+    <clipPath>Songs/Tension/Baselius</clipPath>
+    <volume>1.0</volume>
+    <tense>true</tense>
+  </SongDef>
+
+</Defs>

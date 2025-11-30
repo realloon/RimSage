@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SpecialThingFilterDef>
+    <defName>AllowCorpsesColonist</defName>
+    <label>allow colonist corpses</label>
+    <description>Allow the dead bodies of colonists.</description>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesColonist</saveKey>
+    <workerClass>SpecialThingFilterWorker_CorpsesColonist</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowCorpsesStranger</defName>
+    <label>allow stranger corpses</label>
+    <description>Allow the dead bodies of strangers and enemies.</description>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesStranger</saveKey>
+    <workerClass>SpecialThingFilterWorker_CorpsesStranger</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowLargeCorpses</defName>
+    <label>allow large corpses</label>
+    <description>Allow large, dead bodies.</description>
+    <parentCategory>Corpses</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowLargeCorpses</saveKey>
+    <configurable>true</configurable>
+    <workerClass>SpecialThingFilterWorker_CorpsesLarge</workerClass>
+  </SpecialThingFilterDef>
+  
+  <SpecialThingFilterDef>
+    <defName>AllowRotten</defName>
+    <label>allow rotten</label>
+    <description>Allow organic things which have started to rot.</description>
+    <parentCategory>Root</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowRotten</saveKey>
+    <workerClass>SpecialThingFilterWorker_Rotten</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowFresh</defName>
+    <label>allow fresh</label>
+    <description>Allow organic things which haven't started to rot yet.</description>
+    <parentCategory>Root</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowFresh</saveKey>
+    <workerClass>SpecialThingFilterWorker_Fresh</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowPlantFood</defName>
+    <label>allow plant food</label>
+    <description>Allow foods that are of quality equivalent to unharvested plants, like hay.</description>
+    <parentCategory>Foods</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowPlantFood</saveKey>
+    <configurable>false</configurable>
+    <workerClass>SpecialThingFilterWorker_PlantFood</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowSmeltableApparel</defName>
+    <label>allow smeltable</label>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowSmeltableApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_Smeltable</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowNonSmeltableApparel</defName>
+    <label>allow non-smeltable</label>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonSmeltableApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_NonSmeltable</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowBurnableApparel</defName>
+    <label>allow burnable</label>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowBurnableApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_Burnable</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowNonBurnableApparel</defName>
+    <label>allow non-burnable</label>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonBurnableApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_NonBurnable</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowSmeltable</defName> <!-- AllowSmeltableWeapons -->
+    <label>allow smeltable</label>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowSmeltable</saveKey>
+    <workerClass>SpecialThingFilterWorker_Smeltable</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowUnfinished</defName>
+    <label>allow unfinished</label>
+    <description>Allow unfinished items.</description>
+    <parentCategory>ItemsMisc</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowUnfinished</saveKey>
+    <workerClass>SpecialThingFilterWorker_Unfinished</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowNonSmeltableWeapons</defName>
+    <label>allow non-smeltable</label>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonSmeltableWeapons</saveKey>
+    <workerClass>SpecialThingFilterWorker_NonSmeltableWeapons</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowNonBurnableWeapons</defName>
+    <label>allow non-burnable</label>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonBurnableWeapons</saveKey>
+    <workerClass>SpecialThingFilterWorker_NonBurnableWeapons</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowBurnableWeapons</defName>
+    <label>allow burnable</label>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowBurnableWeapons</saveKey>
+    <workerClass>SpecialThingFilterWorker_Burnable</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowBiocodedWeapons</defName>
+    <label>allow biocoded weapons</label>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowBiocodedWeapons</saveKey>
+    <workerClass>SpecialThingFilterWorker_BiocodedWeapons</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowNonBiocodedWeapons</defName>
+    <label>allow non-biocoded weapons</label>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonBiocodedWeapons</saveKey>
+    <workerClass>SpecialThingFilterWorker_NonBiocodedWeapons</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowBiocodedApparel</defName>
+    <label>allow biocoded apparel</label>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowBiocodedApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_BiocodedApparel</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowNonBiocodedApparel</defName>
+    <label>allow non-biocoded apparel</label>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonBiocodedApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_NonBiocodedApparel</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowNonDeadmansApparel</defName>
+    <label>allow clean apparel</label>
+    <description>Allow clothing that was never worn by a corpse. Most humans find corpse-tainted clothing to be disturbing, and traders will not accept it.</description>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonDeadmansApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_NonDeadmansApparel</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowDeadmansApparel</defName>
+    <label>allow tainted apparel</label>
+    <description>Allow clothing that was once worn by a corpse. Most humans find corpse-tainted clothing to be disturbing, and traders will not accept it.</description>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowDeadmansApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_DeadmansApparel</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowChildOnlyApparel</defName>
+    <label>allow child-only apparel</label>
+    <description>Allow clothing that can only be worn by children.</description>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <configurable>false</configurable>
+    <saveKey>allowChildOnlyApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_ChildOnlyApparel</workerClass>
+  </SpecialThingFilterDef>
+  
+  <SpecialThingFilterDef>
+    <defName>AllowAdultOnlyApparel</defName>
+    <label>allow adult-only apparel</label>
+    <description>Allow clothing that can only be worn by adults.</description>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <configurable>false</configurable>
+    <saveKey>allowAdultOnlyApparel</saveKey>
+    <workerClass>SpecialThingFilterWorker_AdultOnlyApparel</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowFemaleGender</defName>
+    <label>allow females</label>
+    <description>Allow female individuals.</description>
+    <parentCategory>Animals</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowFemaleGender</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowFemales</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowMaleGender</defName>
+    <label>allow males</label>
+    <description>Allow male individuals.</description>
+    <parentCategory>Animals</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowMaleGender</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowMales</workerClass>
+  </SpecialThingFilterDef>
+  
+  <!-- Book research -->
+
+  <SpecialThingFilterDef Abstract="True" Name="BaseBookResearchFilter">
+    <parentCategory>ResearchGain</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+  </SpecialThingFilterDef>
+  
+  <SpecialThingFilterDef ParentName="BaseBookResearchFilter">
+    <defName>AllowMainResearch</defName>
+    <label>normal research</label>
+    <description>Allow books which advance research of normal research projects.</description>
+    <saveKey>allowMainResearch</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowMainResearch</workerClass>
+  </SpecialThingFilterDef>
+
+  <!-- Book skills -->
+  
+  <SpecialThingFilterDef Abstract="True" Name="BaseBookSkillFilter">
+    <parentCategory>SkillGain</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+  </SpecialThingFilterDef>
+  
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookShooting</defName>
+    <label>shooting</label>
+    <description>Allow books which teach shooting skills.</description>
+    <saveKey>allowBookShooting</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookShooting</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookMelee</defName>
+    <label>melee</label>
+    <description>Allow books which teach melee skills.</description>
+    <saveKey>allowBookMelee</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookMelee</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookConstruction</defName>
+    <label>construction</label>
+    <description>Allow books which teach construction skills.</description>
+    <saveKey>allowBookConstruction</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookConstruction</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookMining</defName>
+    <label>mining</label>
+    <description>Allow books which teach mining skills.</description>
+    <saveKey>allowBookMining</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookMining</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookCooking</defName>
+    <label>cooking</label>
+    <description>Allow books which teach cooking skills.</description>
+    <saveKey>allowBookCooking</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookCooking</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookPlants</defName>
+    <label>plants</label>
+    <description>Allow books which teach plant-related skills.</description>
+    <saveKey>allowBookPlants</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookPlants</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookAnimals</defName>
+    <label>animals</label>
+    <description>Allow books which teach animal-related skills.</description>
+    <saveKey>allowBookAnimals</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookAnimals</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookCrafting</defName>
+    <label>crafting</label>
+    <description>Allow books which teach crafting skills.</description>
+    <saveKey>allowBookCrafting</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookCrafting</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookArtistic</defName>
+    <label>artistic</label>
+    <description>Allow books which teach art skills.</description>
+    <saveKey>allowBookArtistic</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookArtistic</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookMedicine</defName>
+    <label>medical</label>
+    <description>Allow books which teach medical skills.</description>
+    <saveKey>allowBookMedicine</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookMedicine</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookSocial</defName>
+    <label>social</label>
+    <description>Allow books which teach social skills.</description>
+    <saveKey>allowBookSocial</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookSocial</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef ParentName="BaseBookSkillFilter">
+    <defName>AllowBookIntellectual</defName>
+    <label>intellectual</label>
+    <description>Allow books which teach intellectual skills.</description>
+    <saveKey>allowBookIntellectual</saveKey>
+    <workerClass>SpecialThingFilterWorker_AllowBookIntellectual</workerClass>
+  </SpecialThingFilterDef>
+
+</Defs>

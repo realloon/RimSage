@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PreceptDef>
+    <defName>MarriageName_AlwaysMans</defName>
+    <issue>MarriageName</issue>
+    <label>always man's</label>
+    <description>Couples must share the man's name.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <displayOrderInImpact>-1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>MaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>GotMarried_TookWomansName</eventDef>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_KeptName</eventDef>
+        <gender>Female</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>MarriageName_Random</defName>
+    <issue>MarriageName</issue>
+    <label>random</label>
+    <description>Couples randomly choose whether to share a name, and which name to share.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>-1000</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>MarriageName_KeepNames</defName>
+    <issue>MarriageName</issue>
+    <label>keep names</label>
+    <description>Both partners keep their names upon marriage.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>-1000</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <conflictingMemes>
+      <li>Collectivist</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>GotMarried_TookWomansName</eventDef>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>GotMarried_TookMansName</eventDef>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>MarriageName_UsuallyWomans</defName>
+    <issue>MarriageName</issue>
+    <label>usually woman's</label>
+    <description>Most couples share the woman's name.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>-1000</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Chance">
+        <eventDef>GotMarried_TookMansName</eventDef>
+        <chance>0.95</chance>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Chance">
+        <eventDef>GotMarried_KeptName</eventDef>
+        <chance>0.75</chance>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>MarriageName_AlwaysWomans</defName>
+    <issue>MarriageName</issue>
+    <label>always woman's</label>
+    <description>Couples must share the woman's name.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>-1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>FemaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>GotMarried_TookMansName</eventDef>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_KeptName</eventDef>
+        <gender>Male</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+</Defs>

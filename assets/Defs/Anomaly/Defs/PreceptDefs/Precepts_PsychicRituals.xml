@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef>
+    <defName>PsychicRituals</defName>
+    <label>psychic rituals</label>
+    <iconPath>UI/Issues/PsychicRituals</iconPath>
+  </IssueDef>
+  
+  <HistoryEventDef>
+    <defName>PsychicRitualPerformed</defName>
+    <label>psychic ritual performed</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>InvolvedInPsychicRitual</defName>
+    <label>involved in psychic ritual</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>WasPsychicRitualTarget</defName>
+    <label>member was ritual victim</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>PsychicRituals_Abhorrent</defName>
+    <issue>PsychicRituals</issue>
+    <label>abhorrent</label>
+    <description>Psychic rituals are utterly evil.</description>
+    <impact>High</impact>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>InvolvedInPsychicRitual</eventDef>
+        <description>Participate in psychic ritual</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>PsychicRitualPerformed</eventDef>
+        <thought>PsychicRitualPerformed_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InvolvedInPsychicRitual</eventDef>
+        <thought>InvolvedInPsychicRitual_Abhorrent</thought> <!-- Self -->
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InvolvedInPsychicRitual</eventDef>
+        <thought>InvolvedInPsychicRitual_Social_Abhorrent</thought> <!-- Social -->
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>PsychicRituals_Disapproved</defName>
+    <issue>PsychicRituals</issue>
+    <label>disapproved</label>
+    <description>Psychic rituals should be avoided when possible.</description>
+    <impact>Medium</impact>
+    <statOffsets>
+      <PsychicRitualQualityOffset>-0.1</PsychicRitualQualityOffset>
+    </statOffsets>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>PsychicRitualPerformed</eventDef>
+        <thought>PsychicRitualPerformed_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InvolvedInPsychicRitual</eventDef>
+        <thought>InvolvedInPsychicRitual_Disapproved</thought> <!-- Self -->
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InvolvedInPsychicRitual</eventDef>
+        <thought>InvolvedInPsychicRitual_Social_Disapproved</thought> <!-- Social -->
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>PsychicRituals_Exalted</defName>
+    <issue>PsychicRituals</issue>
+    <label>exalted</label>
+    <description>Connecting with psychic flows brings us closer to truth.</description>
+    <impact>Medium</impact>
+    <statOffsets>
+      <PsychicRitualQualityOffset>0.1</PsychicRitualQualityOffset>
+    </statOffsets>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InvolvedInPsychicRitual</eventDef>
+        <thought>InvolvedInPsychicRitual_Exalted</thought> <!-- Self -->
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InvolvedInPsychicRitual</eventDef>
+        <thought>InvolvedInPsychicRitual_Social_Exalted</thought> <!-- Social -->
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>NoPsychicRituals</thought>
+        <description>No psychic ritual for {DURATION}</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+  
+  <ThoughtDef>
+    <defName>PsychicRitualPerformed_Abhorrent</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>2</stackLimit>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>psychic ritual performed</label>
+        <description>To use such filthy rituals shows we are among the most base of creatures. We have lowered ourselves so much.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InvolvedInPsychicRitual_Abhorrent</defName>
+    <durationDays>4</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>involved in psychic ritual</label>
+        <description>I have touched the filthy psychic power below space. I am disgusted with myself.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InvolvedInPsychicRitual_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>4</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>involved in psychic ritual</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PsychicRitualPerformed_Disapproved</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>2</stackLimit>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>psychic ritual performed</label>
+        <description>We shouldn't be using such dark powers. It's just not right.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InvolvedInPsychicRitual_Disapproved</defName>
+    <durationDays>4</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>involved in psychic ritual</label>
+        <description>That ritual was wrong. I should not have been there.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InvolvedInPsychicRitual_Social_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>4</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>involved in psychic ritual</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InvolvedInPsychicRitual_Exalted</defName>
+    <durationDays>4</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>involved in psychic ritual</label>
+        <description>It was an amazing experience to truly connect with something greater than myself.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InvolvedInPsychicRitual_Social_Exalted</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>4</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>involved in psychic ritual</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>NoPsychicRituals</defName>
+    <workerClass>ThoughtWorker_Precept_NoPsychicRituals</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <minExpectation>High</minExpectation>
+    <stages>
+      <li>
+        <label>no psychic rituals</label>
+        <description>Failing to use these rituals shows everyone how misguided we are.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
+

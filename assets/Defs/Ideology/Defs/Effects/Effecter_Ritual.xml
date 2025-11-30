@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <EffecterDef>
+    <defName>SpikecoreSparks</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>SmokeSpikecore</fleckDef>
+        <chancePerTick>0.05</chancePerTick>
+        <scale>0.9~1.3</scale>
+        <rotationRate>-30~30</rotationRate>
+        <speed>0.6~1.8</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>ShotFlash</fleckDef>
+        <chancePerTick>0.1</chancePerTick>
+        <scale>2.5~3.5</scale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrownFastBright</moteDef>
+        <chancePerTick>0.7</chancePerTick>
+        <scale>0.24~0.34</scale>
+        <airTime>0.08~0.16</airTime>
+        <rotationRate>-240~240</rotationRate>
+        <speed>7.2~12</speed>
+        <angle>-30~30</angle>
+        <positionRadius>0.01</positionRadius>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>Damage_HitFleshGruesome</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.4</positionRadius>
+        <fleckDef>AirPuff</fleckDef>
+        <burstCount>4~5</burstCount>
+        <speed>0.4~0.8</speed>
+        <scale>1.5~1.3</scale>
+        <color>(120, 18, 0)</color>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.1</positionRadius>
+        <fleckDef>BloodSplashLong</fleckDef>
+        <burstCount>2~3</burstCount>
+        <scale>1.1~1.5</scale>
+        <color>(210, 50, 0)</color>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.0</positionRadius>
+        <fleckDef>BodyImpact</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>0.4</scale>
+        <color>(255, 120, 30, 60)</color>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>2.5</positionRadius>
+        <fleckDef>BloodFilth</fleckDef>
+        <burstCount>12</burstCount>
+        <angle>-30~30</angle>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+    <offsetTowardsTarget>0.25~0.25</offsetTowardsTarget>
+    <positionRadius>0.1</positionRadius>
+  </EffecterDef>
+  
+</Defs>

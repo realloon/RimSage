@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <!-- Lava Fields -->
+
+  <IncidentDef>
+    <defName>VolcanicAsh</defName>
+    <label>volcanic ash</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>VolcanicAsh</gameCondition>
+    <letterLabel>Volcanic ash</letterLabel>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>1</baseChance>
+    <minRefireDays>30</minRefireDays>
+    <earliestDay>15</earliestDay>
+    <allowedBiomes>
+      <li>LavaField</li>
+    </allowedBiomes>
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+    <durationDays>2~4</durationDays>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>LavaEmergence</defName>
+    <label>lava emergence</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_LavaEmergence</workerClass>
+    <baseChance>0.5</baseChance>
+    <allowedBiomes>
+      <li>LavaField</li>
+    </allowedBiomes>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>LavaFlow</defName>
+    <label>lava flow</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_LavaFlow</workerClass>
+    <baseChance>0</baseChance>
+    <minRefireDays>12</minRefireDays>
+    <allowedBiomes>
+      <li>LavaField</li>
+    </allowedBiomes>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>SeasonalFlooding</defName>
+    <label>seasonal flooding</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_SeasonalFlooding</workerClass>
+    <baseChance>3</baseChance>
+    <minRefireDays>40</minRefireDays>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>VolcanicDebris</defName>
+    <label>volcanic debris</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>VolcanicDebris</gameCondition>
+    <letterLabel>Volcanic debris</letterLabel>
+    <letterText>A nearby volcanic eruption is showering the region with molten lava!</letterText>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>2.0</baseChance>
+    <minRefireDays>30</minRefireDays>
+    <earliestDay>15</earliestDay>
+    <allowedBiomes>
+      <li>LavaField</li>
+    </allowedBiomes>
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+  </IncidentDef>
+  
+  <!-- Glowforest -->
+
+  <IncidentDef>
+    <defName>BoomshroomSprout</defName>
+    <label>boomshroom sprout</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_BoomshroomSprout</workerClass>
+    <baseChance>1.0</baseChance>
+    <letterLabel>Boomshroom sprout</letterLabel>
+    <letterText>A cluster of explosive boomshrooms has sprouted nearby!\n\nThese mushrooms only grow in darkness. Once they mature, they can be harvested for chemfuel.\n\nBe careful - mature boomshrooms explode if damaged.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <allowedBiomes>
+      <li>Glowforest</li>
+    </allowedBiomes>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>BioluminescentSpores</defName>
+    <label>bioluminescent spores</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>BioluminescentSpores</gameCondition>
+    <baseChance>1.0</baseChance>
+    <letterLabel>Bioluminescent spores</letterLabel>
+    <letterText>Some variety of fungus is blossoming, releasing bioluminescent spores! The spores are strangely beautiful and pose no danger.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <allowedBiomes>
+      <li>Glowforest</li>
+    </allowedBiomes>
+    <minRefireDays>15</minRefireDays>
+    <durationDays>0.33~0.75</durationDays> <!-- 8~18 hours -->
+  </IncidentDef>
+  
+  <!-- Grasslands -->
+
+  <IncidentDef>
+    <defName>DroughtInitial</defName>
+    <label>initial drought conditions</label> <!-- hidden -->
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeInitialDrought</workerClass>
+    <gameCondition>DroughtInitial</gameCondition>
+    <baseChance>1</baseChance>
+    <minRefireDays>40</minRefireDays>
+    <allowedBiomes>
+      <li>Grasslands</li>
+    </allowedBiomes>
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+    <hidden>true</hidden>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>Drought</defName>
+    <label>drought</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>Drought</gameCondition>
+    <letterLabel>drought</letterLabel>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>0</baseChance> <!-- Fired manually, never automatic -->
+    <allowedBiomes>
+      <li>Grasslands</li>
+    </allowedBiomes>
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+    <durationDays>6~10</durationDays>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>GillRot</defName>
+    <label>gill rot</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+      <li>Map_Misc</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>GillRot</gameCondition>
+    <letterLabel>gill rot</letterLabel>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>0.15</baseChance>
+    <earliestDay>45</earliestDay>
+    <durationDays>3~6</durationDays>
+    <minRefireDays>45</minRefireDays>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>OrbitalDebris</defName>
+    <label>orbital debris</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_OrbitalDebris</workerClass>
+    <baseChance>0.5</baseChance>
+    <letterLabel>Orbital debris</letterLabel>
+    <letterText>A cloud of orbital debris is hurtling towards your position and will impact within seconds. Get your colonists under a roof.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <tale>OrbitalDebris</tale>
+    <layerWhitelist>
+      <li>Orbit</li>
+    </layerWhitelist>
+  </IncidentDef>
+  
+</Defs>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Genetics -->
+
+  <WorkGiverDef>
+    <defName>DeliverHemogenToPrisoner</defName>
+    <label>deliver hemogen to prisoners</label>
+    <giverClass>WorkGiver_Warden_DeliverHemogen</giverClass>
+    <workType>Warden</workType>
+    <verb>deliver hemogen for</verb>
+    <gerund>delivering hemogen for</gerund>
+    <priorityInType>72</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>FeedHemogen</defName>
+    <label>administer hemogen</label>
+    <giverClass>Workgiver_AdministerHemogen</giverClass>
+    <workType>Doctor</workType>
+    <verb>administer hemogen to</verb>
+    <gerund>administering hemogen to</gerund>
+    <priorityInType>65</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>HaulToGeneBank</defName>
+    <label>bank genepack</label>
+    <giverClass>WorkGiver_HaulToGeneBank</giverClass>
+    <workType>Hauling</workType>
+    <verb>bank</verb>
+    <gerund>banking</gerund>
+    <priorityInType>111</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CreateXenogerm</defName>
+    <label>create xenogerm</label>
+    <giverClass>WorkGiver_CreateXenogerm</giverClass>
+    <workType>Research</workType>
+    <verb>create xenogerm</verb>
+    <gerund>creating xenogerm at</gerund>
+    <priorityInType>120</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>EnterGeneExtractor</defName>
+    <label>enter gene extractor</label>
+    <giverClass>WorkGiver_EnterGeneExtractor</giverClass>
+    <verb>enter</verb>
+    <gerund>entering</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Moving</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>EnterGrowthVat</defName>
+    <label>enter growth vat</label>
+    <giverClass>WorkGiver_EnterGrowthVat</giverClass>
+    <verb>enter</verb>
+    <gerund>entering</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Moving</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CarryToGeneExtractor</defName>
+    <label>carry to gene extractor</label>
+    <giverClass>WorkGiver_CarryToGeneExtractor</giverClass>
+    <workType>Hauling</workType>
+    <verb>extract genes</verb>
+    <gerund>extracting genes from</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CarryToGrowthVat</defName>
+    <label>carry to growth vat</label>
+    <giverClass>WorkGiver_CarryToGrowthVat</giverClass>
+    <workType>Hauling</workType>
+    <verb>grow</verb>
+    <gerund>growing</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+
+  <!-- Childcare -->
+
+  <WorkGiverDef>
+    <defName>BringBabyToSafety</defName>
+    <label>bring babies to safe temperature</label>
+    <giverClass>WorkGiver_BringBabyToSafety</giverClass>
+    <workType>Childcare</workType>
+    <verb>rescue</verb>
+    <gerund>rescuing</gerund>
+    <priorityInType>200</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>BreastfeedBaby</defName>
+    <label>breastfeed babies</label> 
+    <giverClass>WorkGiver_Breastfeed</giverClass>
+    <workType>Childcare</workType>
+    <verb>breastfeed</verb> 
+    <gerund>breastfeeding</gerund> 
+    <priorityInType>80</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>PlayWithBaby</defName>
+    <label>play with babies</label>
+    <giverClass>WorkGiver_PlayWithBaby</giverClass>
+    <workType>Childcare</workType>
+    <verb>play with</verb>
+    <gerund>playing with</gerund>
+    <priorityInType>80</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>BottleFeedBaby</defName>
+    <label>feed babies</label>
+    <giverClass>WorkGiver_BottleFeedBaby</giverClass>
+    <workType>Childcare</workType>
+    <verb>feed</verb>
+    <gerund>feeding</gerund>
+    <priorityInType>80</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CarryToBreastfeed</defName>
+    <label>carry to mother</label>
+    <giverClass>WorkGiver_BreastfeedCarryToMom</giverClass>
+    <workType>Childcare</workType>
+    <verb>get mother to breastfeed</verb>
+    <gerund>getting mother to breastfeed</gerund>
+    <priorityInType>80</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>ChildcarerTeach</defName>
+    <label>teach child</label>
+    <giverClass>WorkGiver_Teach</giverClass>
+    <workType>Childcare</workType>
+    <verb>teach</verb>
+    <gerund>teaching</gerund>
+    <priorityInType>9999</priorityInType>
+    <requiredCapacities>
+      <li>Talking</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>HaulToGrowthVat</defName>
+    <label>carry to growth vat</label>
+    <giverClass>WorkGiver_HaulToGrowthVat</giverClass>
+    <workType>Hauling</workType>
+    <verb>fill</verb>
+    <gerund>filling</gerund>
+    <priorityInType>109</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <!-- Mech -->
+
+  <WorkGiverDef>
+    <defName>RepairMech</defName>
+    <label>repair mech</label>
+    <giverClass>WorkGiver_RepairMech</giverClass>
+    <workType>Smithing</workType>
+    <verb>repair</verb>
+    <gerund>repairing</gerund>
+    <priorityInType>200</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+    <canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>DoBillsMechGestator</defName>
+    <label>make things at mech gestator</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Smithing</workType>
+    <priorityInType>210</priorityInType>
+    <fixedBillGiverDefs>
+      <li>MechGestator</li>
+      <li>LargeMechGestator</li>
+    </fixedBillGiverDefs>
+    <verb>work at</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>DoBillsSubcoreEncoder</defName>
+    <label>make things at subcore encoder</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Smithing</workType>
+    <priorityInType>220</priorityInType>
+    <fixedBillGiverDefs>
+      <li>SubcoreEncoder</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>EmptyWasteContainer</defName>
+    <label>empty waste container</label>
+    <giverClass>WorkGiver_EmptyWasteContainer</giverClass>
+    <workType>Hauling</workType>
+    <verb>extract from</verb>
+    <gerund>extracting from</gerund>
+    <priorityInType>110</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>HaulMechsToCharger</defName>
+    <label>haul mechs to charger</label>
+    <giverClass>WorkGiver_HaulMechToCharger</giverClass>
+    <workType>Hauling</workType>
+    <verb>haul</verb>
+    <gerund>hauling</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>EnterSubcoreScanner</defName>
+    <label>enter subcore scanner</label>
+    <giverClass>WorkGiver_EnterSubcoreScanner</giverClass>
+    <verb>enter</verb>
+    <gerund>entering</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Moving</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CarryToSubcoreScanner</defName>
+    <label>carry to subcore scanner</label>
+    <giverClass>WorkGiver_CarryToSubcoreScanner</giverClass>
+    <workType>Hauling</workType>
+    <verb>carry</verb>
+    <gerund>carrying</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <!-- Haul to -->
+
+  <WorkGiverDef Name="HaulToBase" Abstract="True">
+    <workType>Hauling</workType>
+    <verb>haul to</verb>
+    <gerund>hauling to</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <priorityInType>90</priorityInType>
+  </WorkGiverDef>
+
+  <WorkGiverDef ParentName="HaulToBase">
+    <defName>HaulToCarrier</defName>
+    <label>haul resources to carrier</label>
+    <giverClass>WorkGiver_HaulResourcesToCarrier</giverClass>
+  </WorkGiverDef>
+
+  <WorkGiverDef ParentName="HaulToBase">
+    <defName>HaulToSubcoreScanner</defName>
+    <label>haul resources to subcore scanner</label>
+    <giverClass>WorkGiver_HaulToSubcoreScanner</giverClass>
+  </WorkGiverDef>
+
+  <WorkGiverDef ParentName="HaulToBase">
+    <defName>HaulToWastepackAtomizer</defName>
+    <label>haul resources to wastepack atomizer</label>
+    <giverClass>WorkGiver_HaulToAtomizer</giverClass>
+  </WorkGiverDef>
+
+    <!-- Cleaning -->
+    <WorkGiverDef>
+      <defName>CleanClearPollution</defName>
+      <label>clean pollution</label>
+      <giverClass>WorkGiver_ClearPollution</giverClass>
+      <workType>Cleaning</workType>
+      <verb>clean pollution</verb>
+      <gerund>cleaning pollution</gerund>
+      <scanThings>false</scanThings>
+      <scanCells>true</scanCells>
+      <requiredCapacities>
+        <li>Manipulation</li>
+      </requiredCapacities>
+    </WorkGiverDef>
+
+</Defs>

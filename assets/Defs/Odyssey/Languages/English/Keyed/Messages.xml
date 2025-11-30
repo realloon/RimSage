@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Grav engine/substructrues -->
+  <MessageMustBePlacedOnSubstructure>Must be placed on gravship substructure.</MessageMustBePlacedOnSubstructure>
+  <MessageMustBePlacedInRangeOfGravEngineOrExtender>Must be placed within the radius of a grav engine or grav field extender.</MessageMustBePlacedInRangeOfGravEngineOrExtender>
+  <MessageCannotPlaceUnderRockRoof>Cannot be placed under rock or mountain roofs.</MessageCannotPlaceUnderRockRoof>
+  <MessageStabilizerDeactivated>{ACTIVATOR_labelShort} has finished hacking {SUBJECT_definite}.</MessageStabilizerDeactivated>
+  <MessageCannotPlaceOverSubstructure>Can't be placed on gravship substructure.</MessageCannotPlaceOverSubstructure>
+  <MessageSubstructureBlocked>Gravship substructure is blocked.</MessageSubstructureBlocked>
+  <MessageMustBePlacedInRangeOfGravEngine>Must be placed within range of a grav engine.</MessageMustBePlacedInRangeOfGravEngine>
+
+  <!-- Alerts -->
+  <MessagePlantDiedOfRot_ExposedToVacuum>{0} has died from vacuum exposure.</MessagePlantDiedOfRot_ExposedToVacuum>
+
+  <!-- Ancient Vents -->
+  <AncientSmokeVentStartUp>The ancient smoke vents have become active, darkening the sky.</AncientSmokeVentStartUp>
+  <AncientSmokeVentShutdown>The ancient smoke vents are stopping.</AncientSmokeVentShutdown>
+  <AncientToxVentStartUp>The ancient toxic vents have become active, causing toxic fallout.</AncientToxVentStartUp>
+  <AncientToxVentShutdown>The ancient toxic vents are stopping.</AncientToxVentShutdown>
+  <AncientHeatVentStartUp>The ancient heat vents have become active, raising temperatures.</AncientHeatVentStartUp>
+  <AncientHeatVentShutdown>The ancient heat vents are stopping.</AncientHeatVentShutdown>
+  
+  <CannotPlaceFishingZone>Must be placed over shallow water containing fish.</CannotPlaceFishingZone>
+  
+  <MessageTrapSprung>{TRAP_indefinite} was triggered.</MessageTrapSprung>
+
+  <GravshipReadyToLaunch>{0} is ready to launch again.</GravshipReadyToLaunch>
+
+  <MessageOrbitalSignalDetected>An orbital scanner has found a signal and is locating its origin</MessageOrbitalSignalDetected>
+  <OrbitalScannerCompletesIn>completes in {0}</OrbitalScannerCompletesIn>
+
+  <MessageTraderGaveQuest>While talking with {TRADER_nameDef}, {NEGOTIATOR_nameDef} learned of a new quest: {0}</MessageTraderGaveQuest>
+  <MessageBookGaveQuest>While reading {BOOK_labelNoParenthesis}, {READER_nameDef} discovered a quest: {0}</MessageBookGaveQuest>
+
+  <MessageConfirmLandingAreaFirst>Confirm gravship landing zone to continue.</MessageConfirmLandingAreaFirst>
+  <MessageNoLandingSiteSelected>Choose a landing site first.</MessageNoLandingSiteSelected>
+  
+  <CannotStoreThingOnTarget>Cannot store {THING_labelShort} on {TARGET_indefinite}</CannotStoreThingOnTarget>
+
+</LanguageData>

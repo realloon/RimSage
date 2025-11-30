@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>NutrientPasteEating_DontMind</defName>
+    <issue>NutrientPasteEating</issue>
+    <label>don't mind</label>
+    <description>There's nothing wrong with a meal of efficient, healthy nutrient paste.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0</defaultSelectionWeight>
+    <requiredMemes>
+      <li>Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhuman</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Shipborn</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>Transhumanist</li>
+    </associatedMemes>
+  </PreceptDef>
+
+</Defs>

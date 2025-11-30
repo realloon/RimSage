@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+  
+  <ThoughtDef>
+    <defName>WillDiminished</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>50</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>will diminished</label>
+        <baseOpinionOffset>-2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FailedConvertAbilityInitiator</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>failed to convert {0}</label>
+        <description>I tried to convert someone and it didn't work out. Awkward.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FailedConvertAbilityRecipient</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>{0} tried to convert me</label>
+        <description>Someone tried to convert me. I wish they'd just leave me alone.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Counsel -->
+
+  <ThoughtDef>
+    <defName>Counselled</defName>
+    <thoughtClass>Thought_Counselled</thoughtClass>
+    <stages>
+      <li>
+        <label>counselled by {0}</label>
+        <description>I received counseling about something that's been bothering me.</description>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CounselFailed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>failed consolation by {0}</label>
+        <description>Somehow, that attempt at helping made things even worse.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Counselled_MoodBoost</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>counselled by {0}</label>
+        <description>I received counseling from someone. It felt nice to be listened to.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TendedByMedicalSpecialist</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>4</durationDays>
+    <stackLimit>100</stackLimit>
+    <stages>
+      <li>
+        <label>tended by {0}</label>
+        <description>I received medical aid from one who carries the special healer status of my ideoligion.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

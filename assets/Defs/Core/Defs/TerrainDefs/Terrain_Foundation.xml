@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TerrainDef Name="BridgeBase" Abstract="True">
+    <layerable>true</layerable>
+    <bridge>true</bridge>
+    <isFoundation>true</isFoundation>
+    <isPaintable>true</isPaintable>
+    <designationCategory>Structure</designationCategory>
+    <fertility>0</fertility>
+    <terrainAffordanceNeeded>Bridgeable</terrainAffordanceNeeded>
+    <preventCraters>true</preventCraters>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>400</renderPrecedence>
+    <autoRebuildable>true</autoRebuildable>
+    <tags>
+      <li>Floor</li>
+    </tags>
+    <drawStyleCategory>Foundations</drawStyleCategory>
+    <destroyBuildingsOnDestroyed>true</destroyBuildingsOnDestroyed>
+    <destroyEffect>Bridge_Collapse</destroyEffect>
+    <destroyEffectWater>Bridge_CollapseWater</destroyEffectWater>
+    <cropIcon>false</cropIcon>
+  </TerrainDef>
+
+  <TerrainDef ParentName="BridgeBase">
+    <defName>Bridge</defName>
+    <label>bridge</label>
+    <description>A flat wooden surface on supportive beams which can be built over water. You can build light structures on bridges, but be careful - bridges are fragile. If a bridge falls, buildings on top of it fall as well.</description>
+    <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+    <bridgePropsPath>Terrain/Misc/BridgeProps</bridgePropsPath>
+    <color>(108,78,55)</color>
+    <uiIconPath>Terrain/Surfaces/Bridge_MenuIcon</uiIconPath>
+    <affordances>
+      <li>Light</li>
+    </affordances>
+    <constructEffect>ConstructWood</constructEffect>
+    <statBases>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>0.8</Flammability>
+    </statBases>
+    <costList>
+      <WoodLog>12</WoodLog>
+    </costList>
+    <designationHotKey>Misc4</designationHotKey>
+    <destroyOnBombDamageThreshold>35</destroyOnBombDamageThreshold>
+  </TerrainDef>
+
+</Defs>

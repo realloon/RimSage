@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Infantry non-coms -->
+
+  <BackstoryDef>
+    <defName>LineInfanteer20</defName>
+    <title>line infanteer</title>
+    <titleShort>infanteer</titleShort>
+    <description>[PAWN_nameDef] was an ordinary infanteer in an imperial battalion.
+\nConscripted at a young age to add bodies the army, [PAWN_nameDef] learned the methods of fighting well enough to satisfy [PAWN_possessive] officers. However, [PAWN_pronoun] never quite understood what was going on around [PAWN_objective] enough to really believe in it.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>4</Shooting>
+      <Melee>3</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>PiousSoldier67</defName>
+    <title>pious soldier</title>
+    <titleShort>pious soldier</titleShort>
+    <description>When not training or combat, [PAWN_nameDef] was often at the chaplain's side. [PAWN_pronoun] dedicated [PAWN_possessive] life to serving both [PAWN_possessive] lord and [PAWN_possessive] religion.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Shooting>6</Shooting>
+      <Melee>4</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>InfantryEngineer46</defName>
+    <title>infantry engineer</title>
+    <titleShort>engineer</titleShort>
+    <description>Despite being in an infantry battalion, [PAWN_nameDef] rarely fired a gun. [PAWN_possessive] specialty was the rapid construction of defenses, traps, defensive installations, and sapping tunnels.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Construction>6</Construction>
+      <Mining>4</Mining>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>InfantryMedic6</defName>
+    <title>infantry medic</title>
+    <titleShort>medic</titleShort>
+    <description>[PAWN_nameDef] treated the combat wounds of [PAWN_possessive] fallen comrades.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Medicine>7</Medicine>
+    </skillGains>
+    <possessions>
+      <MedicineIndustrial>4</MedicineIndustrial>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MilitaryCook18</defName> 
+    <title>military cook</title>
+    <titleShort>army cook</titleShort>
+    <description>They say an army marches on its stomach. [PAWN_nameDef]'s job was to prepared chow to keep [PAWN_possessive] unit marching, no matter the conditions.
+\nThe job required [PAWN_objective] to pay attention to both the nutritional and psychological needs of the troops.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Cooking>7</Cooking>
+      <Shooting>2</Shooting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Cooking</li>
+    </requiredWorkTags>
+    <possessions>
+      <MealSurvivalPack>3</MealSurvivalPack>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>LoyalJanissary59</defName>
+    <title>loyal janissary</title>
+    <titleShort>janissary</titleShort>
+    <description>[PAWN_nameDef] was a janissary in a great lord's army. Even more than the other troops, [PAWN_pronoun] felt a sense of duty, and [PAWN_pronoun] drew [PAWN_possessive] life's meaning from the effort [PAWN_pronoun] put to fulfilling [PAWN_possessive] duty.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>7</Shooting>
+      <Melee>4</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Industriousness>2</Industriousness>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>ReconSniper89</defName>
+    <title>recon sniper</title>
+    <titleShort>sniper</titleShort>
+    <description>[PAWN_nameDef] was a professional military sniper. [PAWN_pronoun] was trained to rapidly reach into unexpected firing positions, snipe key targets, and escape before enemies could pinpoint [PAWN_possessive] location.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>9</Shooting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <SpeedOffset>2</SpeedOffset>
+    </forcedTraits>
+    <possessions>
+      <Gun_SniperRifle>1</Gun_SniperRifle>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Shipcracker37</defName>
+    <title>shipcracker</title>
+    <titleShort>shipcracker</titleShort>
+    <description>[PAWN_nameDef]'s role was to launch through the vacuum of space, land on the enemy ship's hull, punch holes to the interior, and conquer it in room-to-room combat. [PAWN_pronoun] became very good at wielding heavy cataphract weapons to cut both steel and flesh.
+\n[PAWN_pronoun] also developed a taste for the drugs [PAWN_pronoun] used to cope with the overwhelming stress.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Hulk</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>3</Shooting>
+      <Melee>5</Melee>
+      <Mining>4</Mining>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <DrugDesire>1</DrugDesire>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BrokenSoldier29</defName>
+    <title>broken soldier</title>
+    <titleShort>soldier</titleShort>
+    <description>[PAWN_pronoun] was a strong soldier in a long war of succession. In [PAWN_possessive] final battle, [PAWN_possessive] unit was sacrified to cover a retreat. [PAWN_nameDef] watched [PAWN_possessive] comrades die and was the only survivor.
+\nThe experience broke [PAWN_objective] inside, leaving [PAWN_objective] without the coping strategies to moderate [PAWN_possessive] emotions.
+\n[PAWN_nameDef] learned to draw in the hospital.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories><li>ImperialRoyal</li></spawnCategories>
+    <skillGains>
+      <Artistic>2</Artistic>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+    <forcedTraits>
+      <Nerves>-2</Nerves>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>IntelligenceAgent21</defName>
+    <title>intelligence agent</title>
+    <titleShort>intel</titleShort>
+    <description>[PAWN_nameDef] was a high-ranking counterintelligence agent tasked with thwarting enemy spies.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Intellectual>6</Intellectual>
+      <Social>3</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Social</li>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Deserter65</defName>
+    <title>deserter</title>
+    <titleShort>deserter</titleShort>
+    <description>After countless battles for a cause [PAWN_pronoun] did not believe in, [PAWN_nameDef] threw down [PAWN_possessive] arms and deserted. [PAWN_nameDef] lived in isolation, hunted by those [PAWN_pronoun] had deserted.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>4</Shooting>
+      <Melee>2</Melee>
+      <Crafting>2</Crafting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Warmonger35</defName>
+    <title>warmonger</title>
+    <titleShort>warmonger</titleShort>
+    <description>[PAWN_nameDef] revelled in bloodshed. Soldiers who served with [PAWN_objective] were terrified of [PAWN_possessive] ferocity. They rarely socialized with [PAWN_nameDef], and [PAWN_pronoun] did not mind the isolation.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Hulk</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>7</Shooting>
+      <Melee>4</Melee>
+      <Social>-3</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <workDisables>
+      <li>Caring</li>
+    </workDisables>
+    <forcedTraits>
+      <Bloodlust>0</Bloodlust>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <!-- Infantry officers -->
+
+  <BackstoryDef>
+    <defName>InfantryOfficer49</defName>
+    <title>infantry officer</title>
+    <titleShort>officer</titleShort>
+    <description>[PAWN_nameDef] was an officer in an imperial battalion. [PAWN_pronoun] developed the social and combat skills to do [PAWN_possessive] job well and was respected by the men.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>4</Social>
+      <Shooting>5</Shooting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DisgracedOfficer19</defName>
+    <title>disgraced officer</title>
+    <titleShort>officer</titleShort>
+    <description>[PAWN_nameDef] was an officer in an imperial battalion. [PAWN_pronoun] developed the social and combat skills to do [PAWN_possessive] job well and was respected by the men.
+\nWhen [PAWN_possessive] unit came under direct fire for the first time, [PAWN_nameDef] fled to a bunker and hid. [PAWN_pronoun] was demoted and never escaped the disgrace.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>4</Social>
+      <Shooting>5</Shooting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Wimp>0</Wimp>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MilitaryCommissar71</defName>
+    <title>military commissar</title>
+    <titleShort>commissar</titleShort>
+    <description>[PAWN_nameDef] was an internal spymaster in an imperial army battalion. [PAWN_pronoun] made sure that the men were loyal, and did not fall back unless ordered. This made [PAWN_objective] unpopular, but [PAWN_pronoun] gained great skill at detecting the slightest dishonesty.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Shooting>3</Shooting>
+      <Social>6</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Social</li>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <!-- Heavy weapons and vehicles -->
+
+  <BackstoryDef>
+    <defName>Artilleryman28</defName>
+    <title>artilleryman</title>
+    <titleFemale>artillerywoman</titleFemale>
+    <titleShort>artilleer</titleShort>
+    <description>[PAWN_nameDef] loaded shells and aimed artillery to pound [PAWN_possessive] army's enemies from afar.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Shooting>6</Shooting>
+      <Melee>1</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Demolitionist39</defName>
+    <title>demolitionist</title>
+    <titleShort>demolitionist</titleShort>
+    <description>[PAWN_nameDef] manufactured and planted explosives used to breach enemy defenses. Dealing with explosives every day taught [PAWN_objective] to keep a level head and steady hand.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Shooting>4</Shooting>
+      <Crafting>4</Crafting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Nerves>1</Nerves>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <!-- Pilots -->
+
+  <BackstoryDef>
+    <defName>Firebomber51</defName>
+    <title>firebomber</title>
+    <titleShort>firebomber</titleShort>
+    <description>[PAWN_nameDef] piloted a small fighter-bomber design specialized in spreading incendiary gel on flammable targets.
+\nConditioned to love the sight of a target lighting up, [PAWN_pronoun] grew to love fire in all its forms - war, cooking, and even for cauterizing wounds in the hospital.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Shooting>3</Shooting>
+      <Cooking>3</Cooking>
+      <Medicine>2</Medicine>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Pyromaniac>0</Pyromaniac>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <!-- Special -->
+
+  <BackstoryDef>
+    <defName>MilitaryChaplain10</defName>
+    <title>military chaplain</title>
+    <titleShort>chaplain</titleShort>
+    <description>[PAWN_nameDef] stayed with the troops in training and in combat, administering to the dying and reinforcing the faith of the living.
+\nLike all imperial chaplains, [PAWN_pronoun] vowed never to fight [PAWN_objective]self. However, [PAWN_pronoun] acted as a medic and treated the wounded.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>ImperialCommon</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <skillGains>
+      <Medicine>6</Medicine>
+      <Intellectual>2</Intellectual>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Caring</li>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>RoyalGuard51</defName> 
+    <title>royal guard</title>
+    <titleShort>guard</titleShort>
+    <description>[PAWN_nameDef] guarded the personal palace of a powerful lord.
+\nWhile violence was rare, palace intrigue was constant. [PAWN_nameDef]'s work taught [PAWN_pronoun] to handle both words and guns.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Shooting>4</Shooting>
+      <Melee>3</Melee>
+      <Social>3</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+      <li>Social</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Propagandist86</defName>
+    <title>propagandist</title>
+    <titleShort>propagandist</titleShort>
+    <description>[PAWN_nameDef] was a skilled artist and military propagandist. [PAWN_pronoun] created works of art depicting [PAWN_possessive] lords and armies favorably.</description>
+    <slot>Adulthood</slot>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <spawnCategories><li>ImperialFighter</li></spawnCategories>
+    <skillGains>
+      <Artistic>6</Artistic>
+      <Social>2</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Artistic</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+</Defs>

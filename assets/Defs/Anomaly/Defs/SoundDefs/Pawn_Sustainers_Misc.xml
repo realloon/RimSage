@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef>
+    <defName>Pawn_SelfResurrection</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/SelfResurrection</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~35</volumeRange>
+        <sustainLoop>true</sustainLoop>
+        <sustainAttack>2.5</sustainAttack>
+        <sustainRelease>2.5</sustainRelease>
+        <sustainLoopDurationRange>5~5</sustainLoopDurationRange>
+      </li>
+    </subSounds>
+    <sustainFadeoutTime>0.25</sustainFadeoutTime>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HateChant_Sighing</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <maxSimultaneous>4</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/HateChanters/Sighing</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~35</volumeRange>
+        <sustainLoop>true</sustainLoop>
+        <sustainAttack>2.5</sustainAttack>
+        <sustainRelease>2.5</sustainRelease>
+        <distRange>45~90</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

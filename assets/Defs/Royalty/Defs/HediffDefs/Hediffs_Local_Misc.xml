@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>BloodRot</defName>
+    <label>blood rot</label>
+    <description>A slow-growing bacterial disease. The bacteria have little effect on the victim during their growing phase, but upon reaching saturation levels will induce a toxin storm that leads to immediate death.\n\nThe body's immune system will clear blood rot eventually, so the standard treatment is to use normal medicine to suppress it until that happens. Glitterworld doctors can use a massive mechanite dose to clear the infection immediately, but it is expensive.</description>
+    <descriptionShort>A slow-growing bacterial disease. Upon reaching full saturation, it will kill the affected individual.</descriptionShort>
+    <hediffClass>HediffWithComps</hediffClass>
+    <lethalSeverity>1</lethalSeverity>
+    <makesSickThought>true</makesSickThought>
+    <minSeverity>0.001</minSeverity>
+    <initialSeverity>0.001</initialSeverity>
+    <stages>
+      <li>
+        <label>minor</label>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.6</minSeverity>
+        <label>major</label>
+        <vomitMtbDays>1.5</vomitMtbDays>
+        <capMods>
+            <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.85</minSeverity>
+        <label>extreme</label>
+        <lifeThreatening>true</lifeThreatening>
+        <vomitMtbDays>0.75</vomitMtbDays>
+        <painOffset>0.05</painOffset>
+        <capMods>
+            <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <tendable>true</tendable>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.4</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_TendDuration">
+        <severityPerDayTended>-1</severityPerDayTended>
+        <baseTendDurationHours>24</baseTendDurationHours>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800000~2400000</disappearsAfterTicks> <!-- 30 ! 45 days -->
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>CureBloodRot</defName>
+    <label>cure blood rot</label>
+    <description>This special medical operation cures blood rot by a massive infusion of bacteriophage mechanites.</description>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <jobString>Curing blood rot.</jobString>
+    <workAmount>2000</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <isViolation>false</isViolation>
+    <targetsBodyPart>false</targetsBodyPart>
+    <removesHediff>BloodRot</removesHediff>
+    <successfullyRemovedHediffMessage>{0} has successfully cured {1}'s blood rot.</successfullyRemovedHediffMessage>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineUltratech</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <HediffDef ParentName="DiseaseBase">
+    <defName>Abasia</defName>
+    <label>paralytic abasia</label>
+    <description>A condition that makes a person unable to walk by interfering with the motor cortex. After enough time, patients recover naturally as the brain rewires itself, but the process is slow. There is also a chance of a lucky early recovery. This illness can be completely cured with a special procedure, but the procedure requires large amounts of glitterworld medicine.</description>
+    <descriptionShort>A neurological condition that makes a person unable to walk. Patients recover naturally but the process is slow.</descriptionShort>
+    <hediffClass>HediffWithComps</hediffClass>
+    <preventsCrawling>true</preventsCrawling>
+    <comps>
+      <li Class="HediffCompProperties_ChanceToRemove">
+        <intervalTicks>60000</intervalTicks>
+        <chance>0.01</chance>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800000~2400000</disappearsAfterTicks> <!-- 30 ! 45 days -->
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>CureAbasia</defName>
+    <label>anti-abasia mechanite infusion</label>
+    <description>This special medical operation uses a massive dose of mechanites to saturate brain tissue and execute a coordinated restructure of neural activity without damaging the brain. It permanently cures a patient's abasia-induced paralysis, but consumes a large amount of glitterworld medicine.</description>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <jobString>Infusing anti-abasia mechanites.</jobString>
+    <workAmount>2000</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <isViolation>false</isViolation>
+    <targetsBodyPart>false</targetsBodyPart>
+    <removesHediff>Abasia</removesHediff>
+    <successfullyRemovedHediffMessage>{0} has successfully cured {1}'s paralytic abasia.</successfullyRemovedHediffMessage>
+    <skillRequirements>
+      <Medicine>5</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineUltratech</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+ 
+</Defs>

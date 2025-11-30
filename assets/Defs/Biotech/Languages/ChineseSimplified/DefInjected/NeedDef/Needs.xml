@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: deathrest -->
+  <Deathrest.label>死眠</Deathrest.label>
+  <!-- EN: People with the deathrest gene must deathrest every few days or quadrums. Deathresting means entering a regenerative coma for several days, during which the rester appears dead.\n\nA variety of special buildings can connect to a deathresting person and give them bonuses upon waking.\n\nGoing too long without deathrest will cause deathrest exhaustion, which massively degrades a person's physical capacities. -->
+  <Deathrest.description>有死眠基因的人必须每隔几天或几象进行一次死眠。死眠意味着进入一个可再生的昏迷状态，持续数天。在此期间，死眠者看起来就像失去了生命一样。\n\n各种各样的特殊设备可以连接到正在死眠的人，并在他们醒来时给予他们有益效果。\n\n过久不死眠会引发死眠衰竭症，这将极大地降低一个人的身体能力。</Deathrest.description>
+  
+  <!-- EN: kill satiety -->
+  <KillThirst.label>杀欲</KillThirst.label>
+  <!-- EN: Kill satiety fulfills a built-in desire to do violence at close range to human victims. If it isn't satiated, the person will become very unhappy. -->
+  <KillThirst.description>杀欲满足了对人类受害者实施暴力的内在欲望。如果没有得到满足，这个人就会变得非常不快乐。</KillThirst.description>
+  
+  <!-- EN: learning -->
+  <Learning.label>学习</Learning.label>
+  <!-- EN: Children need new lessons and experiences to grow up well, and will become unhappy without them.\n\nChildren will only do learning activities when their schedule is set to Recreation or Anything.\n\nActivities that fulfill a child's desire to learn include:\n{ACTIVITIES}\n\nA satisfied learning need helps children gain growth tiers faster, giving them more passions and choices during growth moments. -->
+  <Learning.description>孩子们需要新的课程和经验才能很好地成长，没有这些课程和经验，他们会变得不快乐。\n\n只有当儿童的日程安排被设定为娱乐或任何事情时，他们才会进行学习活动。\n\n能满足儿童学习欲望的活动包括：\n{ACTIVITIES}\n\n满足学习需求有助于孩子更快地获得成长评级，让他们在成长阶段有更多的兴趣和选择。</Learning.description>
+  
+  <!-- EN: energy -->
+  <MechEnergy.label>能量</MechEnergy.label>
+  <!-- EN: A reserve of bioelectric energy needed for a mechanoid to function. It can be recharged at a charging station. If it reaches zero, the mech will go into dormant self-charging mode and recharge very slowly. -->
+  <MechEnergy.description>能量值表示机械族储备了多少用于维持自身运作的生物电能。可以在充电站处补充能量。如果能量值归零，机械族将进入自机充电的休眠状态。在此状态下补充能量的速度要比在充电站慢得多。</MechEnergy.description>
+  
+  <!-- EN: play -->
+  <Play.label>玩乐</Play.label>
+  <!-- EN: Babies need to be played with by adults. If they aren't played with, they will become unhappy. -->
+  <Play.description>婴儿需要成年人陪同玩耍。如果不和他们一起玩耍，就会不开心。</Play.description>
+  
+</LanguageData>

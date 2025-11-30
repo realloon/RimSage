@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>SpacePirate55</defName>
+    <title>space pirate</title>
+    <titleShort>pirate</titleShort>
+    <description>Piracy appears everywhere that governments are weak and society spread thin. [PAWN_nameDef] was part of this age-old part of human existence, extorting and smashing peaceful trade ships for profit.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>4</Melee>
+      <Shooting>4</Shooting>
+    </skillGains>
+    <spawnCategories><li>Pirate</li></spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>PitBrawler76</defName> 
+    <title>pit brawler</title>
+    <titleShort>brawler</titleShort>
+    <description>[PAWN_nameDef] was nine years old when [PAWN_pronoun] got in [PAWN_possessive] first fight. [PAWN_pronoun] won, but more important was the enjoyment of [PAWN_possessive] audience. Pit fighting turned out to be a lucrative career for those who could survive it. And it was even mostly legal.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>8</Melee>
+    </skillGains>
+    <spawnCategories><li>Pirate</li></spawnCategories>
+    <workDisables>
+      <li>Intellectual</li>
+      <li>Caring</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <forcedTraits>
+      <Brawler>0</Brawler>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>IllegalShipwright76</defName>
+    <title>illegal shipwright</title>
+    <titleShort>shipwright</titleShort>
+    <description>There is a law that says that you're not allowed to put terawatt-range grasers on a cargo scow. Especially if you hide them under what looks like a communications dish for better ambush potential. [PAWN_nameDef] discovered that there is great profit to be made, however, from those who are uninterested in these laws.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Construction>7</Construction>
+    </skillGains>
+    <spawnCategories><li>Pirate</li></spawnCategories>
+    <requiredWorkTags>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Fat</bodyTypeMale>
+    <bodyTypeFemale>Fat</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Gigolo30</defName>
+    <title>gigolo</title>
+    <titleFemale>gigolo</titleFemale>
+    <titleShort>courtesean</titleShort>
+    <titleShortFemale>courtesean</titleShortFemale>
+    <description>[PAWN_nameDef] was used for [PAWN_possessive] body by hundreds of customers in brothels on several planets. [PAWN_pronoun] gained some mental marks and a special kind of street smarts.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Social>8</Social>
+      <Melee>3</Melee>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <workDisables>
+      <li>ManualDumb</li>
+      <li>ManualSkilled</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SpaceMarine16</defName>
+    <title>space marine</title>
+    <titleShort>marine</titleShort>
+    <description>[PAWN_nameDef] was a warrior in an Imperial navy. [PAWN_possessive] job was to punch into enemy starships, gun down the crew, and capture the ship intact. And [PAWN_pronoun] was good at it.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>5</Melee>
+      <Shooting>7</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+      <li>Researcher</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Assassin20</defName>
+    <title>assassin</title>
+    <titleShort>assassin</titleShort>
+    <description>[PAWN_nameDef] was a professional assassin. [PAWN_pronoun] was cold, calculating, and made a good profit. In this business, an utter lack of empathy was an asset.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>10</Melee>
+      <Shooting>10</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+      <li>Cult</li>
+    </spawnCategories>
+    <workDisables>
+      <li>Intellectual</li>
+      <li>ManualDumb</li>
+      <li>ManualSkilled</li>
+      <li>Social</li>
+      <li>Caring</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <forcedTraits>
+      <Psychopath>0</Psychopath>
+    </forcedTraits>
+    <possessions>
+      <NerveSpiker MayRequire="Ludeon.RimWorld.Anomaly">1</NerveSpiker>
+    </possessions>
+  </BackstoryDef>
+
+</Defs>

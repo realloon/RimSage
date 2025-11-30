@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>GasReleasing</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapon/ToxShell/Toxic_Shell_GasRelease_01b</clipPath>
+          </li>
+        </grains>
+        <volumeRange>35</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

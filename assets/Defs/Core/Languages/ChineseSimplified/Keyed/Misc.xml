@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Autosaving -->
+  <Autosaving>自动保存中...</Autosaving>
+  <!-- EN: The three of you awake in your cryptosleep sarcophagi to the sound of sirens and ripping metal. You barely get to the escape pods before the ship is torn apart.\n\nSome time later, you land on this unknown rimworld.\n\nAs pieces of the shredded starship fall around you, you start making plans to survive. -->
+  <GameStartDialog>你们三人在刺耳的警报声与金属碎裂声中从低温休眠舱内醒来，然后勉强在飞船四分五裂前钻进了逃生舱。\n\n随后不久，你们降落到了这个充满未知的边缘世界上。\n\n伴随飞船残骸不断坠落在身边，你们开始制订一份生存计划。</GameStartDialog>
+  <!-- EN: Colony -->
+  <Colony>殖民地</Colony>
+  <!-- EN: You can only change language from the options screen on the main menu. -->
+  <ChangeLanguageFromMainMenu>你只能在主菜单的设置界面内更改游戏语言。</ChangeLanguageFromMainMenu>
+  <!-- EN: and -->
+  <AndLower>和</AndLower>
+  <!-- EN: disabled -->
+  <DisabledLower>禁用</DisabledLower>
+
+  <!-- EN: Version {0} -->
+  <VersionIndicator>版本：{0}</VersionIndicator>
+  <!-- EN: Game version -->
+  <GameVersionIndicator>游戏版本</GameVersionIndicator>
+  <!-- EN: development build -->
+  <DevelopmentBuildLower>开发版</DevelopmentBuildLower>
+  <!-- EN: Compiled {0} -->
+  <CompiledOn>编译于 {0}</CompiledOn>
+  <!-- EN: Logged into Steam as {0} -->
+  <LoggedIntoSteamAs>已登录Steam（用户名：{0}）</LoggedIntoSteamAs>
+  
+  <!-- ToCommaList() -->
+  <!-- EN: {0} and {1} -->
+  <ToCommaListAnd>{0}和{1}</ToCommaListAnd>
+  <!-- EN: {0} or {1} -->
+  <ToCommaListOr>{0}或{1}</ToCommaListOr>
+  
+  <!-- General-use words -->
+  <!-- EN: Yes -->
+  <Yes>是</Yes>
+  <!-- EN: No -->
+  <No>否</No>
+  <!-- EN: No {0} -->
+  <NoSubject>无{0}</NoSubject>
+  <!-- EN: new -->
+  <New>新的</New>
+  <!-- EN: Gender -->
+  <Gender>性别</Gender>
+  <!-- EN: Sex -->
+  <Sex>性别</Sex>
+  <!-- EN: min -->
+  <min>最小</min>
+  <!-- EN: max -->
+  <max>最大</max>
+  <!-- EN: chance -->
+  <chance>几率</chance>
+  <!-- EN: context -->
+  <context>对象</context>
+  <!-- EN: multiplier -->
+  <multiplier>乘数</multiplier>
+  <!-- EN: damage -->
+  <damage>伤害</damage>
+  <!-- EN: radius -->
+  <radius>半径</radius>
+  <!-- EN: expired -->
+  <expired>过期</expired>
+  <!-- EN: duration (days) -->
+  <durationDays>持续时间（天）</durationDays>
+  <!-- EN: interval (days) -->
+  <intervalDays>间隔时间（天）</intervalDays>
+  <!-- EN: delay (days) -->
+  <delayDays>延后（天）</delayDays>
+  <!-- EN: repeat -->
+  <repeat>重复</repeat>
+  <!-- EN: default -->
+  <default>默认</default>
+  <!-- EN: distance -->
+  <distance>距离</distance>
+  <!-- EN: YES -->
+  <YesUppercase>是</YesUppercase>
+  <!-- EN: NO -->
+  <NoUppercase>否</NoUppercase>
+  <!-- EN: kg -->
+  <kg>千克</kg>
+  <!-- EN: Day -->
+  <Day>天</Day>
+  <!-- EN: day -->
+  <day>天</day>
+  <!-- EN: Default -->
+  <Default>默认</Default>
+  <!-- EN: Average -->
+  <Average>平均</Average>
+  <!-- EN: Cause -->
+  <Cause>原因</Cause>
+  <!-- EN: etc -->
+  <Etc>等等</Etc>
+  <!-- EN: ${0} -->
+  <MoneyFormat>{0} 银</MoneyFormat>
+  <!-- EN: Factors -->
+  <Factors>乘数</Factors>
+  <!-- EN: Uses -->
+  <Uses>使用</Uses>
+  <!-- EN: Translation -->
+  <Translation>翻译</Translation>
+  <!-- EN: min(days) -->
+  <minDays>最少（天）</minDays>
+  <!-- EN: max(days) -->
+  <maxDays>最大（天）</maxDays>
+  <!-- EN: Processing -->
+  <Processing>加工</Processing>
+  <!-- EN: Inspect -->
+  <Inspect>检查</Inspect>
+  <!-- EN: Edit -->
+  <Edit>编辑</Edit>
+
+  <!-- Content generation-->
+  
+  <!-- EN: {0} meat -->
+  <MeatLabel>{0}肉</MeatLabel>
+  <!-- EN: Raw butchered flesh. Can be cooked into meals, or eaten raw. -->
+  <MeatDesc>新鲜屠宰的生肉，可进一步烹饪为菜肴或生吃。</MeatDesc>
+  <!-- EN: Raw butchered flesh. If necessary, can be cooked into meals, or even eaten raw. Extremely unappetizing. -->
+  <MeatInsectDesc>新鲜屠宰的生肉。如果需要的话，可进一步烹饪为菜肴，甚至生吃。极度难吃。</MeatInsectDesc>
+  <!-- EN: Raw butchered flesh. Can be cooked into meals or eaten raw, although most humans dislike the idea. -->
+  <MeatHumanDesc>新鲜屠宰的生肉。可进一步烹饪为菜肴或生吃，尽管大部分人类会反感这个想法。</MeatHumanDesc>
+
+  <!-- EN: techprint ({PROJECT_label}) -->
+  <TechprintLabel>科研蓝图（{PROJECT_label}）</TechprintLabel>
+  <!-- EN: This is a techprint for the research project '{PROJECT_label}'.
+\nThe physical form of techprints can range from scraps of paper with diagrams, all the way to advanced self-contained teaching machines. Regardless of form, they play the same role. They give your researchers the confidence that an idea is possible, and a rough idea of the designs used in more established societies.
+\nYour researchers need the foundational knowledge offered by techprints to know where to start on a given technology. Only after enough techprints have been applied can your researchers work out the fine details of how to make use of the technology in your particular situation.
+\nApplying techprints to a satisfied project fulfills half the remaining research progress. In addition, researchers always gain a boost to their intellectual skills when applying techprints, even on already-completed technologies. -->
+  <TechprintDesc>这是关于研究项目“{PROJECT_label}”的科研蓝图。\n\n科研蓝图的物理状态可以是从画有图样的碎纸片到先进的独立教学设备中的任意形式。不管形式如何，它们都扮演着相同的角色。它们能给你的研究员们更多的启发，关于一个有可行性的方案或者一个关于更先进设计的粗略想法。\n\n你的研究员们需要有足够多的基础知识才能理解科研蓝图给定的科技要从何开始。只有在应用了足够多的科研蓝图之后，你的研究员们才能找出在特定情况下要如何细致地使用这项科技。\n\n在相对应的研究项目上使用科研蓝图能够完成项目剩余进度的一半。此外，即使这个项目已经完成，研究员们也能够通过科研蓝图来增进智识技能。</TechprintDesc>
+  <!-- EN: Unlocks -->
+  <Unlocks>解锁</Unlocks>
+
+  <!-- EN: {0} corpse -->
+  <CorpseLabel>{0}尸体</CorpseLabel>
+  <!-- EN: Dead body of a {0}. -->
+  <CorpseDesc>{0}的尸体。</CorpseDesc>
+  <!-- EN: {1_label} (dead) -->
+  <DeadLabel>{1_label}（死亡）</DeadLabel>
+
+  <!-- EN: rough {0} -->
+  <RoughStoneTerrainLabel>粗糙的{0}</RoughStoneTerrainLabel>
+  <!-- EN: Rough, natural {0} ground. -->
+  <RoughStoneTerrainDesc>粗糙的天然{0}地面。</RoughStoneTerrainDesc>
+  <!-- EN: rough-hewn {0} -->
+  <RoughHewnStoneTerrainLabel>粗糙打磨过的{0}</RoughHewnStoneTerrainLabel>
+  <!-- EN: Roughly cut natural {0} floor. -->
+  <RoughHewnStoneTerrainDesc>粗糙打磨过的天然{0}地面。</RoughHewnStoneTerrainDesc>
+  <!-- EN: smooth {0} -->
+  <SmoothStoneTerrainLabel>打磨过的{0}</SmoothStoneTerrainLabel>
+  <!-- EN: Smoothed natural {0} floor. -->
+  <SmoothStoneTerrainDesc>打磨过的天然{0}地面。</SmoothStoneTerrainDesc>
+
+  <!-- EN:  (blueprint) -->
+  <BlueprintLabelExtra>（蓝图）</BlueprintLabelExtra>
+  <!-- EN:  (building) -->
+  <FrameLabelExtra>（建造中）</FrameLabelExtra>
+
+  <!-- EN: Unaffiliated -->
+  <FactionUnaffiliated>无关联</FactionUnaffiliated>
+
+  <!-- EN: Continue anyway? -->
+  <StillWishContinue>无论如何也要继续？</StillWishContinue>
+  
+  <!-- EN: ba,bah,boo,buh,ga,gah,goo,nyah,na,nah,noo,woo,wah,wuh,ma,mah -->
+  <BabyTalk>ba,bah,boo,buh,ga,gah,goo,nyah,na,nah,noo,woo,wah,wuh,ma,mah</BabyTalk>
+
+  <!-- For things made of stuff, e.g. "Stone bed" -->
+  <!-- 0 is the stuffAdjective property under stuffProps and 1 is the label -->
+  <!-- EN: {0} {1} -->
+  <ThingMadeOfStuffLabel>{0}{1}</ThingMadeOfStuffLabel>
+
+  <!-- EN: {PAWN_labelShort}'s {1} -->
+  <SomeonesRoom>{PAWN_labelShort}的{1}</SomeonesRoom>
+  <!-- EN: {PAWN1_labelShort} and {PAWN2_labelShort}'s {2} -->
+  <CouplesRoom>{PAWN1_labelShort}和{PAWN2_labelShort}的{2}</CouplesRoom>
+  
+  <!-- EN: Important for this type of room. -->
+  <StatRelatesToCurrentRoom>对这类房间来说很重要。</StatRelatesToCurrentRoom>
+  
+  <!-- EN: {COUNT} {RESOURCE_label} underground here. -->
+  <DeepResourceRemaining>{COUNT}x{RESOURCE_label}</DeepResourceRemaining>
+  
+  <!-- EN: (various) -->
+  <VariousLabel>（多种）</VariousLabel>
+
+  <!-- History events -->
+  <!-- EN: Colonist died -->
+  <ColonistDied>殖民者死亡</ColonistDied>
+  
+  <!-- Rotation -->
+  <!-- EN: North -->
+  <North>北</North>
+  <!-- EN: South -->
+  <South>南</South>
+  <!-- EN: West -->
+  <West>西</West>
+  <!-- EN: East -->
+  <East>东</East>
+
+  <!-- EN: applying techprint ({0}) -->
+  <ApplyingTechprint>正在应用科研蓝图（{0}）</ApplyingTechprint>
+
+  <!-- Apparel Looks -->
+  <!-- EN: variant of -->
+  <VariantOf>原型</VariantOf>
+  
+  <!-- Familial relationships -->
+  <!-- EN: born to {0} -->
+  <BornOfParents>由{0}所生</BornOfParents>
+  <!-- EN: unknown parents -->
+  <ParentsUnknown>未知父母</ParentsUnknown>
+  
+  <!-- Legal status -->
+  <!-- EN: colonist -->
+  <Colonist>殖民者</Colonist>
+
+</LanguageData>

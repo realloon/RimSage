@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>LookChangeDesired</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_LookChangeDesired</workerClass>
+    <stages>
+      <li>
+        <label>look change desired</label>
+        <description>The way I look doesn't match who I am today. I want to change it.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MasochistWearingCollar</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_MasochistWearingCollar</workerClass>
+    <requiredTraits>
+      <li>Masochist</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>masochist collared</label>
+        <description>Such restrictive discomfort... Delightful.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MasochistWearingBodyStrap</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_MasochistWearingBodyStrap</workerClass>
+    <requiredTraits>
+      <li>Masochist</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>masochist body strapped</label>
+        <description>The straps press in and calm my soul.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>WearingColor_Favorite</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_WearingColor_Favorite</workerClass>
+    <stages>
+      <li>
+        <label>wearing favorite color</label>
+        <description>I just love this color.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>WearingColor_Ideo</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_WearingColor_Ideo</workerClass>
+    <stages>
+      <li>
+        <label>wearing ideoligion color</label>
+        <description>My apparel coloring is properly expressing my beliefs.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

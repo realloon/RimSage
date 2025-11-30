@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ghoul -->
+  <Ghoul.label>食尸鬼</Ghoul.label>
+  
+  <!-- EN: gorehulk -->
+  <ShamblerGorehulk.label>血棘巨人</ShamblerGorehulk.label>
+  
+  <!-- EN: shambler soldier -->
+  <ShamblerSoldier.label>蹒跚士兵</ShamblerSoldier.label>
+  
+  <!-- EN: shambler swarmer -->
+  <ShamblerSwarmer.label>蹒跚怪</ShamblerSwarmer.label>
+  
+</LanguageData>

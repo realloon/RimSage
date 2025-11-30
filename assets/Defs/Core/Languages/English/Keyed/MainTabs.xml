@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Work tab -->
+  <ManualPriorities>Manual priorities</ManualPriorities>
+  <HigherPriority>higher priority</HigherPriority>
+  <LowerPriority>lower priority</LowerPriority>
+  <RelevantSkills>Relevant skills: {0}\nAverage of relevant skills: {1}</RelevantSkills>
+  <ClickToJumpTo>Click to jump to:</ClickToJumpTo>
+  <CannotDoThisWork>{1_labelShort} cannot do this kind of work.</CannotDoThisWork>
+  <NoneBrackets>(none)</NoneBrackets>
+  <IncapableOfWorkTypeBecauseOfCapacities>This colonist is not able to do any work of this type because of their health condition.</IncapableOfWorkTypeBecauseOfCapacities>
+  <EmergencyWorkMarker>E</EmergencyWorkMarker>
+  <SelectedWorkTypeWithVeryBadSkill >Warning: The average of relevant skills is very low.</SelectedWorkTypeWithVeryBadSkill>
+  <PriorityOneDoneFirst>Priority 1 is done first. Priority 4 is done last.</PriorityOneDoneFirst>
+  <Priority0>Will not do</Priority0>
+  <Priority1>Top priority</Priority1>
+  <Priority2>High priority</Priority2>
+  <Priority3>Normal priority</Priority3>
+  <Priority4>Low priority</Priority4>
+  <PawnFactionInfo>{0}\n\nThe faction {1_nameDef} currently belongs to.\n\nClick to view faction.</PawnFactionInfo>
+  <WorkDisabledByBackstory>Disabled by {0} backstory</WorkDisabledByBackstory>
+  <WorkDisabledByTrait>Disabled by {0} trait</WorkDisabledByTrait>
+  <WorkDisabledByQuest>Disabled by quest '{0}'</WorkDisabledByQuest>
+  
+  <!-- Assign tab -->
+  <Unchangeable>Unchangeable</Unchangeable>
+  <ClearForcedApparel>Clr. forced</ClearForcedApparel>
+  <ApparelForcedLower>forced</ApparelForcedLower>
+  <ApparelLockedLower>locked</ApparelLockedLower>
+  <ForcedApparel>Forced apparel</ForcedApparel>
+  <AssignTabEdit>Edit</AssignTabEdit>
+  <ManageApparelPolicies>Manage apparel policies</ManageApparelPolicies>
+  <ManageDrugPolicies>Manage drug policies</ManageDrugPolicies>
+  <ManageFoodPolicies>Manage food policies</ManageFoodPolicies>
+  <ManageReadingPolicies>Manage reading policies</ManageReadingPolicies>
+  
+  <!-- Restrictions tab -->
+  <Copy>Copy</Copy>
+  <Paste>Paste</Paste>
+  <AllowedArea>Allowed area</AllowedArea>
+  
+  <!-- Animals tab -->
+  <Master>Master</Master>
+  <PregnantIconDesc>Pregnant ({0} / {1})</PregnantIconDesc>
+  <BondedTo>Bonded to</BondedTo>
+  <SterilizeAnimal>Sterilize animal.</SterilizeAnimal>
+  <AnimalAlreadySterile>Animal sterile.</AnimalAlreadySterile>
+  
+  <!-- Wildlife tab -->
+  <IsPredator>This creature is a predator. When hungry, it will hunt smaller creatures - possibly including people.</IsPredator>
+  <IsInMentalState>This creature is currently in mental state: {0}</IsInMentalState>
+  
+  <!-- Factions tab -->
+  <Hostile>Hostile</Hostile>
+  <Ally>Ally</Ally>
+  <HostileLower>hostile</HostileLower>
+  <AllyLower>ally</AllyLower>
+  <DefeatedLower>defeated</DefeatedLower>
+  <HostileTo>Enemy of {0}</HostileTo>
+  <EnemyOf>Enemy of: </EnemyOf>
+  <RecentEvents>Recent events</RecentEvents>
+  <OngoingEvents>Ongoing events</OngoingEvents>
+  <CurrentGoodwillTip_PermanentEnemy>This faction is permanently hostile. They will raid your settlements and caravans. Relations with them will never improve for any reason.</CurrentGoodwillTip_PermanentEnemy>
+  <CurrentGoodwillTip_Ally>This faction is allied. They will send fighters to help you when they can. If relations fall below {0}, they will become neutral.</CurrentGoodwillTip_Ally>
+  <CurrentGoodwillTip_Neutral>This faction is neutral. They will trade and talk with you freely. If relations fall below {0}, they will become hostile. If relations rise above {1}, they will become allied and start actively working to help you.</CurrentGoodwillTip_Neutral>
+  <CurrentGoodwillTip_Hostile>This faction is hostile. They will raid your settlements and caravans. If relations rise above {0}, they will become neutral.</CurrentGoodwillTip_Hostile>
+
+  <!-- Social tab -->
+  <Friend>Friend</Friend>
+  <Rival>Rival</Rival>
+  <Acquaintance>Acquaintance</Acquaintance>
+  
+  <!-- History tab - subtabs -->
+  <Graph>Graph</Graph>
+  <Messages>Messages</Messages>
+  <Statistics>Statistics</Statistics>
+  
+  <!-- History tab - Graphs -->
+  <SelectGraph>Select graph</SelectGraph>
+  <Last30Days>Last 30 days</Last30Days>
+  <Last100Days>Last 100 days</Last100Days>
+  <Last300Days>Last 300 days</Last300Days>
+  <AllDays>All</AllDays>
+  <Value>Value</Value>
+  <External>External</External>
+
+  <!-- History tab - Messages -->
+  <ShowLetters>Show letters</ShowLetters>
+  <ShowMessages>Show messages</ShowMessages>
+  <PinArchivableTip>Pin or unpin this message.\n\nThe oldest unpinned messages will be removed automatically from the list after reaching the limit of {0} messages.</PinArchivableTip>
+  <NoMessages>no messages</NoMessages>
+
+  <!-- History tab - Statistics -->
+  <Playtime>Play time</Playtime>
+  <Storyteller>Storyteller</Storyteller>
+  <ThisMapColonyWealthTotal>Colony wealth (this map)</ThisMapColonyWealthTotal>
+  <ThisMapColonyWealthItems>Colony wealth (items) (this map)</ThisMapColonyWealthItems>
+  <ThisMapColonyWealthBuildings>Colony wealth (buildings) (this map)</ThisMapColonyWealthBuildings>
+  <ThisMapColonyWealthColonistsAndTameAnimals>Colony wealth (people and animals) (this map)</ThisMapColonyWealthColonistsAndTameAnimals>
+  <NumThreatBigs>Major threats</NumThreatBigs>
+  <NumEnemyRaids>Enemy raids</NumEnemyRaids>
+  <ThisMapDamageTaken>Damage taken (this map)</ThisMapDamageTaken>
+  <ColonistsKilled>Colonists killed</ColonistsKilled>
+  <ColonistsLaunched>Colonists launched into space</ColonistsLaunched>
+
+  <!-- Research tab -->
+  <Research>Research</Research>
+  <Study>Study</Study>
+  <StudyThing>Study {0}</StudyThing>
+  <Unresearched>Unresearched</Unresearched>
+  <Finished>Finished</Finished>
+  <InProgress>In Progress</InProgress>
+  <Locked>Locked</Locked>
+  <Prerequisites>Prerequisites</Prerequisites>
+  <ResearchTechprintRequirement>Techprints required {0} / {1}</ResearchTechprintRequirement>
+  <InsufficientTechprintsApplied>Insufficient techprints applied ({0} / {1})</InsufficientTechprintsApplied>
+  <PrerequisitesNotCompleted>Prerequisite(s) not completed</PrerequisitesNotCompleted>
+  <NoProjectSelected>No project active.</NoProjectSelected>
+  <ActiveProjectPlural>Active projects</ActiveProjectPlural>
+  <ActiveProject>Active project</ActiveProject>
+  <StopResearch>Stop research</StopResearch>
+  <MissingRequiredResearchFacilities>Missing required research facilities</MissingRequiredResearchFacilities>
+  <RequiredResearchBench>Required research bench</RequiredResearchBench>
+  <RequiredResearchBenchFacilities>Required research bench facilities</RequiredResearchBenchFacilities>
+  <ResearchCostComparison>Project base cost {0} becomes {1} for you because of your tech level.</ResearchCostComparison>
+  <ResearchTechprintsFromFactions>Techprints are available from these factions via trade and quests:</ResearchTechprintsFromFactions>
+  <TechLevelTooLow>Your faction tech level is {0}, but this project's tech level is {1}. Research speed will be multiplied by {2}.</TechLevelTooLow>
+  <UnlockedWith>Unlocked with</UnlockedWith>
+  <UnknownResearchDescription>Research one or more of this project's prerequisites to discover it.</UnknownResearchDescription>
+  <UnknownResearch>unknown</UnknownResearch>
+
+  <!-- Factions tab -->
+  <FactionsTab>Factions</FactionsTab>
+  <NoFactions>No known factions</NoFactions>
+
+  <!-- Quests tab -->
+  <AvailableQuests>Available</AvailableQuests>
+  <ActiveQuests>Active</ActiveQuests>
+  <HistoricalQuests>Historical</HistoricalQuests>
+  <NoQuestSelected>no quest selected</NoQuestSelected>
+  <AppearedDaysAgo>Appeared {0} days ago</AppearedDaysAgo>
+  <AppearedOn>Appeared on {0}</AppearedOn>
+  <AcceptedAgo>Accepted {0} ago</AcceptedAgo>
+  <AcceptedOn>Accepted on {0}</AcceptedOn>
+  <AcceptedAgoBy>Accepted {0} ago by {1}</AcceptedAgoBy>
+  <AcceptedOnBy>Accepted on {0} by {1}</AcceptedOnBy>
+  <QuestExpiresIn>Expires in {0}</QuestExpiresIn>
+  <QuestExpiresOn>Expires on {0}</QuestExpiresOn>
+  <QuestAveragePawnMood>Average guest mood (previous {0}): {1}</QuestAveragePawnMood>
+  <QuestAveragePawnMoodTargets>The average mood of {0} over the previous {1}</QuestAveragePawnMoodTargets>
+  <ShuttleArrivesIn>Shuttle arrives in {0}</ShuttleArrivesIn>
+  <ShuttleArrivesOn>Shuttle arrives on {0}</ShuttleArrivesOn>
+  <ShuttleDepartsIn>Shuttle departs in {0}</ShuttleDepartsIn>
+  <ShuttleDepartsOn>Shuttle departs on {0}</ShuttleDepartsOn>
+  <GuestsDepartsIn>Guests depart in {0}</GuestsDepartsIn>
+  <GuestsDepartsOn>Guests depart on {0}</GuestsDepartsOn>
+  <QuestFinishedAgo>Finished {0} ago</QuestFinishedAgo>
+  <AcceptQuest>Accept quest</AcceptQuest>
+  <AcceptWith>Accept with {0_labelShort}</AcceptWith>
+  <AcceptQuestFor>Accept for</AcceptQuestFor>
+  <AcceptQuestForTip>Click to accept this quest for this reward.</AcceptQuestForTip>
+  <QuestOutcomeInfo_OfferExpired>The offer expired.</QuestOutcomeInfo_OfferExpired>
+  <QuestOutcomeInfo_UnknownOrSuccess>You completed this quest.</QuestOutcomeInfo_UnknownOrSuccess>
+  <QuestOutcomeInfo_Failed>You failed this quest.</QuestOutcomeInfo_Failed>
+  <QuestOutcomeInfo_Invalid>This quest became invalid before it was accepted.</QuestOutcomeInfo_Invalid>
+  <JumpToTargetCustom>Jump to {0}</JumpToTargetCustom>
+  <SelectHiveTargets>Select hives</SelectHiveTargets>
+  <QuestChallengeRatingTip>Challenge rating. This is a general rating for how difficult the quest will be relative to your current strength. More challenging quests give greater rewards.\n\n1: Normal\n2: Hard\n3: Extreme\n4: Ultimate</QuestChallengeRatingTip>
+  <QuestAcceptanceRequirementsDescription>To accept this quest, you need</QuestAcceptanceRequirementsDescription>
+  <QuestBedroomRequirementsUnsatisfied>free bedrooms that satisfy the title requirements of</QuestBedroomRequirementsUnsatisfied>
+  <QuestBedroomRequirementsUnsatisfiedSingle>a free bedroom that satisfies the title requirements of</QuestBedroomRequirementsUnsatisfiedSingle>
+  <QuestThroneRoomRequirementsUnsatisfied>a throneroom that satisfies the requirements of {PAWN_definite}'s {TITLE} title</QuestThroneRoomRequirementsUnsatisfied>
+  <QuestNoThroneRoom>assign a throne for {PAWN_definite}</QuestNoThroneRoom>
+  <QuestNoColonistWithTitle>a colonist with the title of {0}</QuestNoColonistWithTitle>
+  <QuestPawnNotOnColonyMap>{PAWN_definite} to be in your home colony</QuestPawnNotOnColonyMap>
+  <QuestRequiresNoDangerOnMap>the map clear of enemies of the bestower's faction</QuestRequiresNoDangerOnMap>
+  <QuestRequiresResearch>that {PROJECT_label} has been researched.</QuestRequiresResearch>
+  <QuestCanNotStartUntilBestowingCeremonyFinished>to finish the ongoing bestowing ceremony quest</QuestCanNotStartUntilBestowingCeremonyFinished>
+  <ChooseRewards>Reward preferences</ChooseRewards>
+  <ChooseRewardsDesc>Tell other factions what kinds of rewards you want in future quests. This doesn't affect quests that were already offered.</ChooseRewardsDesc>
+  <AcceptRoyalFavor>Accept {FACTION_royalFavorLabel}</AcceptRoyalFavor>
+  <AcceptRoyalFavorDesc>Whether you wish to be rewarded with {FACTION_royalFavorLabel} from {FACTION_name}.\n\nIf this is disabled, {FACTION_name} will offer other types of rewards instead.\n\nThis setting only affects newly-arriving quests.</AcceptRoyalFavorDesc>
+  <AcceptGoodwill>Accept goodwill</AcceptGoodwill>
+  <AcceptGoodwillDesc>Whether you wish to be rewarded via improved faction relations with {FACTION_name}.\n\nIf this is disabled, {FACTION_name} will offer other types of rewards instead.\n\nThis setting only affects newly-generated quests.</AcceptGoodwillDesc>
+  <RoyalFavorOn>You are currently opting in to receive {FACTION_royalFavorLabel}.</RoyalFavorOn>
+  <RoyalFavorOff>You are currently opting out of receiving {FACTION_royalFavorLabel}.</RoyalFavorOff>
+  <GoodwillTip>Your goodwill with {0_name} will improve by {1}.\n\nCurrent goodwill: {4} ({5}).\n\nGoodwill measures the general relationship between factions. If it falls below {2}, the faction becomes hostile and will raid your settlements and caravans. If it rises above {3}, the faction will become your ally and send fighters to help you when they can. Otherwise, the faction remains neutral and will trade and talk with you freely.</GoodwillTip>
+  <PawnQuestReward>{0_labelShort} joins</PawnQuestReward>
+  <QuestBetrayalOffer>Betrayal offer: {0} targets remain</QuestBetrayalOffer>
+  <QuestBetrayalOfferTip>{0} will grant you a reward for killing all members of the {1}.</QuestBetrayalOfferTip>
+  <QuestRequiredPlayerWealth>a colony wealth of at least {0}</QuestRequiredPlayerWealth>
+  <QuestAlliedTo>alliance with {0}</QuestAlliedTo>
+  <QuestHostileTo>hostile to {0}</QuestHostileTo>
+  <QuestNeutralTo>neutral to {0}</QuestNeutralTo>
+  <QuestRequiredThingStudied>studied {0_labelShort}</QuestRequiredThingStudied>
+  <QuestRequiredLayer>cannot accept {GERUND} {LAYER}</QuestRequiredLayer>
+  <QuestNotSpace>cannot accept in space</QuestNotSpace>
+
+  <!-- Health tab -->
+  <CreatesNeed>Creates need</CreatesNeed>
+  <ChangeDefaults>Change defaults...</ChangeDefaults>
+
+  <!-- Misc -->
+  <ClickToEdit>Click to edit</ClickToEdit>
+  <AssignButton>Assign</AssignButton>
+  <UnassignButton>Unassign</UnassignButton>
+  
+  <!-- Books -->
+  <BookMentalBreakChance>Mental break chance</BookMentalBreakChance>
+  
+  <BookJoyFactor>Recreation gain multiplier</BookJoyFactor>
+  
+</LanguageData>

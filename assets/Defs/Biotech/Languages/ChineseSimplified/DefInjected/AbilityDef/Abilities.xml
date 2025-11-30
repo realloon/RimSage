@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: acid spray -->
+  <AcidSpray.label>酸液喷吐</AcidSpray.label>
+  <!-- EN: Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them. -->
+  <AcidSpray.description>从颈部的腺体喷出粘稠的酸性物质，通过嘴巴向外喷出。酸性物质附着的目标会被灼烧。</AcidSpray.description>
+  
+  <!-- EN: animal warcall -->
+  <AnimalWarcall.label>唤兽战吼</AnimalWarcall.label>
+  <!-- EN: With a powerful bellow and psychic connection, call an animal to fight your enemies for a few hours. -->
+  <AnimalWarcall.description>通过强大的吼声发起心灵链接，召唤一只动物为你而战。</AnimalWarcall.description>
+  <!-- EN: warcall -->
+  <AnimalWarcall.verbProperties.label>唤兽战吼</AnimalWarcall.verbProperties.label>
+  <!-- EN: Choose an animal to call -->
+  <AnimalWarcall.verbProperties.mouseTargetingText>选择要召唤的动物</AnimalWarcall.verbProperties.mouseTargetingText>
+  
+  <!-- EN: bloodfeed -->
+  <Bloodfeed.label>汲血</Bloodfeed.label>
+  <!-- EN: Bite the target and extract hemogen directly from their blood. The target will lose blood and will be horrified by the interaction, but will be otherwise unharmed. A fast-acting coagulant will seal the wound to prevent bleeding.\n\nCan only target non-hemogenic humans. Hemogen gain is affected by the target's body size. -->
+  <Bloodfeed.description>啃咬目标，从血液里获取血原质。目标会失去血液并对此感到惊恐，除此之外不会受到其他伤害。同时会分泌一种能够防止伤口出血的速效凝血剂。\n\n只能以非渴血症人类为目标。获取到的血原质受目标体型影响。</Bloodfeed.description>
+  
+  <!-- EN: coagulate -->
+  <Coagulate.label>伤口凝结</Coagulate.label>
+  <!-- EN: Use special glands in the wrists to quickly tend someone's wounds. -->
+  <Coagulate.description>使用手腕上的特殊腺体快速包扎伤者的伤口。</Coagulate.description>
+  
+  <!-- EN: fire burst -->
+  <FireBurst.label>火焰喷发</FireBurst.label>
+  <!-- EN: Emit a burst of burning fuel in all directions to form puddles of ignited liquid on the ground. -->
+  <FireBurst.description>向附近喷发易燃液体，在地面形成易燃区域。</FireBurst.description>
+  
+  <!-- EN: firefoam pop -->
+  <FirefoampopMech.label>阻燃泡沫</FirefoampopMech.label>
+  <!-- EN: Release a fire-retardant foam in a circular area. -->
+  <FirefoampopMech.description>向附近释放可以灭火的阻燃泡沫。</FirefoampopMech.description>
+  
+  <!-- EN: fire spew -->
+  <FireSpew.label>火焰吐息</FireSpew.label>
+  <!-- EN: Spit a stream of sticky, flammable bile from the mouth. The bile can ignite anything or anyone it hits, and also form flaming pools on the ground.\n\nThe bile is generated and stored by an organ in the neck, along with a separate pouch of hypergolic reactant for ignition. -->
+  <FireSpew.description>从嘴巴吐出粘稠的易燃液体。易燃液体可让任何被附着的物体燃烧，同时会在地上形成燃烧区域。\n\n易燃液体储存于颈部的特殊器官，以及一个用于点燃的自燃囊袋。</FireSpew.description>
+  
+  <!-- EN: foam spray -->
+  <FoamSpray.label>泡沫喷吐</FoamSpray.label>
+  <!-- EN: Spray thick fire-retardant foam from glands in the neck up through the mouth. The foam will cover a small area and extinguish any fire it touches. -->
+  <FoamSpray.description>从颈部通过嘴巴向外喷射厚厚的阻燃泡沫。泡沫会覆盖一个区域，区域内所有被接触到的火焰都会熄灭。</FoamSpray.description>
+  
+  <!-- EN: longjump -->
+  <Longjump.label>长距跳跃</Longjump.label>
+  <!-- EN: Jump to a distant location using super-strong hemogen-powered legs. -->
+  <Longjump.description>使用血原质驱动的大腿跳跃到远处。</Longjump.description>
+  <!-- EN: jump -->
+  <Longjump.verbProperties.label>跳跃</Longjump.verbProperties.label>
+  
+  <!-- EN: mech longjump -->
+  <LongjumpMech.label>机械长跃</LongjumpMech.label>
+  <!-- EN: Jump to a distant location using special ultrafast mechanoid muscles. -->
+  <LongjumpMech.description>使用特殊的超快速机械结构跳跃到远处。</LongjumpMech.description>
+  <!-- EN: jump -->
+  <LongjumpMech.verbProperties.label>跳跃</LongjumpMech.verbProperties.label>
+  
+  <!-- EN: jump launcher -->
+  <LongjumpMechLauncher.label>跳跃弹射器</LongjumpMechLauncher.label>
+  <!-- EN: Jump to a distant location using a built-in jump launcher. -->
+  <LongjumpMechLauncher.description>使用跳跃弹射器跳跃到远处。</LongjumpMechLauncher.description>
+  <!-- EN: jump -->
+  <LongjumpMechLauncher.verbProperties.label>跳跃</LongjumpMechLauncher.verbProperties.label>
+  
+  <!-- EN: piercing spine -->
+  <PiercingSpine.label>脊刺</PiercingSpine.label>
+  <!-- EN: Use a hemogenic chemical reaction to launch a bony spine at the target. The spine exits through the skin from an opening between the collarbones. Given the method of launch, it is surprisingly easy to aim. -->
+  <PiercingSpine.description>向目标发射用血原质反应生成的脊刺。脊刺从胸部的筒形开口处射出。由于发射方式，瞄准异常简单。</PiercingSpine.description>
+  
+  <!-- EN: implant genes -->
+  <ReimplantXenogerm.label>植入基因</ReimplantXenogerm.label>
+  <!-- EN: Implant this person's xenogenes into a willing subject using a special injector organ. If this person's genes are currently regrowing, they will implant their xenogerm and die in the process.\n\nWhen implanted, a xenogerm will overwrite the target's xenogenes. Germline genes will be unaffected. -->
+  <ReimplantXenogerm.description>使用特殊的注射器官，将含有自身异种基因副本的胚芽植入目标体内。如果植入者的异种基因仍处于重构状态，将会导致其死亡。\n\n植入后，异种胚芽的基因会覆盖被植入者的异种基因，而系谱基因不受影响。</ReimplantXenogerm.description>
+  
+  <!-- EN: resurrect -->
+  <Resurrect.label>复活</Resurrect.label>
+  <!-- EN: Use archites in the bloodstream to infuse a corpse's body with new life, repairing degenerated cell structures and kickstarting vital functions. The older and worse-preserved the corpse is, the more likely it is that they will come back with memory loss or health conditions. This ability seems to exhaust the archites somehow, so it can only be used very rarely. -->
+  <Resurrect.description>将血液中的纳米微械注入尸体使其得新生命，修复退化的细胞结构并让器官快速恢复运转。死亡时间越久、尸体保存越差，复活后就越有可能失忆和带有健康问题。这种能力似乎会消耗纳米微械，因此能使用的次数很少。</Resurrect.description>
+  
+  <!-- EN: resurrect mech -->
+  <ResurrectionMech.label>机械复活</ResurrectionMech.label>
+  <!-- EN: Resurrect a recently-killed mechanoid by externally supercharging its self-repair processes. The mechanoid will come back with some but not all of its wounds healed. -->
+  <ResurrectionMech.description>超载附近刚死去不久的机械族的自我修复系统，使它们带着部分伤势复活。</ResurrectionMech.description>
+  
+  <!-- EN: mech smokepop -->
+  <SmokepopMech.label>机械烟雾</SmokepopMech.label>
+  <!-- EN: Release compressed smoke from concealed vents. Smoke reduces the accuracy of any shot fired through it, and prevents turrets from locking on entirely. -->
+  <SmokepopMech.description>从隐蔽的气孔中释放经过压缩的烟雾，能够干扰远程武器的瞄准，并防止处于烟雾内的单位被炮塔锁定。</SmokepopMech.description>
+  
+</LanguageData>

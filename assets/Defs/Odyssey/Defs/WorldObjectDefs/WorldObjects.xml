@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <WorldObjectDef>
+    <defName>Gravship</defName>
+    <label>gravship</label>
+    <description>A gravship in flight.</description>
+    <worldObjectClass>Gravship</worldObjectClass>
+    <texture>World/WorldObjects/Caravan</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>World/WorldObjects/Expanding/Gravship</expandingIconTexture>
+    <expandingIconPriority>60</expandingIconPriority>
+    <expandingIconDrawSize>1.35</expandingIconDrawSize>
+    <fullyExpandedInSpace>true</fullyExpandedInSpace>
+    <validLaunchTarget>false</validLaunchTarget>
+    <IncidentTargetTags>
+      <li>Gravship</li>
+    </IncidentTargetTags>
+  </WorldObjectDef>
+  
+  <WorldObjectDef Abstract="True" Name="SpaceBase">
+    <worldObjectClass>SpaceMapParent</worldObjectClass>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>60</expandingIconPriority>
+    <expandingIconColor>(255,255,255,255)</expandingIconColor> <!-- required -->
+    <expandingIconDrawSize>1.35</expandingIconDrawSize>
+    <fullyExpandedInSpace>true</fullyExpandedInSpace>
+    <canBePlayerHome>true</canBePlayerHome>
+    <mapGenerator>Space</mapGenerator>
+    <neverMultiSelect>true</neverMultiSelect>
+  </WorldObjectDef>
+
+  <WorldObjectDef Name="ClaimableSpace" ParentName="SpaceBase" Abstract="True">
+    <canBePlayerHome>true</canBePlayerHome>
+    <treatAsPlayerHome>true</treatAsPlayerHome>
+    <IncidentTargetTags>
+      <li>Map_PlayerHome</li>
+    </IncidentTargetTags>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="SpaceBase">
+    <defName>SpaceSettlement</defName>
+    <label>orbital settlement</label>
+    <description>An orbital platform controlled by another human faction. They won't appreciate visitors.\n\nThese platforms have long-range automatic weapon systems capable of destroying incoming ships. They can only safely be approached by a gravship with a signal jammer.</description>
+    <worldObjectClass>Settlement</worldObjectClass>
+    <canBePlayerHome>true</canBePlayerHome>
+    <expandingIconDrawSize>1.1</expandingIconDrawSize>
+    <overrideMapSize>(200,1,200)</overrideMapSize>
+    <mapGenerator>SettlementPlatform</mapGenerator>
+    <requiresSignalJammerToReach>true</requiresSignalJammerToReach>
+    <expandingIconTexture>World/WorldObjects/Expanding/SettlementPlatform</expandingIconTexture>
+    <expandingIconColor IsNull="True" />
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="SpaceBase">
+    <defName>DestroyedSpaceSettlement</defName>
+    <label>destroyed settlement</label>
+    <description>A destroyed settlement.</description>
+    <worldObjectClass>DestroyedSettlement</worldObjectClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/SettlementPlatform</expandingIconTexture>
+  </WorldObjectDef>
+  
+  <WorldObjectDef Name="SpaceSite" ParentName="Site">
+    <defName>SpaceSite</defName>
+    <label>space site</label> <!-- hidden -->
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>60</expandingIconPriority>
+    <expandingIconColor>(255,255,255,255)</expandingIconColor> <!-- required -->
+    <fullyExpandedInSpace>true</fullyExpandedInSpace>
+    <expandingIconDrawSize>1.35</expandingIconDrawSize>
+    <mapGenerator>Space</mapGenerator>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="SpaceSite">
+    <defName>ClaimableSpaceSite</defName>
+    <label>claimable space site</label> <!-- hidden -->
+    <canBePlayerHome>true</canBePlayerHome>
+    <treatAsPlayerHome>true</treatAsPlayerHome>
+    <IncidentTargetTags>
+      <li>Map_PlayerHome</li>
+    </IncidentTargetTags>
+  </WorldObjectDef>
+  
+  <WorldObjectDef ParentName="SpaceBase">
+    <defName>Space</defName>
+    <label>space</label> <!-- hidden -->
+    <canResizeToGravship>true</canResizeToGravship>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="ClaimableSpace">
+    <defName>AsteroidMiningSite</defName>
+    <worldObjectClass>ResourceAsteroidMapParent</worldObjectClass>
+    <label>asteroid mining site</label> <!-- hidden -->
+    <description>A vacstone asteroid that was towed into orbit around the planet as part of a mining operation long ago. This asteroid has only been partially mined.\n\nThis location can be reached using transport pods, shuttles, or a gravship.</description>
+    <expandingIconTexture>World/WorldObjects/Expanding/ResourceAsteroid</expandingIconTexture>
+    <expandingIconMaskTexture>World/WorldObjects/Expanding/ResourceAsteroid_m</expandingIconMaskTexture>
+    <expandingShader>CutoutComplexUI</expandingShader>
+    <overrideMapSize>(250,1,250)</overrideMapSize>
+    <mapGenerator>Asteroid</mapGenerator>
+  </WorldObjectDef>
+  
+  <WorldObjectDef Abstract="True" Name="GeneratedAsteroid" ParentName="ClaimableSpace">
+    <worldObjectClass>BasicAsteroidMapParent</worldObjectClass>
+    <label>basic asteroid</label> <!-- hidden -->
+    <description>A vacstone asteroid that was towed into orbit around the planet as part of a mining operation long ago. Most of the valuable resources have been depleted from this asteroid.\n\nThis location can be reached using transport pods, shuttles, or a gravship.</description>
+    <nameMaker>NamerWorldObject_AsteroidBasic</nameMaker>
+    <expandingIconTexture>World/WorldObjects/Expanding/AsteroidMine</expandingIconTexture>
+    <overrideMapSize>(250,1,250)</overrideMapSize>
+    <mapGenerator>AsteroidBasic</mapGenerator>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="GeneratedAsteroid">
+    <defName>OrbitalItemStash</defName>
+    <label>orbital item stash</label> <!-- hidden -->
+    <worldObjectClass>BasicAsteroidMapParent</worldObjectClass>
+    <nameMaker>NamerWorldObject_AsteroidBasic</nameMaker>
+    <expandingIconTexture>World/WorldObjects/Expanding/OrbitalItemStash</expandingIconTexture>
+    <mapGenerator>OrbitalItemStash</mapGenerator>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="GeneratedAsteroid">
+    <defName>AsteroidBasic</defName>
+    <label>basic asteroid</label> <!-- hidden -->
+    <nameMaker>NamerWorldObject_AsteroidBasic</nameMaker>
+    <mapGenerator>AsteroidBasic</mapGenerator>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="Site">
+    <defName>ClaimableSite</defName>
+    <label>claimable site</label> <!-- hidden -->
+    <canBePlayerHome>true</canBePlayerHome>
+    <treatAsPlayerHome>true</treatAsPlayerHome>
+    <mapGenerator>Base_Player</mapGenerator>
+    <IncidentTargetTags>
+      <li>Map_PlayerHome</li>
+    </IncidentTargetTags>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="SpaceSite">
+    <defName>Mechhive</defName>
+    <label>mechhive</label> <!-- hidden -->
+    <mapGenerator>Mechhive</mapGenerator>
+    <requiresSignalJammerToReach>true</requiresSignalJammerToReach>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="ShuttleWorldObjectBase">
+    <defName>PassengerShuttle</defName>
+    <label>passenger shuttle</label>
+    <description>A passenger shuttle in flight.</description>
+    <expandingIconTexture>World/WorldObjects/Expanding/PassengerShuttle</expandingIconTexture>
+    <expandingIconDrawSize>1</expandingIconDrawSize>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="StaticWorldObjectBase">
+    <defName>GravshipLaunch</defName>
+    <label>gravship launch</label>
+    <description>The launch site of a gravship.</description>
+    <texture>World/WorldObjects/Expanding/GravshipLaunchSite</texture>
+    <worldObjectClass>GravshipLaunch</worldObjectClass>
+    <canHaveMap>false</canHaveMap>
+  </WorldObjectDef>
+
+  <WorldObjectDef ParentName="StaticWorldObjectBase">
+    <defName>AbandonedLandmark</defName>
+    <label>abandoned landmark</label>
+    <description>An abandoned campsite at a landmark.</description>
+    <texture>World/WorldObjects/AbandonedCamp</texture>
+    <canHaveMap>false</canHaveMap>
+  </WorldObjectDef>
+
+</Defs>

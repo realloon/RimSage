@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LetterDef>
+    <defName>BundleLetter</defName>
+    <letterClass>BundleLetter</letterClass>
+    <color>(175, 176, 185)</color>
+  </LetterDef>
+
+</Defs>

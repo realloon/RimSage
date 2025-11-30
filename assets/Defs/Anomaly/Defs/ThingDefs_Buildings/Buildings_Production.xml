@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <!-- Bioferrite shaper -->
+  
+  <ThingDef ParentName="BenchBase">
+    <defName>BioferriteShaper</defName>
+    <label>bioferrite shaper</label>
+    <description>A work bench used to craft bioferrite products. This bench uses heat and electromagnetic stimulation to temporarily coax bioferrite into a pliable state, allowing a worker to shape it into complex shapes and combine it with other materials.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/BioferriteShaper/BioferriteShaper</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5,1.5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <altitudeLayer>Building</altitudeLayer>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+      <workTableRoomRole>Workshop</workTableRoomRole>
+      <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
+    </building>
+    <designationCategory>Anomaly</designationCategory>
+    <uiOrder>300</uiOrder>
+    <statBases>
+      <WorkToBuild>3000</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>0.75</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(3,1)</size>
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Bioferrite>40</Bioferrite>
+      <Steel>50</Steel>
+    </costList>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <researchPrerequisites>
+      <li>BioferriteShaping</li>
+    </researchPrerequisites>
+    <constructEffect>ConstructMetal</constructEffect>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <!-- Serum lab -->
+  
+  <ThingDef ParentName="BenchBase">
+    <defName>SerumCentrifuge</defName>
+    <label>serum lab</label>
+    <description>A workbench that uses scavenged archotechnology to create single-use injectable serums. Serums produce diverse and exotic effects through the use of exotic archotech mechanites.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/SerumCentrifuge/SerumCentrifuge</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <altitudeLayer>Building</altitudeLayer>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+      <workTableRoomRole>Laboratory</workTableRoomRole>
+      <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
+    </building>
+    <designationCategory>Anomaly</designationCategory>
+    <uiOrder>300</uiOrder>
+    <statBases>
+      <WorkToBuild>3000</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>0.75</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Shard>1</Shard>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Bioferrite>80</Bioferrite>
+      <Steel>100</Steel>
+    </costList>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>375</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <researchPrerequisites>
+      <li>SerumSynthesis</li>
+    </researchPrerequisites>
+    <constructEffect>ConstructMetal</constructEffect>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <!-- Bioferrite harvester -->
+  
+  <ThingDef ParentName="BuildingBase">
+    <thingClass>Building_BioferriteHarvester</thingClass>
+    <defName>BioferriteHarvester</defName>
+    <label>bioferrite harvester</label>
+    <description>When placed near a holding platform, this device draws biomass from the held entity and converts it to bioferrite. The harvester creates more bioferrite than manual extraction.\n\nLarger entities generally produce more bioferrite. However, for most creatures, the process causes extreme discomfort, making the entity harder to contain.\n\nEach holding platform can only support one harvester; however, each harvester can connect to multiple platforms.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,2)</size>
+    <graphicData>
+      <texPath>Things/Building/BioferriteHarvester/BioferriteHarvester</texPath>
+      <graphicClass>Graphic_Multi_BuildingWorking</graphicClass>
+      <drawSize>(2,3)</drawSize>
+      <shaderType>BioferriteHarvester</shaderType>
+      <addTopAltitudeBias>true</addTopAltitudeBias>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <pathCost>50</pathCost>
+    <designationCategory>Anomaly</designationCategory>
+    <uiOrder>115</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Flammability>0.75</Flammability>
+      <Beauty>-10</Beauty>
+      <Mass>20</Mass>
+    </statBases>
+    <costList>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>50</Steel>
+    </costList>
+    <researchPrerequisites>
+      <li>BioferriteHarvesting</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Facility">
+        <maxDistance>5.1</maxDistance>
+        <statOffsets>
+          <ContainmentStrength>-15</ContainmentStrength>
+        </statOffsets>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AttachPoints">
+        <points>
+          <li>
+            <offset>(.1, 0, .8)</offset>
+            <type>CableConnection0</type>
+          </li>
+          <li>
+            <offset>(.1, 0, .8)</offset>
+            <type>CableConnection1</type>
+          </li>
+          <li>
+            <offset>(.1, 0, .8)</offset>
+            <type>CableConnection2</type>
+          </li>
+          <li>
+            <offset>(.1, 0, .8)</offset>
+            <type>CableConnection3</type>
+          </li>
+          <li>
+            <offset>(0, 0, .28)</offset>
+            <type>Exhaust</type>
+          </li>
+        </points>
+      </li>
+      <li Class="CompProperties_CableConnection">
+        <color>(0.36, 0.21, 0.13, 1)</color>
+        <drawMote>true</drawMote>
+        <moteDef>Mote_BioFerriteHarvested</moteDef>
+        <offsets>
+          <li>
+            <li>(0, 0, 0.9)</li>
+            <li>(0, 0, 0.48)</li>
+            <li>(0, 0, 0.3)</li>
+            <li>(0, 0, 0.1)</li>
+          </li>
+          <li>
+            <li>(0.6, 0, 0.3)</li>
+            <li>(-0.2, 0, 0)</li>
+            <li>(0.2, 0, 0)</li>
+            <li>(0.4, 0, 0)</li>
+          </li>
+          <li>
+            <li>(0, 0, -0.25)</li>
+            <li>(0.4, 0, 0.48)</li>
+            <li>(0.4, 0, 0.3)</li>
+            <li>(0.4, 0, 0.1)</li>
+          </li>
+          <li>
+            <li>(-0.65, 0, 0.3)</li>
+            <li>(-0.2, 0, 0.65)</li>
+            <li>(0.2, 0, 0.65)</li>
+            <li>(0.4, 0, 0.65)</li>
+          </li>
+        </offsets>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

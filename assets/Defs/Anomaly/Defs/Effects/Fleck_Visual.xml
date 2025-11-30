@@ -1,0 +1,3619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>FleckShamblerDecay</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.75</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0.65</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesA</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesB</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesC</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesD</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesE</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesF</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesG</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesH</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesI</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/ShamblerDecayParticles/ShamblerDecayParticlesJ</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.4</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>MeatExplosionSplatter</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <solidTime>3</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterA</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(171, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterB</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(171, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterC</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(171, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>MeatExplosionSplatterTerrain</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <solidTime>6</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <fadeInTime>.25</fadeInTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterA</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(171, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterB</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(171, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterC</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(171, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+    </randomGraphics>
+    <scalers>
+      <li>
+        <scaleTime>3</scaleTime>
+        <scaleAmt>1</scaleAmt>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.2381762)</li>
+            <li>(0.08,0.4249946)</li>
+            <li>(0.12,0.5651093)</li>
+            <li>(0.16,0.6701739)</li>
+            <li>(0.2,0.7500439)</li>
+            <li>(0.24,0.8105828)</li>
+            <li>(0.28,0.8564262)</li>
+            <li>(0.32,0.8911517)</li>
+            <li>(0.36,0.9175276)</li>
+            <li>(0.3999999,0.9375309)</li>
+            <li>(0.4399999,0.9526281)</li>
+            <li>(0.4799999,0.964285)</li>
+            <li>(0.5199999,0.9726838)</li>
+            <li>(0.5599999,0.9789782)</li>
+            <li>(0.6,0.9838976)</li>
+            <li>(0.64,0.9877752)</li>
+            <li>(0.68,0.9909443)</li>
+            <li>(0.72,0.9935225)</li>
+            <li>(0.7600001,0.9953468)</li>
+            <li>(0.8000001,0.9965819)</li>
+            <li>(0.8400001,0.9974015)</li>
+            <li>(0.8800001,0.9979795)</li>
+            <li>(0.9200001,0.9984894)</li>
+            <li>(0.9600002,0.999105)</li>
+            <li>(1,1)</li>
+          </points>
+
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>ShamblerRaiseSplatter</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <solidTime>3</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>.08</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterA</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(23, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterB</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(23, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterC</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(23, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>MonolithLevelChanged</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>4</solidTime>
+    <fadeOutTime>2.5</fadeOutTime>
+    <growthRate>2.0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.12</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+        <_noiseIntensity>10</_noiseIntensity>
+        <_ageToNoiseRatio>0</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>DirtyExpandingRingShort</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>2.0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.12</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+        <_noiseIntensity>10</_noiseIntensity>
+        <_ageToNoiseRatio>0</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidNodeCollapsingRing</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-3</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <color>(1, 1, 1, .1)</color>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-0.4</_texBScrollSpeed>
+        <_Intensity>0.5</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>0.5</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>VoidNodeCollapseDirtyGroundFogSlow</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>12</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-.16</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_Color2>(1, 1, 1, 1)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidNodeCollapseContractRingSlow</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>10</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-2</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <color>(1, 1, 1, .3)</color>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-.4</_texBScrollSpeed>
+        <_Intensity>0.5</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>0.5</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidNodeCollapseContractRingSlowLow</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-1</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <color>(1, 1, 1, .3)</color>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-.4</_texBScrollSpeed>
+        <_Intensity>0.5</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>0.5</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>NociosphereDepartingRing</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>11</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-.16</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_NoiseIntensity>100</_NoiseIntensity>
+        <_Color2>(1, 1, 1, 0.5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>NociosphereDepartCompleteDistortion</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>1</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.12</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+        <_noiseIntensity>10</_noiseIntensity>
+        <_ageToNoiseRatio>0</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianHugeSpellLightWarmup</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-2</growthRate>
+    <useAttachLink>True</useAttachLink>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-0.4</_texBScrollSpeed>
+        <_Intensity>0.5</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>0.5</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianHugeSpellDarkWarmup</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-2</growthRate>
+    <useAttachLink>True</useAttachLink>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyCircular</shaderType>
+      <shaderParameters>
+        <_AlphaClip>.9</_AlphaClip>
+        <_Color2>(0, 0, 0, 1)</_Color2>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-0.4</_texBScrollSpeed>
+        <_Intensity>0.5</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>0.5</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>HoraxianBurstDistortion</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+    <growthRate>4.0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.12</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>HoraxianBurstDistortionSmall</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+    <growthRate>100.0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.2</_distortionIntensity>
+        <_brightnessMultiplier>5.15</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>HoraxianBurstDistortionSmallDark</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <growthRate>100.0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.1</_distortionIntensity>
+        <_brightnessMultiplier>-20</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianField</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime> .5</solidTime>
+    <fadeOutTime>0.6</fadeOutTime>
+    <growthRate>-.5</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianGeo</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_brightnessMultiplier>0.0</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianFieldQuickRing</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>.4</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+    <growthRate>-.5</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianGeo</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <shaderParameters>
+        <_brightnessMultiplier>0.0</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianFieldQuickRingCurved</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>.4</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+    <growthRate>-.5</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianGeoCurved</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <shaderParameters>
+        <_brightnessMultiplier>0.0</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>PsychicRitualRiserRing</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-1.7</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_Color2>(1, 1, 1, 0.5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PsychicRitual_Complete</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>1.5</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>-.15</growthRate>
+    <speedPerTime>-20</speedPerTime>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianGeoCurved</texPath>
+      <shaderType>HoraxianSnake</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <shaderParameters>
+        <_brightnessMultiplier>0.0</_brightnessMultiplier>
+        <_RampTime>0</_RampTime>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianSnakeQuick</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>.2</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <growthRate>-.5</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianGeo</texPath>
+      <shaderType>HoraxianSnake</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <shaderParameters>
+        <_brightnessMultiplier>0.0</_brightnessMultiplier>
+        <_Color2>(0, 0, 0, .5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianClouds</defName>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianCloud</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color>(0, 0, 0, 0)</_Color>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <growthRate>0</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianSparks</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianSpark</texPath>
+      <shaderType>MoteGlowPulse</shaderType>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color>(100, 100, 100, 100)</_Color>
+        <_Interval>0.04</_Interval>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.3</fadeOutTime>
+    <growthRate>-1.0</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianWhiteRing</defName>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.25</fadeOutTime>
+    <growthRate>11</growthRate>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-0.4</_texBScrollSpeed>
+        <_Intensity>0.5</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>0.5</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>VoidAwakeningStructureActivated</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <fadeOutTime>0.6</fadeOutTime>
+    <solidTime>2.5</solidTime>
+    <growthRate>1.5</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.12</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PsychicRitual_Sustained</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.2</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <speedPerTime>.01~.1</speedPerTime>
+    <growthRate>1</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <shaderType>Mote</shaderType>
+      <texPath>Things/Mote/RitualEffects/PsychicRitualParticleBlackSoft</texPath>
+      <shaderParameters>
+        <_Color2>(1,1,1,.75)</_Color2>
+      </shaderParameters>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+    <acceleration>(0, 0, 0)</acceleration>
+    <useAttachLink>true</useAttachLink>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PsychicDistortionRibbon</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>10</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>.04</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/RitualEffects/PsychicDistortionWhiteStreak</texPath>
+      <shaderType>PsychicDistortionRibbon</shaderType>
+      <shaderParameters>
+        <_distortionIntensity>.5</_distortionIntensity>
+        <_brightnessMultiplier>-2</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianRibbon</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>-.04</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/RitualEffects/PsychicDistortionWhiteStreak</texPath>
+      <shaderType>Mote</shaderType>
+      <shaderParameters>
+        <_Color>(0, 0, 0, 1.0)</_Color>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>PsychicDistortionRingContracting</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>2</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>5</fadeOutTime>
+    <growthRate>-.2</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.1</_distortionIntensity>
+        <_brightnessMultiplier>-.2</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>PsychicDistortionRingContractingQuick</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.3</fadeOutTime>
+    <growthRate>-.2</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.1</_distortionIntensity>
+        <_brightnessMultiplier>-.2</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>DistortionPulse</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>.25</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.03</_distortionIntensity>
+        <_brightnessMultiplier>3.15</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>DarkHighlightRing</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>3.5</fadeOutTime>
+    <growthRate>1</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_NoiseIntensity>10</_NoiseIntensity>
+        <_Color2>(1, 1, 1, 0.1)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>MonolithShadow</defName>
+    <graphicData>
+      <texPath>Things/Mote/MonolithShadow</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color2>(1, 1, 1, .2)</_Color2>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <growthRate>0</growthRate>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>DarkHighlightRing_FullDirty</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>3</solidTime>
+    <fadeOutTime>3.5</fadeOutTime>
+    <growthRate>2</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_NoiseIntensity>10</_NoiseIntensity>
+        <_Color2>(1, 1, 1, 0.5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianField_LongDecay</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>3.5</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>-.25</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianGeoCrooked</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_brightnessMultiplier>0.0</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>MonolithLowLightningRing</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRingWhiteRedTinged</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color>(1, .2, .2, .2)</_Color>
+        <_Interval>0.1</_Interval>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>EnergyCrackle</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.0</fadeInTime>
+    <solidTime>.1</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <growthRate>-.125</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleA</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <shaderParameters>
+          <_Color>(1, .8, .9, 1)</_Color>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>12.0</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleB</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <shaderParameters>
+          <_Color>(1, .8, .9, 1)</_Color>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>12.0</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <texPath>Things/Mote/EnergyCrackleC</texPath>
+        <shaderType>MoteGlowPulse</shaderType>
+        <renderInstanced>true</renderInstanced>
+        <shaderParameters>
+          <_Color>(1, .8, .9, 1)</_Color>
+          <_Interval>0.02</_Interval>
+        </shaderParameters>
+        <drawSize>12.0</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+    
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>PsychicRitual_Candle</defName>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/Candles/CandleClusterA</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>PsychicRitualCandleMote</shaderType>
+        <shaderParameters>
+          <_FlameTex>/Things/Mote/Candles/CandleFlame</_FlameTex>
+          <_Interval>1</_Interval>
+        </shaderParameters>
+        <drawSize>0.8</drawSize>
+      </li>
+      
+      <li>
+        <texPath>Things/Mote/Candles/CandleClusterB</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>PsychicRitualCandleMote</shaderType>
+        <drawSize>0.8</drawSize>
+        <shaderParameters>
+          <_FlameTex>/Things/Mote/Candles/CandleFlame</_FlameTex>
+          <_Interval>1</_Interval>
+        </shaderParameters>
+      </li>
+      <li>
+        <texPath>Things/Mote/Candles/CandleClusterC</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>PsychicRitualCandleMote</shaderType>
+        <drawSize>0.8</drawSize>
+        <shaderParameters>
+          <_FlameTex>/Things/Mote/Candles/CandleFlame</_FlameTex>
+          <_Interval>1</_Interval>
+        </shaderParameters>
+      </li>
+    </randomGraphics>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>9999</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>VoidNodeCore_DebrisBit</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <solidTime>2</solidTime>
+    <growthRate>0</growthRate>
+    <useAttachLink>true</useAttachLink>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisA</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisB</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisC</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisD</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisE</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisF</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisG</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisH</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Building/VoidNode/VoidNodeDebrisI</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <shaderParameters>
+        </shaderParameters>
+        <drawSize>(1, 1)</drawSize>
+      </li>
+      
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidNodeDisrupted</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <solidTime>9999</solidTime>
+    <growthRate>0</growthRate>
+    <graphicData>
+      <texPath>Things/Building/VoidNode/VoidNodeDebrisI</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>Mote</shaderType>
+      <shaderParameters>
+      </shaderParameters>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>DirtyExpandingRingShortDist</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>-.16</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>12</_distortionIntensity>
+        <_brightnessMultiplier>.15</_brightnessMultiplier>
+        <_noiseIntensity>10</_noiseIntensity>
+        <_ageToNoiseRatio>2</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidNodeLowLightningRing</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <growthRate>0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRingWhite</texPath>
+      <shaderType>MoteGlowPulseLow</shaderType>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color>(.4, .4, .4, .2)</_Color>
+        <_Interval>0.1</_Interval>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidNodeHighLightningRing</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <growthRate>0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SemiSoftRingWhite</texPath>
+      <shaderType>MoteGlowPulse</shaderType>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color>(3, 3, 3, 3)</_Color>
+        <_Interval>.04</_Interval>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidNodeLowestGroundFlashes</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.4</fadeOutTime>
+    <growthRate>0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/SemiSoftRingWhite</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <shaderParameters>
+        <_Color2>(1.5, 1.5, 1.5, .81)</_Color2>
+      </shaderParameters>
+      <drawSize>30.0</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>DeathRefusalPulse</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>2.3</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/DeathRefusalAvailable</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>Mote</shaderType>
+      <shaderParameters>
+        <_Color>(0, 0, 0, .3)</_Color>
+      </shaderParameters>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>DeathRefusalBubble</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.25</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>.25</fadeOutTime>
+    <growthRate>0</growthRate>
+    <graphicData>
+      <renderInstanced>true</renderInstanced>
+      <texPath>Things/Mote/DeathRefusalBubble</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteBouncing</shaderType>
+      <shaderParameters>
+        <_BounceTex>/Things/Mote/DeathRefusalBounceHeight</_BounceTex>
+        <_bounceSpeed>.1</_bounceSpeed>
+        <_bounceAmplitude>.03</_bounceAmplitude>
+      </shaderParameters>
+      <color>(0, 0, 0, 1)</color>
+      <drawSize>(.25, .25)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>DeathRefusalSplatter</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <solidTime>1</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>.15</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterA</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(85, 0, 0, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterB</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(120, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Filth/Spatter/SpatterC</texPath>
+        <shaderType>Transparent</shaderType>
+        <color>(23, 27, 17, 170)</color>
+        <drawSize>(1.5, 1.5)</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>SputteringBlackPuff</defName>
+    <graphicData>
+      <texPath>Things/Mote/DustPuff</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(0, 0, 0, 150)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.6</solidTime>
+    <fadeOutTime>1.4</fadeOutTime>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PitGateCollapseDust</defName>
+    <graphicData>
+      <texPath>Things/Mote/PitGateDustPuff</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(.42, .33, .27, 1)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.4</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>2</growthRate>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PitGateCollapseDustThick</defName>
+    <graphicData>
+      <texPath>Things/Mote/PitGateDustPuff</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(.42, .33, .27, 1)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.25</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>1.4</fadeOutTime>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>PitGateCollapseDustVeryFine</defName>
+    <randomGraphics>
+      <li>
+        <shaderType>Mote</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/DustVeryFineA</texPath>
+        <renderInstanced>true</renderInstanced>
+        <color>(.21, .17, .13, 1)</color>
+      </li>
+      <li>
+        <shaderType>Mote</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/DustVeryFineB</texPath>
+        <renderInstanced>true</renderInstanced>
+        <color>(.21, .17, .13, 1)</color>
+      </li>
+      <li>
+        <shaderType>Mote</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/DustVeryFineC</texPath>
+        <renderInstanced>true</renderInstanced>
+        <color>(.21, .17, .13, 1)</color>
+      </li>
+      <li>
+        <shaderType>Mote</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/DustVeryFineD</texPath>
+        <renderInstanced>true</renderInstanced>
+        <color>(.21, .17, .13, 1)</color>
+      </li>
+    </randomGraphics>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.25</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>SheetingDust</defName>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <texPath>Things/Mote/SheetingDustA</texPath>
+        <renderInstanced>true</renderInstanced>
+        <drawSize>(.2,1)</drawSize>
+        <color>(.42, .33, .27, .8)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <texPath>Things/Mote/SheetingDustB</texPath>
+        <renderInstanced>true</renderInstanced>
+        <drawSize>(.2,1)</drawSize>
+        <color>(.42, .33, .27, .8)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <texPath>Things/Mote/SheetingDustC</texPath>
+        <renderInstanced>true</renderInstanced>
+        <drawSize>(.2,1)</drawSize>
+        <color>(.42, .33, .27, .8)</color>
+      </li>
+    </randomGraphics>
+    <unattachedDrawOffset>(0, 0, 8)</unattachedDrawOffset>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>.3</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <archHeight>12~16</archHeight>
+    <archDuration>1.15</archDuration>
+    <archCurve>
+      <points>
+        <li>(0,1)</li>
+        <li>(0.04,0.9756736)</li>
+        <li>(0.08,0.9500062)</li>
+        <li>(0.12,0.9230018)</li>
+        <li>(0.16,0.8946642)</li>
+        <li>(0.2,0.8649974)</li>
+        <li>(0.24,0.8340054)</li>
+        <li>(0.28,0.8016918)</li>
+        <li>(0.32,0.7680608)</li>
+        <li>(0.36,0.7331161)</li>
+        <li>(0.3999999,0.6968619)</li>
+        <li>(0.4399999,0.6593019)</li>
+        <li>(0.4799999,0.6204399)</li>
+        <li>(0.5199999,0.5802801)</li>
+        <li>(0.5599999,0.5388262)</li>
+        <li>(0.6,0.4960822)</li>
+        <li>(0.64,0.452052)</li>
+        <li>(0.68,0.4067395)</li>
+        <li>(0.72,0.3601486)</li>
+        <li>(0.7600001,0.3122832)</li>
+        <li>(0.8000001,0.2631474)</li>
+        <li>(0.8400001,0.2127448)</li>
+        <li>(0.8800001,0.1610795)</li>
+        <li>(0.9200001,0.1081554)</li>
+        <li>(0.9600002,0.05397642)</li>
+        <li>(1,0)</li>
+      </points>
+    </archCurve>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>DustImpact</defName>
+    <graphicData>
+      <texPath>Things/Mote/DustPuff</texPath>
+      <shaderType>Transparent</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <color>(.42, .33, .27, .8)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>1.5</fadeOutTime>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>BouncingDebris</defName>
+    <graphicData>
+      <texPath>Things/Mote/RubbleRockA</texPath>
+      <shaderType>Transparent</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <color>(.42, .33, .27, .8)</color>
+    </graphicData>
+    <growthRate>-.5</growthRate>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.05</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <archHeight>1~2</archHeight>
+    <archDuration>.9~1.5</archDuration>
+    <archCurve>
+      <points>
+        <li>(0,0)</li>
+        <li>(0.04,0.06817785)</li>
+        <li>(0.08,0.1415976)</li>
+        <li>(0.12,0.2149889)</li>
+        <li>(0.16,0.2830812)</li>
+        <li>(0.2,0.3406042)</li>
+        <li>(0.24,0.3822875)</li>
+        <li>(0.28,0.4028607)</li>
+        <li>(0.32,0.3951005)</li>
+        <li>(0.36,0.3431725)</li>
+        <li>(0.3999999,0.2600614)</li>
+        <li>(0.4399999,0.1647919)</li>
+        <li>(0.4799999,0.0763886)</li>
+        <li>(0.5199999,0.01387611)</li>
+        <li>(0.5599999,0.01352741)</li>
+        <li>(0.6,0.02955473)</li>
+        <li>(0.64,0.04362636)</li>
+        <li>(0.68,0.05149278)</li>
+        <li>(0.72,0.04808952)</li>
+        <li>(0.7600001,0.03047059)</li>
+        <li>(0.8000001,0.009557847)</li>
+        <li>(0.8400001,0.003781316)</li>
+        <li>(0.8800001,0.01578983)</li>
+        <li>(0.9200001,0.01923234)</li>
+        <li>(0.9600002,0.01081114)</li>
+        <li>(1,0)</li>
+      </points>
+
+    </archCurve>
+    
+  </FleckDef>
+  
+
+  <FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>PitGateCollapsedDistortion</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverheadLow</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>2.5</fadeOutTime>
+    <growthRate>11.0</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.03</_distortionIntensity>
+        <_brightnessMultiplier>1.0</_brightnessMultiplier>
+        <_DistortionTex>/Things/Mote/MoteHellfireCannon_HeatWaveDistortion</_DistortionTex>
+      </shaderParameters>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PitGateCollapseForce</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.2</fadeInTime>
+    <solidTime>0.25</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>4</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/HeatDiffusion</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <color>(1, 1, 1, .3)</color>
+      <shaderType>MoteHeatDiffusion</shaderType>
+      <shaderParameters>
+        <_MultiplyTex>/Things/Mote/RadiationDistortion_A</_MultiplyTex>
+        <_texBScale>0.2</_texBScale>
+        <_texBScrollSpeed>-2</_texBScrollSpeed>
+        <_Intensity>13</_Intensity>
+        <_Clip>0</_Clip>
+      </shaderParameters>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PitGateCollapseRays</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>5</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/VaporizeExplosionRays_A</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(14, 14)</drawSize>
+      <shaderParameters>
+        <_Color>(4, 4, 4, 4)</_Color>
+      </shaderParameters>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PitGateCollapseCenterFlash</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <fadeInTime>0.05</fadeInTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <solidTime>0.1</solidTime>
+    <graphicData>
+      <texPath>Things/Mote/VaporizeExplosion_Center</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(7, 7)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>GleamingLensFlare</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.6</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.9</fadeOutTime>
+    <useAttachLink>true</useAttachLink>
+    <unattachedDrawOffset>(0, 0.2, 0)</unattachedDrawOffset>
+    <graphicData>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/SharpLensFlareB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, .75, .75, 0.8)</color>
+        <drawSize>4</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>DirtClod</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/DirtClod</texPath>
+      <shaderType>Mote</shaderType>
+      <color>(1, 1, 1, 1)</color>
+      <drawSize>4</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>ObeliskActionDarkHighlightRing</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-3</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_Color2>(1, 1, 1, 0.5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>AbductWarmupSpark</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/LensFlares/LensFlareA</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(1, .2, .2, 1)</color>
+      <drawSize>4</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_DeadlifeSmall</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.3</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <growthRate>0.8</growthRate>
+    <acceleration>(0, 0, 2)</acceleration>
+    <graphicData>
+      <texPath>Things/Gas/GasCloudThickA</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(45, 45, 45, 64)</color>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>ProximityDetectorFlare</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>ProximityDetectorGem</defName>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/ProximityDetectorRedGem</texPath>
+      <shaderType>Mote</shaderType>
+      <drawSize>(.35, .5)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>VoidStructureActivatingRing</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>2</fadeInTime>
+    <solidTime>.2</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-2</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_Color2>(1, 1, 1, 1)</_Color2>
+      </shaderParameters>
+      <drawSize>5.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VoidStructureLowRing</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>.25</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRingWhite</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color>(.8862, .3215, .3215, 1)</_Color>
+        <_Color2>(.8862, .3215, .3215, 1)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FireSpew_A_Bioferrite</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.2</fadeInTime>
+    <solidTime>0.7</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+    <rotateTowardsMoveDirectionExtraAngle>-90</rotateTowardsMoveDirectionExtraAngle>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>GlowAnimated</shaderType>
+      <texPath>Things/Mote/FireSpew_Bioferrite_A</texPath>
+      <shaderParameters>
+        <_NumFrames>5</_NumFrames>
+        <_FramesPerSec>7</_FramesPerSec>
+      </shaderParameters>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FireSpew_Base_Bioferrite</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.2</fadeInTime>
+    <solidTime>0.2</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Things/Mote/FireSpew_Bioferrite_Base</texPath>
+      <drawSize>(1.25, 2.5)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FireSpew_Glow_Bioferrite</defName>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.105</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/FireGlow_Bioferrite</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>7</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>Fleck_IncineratorBeamBurn</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>8</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/IncineratorBeamBurn/BeamBurn_A</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>0.65</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/IncineratorBeamBurn/BeamBurn_B</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>0.65</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/IncineratorBeamBurn/BeamBurn_C</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>0.65</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>IncineratorBeamEnd_Glow</defName>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <fadeInTime>0.01</fadeInTime>
+    <solidTime>0.105</solidTime>
+    <fadeOutTime>0.04</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/IncineratorBeamGlow</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>12</drawSize>
+      <color>(1, .7, 0.09, 0.75)</color> 
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_IncineratorBeamSmoke</defName>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>.1</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>4</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <shaderType>Transparent</shaderType>
+      <drawSize>1</drawSize>
+      <color>(.1, .1, .1, 1)</color>
+      <renderQueue>3200</renderQueue>
+    </graphicData>
+    <acceleration>(0, 10, 0.0)</acceleration>
+    <speedPerTime>-6~10</speedPerTime>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_BurnerUsedSmoke</defName>
+    <fadeInTime>.2</fadeInTime>
+    <solidTime>5</solidTime>
+    <fadeOutTime>4</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>.75</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Smoke</texPath>
+      <shaderType>TransparentColorLerp</shaderType>
+      <drawSize>1</drawSize>
+      <shaderParameters>
+        <_ColorLerp>/Things/Mote/IncineratorSmokeColorLerp</_ColorLerp>
+        <_Duration>1</_Duration>
+      </shaderParameters>
+    </graphicData>
+    <acceleration>(0, 0, 0)</acceleration>
+    <speedPerTime>0</speedPerTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_BurnerUsedEmber</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>3</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Ember</texPath>
+      <shaderType>EmberGlow</shaderType>
+      <drawSize>.5</drawSize>
+      <shaderParameters>
+        <_Color2>(.96, .6, .2, 1)</_Color2>
+        <_Interval>0.05</_Interval>
+      </shaderParameters>
+    </graphicData>
+    <scalers>
+      <li>
+        <scaleAmt>1~4</scaleAmt>
+        <scaleTime>.2~6</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.305448)</li>
+            <li>(0.08,0.6668836)</li>
+            <li>(0.12,0.9360147)</li>
+            <li>(0.16,0.9911547)</li>
+            <li>(0.2,0.9870781)</li>
+            <li>(0.24,0.9784655)</li>
+            <li>(0.28,0.9653521)</li>
+            <li>(0.32,0.9477734)</li>
+            <li>(0.36,0.9257647)</li>
+            <li>(0.3999999,0.8993613)</li>
+            <li>(0.4399999,0.8685986)</li>
+            <li>(0.4799999,0.8335121)</li>
+            <li>(0.5199999,0.7941369)</li>
+            <li>(0.5599999,0.7505086)</li>
+            <li>(0.6,0.7026625)</li>
+            <li>(0.64,0.6506338)</li>
+            <li>(0.68,0.594458)</li>
+            <li>(0.72,0.5341705)</li>
+            <li>(0.7600001,0.4698067)</li>
+            <li>(0.8000001,0.4014017)</li>
+            <li>(0.8400001,0.3289912)</li>
+            <li>(0.8800001,0.2526103)</li>
+            <li>(0.9200001,0.1722946)</li>
+            <li>(0.9600002,0.08807921)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+    
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_BurnerUsedEmberBlack</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>3</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <graphicData>
+      <drawSize>.5</drawSize>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Ember</texPath>
+      <shaderType>Ember</shaderType>
+      <shaderParameters>
+        <_Color2>(0, 0, 0, 1)</_Color2>
+        <_Interval>0.05</_Interval>
+      </shaderParameters>
+    </graphicData>
+    <scalers>
+      <li>
+        <scaleAmt>.8~1</scaleAmt>
+        <scaleTime>2~6</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.305448)</li>
+            <li>(0.08,0.6668836)</li>
+            <li>(0.12,0.9360147)</li>
+            <li>(0.16,0.9911547)</li>
+            <li>(0.2,0.9870781)</li>
+            <li>(0.24,0.9784655)</li>
+            <li>(0.28,0.9653521)</li>
+            <li>(0.32,0.9477734)</li>
+            <li>(0.36,0.9257647)</li>
+            <li>(0.3999999,0.8993613)</li>
+            <li>(0.4399999,0.8685986)</li>
+            <li>(0.4799999,0.8335121)</li>
+            <li>(0.5199999,0.7941369)</li>
+            <li>(0.5599999,0.7505086)</li>
+            <li>(0.6,0.7026625)</li>
+            <li>(0.64,0.6506338)</li>
+            <li>(0.68,0.594458)</li>
+            <li>(0.72,0.5341705)</li>
+            <li>(0.7600001,0.4698067)</li>
+            <li>(0.8000001,0.4014017)</li>
+            <li>(0.8400001,0.3289912)</li>
+            <li>(0.8800001,0.2526103)</li>
+            <li>(0.9200001,0.1722946)</li>
+            <li>(0.9600002,0.08807921)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+   
+  </FleckDef>
+
+  <FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>UnnaturalHealing</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <fadeOutTime>0.08</fadeOutTime>
+    <solidTime>0.15</solidTime>
+    <growthRate>3</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionRing</_DistortionTex>
+        <_distortionIntensity>0.03</_distortionIntensity>
+        <_brightnessMultiplier>1.5</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>2</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>DisruptorFlareGlow</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.2</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/DisruptorLensFlare</texPath>
+      <shaderType>MoteGlowPulse</shaderType>
+      <color>(1, .1, .1, 0.1)</color>
+      <drawSize>10</drawSize>
+      <shaderParameters>
+        <_Interval>0.05</_Interval>
+      </shaderParameters>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>DisruptorDestroyWarnSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <color>(0, 0, 0, .5)</color>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>6</solidTime>
+    <fadeOutTime>3.2</fadeOutTime>
+    <growthRate>0.005</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>DisruptorFlareImpactPulse</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <color>(1, 1, 1, .3)</color>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-.4</_texBScrollSpeed>
+        <_Intensity>1</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>1</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.27</fadeOutTime>
+    <growthRate>15</growthRate>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_AcidSpitLaunchedMist</defName>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>1</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <shaderType>Transparent</shaderType>
+      <drawSize>1</drawSize>
+      <color>(.87, .92, .47, .4)</color>
+      <renderQueue>3200</renderQueue>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_AcidSpitLaunchedDenseMist</defName>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>.1</solidTime>
+    <fadeOutTime>.65</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>4</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <shaderType>Transparent</shaderType>
+      <drawSize>1</drawSize>
+      <color>(.87, .92, .47, 1)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>Fleck_AcidSpitLaunchedGlob</defName>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>-.3</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/AcidSpitGobs/AcidSpitGobA</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+        <color>(.87, .92, .47, 1)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/AcidSpitGobs/AcidSpitGobB</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+        <color>(.87, .92, .47, 1)</color>
+      </li>
+      <li>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/AcidSpitGobs/AcidSpitGobC</texPath>
+      <shaderType>Transparent</shaderType>
+      <drawSize>1</drawSize>
+      <color>(.87, .92, .47, 1)</color>
+    </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>Fleck_AcidSpitLaunchedGlobFast</defName>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>.6</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>-2</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/AcidSpitGobs/AcidSpitGobA</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+        <color>(.87, .92, .47, 1)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/AcidSpitGobs/AcidSpitGobB</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+        <color>(.87, .92, .47, 1)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/AcidSpitGobs/AcidSpitGobC</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+        <color>(.87, .92, .47, 1)</color>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_AcidSpitImpact</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0.3</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <growthRate>.1</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/AcidSplashSheet</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>TransparentAnimatedColorLerp</shaderType>
+      <shaderParameters>
+        <_NumFrames>8</_NumFrames>
+        <_FramesPerSec>16</_FramesPerSec>
+        <_Loop>0</_Loop>
+        <_ColorLerp>/Things/Mote/AcidSplashColorLerp</_ColorLerp>
+        <_Duration>.2</_Duration>
+      </shaderParameters>
+      <drawSize>(5, 5)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>Fleck_Studying</defName>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>.5</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>.25</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingA</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingC</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingD</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingE</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingF</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingG</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingH</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingI</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Studying/StudyingJ</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>StressAura</defName>
+    <graphicData>
+      <texPath>Things/Mote/StressAura</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <color>(.7, 0, 0, .5)</color>
+      <drawSize>(.75, .6)</drawSize>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>1.1</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <useAttachLink>true</useAttachLink>
+    <scalers>
+      <li>
+        <scaleTime>2</scaleTime>
+        <scaleAmt>5</scaleAmt>
+        <curve>
+          <points>
+            <li>(0,0.8027145)</li>
+            <li>(0.04,0.8332495)</li>
+            <li>(0.08,0.879966)</li>
+            <li>(0.12,0.9267562)</li>
+            <li>(0.16,0.9666791)</li>
+            <li>(0.2,0.992794)</li>
+            <li>(0.24,0.9982609)</li>
+            <li>(0.28,0.9818959)</li>
+            <li>(0.32,0.9501885)</li>
+            <li>(0.36,0.9101336)</li>
+            <li>(0.3999999,0.8687258)</li>
+            <li>(0.4399999,0.8329597)</li>
+            <li>(0.4799999,0.8098301)</li>
+            <li>(0.5199999,0.8064002)</li>
+            <li>(0.5599999,0.8270092)</li>
+            <li>(0.6,0.864563)</li>
+            <li>(0.64,0.9097805)</li>
+            <li>(0.68,0.9533802)</li>
+            <li>(0.72,0.9860811)</li>
+            <li>(0.7600001,0.9986354)</li>
+            <li>(0.8000001,0.9910107)</li>
+            <li>(0.8400001,0.9701501)</li>
+            <li>(0.8800001,0.9398005)</li>
+            <li>(0.9200001,0.9037092)</li>
+            <li>(0.9600002,0.8656235)</li>
+            <li>(1,0.8292906)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+    
+  </FleckDef>
+
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>StressSpikes</defName>
+    <growthRate>-1</growthRate>
+    <useAttachLink>true</useAttachLink>
+    <graphicData>
+      <texPath>Things/Mote/StressSpikes</texPath>
+      <shaderType>Mote</shaderType>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <renderInstanced>false</renderInstanced>
+      <color>(1, 1, 1, 1)</color>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>RevenantDeath</defName>
+    <graphicData>
+      <texPath>Things/Mote/RevenantDeath</texPath>
+      <shaderType>RevenantDeath</shaderType>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <renderInstanced>false</renderInstanced>
+      <color>(1, 1, 1, 1)</color>
+      <drawSize>(2, 2)</drawSize>
+      <shaderParameters>
+        <_DissolveTex>/Things/Mote/DownUpDissolveNoise</_DissolveTex>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>6</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>RevenantDeathDrip1</defName>
+    <graphicData>
+      <texPath>Things/Mote/RevenantDeathDrip</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <color>(.07, .07, .07, 1)</color>
+    </graphicData>
+    <growthRate>-.5</growthRate>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.05</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <archHeight>.25</archHeight>
+    <archDuration>.5</archDuration>
+    <archCurve>
+      <points>
+        <li>(0,1)</li>
+        <li>(0.04,0.993281)</li>
+        <li>(0.08,0.9867465)</li>
+        <li>(0.12,0.9800107)</li>
+        <li>(0.16,0.9726878)</li>
+        <li>(0.2,0.9643919)</li>
+        <li>(0.24,0.9547373)</li>
+        <li>(0.28,0.943338)</li>
+        <li>(0.32,0.9298084)</li>
+        <li>(0.36,0.9137626)</li>
+        <li>(0.3999999,0.8948148)</li>
+        <li>(0.4399999,0.8725791)</li>
+        <li>(0.4799999,0.8466698)</li>
+        <li>(0.5199999,0.816701)</li>
+        <li>(0.5599999,0.7822869)</li>
+        <li>(0.6,0.7430416)</li>
+        <li>(0.64,0.6985795)</li>
+        <li>(0.68,0.6485147)</li>
+        <li>(0.72,0.5924613)</li>
+        <li>(0.7600001,0.5300335)</li>
+        <li>(0.8000001,0.4608455)</li>
+        <li>(0.8400001,0.3845116)</li>
+        <li>(0.8800001,0.3006458)</li>
+        <li>(0.9200001,0.2088624)</li>
+        <li>(0.9600002,0.1087756)</li>
+        <li>(1,0)</li>
+      </points>
+    </archCurve>
+    <scalers>
+      <li>
+        <scaleTime>.5~.6</scaleTime>
+        <scaleAmt>1.5</scaleAmt>
+        <axisMask>(0, 0, 1)</axisMask>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.08620859)</li>
+            <li>(0.08,0.1821436)</li>
+            <li>(0.12,0.2846805)</li>
+            <li>(0.16,0.390695)</li>
+            <li>(0.2,0.4970627)</li>
+            <li>(0.24,0.6006593)</li>
+            <li>(0.28,0.6983603)</li>
+            <li>(0.32,0.7870412)</li>
+            <li>(0.36,0.8635778)</li>
+            <li>(0.3999999,0.9248457)</li>
+            <li>(0.4399999,0.9677205)</li>
+            <li>(0.4799999,0.9890777)</li>
+            <li>(0.5199999,0.9862287)</li>
+            <li>(0.5599999,0.9602945)</li>
+            <li>(0.6,0.9142406)</li>
+            <li>(0.64,0.8510348)</li>
+            <li>(0.68,0.7736445)</li>
+            <li>(0.72,0.6850375)</li>
+            <li>(0.7600001,0.5881814)</li>
+            <li>(0.8000001,0.4860437)</li>
+            <li>(0.8400001,0.3815921)</li>
+            <li>(0.8800001,0.2777943)</li>
+            <li>(0.9200001,0.1776178)</li>
+            <li>(0.9600002,0.08403039)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>RevenantDeathDrip2</defName>
+    <graphicData>
+      <texPath>Things/Mote/RevenantDeathDrip</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <color>(.07, .07, .07, 1)</color>
+    </graphicData>
+    <growthRate>-.5</growthRate>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.05</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <archHeight>.75</archHeight>
+    <archDuration>.55</archDuration>
+    <archCurve>
+      <points>
+        <li>(0,1)</li>
+        <li>(0.04,0.993281)</li>
+        <li>(0.08,0.9867465)</li>
+        <li>(0.12,0.9800107)</li>
+        <li>(0.16,0.9726878)</li>
+        <li>(0.2,0.9643919)</li>
+        <li>(0.24,0.9547373)</li>
+        <li>(0.28,0.943338)</li>
+        <li>(0.32,0.9298084)</li>
+        <li>(0.36,0.9137626)</li>
+        <li>(0.3999999,0.8948148)</li>
+        <li>(0.4399999,0.8725791)</li>
+        <li>(0.4799999,0.8466698)</li>
+        <li>(0.5199999,0.816701)</li>
+        <li>(0.5599999,0.7822869)</li>
+        <li>(0.6,0.7430416)</li>
+        <li>(0.64,0.6985795)</li>
+        <li>(0.68,0.6485147)</li>
+        <li>(0.72,0.5924613)</li>
+        <li>(0.7600001,0.5300335)</li>
+        <li>(0.8000001,0.4608455)</li>
+        <li>(0.8400001,0.3845116)</li>
+        <li>(0.8800001,0.3006458)</li>
+        <li>(0.9200001,0.2088624)</li>
+        <li>(0.9600002,0.1087756)</li>
+        <li>(1,0)</li>
+      </points>
+    </archCurve>
+    <scalers>
+      <li>
+        <scaleTime>.5~.6</scaleTime>
+        <scaleAmt>1.5</scaleAmt>
+        <axisMask>(0, 0, 1)</axisMask>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.08620859)</li>
+            <li>(0.08,0.1821436)</li>
+            <li>(0.12,0.2846805)</li>
+            <li>(0.16,0.390695)</li>
+            <li>(0.2,0.4970627)</li>
+            <li>(0.24,0.6006593)</li>
+            <li>(0.28,0.6983603)</li>
+            <li>(0.32,0.7870412)</li>
+            <li>(0.36,0.8635778)</li>
+            <li>(0.3999999,0.9248457)</li>
+            <li>(0.4399999,0.9677205)</li>
+            <li>(0.4799999,0.9890777)</li>
+            <li>(0.5199999,0.9862287)</li>
+            <li>(0.5599999,0.9602945)</li>
+            <li>(0.6,0.9142406)</li>
+            <li>(0.64,0.8510348)</li>
+            <li>(0.68,0.7736445)</li>
+            <li>(0.72,0.6850375)</li>
+            <li>(0.7600001,0.5881814)</li>
+            <li>(0.8000001,0.4860437)</li>
+            <li>(0.8400001,0.3815921)</li>
+            <li>(0.8800001,0.2777943)</li>
+            <li>(0.9200001,0.1776178)</li>
+            <li>(0.9600002,0.08403039)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>RevenantDeathDrip3</defName>
+    <graphicData>
+      <texPath>Things/Mote/RevenantDeathDrip</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <color>(.07, .07, .07, 1)</color>
+    </graphicData>
+    <growthRate>-.5</growthRate>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <archHeight>1.5</archHeight>
+    <archDuration>.6</archDuration>
+    <archCurve>
+      <points>
+        <li>(0,1)</li>
+        <li>(0.04,0.993281)</li>
+        <li>(0.08,0.9867465)</li>
+        <li>(0.12,0.9800107)</li>
+        <li>(0.16,0.9726878)</li>
+        <li>(0.2,0.9643919)</li>
+        <li>(0.24,0.9547373)</li>
+        <li>(0.28,0.943338)</li>
+        <li>(0.32,0.9298084)</li>
+        <li>(0.36,0.9137626)</li>
+        <li>(0.3999999,0.8948148)</li>
+        <li>(0.4399999,0.8725791)</li>
+        <li>(0.4799999,0.8466698)</li>
+        <li>(0.5199999,0.816701)</li>
+        <li>(0.5599999,0.7822869)</li>
+        <li>(0.6,0.7430416)</li>
+        <li>(0.64,0.6985795)</li>
+        <li>(0.68,0.6485147)</li>
+        <li>(0.72,0.5924613)</li>
+        <li>(0.7600001,0.5300335)</li>
+        <li>(0.8000001,0.4608455)</li>
+        <li>(0.8400001,0.3845116)</li>
+        <li>(0.8800001,0.3006458)</li>
+        <li>(0.9200001,0.2088624)</li>
+        <li>(0.9600002,0.1087756)</li>
+        <li>(1,0)</li>
+      </points>
+    </archCurve>
+    <scalers>
+      <li>
+        <scaleTime>.5~.6</scaleTime>
+        <scaleAmt>1.5</scaleAmt>
+        <axisMask>(0, 0, 1)</axisMask>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.08620859)</li>
+            <li>(0.08,0.1821436)</li>
+            <li>(0.12,0.2846805)</li>
+            <li>(0.16,0.390695)</li>
+            <li>(0.2,0.4970627)</li>
+            <li>(0.24,0.6006593)</li>
+            <li>(0.28,0.6983603)</li>
+            <li>(0.32,0.7870412)</li>
+            <li>(0.36,0.8635778)</li>
+            <li>(0.3999999,0.9248457)</li>
+            <li>(0.4399999,0.9677205)</li>
+            <li>(0.4799999,0.9890777)</li>
+            <li>(0.5199999,0.9862287)</li>
+            <li>(0.5599999,0.9602945)</li>
+            <li>(0.6,0.9142406)</li>
+            <li>(0.64,0.8510348)</li>
+            <li>(0.68,0.7736445)</li>
+            <li>(0.72,0.6850375)</li>
+            <li>(0.7600001,0.5881814)</li>
+            <li>(0.8000001,0.4860437)</li>
+            <li>(0.8400001,0.3815921)</li>
+            <li>(0.8800001,0.2777943)</li>
+            <li>(0.9200001,0.1776178)</li>
+            <li>(0.9600002,0.08403039)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>RevenantDeathPuddle</defName>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Filth/RevenantBloodPool/RevenantBloodPoolA</texPath>
+        <shaderType>Mote</shaderType>
+        <renderInstanced>false</renderInstanced>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+    </randomGraphics>
+    <growthRate>.2</growthRate>
+    <altitudeLayer>Filth</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>5</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>VoidStructureIncomingFast</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-10</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_NoiseIntensity>100</_NoiseIntensity>
+        <_Color2>(1, 1, 1, 0.5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>VoidStructureIncomingSlow</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>-5</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_NoiseIntensity>100</_NoiseIntensity>
+        <_Color2>(1, 1, 1, 0.5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>MonolithTwistingRingSlow</defName>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <growthRate>2</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/SoftRing</texPath>
+      <shaderType>DarkHighlightRing</shaderType>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_NoiseIntensity>100</_NoiseIntensity>
+        <_Color2>(1, 1, 1, 0.5)</_Color2>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase">
+    <defName>TachycardiacArrestRiserRing</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>3</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <growthRate>0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>.07</_distortionIntensity>
+        <_brightnessMultiplier>10</_brightnessMultiplier>
+        <_noiseIntensity>6</_noiseIntensity>
+        <_ageToNoiseRatio>0</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>CaveWaterDrip</defName>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <texPath>Things/Mote/CaveWaterDripA</texPath>
+        <drawSize>(2,2)</drawSize>
+        <color>(0.53, 0.69, 0.74, .7)</color>
+      </li>
+    </randomGraphics>
+    <unattachedDrawOffset>(0, 0, 8)</unattachedDrawOffset>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.15</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.35</fadeOutTime>
+    <archHeight>8</archHeight>
+    <archDuration>.5</archDuration>
+    <scalingAnchor>(.5, 0, 0)</scalingAnchor>
+    <archCurve>
+      <points>
+        <li>(0,1)</li>
+        <li>(0.04,0.9756736)</li>
+        <li>(0.08,0.9500062)</li>
+        <li>(0.12,0.9230018)</li>
+        <li>(0.16,0.8946642)</li>
+        <li>(0.2,0.8649974)</li>
+        <li>(0.24,0.8340054)</li>
+        <li>(0.28,0.8016918)</li>
+        <li>(0.32,0.7680608)</li>
+        <li>(0.36,0.7331161)</li>
+        <li>(0.3999999,0.6968619)</li>
+        <li>(0.4399999,0.6593019)</li>
+        <li>(0.4799999,0.6204399)</li>
+        <li>(0.5199999,0.5802801)</li>
+        <li>(0.5599999,0.5388262)</li>
+        <li>(0.6,0.4960822)</li>
+        <li>(0.64,0.452052)</li>
+        <li>(0.68,0.4067395)</li>
+        <li>(0.72,0.3601486)</li>
+        <li>(0.7600001,0.3122832)</li>
+        <li>(0.8000001,0.2631474)</li>
+        <li>(0.8400001,0.2127448)</li>
+        <li>(0.8800001,0.1610795)</li>
+        <li>(0.9200001,0.1081554)</li>
+        <li>(0.9600002,0.05397642)</li>
+        <li>(1,0)</li>
+      </points>
+    </archCurve>
+    <scalers>
+      <li>
+        <scaleAmt>3</scaleAmt>
+        <scaleTime>.5</scaleTime>
+        <axisMask>(0, 1, 1)</axisMask>
+        <curve>
+          <points>
+            <li>(0,1)</li>
+            <li>(0.04,0.999419)</li>
+            <li>(0.08,0.9991278)</li>
+            <li>(0.12,0.9990724)</li>
+            <li>(0.16,0.9991986)</li>
+            <li>(0.2,0.9994522)</li>
+            <li>(0.24,0.9997793)</li>
+            <li>(0.28,1.000126)</li>
+            <li>(0.32,1.000437)</li>
+            <li>(0.36,1.000659)</li>
+            <li>(0.3999999,1.000739)</li>
+            <li>(0.4399999,1.000621)</li>
+            <li>(0.4799999,1.000252)</li>
+            <li>(0.5199999,0.9995767)</li>
+            <li>(0.5599999,0.9985422)</li>
+            <li>(0.6,0.997094)</li>
+            <li>(0.64,0.995178)</li>
+            <li>(0.68,0.9927399)</li>
+            <li>(0.72,0.9897258)</li>
+            <li>(0.7600001,0.9860814)</li>
+            <li>(0.8000001,0.9258614)</li>
+            <li>(0.8400001,0.7906939)</li>
+            <li>(0.8800001,0.6060663)</li>
+            <li>(0.9200001,0.3964363)</li>
+            <li>(0.9600002,0.1862615)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>CaveWaterSpray</defName>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+        <texPath>Things/Mote/WaterSpray</texPath>
+        <drawSize>(.5,1)</drawSize>
+        <color>(0.53, 0.69, 0.74, .7)</color>
+        <!--<renderQueue>3200</renderQueue>-->
+      </li>
+    </randomGraphics>
+    <unattachedDrawOffset>(0, 0, 8)</unattachedDrawOffset>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.5</fadeInTime>
+    <solidTime>.65</solidTime>
+    <fadeOutTime>.75</fadeOutTime>
+    <archHeight>10~20</archHeight>
+    <growthRate>1</growthRate>
+    <archDuration>2.25</archDuration>
+    <archCurve>
+      <points>
+        <li>(0,1)</li>
+        <li>(0.04,0.9756736)</li>
+        <li>(0.08,0.9500062)</li>
+        <li>(0.12,0.9230018)</li>
+        <li>(0.16,0.8946642)</li>
+        <li>(0.2,0.8649974)</li>
+        <li>(0.24,0.8340054)</li>
+        <li>(0.28,0.8016918)</li>
+        <li>(0.32,0.7680608)</li>
+        <li>(0.36,0.7331161)</li>
+        <li>(0.3999999,0.6968619)</li>
+        <li>(0.4399999,0.6593019)</li>
+        <li>(0.4799999,0.6204399)</li>
+        <li>(0.5199999,0.5802801)</li>
+        <li>(0.5599999,0.5388262)</li>
+        <li>(0.6,0.4960822)</li>
+        <li>(0.64,0.452052)</li>
+        <li>(0.68,0.4067395)</li>
+        <li>(0.72,0.3601486)</li>
+        <li>(0.7600001,0.3122832)</li>
+        <li>(0.8000001,0.2631474)</li>
+        <li>(0.8400001,0.2127448)</li>
+        <li>(0.8800001,0.1610795)</li>
+        <li>(0.9200001,0.1081554)</li>
+        <li>(0.9600002,0.05397642)</li>
+        <li>(1,0)</li>
+      </points>
+    </archCurve>
+  </FleckDef>
+
+
+
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>PulsingDistortionRing</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <scalers>
+      <li>
+        <curve>
+          <points>
+              <li>(0,0.5)</li>
+              <li>(0.04,0.5506649)</li>
+              <li>(0.08,0.6083986)</li>
+              <li>(0.12,0.6601207)</li>
+              <li>(0.16,0.6927508)</li>
+              <li>(0.2,0.6932482)</li>
+              <li>(0.24,0.6573324)</li>
+              <li>(0.28,0.5968097)</li>
+              <li>(0.32,0.5250826)</li>
+              <li>(0.36,0.4555534)</li>
+              <li>(0.3999999,0.4016244)</li>
+              <li>(0.4399999,0.3766979)</li>
+              <li>(0.4799999,0.3844551)</li>
+              <li>(0.5199999,0.4151261)</li>
+              <li>(0.5599999,0.4617828)</li>
+              <li>(0.6,0.5174969)</li>
+              <li>(0.64,0.5753405)</li>
+              <li>(0.68,0.6283851)</li>
+              <li>(0.72,0.6697027)</li>
+              <li>(0.7600001,0.6923652)</li>
+              <li>(0.8000001,0.6905967)</li>
+              <li>(0.8400001,0.6676212)</li>
+              <li>(0.8800001,0.6302789)</li>
+              <li>(0.9200001,0.5853646)</li>
+              <li>(0.9600002,0.5396733)</li>
+              <li>(1,0.5)</li>
+          </points>
+        </curve>
+        <scaleAmt>1</scaleAmt>
+        <scaleTime>1.6</scaleTime>
+      </li>
+    </scalers>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+        <_noiseIntensity>1</_noiseIntensity>
+        <_ageToNoiseRatio>0</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+    <useAttachLink>True</useAttachLink>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>ExpandingDistortionRing</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <scalers>
+      <li>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.0784)</li>
+            <li>(0.08,0.1536)</li>
+            <li>(0.12,0.2256)</li>
+            <li>(0.16,0.2944)</li>
+            <li>(0.2,0.36)</li>
+            <li>(0.24,0.4224)</li>
+            <li>(0.28,0.4816)</li>
+            <li>(0.32,0.5376)</li>
+            <li>(0.36,0.5904)</li>
+            <li>(0.3999999,0.6399999)</li>
+            <li>(0.4399999,0.6863999)</li>
+            <li>(0.4799999,0.7296)</li>
+            <li>(0.5199999,0.7695999)</li>
+            <li>(0.5599999,0.8063999)</li>
+            <li>(0.6,0.84)</li>
+            <li>(0.64,0.8704)</li>
+            <li>(0.68,0.8975999)</li>
+            <li>(0.72,0.9216)</li>
+            <li>(0.7600001,0.9424001)</li>
+            <li>(0.8000001,0.96)</li>
+            <li>(0.8400001,0.9744)</li>
+            <li>(0.8800001,0.9856001)</li>
+            <li>(0.9200001,0.9936001)</li>
+            <li>(0.9600002,0.9984)</li>
+            <li>(1,1)</li>
+          </points>
+        </curve>
+        <scaleAmt>1.5</scaleAmt>
+        <scaleTime>2</scaleTime>
+      </li>
+    </scalers>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.1</_distortionIntensity>
+        <_brightnessMultiplier>2.15</_brightnessMultiplier>
+        <_noiseIntensity>1</_noiseIntensity>
+        <_ageToNoiseRatio>10</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+    <useAttachLink>True</useAttachLink>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>ExpandingDistortionRingFast</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>.5</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <scalers>
+      <li>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.0784)</li>
+            <li>(0.08,0.1536)</li>
+            <li>(0.12,0.2256)</li>
+            <li>(0.16,0.2944)</li>
+            <li>(0.2,0.36)</li>
+            <li>(0.24,0.4224)</li>
+            <li>(0.28,0.4816)</li>
+            <li>(0.32,0.5376)</li>
+            <li>(0.36,0.5904)</li>
+            <li>(0.3999999,0.6399999)</li>
+            <li>(0.4399999,0.6863999)</li>
+            <li>(0.4799999,0.7296)</li>
+            <li>(0.5199999,0.7695999)</li>
+            <li>(0.5599999,0.8063999)</li>
+            <li>(0.6,0.84)</li>
+            <li>(0.64,0.8704)</li>
+            <li>(0.68,0.8975999)</li>
+            <li>(0.72,0.9216)</li>
+            <li>(0.7600001,0.9424001)</li>
+            <li>(0.8000001,0.96)</li>
+            <li>(0.8400001,0.9744)</li>
+            <li>(0.8800001,0.9856001)</li>
+            <li>(0.9200001,0.9936001)</li>
+            <li>(0.9600002,0.9984)</li>
+            <li>(1,1)</li>
+          </points>
+        </curve>
+        <scaleAmt>1.5</scaleAmt>
+        <scaleTime>2</scaleTime>
+      </li>
+    </scalers>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>2.15</_brightnessMultiplier>
+        <_noiseIntensity>1</_noiseIntensity>
+        <_ageToNoiseRatio>10</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+    <useAttachLink>True</useAttachLink>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>BioferriteHarvesterWorking</defName>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianCloud</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color>(0, 0, 0, 0)</_Color>
+        <_Color2>(0, 0, 0, .4)</_Color2>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.2</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>2</growthRate>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HeatDistortion</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HeatDistortion</texPath>
+      <shaderType>MoteHeatDistortion</shaderType>
+      <shaderParameters>
+        <_distortionIntensity>.01</_distortionIntensity>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>2</fadeInTime>
+    <solidTime>5</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>0</growthRate>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FerroBlob</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/FerroBlob</texPath>
+      <shaderType>FerroBlob</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>.3</fadeOutTime>
+    <scalers>
+      <li>
+        <scaleAmt>1.5~2.5</scaleAmt>
+        <scaleTime>1</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.1085123)</li>
+            <li>(0.08,0.2089105)</li>
+            <li>(0.12,0.3015082)</li>
+            <li>(0.16,0.3866191)</li>
+            <li>(0.2,0.4645568)</li>
+            <li>(0.24,0.5356349)</li>
+            <li>(0.28,0.6001673)</li>
+            <li>(0.32,0.6584677)</li>
+            <li>(0.36,0.7108493)</li>
+            <li>(0.3999999,0.7576264)</li>
+            <li>(0.4399999,0.7991121)</li>
+            <li>(0.4799999,0.8356205)</li>
+            <li>(0.5199999,0.8674651)</li>
+            <li>(0.5599999,0.8949595)</li>
+            <li>(0.6,0.9184176)</li>
+            <li>(0.64,0.9381528)</li>
+            <li>(0.68,0.954479)</li>
+            <li>(0.72,0.9677095)</li>
+            <li>(0.7600001,0.9781584)</li>
+            <li>(0.8000001,0.9861392)</li>
+            <li>(0.8400001,0.9919655)</li>
+            <li>(0.8800001,0.9959511)</li>
+            <li>(0.9200001,0.9984096)</li>
+            <li>(0.9600002,0.9996548)</li>
+            <li>(1,1)</li>
+          </points>
+
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoraxianFerroBlob</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/HoraxianFerroBlob</texPath>
+      <shaderType>FerroBlob</shaderType>
+      <shaderParameters>
+        <_NoiseScale>10</_NoiseScale>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>Terrain</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>.3</fadeOutTime>
+    <scalers>
+      <li>
+        <scaleAmt>2.5~3.5</scaleAmt>
+        <scaleTime>1</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.1085123)</li>
+            <li>(0.08,0.2089105)</li>
+            <li>(0.12,0.3015082)</li>
+            <li>(0.16,0.3866191)</li>
+            <li>(0.2,0.4645568)</li>
+            <li>(0.24,0.5356349)</li>
+            <li>(0.28,0.6001673)</li>
+            <li>(0.32,0.6584677)</li>
+            <li>(0.36,0.7108493)</li>
+            <li>(0.3999999,0.7576264)</li>
+            <li>(0.4399999,0.7991121)</li>
+            <li>(0.4799999,0.8356205)</li>
+            <li>(0.5199999,0.8674651)</li>
+            <li>(0.5599999,0.8949595)</li>
+            <li>(0.6,0.9184176)</li>
+            <li>(0.64,0.9381528)</li>
+            <li>(0.68,0.954479)</li>
+            <li>(0.72,0.9677095)</li>
+            <li>(0.7600001,0.9781584)</li>
+            <li>(0.8000001,0.9861392)</li>
+            <li>(0.8400001,0.9919655)</li>
+            <li>(0.8800001,0.9959511)</li>
+            <li>(0.9200001,0.9984096)</li>
+            <li>(0.9600002,0.9996548)</li>
+            <li>(1,1)</li>
+          </points>
+
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FerroBlobComplex</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/FerroBlob</texPath>
+      <shaderType>FerroBlob</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>3.8</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <scalers>
+      <li>
+        <scaleAmt>30</scaleAmt>
+        <scaleTime>4</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.05683046)</li>
+            <li>(0.08,0.1164435)</li>
+            <li>(0.12,0.1721913)</li>
+            <li>(0.16,0.2174262)</li>
+            <li>(0.2,0.2431684)</li>
+            <li>(0.24,0.2469372)</li>
+            <li>(0.28,0.241274)</li>
+            <li>(0.32,0.2392099)</li>
+            <li>(0.36,0.253776)</li>
+            <li>(0.3999999,0.2980039)</li>
+            <li>(0.4399999,0.4074572)</li>
+            <li>(0.4799999,0.5423197)</li>
+            <li>(0.5199999,0.6087481)</li>
+            <li>(0.5599999,0.6324053)</li>
+            <li>(0.6,0.6422248)</li>
+            <li>(0.64,0.6645381)</li>
+            <li>(0.68,0.7260946)</li>
+            <li>(0.72,0.8276181)</li>
+            <li>(0.7600001,0.930284)</li>
+            <li>(0.8000001,0.9928885)</li>
+            <li>(0.8400001,0.9971336)</li>
+            <li>(0.8800001,0.992223)</li>
+            <li>(0.9200001,0.9641628)</li>
+            <li>(0.9600002,0.891233)</li>
+            <li>(1,0.75)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FerroWave</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/FerroWave</texPath>
+      <shaderType>FerroWave</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>4</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>-.65</growthRate>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>TwistingMonolithLights</defName>
+    <graphicData>
+      <texPath>Things/Mote/TwistingMonolithLights</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>TwistingMonolithLightsIntense</defName>
+    <graphicData>
+      <texPath>Things/Mote/TwistingMonolithLights</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderType>MoteGlow</shaderType>
+      <shaderParameters>
+        <_Color2>(2, 2, 2, 1)</_Color2>
+      </shaderParameters>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>GleamingMonolithLights</defName>
+    <graphicData>
+      <texPath>Things/Mote/GleamingMonolithLights</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>TerrifyingHallucinationsHigh</defName>
+    <useAttachLink>True</useAttachLink>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/TerrifyingHallucinations/TerrifyingHallucinationA</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+      </li>
+      <li>
+        <texPath>Things/Mote/TerrifyingHallucinations/TerrifyingHallucinationB</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>Mote</shaderType>
+      </li>
+    </randomGraphics>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.25</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>.25</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>TerrifyingHallucinationsLow</defName>
+    <useAttachLink>True</useAttachLink>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/TerrifyingHallucinations/TerrifyingHallucinationC</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>HoraxianSnake</shaderType>
+      </li>
+    </randomGraphics>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>.25</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>.25</fadeOutTime>
+  </FleckDef>
+
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>ChimeraRage</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <growthRate>3</growthRate>
+    <useAttachLink>True</useAttachLink>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_Color2>(1, 0, 0, 1)</_Color2>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-0.4</_texBScrollSpeed>
+        <_Intensity>1</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>1</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>0</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>RevenantHypnosis</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>0</growthRate>
+    <useAttachLink>True</useAttachLink>
+    <attachedToHead>True</attachedToHead>
+    <graphicData>
+      <texPath>Things/Mote/RevenantHypnosis</texPath>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <shaderParameters>
+        <_Color2>(1, 1, 1, .5)</_Color2>
+        <_Interval>.1</_Interval>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>RageSpeedBit</defName>
+    <graphicData>
+      <texPath>Things/Mote/RageSpeedBit</texPath>
+      <renderInstanced>true</renderInstanced>
+      <shaderParameters>
+        <_Color2>(.55, 0, 0, 1)</_Color2>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>.8</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <useAttachLink>true</useAttachLink>
+    <scalers>
+      <li>
+        <scaleTime>1.6</scaleTime>
+        <scaleAmt>1.1</scaleAmt>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.2481705)</li>
+            <li>(0.08,0.4560294)</li>
+            <li>(0.12,0.620567)</li>
+            <li>(0.16,0.7430447)</li>
+            <li>(0.2,0.8336748)</li>
+            <li>(0.24,0.8986948)</li>
+            <li>(0.28,0.9402529)</li>
+            <li>(0.32,0.9627749)</li>
+            <li>(0.36,0.9723766)</li>
+            <li>(0.3999999,0.9767269)</li>
+            <li>(0.4399999,0.9783706)</li>
+            <li>(0.4799999,0.978039)</li>
+            <li>(0.5199999,0.9772476)</li>
+            <li>(0.5599999,0.9762664)</li>
+            <li>(0.6,0.975273)</li>
+            <li>(0.64,0.974445)</li>
+            <li>(0.68,0.9739599)</li>
+            <li>(0.72,0.9739954)</li>
+            <li>(0.7600001,0.9734936)</li>
+            <li>(0.8000001,0.9718959)</li>
+            <li>(0.8400001,0.9508023)</li>
+            <li>(0.8800001,0.8760892)</li>
+            <li>(0.9200001,0.7138872)</li>
+            <li>(0.9600002,0.4319071)</li>
+            <li>(1,0)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>MonolithL0FlareHint</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.6</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.9</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(0.52, 0.55, 0.53, .75)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(0.52, 0.55, 0.53, .75)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(0.52, 0.55, 0.53, .75)</color>
+        <drawSize>4</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>MonolithL0CrackGlow</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>.6</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.9</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/MonolithL0Crack</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(0.52, 0.55, 0.53, 1)</color>
+      <drawSize>5</drawSize>
+    </graphicData>
+    
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>MetalhorrorDeath</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <growthRate>-4</growthRate>
+    <speedPerTime>-150</speedPerTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/MetalShardA</texPath>
+        <shaderType>Mote</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/MetalShardB</texPath>
+        <shaderType>Mote</shaderType>
+        <drawSize>1</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>MetalhorrorDeathFlash</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(0.32, 0.35, 0.33, .75)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(0.32, 0.35, 0.33, .75)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(0.32, 0.35, 0.33, .75)</color>
+        <drawSize>4</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>HoldingPlatformChainSparks</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/ChainSparks</texPath>
+      <shaderType>MoteGlowPulse</shaderType>
+      <shaderParameters>
+        <_Interval>.05</_Interval>
+        <_PulseMin>.8</_PulseMin>
+        <_PulseMax>1</_PulseMax>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>1.2</fadeOutTime>
+    <scalers>
+      <li>
+        <scaleAmt>4</scaleAmt>
+        <scaleTime>1.3</scaleTime>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.2381762)</li>
+            <li>(0.08,0.4249946)</li>
+            <li>(0.12,0.5651093)</li>
+            <li>(0.16,0.6701739)</li>
+            <li>(0.2,0.7500439)</li>
+            <li>(0.24,0.8105828)</li>
+            <li>(0.28,0.8564262)</li>
+            <li>(0.32,0.8911517)</li>
+            <li>(0.36,0.9175276)</li>
+            <li>(0.3999999,0.9375309)</li>
+            <li>(0.4399999,0.9526281)</li>
+            <li>(0.4799999,0.964285)</li>
+            <li>(0.5199999,0.9726838)</li>
+            <li>(0.5599999,0.9789782)</li>
+            <li>(0.6,0.9838976)</li>
+            <li>(0.64,0.9877752)</li>
+            <li>(0.68,0.9909443)</li>
+            <li>(0.72,0.9935225)</li>
+            <li>(0.7600001,0.9953468)</li>
+            <li>(0.8000001,0.9965819)</li>
+            <li>(0.8400001,0.9974015)</li>
+            <li>(0.8800001,0.9979795)</li>
+            <li>(0.9200001,0.9984894)</li>
+            <li>(0.9600002,0.999105)</li>
+            <li>(1,1)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+    <archDuration>1.3</archDuration>
+    <archHeight>.1~.5</archHeight>
+    <archCurve>
+      <points>
+        <li>(0,0)</li>
+        <li>(0.04,0.1816335)</li>
+        <li>(0.08,0.343136)</li>
+        <li>(0.12,0.4855976)</li>
+        <li>(0.16,0.610109)</li>
+        <li>(0.2,0.7177604)</li>
+        <li>(0.24,0.8096424)</li>
+        <li>(0.28,0.8868452)</li>
+        <li>(0.32,0.9504592)</li>
+        <li>(0.36,1.001575)</li>
+        <li>(0.3999999,1.041283)</li>
+        <li>(0.4399999,1.070673)</li>
+        <li>(0.4799999,1.090836)</li>
+        <li>(0.5199999,1.102863)</li>
+        <li>(0.5599999,1.107843)</li>
+        <li>(0.6,1.106655)</li>
+        <li>(0.64,1.098712)</li>
+        <li>(0.68,1.082944)</li>
+        <li>(0.72,1.058277)</li>
+        <li>(0.7600001,1.023641)</li>
+        <li>(0.8000001,0.9779621)</li>
+        <li>(0.8400001,0.9201699)</li>
+        <li>(0.8800001,0.8491918)</li>
+        <li>(0.9200001,0.7639561)</li>
+        <li>(0.9600002,0.6633908)</li>
+        <li>(1,0.5481257)</li>
+      </points>
+
+    </archCurve>
+  </FleckDef>
+  
+</Defs>

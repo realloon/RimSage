@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>Hacking_InProgress</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Hacking/Hacking_Loop_02a</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>6~8</volumeRange>      
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Speech_Leader_Male</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/LeaderSpeech_Male</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>8~10</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Speech_Leader_Female</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/LeaderSpeech_Female</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>12~14</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Speech_Ideoligious_Male</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/IdeoSpeech_Male</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>8~10</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Speech_Ideoligious_Female</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/IdeoSpeech_Female</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>12~14</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Interact_Prune</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <repeatMode>NeverTwice</repeatMode>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Work/Pruning</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10~14</volumeRange>
+        <sustainLoop>False</sustainLoop>
+        <sustainIntervalRange>0.2~0.8</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HairCutting</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <repeatMode>NeverTwice</repeatMode>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Work/HairCutting</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15~19</volumeRange>
+        <sustainLoop>False</sustainLoop>
+        <sustainIntervalRange>0.2~0.8</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Interact_RecolorApparel</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <repeatMode>NeverTwice</repeatMode>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Work/RecolorApparel</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15~19</volumeRange>
+        <sustainLoop>False</sustainLoop>
+        <sustainIntervalRange>0.2~0.8</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Speech_Funeral_Female</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/FuneralSpeech_Female</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>12~14</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Speech_Funeral_Male</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Human/Speech/FuneralSpeech_Male</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <gameSpeedRange>0~2</gameSpeedRange>
+        <volumeRange>12~14</volumeRange>
+        <distRange>20~40</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>0~0.25</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LeavesRustle</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Work/Grow</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>13~15</volumeRange>
+        <distRange>25~55</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

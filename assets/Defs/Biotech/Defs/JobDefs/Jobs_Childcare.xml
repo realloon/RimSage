@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>BottleFeedBaby</defName>
+    <driverClass>JobDriver_BottleFeedBaby</driverClass>
+    <reportString>feeding TargetB to TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Breastfeed</defName>
+    <driverClass>JobDriver_Breastfeed</driverClass>
+    <reportString>breastfeeding TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <isCrawlingIfDowned>false</isCrawlingIfDowned>
+  </JobDef>
+
+  <JobDef>
+    <defName>BreastfeedCarryToMom</defName>
+    <driverClass>JobDriver_BreastfeedCarryToDownedMom</driverClass>
+    <reportString>carrying TargetA to TargetB.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>BringBabyToSafety</defName>
+    <driverClass>JobDriver_BringBabyToSafety</driverClass>
+    <reportString>putting TargetA somewhere safe.</reportString>
+    <forceCompleteBeforeNextJob>true</forceCompleteBeforeNextJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>BringBabyToSafetyUnforced</defName>
+    <driverClass>JobDriver_BringBabyToSafety</driverClass>
+    <reportString>putting TargetA somewhere safe.</reportString>
+    <forceCompleteBeforeNextJob>false</forceCompleteBeforeNextJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryToMomAfterBirth</defName>
+    <driverClass>JobDriver_BreastfeedCarryToMom</driverClass>
+    <reportString>carrying TargetA to TargetB.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>FertilizeOvum</defName>
+    <driverClass>JobDriver_FertilizeOvum</driverClass>
+    <reportString>fertilizing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>BabySuckle</defName>
+    <driverClass>JobDriver_BabyPassive</driverClass>
+    <reportString>feeding from TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <sleepCanInterrupt>false</sleepCanInterrupt>
+  </JobDef>
+
+  <JobDef>
+    <defName>BabyPlay</defName>
+    <driverClass>JobDriver_BabyPassive</driverClass>
+    <reportString>playing with TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <sleepCanInterrupt>false</sleepCanInterrupt>
+  </JobDef>
+
+</Defs>

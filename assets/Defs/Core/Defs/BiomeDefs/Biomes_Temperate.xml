@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BiomeDef Name="TemperateForest">
+    <defName>TemperateForest</defName>
+    <label>temperate forest</label>
+    <description>Forests of deciduous trees interspersed with fertile clearings. Many species of animals move around among the trees and on the plains.</description>
+    <workerClass>BiomeWorker_TemperateForest</workerClass>
+    <animalDensity>3.7</animalDensity>
+    <plantDensity>0.65</plantDensity>
+    <settlementSelectionWeight>1</settlementSelectionWeight>
+    <movementDifficulty>1</movementDifficulty>
+    <lakeBeachTerrain>Sand</lakeBeachTerrain>
+    <riverbankTerrain>Riverbank</riverbankTerrain>
+    <riverbankSizeRange>6~8</riverbankSizeRange>
+    <texture>World/Biomes/TemperateForest</texture>
+    <forageability>1</forageability>
+    <foragedFood>RawBerries</foragedFood>
+    <wildPlantRegrowDays>20</wildPlantRegrowDays>
+    <maxFishPopulation>540</maxFishPopulation>
+    <fishTypes MayRequire="Ludeon.RimWorld.Odyssey">
+      <freshwater_Common>
+        <Fish_Salmon MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Salmon>
+        <Fish_Bass MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bass>
+      </freshwater_Common>
+      <freshwater_Uncommon>
+        <Fish_Catfish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Catfish>
+      </freshwater_Uncommon>
+      <saltwater_Common>
+        <Fish_Salmon MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Salmon>
+        <Fish_Bluefish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bluefish>
+      </saltwater_Common>
+      <saltwater_Uncommon>
+        <Fish_Marlin MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Marlin>
+        <Fish_Flounder MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Flounder>
+      </saltwater_Uncommon>
+      <rareCatchesSetMaker MayRequire="Ludeon.RimWorld.Odyssey">RareFishingCatches_Temperate</rareCatchesSetMaker>
+    </fishTypes>
+    <soundsAmbient>
+      <li>Ambient_NightInsects_Standard</li>
+    </soundsAmbient>
+    <diseaseMtbDays>50</diseaseMtbDays>
+    <diseases>
+      <li>
+        <diseaseInc>Disease_Flu</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_Plague</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_Malaria</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_GutWorms</diseaseInc>
+        <commonality>50</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_FibrousMechanites</diseaseInc>
+        <commonality>30</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_SensoryMechanites</diseaseInc>
+        <commonality>30</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_MuscleParasites</diseaseInc>
+        <commonality>50</commonality>
+      </li>
+
+      <li>
+        <diseaseInc>Disease_AnimalFlu</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_AnimalPlague</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_OrganDecay</diseaseInc>
+        <commonality>10</commonality>
+      </li>
+    </diseases>
+    <terrainsByFertility>
+      <li>
+        <terrain>Soil</terrain>
+        <min>-999</min>
+        <max>0.87</max>
+      </li>
+      <li>
+        <terrain>SoilRich</terrain>
+        <min>0.87</min>
+        <max>999</max>
+      </li>
+    </terrainsByFertility>
+    <terrainPatchMakers>
+      <li>
+        <perlinFrequency>0.015</perlinFrequency>
+        <isPond>true</isPond>
+        <thresholds>
+          <li>
+            <terrain>SoilRich</terrain>
+            <min>0.73</min>
+            <max>0.80</max>
+          </li>
+          <li>
+            <terrain>Mud</terrain>
+            <min>0.80</min>
+            <max>0.93</max>
+          </li>
+          <li>
+            <terrain>WaterShallow</terrain>
+            <min>0.93</min>
+            <max>999</max>
+          </li>
+        </thresholds>
+      </li>
+    </terrainPatchMakers>
+    <baseWeatherCommonalities>
+      <Clear>18</Clear>
+      <Fog>1</Fog>
+      <Rain>2</Rain>
+      <DryThunderstorm>1</DryThunderstorm>
+      <RainyThunderstorm>1</RainyThunderstorm>
+      <FoggyRain>1</FoggyRain>
+      <SnowGentle>4</SnowGentle>
+      <SnowHard>4</SnowHard>
+      <GrayPall MayRequire="Ludeon.RimWorld.Anomaly">1</GrayPall>
+      <Overcast MayRequire="Ludeon.RimWorld.Odyssey">2</Overcast>
+    </baseWeatherCommonalities>
+    <wildPlants>
+      <Plant_Grass>5.0</Plant_Grass>
+      <Plant_GrayGrass MayRequire="Ludeon.RimWorld.Biotech">2</Plant_GrayGrass>
+      <Plant_TallGrass>2.0</Plant_TallGrass>
+      <Plant_Brambles>1.0</Plant_Brambles>
+      <Plant_Ripthorn MayRequire="Ludeon.RimWorld.Biotech">0.8</Plant_Ripthorn>
+      <Plant_Dandelion>0.5</Plant_Dandelion>
+      <Plant_Bush>0.6</Plant_Bush>
+      <Plant_TreeOak>0.5</Plant_TreeOak>
+      <Plant_TreePoplar>0.5</Plant_TreePoplar>
+      <Plant_Berry>0.05</Plant_Berry>
+      <Plant_HealrootWild>0.05</Plant_HealrootWild>
+      <Plant_Witchwood MayRequire="Ludeon.RimWorld.Biotech">0.5</Plant_Witchwood>
+      <Plant_Reeds MayRequire="Ludeon.RimWorld.Odyssey">1</Plant_Reeds>
+      <Plant_LilyPad MayRequire="Ludeon.RimWorld.Odyssey">0.2</Plant_LilyPad>
+      <Plant_Bulrush MayRequire="Ludeon.RimWorld.Odyssey">0.2</Plant_Bulrush>
+    </wildPlants>
+    <wildAnimals>
+      <Donkey>0.20</Donkey>
+      <GuineaPig>0.45</GuineaPig>
+      <Yak>0.06</Yak>
+      <Bison>0.07</Bison>
+      <Horse>0.20</Horse>
+      <Hare>1.0</Hare>
+      <Squirrel>1.0</Squirrel>
+      <Rat>1.0</Rat>
+      <Deer>0.5</Deer>
+      <WildBoar>0.5</WildBoar>
+      <Turkey>0.5</Turkey>
+      <Raccoon>0.5</Raccoon>
+      <Ibex>0.5</Ibex>
+      <Muffalo>0.5</Muffalo>
+      <Alpaca>0.5</Alpaca>
+      <Boomalope>0.4</Boomalope>
+      <Boomrat>0.4</Boomrat>
+      <Tortoise>0.3</Tortoise>
+      <Gazelle>0.3</Gazelle>
+      <Megasloth>0.2</Megasloth>
+      <Rhinoceros>0.1</Rhinoceros>
+      <Bear_Grizzly>0.07</Bear_Grizzly>
+      <Wolf_Timber>0.07</Wolf_Timber>
+      <Fox_Red>0.07</Fox_Red>
+      <Cougar>0.07</Cougar>
+      <Lynx>0.07</Lynx>
+      <Warg>0.07</Warg>
+      <Porcupine MayRequire="Ludeon.RimWorld.Odyssey">0.2</Porcupine>
+      <Wolverine MayRequire="Ludeon.RimWorld.Odyssey">0.07</Wolverine>
+      <Mink MayRequire="Ludeon.RimWorld.Odyssey">0.1</Mink>
+      <Swan MayRequire="Ludeon.RimWorld.Odyssey">0.1</Swan>
+      <Badger MayRequire="Ludeon.RimWorld.Odyssey">0.2</Badger>
+      <Sparrow MayRequire="Ludeon.RimWorld.Odyssey">0.5</Sparrow>
+      <Crow MayRequire="Ludeon.RimWorld.Odyssey">0.5</Crow>
+      <Bluebird MayRequire="Ludeon.RimWorld.Odyssey">0.5</Bluebird>
+      <Quail MayRequire="Ludeon.RimWorld.Odyssey">0.5</Quail>
+    </wildAnimals>
+    <pollutionWildAnimals MayRequire="Ludeon.RimWorld.Biotech">
+      <Toxalope MayRequire="Ludeon.RimWorld.Biotech">0.4</Toxalope>
+      <WasteRat MayRequire="Ludeon.RimWorld.Biotech">0.1</WasteRat>
+      <Rat>1</Rat>
+      <Raccoon>0.5</Raccoon>
+      <Boomrat>0.4</Boomrat>
+      <Boomalope>0.1</Boomalope>
+      <Warg>0.05</Warg>
+    </pollutionWildAnimals>
+    <coastalWildAnimals>
+      <SeaLion MayRequire="Ludeon.RimWorld.Odyssey">0.1</SeaLion>
+      <Seal MayRequire="Ludeon.RimWorld.Odyssey">0.1</Seal>
+      <StoneCrab MayRequire="Ludeon.RimWorld.Odyssey">0.1</StoneCrab>
+      <Otter MayRequire="Ludeon.RimWorld.Odyssey">0.1</Otter>
+    </coastalWildAnimals>
+    <allowedPackAnimals>
+      <li>Muffalo</li>
+      <li>Alpaca</li>
+    </allowedPackAnimals>
+  </BiomeDef>
+
+  <BiomeDef>
+    <defName>TemperateSwamp</defName>
+    <label>temperate swamp</label>
+    <description>Wetlands choked with vegetation and disease. Dense overgrowth makes it hard to move around, and clearing areas for building takes a long time. Much of the terrain is too marshy to support heavy structures.</description>
+    <workerClass>BiomeWorker_TemperateSwamp</workerClass>
+    <animalDensity>4.3</animalDensity>
+    <plantDensity>0.80</plantDensity>
+    <settlementSelectionWeight>0.6</settlementSelectionWeight>
+    <campSelectionWeight>0.9</campSelectionWeight>
+    <movementDifficulty>4</movementDifficulty>
+    <lakeBeachTerrain>Mud</lakeBeachTerrain>
+    <riverbankTerrain>Mud</riverbankTerrain>
+    <riverbankSizeRange>6~12</riverbankSizeRange>
+    <texture>World/Biomes/TemperateSwamp</texture>
+    <forageability>0.75</forageability>
+    <foragedFood>RawBerries</foragedFood>
+    <wildPlantRegrowDays>15</wildPlantRegrowDays>
+    <maxFishPopulation>660</maxFishPopulation>
+    <fishTypes MayRequire="Ludeon.RimWorld.Odyssey">
+      <freshwater_Common>
+        <Fish_Bass MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bass>
+      </freshwater_Common>
+      <freshwater_Uncommon>
+        <Fish_Catfish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Catfish>
+      </freshwater_Uncommon>
+      <saltwater_Common>
+        <Fish_Bluefish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bluefish>
+      </saltwater_Common>
+      <saltwater_Uncommon>
+        <Fish_Marlin MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Marlin>
+        <Fish_Flounder MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Flounder>
+      </saltwater_Uncommon>
+      <rareCatchesSetMaker MayRequire="Ludeon.RimWorld.Odyssey">RareFishingCatches_Temperate</rareCatchesSetMaker>
+    </fishTypes>
+    <soundsAmbient>
+      <li>Ambient_NightInsects_Standard</li>
+    </soundsAmbient>
+    <diseaseMtbDays>40</diseaseMtbDays>
+    <diseases>
+      <li>
+        <diseaseInc>Disease_Flu</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_Plague</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_Malaria</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_GutWorms</diseaseInc>
+        <commonality>50</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_FibrousMechanites</diseaseInc>
+        <commonality>30</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_SensoryMechanites</diseaseInc>
+        <commonality>30</commonality>
+      </li>
+
+      <li>
+        <diseaseInc>Disease_MuscleParasites</diseaseInc>
+        <commonality>50</commonality>
+      </li>
+
+      <li>
+        <diseaseInc>Disease_AnimalFlu</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_AnimalPlague</diseaseInc>
+        <commonality>100</commonality>
+      </li>
+      <li>
+        <diseaseInc>Disease_OrganDecay</diseaseInc>
+        <commonality>10</commonality>
+      </li>
+    </diseases>
+    <terrainsByFertility>
+      <li>
+        <terrain>Soil</terrain>
+        <min>-999</min>
+        <max>0.87</max>
+      </li>
+      <li>
+        <terrain>SoilRich</terrain>
+        <min>0.87</min>
+        <max>999</max>
+      </li>
+    </terrainsByFertility>
+    <terrainPatchMakers>
+      <li>
+        <perlinFrequency>0.04</perlinFrequency>
+        <thresholds>
+          <li>
+            <terrain>MarshyTerrain</terrain>
+            <min>0.32</min>
+            <max>999</max>
+          </li>
+        </thresholds>
+      </li>
+      <li>
+        <perlinFrequency>0.027</perlinFrequency>
+        <isPond>true</isPond>
+        <thresholds>
+          <li>
+            <terrain>SoilRich</terrain>
+            <min>-0.12</min>
+            <max>0.32</max>
+          </li>
+          <li>
+            <terrain>Mud</terrain>
+            <min>0.32</min>
+            <max>0.6</max>
+          </li>
+          <li>
+            <terrain>WaterShallow</terrain>
+            <min>0.6</min>
+            <max>999</max>
+          </li>
+        </thresholds>
+      </li>
+    </terrainPatchMakers>
+    <baseWeatherCommonalities>
+      <Clear>18</Clear>
+      <Fog>1</Fog>
+      <Rain>2</Rain>
+      <DryThunderstorm>1</DryThunderstorm>
+      <RainyThunderstorm>1</RainyThunderstorm>
+      <FoggyRain>1</FoggyRain>
+      <SnowGentle>4</SnowGentle>
+      <SnowHard>4</SnowHard>
+      <GrayPall MayRequire="Ludeon.RimWorld.Anomaly">1</GrayPall>
+      <BlindFog MayRequire="Ludeon.RimWorld.Odyssey">1</BlindFog>
+      <Overcast MayRequire="Ludeon.RimWorld.Odyssey">2</Overcast>
+      <TorrentialRain MayRequire="Ludeon.RimWorld.Odyssey">0.5</TorrentialRain>
+    </baseWeatherCommonalities>
+    <wildPlants>
+      <Plant_TallGrass>3.2</Plant_TallGrass>
+      <Plant_Chokevine>0.8</Plant_Chokevine>
+      <Plant_Bush>0.2</Plant_Bush>
+      <Plant_TreeWillow>1.0</Plant_TreeWillow>
+      <Plant_TreeCypress>1.0</Plant_TreeCypress>
+      <Plant_TreeMaple>1.0</Plant_TreeMaple>
+      <Plant_Berry>0.05</Plant_Berry>
+      <Plant_HealrootWild>0.05</Plant_HealrootWild>
+      <Plant_Witchwood MayRequire="Ludeon.RimWorld.Biotech">1.0</Plant_Witchwood>
+      <Plant_Reeds MayRequire="Ludeon.RimWorld.Odyssey">1</Plant_Reeds>
+      <Plant_LilyPad MayRequire="Ludeon.RimWorld.Odyssey">0.2</Plant_LilyPad>
+      <Plant_Bulrush MayRequire="Ludeon.RimWorld.Odyssey">0.2</Plant_Bulrush>
+    </wildPlants>
+    <wildAnimals>
+      <GuineaPig>0.15</GuineaPig>
+      <Yak>0.04</Yak>
+      <Horse>0.20</Horse>
+      <Hare>1.0</Hare>
+      <Squirrel>1.0</Squirrel>
+      <Rat>1.0</Rat>
+      <Tortoise>0.6</Tortoise>
+      <Deer>0.5</Deer>
+      <WildBoar>0.5</WildBoar>
+      <Turkey>0.5</Turkey>
+      <Raccoon>0.5</Raccoon>
+      <Ibex>0.5</Ibex>
+      <Muffalo>0.5</Muffalo>
+      <Alpaca>0.5</Alpaca>
+      <Boomalope>0.4</Boomalope>
+      <Boomrat>0.4</Boomrat>
+      <Megasloth>0.2</Megasloth>
+      <Rhinoceros>0.1</Rhinoceros>
+      <Bear_Grizzly>0.07</Bear_Grizzly>
+      <Wolf_Timber>0.07</Wolf_Timber>
+      <Fox_Red>0.07</Fox_Red>
+      <Cougar>0.07</Cougar>
+      <Lynx>0.07</Lynx>
+      <Warg>0.07</Warg>
+      <Duck>0.5</Duck>
+      <Porcupine MayRequire="Ludeon.RimWorld.Odyssey">0.2</Porcupine>
+      <Heron MayRequire="Ludeon.RimWorld.Odyssey">0.5</Heron>
+      <Swan MayRequire="Ludeon.RimWorld.Odyssey">0.1</Swan>
+      <Badger MayRequire="Ludeon.RimWorld.Odyssey">0.2</Badger>
+      <Bluebird MayRequire="Ludeon.RimWorld.Odyssey">0.5</Bluebird>
+      <Mink MayRequire="Ludeon.RimWorld.Odyssey">0.1</Mink>
+      <Alligator MayRequire="Ludeon.RimWorld.Odyssey">0.07</Alligator>
+      <Bullfrog MayRequire="Ludeon.RimWorld.Odyssey">0.4</Bullfrog>
+    </wildAnimals>
+    <pollutionWildAnimals MayRequire="Ludeon.RimWorld.Biotech">
+      <Toxalope MayRequire="Ludeon.RimWorld.Biotech">0.4</Toxalope>
+      <WasteRat MayRequire="Ludeon.RimWorld.Biotech">0.5</WasteRat>
+      <Rat>1</Rat>
+      <Raccoon>0.5</Raccoon>
+      <Boomrat>0.4</Boomrat>
+      <Boomalope>0.1</Boomalope>
+      <Warg>0.05</Warg>
+    </pollutionWildAnimals>
+    <coastalWildAnimals>
+      <SeaLion MayRequire="Ludeon.RimWorld.Odyssey">0.1</SeaLion>
+      <Seal MayRequire="Ludeon.RimWorld.Odyssey">0.1</Seal>
+      <StoneCrab MayRequire="Ludeon.RimWorld.Odyssey">0.1</StoneCrab>
+      <Otter MayRequire="Ludeon.RimWorld.Odyssey">0.1</Otter>
+    </coastalWildAnimals>
+    <allowedPackAnimals>
+      <li>Muffalo</li>
+      <li>Alpaca</li>
+    </allowedPackAnimals>
+  </BiomeDef>
+
+</Defs>

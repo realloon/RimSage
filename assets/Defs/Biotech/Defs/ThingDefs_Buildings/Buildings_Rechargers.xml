@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ThingDef Name="BaseMechCharger" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building_MechCharger</thingClass>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>true</hasInteractionCell>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0.3</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2410</uiOrder>
+    <comps>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_WasteProducer">
+        <showContentsInInspectPane>false</showContentsInInspectPane>
+      </li>
+    </comps>
+    <drawerType>MapMeshAndRealTime</drawerType>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMechCharger">
+    <defName>BasicRecharger</defName>
+    <label>mech recharger</label>
+    <description>Lightweight mechanoids can recharge here. During recharge, this recharger produces toxic wastepacks and stores them internally. Haulers must remove the wastepacks from time to time.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/BasicRecharger</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.9,1.25)</drawSize>
+      <shadowData>
+        <volume>(2.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <passability>PassThroughOnly</passability>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(3,1)</size>
+    <building>
+      <requiredMechWeightClasses>
+        <li>Light</li>
+      </requiredMechWeightClasses>
+      <barDrawData>
+        <north>
+          <preRotationOffset>(-0.01598358,0.0255661)</preRotationOffset>
+          <size>(0.5505219,0.1139069)</size>
+        </north>
+        <south>
+          <preRotationOffset>(0.006927488,-0.02323151)</preRotationOffset>
+          <size>(0.5479813,0.1345978)</size>
+        </south>
+        <east>
+          <preRotationOffset>(0.1157379,-0.006530767)</preRotationOffset>
+          <size>(0.4481201,0.1160278)</size>
+        </east>
+        <west>
+          <preRotationOffset>(-0.1114426,-0.005119322)</preRotationOffset>
+          <size>(0.4646759,0.1281815)</size>
+        </west>
+      </barDrawData>
+    </building>
+    <costList>
+      <Steel>125</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>BasicMechtech</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_ThingContainer">
+        <compClass>CompThingContainer</compClass>
+        <stackLimit>5</stackLimit>
+        <drawContainedThing>false</drawContainedThing>
+        <dropEffecterDef>MechChargerWasteRemoved</dropEffecterDef>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMechCharger">
+    <defName>StandardRecharger</defName>
+    <label>large mech recharger</label>
+    <description>Medium, heavy, and ultraheavy mechanoids can recharge here. During recharge, this recharger produces toxic wastepacks and stores them internally. Haulers must remove the wastepacks from time to time.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/StandardRecharger</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.8,2.8)</drawSize>
+      <shadowData>
+        <volume>(2.9, 0.5, 1.9)</volume>
+      </shadowData>
+    </graphicData>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <passability>PassThroughOnly</passability>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(3,2)</size>
+    <building>
+      <requiredMechWeightClasses>
+        <li>Medium</li>
+        <li>Heavy</li>
+        <li>UltraHeavy</li>
+      </requiredMechWeightClasses>
+      <barDrawData>
+        <north>
+          <preRotationOffset>(0.002166748,-0.3722534)</preRotationOffset>
+          <size>(0.4398041,0.1365509)</size>
+        </north>
+        <south>
+          <preRotationOffset>(-0.002609305,-0.6002655)</preRotationOffset>
+          <size>(0.4398041,0.121376)</size>
+        </south>
+        <east>
+          <preRotationOffset>(0.04148867,0.6301422)</preRotationOffset>
+          <size>(0.4066238,0.1425552)</size>
+        </east>
+        <west>
+          <preRotationOffset>(-0.02767944,0.6171188)</preRotationOffset>
+          <size>(0.397522,0.1395264)</size>
+        </west>
+      </barDrawData>
+    </building>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>StandardMechtech</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_ThingContainer">
+        <compClass>CompThingContainer</compClass>
+        <stackLimit>10</stackLimit>
+        <drawContainedThing>false</drawContainedThing>
+        <dropEffecterDef>MechChargerWasteRemoved</dropEffecterDef>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>400</basePowerConsumption>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

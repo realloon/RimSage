@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <SaveButton>Save</SaveButton>
+  <ClearBinding>Clear</ClearBinding>
+  <ResetBinding>Reset to default</ResetBinding>
+  <BindingButtonToolTip>Left-click to bind this key or right-click for options</BindingButtonToolTip>
+  <BindingButtonToolTipController>Click to bind this key or left trigger button for options</BindingButtonToolTipController>
+  <PressAnyKeyOrEsc>Press any key or Esc to cancel...</PressAnyKeyOrEsc>
+  <PressAnyKeyOrEscController>Press any button or {Key:Cancel} to cancel...</PressAnyKeyOrEscController>
+  <KeyBindingOverwritten>Key binding overwritten: {0}</KeyBindingOverwritten>
+  
+</LanguageData>

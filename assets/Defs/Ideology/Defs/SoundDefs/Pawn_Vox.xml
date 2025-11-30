@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+  
+  <SoundDef>
+    <defName>Pawn_Dryad_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Spawn</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad/Spawn</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Barkskin_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Barkskin/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Barkskin_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Barkskin/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Berrymaker_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Berrymaker/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Berrymaker_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Berrymaker/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Carrier_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Carrier/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Carrier_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Carrier/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Clawer_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Clawer/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Clawer_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Clawer/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Gaumaker_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Gaumaker/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Gaumaker_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Gaumaker/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Medicinemaker_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Medicinemaker/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Medicinemaker_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Medicinemaker/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Woodmaker_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Woodmaker/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>12~12</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Dryad_Woodmaker_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Animal/Dryad_Woodmaker/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

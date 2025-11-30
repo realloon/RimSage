@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Issues -->
+
+  <IssueDef>
+    <defName>RoughLiving</defName>
+    <label>Rough living</label>
+    <iconPath>UI/Issues/RoughLiving</iconPath>
+  </IssueDef>
+
+  <PreceptDef>
+    <defName>RoughLiving_Welcomed</defName>
+    <issue>RoughLiving</issue>
+    <label>welcomed</label>
+    <description>We don't need to separate ourselves from the roughness of nature.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <associatedMemes>
+      <li>TreeConnection</li>
+      <li>PainIsVirtue</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>TreeConnection</li>
+      <li>PainIsVirtue</li>
+    </requiredMemes>
+  </PreceptDef>
+
+</Defs>

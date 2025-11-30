@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Apparel_WarVeil"]/description</xpath>
+    <value>
+      <description>A piece of fabric which covers the wearer's face. It protects surprisingly well against pollution.</description>
+    </value>
+  </Operation>
+
+</Patch>

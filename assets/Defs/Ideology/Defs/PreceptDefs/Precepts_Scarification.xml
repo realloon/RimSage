@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Scarification</defName>
+    <label>scarification</label>
+    <iconPath>UI/Issues/Scarification</iconPath>
+  </IssueDef>
+
+  <!-- HistoryEvents -->
+  <HistoryEventDef>
+    <defName>GotScarified</defName>
+    <label>was scarified</label>
+  </HistoryEventDef>
+
+  <!-- Hediffs -->
+
+  <HediffDef>
+    <defName>Scarification</defName>
+    <label>scarification</label>
+    <labelNoun>a scarification</labelNoun>
+    <description>An artistic scar carefully carved into the flesh for ritual or artistic purposes.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>false</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>scarification</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <averagePainPerSeverityPermanent>0.075</averagePainPerSeverityPermanent>
+      <bleedRate>0</bleedRate>
+      <canMerge>false</canMerge>
+    </injuryProps>
+  </HediffDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Scarification_Extreme</defName>
+    <issue>Scarification</issue>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <label>extreme</label>
+    <description>Every person ought to bear the ritual scars - all over.</description>
+    <requiredScars>5</requiredScars>
+    <requiredMemes>
+      <li>PainIsVirtue</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Scarification_Extreme</thought>
+        <thoughtStageDescriptions>
+          <li>Scarification (5 scars required)</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Scarification_Extreme_Opinion</thought>
+        <thoughtStageDescriptions>
+          <li>Scarification (5 scars required)</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotScarified</eventDef>
+        <thought>ScarificationCeremony_Self_Extreme</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Scarification_Heavy</defName>
+    <issue>Scarification</issue>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <label>heavy</label>
+    <description>Every person ought to bear the ritual scars - many of them.</description>
+    <requiredScars>3</requiredScars>
+    <requiredMemes>
+      <li>PainIsVirtue</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Scarification_Heavy</thought>
+        <thoughtStageDescriptions>
+          <li>Scarification (3 scars required)</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Scarification_Heavy_Opinion</thought>
+        <thoughtStageDescriptions>
+          <li>Scarification (3 scars required)</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotScarified</eventDef>
+        <thought>ScarificationCeremony_Self_Heavy</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Scarification_Minor</defName>
+    <issue>Scarification</issue>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <label>minor</label>
+    <description>Every person ought to bear a ritual scar.</description>
+    <requiredScars>1</requiredScars>
+    <requiredMemes>
+      <li>PainIsVirtue</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Scarification_Minor</thought>
+        <thoughtStageDescriptions>
+          <li>Scarification (1 scar required)</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Scarification_Minor_Opinion</thought>
+        <thoughtStageDescriptions>
+          <li>Scarification (1 scar required)</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotScarified</eventDef>
+        <thought>ScarificationCeremony_Self_Minor</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Scarification_Horrible</defName>
+    <issue>Scarification</issue>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <label>horrible</label>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <description>Scarifying people for ideoligious reasons is horrible.</description>
+    <exclusionTags>
+      <li>ScarificationBad</li>
+    </exclusionTags>
+    <conflictingMemes>
+      <li>PainIsVirtue</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotScarified</eventDef>
+        <thought>ScarificationCeremony_Know_Horrible</thought>
+        <description>someone got scarified</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Ceremony thoughts -->
+
+  <ThoughtDef>
+    <defName>ScarificationCeremony_Know_Horrible</defName>
+    <durationDays>4</durationDays>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>Scarification ceremony</label>
+        <description>We mutilated a fellow colonist over ideological beliefs! This is wrong!</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ScarificationCeremony_Self_Minor</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>got scarified</label>
+        <description>I bear a new ritual mark to remind me of our truth.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ScarificationCeremony_Self_Heavy</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>got scarified</label>
+        <description>I bear a new ritual mark to connected me to our truth.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ScarificationCeremony_Self_Extreme</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>got scarified</label>
+        <description>I bear a new ritual mark to bind me to our truth.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>Scarification_Extreme_Opinion</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_Scarification_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Wimp</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>scarified</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+      <li>
+        <label>not scarified</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+      <li>
+        <label>insufficiently scarified</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Scarification_Extreme</defName>
+    <workerClass>ThoughtWorker_Precept_Scarification</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <minExpectationForNegativeThought>Low</minExpectationForNegativeThought>
+    <nullifyingTraits>
+      <li>Wimp</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>scarified</label>
+        <description>My dedication is written in indelible pain.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>not scarified</label>
+        <description>This smooth skin is a travesty.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>insufficiently scarified</label>
+        <description>This smooth skin is a travesty.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Scarification_Heavy_Opinion</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_Scarification_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Wimp</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>scarified</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+      <li>
+        <label>not scarified</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+      <li>
+        <label>insufficiently scarified</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Scarification_Heavy</defName>
+    <workerClass>ThoughtWorker_Precept_Scarification</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <minExpectationForNegativeThought>Low</minExpectationForNegativeThought>
+    <nullifyingTraits>
+      <li>Wimp</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>scarified</label>
+        <description>I bear the many cuts, as one ought to.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>not scarified</label>
+        <description>This smooth skin is wrong.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>insufficiently scarified</label>
+        <description>This smooth skin is wrong.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Scarification_Minor_Opinion</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_Scarification_Social</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Wimp</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>scarified</label>
+        <baseOpinionOffset>3</baseOpinionOffset>
+      </li>
+      <li>
+        <label>not scarified</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+      <li>
+        <label>insufficiently scarified</label>
+        <baseOpinionOffset>-2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Scarification_Minor</defName>
+    <workerClass>ThoughtWorker_Precept_Scarification</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <minExpectationForNegativeThought>Low</minExpectationForNegativeThought>
+    <nullifyingTraits>
+      <li>Wimp</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>scarified</label>
+        <description>I bear the mark, as one ought to.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>not scarified</label>
+        <description>I lack the appropriate ritual scar.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>insufficiently scarified</label>
+        <description>I lack the appropriate ritual scar.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+</Defs>

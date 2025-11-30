@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BodyPartGroupDef>
+    <defName>SpikedShellAttackTool</defName>
+    <label>shell spike</label>
+    <labelShort>spike</labelShort>
+    <listOrder>79</listOrder>
+  </BodyPartGroupDef>
+</Defs>

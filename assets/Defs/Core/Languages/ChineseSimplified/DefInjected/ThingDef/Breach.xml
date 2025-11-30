@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: breach axe -->
+  <MeleeWeapon_BreachAxe.label>破墙斧</MeleeWeapon_BreachAxe.label>
+  <!-- EN: A combined blade and tool-head attached to a sturdy haft. While slightly less effective than other weapons against human enemies, it excels at tearing down walls, doors, and other structures thanks to its integrated tool-head. -->
+  <MeleeWeapon_BreachAxe.description>将尖刃和工具头端结合在坚固握柄上的武器。虽然它对生物敌人的杀伤力不如其他武器，但能够高效且迅速地拆毁墙体、门等建筑结构。</MeleeWeapon_BreachAxe.description>
+  <!-- EN: handle -->
+  <MeleeWeapon_BreachAxe.tools.handle.label>握柄</MeleeWeapon_BreachAxe.tools.handle.label>
+  <!-- EN: head -->
+  <MeleeWeapon_BreachAxe.tools.head.label>斧头</MeleeWeapon_BreachAxe.tools.head.label>
+  
+</LanguageData>

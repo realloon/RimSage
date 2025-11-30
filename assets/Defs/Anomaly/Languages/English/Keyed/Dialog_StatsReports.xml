@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <KnowledgeFromStudy>Knowledge gain from study</KnowledgeFromStudy>
+  <KnowledgeFromStudyDesc>The type and amount of anomaly knowledge that can be obtained when this entity is studied. More sophisticated entities can unlock more advanced anomaly research projects.</KnowledgeFromStudyDesc>
+  <Stat_Knowledge>{0} {1}</Stat_Knowledge>
+  <StudyFrequency>Study interval</StudyFrequency>
+  <StudyFrequencyDesc>The duration between available study periods for this entity.</StudyFrequencyDesc>
+  
+  <Stat_Hediff_Regeneration_Name>Healing</Stat_Hediff_Regeneration_Name>
+  <Stat_Hediff_Regeneration_Desc>A flat amount of healing per day.</Stat_Hediff_Regeneration_Desc>
+  <Stat_Hediff_Regeneration_Stat>{0} hp/day</Stat_Hediff_Regeneration_Stat>
+
+  <Stat_ContainmentStrength_AverageLighting>Average lighting</Stat_ContainmentStrength_AverageLighting>
+  <Stat_ContainmentStrength_AverageWallHp>Average wall HP</Stat_ContainmentStrength_AverageWallHp>
+  <Stat_ContainmentStrength_AverageDoorHp>Average door HP</Stat_ContainmentStrength_AverageDoorHp>
+  <Stat_ContainmentStrength_OtherHoldingPlatforms>Multiple ({0}) holding platforms</Stat_ContainmentStrength_OtherHoldingPlatforms>
+  <Stat_ContainmentStrength_MapwideOffset>Map-wide offset</Stat_ContainmentStrength_MapwideOffset>
+  <Stat_ContainmentStrength_DoorForcedOpen>door open</Stat_ContainmentStrength_DoorForcedOpen>
+  <Stat_ContainmentStrength_NotFullyRoofed>Not fully roofed</Stat_ContainmentStrength_NotFullyRoofed>
+  <Stat_ContainmentStrength_Flooring>Flooring</Stat_ContainmentStrength_Flooring>
+  <Stat_ContainmentStrength_Platform>Building</Stat_ContainmentStrength_Platform>
+
+  <StatsReport_BioferriteGeneration>Bioferrite generation</StatsReport_BioferriteGeneration>
+  <StatsReport_BioferriteGeneration_Desc>How much bioferrite this entity generates per day when connected to a bioferrite harvester.</StatsReport_BioferriteGeneration_Desc>
+  <StatsReport_BioferriteDensityMultiplier>Multiplier for bioferrite density</StatsReport_BioferriteDensityMultiplier>
+  <StatsReport_BioferriteExtractedMultiplier>Multiplier for bioferrite extracted recently</StatsReport_BioferriteExtractedMultiplier>
+
+  <StatsReport_Offering>Offering</StatsReport_Offering>
+  <StatsReport_Offering_Desc>The ingredients required to perform the psychic ritual.</StatsReport_Offering_Desc>
+
+  <StatsReport_RitualDuration>Ritual duration</StatsReport_RitualDuration>
+  <StatsReport_RitualDuration_Desc>The time it takes to perform this ritual.</StatsReport_RitualDuration_Desc>
+
+  <StatsReport_RitualCooldown>Cooldown</StatsReport_RitualCooldown>
+  <StatsReport_RitualCooldown_Desc>After a ritual is performed, it disrupts ambient psychic energy for a period of time. During this time, the ritual can't be performed again.</StatsReport_RitualCooldown_Desc>
+
+  <StatsReport_ContainmentStrengthOffset>Containment offset</StatsReport_ContainmentStrengthOffset>
+  <StatsReport_ContainmentStrengthOffset_Desc>How much this affects the ability of a holding platform to constrain an entity. Entities that are better contained are less likely to escape and provide more knowledge when studied.</StatsReport_ContainmentStrengthOffset_Desc>
+
+  <StatsReport_SerumDuration>Duration</StatsReport_SerumDuration>
+  <StatsReport_SerumDuration_Desc>How long the effects of a serum last.</StatsReport_SerumDuration_Desc>
+  
+  <StatsReport_Occupied>Occupied</StatsReport_Occupied>
+  <MeditationFocusPerBuilding>{2} per nearby {BUILDING_label} ({0} / {1})</MeditationFocusPerBuilding>
+  <MeditationFocusPerBuildingAbstract>{1} per nearby {BUILDING_label} (up to {0})</MeditationFocusPerBuildingAbstract>
+
+</LanguageData>

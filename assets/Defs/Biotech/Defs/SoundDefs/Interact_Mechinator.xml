@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>MechlinkInstalled</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Item/Mechlink/Installed</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>    
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>RepairMech_Touch</defName>
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <sustainLoop>False</sustainLoop>
+        <volumeRange>17~19</volumeRange>      
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Work/RepairMech</clipFolderPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>RepairMech_Remote_Start</defName>
+    <sustain>false</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Work/RemoteRepairMech/Mechanitor_RemoteRepair_Start_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>      
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>RepairMech_Remote</defName>
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <sustainStartSound>RepairMech_Remote_Start</sustainStartSound>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Work/RemoteRepairMech/Mechanitor_RemoteRepair_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <sustainAttack>0.7</sustainAttack>
+        <volumeRange>20</volumeRange>    
+        <muteWhenPaused>True</muteWhenPaused>  
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ShieldMech</defName>
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <sustainStartSound>ShieldMech_Start</sustainStartSound>  
+    <sustainFadeoutStartSound>ShieldMech_Complete</sustainFadeoutStartSound>
+    <sustainFadeoutTime>0.7</sustainFadeoutTime>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Work/ShieldMech/Mechanitor_RemoteShield_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <sustainAttack>0.7</sustainAttack>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ShieldMech_Start</defName>
+    <sustain>false</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Work/ShieldMech/Mechanitor_RemoteShield_Start_01a</clipPath>
+          </li>
+        </grains>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ShieldMech_Complete</defName>
+    <sustain>false</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Work/ShieldMech/Mechanitor_RemoteShield_Complete_01a</clipPath>
+          </li>
+        </grains>
+        <muteWhenPaused>True</muteWhenPaused>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ControlMech</defName>
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanitor/ControlTaking/Grains</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <volumeRange>30</volumeRange>
+      </li>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Mechanitor/ControlTaking/Mech_Control_Taking_Loop_01a</clipPath>
+          </li>
+        </grains>
+        <sustainRelease>0.1</sustainRelease>
+        <volumeRange>25</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ControlMech_Complete</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanitor/ControlTaking/Resolve</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.95~1.05</pitchRange>
+        <volumeRange>30</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DisconnectedMech</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanitor/MechDisconnected</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

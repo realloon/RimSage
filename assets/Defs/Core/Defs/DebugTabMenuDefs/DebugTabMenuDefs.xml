@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DebugTabMenuDef>
+    <defName>Actions</defName>
+    <label>actions/tools</label>
+    <menuClass>DebugTabMenu_Actions</menuClass>
+    <displayOrder>0</displayOrder>
+  </DebugTabMenuDef>
+
+  <DebugTabMenuDef>
+    <defName>Settings</defName>
+    <label>settings</label>
+    <menuClass>DebugTabMenu_Settings</menuClass>
+    <displayOrder>100</displayOrder>
+  </DebugTabMenuDef>
+
+  <DebugTabMenuDef>
+    <defName>Output</defName>
+    <label>output</label>
+    <menuClass>DebugTabMenu_Output</menuClass>
+    <displayOrder>200</displayOrder>
+  </DebugTabMenuDef>
+
+</Defs>

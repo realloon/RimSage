@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  
+  <InfectionPathwayDef>
+    <defName>EntityAttacked</defName>
+    <label>entity attack</label>
+    <pawnRequired>true</pawnRequired>
+  </InfectionPathwayDef>
+  
+  <InfectionPathwayDef>
+    <defName>RevenantHypnotized</defName>
+    <label>revenant hypnotized</label>
+  </InfectionPathwayDef>
+  
+</Defs>

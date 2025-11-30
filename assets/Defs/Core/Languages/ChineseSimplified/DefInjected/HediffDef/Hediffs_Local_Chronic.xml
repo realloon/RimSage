@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: alzheimer's -->
+  <Alzheimers.label>阿尔茨海默病</Alzheimers.label>
+  <!-- EN: A brain disease usually associated with aging. Alzheimer's disease causes progressive degradation in the ability to think and remember. Patients are known to forget close relatives and sometimes wander around in confusion. -->
+  <Alzheimers.description>一种通常由衰老引起的神经系统退行性疾病，也被称为“老年痴呆”。阿尔茨海默病会导致思考和记忆能力随时间逐步退化。大多数情况，患者发病时会表现出忘记自己的亲属、困惑地四处游荡等一系列的行为。</Alzheimers.description>
+  <!-- EN: minor -->
+  <Alzheimers.stages.minor-0.label>轻微</Alzheimers.stages.minor-0.label>
+  <!-- EN: minor -->
+  <Alzheimers.stages.minor-1.label>较轻</Alzheimers.stages.minor-1.label>
+  <!-- EN: major -->
+  <Alzheimers.stages.major-0.label>较重</Alzheimers.stages.major-0.label>
+  <!-- EN: major -->
+  <Alzheimers.stages.major-1.label>严重</Alzheimers.stages.major-1.label>
+  
+  <!-- EN: asthma -->
+  <Asthma.label>哮喘</Asthma.label>
+  <!-- EN: A long-term inflammatory disease of the airways in the lungs. It requires regular tending to prevent symptoms. -->
+  <Asthma.description>一种慢性气管疾病。它需要定期的护理来预防症状发作。</Asthma.description>
+  <!-- EN: minor -->
+  <Asthma.stages.minor.label>较轻</Asthma.stages.minor.label>
+  <!-- EN: major -->
+  <Asthma.stages.major-0.label>较重</Asthma.stages.major-0.label>
+  <!-- EN: major -->
+  <Asthma.stages.major-1.label>严重</Asthma.stages.major-1.label>
+  
+  <!-- EN: bad back -->
+  <BadBack.label>背痛</BadBack.label>
+  <!-- EN: Degradation in the spinal column and surrounding musculature. This makes it hard to move and bend smoothly. -->
+  <BadBack.description>脊柱周围肌肉组织和软组织的退化使得脊柱很难顺利地活动或屈伸。</BadBack.description>
+  <!-- EN: a bad back -->
+  <BadBack.labelNoun>背痛</BadBack.labelNoun>
+  
+  <!-- EN: blindness -->
+  <Blindness.label>失明</Blindness.label>
+  <!-- EN: Total inability to see. -->
+  <Blindness.description>完全失去了视力</Blindness.description>
+  
+  <!-- EN: carcinoma -->
+  <Carcinoma.label>癌症肿瘤</Carcinoma.label>
+  <!-- EN: A lump of cancerous tissue. Without treatment, the carcinoma will grow over time, causing worsening symptoms and eventually killing the patient.\n\nA skilled doctor can excise the carcinoma. An unskilled doctor may be able to simply amputate the body part which contains the carcinoma. -->
+  <Carcinoma.description>一团癌变组织。如果患者得不到及时的治疗，癌细胞就会随着时间的推移无限制的生长下去，最后导致癌症持续恶化并最终导致患者的死亡。\n一名熟练的医生能移除癌细胞，但一名不熟练的医生则只能简单的切除含癌的器官或肢体。</Carcinoma.description>
+  <!-- EN: a carcinoma -->
+  <Carcinoma.labelNoun>癌症肿瘤</Carcinoma.labelNoun>
+  <!-- EN: minor -->
+  <Carcinoma.stages.minor-0.label>轻微</Carcinoma.stages.minor-0.label>
+  <!-- EN: minor -->
+  <Carcinoma.stages.minor-1.label>较轻</Carcinoma.stages.minor-1.label>
+  <!-- EN: major -->
+  <Carcinoma.stages.major-0.label>中等</Carcinoma.stages.major-0.label>
+  <!-- EN: major -->
+  <Carcinoma.stages.major-1.label>严重</Carcinoma.stages.major-1.label>
+  <!-- EN: extreme -->
+  <Carcinoma.stages.extreme-0.label>极重</Carcinoma.stages.extreme-0.label>
+  <!-- EN: extreme -->
+  <Carcinoma.stages.extreme-1.label>极重</Carcinoma.stages.extreme-1.label>
+  
+  <!-- EN: cataract -->
+  <Cataract.label>白内障</Cataract.label>
+  <!-- EN: Milky-looking opacity in the eye. Cataracts impair vision. -->
+  <Cataract.description>因晶状体的蛋白质变性发生混浊导致的。会影响患者的视力。</Cataract.description>
+  <!-- EN: a cataract -->
+  <Cataract.labelNoun>白内障</Cataract.labelNoun>
+  
+  <!-- EN: dementia -->
+  <Dementia.label>痴呆</Dementia.label>
+  <!-- EN: Neural degradation which causes deficits in the ability to think and remember. Dementia has various causes including aging, specific illnesses, and toxins. -->
+  <Dementia.description>神经系统退行性疾病。会导致思考和记忆能力的缺陷。痴呆症有多种原因，包括衰老、特定疾病和毒素。</Dementia.description>
+  
+  <!-- EN: frail -->
+  <Frail.label>体弱</Frail.label>
+  <!-- EN: Generalized loss of muscle and bone density. -->
+  <Frail.description>全身肌肉质量和骨密度的下降。</Frail.description>
+  <!-- EN: frailty -->
+  <Frail.labelNoun>体弱</Frail.labelNoun>
+  
+  <!-- EN: hearing loss -->
+  <HearingLoss.label>耳聋</HearingLoss.label>
+  <!-- EN: Inability to hear quiet sounds due to degradation of hair cells in the cochlea. -->
+  <HearingLoss.description>耳蜗质性病变导致声音信息的异常传递。患者通常表现为不同等级的听力损失。</HearingLoss.description>
+  
+  <!-- EN: artery blockage -->
+  <HeartArteryBlockage.label>动脉阻塞</HeartArteryBlockage.label>
+  <!-- EN: A blockage in one of the critical arteries in the heart. Heart artery blockages randomly induce heart attacks. -->
+  <HeartArteryBlockage.description>心脏中的重要动脉被阻塞了。动脉阻塞会导致不定期的心脏病发作。</HeartArteryBlockage.description>
+  <!-- EN: an artery blockage -->
+  <HeartArteryBlockage.labelNoun>动脉阻塞</HeartArteryBlockage.labelNoun>
+  <!-- EN: minor -->
+  <HeartArteryBlockage.stages.minor-0.label>轻微</HeartArteryBlockage.stages.minor-0.label>
+  <!-- EN: minor -->
+  <HeartArteryBlockage.stages.minor-1.label>较轻</HeartArteryBlockage.stages.minor-1.label>
+  <!-- EN: major -->
+  <HeartArteryBlockage.stages.major-0.label>中等</HeartArteryBlockage.stages.major-0.label>
+  <!-- EN: major -->
+  <HeartArteryBlockage.stages.major-1.label>严重</HeartArteryBlockage.stages.major-1.label>
+  <!-- EN: extreme -->
+  <HeartArteryBlockage.stages.extreme.label>极重</HeartArteryBlockage.stages.extreme.label>
+  
+  <!-- EN: organ decay -->
+  <OrganDecay.label>器官衰竭</OrganDecay.label>
+  <!-- EN: An untreatable degenerative disease affecting a single organ. The cause may be bacterial or viral. The illness seems to strike randomly from an unknown natural reservoir; it is not directly contagious between people.\n\nThis organ will slowly lose function before dying completely. Replace it with a bionic or natural organ. -->
+  <OrganDecay.description>针对单一器官的退行性疾病，无法通过常规手段治愈。病因可能是细菌或病毒。病原似乎是某处自然水域；它不会在人与人之间直接传染。\n\n此器官会逐渐丧失各项机能，直至完全衰竭。可以使用仿生器官或天然器官将其替换掉。</OrganDecay.description>
+  <!-- EN: {PAWN_labelShort}'s {1} was destroyed by organ decay. -->
+  <OrganDecay.comps.HediffComp_DestroyOrgan.messageText>{PAWN_labelShort}的{1}毁于器官衰竭。</OrganDecay.comps.HediffComp_DestroyOrgan.messageText>
+  <!-- EN: minor -->
+  <OrganDecay.stages.minor.label>较轻</OrganDecay.stages.minor.label>
+  <!-- EN: moderate -->
+  <OrganDecay.stages.moderate.label>中等</OrganDecay.stages.moderate.label>
+  <!-- EN: severe -->
+  <OrganDecay.stages.severe.label>严重</OrganDecay.stages.severe.label>
+  <!-- EN: extreme -->
+  <OrganDecay.stages.extreme.label>极重</OrganDecay.stages.extreme.label>
+  
+</LanguageData>

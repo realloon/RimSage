@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <CommandSelfResurrect>Self-resurrect</CommandSelfResurrect>
+  <CommandSelfResurrectDesc>Command this person to self-resurrect, healing wounds and repairing damaged body parts. The process is not perfect and may cause scarring.</CommandSelfResurrectDesc>
+
+  <ToggleStudy>Study</ToggleStudy>
+  <ToggleStudyDesc>When on, a researcher will automatically study the entity restrained on this holding platform.</ToggleStudyDesc>
+
+</LanguageData>

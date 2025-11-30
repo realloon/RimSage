@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>Substructure</defName>
+    <label>gravship substructure</label>
+    <description>A lightweight truss structure with flooring on top that forms the deck of a gravship. Only things on top of this substructure can be lifted by the grav engine's levitation field. This floor must be constructed within range of a grav engine.\n\nGravship substructure can be removed using the 'remove foundation' designator.</description>
+    <texturePath>Terrain/Surfaces/Substructure/Substructure</texturePath>
+    <fertility>0</fertility>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>399</renderPrecedence>
+    <constructEffect>ConstructMetal</constructEffect>
+    <isPaintable>true</isPaintable>
+    <designationCategory>Odyssey</designationCategory>
+    <isFoundation>true</isFoundation>
+    <preventCraters>true</preventCraters>
+    <designationHotKey>Misc9</designationHotKey>
+    <affordances>
+      <li>Substructure</li>
+    </affordances>
+    <statBases>
+      <WorkToBuild>600</WorkToBuild>
+      <Flammability>0</Flammability>
+      <CleaningTimeFactor>0.9</CleaningTimeFactor>
+    </statBases>
+    <costList>
+      <GravlitePanel>1</GravlitePanel>
+      <Steel>4</Steel>
+    </costList>
+    <uiOrder>1000</uiOrder>
+    <requireInspectedGravEngine>true</requireInspectedGravEngine>
+    <terrainAffordanceNeeded>Walkable</terrainAffordanceNeeded>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <tags>
+      <li>Substructure</li>
+    </tags>
+    <placeWorkers>
+      <li>PlaceWorker_InSubstructureFootprint</li>
+      <li>PlaceWorker_BuildingsValidOverSubstructure</li>
+    </placeWorkers>
+  </TerrainDef>
+
+  <TerrainDef ParentName="BridgeBase">
+    <defName>HeavyBridge</defName>
+    <label>heavy bridge</label>
+    <description>A stronger version of the basic bridge which supports heavy structures on top. You can build a whole colony on water with this.</description>
+    <texturePath>Terrain/Surfaces/GenericFloorTile</texturePath>
+    <bridgePropsPath>Terrain/Misc/HeavyBridgeProps</bridgePropsPath>
+    <color>(0.5, 0.5, 0.5)</color>
+    <uiIconPath>Terrain/Misc/HeavyBridge_MenuIcon</uiIconPath>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Walkable</li>
+    </affordances>
+    <constructEffect>ConstructMetal</constructEffect>
+    <statBases>
+      <WorkToBuild>2500</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>14</Steel>
+    </costList>
+    <researchPrerequisites>
+      <li>HeavyBridges</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc4</designationHotKey>
+    <destroyOnBombDamageThreshold>45</destroyOnBombDamageThreshold>
+  </TerrainDef>
+
+</Defs>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>KeepLyingDown</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_KeepLyingDown" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>KeepLyingDownForBirth</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_KeepLyingDown" />
+      </subNodes>
+    </thinkNode>
+    <forceFaceUpPosture>true</forceFaceUpPosture>
+    <drawBodyOverride>true</drawBodyOverride>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>SocialMeeting</defName>
+    <hook>HighPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_GetFood">
+          <minCategory>UrgentlyHungry</minCategory>
+        </li>
+
+        <li Class="ThinkNode_ConditionalRandom">
+          <chance>0.05</chance>
+          <subNodes>
+            <li Class="JobGiver_StandAndBeSociallyActive">
+              <ticksRange>350~750</ticksRange>
+              <maintainFacing>true</maintainFacing>
+            </li>
+          </subNodes>
+        </li>
+
+        <li Class="JobGiver_SpectateInCircleDuty" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+</Defs>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>Archonexus</defName>
+    <label>archonexus</label>
+    <description>An ancient archotech device. Some say it is capable of invoking the power of the machine god.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Archonexus</expandingIconTexture>
+    <approachOrderString>Investigate {0}</approachOrderString>
+    <approachingReportString>Investigating {0}.</approachingReportString>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <tags>
+      <li>Archonexus</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>Archonexus</defName>
+    <linkWithSite>Archonexus</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Archonexus" />
+  </GenStepDef>
+
+</Defs>

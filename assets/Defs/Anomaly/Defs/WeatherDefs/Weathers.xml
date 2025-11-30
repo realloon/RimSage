@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WeatherDef Name="UnnaturalDarknessBase" Abstract="True">
+    <label>unnatural darkness</label>
+    <isBad>true</isBad>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    <favorability>VeryBad</favorability>
+    <perceivePriority>3</perceivePriority>
+    <!-- Same as clear night -->
+    <skyColorsDay>
+      <sky>(0.482, 0.603, 0.682)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6, 0.6, 0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.482, 0.603, 0.682)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6, 0.6, 0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.482, 0.603, 0.682)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6, 0.6, 0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.482, 0.603, 0.682)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6, 0.6, 0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+
+  <WeatherDef ParentName="UnnaturalDarknessBase">
+    <defName>UnnaturalDarkness_Stage1</defName>
+    <description>A psychic phenomenon affecting your colonists. The sky is cracking and dissolving, immersing the world in an unnatural darkness. This darkness will deepen and become dangerous over time.</description>
+    <ambientSounds>
+      <li>Ambient_UnnaturalDarkness_Phase1</li>
+    </ambientSounds>
+  </WeatherDef>
+
+  <WeatherDef ParentName="UnnaturalDarknessBase">
+    <defName>UnnaturalDarkness_Stage2</defName>
+    <description>A psychic phenomenon affecting your colonists. The sky itself appears to have collapsed, immersing the world in an unnatural darkness. Stay in the light.</description>
+    <ambientSounds>
+      <li>Ambient_UnnaturalDarkness_Phase2</li>
+    </ambientSounds>
+  </WeatherDef>
+
+  <WeatherDef>
+    <defName>BloodRain</defName>
+    <label>blood rain</label>
+    <isBad>true</isBad>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    <description>Anyone exposed to the blood rain for long enough will be driven into a berserk rage. Certain traits and psychic sensitivity influence the berserk effect.</description>
+    <favorability>VeryBad</favorability>
+    <perceivePriority>3</perceivePriority>
+    <weatherThought>SoakingWet</weatherThought>
+    <accuracyMultiplier>0.5</accuracyMultiplier>
+    <rainRate>1</rainRate>
+    <moveSpeedMultiplier>0.9</moveSpeedMultiplier>
+    <overlayClasses>
+      <li>WeatherOverlay_BloodRain</li>
+      <li>WeatherOverlay_BloodFog</li>
+      <li>WeatherOverlay_DeepBloodFog</li> <!-- redder, thinner, more diffuse layer to get around skyoverlay only having 2 texture slots-->
+    </overlayClasses>
+    <ambientSounds>
+      <li>Ambient_Wind_Fog</li>
+      <li>Ambient_Rain</li>
+    </ambientSounds>
+    <skyColorsDay>
+      <sky>(0.8,0.8,0.8)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.5, 0.5, 0.5)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(1,1,1)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.5, 0.5, 0.5)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.5, 0.5, 0.5)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.5, 0.5, 0.5)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+
+  <WeatherDef ParentName="Weather_Underground">
+    <defName>Undercave</defName>
+    <label>undercave</label>
+    <ambientSounds>
+      <li>Ambient_Undercave</li>
+    </ambientSounds>
+  </WeatherDef>
+
+  <WeatherDef ParentName="Weather_Underground">
+    <defName>MetalHell</defName>
+    <label>metal hell</label>
+    <ambientSounds>
+      <li>Ambient_MetalHell</li>
+    </ambientSounds>
+    <skyColorsDay>
+      <sky>(0.4, 0.5, 0.5)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6,0.6,0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.4, 0.5, 0.5)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6,0.6,0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.4, 0.5, 0.5)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6,0.6,0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.4, 0.5, 0.5)</sky>
+      <shadow>(0.85, 0.85, 0.85)</shadow>
+      <overlay>(0.6,0.6,0.6)</overlay>
+      <saturation>1.25</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+
+  <WeatherDef>
+    <defName>UnnaturalFog</defName>
+    <label>death pall</label>
+    <isBad>true</isBad>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    <description>A death-gray cloud of black dust has descended on this area. The smell is ancient and putrid as the diffuse dust enters every crack and crevice.\n\nThe dust is made of corrupted archites that will enter corpses and reanimate them into a twisted imitation of life.\n\nThe dead will rise! Burn, bury, destroy, or move corpses indoors to prevent them from resurrecting.</description>
+    <favorability>VeryBad</favorability>
+    <perceivePriority>3</perceivePriority>
+    <windSpeedFactor>0.5</windSpeedFactor>
+    <accuracyMultiplier>0.8</accuracyMultiplier>
+    <transitionTicksOverride>600</transitionTicksOverride>
+    <weatherThought>DeathPall</weatherThought>
+    <ambientSounds>
+      <li>Ambient_DeathPall</li>
+    </ambientSounds>
+    <overlayClasses>
+      <li>WeatherOverlay_DeathpallFog</li>
+      <li>WeatherOverlay_DeathpallAshes</li>
+    </overlayClasses>
+    <commonalityRainfallFactor>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1300, 1)</li>
+      </points>
+    </commonalityRainfallFactor>
+    <!-- Colors are Overcast -->
+    <skyColorsDay>
+      <sky>(0.482,0.603,0.682)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.25,0.2,0.2)</overlay>
+      <saturation>0.5</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.482,0.603,0.682)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.25,0.2,0.2)</overlay>
+      <saturation>0.5</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.15,0.1,0.1)</overlay>
+      <saturation>0.5</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.15,0.1,0.1)</overlay>
+      <saturation>0.5</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+  
+  <WeatherDef>
+    <defName>GrayPall</defName>
+    <label>gray pall</label> 
+    <isBad>true</isBad>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    <minMonolithLevel>1</minMonolithLevel>
+    <canOccurInAmbientHorror>true</canOccurInAmbientHorror>
+    <description>A gritty fog clings to the air. The smell is rotten and acidic. This unnatural weather creates feelings of dread.</description>
+    <favorability>Bad</favorability>
+    <perceivePriority>3</perceivePriority>
+    <windSpeedFactor>0.5</windSpeedFactor>
+    <accuracyMultiplier>0.8</accuracyMultiplier>
+    <transitionTicksOverride>600</transitionTicksOverride>
+    <weatherThought>GrayPall</weatherThought>
+    <ambientSounds>
+      <li>Ambient_Wind_Fog</li>
+    </ambientSounds>
+    <overlayClasses>
+      <li>WeatherOverlay_GrayPallFog</li>
+    </overlayClasses>
+    <commonalityRainfallFactor>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1300, 1)</li>
+      </points>
+    </commonalityRainfallFactor>
+    <!-- Colors are Overcast -->
+    <skyColorsDay>
+      <sky>(0.482,0.603,0.682)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.25,0.2,0.2)</overlay>
+      <saturation>0.75</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.482,0.603,0.682)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.25,0.2,0.2)</overlay>
+      <saturation>0.75</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.15,0.1,0.1)</overlay>
+      <saturation>0.75</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.15,0.1,0.1)</overlay>
+      <saturation>0.75</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+  
+</Defs>

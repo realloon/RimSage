@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerWeaponBladelink</defName>
+    <rulePack>
+      <include>
+        <li>NamerAnimalUtility</li>
+      </include>
+      <rulesStrings>
+        <li>r_weapon_name(p=3)->[noun][verber]</li>
+        <li>r_weapon_name(p=2)->[beginSyl][middleSyl][endSyl]</li>
+        <li>r_weapon_name(p=1)->[beginSyl][middleSyl][middleSyl][endSyl]</li>
+        <li>r_weapon_name(p=1)->[beginSyl][endSyl]</li>
+        <li>r_weapon_name(p=1)->[NamePerson]</li>
+        <li>r_weapon_name(p=1)->[nameAnimal]</li>
+
+        <li>nameAnimal->[NameAnimalUnisex]</li>
+        <li>nameAnimal->[NameAnimalMale]</li>
+        <li>nameAnimal->[NameAnimalFemale]</li>
+
+        <li>noun->oath</li>
+        <li>noun->promise</li>
+        <li>noun->death</li>
+        <li>noun->pain</li>
+        <li>noun->blood</li>
+        <li>noun->doom</li>
+        <li>noun->murder</li>
+        <li>noun->justice</li>
+        <li>noun->fear</li>
+        <li>noun->terror</li>
+        <li>noun->chaos</li>
+        <li>noun->order</li>
+        <li>noun->war</li>
+        <li>noun->silence</li>
+        <li>noun->debt</li>
+        <li>verber->keeper</li>
+        <li>verber->bringer</li>
+        <li>verber->sender</li>
+        <li>verber->giver</li>
+        <li>verber->maker</li>
+        <li>verber->crusher</li>
+        <li>verber->breaker</li>
+        <li>verber->smasher</li>
+        <li>verber->bender</li>
+        <li>verber->knower</li>
+        <li>verber->doer</li>
+
+        <li>beginSyl->vi</li>
+        <li>beginSyl->na</li>
+        <li>beginSyl->lo</li>
+        <li>beginSyl->ra</li>
+        <li>beginSyl->to</li>
+        <li>beginSyl->ger</li>
+        <li>beginSyl->xan</li>
+        <li>beginSyl->kel</li>
+        <li>middleSyl->ser</li>
+        <li>middleSyl->gar</li>
+        <li>middleSyl->lor</li>
+        <li>middleSyl->ven</li>
+        <li>middleSyl->zan</li>
+        <li>middleSyl->xal</li>
+        <li>endSyl->ys</li>
+        <li>endSyl->or</li>
+        <li>endSyl->ar</li>
+        <li>endSyl->sum</li>
+        <li>endSyl->dor</li>
+        <li>endSyl->mar</li>
+        <li>endSyl->gur</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <ThingDef Name="BaseWeapon_Bladelink" ParentName="BaseWeapon" Abstract="True">
+    <techLevel>Ultra</techLevel>
+    <tradeNeverStack>true</tradeNeverStack>
+    <relicChance>3</relicChance>
+    <weaponTags>
+      <li>Bladelink</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponMelee</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>Ultratech</li>
+    </weaponClasses>
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_BladelinkWeapon">
+        <biocodeOnEquip>true</biocodeOnEquip>
+      </li>
+      <li Class="CompProperties_GeneratedName">
+        <nameMaker>NamerWeaponBladelink</nameMaker>
+      </li>
+    </comps>
+    <smeltable>true</smeltable>
+    <burnableByRecipe>true</burnableByRecipe>
+    <notifyMapRemoved>true</notifyMapRemoved>
+    <thingCategories>
+      <li>WeaponsMeleeBladelink</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>WeaponBladelink</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeapon_Bladelink">
+    <defName>MeleeWeapon_MonoSwordBladelink</defName>
+    <label>persona monosword</label>
+    <description>A crystal-metallic longsword infused with mechanites that maintain a mono-molecular cutting edge. It cuts through even thick armor with ease, while its light weight and onboard persona permit extremely fast attacks.
+\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+      <Mass>2</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Equipment/WeaponMelee/Monosword</texPath>
+      <color>(255,200,200)</color>
+    </graphicData>
+    <soundInteract>Interact_BladelinkMonoSword</soundInteract>
+    <meleeHitSound>MeleeHit_BladelinkMonoSword</meleeHitSound>
+    <smeltable>false</smeltable>
+    <weaponClasses>
+      <li>Melee</li>
+      <li>MeleePiercer</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>27</power>
+        <cooldownTime>1.6</cooldownTime>
+        <armorPenetration>0.9</armorPenetration>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>27</power>
+        <cooldownTime>1.6</cooldownTime>
+        <armorPenetration>0.9</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeapon_Bladelink">
+    <defName>MeleeWeapon_ZeusHammerBladelink</defName>
+    <label>persona zeushammer</label>
+    <description>A warhammer with an embedded EMP capacitor. Upon impact, it blasts the target with an EMP burst in addition to the physical damage.
+\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+      <Mass>2</Mass>
+    </statBases>
+    <soundInteract>Interact_BladelinkZeusHammer</soundInteract>
+    <meleeHitSound>MeleeHit_BladelinkZeusHammer</meleeHitSound>
+    <smeltable>false</smeltable>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Equipment/WeaponMelee/ZeusHammer</texPath>
+      <color>(255,200,200)</color>
+    </graphicData>
+    <weaponClasses>
+      <li>Melee</li>
+      <li>MeleeBlunt</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <labelUsedInLogging>false</labelUsedInLogging>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>31</power>
+        <cooldownTime>2.2</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>EMP</def>
+            <amount>9</amount>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeapon_Bladelink">
+    <defName>MeleeWeapon_PlasmaSwordBladelink</defName>
+    <label>persona plasmasword</label>
+    <description>A metal-cored sword with a cutting edge. Plasma is wrapped around the core, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by the plasma sheath.
+\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+    <statBases>
+      <MarketValue>3000</MarketValue>
+      <Mass>2</Mass>
+    </statBases>
+    <soundInteract>Interact_BladelinkPlasmaSword</soundInteract>
+    <meleeHitSound>MeleeHit_BladelinkPlasmaSword</meleeHitSound>
+    <smeltable>false</smeltable>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Equipment/WeaponMelee/PlasmaSword</texPath>
+      <color>(255,200,200)</color>
+    </graphicData>
+    <weaponClasses>
+      <li>Melee</li>
+      <li>MeleePiercer</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>10</amount>
+            <chance>0.7</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>10</amount>
+            <chance>0.7</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+</Defs>

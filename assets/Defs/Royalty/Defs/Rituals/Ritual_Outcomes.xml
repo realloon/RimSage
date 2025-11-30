@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <RitualOutcomeEffectDef>
+    <defName>BestowingCeremony</defName>
+    <workerClass>RitualOutcomeEffectWorker_Bestowing</workerClass>
+    <description>Depending on ritual quality, the bestowee gets up to 3 bonus honor. Other participants get up to +6 mood boost for 6 days.</description>
+    <honorFromQuality>
+      <points>
+        <li>(0,   0)</li>
+        <li>(0.3, 1)</li>
+        <li>(0.6, 2)</li>
+        <li>(0.9, 3)</li>
+      </points>
+    </honorFromQuality>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.15)</li>
+            <li>(5,  0.35)</li>
+            <li>(10, 0.5)</li>
+            <li>(17, 0.6)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.2</li>
+            <li>100,  0.3</li>
+            <li>170, 0.4</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleBestowingCeremony</memory>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Unimpressive</label>
+        <chance>0.15</chance>
+        <memory>UnimpressiveBestowingCeremony</memory>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Honorable</label>
+        <chance>0.6</chance>
+        <memory>HonorableBestowingCeremony</memory>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Grandiose</label>
+        <chance>0.2</chance>
+        <memory>GrandioseBestowingCeremony</memory>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>AnimaTreeLinking</defName>
+    <workerClass>RitualOutcomeEffectWorker_AnimaTreeLinking</workerClass>
+    <warnOnLowQuality>false</warnOnLowQuality>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.2)</li>
+            <li>(2, 0.4)</li>
+            <li>(4, 0.6)</li>
+            <li>(6, 0.8)</li>
+            <li>(8, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+  
+</Defs>

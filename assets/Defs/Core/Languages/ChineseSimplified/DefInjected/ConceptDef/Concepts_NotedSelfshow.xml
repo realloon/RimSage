@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Alerts -->
+  <Alerts.label>警报</Alerts.label>
+  <!-- EN: The alerts at the right edge of the screen tell you about issues that need your attention.\n\nKeep an eye on the alerts. -->
+  <Alerts.helpText>屏幕右侧边缘的警报按钮会告诉你需要注意的事情。\n\n记得要留神。</Alerts.helpText>
+  
+  <!-- EN: Allowed areas -->
+  <AllowedAreas.label>允许活动区域</AllowedAreas.label>
+  <!-- EN: Colonists and colony animals can be assigned to ALLOWED AREAS. This forbids them from taking destinations outside their allowed area.\n\nThis can be used to, for example, forbid colonists from going outside.\n\nYou can create multiple allowed areas and assign them to different colonists and animals.\n\nCreate, delete, and assign allowed areas in the SCHEDULE tab.\n\nPaint allowed areas onto the map using the EXPAND ALLOWED AREA and CLEAR ALLOWED AREA designators in the Architect tab. -->
+  <AllowedAreas.helpText>殖民者和动物可以通过在屏幕下方的「管制」面板中设置「允许活动区域」来限定活动范围。他们不会在可活动区外的地区从事任何活动和工作。\n\n你可以设置多个区域然后给不同的殖民者/动物设置不同的限制方案。\n\n「添加活动区」或「移除活动区」需要在「建筑规划」面板中的「区域」选项卡进行。分配区域需要在「管制」面板中进行。</AllowedAreas.helpText>
+  
+  <!-- EN: Animal taming -->
+  <AnimalTaming.label>动物驯服</AnimalTaming.label>
+  <!-- EN: You can assign colonists to tame a wild animal with the TAME designator.\n\nColonists will offer the animal food and attempt to tame it.\n\nBeware: Some animals can respond violently to failed taming attempts. -->
+  <AnimalTaming.helpText>你可以通过「驯服」命令指派殖民者驯服野生动物。\n\n殖民者会为动物提供食物，然后尝试驯服它们。\n\n当心：有些动物在被驯服时会变得暴躁，攻击你的殖民者。</AnimalTaming.helpText>
+  
+  <!-- EN: Animal training -->
+  <AnimalTraining.label>动物训练</AnimalTraining.label>
+  <!-- EN: You can assign a tame animal to be trained in specific skills on its TRAINING tab or on the ANIMALS tab.\n\nAnimals can't be trained continuously; they need time between training sessions. -->
+  <AnimalTraining.helpText>在已驯服的动物的「训练」标签中，你可以指派动物进一步接受特定技能的训练。\n\n动物无法连续受训，训练阶段之间需要间隔一段时间。</AnimalTraining.helpText>
+  
+  <!-- EN: Camera dolly -->
+  <CameraDolly.label>镜头移动</CameraDolly.label>
+  <!-- EN: Move the camera by clicking and dragging the MOUSE BUTTON 3 (middle button) or with the {Key:MapDolly_Up}-{Key:MapDolly_Left}-{Key:MapDolly_Down}-{Key:MapDolly_Right} keys. -->
+  <CameraDolly.helpText>按住「鼠标中键或右键」并拖拽或者使用{Key:MapDolly_Up}-{Key:MapDolly_Left}-{Key:MapDolly_Down}-{Key:MapDolly_Right}按键来移动镜头。</CameraDolly.helpText>
+  <!-- EN: Move the camera by using the D-pad. -->
+  <CameraDolly.helpTextController>使用摇杆移动镜头。</CameraDolly.helpTextController>
+  
+  <!-- EN: Camera zoom -->
+  <CameraZoom.label>镜头缩放</CameraZoom.label>
+  <!-- EN: Zoom in and out with the MOUSEWHEEL or the {Key:MapZoom_In} and {Key:MapZoom_Out} keys. -->
+  <CameraZoom.helpText>使用「鼠标滚轮」，或{Key:MapZoom_In}和{Key:MapZoom_Out}键来缩放镜头。</CameraZoom.helpText>
+  <!-- EN: Zoom in and out with {Key:MapZoom_In} and {Key:MapZoom_Out}. -->
+  <CameraZoom.helpTextController>使用{Key:MapZoom_In}和{Key:MapZoom_Out}键来缩放镜头。</CameraZoom.helpTextController>
+  
+  <!-- EN: Clicking messages -->
+  <ClickingMessages.label>点击通知</ClickingMessages.label>
+  <!-- EN: You can click on the notifications in the top-left of the screen to instantly center the camera on their subject. -->
+  <ClickingMessages.helpText>你可以通过点击出现在屏幕左上方的通知信息来快速切换到目标区域查看详情。</ClickingMessages.helpText>
+  
+  <!-- EN: Cover and shooting -->
+  <CoverAndShooting.label>掩体与射击</CoverAndShooting.label>
+  <!-- EN: The most important thing to do in ranged combat is to use cover.\n\nCover only works if your colonist is touching it, and it is between your colonist and the enemy.\n\nYou can also place colonists behind wall corners. They will lean out to shoot.\n\nMost things can be used as cover, but some things are better than others. Hiding behind a tree is better than nothing, but hiding behind sandbags is better than using a tree. -->
+  <CoverAndShooting.helpText>远程作战第一课：先给自己找掩体。\n\n掩体只有在处于交火路径当中且你的殖民者紧贴着掩体时才生效。\n\n你也可以把殖民者放在墙角后来射击。他们会侧身射击。\n\n大部分物体都可以作为掩体，但是它们的效果并不尽相同，一棵树比没有掩体要强，但是远不如沙袋好使。</CoverAndShooting.helpText>
+  
+  <!-- EN: Item deterioration -->
+  <Deterioration.label>物品老化</Deterioration.label>
+  <!-- EN: Items left outdoors will slowly deteriorate.\n\nIf you want to store items long-term, keep them in a roofed room. -->
+  <Deterioration.helpText>放置在室外的物品会因为淋雨等因素而缓慢老化损坏。\n\n如果你想长期保存该物品，就把它们放到有屋顶的房间里或物品架上。</Deterioration.helpText>
+  
+  <!-- EN: Equipping weapons -->
+  <EquippingWeapons.label>装备武器</EquippingWeapons.label>
+  <!-- EN: Your colonists arrived with some weapons. Equip them!\n\nSelect each colonist and right-click on the weapon you want them to equip. -->
+  <EquippingWeapons.helpText>你的殖民者在抵达时也带来了武器。将他们武装起来吧！\n\n选择一个殖民者，对想要装备的武器按下鼠标右键，在弹出的命令栏内选择「装备武器」。给每个人都装备上武器吧！</EquippingWeapons.helpText>
+  <!-- EN: Your colonists arrived with some weapons. Equip them!\n\nSelect each colonist and press the left trigger on the weapon you want them to equip. -->
+  <EquippingWeapons.helpTextController>你的殖民者在抵达时也带来了武器。将他们武装起来吧！\n\n选择一个殖民者，对想要装备的武器按下左扳机键，在弹出的命令栏内选择「装备武器」。给每个人都装备上武器吧！</EquippingWeapons.helpTextController>
+  
+  <!-- EN: Fire preparation -->
+  <FirePreparation.label>防火</FirePreparation.label>
+  <!-- EN: Fires can easily burn down a colony. To defeat them, you must prepare before they happen.\n\nThese design elements can help reduce the damage from fires:\n\n1. Instead of constructing one super-building, build separate buildings with spaces in between.\n\n2. Use less flammable materials. Wood is cheap and fast - but very flammable.\n\n3. Build firebreaks to stop wildfires approaching your base. A strip of concrete floor 3 or 4 cells wide will generally stop an advancing fire. -->
+  <FirePreparation.helpText>火灾能够轻易的摧毁你的殖民地，因此安全防火非常关键，我们推荐以下方法：\n\n1.不要将一个建筑造的过大，相反的我们可以多造一些小的独立建筑。\n\n2.尽可能的选用易燃性较低的材料来修建房屋。原木虽然好获取，但是十分易燃。\n\n3.通过在基地周围铺上一圈3到4格宽的地板可以很好的隔绝野火蔓延到你的基地。</FirePreparation.helpText>
+  
+  <!-- EN: Forbid and allow -->
+  <Forbidding.label>禁用和解禁</Forbidding.label>
+  <!-- EN: Colonists will not interact with items marked FORBIDDEN.\n\nForbidden items have a small red X attached. Select a forbidden item and use the controls at the bottom to ALLOW it. -->
+  <Forbidding.helpText>殖民者不能对被标记为「禁用」的物品进行操作。被禁用的物品上会显示一个红色的「X」标记。选择一项被禁用的物品，点击屏幕下方控制栏内的「允许」按钮即可解禁。</Forbidding.helpText>
+  
+  <!-- EN: Forbidding doors -->
+  <ForbiddingDoors.label>门禁</ForbiddingDoors.label>
+  <!-- EN: You can FORBID doors so colonists and tame animals won't go through them.\n\nNote that this isn't a door lock. Doors are always locked, so enemies can't pass freely. Forbidding just directs your colonists not to use the door. Colonists who are going crazy might use the door anyway. -->
+  <ForbiddingDoors.helpText>你可以通过「禁用」门来阻止殖民者以及已驯服的动物穿过特定的门。\n\n注意：这样做并不等同于给门上锁，只是禁止他们通过，而精神崩溃的殖民者和中立/盟友派系的角色仍有可能使用这扇门。</ForbiddingDoors.helpText>
+  
+  <!-- EN: Forming caravans -->
+  <FormCaravan.label>组建远行队</FormCaravan.label>
+  <!-- EN: You can form a caravan to send groups of people traveling across the planet!\n\nIn the WORLD tab, select your home base and click the "form caravan" button. -->
+  <FormCaravan.helpText>你可以组建远行队以派遣一队人员穿过这颗星球。\n\n在屏幕下方的「世界」面板中，选中你的基地并点击「组建远行队」按钮。</FormCaravan.helpText>
+  
+  <!-- EN: Friendly fire safety -->
+  <FriendlyFireSafety.label>友军误伤</FriendlyFireSafety.label>
+  <!-- EN: Friendly fire never occurs if the shooter is close to their ally.\n\nFor example, you can safely put a sword-wielding colonist directly in front of a gun-wielding one. The shooter will fire over their friend's shoulder.\n\nThis is a good way to combine ranged and melee fighters. -->
+  <FriendlyFireSafety.helpText>如果友军距离足够近，就永远不会产生误伤。\n\n紧挨着枪手的近战单位不会被己方的火力误伤，射击者会越过他的肩膀射击。\n\n这是一个近战/远程单位相互配合的好方法。</FriendlyFireSafety.helpText>
+  
+  <!-- EN: Getting more traders -->
+  <GettingMoreTraders.label>获得更多商队</GettingMoreTraders.label>
+  <!-- EN: More trader caravans will come to visit you if you're allied with more factions.\n\nIf you have no allies, no caravans will ever visit!\n\nYou can also pay allies to send trade caravans by calling them on the comms console. -->
+  <GettingMoreTraders.helpText>你的盟友越多，贸易商队就越多。\n\n你可以通过通讯台来呼叫盟友派遣商队，但需要花费一些好感度。</GettingMoreTraders.helpText>
+  
+  <!-- EN: Growing zones -->
+  <GrowingFood.label>种植区</GrowingFood.label>
+  <!-- EN: To grow food, place GROWING ZONES using the Architect menu.\n\nThey can only be placed on fertile ground. -->
+  <GrowingFood.helpText>要种植作物，在「建筑规划」面板内的「区域」选项卡里可找到「种植区」。\n\n种植区无法创建在肥沃度过低或没有肥沃度的地形上。</GrowingFood.helpText>
+  
+  <!-- EN: History tab -->
+  <HistoryTab.label>「历史」面板</HistoryTab.label>
+  <!-- EN: You can see a record of your colony's fortunes over time in the HISTORY tab at the bottom of the screen. -->
+  <HistoryTab.helpText>你可以通过「历史」面板来回顾殖民地的发展过程和财富积累情况。</HistoryTab.helpText>
+  
+  <!-- EN: Home area -->
+  <HomeArea.label>了解居住区</HomeArea.label>
+  <!-- EN: The HOME AREA tells your colonists which area to clean and where to extinguish fires.\n\nDefine the HOME AREA with the Zones category under the Architect menu. -->
+  <HomeArea.helpText>「居住区」是你的殖民者会清洁以及灭火的区域。\n\n在「建筑规划」面板内的「区域」选项卡里可找到「居住区」。</HomeArea.helpText>
+  
+  <!-- EN: Hostility response modes -->
+  <HostilityResponse.label>应敌模式</HostilityResponse.label>
+  <!-- EN: You can configure how colonists should automatically respond to threats like predatory animals.\n\nChoose from FLEE, ATTACK, and IGNORE modes in the ASSIGN menu. -->
+  <HostilityResponse.helpText>你可以在设置你的殖民者在面临危险时如何自动应对。\n\n在「方案」面板中选择「逃跑」、「反击」或「无视」模式。</HostilityResponse.helpText>
+  
+  <!-- EN: Info card -->
+  <InfoCard.label>详细信息卡</InfoCard.label>
+  <!-- EN: The info card shows you detailed statistics about any item, person, or construction.\n\nSelect a person or item and open their info card with the 'i' button on the inspect pane. -->
+  <InfoCard.helpText>任何物品、建筑和角色都可以通过信息卡来查看详细的数据。\n\n通过点击「i」来打开信息卡进入详细信息面板。</InfoCard.helpText>
+  
+  <!-- EN: Manual work priorities -->
+  <ManualWorkPriorities.label>手动分配工作优先级</ManualWorkPriorities.label>
+  <!-- EN: One of the most important parts of RimWorld is choosing good work settings for your colonists.\n\nPoor work settings can leave essential work unfinished for a long time while colonists waste time on unimportant tasks.\n\nTo give more control over what work colonists do, you can use the Manual Priorities mode in the WORK tab.\n\nIn this mode, each colonist has a priority number for each work type. Colonists will do priority 1 work from left to right, then priority 2 work from left to right, and so on.\n\nIntelligent use of these setting is essential for a large, well-automated colony. -->
+  <ManualWorkPriorities.helpText>在边缘世界中，如何设置一份智能的工作制度表是件很重要的事情。\n\n在「工作」面板中开启「手动分配工作优先级」模式后，你可以为每一个殖民者的每一项工作设置具体的优先级。\n\n通过鼠标左右键修改优先级数字，标记「1」为最先去做，标记「4」为最后去做，如果没有数字则表示不会从事此项工作。\n\n殖民者总是会先进行优先级更高的工作。多项工作的优先级相同时，会优先处理靠左边的任务。</ManualWorkPriorities.helpText>
+  
+  <!-- EN: Medical operations -->
+  <MedicalOperations.label>医疗手术</MedicalOperations.label>
+  <!-- EN: To assign a medical operation, like organ harvesting or prosthetics installation, open a colonist's HEALTH tab, then switch to the OPERATIONS sub-tab. -->
+  <MedicalOperations.helpText>要进行一次手术，例如器官摘取或者安装假肢，可以打开殖民者的「健康」选项卡，然后切换至「手术」子选项卡。</MedicalOperations.helpText>
+  
+  <!-- EN: Mining -->
+  <Mining.label>采矿</Mining.label>
+  <!-- EN: You can designate where to mine by opening the ARCHITECT menu and selecting the ORDERS tab.\n\nSome mineable blocks yield STEEL, GOLD, PLASTEEL, and other useful materials. -->
+  <Mining.helpText>你可以通过「建筑规划」面板内的「命令」选项卡安排在何处开采岩石。\n\n你可能会开采到「钢铁」、「黄金」、「玻璃钢」或者其他有用的材料。</Mining.helpText>
+  
+  <!-- EN: Outfits -->
+  <Outfits.label>着装管理</Outfits.label>
+  <!-- EN: Colonists will automatically try to wear the newest, highest-quality apparel they can.\n\nYou don't need to manually assign each piece of apparel to colonists (though you can, if you wish).\n\nTo assign colonists restrictions on how to dress, open the ASSIGN tab, use the "Manage apparel policies" dialog box to design a new outfit, and then assign the outfit to colonists. -->
+  <Outfits.helpText>殖民者总是会尝试穿更新更好的衣物。\n\n你无需手动指派殖民者的每一项着装设定（如果你想的话当然也是完全可以的）。\n\n通过打开「方案」面板就可以为你的殖民者设计/安排着装方案了。</Outfits.helpText>
+  
+  <!-- EN: Pausing -->
+  <Pause.label>暂停时间</Pause.label>
+  <!-- EN: Hit {Key:TogglePause} to pause or unpause the game.\n\nYou can give orders while paused.\n\nRemember this - if things get hectic, just hit {Key:TogglePause}! -->
+  <Pause.helpText>你可以随时暂停时间！THE WORLD！\n\n这意味着你永远不需要赶时间，也可以静下心来慢慢发号施令。\n\n按下{Key:TogglePause}键来暂停/继续游戏，或点击屏幕右下方的时间控制栏。\n\n当你忙得不可开交时，按下{Key:TogglePause}键就对了！</Pause.helpText>
+  
+  <!-- EN: Shot accuracy tooltip -->
+  <ShotAccuracyTooltip.label>射击精度提示框</ShotAccuracyTooltip.label>
+  <!-- EN: You can see the exact calculations behind the accuracy of any shot.\n\nTo do so, select the shooter, then rest the mouse over the target. The tooltip will show the chance to hit, and a breakdown of the contribution of various to-hit chance multipliers. -->
+  <ShotAccuracyTooltip.helpText>你可以查看殖民者每一枪的射击命中率。\n\n选择一位枪手，将鼠标移动到他的目标之上，命中率乘数和偏移都会显示出来。</ShotAccuracyTooltip.helpText>
+  
+  <!-- EN: Spoilage and freezers -->
+  <SpoilageAndFreezers.label>腐烂和冷冻</SpoilageAndFreezers.label>
+  <!-- EN: Most foodstuffs will spoil after a relatively short time.\n\nTo prevent this, you can build a walk-in freezer.\n\nTo build a freezer, construct a closed room, and put one or two coolers into the wall. Set the coolers to a negative target temperature.\n\nFrozen foods won't ever spoil. -->
+  <SpoilageAndFreezers.helpText>大部分的食物在短时期后就会变质腐烂。\n\n你可以将一个房间设成冷库来避免这种情况发生。\n\n在一个房间中安装制冷机，再将目标温度设置为零下即可。房间越大，所需要的制冷机就越多。\n\n被冷冻的食物不会腐烂。</SpoilageAndFreezers.helpText>
+  
+  <!-- EN: Stockpiles -->
+  <Stockpiles.label>储存区</Stockpiles.label>
+  <!-- EN: Your colonists need somewhere to store items. Designate a STOCKPILE for them to store things.\n\nFind the stockpile in the ZONES section of the ARCHITECT menu in the lower-left. -->
+  <Stockpiles.helpText>你的殖民者们需要一块地方来储存物品，规划一片「储存区」来存放物资吧。\n\n你可以在屏幕左下方的「建筑规划」面板中找到「区域」→「储存区」来规划。</Stockpiles.helpText>
+  
+  <!-- EN: Storage tab -->
+  <StorageTab.label>储存筛选</StorageTab.label>
+  <!-- EN: You can configure stockpiles and storage buildings by selecting them and opening the STORAGE TAB above the bottom-left inspector pane.\n\nIn the storage tab of a stockpile, you can expand categories to allow or deny specific items. Click the triangles to the left of category names.\n\nYou can change the PRIORITY of storage. Colonists will fill higher-priority storage first, and move items from lower to higher priority. -->
+  <StorageTab.helpText>你可以通过点击储存区或者物品架面板左下角的「储存筛选」按钮来进行详细设置。\n\n你可以扩大/减少该储存区允许堆放的物品种类。\n\n也可以更改当前区域的「优先级」，殖民者总是会优先向优先级更高的储存区和物品架搬运东西。</StorageTab.helpText>
+  
+  <!-- EN: Tile inspector -->
+  <TileInspector.label>地格查看器</TileInspector.label>
+  <!-- EN: You can inspect the details of a tile by holding {Key:ShowCellInspector}. This displays the contents of a tile, room information, beauty information, and more. -->
+  <TileInspector.helpText>你可以通过按住{Key:ShowCellInspector}来查看地格的详细信息，这包括地格的内容、房间信息、美观度信息等等。</TileInspector.helpText>
+  
+  <!-- EN: Time assignments -->
+  <TimeAssignments.label>作息表</TimeAssignments.label>
+  <!-- EN: You can modify what time of day colonists should do different activities using the SCHEDULE tab. -->
+  <TimeAssignments.helpText>你可以在「管制」面板中调整殖民者每日的活动安排。</TimeAssignments.helpText>
+  
+  <!-- EN: Time controls -->
+  <TimeControls.label>时间控制</TimeControls.label>
+  <!-- EN: You can speed up time.\n\nTry controlling time with the {Key:TimeSpeed_Normal}, {Key:TimeSpeed_Fast}, and {Key:TimeSpeed_Superfast} keys, or with the time controls in the bottom right. -->
+  <TimeControls.helpText>你可以控制时间的流逝速度。\n\n试着按下{Key:TimeSpeed_Normal}、{Key:TimeSpeed_Fast}和{Key:TimeSpeed_Superfast}键来调整时间流逝速度，或点击屏幕右下方的时间控制栏。</TimeControls.helpText>
+  <!-- EN: You can speed up time.\n\nTry controlling time with {Key:TimeSpeed_Faster} and {Key:TimeSpeed_Slower}, or with the time controls in the bottom right. -->
+  <TimeControls.helpTextController>你可以控制时间的流逝速度。\n\n试着按下{Key:TimeSpeed_Faster}和{Key:TimeSpeed_Slower}键来调整时间流逝速度，或点击屏幕右下方的时间控制栏。</TimeControls.helpTextController>
+  
+  <!-- EN: Work settings -->
+  <WorkTab.label>工作设置</WorkTab.label>
+  <!-- EN: You can set each colonist's work settings in the WORK tab at the bottom left of the screen.\n\nThey will always do the highest priority work that they can find.\n\nIf nobody has a certain work type assigned, or if they are busy with higher-priority tasks, it will never get done. -->
+  <WorkTab.helpText>你可以在屏幕左下角的「工作」面板中来分配各殖民者的工作优先级。\n\n殖民者们总是会先进行优先级更高的任务。\n\n要注意：如果某项工作没有任何殖民者被安排从事，或是总有优先级更高的事情需要处理，那么这些工作将永远不会被完成！</WorkTab.helpText>
+  
+</LanguageData>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <RecipeRequiresMechanitor>The recipe {0} requires a mechanitor to work on it. None of your colonists are mechanitors, so nobody will do this bill.</RecipeRequiresMechanitor>
+
+  <GenepackPlural>genepacks</GenepackPlural>
+  <TraitsDevelopLaterBaby>Traits develop later during childhood</TraitsDevelopLaterBaby>
+  <SkillsDevelopLaterBaby>Skills develop later during childhood</SkillsDevelopLaterBaby>
+  <TabGenes>Genes</TabGenes>
+
+  <ViewGenes>View genes</ViewGenes>
+  <ViewGenesDesc>Click to view {PAWN_nameDef}'s genes.</ViewGenesDesc>
+
+  <!-- Feeding tab (human babies) -->
+  <TabFeeding>Feeding</TabFeeding>
+  <AutofeedSectionHeader>Auto feed settings</AutofeedSectionHeader>
+  <AutofeedModeNever>never</AutofeedModeNever>
+  <AutofeedModeChildcare>childcare</AutofeedModeChildcare>
+  <AutofeedModeUrgent>urgent</AutofeedModeUrgent>
+  <AutofeedNone>Nobody can feed this baby.</AutofeedNone>
+  <AutofeedModeTooltipNever>{FEEDER_nameDef} will not automatically feed {BABY_nameDef}.</AutofeedModeTooltipNever>
+  <AutofeedModeTooltipChildcare>{FEEDER_nameDef} will feed {BABY_nameDef} as childcare work.</AutofeedModeTooltipChildcare>
+  <AutofeedModeTooltipUrgent>{FEEDER_nameDef} will feed {BABY_nameDef} day or night, even if {FEEDER_nameDef} is not assigned to childcare or is incapable of childcare.</AutofeedModeTooltipUrgent>
+  <BabyFoodConsumables>Consumable foods</BabyFoodConsumables>
+
+  <!-- Social tab (human babies) -->
+  <IdeoExposureSectionHeader>ideoligion exposure</IdeoExposureSectionHeader>
+  <IdeoExposureNoExposure>{BABY_labelShort} has not been exposed to any ideoligions yet.</IdeoExposureNoExposure>
+  <IdeoExposureNoExposureDetail>{BABY_pronoun} can be exposed to ideoligions by interacting with followers of an ideoligion. These interactions include being breastfed, carried, played with, and more. At the age of {CHILDAGE} {BABY_labelShort} will join one of the ideoligions {BABY_pronoun} has been exposed to.</IdeoExposureNoExposureDetail>
+  <IdeoExposurePointsTooltipJoinLikelihood>{BABY_labelShort} is {PERCENT} likely to join the ideoligion {IDEO_name}.</IdeoExposurePointsTooltipJoinLikelihood>
+  <IdeoExposurePointsTooltipJoinDescription>As {BABY_labelShort} interacts with followers of an ideoligion {BABY_pronoun} becomes more likely to join that ideoligion. {BABY_labelShort} will join one of the ideoligions {BABY_pronoun} has been exposed to at the age of {CHILDAGE}.</IdeoExposurePointsTooltipJoinDescription>
+  <IdeoExposurePointsTooltipExposureDescription>Ideoligion exposure is measured by exposure points. Interactions like being breastfed, carried, or played with will cause {BABY_labelShort} to gain exposure points for the ideoligions followed by those {BABY_pronoun} interacts with.</IdeoExposurePointsTooltipExposureDescription>
+  <IdeoExposurePointsTooltipIdeoExposure>{IDEO_name} exposure points</IdeoExposurePointsTooltipIdeoExposure>
+  <IdeoExposurePointsTooltipTotalExposure>Total exposure points</IdeoExposurePointsTooltipTotalExposure>
+
+  <!-- Social tab (romance) -->
+  <TryRomanceButtonLabel>Romance</TryRomanceButtonLabel>
+  <TryRomanceNoOptsMessage>Nobody for {0_labelShort} to romance.</TryRomanceNoOptsMessage>
+  <CantRomanceTargetUnreachable>unreachable</CantRomanceTargetUnreachable>
+  <CantRomanceTargetSleeping>sleeping</CantRomanceTargetSleeping>
+  <CantRomanceTargetDowned>incapacitated</CantRomanceTargetDowned>
+  <CantRomanceTargetDrafted>drafted</CantRomanceTargetDrafted>
+  <CantRomanceTargetMentalState>mental break</CantRomanceTargetMentalState>
+  <CantRomanceTargetIncest>incestuous</CantRomanceTargetIncest>
+  <CantRomanceTargetOpinion>low opinion</CantRomanceTargetOpinion>
+  <CantRomanceTargetSexuality>incompatible orientation</CantRomanceTargetSexuality>
+  <CantRomanceTargetPrisoner>prisoner</CantRomanceTargetPrisoner>
+  <CantRomanceTargetYoung>too young</CantRomanceTargetYoung>
+  <CantRomanceTargetZeroChance>zero chance</CantRomanceTargetZeroChance>
+  <CantRomanceInitiateMessagePrisoner>{0_labelShort} cannot try to romance because {0_pronoun} is a prisoner.</CantRomanceInitiateMessagePrisoner>
+  <CantRomanceInitiateMessageSlave>{0_labelShort} cannot try to romance because {0_pronoun} is a slave.</CantRomanceInitiateMessageSlave>
+  <CantRomanceInitiateMessageAsexual>{0_labelShort} cannot try to romance because {0_pronoun} has the asexual trait.</CantRomanceInitiateMessageAsexual>
+  <CantRomanceInitiateMessageDowned>{0_labelShort} cannot try to romance because {0_pronoun} is incapacitated.</CantRomanceInitiateMessageDowned>
+  <CantRomanceInitiateMessageDrafted>{0_labelShort} cannot try to romance because {0_pronoun} is drafted.</CantRomanceInitiateMessageDrafted>
+  <CantRomanceInitiateMessageMentalState>{0_labelShort} cannot try to romance because {0_pronoun} is in an unfit mental state.</CantRomanceInitiateMessageMentalState>
+  <CantRomanceInitiateMessageTalk>{0_labelShort} cannot try to romance because {0_pronoun} is unable to speak.</CantRomanceInitiateMessageTalk>
+  <CantRomanceInitiateMessageCooldown>{0_labelShort} tried romancing recently and must wait {1} until trying again.</CantRomanceInitiateMessageCooldown>
+  <TryRomanceFailedMessage>{0_labelShort}'s attempt to romance {1_labelShort} was unsuccessful.</TryRomanceFailedMessage>
+  <RomanceExistingRelationshipWarning>Having {INITIATOR_nameDef} romance {TARGET_nameDef} could sow resentment among existing partners, lead to breakups, and cause altercations.</RomanceExistingRelationshipWarning>
+  <RomanceChance>Romance chance</RomanceChance>
+  <RomanceChanceExistingRelation>already {PAWN_nameDef}'s {RELATION}</RomanceChanceExistingRelation>
+  <RomanceChanceCant>Cannot romance</RomanceChanceCant>
+  <RomanceChanceAgeFactor>Relative age</RomanceChanceAgeFactor>
+  <RomanceChanceBeautyFactor>Beauty</RomanceChanceBeautyFactor>
+  <RomanceChanceOpinionFactor>Opinion</RomanceChanceOpinionFactor>
+  <RomanceChancePartnerFactor>Opinion of partner</RomanceChancePartnerFactor>
+  <RomanceFailedUnexpected>{0_labelShort} was unable to romance {1_labelShort}</RomanceFailedUnexpected>
+  <RomanceWarningMonogamous>{0_nameDef} is already in a relationship.</RomanceWarningMonogamous>
+  <RomanceWarningPolygamous>{0_nameDef} already has {1} partners.</RomanceWarningPolygamous>
+
+  <!-- Guest tab (prisoners) -->
+  <FactorForGenes>Genes</FactorForGenes>
+  <PrisonBreakingDisabledDueToGene>Prison breaking is disabled by {GENE_label} gene.</PrisonBreakingDisabledDueToGene>
+
+</LanguageData>

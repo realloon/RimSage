@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>ListeningToHarp</defName>
+    <workerClass>ThoughtWorker_ListeningToHarp</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>listening to harp</label>
+        <description>The harp is so soothing.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ListeningToHarpsichord</defName>
+    <workerClass>ThoughtWorker_ListeningToHarpsichord</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>listening to harpsichord</label>
+        <description>The complexity of the harpsichord fulfills my mind.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ListeningToPiano</defName>
+    <workerClass>ThoughtWorker_ListeningToPiano</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>listening to piano</label>
+        <description>The piano's range makes me feel melancholy, excited, and whimsical at the same time. What a sound.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

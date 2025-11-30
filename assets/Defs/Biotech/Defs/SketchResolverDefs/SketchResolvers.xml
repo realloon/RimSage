@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SketchResolverDef>
+    <defName>AncientRechargeRoom</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientRechargeRoom" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientMechGestatorRoom</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientMechGestatorRoom" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientMechGeneratorRoom</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientMechGeneratorRoom" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientBandNodeRoom</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientBandNodeRoom" />
+  </SketchResolverDef>
+
+</Defs>

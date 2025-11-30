@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <NotAMechanitor>Not a mechanitor</NotAMechanitor>
+  <NotEnoughBandwidth>Not enough bandwidth</NotEnoughBandwidth>
+  <ControlMech>Take control of {0}</ControlMech>
+  <CannotControlMech>Cannot control {0}</CannotControlMech>
+  <CannotControlMechAlreadyControlled>Already controlled by {0}</CannotControlMechAlreadyControlled>
+  <CannotControlMechNotEnoughBandwidth>Not enough bandwidth</CannotControlMechNotEnoughBandwidth>
+  <CannotControlMechNeverControllable>Never controllable</CannotControlMechNeverControllable>
+  <CannotDisconnectMech>Cannot disconnect from {0}</CannotDisconnectMech>
+  <DisconnectMech>Disconnect from {0}</DisconnectMech>
+  <DisassembleMech>Permanently disassemble {0}</DisassembleMech>
+  <CannotDisassembleMech>Cannot permanently disassemble {0}</CannotDisassembleMech>
+  <MustBeOverseer>Must be overseer</MustBeOverseer>
+  <Extract>Extract</Extract>
+  <OutOfCommandRange>Out of command range</OutOfCommandRange>
+  <CannotGoOutOfRange>Cannot go here</CannotGoOutOfRange>
+  <WasteContainerFull>Must be emptied</WasteContainerFull>
+  <CannotRepairMech>Cannot repair mech {0}</CannotRepairMech>
+
+  <ExtractXenogermFrom>Extract xenogerm from {PAWN_nameDef}</ExtractXenogermFrom>
+  <EnterBuilding>Enter {0_labelShort}</EnterBuilding>
+  <PawnHasNoGenes>{PAWN_nameDef} has no genes</PawnHasNoGenes>
+  <PawnHasNoNonArchiteGenes>{PAWN_nameDef} has no extractable genes.</PawnHasNoNonArchiteGenes>
+  <InXenogerminationComa>In xenogermination coma</InXenogerminationComa>
+  <Occupied>Occupied</Occupied>
+  <OccupantEjectedFromGrowthVat>{PAWN_nameDef} was ejected from a growth vat</OccupantEjectedFromGrowthVat>
+  <TooOld>{PAWN_nameDef} must be younger than {AGEYEARS} years old.</TooOld>
+  <PawnIsTooOld>{PAWN_nameDef} is too old.</PawnIsTooOld>
+  <PawnBiostarving>{PAWN_nameDef} is suffering from biostarvation.</PawnBiostarving>
+  <NoViablePawns>No available people</NoViablePawns>
+  <NoExtractablePawns>No extractable people</NoExtractablePawns>
+  <NoImplantablePawns>No implantable people</NoImplantablePawns>
+  <CannotEnterBuilding>Cannot enter {0_labelShort}</CannotEnterBuilding>
+  <AssignedToOtherPawn>{0_labelShort} is assigned to another person.</AssignedToOtherPawn>
+
+  <AbsorbXenogerm>Absorb xenogerm of {PAWN_nameDef}</AbsorbXenogerm>
+  <CannotAbsorbXenogerm>Cannot absorb {PAWN_nameDef}'s xenogerm</CannotAbsorbXenogerm>
+  <SameXenotype>{PAWN_nameDef} is already {PAWN_xenotype}</SameXenotype>
+  <XenogermLossShockPresent>{PAWN_nameDef} suffering from xenogerm loss shock</XenogermLossShockPresent>
+  <CarryToSpecificThing>Carry to {0_labelShort}</CarryToSpecificThing>
+  <NoCasketOrBed>No reachable, un-reserved bed or deathrest casket in safe temperature.</NoCasketOrBed>
+  <TemporaryFactionMember>{PAWN_nameDef} is a temporary faction member.</TemporaryFactionMember>
+
+  <SubcoreScannerNotInit>Scanner not initiated</SubcoreScannerNotInit>
+  <SubcoreScannerRequiresIngredients>Waiting for ingredients</SubcoreScannerRequiresIngredients>
+  <SubcoreScannerOccupied>Occupied</SubcoreScannerOccupied>
+  <EnterSubcoreScanner>Enter {0}</EnterSubcoreScanner>
+
+  <BabyCareBreastfeed>Breastfeed {BABY_labelShort}</BabyCareBreastfeed>
+  <BabyCareBreastfeedUnable>Cannot breastfeed {BABY_labelShort}</BabyCareBreastfeedUnable>
+  <AlreadyBreastfeeding>Already breastfeeding {BABY_labelShort}</AlreadyBreastfeeding>
+  <NoBabyFood>No baby-edible food</NoBabyFood>
+
+  <CannotInteractBabyPlayFull>play need full</CannotInteractBabyPlayFull>
+
+  <BloodfeedOn>Feed on {PAWN_nameDef}</BloodfeedOn>
+  <CannotBloodfeedOn>Cannot feed on {PAWN_nameDef}</CannotBloodfeedOn>
+  <CannotFeedOnWouldKill>Not enough blood.</CannotFeedOnWouldKill>
+
+  <!-- BreastfeedFailReason strings-->
+  <BreastfeedFailReason_MomNotEnoughMilk>{MOM_labelShort} does not have enough milk</BreastfeedFailReason_MomNotEnoughMilk>
+  <BreastfeedFailReason_MomInMentalState>{MOM_labelShort} cannot breastfeed right now</BreastfeedFailReason_MomInMentalState>
+  <BreastfeedFailReason_BabyTooFull>{BABY_labelShort} is too full to suckle</BreastfeedFailReason_BabyTooFull>
+  <BreastfeedFailReason_BabyForbiddenToMom>{BABY_labelShort} is forbidden to {MOM_labelShort}</BreastfeedFailReason_BabyForbiddenToMom>
+  <BreastfeedFailReason_BabyForbiddenToHauler>{BABY_labelShort} is forbidden to {HAULER_labelShort}</BreastfeedFailReason_BabyForbiddenToHauler>
+  <BreastfeedFailReason_MomForbiddenToHauler>{MOM_labelShort} is forbidden to {HAULER_labelShort}</BreastfeedFailReason_MomForbiddenToHauler>
+  <BreastfeedFailReason_MomIsMobile>{MOM_labelShort} can breastfeed {BABY_labelShort} without help</BreastfeedFailReason_MomIsMobile>
+  <BreastfeedFailReason_HaulerCannotReachMom>{HAULER_labelShort} cannot go from {BABY_labelShort} to {MOM_labelShort}</BreastfeedFailReason_HaulerCannotReachMom>
+  <BreastfeedFailReason_HaulerCannotReachBaby>{HAULER_labelShort} cannot reach {BABY_labelShort}</BreastfeedFailReason_HaulerCannotReachBaby>
+  <BreastfeedFailReason_NoMomsAssignedToBaby>No lactating {BABY_factionPawnsPlural} are assigned to {BABY_labelShort}</BreastfeedFailReason_NoMomsAssignedToBaby>
+  <BreastfeedFailReason_MomNotAssignedToChildcare>{MOM_labelShort} is not assigned to childcare</BreastfeedFailReason_MomNotAssignedToChildcare>
+  <BreastfeedFailReason_MomInsideContainer>{MOM_labelShort} is inside a container</BreastfeedFailReason_MomInsideContainer>
+  <BreastfeedFailReason_MomBeingCarried>{MOM_labelShort} is being carried</BreastfeedFailReason_MomBeingCarried>
+
+  <OrderImplantationIntoPawn>Order implantation into {PAWN_nameDef}</OrderImplantationIntoPawn>
+  <AcceptXenogerm>Accept {0_xenotype} xenogerm</AcceptXenogerm>
+
+  <CarryToRechargerOrdered>Carry {PAWN_labelShort} to recharger</CarryToRechargerOrdered>
+  <CannotCarryToRecharger>Cannot carry {PAWN_labelShort} to recharger</CannotCarryToRecharger>
+  <CannotCarryToRechargerNoneAvailable>No available recharger</CannotCarryToRechargerNoneAvailable>
+
+  <NotAllowedHemogen>Hemogen packs disabled by food restriction.</NotAllowedHemogen>
+
+  <EjectGenepackFromGeneBank>Eject genepack from gene bank</EjectGenepackFromGeneBank>
+
+  <ResultingMetTooLow>Resulting metabolism would be too low</ResultingMetTooLow>
+
+  <RomanceOnCooldown>attempted romance too recently</RomanceOnCooldown>
+
+  <CarryToSafePlace>Take to safe location</CarryToSafePlace>
+  <CannotCarryToSafePlace>Cannot take to safe location</CannotCarryToSafePlace>
+  <NoBetterSafePlace>No safer location than current location</NoBetterSafePlace>
+  <AlreadyCarryingToSafePlace>Already taking to safe location</AlreadyCarryingToSafePlace>
+
+</LanguageData>

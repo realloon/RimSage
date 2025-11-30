@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Pigskin -->
+  <SoundDef>
+    <defName>Pawn_Pigskin_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Humanlike/Pigskin/Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Pigskin_Death</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Humanlike/Pigskin/Death</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_Pigskin_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Humanlike/Pigskin/Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <!-- Furskin -->
+    <SoundDef>
+      <defName>Pawn_Furskin_Call</defName>
+      <context>MapOnly</context>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Folder">
+              <clipFolderPath>Pawn/Humanlike/Furskin/Call</clipFolderPath>
+            </li>
+          </grains>
+          <volumeRange>14</volumeRange>
+          <pitchRange>0.95~1.05</pitchRange>
+          <sustainLoop>False</sustainLoop>
+        </li>
+      </subSounds>
+    </SoundDef>
+  
+    <SoundDef>
+      <defName>Pawn_Furskin_Death</defName>
+      <context>MapOnly</context>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Folder">
+              <clipFolderPath>Pawn/Humanlike/Furskin/Death</clipFolderPath>
+            </li>
+          </grains>
+          <volumeRange>16</volumeRange>
+          <pitchRange>0.95~1.05</pitchRange>
+          <sustainLoop>False</sustainLoop>
+        </li>
+      </subSounds>
+    </SoundDef>
+  
+    <SoundDef>
+      <defName>Pawn_Furskin_Wounded</defName>
+      <context>MapOnly</context>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Folder">
+              <clipFolderPath>Pawn/Humanlike/Furskin/Wounded</clipFolderPath>
+            </li>
+          </grains>
+          <volumeRange>16</volumeRange>
+          <pitchRange>0.95~1.05</pitchRange>
+          <sustainLoop>False</sustainLoop>
+          <repeatMode>NeverTwice</repeatMode>
+        </li>
+      </subSounds>
+    </SoundDef>
+
+
+</Defs>

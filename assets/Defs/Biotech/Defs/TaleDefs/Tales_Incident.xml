@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaleDef>
+    <defName>NoxiousHaze</defName>
+    <label>acidic smog</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>50</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->acidic smog sweeping over [PAWN_nameDef]'s [Community]</li>
+        <li>tale_noun->the atmosphere near [PAWN_nameDef]'s [Community] becoming noxious</li>
+        <li>image->an ominous sky, [circumstance_group]</li>
+        <li>image->the air becoming thick and [circumstance_group]</li>
+        <li>circumstance_phrase->with no life in sight</li>
+        <li>circumstance_phrase->waiting for the acidic smog to clear</li>
+        <li>circumstance_phrase->watching the animals flee</li>
+        <li>desc_sentence->[PAWN_nameDef] hides near a [TerrainFeature], gazing out with a [AdjectiveAngsty] look.</li>
+        <li>desc_sentence->[PAWN_nameDef] looks on with a cloth wrapped around [PAWN_possessive] face.</li>
+        <li>desc_sentence->[Quantity_adjphrase] dead [Animal]s lay on the ground.</li>
+        <li>desc_sentence->[Quantity_adjphrase] dying [Animal]s lay on the ground.</li>
+        <li>desc_sentence->[Quantity_adjphrase] suffocating [Animal]s lay on the ground.</li>
+        <li>desc_sentence->[Quantity_adjphrase] [Animal]s flee.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+</Defs>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>BabyFood</defName>
+    <label>baby food</label>
+    <description>A bland vegetarian mash. Babies love it, but children and adults will be upset if they're forced to eat it.</description>
+    <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Resource/BabyFood</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <MarketValue>1.25</MarketValue>
+      <Mass>0.015</Mass>
+      <Nutrition>0.05</Nutrition>
+    </statBases>
+    <stackLimit>75</stackLimit>
+    <ingestible>
+      <foodType>Meal</foodType>
+      <preferability>MealTerrible</preferability>
+      <tasteThought>AteBabyFood</tasteThought>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+      <babiesCanIngest>true</babiesCanIngest>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Ingredients">
+        <performMergeCompatibilityChecks>false</performMergeCompatibilityChecks>
+        <noIngredientsFoodKind>NonMeat</noIngredientsFoodKind>
+      </li>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>14</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <allowedArchonexusCount>200</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>HemogenPack</defName>
+    <label>hemogen pack</label>
+    <description>A package of refined hemogen in a specialized container that prevents spoilage. Hemogenic humans can consume it to restore their internal hemogen stores. It can be administered via an operation to reverse blood loss.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <stackLimit>10</stackLimit>
+    <tickerType>Rare</tickerType>
+    <possessionCount>5</possessionCount>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <graphicData>
+      <texPath>Things/Item/Resource/HemogenPack</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <DeteriorationRate>5</DeteriorationRate>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <Nutrition>0.1</Nutrition>
+      <Beauty>0</Beauty>
+      <MarketValue>5</MarketValue>
+    </statBases>
+    <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <specialThoughtDirect>IngestedHemogenPack</specialThoughtDirect>
+      <ingestSound>HemogenPack_Consume</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_OffsetHemogen">
+          <offset>0.2</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+</Defs>

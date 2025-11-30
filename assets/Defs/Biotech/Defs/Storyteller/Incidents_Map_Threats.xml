@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>WastepackInfestation</defName>
+    <label>wastepack infestation</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+      <li>Map_Misc</li>
+    </targetTags>
+    <workerClass>IncidentWorker_WastepackInfestation</workerClass>
+    <letterLabel>Wastepack infestation</letterLabel>
+    <letterText>A group of burrowed insect stasis cocoons have picked up the scent of a recently-dissolved toxic wastepack. They're tunneling upwards to get closer to the chemicals!\n\nThe cocoons will emerge in a dormant state. They will remain dormant indefinitely. If someone approaches or disturbs them, they will open and release enraged insects.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.012</baseChance>
+    <minRefireDays>15</minRefireDays>
+    <category>Special</category>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>Infestation</tale>
+    <refireCheckTags>
+      <li>WastepackInfestation</li>
+    </refireCheckTags>
+  </IncidentDef>
+
+</Defs>

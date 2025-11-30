@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>NeedLearning</defName>
+    <workerClass>ThoughtWorker_NeedLearning</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>learning-starved</label>
+        <description>It's been so long since I learned anything new. I'm tired of the monotony!</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+      <li>
+        <label>learning-deprived</label>
+        <description>I want to learn more about all sorts of things. This place is boring!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>learning unfulfilled</label>
+        <description>I need more opportunities to learn and more time to study.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>learning satisfied</label>
+        <description>I've learned a lot recently! I'm looking forward to learning more.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>learning fully satisfied</label>
+        <description>I've learned so much! I love all these new experiences.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>NeedPlay</defName>
+    <workerClass>ThoughtWorker_NeedPlay</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>desperately wants to play</label>
+        <description>Play. With. Me. Now!</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+      <li>
+        <label>really wants to play</label>
+        <description>Why won't anybody play with me?</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>wants to play</label>
+        <description>This place is boring.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>entertained</label>
+        <description>I'm having lots of fun.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>very entertained</label>
+        <description>I'm having so much fun!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

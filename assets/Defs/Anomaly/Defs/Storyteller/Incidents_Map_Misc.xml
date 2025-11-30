@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <IncidentDef Abstract="True" Name="AnomalyIncidentBase">
+    <minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>UnnaturalDarkness</defName>
+    <label>unnatural darkness</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <questScriptDef>UnnaturalDarkness</questScriptDef>
+    <minRefireDays>75</minRefireDays>
+    <baseChance>1</baseChance>
+    <earliestDay>45</earliestDay>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <requireColonistsPresent>True</requireColonistsPresent>
+    <tale>UnnaturalDarkness</tale>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>DeathPall</defName>
+    <label>death pall</label>  
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_DeathPall</workerClass>
+    <gameCondition>DeathPall</gameCondition>
+    <letterLabel>Death pall</letterLabel> 
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.5</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <earliestDay>15</earliestDay>
+    <minRefireDays>30</minRefireDays>
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+    <durationDays>1~3</durationDays>
+    <tale>DeathPall</tale>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>MetalhorrorImplantation</defName>
+    <label>metalhorror implantation</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MetalhorrorImplantation</workerClass>
+    <baseChance>0.2</baseChance>
+    <earliestDay>30</earliestDay>
+    <minThreatPoints>300</minThreatPoints>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <minRefireDays>45</minRefireDays>
+    <minPopulation>4</minPopulation>
+  </IncidentDef>
+  
+  <IncidentDef Name="ObeliskBase" ParentName="AnomalyIncidentBase" Abstract="True">
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <letterText>A mysterious obelisk has crashed nearby.\n\nThe obelisk hums with putrid psychic energy, gradually intensifying as it approaches some dangerous limit. You can send colonists to suppress the obelisk to prevent it from activating.\n\nYou can also mark the obelisk for study to try to learn its purpose and perhaps make use of it.\n\nYou can always attack the obelisk to destroy it, but doing so may unleash unnatural and dangerous phenomena.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <baseChance>0.5</baseChance>
+    <earliestDay>50</earliestDay>
+    <minRefireDays>120</minRefireDays>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+  </IncidentDef>
+
+  <IncidentDef ParentName="ObeliskBase">
+    <defName>WarpedObelisk_Mutator</defName>
+    <label>twisted obelisk</label>
+    <letterLabel>Twisted obelisk</letterLabel>
+    <workerClass>IncidentWorker_ObeliskMutator</workerClass>
+  </IncidentDef>
+
+  <IncidentDef ParentName="ObeliskBase">
+    <defName>WarpedObelisk_Duplicator</defName>
+    <label>corrupted obelisk</label>
+    <letterLabel>Corrupted obelisk</letterLabel>
+    <workerClass>IncidentWorker_ObeliskDuplicator</workerClass>
+  </IncidentDef>
+
+  <IncidentDef ParentName="ObeliskBase">
+    <defName>WarpedObelisk_Abductor</defName>
+    <label>warped obelisk</label>
+    <letterLabel>Warped obelisk</letterLabel>
+    <workerClass>IncidentWorker_ObeliskAbductor</workerClass>
+  </IncidentDef>
+
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>Nociosphere</defName>
+    <label>nociosphere</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_Nociosphere</workerClass>
+    <category>ThreatBig</category>
+    <letterLabel>Nociosphere</letterLabel>
+    <letterText>A strange metallic sphere has appeared. It hurts to be near it.\n\nYou could attack it, though you're not sure how it might defend itself. Or, you could capture it using a holding platform and learn to make use of its power.\n\nIt seems quiet for now, but it is gaining energy over time. You can suppress the sphere when it is captured to a holding platform, reducing its energy.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>1</baseChance>
+    <earliestDay>45</earliestDay>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <minRefireDays>30</minRefireDays>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>PitGate</defName>
+    <label>pit gate</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_PitGate</workerClass>
+    <letterLabel>Pit gate opening</letterLabel>
+    <letterText>A wide piece of terrain has begun sinking into the depths, forming a deepening hole. At this rate, it will deepen out of sight within a day. You can hear inhuman shrieks rising from the depths.\n\nMove buildings and items away from the emergence point.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.75</baseChance>
+    <minThreatPoints>500</minThreatPoints>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <category>ThreatBig</category>
+    <minRefireDays>45</minRefireDays>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>FleshmassHeart</defName>
+    <label>fleshmass heart</label> 
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_FleshmassHeart</workerClass>
+    <letterLabel>Something from below</letterLabel> 
+    <letterText>A small circle of terrain has begun to shift and crack apart. Something is digging up towards the surface. Rhythmic pulsations shake the ground from underneath.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.75</baseChance>
+    <earliestDay>60</earliestDay>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <pointsScaleable>true</pointsScaleable>
+    <category>ThreatBig</category>
+    <minRefireDays>120</minRefireDays>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>CreepJoinerJoin</defName>
+    <label>creepjoiner join</label>  
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <questScriptDef>CreepJoinerArrival</questScriptDef>
+    <earliestDay>10</earliestDay>
+    <baseChance>1</baseChance>
+    <minRefireDays>60</minRefireDays>
+    <minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+    <requireColonistsPresent>True</requireColonistsPresent>
+    <refireCheckTags>
+      <li>CreepjoinerJoin</li>
+    </refireCheckTags>
+  </IncidentDef>
+
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>CreepJoinerJoin_Metalhorror</defName>
+    <label>creepjoiner join</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_CreepJoiner_Metalhorror</workerClass>
+    <questScriptDef>CreepJoinerArrival_Metalhorror</questScriptDef>
+    <earliestDay>10</earliestDay>
+    <baseChance>0.05</baseChance>
+    <minRefireDays>60</minRefireDays>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <requireColonistsPresent>True</requireColonistsPresent>
+    <refireCheckTags>
+      <li>CreepjoinerJoin</li>
+    </refireCheckTags>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>BloodRain</defName>
+    <label>blood rain</label>
+    <category>ThreatBig</category>
+    <baseChance>0.5</baseChance>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <earliestDay>14</earliestDay>
+    <minRefireDays>45</minRefireDays>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>BloodRain</gameCondition>
+    <letterLabel>Blood rain</letterLabel>
+    <letterDef>ThreatBig</letterDef>
+    <durationDays>0.33~1.5</durationDays> <!-- 8~36 hours -->
+  </IncidentDef>
+
+  <IncidentDef Abstract="True" Name="MysteriousIncidentCargoBase" ParentName="AnomalyIncidentBase">
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <earliestDay>10</earliestDay>
+    <baseChance>0.2</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <minThreatPoints>200</minThreatPoints>
+    <requireColonistsPresent>True</requireColonistsPresent>
+    <minRefireDays>240</minRefireDays>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="MysteriousIncidentCargoBase">
+    <defName>MysteriousCargoUnnaturalCorpse</defName>
+    <label>mysterious cargo corpse</label> 
+    <questScriptDef>MysteriousCargoUnnaturalCorpse</questScriptDef>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="MysteriousIncidentCargoBase">
+    <defName>MysteriousCargoCube</defName>
+    <label>mysterious cargo cube</label> 
+    <questScriptDef>MysteriousCargoCube</questScriptDef>
+  </IncidentDef>
+
+  <IncidentDef ParentName="MysteriousIncidentCargoBase">
+    <defName>MysteriousCargoRevenantSpine</defName>
+    <label>mysterious cargo revenant spine</label>
+    <questScriptDef>MysteriousCargoRevenantSpine</questScriptDef>
+  </IncidentDef>
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>GiveQuest_DistressCall</defName>
+    <label>distress signal</label>
+    <letterLabel>Distress signal</letterLabel>
+    <questScriptDef>OpportunitySite_DistressCall</questScriptDef>
+    <pointsScaleable>true</pointsScaleable>
+    <earliestDay>15</earliestDay>
+    <minRefireDays>45</minRefireDays>
+    <baseChance>1</baseChance>
+    <minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>RevenantEmergence</defName>
+    <label>revenant emergence</label>
+    <category>Misc</category>
+    <minRefireDays>15</minRefireDays>
+    <baseChance>1</baseChance>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+      <li>Map_TempIncident</li>
+      <li>Map_Misc</li>
+      <li>Map_RaidBeacon</li>
+      <li>Caravan</li>
+    </targetTags>
+    <workerClass>IncidentWorker_RevenantEmergence</workerClass>
+    <letterLabel>Revenant spine humming</letterLabel>
+    <letterText>The revenant spine is becoming more active and emitting an ominous hum. Destroy it or restrain it on a holding platform before it's too late.</letterText>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+  </IncidentDef>
+
+  <!-- Void Provocation only -->
+  <IncidentDef>
+    <defName>UnnaturalCorpseArrival</defName>
+    <label>unnatural corpse arrival</label>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <minRefireDays>240</minRefireDays>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_UnnaturalCorpseArrival</workerClass>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>GoldenCubeArrival</defName>
+    <label>golden cube arrival</label>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+    <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+    <minRefireDays>240</minRefireDays>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GoldenCubeArrival</workerClass>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>HarbingerTreeProvoked</defName>
+    <label>harbinger tree</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_HarbingerTreeProvoked</workerClass>
+    <letterLabel>Harbinger tree sprout</letterLabel>
+    <letterText>A harbinger tree has sprouted nearby. These gnarled trees grow flesh-like coverings, and can feed on corpses and raw meat placed nearby. If well fed, the grove will continue to grow.\n\nIn a tribal myth, these trees are the emissaries of a shapeless god who rules an endless black ocean. The myth ends after the shapeless god reaches up from the water and tears down the sky.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+  </IncidentDef>
+
+</Defs>

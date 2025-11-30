@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Entities -->
+  <MessageActivityRisingDamage>{0_definite}'s activity is rising due to taking damage.</MessageActivityRisingDamage>
+  <EntityDiedOnHoldingPlatform>{0_definite} has died on a holding platform.</EntityDiedOnHoldingPlatform>
+  <MessageEntityDiscovered>New entity discovered</MessageEntityDiscovered>
+
+  <!-- Hate chanters -->
+  <MessageHateChantersAbsorbed>The cultists are in a trance and don't respond when attacked.</MessageHateChantersAbsorbed>
+  <MessageHateChantIncreased>The hate chanting has increased in volume.</MessageHateChantIncreased>
+
+  <!-- Self-resurrection -->
+  <SelfResurrectText>{0_nameDef} can self-resurrect on command using death refusal.</SelfResurrectText>
+  <MessageUsingSelfResurrection>{0_nameDef} is using death refusal to self-resurrect.</MessageUsingSelfResurrection>
+
+  <!-- Pit Gate -->
+  <MessagePitGateCollapsed>The pit gate has collapsed.</MessagePitGateCollapsed>
+  <MessagePitBurrowCollapsed>A pit burrow has collapsed.</MessagePitBurrowCollapsed>
+
+  <!-- Fleshsack -->
+  <FleshmassContainedMessage>The flesh sack contained something</FleshmassContainedMessage>
+
+  <!-- Psychic rituals -->
+  <MessagePsychicRitualAssault>{0_pawnsPluralDef} are attacking!</MessagePsychicRitualAssault>
+  <MessageAIPsychicRitualBegan>{FACTION_pawnsPluralDef} are beginning the psychic ritual</MessageAIPsychicRitualBegan>
+  
+  <!-- Biomutation lance -->
+  <MessageBiomutationLanceInvalidTargetRace>Cannot target: {0_nameDef} is not an animal or human.</MessageBiomutationLanceInvalidTargetRace>
+  <MessageBiomutationLanceTargetTooBig>Cannot target: {0_nameDef} is too large.</MessageBiomutationLanceTargetTooBig>
+
+  <!-- Containment -->
+  <MessageNoRoomWithMinimumContainmentStrength>Warning: No rooms have the minimum containment strength for {0}. It may escape soon.</MessageNoRoomWithMinimumContainmentStrength>
+  <MessageTargetBelowMinimumContainmentStrength>Warning: {0} is below minimum containment strength for {1}. It may escape soon.</MessageTargetBelowMinimumContainmentStrength>
+  <MessageHolderReserved>Can't transfer to {0} reserved by someone else.</MessageHolderReserved>
+  <MessageEntityExecuted>{EXECUTIONER_labelShort} has executed {VICTIM_kindIndef}.</MessageEntityExecuted>
+  <MessageOccupiedHoldingPlatformReinstalled>Warning: Reinstalling an occupied holding platform will release the entity. Transfer the entity to another platform first.</MessageOccupiedHoldingPlatformReinstalled>
+  <MessageOccupiedHoldingPlatformUninstalled>Warning: Uninstalling an occupied holding platform will release the entity. Transfer the entity to another platform first.</MessageOccupiedHoldingPlatformUninstalled>
+  <MessageOccupiedHoldingPlatformDeconstructed>Warning: Deconstructing an occupied holding platform will release the entity. Transfer the entity to another platform first.</MessageOccupiedHoldingPlatformDeconstructed>
+  
+  <!-- Duplicator obelisk -->
+  <MessageHostileDuplicate>A hostile duplicate of {0_nameDef} has appeared.</MessageHostileDuplicate>
+  
+  <!-- Proximity detector -->
+  <MessageProximityDetectorTriggered>A proximity detector has detected an invisible creature.</MessageProximityDetectorTriggered>
+  
+  <!-- Unnatural darkness --> 
+  <MessagePawnAttackedInDarkness>Something in the darkness has attacked {0_nameDef}.</MessagePawnAttackedInDarkness>
+  
+  <!-- Revenant -->
+  <MessageRevenantForcedVisibility>A hidden revenant has been revealed!</MessageRevenantForcedVisibility>
+  <MessageRevenantHeard>{PAWN_nameDef} can hear the revenant {1} nearby!</MessageRevenantHeard>
+  
+  <!-- Abilities -->
+  <MessageCannotUseOnNonBleeder>{ABILITY_label} cannot be used on non-bleeding creatures.</MessageCannotUseOnNonBleeder>
+  
+  <MessageFingerspikeDisturbed>{WAKER_nameDef} has disturbed a fingerspike.</MessageFingerspikeDisturbed>
+  <MessageFingerspikeDisturbedPlural>{WAKER_nameDef} has disturbed several fingerspikes.</MessageFingerspikeDisturbedPlural>
+
+  <DeathPallResurrectedMessage>The death pall has begun to resurrect corpses.</DeathPallResurrectedMessage>
+  
+</LanguageData>

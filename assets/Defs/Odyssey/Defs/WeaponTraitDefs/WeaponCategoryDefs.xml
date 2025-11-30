@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WeaponCategoryDef>
+    <defName>Ranged</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>BulletFiring</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Bow</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Rifle</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Sighted</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Scoped</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Shotgun</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>BurstFire</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>LowStoppingPower</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Gun</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>PelletFiring</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>PulseCharge</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Pistol</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>BeamWeapon</defName>
+  </WeaponCategoryDef>
+
+  <WeaponCategoryDef>
+    <defName>Attachable</defName>
+  </WeaponCategoryDef>
+</Defs>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoColorDef>
+    <defName>LightGrey</defName>
+    <colorDef>LightGrey</colorDef>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoColorDef>
+
+  <IdeoColorDef>
+    <defName>Grey</defName>
+    <colorDef>Grey</colorDef>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoColorDef>
+
+  <IdeoColorDef>
+    <defName>DarkGrey</defName>
+    <colorDef>DarkGrey</colorDef>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoColorDef>
+
+  <IdeoColorDef>
+    <defName>LightRed</defName>
+    <colorDef>LightRed</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Red</defName>
+    <colorDef>Red</colorDef>
+    <memes>
+      <li>Cannibal</li>
+      <li>Supremacist</li>
+      <li>PainIsVirtue</li>
+    </memes>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkRed</defName>
+    <colorDef>DarkRed</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightOrange</defName>
+    <colorDef>LightOrange</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Orange</defName>
+    <colorDef>Orange</colorDef>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkOrange</defName>
+    <colorDef>DarkOrange</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightOlive</defName>
+    <colorDef>LightOlive</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Olive</defName>
+    <colorDef>Olive</colorDef>
+    <memes>
+      <li>NaturePrimacy</li>
+    </memes>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkOlive</defName>
+    <colorDef>DarkOlive</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightGreen</defName>
+    <colorDef>LightGreen</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Green</defName>
+    <colorDef>Green</colorDef>
+    <memes>
+      <li>NaturePrimacy</li>
+    </memes>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkGreen</defName>
+    <colorDef>DarkGreen</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightTeal</defName>
+    <colorDef>LightTeal</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Teal</defName>
+    <colorDef>Teal</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkTeal</defName>
+    <colorDef>DarkTeal</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightBlue</defName>
+    <colorDef>LightBlue</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Blue</defName>
+    <colorDef>Blue</colorDef>
+    <memes>
+      <li>NaturePrimacy</li>
+    </memes>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkBlue</defName>
+    <colorDef>DarkBlue</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightSapphire</defName>
+    <colorDef>LightSapphire</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Sapphire</defName>
+    <colorDef>Sapphire</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkSapphire</defName>
+    <colorDef>DarkSapphire</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightMauve</defName>
+    <colorDef>LightMauve</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Mauve</defName>
+    <colorDef>Mauve</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkMauve</defName>
+    <colorDef>DarkMauve</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightPurple</defName>
+    <colorDef>LightPurple</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Purple</defName>
+    <colorDef>Purple</colorDef>
+    <memes>
+      <li>Cannibal</li>
+      <li>FemaleSupremacy</li>
+      <li>Supremacist</li>
+    </memes>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkPurple</defName>
+    <colorDef>DarkPurple</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>LightPink</defName>
+    <colorDef>LightPink</colorDef>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>Pink</defName>
+    <colorDef>Pink</colorDef>
+    <memes>
+      <li>FemaleSupremacy</li>
+    </memes>
+  </IdeoColorDef>
+  
+  <IdeoColorDef>
+    <defName>DarkPink</defName>
+    <colorDef>DarkPink</colorDef>
+  </IdeoColorDef>
+
+
+  <!-- Ideo colors -->
+
+  <ColorDef Name="IdeoColorBase" Abstract="True">
+    <colorType>Ideo</colorType>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightGrey</defName>
+    <label>light grey</label>
+    <color>(245, 245, 245)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Grey</defName>
+    <label>grey</label>
+    <color>(192, 192, 192)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkGrey</defName>
+    <label>dark grey</label>
+    <color>(128, 128, 128)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Black</defName>
+    <label>black</label>
+    <color>(0.2, 0.2, 0.2)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightRed</defName>
+    <label>light red</label>
+    <color>(255, 115, 115)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Red</defName>
+    <label>red</label>
+    <color>(191, 86, 86)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkRed</defName>
+    <label>dark red</label>
+    <color>(148, 67, 67)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightOrange</defName>
+    <label>light orange</label>
+    <color>(255, 199, 115)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Orange</defName>
+    <label>orange</label>
+    <color>(191, 149, 86)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkOrange</defName>
+    <label>dark orange</label>
+    <color>(148, 115, 67)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightOlive</defName>
+    <label>light olive</label>
+    <color>(227, 255, 115)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Olive</defName>
+    <label>olive</label>
+    <color>(170, 191, 86)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkOlive</defName>
+    <label>dark olive</label>
+    <color>(132, 148, 67)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightGreen</defName>
+    <label>light green</label>
+    <color>(143, 255, 115)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Green</defName>
+    <label>green</label>
+    <color>(107, 191, 86)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkGreen</defName>
+    <label>dark green</label>
+    <color>(83, 148, 67)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightTeal</defName>
+    <label>light teal</label>
+    <color>(115, 255, 171)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Teal</defName>
+    <label>teal</label>
+    <color>(86, 191, 128)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkTeal</defName>
+    <label>dark teal</label>
+    <color>(67, 148, 99)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightBlue</defName>
+    <label>light blue</label>
+    <color>(115, 255, 255)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Blue</defName>
+    <label>blue</label>
+    <color>(86, 191, 191)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkBlue</defName>
+    <label>dark blue</label>
+    <color>(67, 148, 148)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightSapphire</defName>
+    <label>light sapphire</label>
+    <color>(115, 171, 255)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Sapphire</defName>
+    <label>sapphire</label>
+    <color>(86, 128, 191)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkSapphire</defName>
+    <label>dark sapphire</label>
+    <color>(67, 99, 148)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightMauve</defName>
+    <label>light mauve</label>
+    <color>(143, 115, 255)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Mauve</defName>
+    <label>mauve</label>
+    <color>(107, 86, 191)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkMauve</defName>
+    <label>dark mauve</label>
+    <color>(83, 67, 148)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightPurple</defName>
+    <label>light purple</label>
+    <color>(227, 115, 255)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Purple</defName>
+    <label>purple</label>
+    <color>(170, 86, 191)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkPurple</defName>
+    <label>dark purple</label>
+    <color>(132, 67, 148)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>LightPink</defName>
+    <label>light pink</label>
+    <color>(255, 115, 199)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>Pink</defName>
+    <label>pink</label>
+    <color>(191, 86, 149)</color>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>DarkPink</defName>
+    <label>dark pink</label>
+    <color>(148, 67, 115)</color>
+  </ColorDef>
+
+</Defs>

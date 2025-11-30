@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef>
+    <defName>VoidStudy</defName>
+    <label>void study</label>
+    <iconPath>UI/Issues/VoidStudy</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+  
+  <PreceptDef>
+    <defName>VoidStudy_VeryInefficient</defName>
+    <label>very inefficient</label>
+    <description>All this void nonsense is superstition. Let's focus on reality.</description>
+    <issue>VoidStudy</issue>
+    <impact>Medium</impact>
+    <displayOrderInImpact>1020</displayOrderInImpact>
+    <statFactors>
+      <StudyEfficiency>0.5</StudyEfficiency>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>VoidStudy_Inefficient</defName>
+    <label>inefficient</label>
+    <description>Trying to understand the unknowable is pointless. We should focus on more meaningful activities.</description>
+    <issue>VoidStudy</issue>
+    <impact>Low</impact>
+    <displayOrderInImpact>1020</displayOrderInImpact>
+    <statFactors>
+      <StudyEfficiency>0.75</StudyEfficiency>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>VoidStudy_Efficient</defName>
+    <label>efficient</label>
+    <description>The void is a true mystery that deserves to be studied.</description>
+    <issue>VoidStudy</issue>
+    <impact>Low</impact>
+    <displayOrderInImpact>1020</displayOrderInImpact>
+    <statFactors>
+      <StudyEfficiency>1.25</StudyEfficiency>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>VoidStudy_VeryEfficient</defName>
+    <label>very efficient</label>
+    <description>The void is the ultimate truth.</description>
+    <issue>VoidStudy</issue>
+    <impact>Medium</impact>
+    <displayOrderInImpact>1020</displayOrderInImpact>
+    <statFactors>
+      <StudyEfficiency>1.5</StudyEfficiency>
+    </statFactors>
+  </PreceptDef>
+  
+</Defs>
+

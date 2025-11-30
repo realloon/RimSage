@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <!-- Shamblers -->
+  <ShamblerRegenerating>Regenerating to rise again.</ShamblerRegenerating>
+  <ShamblerRising>Rising.</ShamblerRising>
+  <ShamblerStanding>Standing listlessly.</ShamblerStanding>
+  <ShamblerShuffling>Shuffling listlessly.</ShamblerShuffling>
+  <LetterText_ShamblerGorehulk>Be careful, the group contains a shambler gorehulk.</LetterText_ShamblerGorehulk>
+  <LetterText_ShamblerGorehulkPlural>Be careful, the group contains several shambler gorehulks.</LetterText_ShamblerGorehulkPlural>
+  <LetterText_ShamblerChimera>Be careful, the group contains a shambler chimera.</LetterText_ShamblerChimera>
+  <LetterText_ShamblerChimeraPlural>Be careful, the group contains several shambler chimeras.</LetterText_ShamblerChimeraPlural>
+
+  <MessageRitualCannotBeMutant>Non-humans cannot participate in rituals.</MessageRitualCannotBeMutant>
+
+  <!-- Revenant -->
+  <LetterLabelRevenantRevealed>Revenant attack</LetterLabelRevenantRevealed>
+  <LetterRevenantRevealed>A revenant has revealed itself!</LetterRevenantRevealed>
+  <LetterRevenantRevealedFirst>A revenant has revealed itself and is hunting one of your colonists!</LetterRevenantRevealedFirst> 
+  <LetterLabelRevenantSmearDiscovered>Revenant smear discovered</LetterLabelRevenantSmearDiscovered>
+  <LetterRevenantSmearDiscovered>{0} has noticed a black slick on the ground. It looks unnatural and gives off a foul, acrid smell. It is still fresh and wet. An eldritch entity passed by recently.</LetterRevenantSmearDiscovered>
+  <LetterLabelRevenantKilled>Revenant killed</LetterLabelRevenantKilled>
+  <LetterRevenantKilled>The revenant is dead! Those who were hypnotized will recover.\n\nIts body has dissipated, leaving behind its spine. You can gather and study the spine, or destroy it.</LetterRevenantKilled>
+  <LetterLabelPawnHypnotized>{PAWN_nameDef} hypnotized</LetterLabelPawnHypnotized>
+  <LetterPawnHypnotized>{PAWN_nameDef} has been hypnotized by a revenant and is now rambling incoherently about nightmarish images and ideas.\n\nKilling the revenant will end the hypnosis.\n\nThe revenant uses psychic powers to twist the perceptions of those around it, making itself invisible. However, it can still be hunted by following the black smears that it leaves. The revenant will be revealed if hit by explosive weapons, firefoam, EMPs, fire, or disruptor flares.\n\nIf not killed, the revenant will continue to hypnotize new victims.</LetterPawnHypnotized>
+  <LetterRevenantFleshChunkLabel>Revenant flesh chunk</LetterRevenantFleshChunkLabel>
+  <LetterRevenantFleshChunkText>The wounded revenant left behind a piece of itself. You can analyze this flesh chunk to learn how to track the revenant.</LetterRevenantFleshChunkText>
+  <LetterRevenantSeenLabel>Revenant seen</LetterRevenantSeenLabel>
+  <LetterRevenantSeen>{PAWN_nameDef} has seen a hiding revenant!</LetterRevenantSeen>
+  <InTrance>In trance.</InTrance>
+  <LetterLabelRevenantEmergence>Revenant emergence</LetterLabelRevenantEmergence>
+  <LetterRevenantEmergence>The revenant has reemerged from the safety of its spine! Destroy it before it escapes.\n\nIn the process, the revenant has mutated and adopted a new biosignature.</LetterRevenantEmergence>
+
+  <!-- Sightstealers -->
+  <LetterLabelSightstealerRevealed>Sightstealer revealed</LetterLabelSightstealerRevealed>
+  <LetterSightstealerRevealed>A twisted creature has appeared out of thin air!</LetterSightstealerRevealed>
+  <MessageSightstealerRevealed>A sightstealer has appeared!</MessageSightstealerRevealed>
+  <LetterLabelSightstealerHowl>Sightstealer shrieks</LetterLabelSightstealerHowl>
+  <LetterSightstealerHowl>Your colonists hear sightstealers shrieking in the distance.\n\nIt's hard to tell where they are or how many. They might arrive immediately or days from now.</LetterSightstealerHowl>
+  <LetterLabelSightstealerHowlBig>Sightstealer howling</LetterLabelSightstealerHowlBig>
+  <LetterSightstealerHowlBig>Your colonists hear a huge number of distant sightstealers screaming in their twisted rage. They are coming.\n\nThey might arrive immediately, or days from now.</LetterSightstealerHowlBig>
+
+  <!-- Death Pall -->
+  <LetterLabelDeathPallEnded>Death pall clearing</LetterLabelDeathPallEnded> 
+  <LetterDeathPallEnded>The pall of death is lifting. The corpses reanimated by it will soon return to their natural state.</LetterDeathPallEnded>
+  
+  <!-- Pit Gate -->
+  <LetterLabelGateClosing>Pit gate closing</LetterLabelGateClosing>
+  <LetterGateClosing>The pit gate is closing! Its entrance is about to crumble.\n\nThe pit gate entrance was unstable from the start and is finally sealing itself.</LetterGateClosing>
+  <MustPlaceNextToPitGate>Must be placed adjacent to a pit gate.</MustPlaceNextToPitGate>
+  <PitGateClosedHumanityNote>Pit gate closed</PitGateClosedHumanityNote>
+  <PitGateCollapsing>Pit gate collapsing</PitGateCollapsing> 
+  <PitGateSettling>Pit gate settling</PitGateSettling>
+  <EmergenceWarningLabel>Pit rumbles</EmergenceWarningLabel>
+  <EmergenceWarningText>The ground shakes under your feet and the inhuman screams echoing from the pit seem to get closer. Something will emerge soon.</EmergenceWarningText>
+
+    <!-- Undercave -->
+  <LetterLabelDreadmeldWarning>Squirming sounds</LetterLabelDreadmeldWarning>
+  <LetterDreadmeldWarning>As {PAWN_nameDef} draws near the fleshmass here, {PAWN_pronoun} senses a heavy writhing and throbbing from under its warm surface. Some huge living entity is hidden behind the wall of flesh.</LetterDreadmeldWarning> 
+  <LetterLabelUndercaveCollapsing>Undercave unstable</LetterLabelUndercaveCollapsing> 
+  <LetterUndercaveCollapsing>The dreadmeld's death has shocked the fleshmass and caused the cave system to destabilize. The fleshmass that supported the cavern is already beginning to deteriorate. Within half a day, the entire cavern will collapse.\n\nGet out of the undercave before it's too late!</LetterUndercaveCollapsing>
+
+  <!-- Holding platform -->
+  <HoldingThing>Holding</HoldingThing>
+  <RemoveFromPlatform>Remove {0_labelShort}</RemoveFromPlatform>
+  <RemoveFromPlatformDesc>Remove the current entity held on the platform.</RemoveFromPlatformDesc>
+  <ReleasingEntity>{GERUND} {TARGETLABEL} from</ReleasingEntity>
+  <TransferringEntity>{GERUND} {TARGETLABEL}</TransferringEntity>
+  <SelectHoldingPlatform>Select holding platform</SelectHoldingPlatform>
+  <LetterLabelEscapingFromHoldingPlatform>Entity escape</LetterLabelEscapingFromHoldingPlatform> 
+  <LetterEscapingFromHoldingPlatform>The following entities have escaped their restraints:\n\n{0}\n\nBuild stronger containment rooms to stop entities escaping. Entities are less likely to escape from holding platforms with high containment strength, which comes from strong walls and doors, good lighting, and special containment devices.</LetterEscapingFromHoldingPlatform> 
+  <HoldingPlatformRequiresStrength>requires {0}</HoldingPlatformRequiresStrength>
+  <NoHoldingPlatformsAvailable>No holding platforms available.</NoHoldingPlatformsAvailable>
+  
+  
+  <!-- Obelisks -->
+  <MutatorObeliskLetterLabel>Obelisk activation</MutatorObeliskLetterLabel>
+  <MutatorObeliskLetter>The obelisk is activating! It swells with grisly energy as the air crackles around it. It is about to self-destruct in a great explosion, but before it does, it will use its hideous transformative power on any creature it can detect.</MutatorObeliskLetter>
+
+  <ObeliskTentacleLetterLabel>Obelisk mutation</ObeliskTentacleLetterLabel>
+  <ObeliskTentacleLetter>While interacting with the obelisk, {PAWN_nameDef} felt {PAWN_possessive} arm tingling. Moments later, {PAWN_possessive} skin split open as a fleshy growth erupted from {PAWN_possessive} body. {PAWN_possessive} arm has been replaced by a squirming tentacle!\n\n{PAWN_nameDef} lost some blood, but seems otherwise unharmed.</ObeliskTentacleLetter>
+
+  <ObeliskFleshWhipLetterLabel>Obelisk mutation</ObeliskFleshWhipLetterLabel>
+  <ObeliskFleshWhipLetter>While interacting with the obelisk, {PAWN_nameDef} felt {PAWN_possessive} arm tingling. Moments later, {PAWN_possessive} skin split open violently as a growth burst from {PAWN_possessive} body. {PAWN_possessive} arm has been replaced by a tentacle tipped with a bony blade!\n\n{PAWN_nameDef} lost some blood, but seems otherwise unharmed by this disturbing event. The tentacle is hideous, but it will make an excellent melee weapon.</ObeliskFleshWhipLetter>
+
+  <MutatorObeliskFailedArmLetterLabel>Obelisk interaction</MutatorObeliskFailedArmLetterLabel>
+  <MutatorObeliskFailedArmLetter>While interacting with the obelisk, {PAWN_nameDef} felt {PAWN_possessive} arm tingling for a few moments. The feeling passed.\n\nThe obelisk tried to mutate {PAWN_nameDef} but failed.</MutatorObeliskFailedArmLetter>
+
+  <ObeliskFleshmassStomachLetterLabel>Obelisk mutation</ObeliskFleshmassStomachLetterLabel>
+  <ObeliskFleshmassStomachLetter>While interacting with the obelisk, {PAWN_nameDef} felt a sudden sharp pain in {PAWN_possessive} stomach, as {PAWN_possessive} tissue began to roil and mutate. {PAWN_possessive} stomach has mutated into a mass of semi-sentient flesh. The harsh acids it produces are painful but prevent food poisoning.</ObeliskFleshmassStomachLetter>
+
+  <MutatorObeliskFailedStomachLetterLabel>Obelisk interaction</MutatorObeliskFailedStomachLetterLabel>
+  <MutatorObeliskFailedStomachLetter>While interacting with the obelisk, {PAWN_nameDef} felt {PAWN_possessive} stomach aching for a few moments. The feeling passed.\n\nThe obelisk tried to mutate {PAWN_nameDef} but failed.</MutatorObeliskFailedStomachLetter>
+
+  <ObeliskFleshmassLungLetterLabel>Obelisk mutation</ObeliskFleshmassLungLetterLabel>
+  <ObeliskFleshmassLungLetter>While interacting with the obelisk, {PAWN_nameDef} felt a sudden sharp pain in {PAWN_possessive} chest, as {PAWN_possessive} lung began to twist and swell. {PAWN_possessive} lung has mutated into a painful mass of semi-sentient flesh. The tissue is constantly regrowing and replacing itself, making it immune to effects like lung rot and asthma.</ObeliskFleshmassLungLetter>
+
+  <MutatorObeliskFailedLungLetterLabel>Obelisk interaction</MutatorObeliskFailedLungLetterLabel>
+  <MutatorObeliskFailedLungLetter>While interacting with the obelisk, {PAWN_nameDef} felt {PAWN_possessive} chest ache for a few moments. The feeling passed.\n\nThe obelisk tried to mutate {PAWN_nameDef} but failed.</MutatorObeliskFailedLungLetter>
+
+  <ObeliskAnimalMutationLetterLabel>Obelisk mutation</ObeliskAnimalMutationLetterLabel>
+  <ObeliskAnimalMutationLetter>While interacting with the obelisk, {PAWN_nameDef} observed a sudden spike in energy. The obelisk has violently warped the flesh of {ANIMAL}, turning it into a hideous fleshbeast.</ObeliskAnimalMutationLetter>
+
+  <ObeliskTreeMutationLetterLabel>Obelisk mutation</ObeliskTreeMutationLetterLabel>
+  <ObeliskTreeMutationLetter>While interacting with the obelisk, {PAWN_nameDef} observed a sudden pulse of energy. The obelisk has twisted a nearby tree into a harbinger tree. These monstrous trees are capable of feeding on nearby corpses and raw meat.</ObeliskTreeMutationLetter>
+
+  <ObeliskDuplicationLetterLabel>Obelisk duplicate</ObeliskDuplicationLetterLabel>
+  <ObeliskDuplicationLetter>While {PAWN_nameDef} interacted with the obelisk, it pulsed with energy and generated a flash of light. {PAWN_nameDef} found {PAWN_objective}self face to face with a copy of {PAWN_objective}self! The duplicate claims to be the real {PAWN_nameDef} and has joined your colony.</ObeliskDuplicationLetter>
+
+  <ObeliskDuplicationFailedLetterLabel>Obelisk failure</ObeliskDuplicationFailedLetterLabel>
+  <ObeliskDuplicationFailedLetter>{PAWN_nameDef} attempted to trigger the obelisk but nothing occurred. Something about {PAWN_nameDef} is preventing the obelisk from duplicating {PAWN_objective}.</ObeliskDuplicationFailedLetter>
+  
+  <ObeliskDuplicationSuccessMessage>{PAWN_nameDef} has successfully triggered obelisk duplication.</ObeliskDuplicationSuccessMessage>
+
+  <ObeliskHostileDuplicateLetterLabel>Hostile obelisk duplicate</ObeliskHostileDuplicateLetterLabel>
+  <ObeliskHostileDuplicateLetter>While {PAWN_nameDef} interacted with the obelisk, it pulsed with energy and generated a flash of light. {PAWN_nameDef} found {PAWN_objective}self face to face with a copy of {PAWN_objective}self. The duplicate is approaching {PAWN_nameDef} with murderous intent!</ObeliskHostileDuplicateLetter>
+
+  <DuplicatorObeliskLetterLabel>Obelisk activation</DuplicatorObeliskLetterLabel>
+  <DuplicatorObeliskLetter>The obelisk is activating! The air around it crackles with energy. Duplicates of your colonists will soon appear with murderous intent.\n\nBe careful - unstable energy is coursing through the obelisk and it could explode at any moment.</DuplicatorObeliskLetter>
+
+  <ObeliskAbductorLetterLabel>Colonists disappearing</ObeliskAbductorLetterLabel>
+  <ObeliskAbductorLetter>The warped obelisk crackles with energy as it warps space around itself. All manner of creatures are beginning to disappear and will soon vanish entirely.\n\nBe careful - unstable energy is coursing through the obelisk and it could explode at any moment.</ObeliskAbductorLetter>
+  
+  <ObeliskAbductedDisappearingLetterLabel>{PAWN_nameDef} is disappearing</ObeliskAbductedDisappearingLetterLabel>
+  <ObeliskAbductedDisappearingLetter>{PAWN_nameDef} noticed activity in the warped obelisk. Some mysterious internal mechanism has come to life, causing {PAWN_nameDef} to begin to disappear. {PAWN_pronoun} will soon vanish entirely.</ObeliskAbductedDisappearingLetter>
+  
+  <ObeliskAbductedLetterLabel>{PAWN_nameDef} reappeared</ObeliskAbductedLetterLabel>
+  <ObeliskAbductedLetter>{PAWN_nameDef} has been teleported to a strange room. The walls are an unidentifiable gray material and the air is dead still. {PAWN_pronoun} doesn't know where {PAWN_pronoun} is - or how to get home.\n\nA nearby door is jammed but looks like it can be forced open with some effort. Right-click jammed doors to open them.\n\nBy studying the obelisk, other colonists may be able to understand what happened to {PAWN_nameDef} and find a way to help {PAWN_objective}. Alternatively, attacking the obelisk may provoke it to abduct more colonists.</ObeliskAbductedLetter>
+
+  <MutatorObeliskMutated>{PAWN_nameIndef} has mutated into a fleshbeast.</MutatorObeliskMutated>
+  <MutatorObeliskSpawned>A fleshbeast has emerged from the ground.</MutatorObeliskSpawned>
+
+  <ObeliskActivateDesc>Fully activate the warped obelisk.</ObeliskActivateDesc>
+  <ObeliskActivateDescWarning>Warning: The warped obelisk is unstable. Fully activating it will provoke a dangerous response and will cause the obelisk to self-destruct.</ObeliskActivateDescWarning>
+
+  <ObeliskDeactivateMissingShards>Requires {0} shards to disable</ObeliskDeactivateMissingShards>
+  
+  <!-- Activity / Supression -->
+  <ActivityLevel>Activity level</ActivityLevel>
+  <IsPsychicallySuppressed>Psychic suppression</IsPsychicallySuppressed>
+  <ActivityIncrease>Increase rate</ActivityIncrease>
+  <NotInSealedRoom>Not in sealed room</NotInSealedRoom>
+  <EnergyHarvesting>Energy harvesting</EnergyHarvesting>
+  <Unstable>Unstable</Unstable>
+  <BaseLevel>Base level</BaseLevel>
+  <IsActive>Is active</IsActive>
+  <Resisted>resist</Resisted>
+  <HealthFactor>Damaged</HealthFactor>
+
+  <CommandSent>{PAWN_labelShort} was sent.</CommandSent>
+  <CannotActivateEntity>Cannot activate entity</CannotActivateEntity>
+  <CannotActivateEntityPlatform>Entity must be on platform</CannotActivateEntityPlatform>
+  
+  <ActivityGizmo>Activity</ActivityGizmo>
+  <ActivitySuppressionTooltipTitle>Automatic suppression</ActivitySuppressionTooltipTitle>
+  <ActivitySuppressionTooltipDisabled>Automatic suppression is currently disabled. Enable it to have wardens suppress the {0}.</ActivitySuppressionTooltipDisabled>
+  <ActivitySuppressionTooltipDesc>The {0}'s activity level rises over time. Activity rises faster if the {0} is damaged or provoked.\n\nIf the activity level reaches 100%, the {0} will activate.\n\nWardens can suppress the {0} to keep its activity at a safe level. They will suppress it any time its activity is above the assigned level: {LEVEL}\n\nEntities that have higher activity levels will give more knowledge when studied.</ActivitySuppressionTooltipDesc>
+  <ActivitySuppressionToggleTooltipDesc>This determines whether the {0} will be automatically suppressed when its activity is above {LEVEL}.\n\nAutomatic suppression is currently {ONOFF}.</ActivitySuppressionToggleTooltipDesc>
+
+  <!-- Activity Descs -->
+  <ActivityLevelDesc>activity level</ActivityLevelDesc>
+  <PsychicallySuppressedDesc>psychic suppression</PsychicallySuppressedDesc>
+
+  <!-- Entity study -->
+  <CaptureEntity>Capture</CaptureEntity>
+  <CaptureEntityDesc>Capture {0_definite}. It must be restrained on a holding platform. Once restrained, it can be studied.</CaptureEntityDesc>
+  <CancelCapture>Cancel capture</CancelCapture>
+  <CancelCaptureDesc>Cancel capturing {0_definite}.</CancelCaptureDesc>
+  <ReadyToStudy>ready to study</ReadyToStudy>
+  <NoActiveResearchProject>No active anomaly research project selected for {0} knowledge category.</NoActiveResearchProject>
+  <Capturable>Capturable</Capturable>
+  <RequiresHoldingPlatform>Must be captured in a holding platform.</RequiresHoldingPlatform>
+  <ChooseNociosphereDest>Choose a location for the nociosphere to teleport to.</ChooseNociosphereDest>
+  <TransferEntity>Transfer {0_definite}</TransferEntity>
+  <TransferEntityDesc>Transfer the contained entity to another holding platform.</TransferEntityDesc>
+  <CancelTransfer>Cancel transfer</CancelTransfer>
+  <CancelTransferDesc>Cancel transferring this entity to another holding platform.</CancelTransferDesc>
+  
+  <!-- Metalhorrors -->
+  <EmergedFrom>Emerged from</EmergedFrom>
+  <Emerging>Metalhorror emerging</Emerging>
+  
+  <ImplantSourceUnknown>Implanted before arrival at your colony</ImplantSourceUnknown>
+  <InsectImplant>Implanter insectoid</InsectImplant>
+  <SleepImplant>Implanted during sleep by {SOURCE_nameDef}</SleepImplant>
+  <SurgeryImplant>Implanted during surgery by {SOURCE_nameDef}</SurgeryImplant>
+  <FoodImplant>Implanted through a meal cooked by {SOURCE_nameDef}</FoodImplant>
+  <UnnaturalHealingImplant>Implanted during unnatural healing by {SOURCE_nameDef}</UnnaturalHealingImplant>
+  <FeedingImplant>Implanted when fed a meal by {SOURCE_nameDef}</FeedingImplant>
+
+  <MetalhorrorEmergingLabel>Metalhorror emerging</MetalhorrorEmergingLabel>
+  <MetalhorrorEmergingDesc>A metalhorror is emerging! Slicing through flesh and skin, this nightmarish bladed creature is cutting its way out of its host. The metalhorror is emerging from:</MetalhorrorEmergingDesc>
+  <MetalhorrorEmergingPluralDesc>Metalhorrors are emerging! Slicing through flesh and skin, these nightmarish bladed creatures are cutting their way out of their hosts. Metalhorrors are emerging from:</MetalhorrorEmergingPluralDesc>
+  <MetalhorrorEmergingDescAppended>These horrifying metallic parasites live inside the victim, taking control of higher reasoning via a network of hair-thin metallic filaments that they spread throughout the body and brain. They control the victim's mind and compel them to infect others with new metalhorrors.</MetalhorrorEmergingDescAppended>
+  
+  <MetalhorrorSurgicalInspectionDetails>These doctors were infested and controlled by metalhorrors, so they lied about the results of a surgical inspection</MetalhorrorSurgicalInspectionDetails>
+  
+  <MetalhorrorReasonInteraction>{INFECTED_nameDef}'s metalhorror emerged because it was discovered by {PAWN_nameDef} during a social interaction.</MetalhorrorReasonInteraction>
+  <MetalhorrorReasonInterrogation>{INFECTED_nameDef}'s metalhorror emerged because it was discovered by {PAWN_nameDef} during an interrogation.</MetalhorrorReasonInterrogation>
+  <MetalhorrorReasonHostDied>{INFECTED_nameDef}'s metalhorror emerged because {INFECTED_nameDef} died.</MetalhorrorReasonHostDied>
+  <MetalhorrorReasonSurgeryInspected>{INFECTED_nameDef}'s metalhorror emerged because it was detected by {PAWN_nameDef} during a surgical inspection.</MetalhorrorReasonSurgeryInspected>
+  <MetalhorrorReasonRandom>{INFECTED_nameDef}'s metalhorror emerged for unknown reasons.</MetalhorrorReasonRandom>
+  <MetalhorrorReasonTriedToLeaveMap>{INFECTED_nameDef}'s metalhorror emerged upon sensing it was being taken away from the colony.</MetalhorrorReasonTriedToLeaveMap>
+  
+  <MetalhorrorDetected>Metalhorror detected</MetalhorrorDetected>
+  <InteractionDetectedDesc>{PAWN_nameDef} noticed something wrong with {INFECTED_nameDef} while chatting. {INFECTED_nameDef} exhibited some combination of unnatural behavior, strange vocal sounds, or barely visible metallic worms in the eyes. {PAWN_nameDef} suspects that {INFECTED_nameDef} is infected with a metalhorror.</InteractionDetectedDesc>
+  <InterrogationDetectedDesc>{PAWN_nameDef} has found something unusual while interrogating {INFECTED_nameDef}. {INFECTED_nameDef} exhibited some combination of unnatural behavior, strange vocal sounds, or barely visible metallic worms in the eyes. {PAWN_nameDef} suspects that {INFECTED_nameDef} is infected with a metalhorror.</InterrogationDetectedDesc>
+  
+  <MetalhorrorNoticedDetailsAppended>Metalhorrors are parasites that control the host and use them to infect others.\n\nMetalhorrors grow stronger inside the host as time passes. A metalhorror will cut its way out of the host's body if it knows it's been detected. The process is horrifying, but the host generally survives.\n\nThe only way to confirm a person is infected with a metalhorror is to study the metalhorror's fleshy leavings to identify its biosignature, then use the surgical inspection operation with a trusted doctor.\n\nOnce discovered, you can use the surgical inspection operation to cause a metalhorror to emerge from its host. Be prepared for a fight.</MetalhorrorNoticedDetailsAppended>
+  
+  <LetterGrayFleshDiscoveredLabel>Gray flesh</LetterGrayFleshDiscoveredLabel>
+  <LetterGrayFleshDiscovered>{PAWN_nameDef} has discovered a strip of fleshy tissue. It resembles human skin stained gray by tiny metallic particles. It must have sloughed off someone during flesh liquification.\n\nSomeone here may not be what they seem.\n\nThere are several ways to detect imposters:\n\n{METHODS}\n\nWarning: Some parasites can control the mind and even be transmitted to others.</LetterGrayFleshDiscovered>
+  
+  <LetterInterrogationUnlocked>The “interrogate” prisoner interaction mode is now unlocked.</LetterInterrogationUnlocked>
+  
+  <LetterGrayFleshMethodOne>Imprison someone and send a warden to interrogate them about their true identity. This can take many days.</LetterGrayFleshMethodOne>
+  <LetterGrayFleshMethodTwo>Collect more gray flesh and analyze it to determine the biosignature of the threat. Then, use the surgical inspection operation to search for that biosignature. It could take a long time to collect enough samples, and the surgery is invasive.</LetterGrayFleshMethodTwo>
+  <LetterGrayFleshMethodThree>Execute or banish whoever you suspect.</LetterGrayFleshMethodThree>
+  
+  <LetterMetalhorrorReawakeningLabel>Metalhorrors awakening</LetterMetalhorrorReawakeningLabel>
+  <LetterMetalhorrorReawakening>The metalhorrors have been disturbed and are awakening again!</LetterMetalhorrorReawakening>
+
+  <MessageMetalHorrorDormant>The metalhorrors are beginning to hibernate. They will awaken again if disturbed.</MessageMetalHorrorDormant>
+  
+  <MetalhorrorDormant>Hibernating. Will awaken if disturbed.</MetalhorrorDormant>
+  
+  <!-- Surgical inspection -->
+  <LetterSurgicallyInspectedLabel>Surgical inspection results</LetterSurgicallyInspectedLabel>
+  <LetterSurgicallyInspectedHeader>{DOCTOR_nameDef} performed an extensive surgical inspection of {PATIENT_nameDef}.</LetterSurgicallyInspectedHeader>
+  <LetterSurgicallyInspectedNothing>{DOCTOR_pronoun} says that {DOCTOR_pronoun} found no anomalies. However, a doctor may lie if it is in their own self-interest.</LetterSurgicallyInspectedNothing>
+  
+  <!-- Death refusal -->
+  <DeathRefusalUseSingular>use</DeathRefusalUseSingular>
+  <DeathRefusalUsePlural>uses</DeathRefusalUsePlural>
+  <SelfResurrecting>Self-resurrecting</SelfResurrecting>
+
+  <!-- Harbinger Tree -->
+  <HarbingerTreeConsumption>near harbinger tree</HarbingerTreeConsumption>
+  <HarbingerTreeSprouted>A new harbinger tree has sprouted.</HarbingerTreeSprouted>
+  <HarbingerTreeConsuming>Consuming flesh.</HarbingerTreeConsuming>
+  <HarbingerTreeNotConsuming>Will consume corpses and meat placed nearby.</HarbingerTreeNotConsuming>
+  <ConsumedByHarbingerTree>Being consumed by harbinger tree.</ConsumedByHarbingerTree>
+  <FleshConsumption>flesh consumption</FleshConsumption>
+  <CreateCorpseStockpile>Create corpse stockpile</CreateCorpseStockpile>
+  <CreateCorpseStockpileDesc>Create a dumping stockpile zone around the harbinger tree for corpses.\n\nHarbinger trees will consume nearby corpses and raw meat. If well fed, the trees will grow faster and create new harbinger trees.</CreateCorpseStockpileDesc>
+
+  <VoidNodeDisabled>Void node has been disabled.</VoidNodeDisabled>
+
+  <!-- Creepjoiners -->
+  <LetterCreeperAppearedAppended>{PAWN_pronoun} wants to talk. You can send a colonist to hear what {PAWN_pronoun} has to say.</LetterCreeperAppearedAppended>
+  <LetterCreeperInviteJoins>{PAWN_nameDef} wants to join</LetterCreeperInviteJoins>
+  <LetterCreeperInviteAppend>{PAWN_pronoun} may be very useful, but you also sense there is something {PAWN_nameDef} is not telling you.</LetterCreeperInviteAppend>
+  
+  <AcceptCreeper>Allow {PAWN_nameDef} to join</AcceptCreeper>
+  <CaptureCreeper>Send {SPEAKER_nameDef} to capture {PAWN_nameDef}</CaptureCreeper>
+  <RejectCreeper>Send {PAWN_nameDef} away</RejectCreeper>
+  
+  <!-- Unnatural healing ability -->
+  <LetterUnnaturalHealingLabel>Unnatural healing</LetterUnnaturalHealingLabel>
+  <LetterUnnaturalHealing>{CASTER_nameDef} has finished {CASTER_possessive} psychic healing on {PAWN_nameDef}.</LetterUnnaturalHealing>
+  <LetterUnnaturalHealingTentacle>However, something went terribly wrong.\n\n{PAWN_nameDef}'s arm split open as a violent growth emerged from {PAWN_possessive} body. {PAWN_possessive} arm has been replaced by a fleshy tentacle!</LetterUnnaturalHealingTentacle>
+  
+  <!-- Transmutation ability -->
+  <MessageTransmutedItem>{PAWN_nameDef} has transmuted {ORIGINAL} into {TRANSMUTED}.</MessageTransmutedItem>
+  <MessageTransmutedStuff>{PAWN_nameDef} has transmuted {1} into {TRANSMUTED_labelShortIndef}.</MessageTransmutedStuff>
+  <MessageTransmutedStuffPlural>{PAWN_nameDef} has transmuted {1} into {TRANSMUTED_labelPluralIndef}.</MessageTransmutedStuffPlural>
+  
+  <!-- Electroharvester -->
+  <ElectroharvesterNoEntity>No restrained entity.</ElectroharvesterNoEntity>
+  <ElectroharvesterNoPlatform>Not connected to a holding platform.</ElectroharvesterNoPlatform>
+  
+  <!-- Fleshmass Heart -->
+  <FleshmassHeartInvulnerable>Invulnerable. Analyze fleshmass neural lumps to destroy this.</FleshmassHeartInvulnerable>
+  <FleshmassHeartGrowing>Growing fleshmass.</FleshmassHeartGrowing>
+  <FleshmassHeartCollecting>Collecting biomass for next growth spurt...</FleshmassHeartCollecting>
+  <MessageHeartAttack>The fleshmass heart is convulsing!</MessageHeartAttack>
+  <LetterLabelFleshmassHeartDestroyed>Fleshmass heart defeated</LetterLabelFleshmassHeartDestroyed>
+  <LetterFleshmassHeartDestroyed>The fleshmass heart has been destroyed, leaving behind a broken but still functional core - a twisted amalgam of flesh and archotechnology. The nucleus continues to grow and mutate flesh, even while the surrounding fleshmass decays.\n\nYou can capture the nucleus to study it further or destroy it to end this nightmare. If left alone, it may reform into a new fleshmass heart.</LetterFleshmassHeartDestroyed>
+  <NerveBundleGrewMessage>The fleshmass heart has grown a new nerve bundle.</NerveBundleGrewMessage>
+  <NeuralLumpDroppedMessage>The nerve bundle has dropped a neural lump. Analyze it to learn more about the fleshmass heart.</NeuralLumpDroppedMessage>
+  <DestroyHeartDisabled>Must collect and analyze fleshmass neural lumps. Lumps analyzed</DestroyHeartDisabled>
+  <SpitterAttacking>A fleshmass spitter is attacking!</SpitterAttacking>
+  <SpitterGatheringSpit>Gathering acid. Ready in</SpitterGatheringSpit>
+  <SpitterReadyToSpit>Ready to spit acid.</SpitterReadyToSpit>
+
+  <ActiveFleshmassInspect>Active fleshmass. May birth fleshbeasts if destroyed.</ActiveFleshmassInspect>
+
+  <!-- Misc -->
+  <LetterLabelFleshTentacleAttack>Flesh tentacle attack</LetterLabelFleshTentacleAttack>
+  <LetterFleshTentacleAttack>{PAWN_nameDef}'s operation was successful. However, the twisting mass of flesh that was {PAWN_possessive} tentacle has begun to attack!</LetterFleshTentacleAttack>
+  <Biosignature>Biosignature</Biosignature>
+  <BlissLobotomy>Bliss lobotomy</BlissLobotomy>
+  <HP>hp</HP>
+  <Analyzed>analyzed</Analyzed>
+  <HighestSkill>Highest skill</HighestSkill>
+  
+  <MessageShardDropped>{0} dropped a shard of dark archotechnology. You can collect and make use of it.</MessageShardDropped>
+  
+  <!-- Blood rain -->
+  <Berserk_BloodRain>The blood rain has driven {0_nameIndef} into a berserk rage!</Berserk_BloodRain>
+  <Manhunter_BloodRain>The blood rain has driven {0_nameIndef} into a manhunting rage!</Manhunter_BloodRain>
+  <MentalBreakReason_BloodRage>This happened because of blood rage buildup.</MentalBreakReason_BloodRage>
+  
+  <!-- Unnatural corpses -->
+  <LetterLabelCorpseDisappeared>Corpse disappearance</LetterLabelCorpseDisappeared>
+  <LetterCorpseDisappeared>The unnatural corpse has vanished.</LetterCorpseDisappeared>
+  <LetterCorpseDisappearedPawnAliveAppend>{PAWN_nameDef} is starting to feel calmer.</LetterCorpseDisappearedPawnAliveAppend>
+
+  <LetterLabelCorpseReappeared>Corpse appearance</LetterLabelCorpseReappeared>
+  <LetterCorpseReappeared>The corpse resembling {PAWN_nameDef} has appeared again, as if out of thin air.</LetterCorpseReappeared>
+  
+  <MessageCorpseEscaped>The corpse resembling {PAWN_nameDef} has somehow gotten out of its {CONTAINER_labelShort}.</MessageCorpseEscaped>
+  <MessageUnnaturalCorpseResurrect>Failed to resurrect {PAWN_nameDef}. It simply does not respond.</MessageUnnaturalCorpseResurrect>
+  <MessagePawnFainted>The unnatural corpse has caused {PAWN_nameDef} to faint.</MessagePawnFainted>
+  <MessageAwokenReappeared>The unnatural corpse has appeared near {PAWN_nameDef} and is approaching!</MessageAwokenReappeared>
+  <MessageAwokenVanished>The unnatural corpse has vanished. It will come for {PAWN_nameDef} later.</MessageAwokenVanished>
+  <MessageAwokenAttacking>The awoken corpse is attacking {PAWN_nameDef}!</MessageAwokenAttacking>
+  <MessageAwokenKilledVictim>The awoken corpse has destroyed {PAWN_nameDef}'s brain.</MessageAwokenKilledVictim>
+  <MessageAwokenDisappeared>The awoken corpse has disappeared.</MessageAwokenDisappeared>
+
+  <MentalBreakReason_MysteriousCorpse>This happened because of the presence of an unnatural corpse.</MentalBreakReason_MysteriousCorpse>
+
+  <UnnaturalCorpseStudyLetter>Unnatural corpse study progress</UnnaturalCorpseStudyLetter>
+  <UnnaturalCorpseStudyLetterDesc>Your investigation of the unnatural corpse has revealed more about the body. An archotech shard at its core psychically links it with {VICTIM_nameDef}. It will rebuild itself if destroyed, and teleport any distance to be near {VICTIM_nameDef}. \n\n{RESEARCHER_nameDef} thinks that there may be a way to permanently destroy the corpse but will need to study it further.\n\nStudy the corpse more to learn how to destroy it.</UnnaturalCorpseStudyLetterDesc>
+
+  <UnnaturalCorpseStudyCompletedLetter>Unnatural corpse study complete</UnnaturalCorpseStudyCompletedLetter>
+  <UnnaturalCorpseStudyCompletedLetterDesc>Your investigation of the unnatural corpse has revealed how to safely remove the archotech shard. Doing so will stop it from psychically tormenting {VICTIM_nameDef}. However, it will also prevent further study of the corpse.</UnnaturalCorpseStudyCompletedLetterDesc>
+
+  <UnnaturalCorpseDeactivatedLetter>Corpse shard</UnnaturalCorpseDeactivatedLetter>
+  <UnnaturalCorpseDeactivatedLetterDesc>{PAWN_nameDef} extracted an archotech shard from the unnatural corpse, the corpse then began to violently bloat and exploded into gore.</UnnaturalCorpseDeactivatedLetterDesc>
+  <UnnaturalCorpseDeactivatedLetterDescAppended>{PAWN_nameDef} is feeling better already.</UnnaturalCorpseDeactivatedLetterDescAppended>
+  
+  <UnnaturalCorpseDeactivate>Destroy unnatural corpse</UnnaturalCorpseDeactivate>
+  <UnnaturalCorpseDeactivateDesc>Permanently destroy the unnatural corpse.</UnnaturalCorpseDeactivateDesc>
+  <UnnaturalCorpseGuiLabel>Choose who should destroy this.</UnnaturalCorpseGuiLabel>
+  <UnnaturalCorpseJobString>destroy</UnnaturalCorpseJobString>
+  <UnnaturalCorpseActivatingEnroute>destroying {0}</UnnaturalCorpseActivatingEnroute>
+  <UnnaturalCorpseActivating>destroying {0}: {1}s</UnnaturalCorpseActivating>
+  
+  <UnnaturalCorpseAwakeningLetter>Unnatural corpse</UnnaturalCorpseAwakeningLetter>
+  <UnnaturalCorpseAwakeningLetterDesc>{PAWN_nameDef} feels the unnatural corpse growing rapidly stronger. Some horrible consciousness is flickering within it.\n\nSomething awful will happen in the next few days.</UnnaturalCorpseAwakeningLetterDesc>
+  <UnnaturalCorpseAwakeningLetterExtra_StudyComplete>Destroy the corpse before it's too late.</UnnaturalCorpseAwakeningLetterExtra_StudyComplete>
+  <UnnaturalCorpseAwakeningLetterExtra_StudyIncomplete>Study the corpse to learn how to destroy it.</UnnaturalCorpseAwakeningLetterExtra_StudyIncomplete>
+
+  <UnnaturalCorpseAwokenLetter>Corpse awakened</UnnaturalCorpseAwokenLetter>
+  <UnnaturalCorpseAwokenLetterDesc>The unnatural corpse is rising! It intends to attack {PAWN_nameDef}!\n\nThe corpse will follow {PAWN_nameDef} forever no matter how far {PAWN_pronoun} goes.\n\nYou must destroy it now.</UnnaturalCorpseAwokenLetterDesc>
+
+  <UnnaturalCorpseAwokenDefeatedLetter>Unnatural corpse destroyed!</UnnaturalCorpseAwokenDefeatedLetter>
+  <UnnaturalCorpseAwokenDefeatedLetterDesc>The unnatural corpse charging towards {PAWN_nameDef} has been defeated!\n\nThe corpse will no longer torment {PAWN_nameDef}.</UnnaturalCorpseAwokenDefeatedLetterDesc>
+
+  <!-- Golden Cube -->
+  <MessageGoldenCubeSeverityIncreased>{PAWN_labelShort}'s obsession with the golden cube has intensified.</MessageGoldenCubeSeverityIncreased>
+  <MessageGoldenCubeWithdrawal>{PAWN_labelShort} is experiencing cube withdrawal.</MessageGoldenCubeWithdrawal>
+  <MessageGoldenCubeWithdrawalIncreased>{PAWN_labelShort}'s cube withdrawal has worsened.</MessageGoldenCubeWithdrawalIncreased>
+  <MessageGoldenCubeInterest>{PAWN_labelShort} has become intrigued by the golden cube.</MessageGoldenCubeInterest>
+  <MessageGoldenCubeSculptureDestroyed>{PAWN_labelShort} is enraged that {PAWN_possessive} cube sculpture was removed. {PAWN_pronoun} might become violent.</MessageGoldenCubeSculptureDestroyed>
+
+  <CannotDisableCube>{PAWN_labelShort} refuses to deactivate the golden cube.</CannotDisableCube>
+  
+  <LetterLabelGoldenCubeComa>Cube coma: {PAWN_labelShort}</LetterLabelGoldenCubeComa>
+  <LetterGoldenCubeComa>{PAWN_labelShort}'s cube withdrawal has sent {PAWN_objective} into a coma. {PAWN_pronoun} will remain in a coma until the golden cube's psychic link has completely dissipated.</LetterGoldenCubeComa>
+
+  <CubeDeactivationConfirmation>Deactivating the golden cube will cause any cube-interested people to enter a violent berserk rage. Any cube-interested people in caravans will be permanently lost.</CubeDeactivationConfirmation>
+  <CubeDeactivationConfirmationPawnsBerserk>The following people will enter a berserk rage</CubeDeactivationConfirmationPawnsBerserk>
+  <CubeDeactivationConfirmationPawnsLost>The following people will run away and be lost</CubeDeactivationConfirmationPawnsLost>
+  <CubeDeactivationConfirmationEnd>Are you sure you want to continue?</CubeDeactivationConfirmationEnd>
+  <CubeDeactivationBerserk>Cube deactivation</CubeDeactivationBerserk>
+  <CubeDeactivationBerserkDesc>{PAWN_labelShort} has successfully destroyed the golden cube. The psychic whiplash has driven colonists into a berserk rage!</CubeDeactivationBerserkDesc>
+  <CubeDeactivationBerserkPawns>These people have entered a temporary berserk rage</CubeDeactivationBerserkPawns>
+  <CubeDeactivationLostPawns>These people in caravans have run away in a rage</CubeDeactivationLostPawns>
+
+  <MentalBreakReason_CubeSculpting>This happened because of {PAWN_possessive} obsession with the cube.</MentalBreakReason_CubeSculpting>
+  
+  <CubeMaterialDirt>dirt</CubeMaterialDirt>
+  <CubeMaterialStone>stone</CubeMaterialStone>
+  <CubeMaterialSand>sand</CubeMaterialSand>
+  <CubeMaterialScrap>scrap</CubeMaterialScrap>
+  
+  <ReportBuildingCubeEnroute>building a sculpture.</ReportBuildingCubeEnroute>
+  
+  <!-- Slaughter ability -->
+  <MessageSlaughterNoFlesh>Cannot slaughter: {PAWN_labelShort} does not have flesh.</MessageSlaughterNoFlesh>
+  <MessageSlaughterTooBig>Cannot slaughter: {PAWN_labelShort} is too large.</MessageSlaughterTooBig>
+  
+  <!-- Labyrinth -->
+  <GeneratingLabyrinth>Entering the labyrinth</GeneratingLabyrinth>
+  <MessagePawnVanished>{PAWN_nameDef} has vanished.</MessagePawnVanished>
+  <MessagePawnReappeared>{PAWN_nameDef} has reappeared.</MessagePawnReappeared>
+  
+  <FloorEtchingsInspectorExit>Exit direction</FloorEtchingsInspectorExit>
+  
+  <LetterLabelObeliskDiscovered>Warped obelisk</LetterLabelObeliskDiscovered>
+  <LetterObeliskDiscovered>{PAWN_nameDef} has discovered a large obelisk. It looks nearly identical to the one that originally brought {PAWN_objective} here. Perhaps it can be activated to return {PAWN_objective} home.\n\nSelect {PAWN_nameDef} and right-click the obelisk to activate it.</LetterObeliskDiscovered>
+  
+  <LetterLabelFloorEtchings>Floor etchings</LetterLabelFloorEtchings>
+  <LetterFloorEtchings>{PAWN_nameDef} has managed to decipher the floor etchings.\n\n{RAMBLINGS}\n\nThey seem to indicate that an exit is somewhere {DIRECTION} of here.</LetterFloorEtchings>
+
+  <LetterLabelFloorEtchingRamblings>Floor etchings</LetterLabelFloorEtchingRamblings>
+  <LetterFloorEtchingsRamblings>{PAWN_nameDef} has managed to decipher the floor etchings.</LetterFloorEtchingsRamblings>
+
+  <LetterLabelLabyrinthExit>Colonists returned</LetterLabelLabyrinthExit>
+  <LetterLabyrinthExit>The whirring obelisk has returned your abducted colonists. Shortly after doing so, it vanished into thin air.\n\nBe careful, the obelisk may have returned other creatures as well.</LetterLabyrinthExit>
+
+  <GrayDoorJammed>Jammed shut. Must be forced open.</GrayDoorJammed>
+  <ActivatedByProximity>Activated by proximity.</ActivatedByProximity>
+
+  <!-- Void monolith -->
+  <MonolithActivateDisabledPawns>No available pawns.</MonolithActivateDisabledPawns>
+  <VoidMonolithInvestigatedText>The monolith's dark metallic surface is warm to the touch, and {PAWN_nameDef} thinks {PAWN_pronoun} can hear a faint hum emanating from inside. The lines on its dusty surface seem to squirm in unsettling patterns.\n\n{PAWN_nameDef} focuses on the shapes, trying to uncover their meaning.\n\nThe hum strengthens. The shapes begin to flow in {PAWN_nameDef}'s vision, but the surface isn't changing. Power begins to uncoil in the empty space all around. A black shape is forming in {PAWN_possessive} mind.\n\nThe Anomaly is stirring...</VoidMonolithInvestigatedText>
+  <VoidMonolithInvestigate>Keep focusing on the Anomaly</VoidMonolithInvestigate>
+  <VoidMonolithWalkAway>Walk away</VoidMonolithWalkAway>
+  <VoidMonolithViewQuest>View quest</VoidMonolithViewQuest>
+  <VoidMonolithViewResearch>View Anomaly research</VoidMonolithViewResearch>
+  <CurrentMonolithLevel>Current monolith level</CurrentMonolithLevel>
+  <VoidMonolithUndiscovered>Send a colonist to investigate this.</VoidMonolithUndiscovered>
+  <VoidMonolithRequiredEntityCategory>In order to advance the monolith to the next step, you need to discover {0} {1} tier entities.</VoidMonolithRequiredEntityCategory>
+  <DiscoveredCount>Discovered: {0}</DiscoveredCount>
+  <VoidMonolithAllEntitiesDiscovered>Required entities discovered.</VoidMonolithAllEntitiesDiscovered>
+  <VoidMonolithRequiresDiscovery>Required to increase level</VoidMonolithRequiresDiscovery>
+  <VoidMonolithRequiresDiscoveryShort>Undiscovered entities</VoidMonolithRequiresDiscoveryShort>
+  <VoidMonolithRequiresCategory>Must discover {0} more {1} monolith entities.</VoidMonolithRequiresCategory>
+  <VoidMonolithVisionLabel>Disturbing vision</VoidMonolithVisionLabel>
+  <VoidMonolithVisionText>{PAWN_nameDef} has had a strange dream. In it, {PAWN_pronoun} saw a black shape, unfurling in space and time, growing and consuming. The shape originated from a nearby crumbled monolith.\n\nUpon waking from the vision, {PAWN_nameDef} feels strangely drawn to the monolith. It calls to {PAWN_objective}.</VoidMonolithVisionText>
+  <VoidMonolithChooseActivator>Choose who should do this</VoidMonolithChooseActivator>
+  <VoidMonolithActivatorDowned>Target is downed</VoidMonolithActivatorDowned>
+  <VoidMonolithActivatorMentalState>Target in mental state</VoidMonolithActivatorMentalState>
+  <VoidMonolithActivatorBusy>Target is busy</VoidMonolithActivatorBusy>
+  <VoidMonolithActivatorIncapable>Target is incapable</VoidMonolithActivatorIncapable>
+  <MonolithArrivalLabel>Monolith arrival</MonolithArrivalLabel>
+  <MonolithArrivalText>Interacting with the psychic signal has caused a strange structure to appear.</MonolithArrivalText>
+  <MonolithArrivalTextExt>It is very similar, if not identical, to the monolith you previously encountered.</MonolithArrivalTextExt>
+  <CantActivateMonolith>Can't {0} monolith</CantActivateMonolith>
+
+  <MonolithTwistingAlert>Monolith twisting</MonolithTwistingAlert>
+  <MonolithTwistingExplanation>Your presence has caused the monolith to twist and morph. Soon the process will be complete. Be prepared for whatever comes next.</MonolithTwistingExplanation>
+  <MonolithAutoActivatingLabel>Fallen monolith</MonolithAutoActivatingLabel>
+  <MonolithAutoActivatingText>A wave of dread passes over your colonists. The fallen monolith has begun to stir. Slowly, it begins to twist and rearrange itself, morphing into something new.\n\nWithin a matter of days, the process will be complete. Be prepared for whatever comes next.</MonolithAutoActivatingText>
+  <MonolithAutoActivatedLabel>Void monolith</MonolithAutoActivatedLabel>
+  <MonolithAutoActivatedText>The monolith's transformation is almost complete...</MonolithAutoActivatedText>
+
+  <LetterLabelGrayPallDescending>Gray pall</LetterLabelGrayPallDescending>
+  <LetterGrayPallDescending>A blanket of gritty fog has descended on this area. The fog smells ancient, somehow, and it stings the skin. The unnatural grayness of it invokes a sense of dread.</LetterGrayPallDescending>
+
+  <!-- Void Awakening -->
+  <VoidAwakeningConfirmationText>Awakening the void monolith will engulf your colony in darkness for days and attract powerful entities. Make sure you are well prepared:\n\n- Stockpile food, building material, and weapons.\n- Make sure your colony is well lit, and has ample power. Avoid relying on solar generators.\n- Ensure your colony is well defended, and your colonists are ready to fight.\n\nOnce you awaken the void monolith, there is no going back.\n\nAre you sure you want to continue?</VoidAwakeningConfirmationText>
+  <VoidNodeLetter>A sphere of writhing psychic energy rises before {PAWN_nameDef}.\n\n{PAWN_nameDef} feels a presence inside {PAWN_possessive} mind, deeper than any normal human sense. {PAWN_pronoun} stands on the shoreline of an infinite black ocean of power. It beckons {PAWN_objective} in...\n\nNearby archotech devices support the sphere along fragile connections. {PAWN_nameDef} could disrupt them, closing this link between worlds.\n\nOr, {PAWN_pronoun} could step into the sphere and merge with the void. It's unknown what dark power could be gained from such an inhuman act.</VoidNodeLetter>
+  <VoidNodeDisrupt>Disrupt the link</VoidNodeDisrupt>
+  <VoidNodeEmbrace>Embrace the void</VoidNodeEmbrace>
+  <VoidNodePostpone>Postpone</VoidNodePostpone>
+  <DisruptTheLinkCredits>The psychic flows destabilize and the twisted machinery screams. The swirling void flickers. {PAWN_nameDef} feels it shuddering and collapsing into itself.\n\nThe metallic cavern begins to twist, reshaping like the chamber of a massive heart. Before {PAWN_nameDef} has a chance to scream, {PAWN_pronoun} blinks out of existence.\n\n{PAWN_nameDef} has rejected the void.\n\n{PAWN_possessive} story continues...</DisruptTheLinkCredits>
+  <EmbraceTheVoidCredits>{PAWN_nameDef} steps into the void and the black ocean floods into {PAWN_objective}, overwhelming every sense, suffusing every thought in {PAWN_possessive} mind.\n\nThe void node has been refocused away from the world, towards one single person. The void structures scream, then blink out of existence.\n\n{PAWN_nameDef} has embraced the void.\n\n{PAWN_possessive} story continues...</EmbraceTheVoidCredits>
+  <StructureActivatedMessage>{PAWN_nameDef} has finished activating {STRUCTURE_definite}</StructureActivatedMessage>
+  <StructuresActivatedAlertLabel>Structures activated</StructuresActivatedAlertLabel>
+  <StructuresActivatedAlertDescription>Activate void structures to complete the monolith awakening.</StructuresActivatedAlertDescription>
+  <GleamingMonolithInterrupted>{PAWN_nameDef}'s connection to the void monolith has been broken. It must be activated again.</GleamingMonolithInterrupted>
+
+  <!-- HediffComp_GiveLovinMTBFactor -->
+  <IncreasesChanceOfLovin>Increases the chance of lovin`</IncreasesChanceOfLovin>
+
+  <UnnaturalCorpse>Unnatural {0_label} corpse</UnnaturalCorpse>
+
+  <!-- Studiable -->
+  <KnowledgeFactorOutdoors>Knowledge from study reduced</KnowledgeFactorOutdoors>
+
+  <!-- Unnatural darkness -->
+  <EmergenceIn>Emergence in {0}</EmergenceIn>
+  <EmergenceInDesc>Something will emerge from the ground in {0}.</EmergenceInDesc>
+  
+  <!-- Bioferrite harvester -->
+  <BioferriteHarvesterContained>Bioferrite contained</BioferriteHarvesterContained>
+  <BioferriteHarvesterPerDay>per day</BioferriteHarvesterPerDay>
+  <BioferriteHarvesterEjectContents>Eject contents</BioferriteHarvesterEjectContents>
+  <BioferriteHarvesterEjectContentsDesc>Eject all contained {0} onto the ground.</BioferriteHarvesterEjectContentsDesc>
+  <BioferriteHarvesterToggleUnloading>Toggle bioferrite unloading</BioferriteHarvesterToggleUnloading>
+  <BioferriteHarvesterToggleUnloadingDesc>When active, colonists will automatically unload bioferrite from the harvester as it is filling up.</BioferriteHarvesterToggleUnloadingDesc>
+  
+  <!-- Proximity detector -->
+  <ProximityDetectorCreatureDetected>Invisible creature detected.</ProximityDetectorCreatureDetected>
+  
+  <!-- Frenzy inducer -->
+  <FrenzyInducerEffectDescription>Generating frenzy field.</FrenzyInducerEffectDescription>
+  <MentalBreakReason_FrenzyInducer>This happened due to the influence of a frenzy inducer.</MentalBreakReason_FrenzyInducer>
+  
+  <!-- Sleep suppressor -->
+  <SleepSuppressorEffectDescription>sleepless psychic pulsation.</SleepSuppressorEffectDescription>
+  
+  <!-- Devourer -->
+  <DigestedBy>Being digested by {0_labelShort}.</DigestedBy>
+
+  <!-- Chimeras -->
+  <MessageChimeraModeChangeSingular>The chimera is {0}</MessageChimeraModeChangeSingular>
+  <MessageChimeraModeChangePlural>The chimeras are {0}</MessageChimeraModeChangePlural>
+  <MessageChimeraWithdrawing>temporarily withdrawing.</MessageChimeraWithdrawing>
+
+  <LetterChimerasAttackingLabel>Chimeras attacking</LetterChimerasAttackingLabel>
+  <LetterChimerasAttacking>The chimeras have begun their attack!</LetterChimerasAttacking>
+  
+  <!-- Anomaly event frequency -->
+  <AnomalyFrequency_None>No major threats</AnomalyFrequency_None>
+  <AnomalyFrequency_VeryRare>Very rare</AnomalyFrequency_VeryRare>
+  <AnomalyFrequency_Rare>Rare</AnomalyFrequency_Rare>
+  <AnomalyFrequency_Balanced>Balanced</AnomalyFrequency_Balanced>
+  <AnomalyFrequency_Intense>Intense</AnomalyFrequency_Intense>
+  <AnomalyFrequency_Overwhelming>Overwhelming</AnomalyFrequency_Overwhelming>
+  
+  <SecurityDoorsOnly>Security doors only</SecurityDoorsOnly>
+  
+</LanguageData>

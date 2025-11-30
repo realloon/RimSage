@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Params:
+        - contents: The contents to add to the shuttle. -->
+
+  <QuestScriptDef>
+    <defName>Util_TransportShip_DropOff</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <!-- Generate the shuttle -->
+        <li Class="QuestNode_GenerateShuttle">
+          <storeAs>dropoffShipThing</storeAs>
+          <requiredPawns>$requiredPawns</requiredPawns>
+          <requiredItems>$requiredItems</requiredItems>
+          <requireColonistCount>$requireColonistCount</requireColonistCount>
+          <acceptColonists>$acceptColonists</acceptColonists>
+          <onlyAcceptColonists>$onlyAcceptColonists</onlyAcceptColonists>
+          <onlyAcceptHealthy>$onlyAcceptHealthy</onlyAcceptHealthy>
+          <owningFaction>$owningFaction</owningFaction>
+          <permitShuttle>$permitShuttle</permitShuttle>
+        </li>
+
+        <!-- Generate the transport ship -->
+        <li Class="QuestNode_GenerateTransportShip">
+          <def>Ship_Shuttle</def>
+          <shipThing>$dropoffShipThing</shipThing>
+          <contents>$contents</contents>
+          <storeAs>dropOffShip</storeAs>
+        </li>
+
+        <!-- Add jobs -->
+        <li Class="QuestNode_AddShipJob_Arrive">
+          <transportShip>$dropOffShip</transportShip>
+          <shipJobStartMode>Instant</shipJobStartMode>
+        </li>
+        <li Class="QuestNode_AddShipJob">
+          <jobDef>Unload</jobDef>
+          <transportShip>$dropOffShip</transportShip>
+        </li>
+        <li Class="QuestNode_AddShipJob_FlyAway">
+          <transportShip>$dropOffShip</transportShip>
+        </li>
+
+        <!-- Send away on cleanup -->
+        <li Class="QuestNode_SendTransportShipAwayOnCleanup">
+          <transportShip>$dropOffShip</transportShip>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  
+
+  <!-- Params:
+        - leaveDelayTicks: The amount of ticks to wait before taking off.
+        - leaveImmediatelyWhenSatisfied: Leave immediately if the shuttle is satisfied.
+        - sendAwayIfAllDespawned: Send the shuttle away if all things are despawned.-->
+  
+  <QuestScriptDef>
+    <defName>Util_TransportShip_Pickup</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <!-- Generate the shuttle -->
+        <li Class="QuestNode_GenerateShuttle">
+          <storeAs>pickupShipThing</storeAs>
+          <requiredPawns>$requiredPawns</requiredPawns>
+          <requiredItems>$requiredItems</requiredItems>
+          <requireColonistCount>$requireColonistCount</requireColonistCount>
+          <acceptColonists>$acceptColonists</acceptColonists>
+          <acceptChildren>$acceptChildren</acceptChildren>
+          <onlyAcceptColonists>$onlyAcceptColonists</onlyAcceptColonists>
+          <onlyAcceptHealthy>$onlyAcceptHealthy</onlyAcceptHealthy>
+          <owningFaction>$owningFaction</owningFaction>
+          <permitShuttle>$permitShuttle</permitShuttle>
+          <overrideMass>$overrideMass</overrideMass>
+          <minAge>$minAge</minAge>
+        </li>
+
+        <!-- Generate the transport ship -->
+        <li Class="QuestNode_GenerateTransportShip">
+          <def>Ship_Shuttle</def>
+          <shipThing>$pickupShipThing</shipThing>
+          <storeAs>pickUpShip</storeAs>
+        </li>
+
+        <!-- Add jobs -->
+        <li Class="QuestNode_AddShipJob_Arrive">
+          <transportShip>$pickUpShip</transportShip>
+          <shipJobStartMode>Instant</shipJobStartMode>
+        </li>
+        <li Class="QuestNode_AddShipJob_Wait">
+          <jobDef>WaitTime</jobDef>
+          <ticks>$leaveDelayTicks</ticks>
+          <transportShip>$pickUpShip</transportShip>
+          <leaveImmediatelyWhenSatisfied>$leaveImmediatelyWhenSatisfied</leaveImmediatelyWhenSatisfied>
+          <sendAwayIfAllDespawned>$sendAwayIfAllDespawned</sendAwayIfAllDespawned>
+        </li>
+        <li Class="QuestNode_AddShipJob_FlyAway">
+          <transportShip>$pickUpShip</transportShip>
+        </li>
+
+        <!-- Send away on cleanup -->
+        <li Class="QuestNode_SendTransportShipAwayOnCleanup">
+          <transportShip>$pickUpShip</transportShip>
+          <unsatisfiedDropMode>All</unsatisfiedDropMode>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

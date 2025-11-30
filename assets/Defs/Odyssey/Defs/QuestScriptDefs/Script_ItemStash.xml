@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>OpportunitySite_ItemStash_Giver</defName>
+    <isRootSpecial>true</isRootSpecial>
+    <randomlySelectable>false</randomlySelectable>
+    <givenBy>
+      <li>Traders</li>
+      <li>Beggars</li>
+      <li>Reading</li>
+    </givenBy>
+    <rootSelectionWeight>0.5</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[stash] of [treasure]</li>
+        <li>stash->Stash</li>
+        <li>stash->Cache</li>
+        <li>stash->Collection</li>
+        <li>stash->Shack</li>
+        <li>treasure->Treasure</li>
+        <li>treasure->Valuables</li>
+        <li>treasure->Fortune</li>
+        <li>treasure->Goodies</li>
+        <li>treasure->Supplies</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[discoveryMethod] the location of a collection of valuable items worth [itemStashContentsValue]. The collection consists of:\n\n[itemStashContents]\n\nIt seems that [allSitePartsDescriptionsExceptFirst]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questSubjectRules>
+      <rulesStrings>
+        <li>subject->loot stashes</li>
+        <li>subject->secret treasures</li>
+        <li>subject->valuables</li>
+
+        <li>questMapFeature->drawing of a treasure chest</li>
+        <li>questMapFeature->supply shack</li>
+
+        <li>questMapText->secret item stash</li>
+        <li>questMapText->loot here</li>
+        <li>questMapText->hidden valuables</li>
+      </rulesStrings>
+    </questSubjectRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+        
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+        
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+
+        <li Class="QuestNode_GetMap">
+          <canBeSpace>true</canBeSpace>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>siteDistRange</name>
+          <value>20~60</value>
+        </li>
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+          <selectLandmarkChance>0.75</selectLandmarkChance>
+          <allowedLandmarks>
+            <li>Oasis</li>
+            <li>Lake</li>
+            <li>LakeWithIsland</li>
+            <li>LakeWithIslands</li>
+            <li>Pond</li>
+            <li>DryLake</li>
+            <li>ToxicLake</li>
+            <li>Wetland</li>
+            <li>HotSprings</li>
+            <li>Archipelago</li>
+            <li>CoastalIsland</li>
+            <li>Peninsula</li>
+            <li>Bay</li>
+            <li>Valley</li>
+            <li>Cavern</li>
+            <li>Chasm</li>
+            <li>Cliffs</li>
+            <li>Hollow</li>
+            <li>TerraformingScar</li>
+            <li>LavaLake</li>
+            <li>Dunes</li>
+            <li>AncientHeatVent</li>
+          </allowedLandmarks>
+        </li>
+
+        <li Class="QuestNode_ViolentQuestsAllowed">
+          <node Class="QuestNode_Set">
+            <name>siteThreatChance</name>
+            <value>0.85</value>
+          </node>
+          <elseNode Class="QuestNode_Set">
+            <name>siteThreatChance</name>
+            <value>0</value>
+          </elseNode>
+        </li>
+
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>ItemStash</tag>
+            </li>
+            <li>
+              <tag>ItemStashQuestThreat</tag>
+              <chance>$siteThreatChance</chance>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(25,35)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Intercepted communications indicate the item stash has been claimed by others. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_AddItemsReward">
+          <items>$generatedItemStashThings</items>
+          <inSignalChoiceUsed>site.MapGenerated</inSignalChoiceUsed>
+          <generateQuestParts>false</generateQuestParts>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End">
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

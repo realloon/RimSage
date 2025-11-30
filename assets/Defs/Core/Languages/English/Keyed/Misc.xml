@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <Autosaving>Autosaving</Autosaving>
+  <GameStartDialog>The three of you awake in your cryptosleep sarcophagi to the sound of sirens and ripping metal. You barely get to the escape pods before the ship is torn apart.\n\nSome time later, you land on this unknown rimworld.\n\nAs pieces of the shredded starship fall around you, you start making plans to survive.</GameStartDialog>
+  <Colony>Colony</Colony>
+  <ChangeLanguageFromMainMenu>You can only change language from the options screen on the main menu.</ChangeLanguageFromMainMenu>
+  <AndLower>and</AndLower>
+  <DisabledLower>disabled</DisabledLower>
+
+  <VersionIndicator>Version {0}</VersionIndicator>
+  <GameVersionIndicator>Game version</GameVersionIndicator>
+  <DevelopmentBuildLower>development build</DevelopmentBuildLower>
+  <CompiledOn>Compiled {0}</CompiledOn>
+  <LoggedIntoSteamAs>Logged into Steam as {0}</LoggedIntoSteamAs>
+  
+  <!-- ToCommaList() -->
+  <ToCommaListAnd>{0} and {1}</ToCommaListAnd>
+  <ToCommaListOr>{0} or {1}</ToCommaListOr>
+  
+  <!-- General-use words -->
+  <Yes>Yes</Yes>
+  <No>No</No>
+  <NoSubject>No {0}</NoSubject>
+  <New>new</New>
+  <Gender>Gender</Gender>
+  <Sex>Sex</Sex>
+  <min>min</min>
+  <max>max</max>
+  <chance>chance</chance>
+  <context>context</context>
+  <multiplier>multiplier</multiplier>
+  <damage>damage</damage>
+  <radius>radius</radius>
+  <expired>expired</expired>
+  <durationDays>duration (days)</durationDays>
+  <intervalDays>interval (days)</intervalDays>
+  <delayDays>delay (days)</delayDays>
+  <repeat>repeat</repeat>
+  <default>default</default>
+  <distance>distance</distance>
+  <YesUppercase>YES</YesUppercase>
+  <NoUppercase>NO</NoUppercase>
+  <kg>kg</kg>
+  <Day>Day</Day>
+  <day>day</day>
+  <Default>Default</Default>
+  <Average>Average</Average>
+  <Cause>Cause</Cause>
+  <Etc>etc</Etc>
+  <MoneyFormat>${0}</MoneyFormat>
+  <Factors>Factors</Factors>
+  <Uses>Uses</Uses>
+  <Translation>Translation</Translation>
+  <minDays>min(days)</minDays>
+  <maxDays>max(days)</maxDays>
+  <Processing>Processing</Processing>
+  <Inspect>Inspect</Inspect>
+  <Edit>Edit</Edit>
+
+  <!-- Content generation-->
+  
+  <MeatLabel>{0} meat</MeatLabel>
+  <MeatDesc>Raw butchered flesh. Can be cooked into meals, or eaten raw.</MeatDesc>
+  <MeatInsectDesc>Raw butchered flesh. If necessary, can be cooked into meals, or even eaten raw. Extremely unappetizing.</MeatInsectDesc>
+  <MeatHumanDesc>Raw butchered flesh. Can be cooked into meals or eaten raw, although most humans dislike the idea.</MeatHumanDesc>
+
+  <TechprintLabel>techprint ({PROJECT_label})</TechprintLabel>
+  <TechprintDesc>This is a techprint for the research project '{PROJECT_label}'.
+\nThe physical form of techprints can range from scraps of paper with diagrams, all the way to advanced self-contained teaching machines. Regardless of form, they play the same role. They give your researchers the confidence that an idea is possible, and a rough idea of the designs used in more established societies.
+\nYour researchers need the foundational knowledge offered by techprints to know where to start on a given technology. Only after enough techprints have been applied can your researchers work out the fine details of how to make use of the technology in your particular situation.
+\nApplying techprints to a satisfied project fulfills half the remaining research progress. In addition, researchers always gain a boost to their intellectual skills when applying techprints, even on already-completed technologies.</TechprintDesc>
+  <Unlocks>Unlocks</Unlocks>
+
+  <CorpseLabel>{0} corpse</CorpseLabel>
+  <CorpseDesc>Dead body of a {0}.</CorpseDesc>
+  <DeadLabel>{1_label} (dead)</DeadLabel>
+
+  <RoughStoneTerrainLabel>rough {0}</RoughStoneTerrainLabel>
+  <RoughStoneTerrainDesc>Rough, natural {0} ground.</RoughStoneTerrainDesc>
+  <RoughHewnStoneTerrainLabel>rough-hewn {0}</RoughHewnStoneTerrainLabel>
+  <RoughHewnStoneTerrainDesc>Roughly cut natural {0} floor.</RoughHewnStoneTerrainDesc>
+  <SmoothStoneTerrainLabel>smooth {0}</SmoothStoneTerrainLabel>
+  <SmoothStoneTerrainDesc>Smoothed natural {0} floor.</SmoothStoneTerrainDesc>
+
+  <BlueprintLabelExtra> (blueprint)</BlueprintLabelExtra>
+  <FrameLabelExtra> (building)</FrameLabelExtra>
+
+  <FactionUnaffiliated>Unaffiliated</FactionUnaffiliated>
+
+  <StillWishContinue>Continue anyway?</StillWishContinue>
+  
+  <BabyTalk>ba,bah,boo,buh,ga,gah,goo,nyah,na,nah,noo,woo,wah,wuh,ma,mah</BabyTalk>
+
+  <!-- For things made of stuff, e.g. "Stone bed" -->
+  <!-- 0 is the stuffAdjective property under stuffProps and 1 is the label -->
+  <ThingMadeOfStuffLabel>{0} {1}</ThingMadeOfStuffLabel>
+
+  <SomeonesRoom>{PAWN_labelShort}'s {1}</SomeonesRoom>
+  <CouplesRoom>{PAWN1_labelShort} and {PAWN2_labelShort}'s {2}</CouplesRoom>
+  
+  <StatRelatesToCurrentRoom>Important for this type of room.</StatRelatesToCurrentRoom>
+  
+  <DeepResourceRemaining>{COUNT} {RESOURCE_label} underground here.</DeepResourceRemaining>
+  
+  <VariousLabel>(various)</VariousLabel>
+
+  <!-- History events -->
+  <ColonistDied>Colonist died</ColonistDied>
+  
+  <!-- Rotation -->
+  <North>North</North>
+  <South>South</South>
+  <West>West</West>
+  <East>East</East>
+
+  <ApplyingTechprint>applying techprint ({0})</ApplyingTechprint>
+
+  <!-- Apparel Looks -->
+  <VariantOf>variant of</VariantOf>
+  
+  <!-- Familial relationships -->
+  <BornOfParents>born to {0}</BornOfParents>
+  <ParentsUnknown>unknown parents</ParentsUnknown>
+  
+  <!-- Legal status -->
+  <Colonist>colonist</Colonist>
+
+</LanguageData>

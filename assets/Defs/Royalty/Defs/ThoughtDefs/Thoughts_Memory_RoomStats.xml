@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <ThoughtDef>
+    <defName>ReignedInThroneroom</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>awful throneroom</label>
+        <description>I had to reign in an awful throneroom. It's like a deliberate insult from my inferiors.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+      <li>
+        <label>dull throneroom</label>
+        <description>I had to reign in a dull throneroom. It clearly diminished my stature.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>mediocre throneroom</label>
+        <description>I had to reign in a mediocre throneroom. It didn't express my stature.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li IsNull="True" /> <!-- decent -->
+      <li IsNull="True" /> <!-- slightly impressive -->
+      <li IsNull="True" /> <!-- impressive -->
+      <li>
+        <label>very impressive throneroom</label>
+        <description>I reigned in a very impressive throneroom. It expressed noticeable stature.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>extremely impressive throneroom</label>
+        <description>I reigned in an extremely impressive throneroom. It effectively demonstrated my stature.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>unbelievably impressive throneroom</label>
+        <description>I reigned in an unbelievably impressive throneroom. The commoners will be amazed at my highness.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>wondrously impressive throneroom</label>
+        <description>I reigned in a heavenly throneroom. It matched my grace and nobility.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

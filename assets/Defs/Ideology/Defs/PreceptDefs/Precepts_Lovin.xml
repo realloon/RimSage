@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PreceptDef>
+    <defName>Lovin_Prohibited</defName>
+    <issue>Lovin</issue>
+    <label>prohibited</label>
+    <description>The physical act of lust is always vile, disgusting, and wrong.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SharedBed</eventDef>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotLovin</eventDef>
+        <thought>GotLovin_Abhorrent</thought>
+        <description>Lustful act</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotLovin</eventDef>
+        <thought>Lovin_Know_Abhorrent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Lovin_Horrible</defName>
+    <issue>Lovin</issue>
+    <label>horrible</label>
+    <description>The physical act of lust is vile, though within marriage it is necessary.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SharedBed_NonSpouse</eventDef>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>GotLovin_Abhorrent</thought>
+        <description>Lustful act with non-spouse</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>Lovin_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotLovin_Spouse</eventDef>
+        <thought>GotLovin_Disapproved</thought>
+        <description>Lustful act with spouse</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotLovin_Spouse</eventDef>
+        <thought>Lovin_Know_Disapproved</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Lovin_SpouseOnly_Strict</defName>
+    <issue>Lovin</issue>
+    <label>spouse only (strict)</label>
+    <description>To make love with another outside of marriage is deeply immoral.</description>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SharedBed_NonSpouse</eventDef>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>GotLovin_Abhorrent</thought>
+        <description>Lustful act with non-spouse</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>Lovin_Know_Abhorrent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Lovin_SpouseOnly_Moderate</defName>
+    <issue>Lovin</issue>
+    <label>spouse only (moderate)</label>
+    <description>To make love with another outside of marriage is wrong.</description>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SharedBed_NonSpouse</eventDef>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>GotLovin_Horrible</thought>
+        <description>Lustful act with non-spouse</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>Lovin_Know_Horrible</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Lovin_SpouseOnly_Mild</defName>
+    <issue>Lovin</issue>
+    <label>spouse only (mild)</label>
+    <description>Though it's understandable to make love with another outside of marriage, it's not a good thing.</description>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SharedBed_NonSpouse</eventDef>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>GotLovin_Disapproved</thought>
+        <description>Lustful act with non-spouse</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>GotLovin_NonSpouse</eventDef>
+        <thought>Lovin_Know_Disapproved</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Lovin_FreeApproved</defName>
+    <issue>Lovin</issue>
+    <label>free and approved</label>
+    <description>The physical act of love is a noble thing, no matter who does it with whom.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <associatedMemes>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InitiatedLovin</eventDef>
+        <thought>Lovin_Know_Approved</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <!-- Thoughts -->
+  
+  <ThoughtDef>
+    <defName>GotLovin_Abhorrent</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>lustful act</label>
+        <description>I committed a lustful act that was absolutely abhorrent.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Lovin_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>lustful act</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>GotLovin_Horrible</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>lustful act</label>
+        <description>I committed a lustful act that was deeply wrong.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>Lovin_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>lustful act</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>GotLovin_Disapproved</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>act of desire</label>
+        <description>I committed an act of desire, but it was the wrong thing to do.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Lovin_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>act of desire</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Lovin_Know_Approved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>lovin' afterglow</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

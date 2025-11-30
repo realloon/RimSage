@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  
+  <InfectionPathwayDef>
+    <defName>PrearrivalGeneric</defName>
+    <label>prearrival generic</label>
+  </InfectionPathwayDef>
+  
+</Defs>

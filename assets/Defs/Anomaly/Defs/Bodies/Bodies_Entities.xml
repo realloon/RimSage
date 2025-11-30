@@ -1,0 +1,1168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Noctol -->
+
+  <BodyPartDef>
+    <defName>NoctolClaw</defName>
+    <label>claw</label>
+    <hitPoints>10</hitPoints>
+    <frostbiteVulnerability>6</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartGroupDef>
+    <defName>FrontLeftClaw</defName>
+    <label>front left claw</label>
+    <labelShort>claw</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>FrontRightClaw</defName>
+    <label>front right claw</label>
+    <labelShort>claw</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyDef>
+    <defName>Noctol</defName>
+    <label>noctol</label>
+    <corePart>
+      <def>Body</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>Spine</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Stomach</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Heart</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Lung</def>
+          <customLabel>left lung</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Lung</def>
+          <customLabel>right lung</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>left kidney</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>right kidney</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Liver</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Neck</def>
+          <coverage>0.22</coverage>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>Head</def>
+              <coverage>0.75</coverage>
+              <groups>
+                <li>HeadAttackTool</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>Skull</def>
+                  <coverage>0.25</coverage>
+                  <depth>Inside</depth>
+                  <parts>
+                    <li>
+                      <def>Brain</def>
+                      <coverage>0.70</coverage>
+                      <depth>Inside</depth>
+                    </li>
+                  </parts>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>left eye</customLabel>
+                  <coverage>0.12</coverage>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>right eye</customLabel>
+                  <coverage>0.12</coverage>
+                </li>
+                <li>
+                  <def>Ear</def>
+                  <customLabel>left ear</customLabel>
+                  <coverage>0.08</coverage>
+                </li>
+                <li>
+                  <def>Ear</def>
+                  <customLabel>right ear</customLabel>
+                  <coverage>0.08</coverage>
+                </li>
+                <li>
+                  <def>Nose</def>
+                  <coverage>0.10</coverage>
+                </li>
+                <li>
+                  <def>AnimalJaw</def>
+                  <coverage>0.10</coverage>
+                  <groups>
+                    <li>Teeth</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Leg</def>
+          <customLabel>front left leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>NoctolClaw</def>
+              <customLabel>front left claw</customLabel>
+              <coverage>0.15</coverage>
+              <groups>
+                <li>FrontLeftClaw</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Leg</def>
+          <customLabel>front right leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>NoctolClaw</def>
+              <customLabel>front right claw</customLabel>
+              <coverage>0.15</coverage>
+              <groups>
+                <li>FrontRightClaw</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Leg</def>
+          <customLabel>rear left leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>NoctolClaw</def>
+              <customLabel>rear left claw</customLabel>
+              <coverage>0.15</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Leg</def>
+          <customLabel>rear right leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+          <parts>
+            <li>
+              <def>NoctolClaw</def>
+              <customLabel>rear right claw</customLabel>
+              <coverage>0.15</coverage>
+            </li>
+          </parts>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+
+  <!-- Nociosphere -->
+
+  <BodyDef>
+    <defName>Nociosphere</defName>
+    <label>nociosphere</label>
+    <corePart>
+      <def>NociosphereShell</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <groups>
+        <li>Torso</li>
+      </groups>
+      <parts>
+        <li>
+          <def>NociosphereCore</def>
+          <coverage>0.05</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>ShellSection</def>
+          <coverage>0.2</coverage>
+          <depth>Outside</depth>
+        </li>
+        <li>
+          <def>ShellSection</def>
+          <coverage>0.2</coverage>
+          <depth>Outside</depth>
+        </li>
+        <li>
+          <def>ShellSection</def>
+          <coverage>0.2</coverage>
+          <depth>Outside</depth>
+        </li>
+        <li>
+          <def>ShellSection</def>
+          <coverage>0.2</coverage>
+          <depth>Outside</depth>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+  <BodyPartDef>
+    <defName>NociosphereShell</defName>
+    <label>shell</label>
+    <hitPoints>2500</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>NociosphereCore</defName>
+    <label>core</label>
+    <hitPoints>750</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>SightSource</li>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ShellSection</defName>
+    <label>shell section</label>
+    <hitPoints>1250</hitPoints>
+    <frostbiteVulnerability>5</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+
+  <!-- Metalhorror -->
+
+  <BodyPartDef Abstract="True" Name="MetalHorrorBase">
+    <skinCovered>false</skinCovered>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorTorso</defName>
+    <label>torso</label>
+    <hitPoints>50</hitPoints>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorCore</defName>
+    <label>core</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <tags>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorNeck</defName>
+    <label>neck</label>
+    <hitPoints>30</hitPoints>
+    <tags>
+      <li>BreathingPathway</li>
+      <li>EatingPathway</li>
+      <li>TalkingPathway</li>
+    </tags>
+    <executionPartPriority>1000</executionPartPriority>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorHead</defName>
+    <label>head</label>
+    <hitPoints>30</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorBrain</defName>
+    <label>mind core</label>
+    <hitPoints>45</hitPoints>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorEye</defName>
+    <label>eye</label>
+    <hitPoints>30</hitPoints>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorShoulder</defName>
+    <label>arm</label>
+    <hitPoints>30</hitPoints>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorArm</defName>
+    <label>arm</label>
+    <hitPoints>30</hitPoints>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorLeg</defName>
+    <label>leg</label>
+    <hitPoints>30</hitPoints>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorFoot</defName>
+    <label>foot</label>
+    <hitPoints>30</hitPoints>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MetalHorrorBase">
+    <defName>MetalhorrorBlade</defName>
+    <label>blade</label>
+    <hitPoints>20</hitPoints>
+    <frostbiteVulnerability>5</frostbiteVulnerability>
+  </BodyPartDef>
+
+  <BodyDef>
+    <defName>Metalhorror</defName>
+    <label>metalhorror</label>
+    <corePart>
+      <def>MetalhorrorTorso</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <groups>
+        <li>Torso</li>
+      </groups>
+      <parts>
+        <li>
+          <def>MetalhorrorCore</def>
+          <coverage>0.05</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>MetalhorrorNeck</def>
+          <coverage>0.18</coverage>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>MetalhorrorHead</def>
+              <coverage>0.75</coverage>
+              <groups>
+                <li>HeadAttackTool</li>
+                <li>UpperHead</li>
+                <li>FullHead</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>MetalhorrorBrain</def>
+                  <coverage>0.7</coverage>
+                  <depth>Inside</depth>
+                </li>
+                <li>
+                  <def>MetalhorrorEye</def>
+                  <customLabel>left eye</customLabel>
+                  <coverage>0.06</coverage>
+                </li>
+                <li>
+                  <def>MetalhorrorEye</def>
+                  <customLabel>right eye</customLabel>
+                  <coverage>0.06</coverage>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MetalhorrorShoulder</def>
+          <customLabel>right shoulder</customLabel>
+          <coverage>0.17</coverage>
+          <parts>
+            <li>
+              <def>MetalhorrorArm</def>
+              <customLabel>right arm</customLabel>
+              <coverage>0.85</coverage>
+              <parts>
+                <li>
+                  <def>MetalhorrorBlade</def>
+                  <customLabel>right blade</customLabel>
+                  <coverage>0.3</coverage>
+                  <groups>
+                    <li>RightBlade</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MetalhorrorShoulder</def>
+          <customLabel>left shoulder</customLabel>
+          <coverage>0.17</coverage>
+          <parts>
+            <li>
+              <def>MetalhorrorArm</def>
+              <customLabel>left arm</customLabel>
+              <coverage>0.85</coverage>
+              <parts>
+                <li>
+                  <def>MetalhorrorBlade</def>
+                  <customLabel>left blade</customLabel>
+                  <coverage>0.3</coverage>
+                  <groups>
+                    <li>LeftBlade</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MetalhorrorLeg</def>
+          <customLabel>left leg</customLabel>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <parts>
+            <li>
+              <def>MetalhorrorFoot</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MetalhorrorLeg</def>
+          <customLabel>right leg</customLabel>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <parts>
+            <li>
+              <def>MetalhorrorFoot</def>
+              <customLabel>right foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+  <!-- Fleshmass Nucleus -->
+
+  <BodyDef>
+    <defName>FleshmassNucleus</defName>
+    <label>fleshmass nucleus</label>
+    <corePart>
+      <def>FleshmassNucleusCore</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <groups>
+        <li>Torso</li>
+      </groups>
+    </corePart>
+  </BodyDef>
+
+  <BodyPartDef>
+    <defName>FleshmassNucleusCore</defName>
+    <label>core</label>
+    <hitPoints>100</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0.1</frostbiteVulnerability>
+    <tags>
+      <li>ConsciousnessSource</li>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>SightSource</li>
+      <li>HearingSource</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <!-- Gorehulk -->
+
+  <BodyPartDef>
+    <defName>FleshClub_Gorehulk</defName>
+    <label>flesh club</label>
+    <hitPoints>12</hitPoints>
+    <frostbiteVulnerability>10</frostbiteVulnerability>
+    <pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>SpineLauncher_Gorehulk</defName>
+    <label>spine cluster</label>
+    <hitPoints>40</hitPoints>
+    <frostbiteVulnerability>0.1</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+  </BodyPartDef>
+
+  <BodyDef>
+    <defName>Gorehulk</defName>
+    <label>gorehulk</label>
+    <corePart>
+      <def>Torso</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <groups>
+        <li>Torso</li>
+      </groups>
+      <parts>
+        <li>
+          <def>SpineLauncher_Gorehulk</def>
+          <customLabel>chest spine cluster</customLabel>
+          <coverage>0.11</coverage>
+          <groups>
+            <li>MiddleSpike</li>
+          </groups>
+        </li>
+        <li>
+          <def>Ribcage</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Sternum</def>
+          <coverage>0.015</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Pelvis</def>
+          <coverage>0.02</coverage>
+          <height>Bottom</height>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Spine</def>
+          <coverage>0.025</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Stomach</def>
+          <coverage>0.025</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Heart</def>
+          <coverage>0.020</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Lung</def>
+          <customLabel>left lung</customLabel>
+          <coverage>0.025</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Lung</def>
+          <customLabel>right lung</customLabel>
+          <coverage>0.025</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>left kidney</customLabel>
+          <coverage>0.017</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>right kidney</customLabel>
+          <coverage>0.017</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Liver</def>
+          <coverage>0.025</coverage>
+          <depth>Inside</depth>
+          <groups>
+            <li>Torso</li>
+          </groups>
+        </li>
+        <li>
+          <def>Neck</def>
+          <coverage>0.075</coverage>
+          <height>Top</height>
+          <groups>
+            <li>Neck</li>
+          </groups>
+          <parts>
+            <li>
+              <def>Head</def>
+              <coverage>0.80</coverage>
+              <groups>
+                <li>UpperHead</li>
+                <li>FullHead</li>
+                <li>HeadAttackTool</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>Skull</def>
+                  <coverage>0.18</coverage>
+                  <depth>Inside</depth>
+                  <groups>
+                    <li>UpperHead</li>
+                    <li>Eyes</li>
+                    <li>FullHead</li>
+                  </groups>
+                  <parts>
+                    <li>
+                      <def>Brain</def>
+                      <coverage>0.8</coverage>
+                      <groups>
+                        <li>UpperHead</li>
+                        <li>Eyes</li>
+                        <li>FullHead</li>
+                      </groups>
+                    </li>
+                  </parts>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>left eye</customLabel>
+                  <coverage>0.07</coverage>
+                  <groups>
+                    <li>FullHead</li>
+                    <li>Eyes</li>
+                  </groups>
+                  <woundAnchorTag>LeftEye</woundAnchorTag>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>right eye</customLabel>
+                  <coverage>0.07</coverage>
+                  <groups>
+                    <li>FullHead</li>
+                    <li>Eyes</li>
+                  </groups>
+                  <woundAnchorTag>RightEye</woundAnchorTag>
+                </li>
+                <li>
+                  <def>Jaw</def>
+                  <coverage>0.10</coverage>
+                  <groups>
+                    <li>Teeth</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Shoulder</def>
+          <customLabel>left shoulder</customLabel>
+          <coverage>0.12</coverage>
+          <woundAnchorTag>LeftShoulder</woundAnchorTag>
+          <groups>
+            <li>Shoulders</li>
+          </groups>
+          <parts>
+            <li>
+              <def>Clavicle</def>
+              <customLabel>left clavicle</customLabel>
+              <coverage>0.09</coverage>
+              <height>Top</height>
+              <depth>Inside</depth>
+              <groups>
+                <li>Torso</li>
+              </groups>
+            </li>
+            <li>
+              <def>FleshClub_Gorehulk</def>
+              <customLabel>left flesh club</customLabel>
+              <coverage>0.6</coverage>
+              <groups>
+                <li>Arms</li>
+                <li>RightFleshClub</li>
+              </groups>
+            </li>
+            <li>
+              <def>SpineLauncher_Gorehulk</def>
+              <customLabel>left spine cluster</customLabel>
+              <coverage>0.3</coverage>
+              <groups>
+                <li>LeftSpike</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Shoulder</def>
+          <customLabel>right shoulder</customLabel>
+          <coverage>0.12</coverage>
+          <woundAnchorTag>RightShoulder</woundAnchorTag>
+          <groups>
+            <li>Shoulders</li>
+          </groups>
+          <parts>
+            <li>
+              <def>Clavicle</def>
+              <customLabel>right clavicle</customLabel>
+              <coverage>0.09</coverage>
+              <height>Top</height>
+              <depth>Inside</depth>
+              <groups>
+                <li>Torso</li>
+              </groups>
+            </li>
+            <li>
+              <def>FleshClub_Gorehulk</def>
+              <customLabel>right flesh club</customLabel>
+              <coverage>0.6</coverage>
+              <groups>
+                <li>LeftFleshClub</li>
+                <li>Arms</li>
+              </groups>
+            </li>
+            <li>
+              <def>SpineLauncher_Gorehulk</def>
+              <customLabel>right spine cluster</customLabel>
+              <coverage>0.3</coverage>
+              <groups>
+                <li>RightSpike</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Waist</def>
+          <coverage>0</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Waist</li>
+          </groups>
+        </li>
+        <li>
+          <def>Leg</def>
+          <customLabel>left leg</customLabel>
+          <coverage>0.14</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <woundAnchorTag>LeftLeg</woundAnchorTag>
+          <parts>
+            <li>
+              <def>Femur</def>
+              <customLabel>left femur</customLabel>
+              <coverage>0.1</coverage>
+              <depth>Inside</depth>
+              <groups>
+                <li>Legs</li>
+              </groups>
+            </li>
+            <li>
+              <def>Tibia</def>
+              <customLabel>left tibia</customLabel>
+              <coverage>0.1</coverage>
+              <depth>Inside</depth>
+              <groups>
+                <li>Legs</li>
+              </groups>
+            </li>
+            <li>
+              <def>Foot</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>left little toe</customLabel>
+                  <coverage>0.06</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>left fourth toe</customLabel>
+                  <coverage>0.07</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>left middle toe</customLabel>
+                  <coverage>0.08</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>left second toe</customLabel>
+                  <coverage>0.09</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>left big toe</customLabel>
+                  <coverage>0.09</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Leg</def>
+          <customLabel>right leg</customLabel>
+          <coverage>0.14</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <woundAnchorTag>RightLeg</woundAnchorTag>
+          <parts>
+            <li>
+              <def>Femur</def>
+              <customLabel>right femur</customLabel>
+              <coverage>0.1</coverage>
+              <depth>Inside</depth>
+              <groups>
+                <li>Legs</li>
+              </groups>
+            </li>
+            <li>
+              <def>Tibia</def>
+              <customLabel>right tibia</customLabel>
+              <coverage>0.1</coverage>
+              <depth>Inside</depth>
+              <groups>
+                <li>Legs</li>
+              </groups>
+            </li>
+            <li>
+              <def>Foot</def>
+              <customLabel>right foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>right little toe</customLabel>
+                  <coverage>0.06</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>right fourth toe</customLabel>
+                  <coverage>0.07</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>right middle toe</customLabel>
+                  <coverage>0.08</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>right second toe</customLabel>
+                  <coverage>0.09</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>Toe</def>
+                  <customLabel>right big toe</customLabel>
+                  <coverage>0.09</coverage>
+                  <groups>
+                    <li>Feet</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+  <!-- Devourer -->
+
+  <BodyPartDef>
+    <defName>Fin</defName>
+    <label>fin</label>
+    <hitPoints>12</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>true</canScarify>
+    <frostbiteVulnerability>10</frostbiteVulnerability>
+    <pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>MovingBody</defName>
+    <label>body</label>
+    <hitPoints>40</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canScarify>true</canScarify>
+    <executionPartPriority>500</executionPartPriority>
+    <frostbiteVulnerability>10</frostbiteVulnerability>
+    <tags>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyDef>
+    <defName>Devourer</defName>
+    <label>devourer</label>
+    <corePart>
+      <def>MovingBody</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>Spine</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Stomach</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Heart</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Lung</def>
+          <customLabel>left lung</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Lung</def>
+          <customLabel>right lung</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>left kidney</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>right kidney</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Liver</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Neck</def>
+          <coverage>0.32</coverage>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>Head</def>
+              <coverage>0.80</coverage>
+              <groups>
+                <li>HeadAttackTool</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>Skull</def>
+                  <coverage>0.15</coverage>
+                  <depth>Inside</depth>
+                  <parts>
+                    <li>
+                      <def>Brain</def>
+                      <coverage>0.7</coverage>
+                      <depth>Inside</depth>
+                    </li>
+                  </parts>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>left eye</customLabel>
+                  <coverage>0.06</coverage>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>right eye</customLabel>
+                  <coverage>0.06</coverage>
+                </li>
+                <li>
+                  <def>Ear</def>
+                  <customLabel>left ear</customLabel>
+                  <coverage>0.06</coverage>
+                </li>
+                <li>
+                  <def>Ear</def>
+                  <customLabel>right ear</customLabel>
+                  <coverage>0.06</coverage>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Fin</def>
+          <customLabel>left fin</customLabel>
+          <coverage>0.06</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>LeftFin</li>
+          </groups>
+        </li>
+        <li>
+          <def>Fin</def>
+          <customLabel>right fin</customLabel>
+          <coverage>0.06</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>RightFin</li>
+          </groups>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+  
+</Defs>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>InsectSludge</defName>
+    <label>insect sludge</label>
+    <designationCategory Inherit="False" />
+    <texturePath>Terrain/Surfaces/InsectSludge</texturePath>
+    <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughLinearBurn</pollutionShaderType>
+    <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionMud</pollutionOverlayTexturePath>
+    <pollutionColor>(1, 1, 1, 1)</pollutionColor>
+    <edgeType>FadeRough</edgeType>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <renderPrecedence>330</renderPrecedence>
+    <pathCost>14</pathCost>
+    <generatedFilth>Filth_Slime</generatedFilth>
+    <filthAcceptanceMask>
+      <li>Unnatural</li>
+    </filthAcceptanceMask>
+    <natural>true</natural>
+    <fertility>0</fertility>
+    <takeFootprints>True</takeFootprints>
+    <avoidWander>true</avoidWander>
+    <statBases>
+      <Beauty>-6</Beauty>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+      <Cleanliness>-1</Cleanliness>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <tags>
+      <li>Insect</li>
+    </tags>
+  </TerrainDef>
+
+  <TerrainDef Name="PlatformBase" Abstract="True">
+    <renderPrecedence>240</renderPrecedence>
+    <preventCraters>true</preventCraters>
+    <layerable>false</layerable>
+    <fertility>0</fertility>
+    <designationCategory />
+    <canEverTerraform>false</canEverTerraform>
+    <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionSoil</pollutionOverlayTexturePath>
+    <pollutionColor>(1, 1, 1, 0.43)</pollutionColor>
+    <pollutionOverlayScale>(0.66, 0.66)</pollutionOverlayScale>
+    <natural>true</natural>
+    <statBases>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <filthAcceptanceMask>
+      <li>Unnatural</li>
+    </filthAcceptanceMask>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Walkable</li>
+    </affordances>
+  </TerrainDef>
+  
+  <TerrainDef ParentName="PlatformBase">
+    <defName>OrbitalPlatform</defName>
+    <label>orbital platform</label>
+    <texturePath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatform</texturePath>
+    <spaceEdgeGraphicData Inherit="False">
+      <OShapeTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_OShape</OShapeTexPath>
+      <UShapeTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_UShape</UShapeTexPath>
+      <CornerInnerTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_CornerInner</CornerInnerTexPath>
+      <CornerOuterTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_CornerOuter</CornerOuterTexPath>
+      <FlatTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_Flat</FlatTexPath>
+
+      <LoopLeftTexPath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatformEdge_Left</LoopLeftTexPath>
+      <LoopRightTexPath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatformEdge_Right</LoopRightTexPath>
+      <LoopSingleTexPath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatformEdge_Single</LoopSingleTexPath>
+
+      <LoopTexPaths>
+        <li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop1</li>
+        <li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop2</li>
+        <li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop3</li>
+        <li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop4</li>
+        <li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop5</li>
+      </LoopTexPaths>
+    </spaceEdgeGraphicData>
+  </TerrainDef>
+
+  <TerrainDef ParentName="PlatformBase">
+    <defName>MechanoidPlatform</defName>
+    <label>mechanoid platform</label>
+    <texturePath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatform</texturePath>
+    <spaceEdgeGraphicData Inherit="False">
+      <OShapeTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_OShape</OShapeTexPath>
+      <UShapeTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_UShape</UShapeTexPath>
+      <CornerInnerTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_CornerInner</CornerInnerTexPath>
+      <CornerOuterTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_CornerOuter</CornerOuterTexPath>
+      <FlatTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_Flat</FlatTexPath>
+
+      <LoopLeftTexPath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatformEdge_Left</LoopLeftTexPath>
+      <LoopRightTexPath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatformEdge_Right</LoopRightTexPath>
+      <LoopSingleTexPath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatformEdge_Single</LoopSingleTexPath>
+
+      <LoopTexPaths>
+        <li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop1</li>
+        <li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop2</li>
+        <li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop3</li>
+        <li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop4</li>
+        <li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop5</li>
+      </LoopTexPaths>
+    </spaceEdgeGraphicData>
+  </TerrainDef>
+  
+</Defs>

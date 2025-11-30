@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>Roof_Collapse</defName>  
+    <context>MapOnly</context> 
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/RockCollapse</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>15~25</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Power_OnSmall</defName>  
+    <context>MapOnly</context>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Electricity/PowerOn/Small</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>10~10</volumeRange>      
+        <pitchRange>0.936413~1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Power_OffSmall</defName>  
+    <context>MapOnly</context>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Electricity/PowerOff/Small</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>10~10</volumeRange>      
+        <pitchRange>0.9152174~1.158843</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DispensePaste</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Food/Dispense/DispensePaste</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>15~20.43478</volumeRange>      
+        <pitchRange>0.9152174~1.042391</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef Name="DropPodImpact">
+    <defName>DropPod_Impact</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/DropPodImpact/Default</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>10~18</volumeRange>      
+        <pitchRange>0.9~1.1</pitchRange>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="DropPodImpact">
+    <defName>DropPod_Impact_Mechanoid</defName>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/DropPodImpact/Mechanoid</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>10~18</volumeRange>      
+        <pitchRange>0.9~1.1</pitchRange>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DropPod_Leaving</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/DropPodLeaving</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~25</volumeRange>      
+        <pitchRange>0.8940217~1.296739</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef Name="DropPodOpen">
+    <defName>DropPod_Open</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/DropPodOpen/Default</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>8~16</volumeRange>      
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="DropPodOpen">
+    <defName>DropPod_Open_Mechanoid</defName>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/DropPodOpen/Mechanoid</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>8~16</volumeRange>      
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>TrapArm</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/Trap/TrapArm</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>      
+        <pitchRange>0.8940217~1.084783</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>TrapSpring</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/Trap/TrapSpring</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>50~80</volumeRange>      
+        <pitchRange>1~1.5</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Bridge_Collapse</defName>  
+    <context>MapOnly</context>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/BridgeCollapse</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>8~14</volumeRange>
+        <pitchRange>0.89~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Bridge_CollapseWater</defName>  
+    <context>MapOnly</context>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/BridgeCollapseWater</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>8~14</volumeRange>
+        <pitchRange>0.89~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Bombardment_PreImpact</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Artillery/Mortar_Incoming_Alt2</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>1.2~1.5</pitchRange>
+        <volumeRange>45~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Shuttle_CrashLanding</defName>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/Shuttle/Crash</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Shuttle_Impact</defName>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/Shuttle/Impact</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Psycast_Skip_Entry</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/Psycasts/Skip/Entry</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>35~35</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>EmergeFromWater</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/EmergeFromWater</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>35~35</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Longjump_Jump</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/Longjump/Jump</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Longjump_Land</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/Longjump/Longjump_Land</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AcidSpray_Warmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/AcidSpray/Acid_Spray_Cast</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AcidSpray_Resolve</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/AcidSpray/Acid_Spray_Resolve</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ToxicShellLanded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/ToxShell/Impact</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>120</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Shuttle_Landing</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/Shuttle/Land</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Shuttle_Leaving</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/Shuttle/Takeoff</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

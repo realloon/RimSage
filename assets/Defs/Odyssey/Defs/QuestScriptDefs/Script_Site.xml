@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <QuestScriptDef>
+    <defName>SurveySite</defName>
+    <rootSelectionWeight>1</rootSelectionWeight>
+    <expireDaysRange>20~30</expireDaysRange>
+    <minRefireDays>30</minRefireDays>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Surveying [site]</li>
+        <li>questName->[remote] Survey</li>
+        <li>questName(p=0.5)->Defending the Scanner</li>
+        <li>questName(p=0.5)->Remote Protection</li>
+
+        <li>site->Site</li>
+        <li>site->Station</li>
+        <li>site->Defense</li>
+        <li>site->Operation</li>
+        <li>remote->Remote</li>
+        <li>remote->Regional</li>
+        <li>remote->Distant</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <!-- Asker is null -->
+        <li>questDescription(askerIsNull==true)->An anonymous AI has requested your help defending surveying equipment at a remote site.\n\nThe surveying operation will take ten to fifteen days and will require traveling to a remote destination.\n\nIn exchange for your services, the AI is offering a valuable gravtech device.</li>
+
+        <!-- Leader asker -->
+        <li>questDescription(asker_factionLeader==true)->[asker_faction_leaderTitle] [asker_nameFull] of [asker_faction_name] has heard rumors of your gravship. [asker_pronoun] wants to survey a distant region and asks that you protect [asker_possessive] surveying equipment.\n\nThe surveying operation will take ten to fifteen days and will require traveling to a remote destination.\n\nIn exchange for your services, [asker_nameDef] is offering a valuable gravtech device.</li>
+
+        <!-- Royal asker -->
+        <li>questDescription(asker_royalInCurrentFaction==true)->[asker_nameFull], a [asker_royalTitleInCurrentFaction] of [asker_faction_name], requests that you protect [asker_possessive] surveying operation. If you do so, [asker_pronoun] will reward you handsomely.\n\nThe surveying operation will take ten to fifteen days and will require traveling to a remote destination.\n\nIn exchange for your services, [asker_nameDef] is offering a valuable gravtech device.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+        <li>attackReason->claim the surveying scanner was sent to spy on their secret rituals</li>
+        <li>attackReason->say the surveying site infringes on their territory</li>
+        <li>attackReason->say they were sent to destroy the scanner as payback</li>
+        <li>attackReason->claim the surveying scanner is too close to one of their hidden stashes</li>
+        <li>attackReason->want to scrap the surveying equipment for parts</li>
+        <li>attackReason->claim that the surveying scanner is secretly a weapon and its activation has caused psychic disturbances</li>
+      </rulesStrings>
+    </questContentRules>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        
+        <li Class="QuestNode_RequirementsToAcceptResearch">
+          <reserach>BasicGravtech</reserach>
+        </li>
+        
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+
+        <li Class="QuestNode_GetMap">
+          <canBeSpace>true</canBeSpace>
+        </li>
+
+        <li Class="QuestNode_IsSet">
+          <name>asker</name>
+          <elseNode Class="QuestNode_RandomNode">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>askerIsNull</name>
+                <value>true</value>
+                <selectionWeight>0.4</selectionWeight>
+              </li>
+              <li Class="QuestNode_GetPawn">
+                <storeAs>asker</storeAs>
+                <mustBeFactionLeader>true</mustBeFactionLeader>
+                <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+                <hostileWeight>0</hostileWeight>
+                <selectionWeight>0.6</selectionWeight>
+                <minTechLevel>Industrial</minTechLevel>
+              </li>
+            </nodes>
+          </elseNode>
+        </li>
+        
+        <li Class="QuestNode_Root_Site">
+          <layerWhitelist>
+            <li>Surface</li>
+          </layerWhitelist>
+          <sitePartDef>Opportunity_SurveySite</sitePartDef>
+          <worldObjectDef>ClaimableSite</worldObjectDef>
+          <distanceFromColonyRange>20~80</distanceFromColonyRange>
+          <selectLandmarkChance>1</selectLandmarkChance>
+          <desperateIgnoreDistance>true</desperateIgnoreDistance>
+          <allowedLandmarks>
+            <li>Oasis</li>
+            <li>Lake</li>
+            <li>LakeWithIsland</li>
+            <li>LakeWithIslands</li>
+            <li>Pond</li>
+            <li>DryLake</li>
+            <li>ToxicLake</li>
+            <li>Wetland</li>
+            <li>HotSprings</li>
+            <li>Archipelago</li>
+            <li>CoastalIsland</li>
+            <li>Peninsula</li>
+            <li>Bay</li>
+            <li>Fjord</li>
+            <li>CoastalAtoll</li>
+            <li>Iceberg</li>
+            <li>Valley</li>
+            <li>Cavern</li>
+            <li>Chasm</li>
+            <li>Crevasse</li>
+            <li>Plateau</li>
+            <li>IceDunes</li>
+            <li>Cliffs</li>
+            <li>Hollow</li>
+            <li>Basin</li>
+            <li>TerraformingScar</li>
+            <li>LavaLake</li>
+            <li>LavaCrater</li>
+            <li>LavaFlow</li>
+            <li>Dunes</li>
+            <li>Ruins</li>
+            <li>FrozenRuins</li>
+            <li>AncientSmokeVent</li>
+            <li>AncientToxVent</li>
+            <li>AncientHeatVent</li>
+            <li>AncientQuarry</li>
+            <li>AbandonedColonyTribal</li>
+            <li>AbandonedColonyOutlander</li>
+            <li>AncientLaunchSite</li>
+            <li>Harbor</li>
+            <li>AncientGarrison</li>
+            <li>AncientWarehouse</li>
+            <li>AncientChemfuelRefinery</li>
+          </allowedLandmarks>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(15,20)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">The scanner has gone offline. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+        
+        <li Class="QuestNode_Set">
+          <name>duration</name>
+          <value>$(randInt(10,15)*60000)</value>
+        </li>
+        
+        <li Class="QuestNode_Root_SurveyScanner">
+          <site>$site</site>
+          <duration>$duration</duration>
+          <raidChance>1</raidChance>
+          <raidAttackRemainingHoursRange>6~48</raidAttackRemainingHoursRange>
+          <raidLetterText TKey="LetterTextSurveySiteRaid">{BASETEXT}\n\nThe [enemyFaction_pawnsPlural] [attackReason].</raidLetterText>
+        </li>
+
+        <li Class="QuestNode_GenerateThingSet">
+          <thingSetMaker>Reward_GravshipUpgrade</thingSetMaker>
+          <storeAs>upgradeItem</storeAs>
+        </li>
+        
+        <!-- Send rewards and end after survey has been completed -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>site.SurveyCompleted</li>
+          </inSignals>
+          <node Class="QuestNode_Delay">
+            <delayTicks>300</delayTicks>
+            <node Class="QuestNode_Sequence">
+              <nodes>
+                <li Class="QuestNode_Letter">
+                  <label TKey="LetterLabelSurveySiteQuestCompleted">Quest completed</label>
+                  <letterDef>PositiveEvent</letterDef>
+                  <text TKey="LetterTextSurveySiteQuestCompleted">You have successfully completed the quest '[resolvedQuestName]'!</text>
+                </li>
+                <li Class="QuestNode_AddItemsReward">
+                  <items>$upgradeItem</items>
+                </li>
+                <li Class="QuestNode_End">
+                  <outcome>Success</outcome>
+                </li>
+              </nodes>
+            </node>
+          </node>
+        </li>
+        
+        <!-- Ending -->
+        
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+          </node>
+        </li>
+        
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  
+</Defs>

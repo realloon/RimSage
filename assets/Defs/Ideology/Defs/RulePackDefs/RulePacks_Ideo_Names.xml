@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Shared content -->
+
+  <RulePackDef>
+    <defName>NamerIdeoGlobal</defName>
+    <include>
+      <li>GlobalUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <!-- The system will feed one (and only one) of these cases into this namer:
+                - key deity
+                - symbol pack
+             These cases are separate, they won't mix.
+
+             The system will also feed a set of place_* keys correesponding to the ideo's foundation PlaceDef
+         -->
+
+        <!-- From key deity -->
+        <li>r_ideoName->[keyDeity]ism</li>
+        <li>r_ideoName->[hyphenPrefix]-[keyDeity]ism</li>
+        <li>r_ideoName->[keyDeity]'s [creed]</li>
+        <li>r_ideoName->[creed] of [keyDeity]</li>
+
+        <li>r_ideoAdjective->[keyDeity]ic</li>
+
+        <li>r_memberName->[keyDeity]ist</li>
+        <li>r_memberName->[keyDeity]ite</li>
+
+        <!-- From symbol pack -->
+        <li>r_ideoName(p=6)->[packIdeoName]</li>
+        <li>r_ideoName(p=2,forcePrefix==False)->[hyphenPrefix]-[packIdeoName]</li>
+        <li>r_ideoName(p=2,forcePrefix==False)->[hyphenPrefix]-[packIdeoNameStructure]</li>
+        <li>r_ideoName(p=2)->[memeAdjective] [creed]</li>
+        <li>r_ideoName(p=1)->[creed] of [packTheme]</li>
+        <li>r_ideoName(p=1)->[place_adjective] [creed]</li>
+        <li>r_ideoName(p=0.25)->The [memeCreed]</li>
+
+        <li>r_ideoAdjective(priority=1)->[packAdjective]</li>
+
+        <li>r_memberName->[packMember]</li>
+
+        <!-- Generic content -->
+
+        <li>creed(priority=1)->[memeCreed]</li>
+        <li>creed->[genericCreed]</li>
+
+        <li>genericCreed->creed</li>
+        <li>genericCreed->doctrine</li>
+        <li>genericCreed->way</li>
+        <li>genericCreed->path</li>
+
+        <li>hyphenPrefix->[globalHyphenPrefix]</li>
+        <li>hyphenPrefix->[memeHyphenPrefix]</li>
+
+        <li>globalHyphenPrefix(p=4)->neo</li>
+        <li>globalHyphenPrefix(p=2)->post</li>
+        <li>globalHyphenPrefix->nova</li>
+        <li>globalHyphenPrefix->archaeo</li>
+        <li>globalHyphenPrefix->hyper</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>CultureSpacer</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>globalAdjective->Spacer</li>
+        <li>globalAdjective->Star</li>
+        <li>globalAdjective->Stellar</li>
+        <li>globalAdjective->Interstellar</li>
+
+        <li>globalHyphenPrefix->astro</li>
+        <li>globalHyphenPrefix->stello</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Culture-specific content -->
+
+  <RulePackDef>
+    <defName>NamerIdeoCorunan</defName>
+    <include>
+      <li>NamerIdeoGlobal</li> <!-- Tribals don't use space words -->
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>globalAdjective(p=15)->Tribal</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerIdeoRustican</defName>
+    <include>
+      <li>NamerIdeoGlobal</li>
+      <li>CultureSpacer</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerIdeoKriminul</defName>
+    <include>
+      <li>NamerIdeoGlobal</li>
+      <li>CultureSpacer</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerIdeoSophian</defName>
+    <include>
+      <li>NamerIdeoGlobal</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerIdeoAstropolitan</defName>
+    <include>
+      <li>NamerIdeoGlobal</li>
+      <li>CultureSpacer</li>
+    </include>
+  </RulePackDef>
+
+</Defs>

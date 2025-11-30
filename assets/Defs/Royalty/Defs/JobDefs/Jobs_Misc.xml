@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>Reign</defName>
+    <driverClass>JobDriver_Reign</driverClass>
+    <reportString>meditating royally at</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <neverShowWeapon>true</neverShowWeapon>
+    <joyDuration>6250</joyDuration>
+    <joyKind>Meditative</joyKind>
+  </JobDef>
+  
+  <JobDef>
+    <defName>LinkPsylinkable</defName>
+    <driverClass>JobDriver_LinkPsylinkable</driverClass>
+    <reportString>linking at TargetA</reportString>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+  <JobDef>
+    <defName>BestowingCeremony</defName>
+    <driverClass>JobDriver_BestowingCeremony</driverClass>
+    <reportString>bestowing at TargetA</reportString>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+</Defs>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: drop pod -->
+  <ActiveDropPod.label>运输舱</ActiveDropPod.label>
+  
+  <!-- EN: drop pod -->
+  <ActiveDropPodMechanoid.label>运输舱</ActiveDropPodMechanoid.label>
+  
+  <!-- EN: fire -->
+  <Fire.label>火</Fire.label>
+  
+  <!-- EN: spark -->
+  <Spark.label>火花</Spark.label>
+  
+</LanguageData>

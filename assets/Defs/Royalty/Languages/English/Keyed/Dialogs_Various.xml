@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Royal Titles -->
+  <RoyalFavorDescription>The amount of {FACTION_royalFavorLabel} that your negotiator will personally receive as a result of this deal.</RoyalFavorDescription>
+  <RoyalTitleTooltipRequiredApparel>Required apparel</RoyalTitleTooltipRequiredApparel>
+  <RoyalTitleTooltipRequiredApparelQuality>Minimum apparel quality</RoyalTitleTooltipRequiredApparelQuality>
+  <RoyalTitleTooltipBedroomRequirements>Bedroom requirements</RoyalTitleTooltipBedroomRequirements>
+  <RoyalTitleTooltipThroneroomRequirements>Throneroom requirements</RoyalTitleTooltipThroneroomRequirements>
+  <RoyalTitleTooltipPermits>Title privileges</RoyalTitleTooltipPermits>
+  <RoyalTitleRequiredApparelStatDescription>Holders of this title must be covered in some combination of</RoyalTitleRequiredApparelStatDescription>
+  <ApparelRequirementAnyPrestigeArmor>Any prestige armor</ApparelRequirementAnyPrestigeArmor>
+  <ApparelRequirementAnyPsycasterApparel>Any psycaster apparel</ApparelRequirementAnyPsycasterApparel>
+  <ApparelRequirementOrAnyPsycasterOrPrestigeApparel>or any psycaster or prestige apparel</ApparelRequirementOrAnyPsycasterOrPrestigeApparel>
+  <DisabledWorkTypes>Disallowed work types</DisabledWorkTypes>
+  <RoyalTitleRequiredMeals>Allowed foods</RoyalTitleRequiredMeals>
+  <RoyalTitleRequiredMealsDesc>A holder of this title will only eat these foods, unless they are starving or on a caravan.</RoyalTitleRequiredMealsDesc>
+
+  <!-- Royal implants -->
+  <RoyalImplantIllegalUseWarning>According to laws of {FACTION_name}, one must have the title of {TITLE} to legally use a {IMPLANT}.\n\n{VIOLATIONTRIGGER}, there is a chance {FACTION_name} will detect its psychic signature. This will lead to diplomatic consequences.</RoyalImplantIllegalUseWarning>
+  <RoyalImplantInstallConfirmation>Install this implant anyway?</RoyalImplantInstallConfirmation>
+  <RoyalImplantUpgradeConfirmation>Upgrade this implant anyway?</RoyalImplantUpgradeConfirmation>
+
+  <!-- Royal weapons -->
+  <BladelinkEquipWarning>Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</BladelinkEquipWarning>
+  <BladelinkEquipWarningTraits>The weapon has the following traits</BladelinkEquipWarningTraits>
+  <RoyalWeaponEquipConfirmation>Are you sure you want to equip this item?</RoyalWeaponEquipConfirmation>
+  
+  <!-- Psycasts -->
+  <AbilityTargetPsychicallyDeaf>Target is psychically deaf.</AbilityTargetPsychicallyDeaf>
+  <PsycastIsIllegal>This is illegal for {PAWN_labelShort}. Requires {TITLE} title.</PsycastIsIllegal>
+
+  <!-- Skip -->
+  <CannotSkipTarget>Cannot skip {PAWN_labelShort}</CannotSkipTarget>
+  <CannotSkipTargetTooLarge>Too large</CannotSkipTargetTooLarge>
+  <CannotSkipTargetPsychicResistant>Psychic resistance</CannotSkipTargetPsychicResistant>
+
+  <!-- Warning -->
+  <QuestGivesRoyalFavor>This quest will reward {FACTION_royalFavorLabel} and thus royal titles for {PAWN_labelShort}.</QuestGivesRoyalFavor>
+  <RoyalIncapableOfSocial>{PAWN_labelShort} is incapable of social tasks. Those with royal titles have great need of social skills, so if {PAWN_labelShort} gains a title, {PAWN_pronoun} may have a difficult time. Another colonist might be more socially-adept.</RoyalIncapableOfSocial>
+  <RoyalWithConceitedTrait>Since {PAWN_labelShort} is {2}, {PAWN_pronoun} will demand that the title's privileges be fully respected. {PAWN_labelShort} may refuse to do certain work types or eat low-class food, and will issue decrees. Another colonist would probably be more flexible.</RoyalWithConceitedTrait>
+  <RoyalWithTraitAffectingPsylinkNegatively>Since {PAWN_labelShort} is {2}, the psylink might not be useful for {PAWN_objective}.</RoyalWithTraitAffectingPsylinkNegatively>
+  <PsylinkTooLowForGainAbility>{PAWN_labelShort}'s psylink is not at a high enough level to use {ABILITY}.\n\nGain this power anyways?</PsylinkTooLowForGainAbility>
+  <SendShuttleWithNoContents>This shuttle is empty. If you send it away, you won't be able to use it again.\n\nSend it anyways?</SendShuttleWithNoContents>
+  <DropResourcesOverweightConfirm>These resources would weigh the caravan down and make it unable to move.\n\nCall for them anyways?</DropResourcesOverweightConfirm>
+
+</LanguageData>

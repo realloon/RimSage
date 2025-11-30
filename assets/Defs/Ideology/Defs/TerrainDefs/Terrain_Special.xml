@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>FungalGravel</defName>
+    <label>fungal gravel</label>
+    <description>A spreadable form of gravel for growing fungal crops underground. It must be placed under overhead mountain so the dank coolness of the depths can nourish the fungal spores.</description>
+    <texturePath>Terrain/Surfaces/FungalGravel</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>320</renderPrecedence>
+    <pathCost>2</pathCost>
+    <fertility>0.7</fertility>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <placeWorkers>
+      <li>Placeworker_OnlyUnderThickRoof</li>
+    </placeWorkers>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+      <WorkToBuild>1000</WorkToBuild>
+    </statBases>
+    <designationHotKey>Misc6</designationHotKey>
+  </TerrainDef>
+
+</Defs>

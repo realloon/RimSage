@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <RitualTargetFilterDef>
+    <defName>UsableThrone</defName>
+    <workerClass>RitualTargetFilter_UsableThrone</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualTargetFilterDef>
+    <defName>SelectedThing</defName>
+    <workerClass>RitualTargetFilter_SelectedThing</workerClass>
+  </RitualTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>AnimaTree</defName>
+    <workerClass>RitualObligationTargetWorker_AnimaTree</workerClass>
+  </RitualObligationTargetFilterDef>
+
+</Defs>

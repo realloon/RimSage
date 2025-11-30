@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TerrainTagWater>water and marsh</TerrainTagWater>
+  <TerrainTagRiver>river</TerrainTagRiver>
+  <TerrainTagOcean>ocean</TerrainTagOcean>
+  <TerrainTagIce>ice</TerrainTagIce>
+  <TerrainTagFineFloor>fine floor</TerrainTagFineFloor>
+  <TerrainTagSoil>soil</TerrainTagSoil>
+  <TerrainTagRoad>road</TerrainTagRoad>
+  <TerrainTagFloor>floor</TerrainTagFloor>
+  <TerrainTagSubstructure>substructure</TerrainTagSubstructure>
+  <TerrainTagInsect>insect</TerrainTagInsect>
+
+</LanguageData>

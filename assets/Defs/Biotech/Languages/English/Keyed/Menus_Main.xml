@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <Difficulty_BabiesAreHealthy_Label>Babies always healthy</Difficulty_BabiesAreHealthy_Label>
+  <Difficulty_BabiesAreHealthy_Info>Human babies are always born healthy. Mothers can't die in childbirth or have miscarriages.</Difficulty_BabiesAreHealthy_Info>
+  <Difficulty_NoBabiesOrChildren_Label>Disable children</Difficulty_NoBabiesOrChildren_Label>
+  <Difficulty_NoBabiesOrChildren_Info>Humans can't become pregnant. Human babies and children will never appear unless you choose them as starting colonists.</Difficulty_NoBabiesOrChildren_Info>
+  <Difficulty_ChildAgingRate_Label>Child aging rate</Difficulty_ChildAgingRate_Label>
+  <Difficulty_ChildAgingRate_Info>Adjust the rate at which babies and children will age. Between ages 11 and 20, the child's aging rate will smoothly transition to the adult aging rate.</Difficulty_ChildAgingRate_Info>
+  <Difficulty_AdultAgingRate_Label>Adult aging rate</Difficulty_AdultAgingRate_Label>
+  <Difficulty_AdultAgingRate_Info>Adjust the rate at which adults will age.</Difficulty_AdultAgingRate_Info>
+  <Difficulty_WastepackInfestationChanceFactor_Label>Wastepack cocoon infestations</Difficulty_WastepackInfestationChanceFactor_Label>
+  <Difficulty_WastepackInfestationChanceFactor_Info>Adjust the chance that a dissolved wastepack will trigger the arrival of insect cocoons.</Difficulty_WastepackInfestationChanceFactor_Info>
+  <Difficulty_ChildRaidersAllowed_Label>Child raiders</Difficulty_ChildRaidersAllowed_Label>
+  <Difficulty_ChildRaidersAllowed_Info>Hostile raids will sometimes include children.</Difficulty_ChildRaidersAllowed_Info>
+
+  <BabiesAreHealthyDisableReason>Disabled because another setting prevents human birth.</BabiesAreHealthyDisableReason>
+
+  <DifficultyChildrenSection>Children</DifficultyChildrenSection>
+
+  <!-- Create/review world -->
+  <PlanetPollution>Pollution</PlanetPollution>
+  
+</LanguageData>

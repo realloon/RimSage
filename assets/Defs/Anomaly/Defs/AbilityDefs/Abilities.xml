@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Bases -->
+
+  <AbilityDef Name="SpikeLaunchBase" Abstract="True">
+    <label>spike launch</label>
+    <description>Launch a bone spike at a target.</description>
+    <cooldownTicksRange>120</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_AbilityShoot</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>Ability_SpineLaunch</soundCast>
+      <ai_IsWeapon>false</ai_IsWeapon>
+    </verbProperties>
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet" Name="SpikeBase" Abstract="True">
+    <label>spike</label>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>RangedStab</damageDef>
+      <armorPenetrationBase>1</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <!-- Toughspike/Trispike -->
+
+  <AbilityDef ParentName="SpikeLaunchBase">
+    <defName>SpikeLaunch_Toughspike</defName>
+    <verbProperties>
+      <range>5.9</range>
+      <defaultProjectile>Spike_Toughspike</defaultProjectile>
+    </verbProperties>
+  </AbilityDef>
+  <ThingDef ParentName="SpikeBase">
+    <defName>Spike_Toughspike</defName>
+    <graphicData>
+      <texPath>Things/Projectile/Projectile_Toughspike</texPath>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>9</damageAmountBase>
+    </projectile>
+  </ThingDef>
+
+  <!-- Fingerspike -->
+
+  <AbilityDef ParentName="SpikeLaunchBase">
+    <defName>SpikeLaunch_Fingerspike</defName>
+    <verbProperties>
+      <range>3.9</range>
+      <defaultProjectile>Spike_Fingerspike</defaultProjectile>
+    </verbProperties>
+  </AbilityDef>
+  <ThingDef ParentName="SpikeBase">
+    <defName>Spike_Fingerspike</defName>
+    <graphicData>
+      <texPath>Things/Projectile/Projectile_Fingerspike</texPath>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>7</damageAmountBase>
+    </projectile>
+  </ThingDef>
+
+  <!-- Gorehulk -->
+
+  <AbilityDef ParentName="SpikeLaunchBase">
+    <defName>SpineLaunch_Gorehulk</defName>
+    <label>spine launch</label>
+    <description>Launch a keratin spine at a target to do damage.</description>
+    <cooldownTicksRange>130</cooldownTicksRange>
+    <verbProperties>
+      <range>17.9</range>
+      <soundCast>Gorehulk_Spine_Launch</soundCast>
+      <defaultProjectile>Spine_Gorehulk</defaultProjectile>
+    </verbProperties>
+  </AbilityDef>
+  <ThingDef ParentName="SpikeBase">
+    <defName>Spine_Gorehulk</defName>
+    <label>spine</label>
+    <graphicData>
+      <texPath>Things/Projectile/Projectile_GorehulkSpike</texPath>
+    </graphicData>
+    <projectile>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <damageAmountBase>12</damageAmountBase>
+    </projectile>
+  </ThingDef>
+
+  <!-- Devourer -->
+
+  <AbilityDef>
+    <defName>ConsumeLeap_Devourer</defName>
+    <label>consume leap</label>
+    <description>Leap onto a target and begin digesting it.</description>
+    <cooldownTicksRange>3600</cooldownTicksRange> <!-- 1.44 hours -->
+    <jobDef>CastJump</jobDef>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityConsumeLeap</verbClass>
+      <label>consume leap</label>
+      <range>9.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <warmupTime>0.25</warmupTime>
+      <soundCast>Pawn_Devourer_Jump</soundCast>
+      <soundLanding>Pawn_Devourer_Land</soundLanding>
+      <targetParams>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_ConsumeLeap">
+        <maxBodySize>2.5</maxBodySize>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- Entity skip -->
+
+  <AbilityDef Name="EntitySkip">
+    <defName>EntitySkip</defName>
+    <label>entity skip</label> <!-- non-player facing -->
+    <category MayRequire="Ludeon.RimWorld.Royalty">Skip</category>
+    <description>Teleport to a target destination.</description> <!-- non-player facing -->
+    <showPsycastEffects>false</showPsycastEffects>
+    <cooldownTicksRange>180~480</cooldownTicksRange> <!-- 3 to 8 seconds -->
+    <aiCanUse>true</aiCanUse>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_EntitySkip</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>0</warmupTime>
+      <range>99.9</range>
+      <ai_IsWeapon>false</ai_IsWeapon>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityTeleport">
+        <compClass>CompAbilityEffect_Teleport</compClass>
+        <destination>Selected</destination>
+        <requiresLineOfSight>false</requiresLineOfSight>
+        <range>-1</range>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+        <destClamorType>Ability</destClamorType>
+        <destClamorRadius>10</destClamorRadius>
+        <maxBodySize>10</maxBodySize>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="EntitySkip">
+    <defName>UnnaturalCorpseSkip</defName>
+    <cooldownTicksRange>1200</cooldownTicksRange> <!-- 20 seconds -->
+  </AbilityDef>
+  
+  <!-- Heatspikes -->
+
+  <AbilityDef>
+    <defName>Heatspikes</defName>
+    <label>heatspikes</label>
+    <description>Fire a burst of low-accuracy energy bolts.</description>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+    <cooldownTicksRange>90~180</cooldownTicksRange> <!-- 1.5 to 3 seconds -->
+    <verbProperties>
+      <verbClass>Verb_AbilityShoot</verbClass>
+      <defaultProjectile>Bullet_Heatspike</defaultProjectile>
+      <range>24.9</range>
+      <soundCast>Heatspikes_Shot</soundCast>
+      <soundCastTail>Heatspikes_Tail</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+      <warmupTime>0</warmupTime>
+      <burstShotCount>12</burstShotCount>
+      <accuracyTouch>0.9</accuracyTouch>
+      <accuracyShort>0.8</accuracyShort>
+      <accuracyMedium>0.7</accuracyMedium>
+      <accuracyLong>0.6</accuracyLong>
+      <ai_IsWeapon>false</ai_IsWeapon>
+    </verbProperties>
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Heatspike</defName>
+    <label>heatspike shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/Nociosphere_Heatspike</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>EnergyBolt</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Fleshmelter bolt -->
+  
+  <AbilityDef>
+    <defName>FleshmelterBolt</defName>
+    <label>fleshmelter bolt</label>
+    <description>Launch a large bolt of energy which generates a high-temperature explosion.</description>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+    <cooldownTicksRange>120~240</cooldownTicksRange> <!-- 2 to 4 seconds -->
+    <verbProperties>
+      <verbClass>Verb_AbilityShoot</verbClass>
+      <defaultProjectile>Bullet_FleshmelterBolt</defaultProjectile>
+      <range>24.9</range>
+      <warmupTime>1.5</warmupTime>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <burstShotCount>1</burstShotCount>
+      <accuracyTouch>0.9</accuracyTouch>
+      <accuracyShort>0.8</accuracyShort>
+      <accuracyMedium>0.7</accuracyMedium>
+      <accuracyLong>0.6</accuracyLong>
+      <beamTargetsGround>true</beamTargetsGround>
+      <soundAiming>FleshmelterBolt_Charging</soundAiming>
+      <ai_IsWeapon>false</ai_IsWeapon>
+      <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+      
+      <aimingLineMote>Mote_FleshmelterBolt_Aim</aimingLineMote>
+      <aimingChargeMote>Mote_FleshmelterBolt_Charge</aimingChargeMote> 
+      <aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+      <aimingLineMoteFixedLength>15.9</aimingLineMoteFixedLength>
+      <aimingTargetMote>Mote_FleshmelterBolt_Target</aimingTargetMote> 
+      
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetPlants>true</canTargetPlants>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_FleshmelterBolt</defName>
+    <label>fleshmelter bolt</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/FleshmelterBolt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Mote</shaderType>
+      <drawSize>(1.5, 3)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>NociosphereVaporize</damageDef>
+      <damageAmountBase>150</damageAmountBase>
+      <speed>75</speed>
+      <soundAmbient>FleshmelterBolt_Launch</soundAmbient>
+      <explosionRadius>2.49</explosionRadius>
+      <screenShakeFactor>1.25</screenShakeFactor>
+      <explosionChanceToStartFire>0.75</explosionChanceToStartFire>
+      <filth>Filth_BlastMark</filth>
+      <filthCount>1</filthCount>
+      <explosionSpawnsSingleFilth>true</explosionSpawnsSingleFilth>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Agony pulse -->
+  
+  <AbilityDef>
+    <defName>AgonyPulse</defName>
+    <label>agony pulse</label>
+    <description>Generate a pulse of psychic pain emanating from a target location.</description>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+    <cooldownTicksRange>900</cooldownTicksRange> <!-- 15 seconds -->
+    <statBases>
+      <Ability_EffectRadius>2.9</Ability_EffectRadius>
+    </statBases>
+    <warmupEffecter>HoraxianSpellLight_Warmup</warmupEffecter>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <defaultProjectile>Bullet_FleshmelterBolt</defaultProjectile>
+      <range>24.9</range>
+      <warmupTime>1.0</warmupTime>
+      <soundCast>AgonyPulse_Cast</soundCast>
+      <ai_IsWeapon>false</ai_IsWeapon>
+      <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediffPsychic">
+        <compClass>CompAbilityEffect_GiveHediffPsychic</compClass>
+        <durationSecondsOverride>2000~4000</durationSecondsOverride> <!-- 2 to 4 days -->
+        <replaceExisting>true</replaceExisting>
+        <hediffDef>AgonyPulse</hediffDef>
+        <onlyBrain>true</onlyBrain>
+        <ignoreSelf>true</ignoreSelf>
+        <severity>0</severity>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>AgonyPulseExplosion</effecterDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- Unnatural healing -->
+
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>UnnaturalHealing</defName>
+    <label>unnatural healing</label>
+    <description>Use dark psychic influence to heal someone. The process will stop bleeding, restore blood loss, and can even heal significant injuries. However, it may also have unexpected side effects.</description>
+    <iconPath>UI/Abilities/UnnaturalHealing</iconPath>
+    <cooldownTicksRange>360000</cooldownTicksRange> <!-- 6 days -->
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <stunTargetWhileCasting>true</stunTargetWhileCasting>
+    <moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+    <warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+    <warmupSound>AnomalyAbilityWarmup</warmupSound>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>4.5</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_UnnaturalHealing" />
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>UnnaturalHealing</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <!-- Shape flesh -->
+  
+  <AbilityDef Name="ShapeFlesh">
+    <defName>ShapeFlesh</defName>
+    <label>shape flesh</label>
+    <description>Induce a dark archotech to reconfigure a corpse into a horrendous fleshbeast. The fleshbeast will be hostile to all humans, including the one who created it.</description>
+    <iconPath>UI/Abilities/ShapeFlesh</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange> <!-- 40 seconds -->
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+    <warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+    <warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+    <warmupSound>AnomalyAbilityWarmup</warmupSound>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>2</warmupTime>
+      <range>24.9</range>
+      <requireLineOfSight>True</requireLineOfSight>
+      <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetCorpses>true</canTargetCorpses>
+        <onlyTargetCorpses>true</onlyTargetCorpses>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_FleshbeastFromCorpse" />
+    </comps>
+  </AbilityDef>
+  
+  <!-- Transmute steel -->
+
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>TransmuteSteel</defName>
+    <label>transmute steel</label>
+    <description>Reconfigure steel at the atomic level, turning it into a random valuable material. Can target steel, steel slag chunks, steel buildings, or steel items.</description>
+    <iconPath>UI/Abilities/TransmuteSteel</iconPath>
+    <cooldownTicksRange>50000</cooldownTicksRange> <!-- 20 hours -->
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+    <warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+    <warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+    <warmupSound>AnomalyAbilityWarmup</warmupSound>
+    <useAverageTargetPositionForWarmupEffecter>true</useAverageTargetPositionForWarmupEffecter>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>2</warmupTime>
+      <range>-1</range>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetItems>true</canTargetItems>
+        <thingCategory>Item</thingCategory>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_Transmute">
+        <failedMessage>Must target steel, steel slag chunks, steel buildings, or steel items.</failedMessage>
+        <elementRatios>
+          <li>
+            <sourceStuff>Steel</sourceStuff>
+            <ratio>1</ratio>
+          </li>
+          <li>
+            <sourceStuff>ChunkSlagSteel</sourceStuff>
+            <ratio>15</ratio>
+          </li>
+        </elementRatios>
+        <outcomeStuff>
+          <li>Plasteel</li>
+          <li>Gold</li>
+          <li>Uranium</li>
+          <li>Bioferrite</li>
+        </outcomeStuff>
+        <outcomeItems>
+          <li>Plasteel</li>
+          <li>Gold</li>
+          <li>Uranium</li>
+          <li>Bioferrite</li>
+          <li>Meat_Twisted</li>
+        </outcomeItems>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>PsychicSlaughter</defName>
+    <label>psychic slaughter</label>
+    <description>Use dark psychic power to induce chaotic reconfiguration of flesh. This kills a flesh creature in seconds and converts its body into a pile of twisted flesh.</description>
+    <iconPath>UI/Abilities/Slaughter</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange> <!-- 1 day -->
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <stunTargetWhileCasting>true</stunTargetWhileCasting>
+    <moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+    <warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+    <warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+    <warmupSound>AnomalyAbilityWarmup</warmupSound>
+    <writeCombatLog>true</writeCombatLog>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>2</warmupTime>
+      <range>4.9</range>
+      <requireLineOfSight>True</requireLineOfSight>
+      <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+      <targetParams>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_PsychicSlaughter" />
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>ReleaseDeadlifeDust</defName>
+    <label>release deadlife dust</label>
+    <description>Release a cloud of dust-like substance that will settle on nearby corpses and raise them as shamblers. The shamblers will only attack your enemies. Deadlife dust is made of nano-scale archites that penetrate and reanimate dead tissue at the cellular level.</description>
+    <iconPath>UI/Abilities/ReleaseDeadlifeDust</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange> <!-- 1 day -->
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <hotKey>Misc1</hotKey>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <label>release deadlife dust</label>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>0.5</warmupTime>
+      <violent>false</violent>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+      <soundCast>DeadlifeRelease</soundCast>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityReleaseGas">
+        <gasType>DeadlifeDust</gasType>
+        <cellsToFill>15</cellsToFill>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>GhoulFrenzy</defName>
+    <label>ghoul frenzy</label>
+    <description>Use the adrenal heart to saturate the bloodstream with stress hormones and liquid energy, permitting the ghoul to move and attack at incredible speeds for a short time.</description>
+    <iconPath>UI/Abilities/GhoulFrenzy</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange> <!-- 30 seconds -->
+    <hostile>false</hostile>
+    <groupAbility>true</groupAbility>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <statBases>
+      <Ability_Duration>15</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <soundCast>Pawn_Ghoul_Frenzy</soundCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>GhoulFrenzy</hediffDef>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>CorrosiveSpray</defName>
+    <label>corrosive spray</label>
+    <description>Use the corrosive heart to spray acid a short distance. The heart pumps the corrosive fluid through a surgically implanted duct, allowing the ghoul to spew it from their mouth at high velocity.</description>
+    <iconPath>UI/Abilities/AcidSpray</iconPath>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <displayOrder>300</displayOrder>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>11.9</range>
+      <warmupTime>0.25</warmupTime>
+      <soundCast>AcidSpray_Resolve</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilitySprayLiquid">
+        <projectileDef>Proj_CorrosiveFluid</projectileDef>
+        <numCellsToHit>9</numCellsToHit>
+        <sprayEffecter>AcidSpray_Directional</sprayEffecter>
+      </li>
+    </comps>
+  </AbilityDef>
+  <ThingDef>
+    <defName>Proj_CorrosiveFluid</defName>
+    <label>corrosive fluid</label>
+    <thingClass>Projectile_Liquid</thingClass>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <texPath>Things/Projectile/Acid</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>AcidBurn</damageDef>
+      <speed>25</speed>
+      <damageAmountBase>30</damageAmountBase>
+      <arcHeightFactor>0.4</arcHeightFactor>
+      <armorPenetrationBase>0.8</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+      <shadowSize>0</shadowSize>
+      <filth>Filth_SpentAcid</filth>
+      <filthCount>1</filthCount>
+    </projectile>
+  </ThingDef>
+
+  <AbilityDef>
+    <defName>MetalbloodInjection</defName>
+    <label>metalblood injection</label>
+    <description>Use the metalblood heart to release metalblood serum into the bloodstream, reducing incoming damage for a short period of time.</description>
+    <iconPath>UI/Abilities/MetalbloodInjection</iconPath>
+    <cooldownTicksRange>15000</cooldownTicksRange> <!-- 6 hours -->
+    <hostile>false</hostile>
+    <groupAbility>true</groupAbility>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>40</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <soundCast>Pawn_Ghoul_Frenzy</soundCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Metalblood</hediffDef>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>RevenantInvisibility</defName>
+    <label>revenant invisibility</label>
+    <description>Use the revenant vertebrae to temporarily turn invisible. The prosthetic manipulates the visual centers of those nearby, letting the user pass unnoticed.</description>
+    <iconPath>UI/Abilities/RevenantInvisibility</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange> <!-- 6 hours -->
+    <writeCombatLog>True</writeCombatLog>
+    <hotKey>Misc12</hotKey>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>15</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <warmupTime>1</warmupTime>
+      <range>19.9</range>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicInvisibility</hediffDef>
+        <psychic>True</psychic>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>VoidTerror</defName>
+    <label>void terror</label>
+    <description>Psychically induce terrifying hallucinations, causing a person to flee in terror.</description>
+    <iconPath>UI/Abilities/VoidTerror</iconPath>
+    <cooldownTicksRange>7500</cooldownTicksRange> <!-- 3 hours -->
+    <warmupEffecter>HoraxianSpellDark_Warmup</warmupEffecter>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <writeCombatLog>true</writeCombatLog>
+    <charges>5</charges>
+    <cooldownPerCharge>true</cooldownPerCharge>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <range>31.9</range>
+      <drawAimPie>true</drawAimPie>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>VoidTerrorCast</soundCast>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetSubhumans>false</canTargetSubhumans>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveMentalState">
+        <compClass>CompAbilityEffect_GiveMentalState</compClass>
+        <stateDef>TerrifyingHallucinations</stateDef>
+        <goodwillImpact>-25</goodwillImpact>
+        <forced>true</forced>
+      </li>
+      <li Class="CompProperties_AbilityConnectingFleckLine">
+        <fleckDef>PsycastPsychicLine</fleckDef>
+      </li>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>VoidTerror_Target</effecterDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

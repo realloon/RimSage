@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HistoryEventDef>
+    <defName>PollutedNearbySite</defName>
+    <label>polluted nearby site</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>PollutedBase</defName>
+    <label>polluted base</label>
+  </HistoryEventDef>
+  
+  <HistoryEventDef>
+    <defName>ToxicWasteDumping</defName>
+    <label>toxic waste dumping</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>AbsorbedXenogerm</defName>
+    <label>absorbed xenogerm</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>ExtractedHemogenPack</defName>
+    <label>extracted hemogen from member</label>
+  </HistoryEventDef>
+
+</Defs>

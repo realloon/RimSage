@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThinkTreeDef>
+    <defName>Drone</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <!-- Lord. Is this needed? -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+
+        <!-- Non player controlled drones fight nearby hostiles -->
+        <li Class="ThinkNode_ConditionalPlayerControlledMech"> <!-- TODO Change to some simpler condition that only checks player ownership-->
+          <invert>true</invert>
+          <subNodes>
+            <li Class="JobGiver_AIFightEnemies">
+              <targetAcquireRadius>30</targetAcquireRadius>
+              <targetKeepRadius>35</targetKeepRadius>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Idle player mech -->
+        <li Class="ThinkNode_ConditionalPlayerControlledMech">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>Idle</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_WanderColony">
+                  <maxDanger>None</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Idle -->
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Idle error -->
+        <li Class="JobGiver_IdleError"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>

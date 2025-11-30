@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: megascarab cocoon -->
+  <CocoonMegascarab.label>巨型甲虫茧</CocoonMegascarab.label>
+  <!-- EN: A stasis cocoon containing a megascarab.\n\nWhen conditions are inhospitable, insects sometimes form stasis cocoons and burrow underground. These cocoons keep insects safe from fire, extreme temperatures, and other threats for years.\n\nPollutants can stimulate cocoons and cause them to resurface, and strong pollutants can attract cocoons from great distances.\n\nCocoons do nothing if they are not disturbed. If a cocoon is disturbed or destroyed, the insect within will awaken and attack, triggering other nearby cocoons in the process. -->
+  <CocoonMegascarab.description>内有巨型甲虫的滞眠茧。\n\n如果周围的环境变得不宜生存，虫族有时会选择结出包裹自身的滞眠茧并潜藏于地下。这种茧可以保护虫族免受火灾、极端温度或其它威胁的影响数年之久。\n\n茧会因污染物的刺激而再度钻出地表，大量的污染物甚至可以将距离遥远的茧也吸引过来。\n\n如果一个茧遭受了外部干扰、破坏或有人在其附近走动，被激怒的虫族将立即从中爬出并发起攻击，同时也会连锁唤醒附近的其他茧。</CocoonMegascarab.description>
+  
+  <!-- EN: megaspider cocoon -->
+  <CocoonMegaspider.label>巨型蜘蛛茧</CocoonMegaspider.label>
+  <!-- EN: A stasis cocoon containing a megaspider.\n\nWhen conditions are inhospitable, insects sometimes form stasis cocoons and burrow underground. These cocoons keep insects safe from fire, extreme temperatures, and other threats for years.\n\nPollutants can stimulate cocoons and cause them to resurface, and strong pollutants can attract cocoons from great distances.\n\nCocoons do nothing if they are not disturbed. If a cocoon is disturbed or destroyed, the insect within will awaken and attack, triggering other nearby cocoons in the process. -->
+  <CocoonMegaspider.description>内有巨型蜘蛛的滞眠茧。\n\n如果周围的环境变得不宜生存，虫族有时会选择结出包裹自身的滞眠茧并潜藏于地下。这种茧可以保护虫族免受火灾、极端温度或其它威胁的影响数年之久。\n\n茧会因污染物的刺激而再度钻出地表，大量的污染物甚至可以将距离遥远的茧也吸引过来。\n\n如果一个茧遭受了外部干扰、破坏或有人在其附近走动，被激怒的虫族将立即从中爬出并发起攻击，同时也会连锁唤醒附近的其他茧。</CocoonMegaspider.description>
+  
+  <!-- EN: spelopede cocoon -->
+  <CocoonSpelopede.label>洞穴阔步虫茧</CocoonSpelopede.label>
+  <!-- EN: A stasis cocoon containing a spelopede.\n\nWhen conditions are inhospitable, insects sometimes form stasis cocoons and burrow underground. These cocoons keep insects safe from fire, extreme temperatures, and other threats for years.\n\nPollutants can stimulate cocoons and cause them to resurface, and strong pollutants can attract cocoons from great distances.\n\nCocoons do nothing if they are not disturbed. If a cocoon is disturbed or destroyed, the insect within will awaken and attack, triggering other nearby cocoons in the process. -->
+  <CocoonSpelopede.description>内有洞穴阔步虫的滞眠茧。\n\n如果周围的环境变得不宜生存，虫族有时会选择结出包裹自身的滞眠茧并潜藏于地下。这种茧可以保护虫族免受火灾、极端温度或其它威胁的影响数年之久。\n\n茧会因污染物的刺激而再度钻出地表，大量的污染物甚至可以将距离遥远的茧也吸引过来。\n\n如果一个茧遭受了外部干扰、破坏或有人在其附近走动，被激怒的虫族将立即从中爬出并发起攻击，同时也会连锁唤醒附近的其他茧。</CocoonSpelopede.description>
+  
+  <!-- EN: collapsed rocks -->
+  <CollapsedRocks.label>崩落的石头</CollapsedRocks.label>
+  <!-- EN: Collapsed rocks, packed tightly enough to hold up a roof. -->
+  <CollapsedRocks.description>崩落下的岩石，牢牢地挤压在一起，足以支撑岩顶。</CollapsedRocks.description>
+  
+  <!-- EN: glow pod -->
+  <GlowPod.label>萤光茧</GlowPod.label>
+  <!-- EN: A bioluminescent pod produced by giant insects. Glows under its own light for a long time, then dies. -->
+  <GlowPod.description>一个萤光茧，巨型虫族的产物。能够长时间照亮一片区域，直到枯死。</GlowPod.description>
+  
+  <!-- EN: hive -->
+  <Hive.label>虫巢</Hive.label>
+  <!-- EN: A hive of giant insects. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly. -->
+  <Hive.description>一个巨型虫族的巢穴。如果被唤醒，它将随着时间的流逝不断繁殖出巨型虫族和新虫巢。也会产出珍贵的虫胶。</Hive.description>
+  
+  <!-- EN: compacted machinery -->
+  <MineableComponentsIndustrial.label>压埋的机械</MineableComponentsIndustrial.label>
+  <!-- EN: Ancient machinery, compacted over time. Can be mined for useful components. -->
+  <MineableComponentsIndustrial.description>经过长时间被压紧的远古机械。可以开采出有用的零部件。</MineableComponentsIndustrial.description>
+  
+  <!-- EN: gold ore -->
+  <MineableGold.label>金矿</MineableGold.label>
+  <!-- EN: Rock containing bits of gold. -->
+  <MineableGold.description>含有少量黄金的岩石。</MineableGold.description>
+  
+  <!-- EN: jade -->
+  <MineableJade.label>翡翠矿</MineableJade.label>
+  <!-- EN: Rock containing bits of jade. -->
+  <MineableJade.description>含有少量翡翠的岩石。</MineableJade.description>
+  
+  <!-- EN: compacted plasteel -->
+  <MineablePlasteel.label>压埋的玻璃钢</MineablePlasteel.label>
+  <!-- EN: Ancient compacted rubble rich in plasteel. -->
+  <MineablePlasteel.description>被压紧的富含玻璃钢的远古瓦砾。</MineablePlasteel.description>
+  
+  <!-- EN: silver ore -->
+  <MineableSilver.label>银矿</MineableSilver.label>
+  <!-- EN: Rock containing bits of silver. -->
+  <MineableSilver.description>含有少量白银的岩石。</MineableSilver.description>
+  
+  <!-- EN: compacted steel -->
+  <MineableSteel.label>压埋的钢材</MineableSteel.label>
+  <!-- EN: The remains of some ancient, collapsed structure. Rich in steel. -->
+  <MineableSteel.description>某个倒塌的远古建筑的残骸。富含钢材。</MineableSteel.description>
+  
+  <!-- EN: uranium ore -->
+  <MineableUranium.label>铀矿</MineableUranium.label>
+  <!-- EN: Rock containing bits of uranium. -->
+  <MineableUranium.description>含有少量铀的岩石。</MineableUranium.description>
+  
+  <!-- EN: raised rocks -->
+  <RaisedRocks.label>垒石</RaisedRocks.label>
+  <!-- EN: A fragile wall made of rubble. It will collapse in time. -->
+  <RaisedRocks.description>用碎石砌成的脆弱墙体，它很快就会倒塌。</RaisedRocks.description>
+  
+  <!-- EN: steam geyser -->
+  <SteamGeyser.label>蒸汽间歇喷泉</SteamGeyser.label>
+  <!-- EN: A natural source of high-pressure steam. Geothermal generators can harness the steam power. Rooms built over this will rapidly cook. -->
+  <SteamGeyser.description>天然的蒸汽源。能够被地热发电机利用。如果在这里建造房间的话，会因温度骤升而变得像烤箱一样。</SteamGeyser.description>
+  
+</LanguageData>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>MonumentMarker</defName>
+    <label>monument marker</label>
+    <description>Marks the place where you intend to build a monument. Once placed, this cannot be moved.</description>
+    <thingClass>MonumentMarker</thingClass>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <Mass>0</Mass>
+    </statBases>
+    <useSameGraphicForGhost>true</useSameGraphicForGhost>
+    <tickerType>Normal</tickerType>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <hasCustomRectForSelector>true</hasCustomRectForSelector>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <drawPlaceWorkersWhileInstallBlueprintSelected>true</drawPlaceWorkersWhileInstallBlueprintSelected>
+    <canLoadIntoCaravan>false</canLoadIntoCaravan>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Ethereal/MonumentMarkerBlueprint</texPath>
+      <shaderType>Transparent</shaderType>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <building>
+      <blueprintGraphicData>
+        <graphicClass>Graphic_Single</graphicClass>
+        <texPath>Things/Ethereal/MonumentMarkerBlueprint</texPath>
+        <shaderType>Transparent</shaderType>
+        <drawRotated>false</drawRotated>
+        <allowFlip>false</allowFlip>
+      </blueprintGraphicData>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_MonumentMarker</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>BulletShieldPsychic</defName>
+    <label>skipshield</label>
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Ethereal/PsychicShieldRipples</texPath>
+      <shaderType>BulletShieldPsychic</shaderType>
+      <color>(180, 231, 237)</color>
+      <drawSize>9.9</drawSize>
+      <shaderParameters>
+        <_PulseInterval>0.5</_PulseInterval>
+        <_DistortionScale>0.5</_DistortionScale>
+        <_DistortionIntensity>0.15</_DistortionIntensity>
+        <_MinAlpha>0.1</_MinAlpha>
+        <_MaxAlpha>0.3</_MaxAlpha>
+        <_DistortionTex>/Things/Mote/SmokeTiled</_DistortionTex>
+      </shaderParameters>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>4.9</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+        <interceptOutgoingProjectiles>true</interceptOutgoingProjectiles>
+        <color>(0.4, 0.4, 0.4)</color>
+        <minAlpha>0.2</minAlpha>
+        <interceptEffect>Interceptor_BlockedProjectilePsychic</interceptEffect>
+      </li>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>900</delayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>Flashstorm</defName>
+    <label>flashstorm</label>
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <graphicData>
+      <graphicClass>Graphic_FadesInOut</graphicClass>
+      <texPath>Weather/Overlays/FlashstormPsychic</texPath>
+      <shaderType>CloudOverlay</shaderType>
+      <color>(255, 255, 255)</color>
+      <drawSize>34</drawSize>
+      <shaderParameters>
+        <_ExtraTex>/Weather/Overlays/FlashstormPsychicExtra</_ExtraTex>
+        <_SoftEdgeSize>0.7</_SoftEdgeSize>
+        <_TextureScale>1.4</_TextureScale>
+        <_ScrollSpeed>(0.04, 0.04)</_ScrollSpeed>
+      </shaderParameters>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>10000</delayTicks>
+      </li>
+      <li Class="CompProperties_FadesInOut">
+        <fadeInSecs>2.0</fadeInSecs>
+        <fadeOutSecs>2.0</fadeOutSecs>
+        <solidTimeSecs>160</solidTimeSecs>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>SolarPinhole</defName>
+    <label>solar pinhole</label>
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <category>PsychicEmitter</category>
+    <altitudeLayer>MoteOverheadLow</altitudeLayer>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Mote/SolarPinhole</texPath>
+      <shaderType>MoteGlowDistorted</shaderType>
+      <color>(255, 255, 245)</color>
+      <drawSize>2</drawSize>
+      <shaderParameters>
+        <_DistortionTex>/Other/Ripples</_DistortionTex>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_DistortionScale>0.4</_DistortionScale>
+        <_distortionScrollSpeed>(0.07, 0.07, 0.0)</_distortionScrollSpeed>
+      </shaderParameters>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>15</glowRadius>
+        <glowColor>(217,217,208,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>10</heatPerSecond>
+        <heatPushMaxTemperature>20</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>300000</delayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

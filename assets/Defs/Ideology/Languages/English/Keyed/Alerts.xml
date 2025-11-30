@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <NeedSlaveBeds>Need slave beds</NeedSlaveBeds>
+  <NeedSlaveBedsDesc>You have more slaves than you have slave beds. Someone will lack a place to sleep.\n\nEither make more beds, or change a colonist or prisoner bed to a slave bed.\n\nIf you have no resources, sleeping spots are free and can be placed instantly.</NeedSlaveBedsDesc>
+
+  <SlavesUnsuppressedLabel>Slave unsuppressed</SlavesUnsuppressedLabel>
+  <SlavesUnsuppressedDesc>{0_nameDef}'s suppression level is dangerously low. There is a good chance {0_pronoun} will rebel.\n\nMake sure there is a colonist assigned to warden work. Wardens will suppress slaves periodically to stop them from rebelling.</SlavesUnsuppressedDesc>
+  <SlaveUnattendedLabel>Slave unattended</SlaveUnattendedLabel>
+  <SlaveUnattendedMultipleLabel>Slaves unattended</SlaveUnattendedMultipleLabel>
+  <SlavesUnattendedDesc>Some slaves are alone on a map with no able-bodied colonists around.\n\nSlaves left unattended like this are very likely to rebel within days or hours.</SlavesUnattendedDesc>
+
+  <RitualOpportunity>{0} opportunity</RitualOpportunity>
+  <RitualOpportunityFor>{0} opportunity for {1}</RitualOpportunityFor>
+  <RitualExpiresIn>Expires in {0}, on {1}.</RitualExpiresIn>
+  <RitualSingleTargetDesc>To begin the ritual, select a {FOCUS} and click the 'Begin {RITUAL_label}' command.</RitualSingleTargetDesc>
+  <RitualMultiTargetDesc>To begin the ritual, select one of the following and click the 'Begin {RITUAL_label}' command</RitualMultiTargetDesc>
+  <RitualTargetsExplanation>To begin the ritual, select a focus object and click the 'Begin {RITUAL_label}' command. The following are valid focus objects:\n{1}</RitualTargetsExplanation>
+  <RitualJumpToTargets>Click to jump to targets</RitualJumpToTargets>
+  <RitualUnfilledRoles>In order to perform {0} you need to fill these roles</RitualUnfilledRoles>
+
+  <IdeoBuildingMissing>{0} desired</IdeoBuildingMissing>
+  <IdeoBuildingMissingDesc>{IDEO_name} requires that you have a {0} in your colony as long as {2} or higher.\n\n{0} is a variant of {BASEBUILDING_label}.{BUILDINGINFO}\n\nThis requirement is only active if {IDEO_name} is your faction's primary ideoligion, or there are {MINBELIEVERS} believers in your faction.{4}\n\nIf the requirement isn't met, these believers will become unhappy:\n{3}</IdeoBuildingMissingDesc>
+  <IdeoBuildingArchitectTabDesc> You can find it by opening the '{TABNAME}' tab of the architect menu.</IdeoBuildingArchitectTabDesc>
+  <IdeoBuildingCanBeCraftedAt> It can be created at:\n{0}.</IdeoBuildingCanBeCraftedAt>
+  <IdeoBuildingRoomRequirementsDesc>In order to dignify {0}, these room requirements must be met</IdeoBuildingRoomRequirementsDesc>
+  <IdeoBuildingExpectations>expectations are</IdeoBuildingExpectations>
+
+  <IdeoBuildingDisrespected>{0} disrespected</IdeoBuildingDisrespected>
+  <IdeoBuildingDisrespectedDesc>{0} requires that {1} be in a dignified room. These room requirements must be met:\n{2}\n\nIf the {1}'s room requirements are not met, these believers will become unhappy:\n{3}</IdeoBuildingDisrespectedDesc>
+  
+  <QuestPartRaidsDelay>Raids arriving in {0}</QuestPartRaidsDelay>
+  <QuestPartRaidsDelayDesc>Raids will start arriving in {0}.\n\nThe raiders will target the spacedrone and attempt to destroy it. Protect the spacedrone so your colonists can hack its computer and retrieve the data.</QuestPartRaidsDelayDesc>
+
+  <IdeoRoleEmpty>{0} role unfilled</IdeoRoleEmpty>
+  <IdeoRolesEmpty>{0} roles unfilled</IdeoRolesEmpty>
+  <IdeoRolesEmptyDesc>These roles are not filled:\n{0}\n\nYou can assign someone a role on their Social tab. You can also select a ritual spot or an altar and click 'Begin role change'. \n\nIf these roles remain empty, the following people will be unhappy</IdeoRolesEmptyDesc>
+
+  <AncientAltarThreatsWaking>Security threats activated in {0}</AncientAltarThreatsWaking>
+  <AncientAltarThreatsWakingDesc>Security threats will activate in {0}. They will attack any who may threaten the relic.</AncientAltarThreatsWakingDesc>
+
+  <AlertRitualComing>Ritual opportunity soon</AlertRitualComing>
+  <AlertRitualComingDesc>A ritual opportunity is coming soon for following rituals</AlertRitualComingDesc>
+  <AlertRitualComingExtra>Opportunities expire after {0} days, and reoccur on the same day each year.</AlertRitualComingExtra>
+  <AlertRitualComingEntry>{0} on {1}, {2} before opportunity arises</AlertRitualComingEntry>
+
+  <AlertAgeReversalDemandNear>Age reversal demanded</AlertAgeReversalDemandNear>
+  <AlertAgeReversalDemandDesc>Because of their beliefs, some of your colonists demand regular age reversal treatments in a biosculpter pod. If they don't get the treatments, they will be displeased.\n\nThe following people demand age reversal treatment</AlertAgeReversalDemandDesc>
+  <AlertAgeReversalDemandDesc_Recruit>{PAWN} joined {FACTION} recently, and wants to begin age reversal treatments in {DURATION}.</AlertAgeReversalDemandDesc_Recruit>
+  <AlertAgeReversalDemandDesc_Next>{PAWN} wants their next treatment in {DURATION}.</AlertAgeReversalDemandDesc_Next>
+  <AlertAgeReversalDemandDesc_Initial>{PAWN} wants their first treatment in {DURATION}.</AlertAgeReversalDemandDesc_Initial>
+  <AlertAgeReversalDemandDesc_Overdue>{PAWN}'s treatment is overdue by {DURATION}.</AlertAgeReversalDemandDesc_Overdue>
+
+  <AlertRoyalTitleNoVeneratedAnimalMeat>{PAWN_nameDef}'s belief in {IDEO_name} prevents {PAWN_objective} from eating the meat of {ANIMALS}.</AlertRoyalTitleNoVeneratedAnimalMeat>
+
+  <AlertGauranlenTreeWithoutDryadTypeLabel>Dryad caste not set</AlertGauranlenTreeWithoutDryadTypeLabel>
+  <AlertGauranlenTreeWithoutDryadTypeDesc>One or more Gauranlen trees do not have their dryad caste set.\n\nSelect the tree and click the '{0}' button to set produced dryad caste.</AlertGauranlenTreeWithoutDryadTypeDesc>
+  <AlertConnectedPawnNotAssignedToPlantCuttingLabel>Connector not assigned to plant cutting</AlertConnectedPawnNotAssignedToPlantCuttingLabel>
+  <AlertConnectedPawnNotAssignedToPlantCuttingDesc>You have Gauranlen trees which are set to be pruned, but their connectors are not assigned to plant cutting.\n\nYou should assign plant cutting work to the following people</AlertConnectedPawnNotAssignedToPlantCuttingDesc>
+
+  <AlertFuelNodeIgniting>Fuel node explodes in {0}</AlertFuelNodeIgniting>
+  <AlertFuelNodeIgnitingDesc>A fuel node has ignited! It will melt down and explode very soon.\n\nGet away and be ready to fight or escape the fires.</AlertFuelNodeIgnitingDesc>
+
+  <AlertInfestationArriving>Insects arriving in {0}</AlertInfestationArriving>
+  <AlertInfestationArrivingDesc>Giant insects have sensed your activity and are burrowing up from underground to attack. Infestations are about to begin.</AlertInfestationArrivingDesc>
+
+  <AlertHostilesWakingUp>{0_pawnsPlural} waking in {1}</AlertHostilesWakingUp>
+  <AlertHostilesWakingUpDesc>One or more {0_pawnsPlural} are waking up.\n\nThey will attack if they find you.</AlertHostilesWakingUpDesc>
+
+  <AlertCasketOpening>Cryptosleep caskets opening in {0}</AlertCasketOpening>
+  <AlertCasketOpeningDesc>Cryptosleep caskets containing unknown threats are opening soon.</AlertCasketOpeningDesc>
+
+  <AlertSlaveRebellionLikely>Slave rebellion likely</AlertSlaveRebellionLikely>
+  <AlertSlaveRebellionLikelyRebelliousCount>There are {REBELLIOUSCOUNT} slaves that are likely to initiate a rebellion.</AlertSlaveRebellionLikelyRebelliousCount>
+  <AlertSlaveRebellionLikelyMostRebellious>A slave rebellion is expected to happen roughly once every {COMBINEDTIME}. Note that each slave's rebellion chance is independent, so if any one of them rebels they can take others with them.\n\n{REBEL_labelShort} is the most rebellious slave and is expected to initiate a rebellion roughly once every {INDIVIDUALTIME}. The following factors are affecting how often they will rebel:</AlertSlaveRebellionLikelyMostRebellious>
+  
+</LanguageData>

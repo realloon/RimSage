@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- History events -->
+
+  <HistoryEventDef>
+    <defName>SlaughteredVeneratedAnimal</defName>
+    <label>slaughtered venerated animal</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>HuntedVeneratedAnimal</defName>
+    <label>hunted venerated animal</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>AteVeneratedAnimalMeat</defName>
+    <label>ate venerated animal meat</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>TameVeneratedAnimalDied</defName>
+    <label>tame venerated animal died</label>
+  </HistoryEventDef>
+
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>AnimalsVenerated</defName>
+    <label>venerated animal</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>AnimalVenerated</defName>
+    <issue>AnimalsVenerated</issue>
+    <label>venerated</label>
+    <description>This animal is considered by believers to hold a special spiritual or moral status, which means it must be venerated and may never be harmed.</description>
+    <preceptClass>Precept_Animal</preceptClass>
+    <workerClass>PreceptWorker_Animal</workerClass>
+    <useChoicesFromBuildingDefs>true</useChoicesFromBuildingDefs>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <impact>Medium</impact>
+    <maxCount>18</maxCount>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SlaughteredVeneratedAnimal</eventDef>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>HuntedVeneratedAnimal</eventDef>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>TameVeneratedAnimalDied</eventDef>
+        <thought>TameVeneratedAnimalDied</thought>
+        <description>Tame venerated animal died</description>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>AteVeneratedAnimalMeat</eventDef>
+        <thought>AteVeneratedAnimalMeat</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>VeneratedAnimalsOnMapOrCaravan</thought>
+        <thoughtStageDescriptions>
+          <li>Scarce animals {STAGE1}</li>
+          <li>Few animals {STAGE2}</li>
+          <li>Some animals {STAGE3}</li>
+          <li>Lots of animals {STAGE4}</li>
+          <li>Tons of animals</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>AteVeneratedAnimalMeat</defName>
+    <durationDays>5</durationDays>
+    <stages>
+      <li>
+        <label>ate venerated animal meat</label>
+        <description>I ate the flesh of a venerated animal. I've violated a most basic moral rule.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TameVeneratedAnimalDied</defName>
+    <thoughtClass>Thought_TameVeneratedAnimalDied</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>venerated {ANIMALKIND} died</label>
+        <description>A tame {ANIMALKIND} passed away. The death of such a noble beast is cause for sadness.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VeneratedAnimalsOnMapOrCaravan</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_VeneratedAnimalOnMapOrCaravan</workerClass>
+    <stages>
+      <li>
+        <label>venerated {ANIMAL_label}</label>
+        <description>There are venerated animals around me.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>venerated {ANIMAL_label}</label>
+        <description>I have some venerated animals around me.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>venerated {ANIMAL_label}</label>
+        <description>I have many venerated animals around me.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>venerated {ANIMAL_label}</label>
+        <description>I have a large number of venerated animals around me!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>venerated {ANIMAL_label}</label>
+        <description>I have a huge number of venerated animals around me!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

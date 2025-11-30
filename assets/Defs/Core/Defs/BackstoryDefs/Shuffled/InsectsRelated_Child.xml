@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>SewerKid57</defName>
+    <title>sewer kid</title>
+    <titleFemale>sewer girl</titleFemale>
+    <titleShort>sewer boy</titleShort>
+    <titleShortFemale>sewer girl</titleShortFemale>
+    <description>[PAWN_nameDef] grew up in the sludge-smeared sewers of a polluted industrial world.
+\n[PAWN_pronoun] befriended the strange insects in the darkness and learned to love them.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>InsectsRelated</li>
+    </spawnCategories>
+    <skillGains>
+      <Cooking>2</Cooking>
+    </skillGains>
+  </BackstoryDef>
+
+</Defs>

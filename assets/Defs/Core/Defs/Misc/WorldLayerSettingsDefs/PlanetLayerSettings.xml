@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <PlanetLayerSettingsDef>
+    <defName>Surface</defName>
+    <label>Default surface</label>
+    <settings>
+      <radius>100</radius>
+      <subdivisions>10</subdivisions>
+      <useSurfaceViewAngle>true</useSurfaceViewAngle>
+    </settings>
+  </PlanetLayerSettingsDef>
+  
+</Defs>

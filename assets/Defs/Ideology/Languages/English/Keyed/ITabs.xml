@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Character -->
+  <OverridesSomePrecepts>Overrides some precepts related to</OverridesSomePrecepts>
+  <AgreeableMemes>Agrees with memes</AgreeableMemes>
+  <DisagreeableMemes>Conflicts with memes</DisagreeableMemes>
+
+  <!-- ITab titles -->
+  <TabSlave>Slave</TabSlave>
+  <SlaveReleaseRelationGainsDesc>The faction goodwill you will gain if you release a slave. This is affected by the slaves's physical and mental health.</SlaveReleaseRelationGainsDesc>
+  <SlaveReleasePotentialRelationGains>Relations gain on release</SlaveReleasePotentialRelationGains>
+  <SlaveRebellionMTBDays>Slave rebellion interval</SlaveRebellionMTBDays>
+  <SlaveRebellionMTBDaysDescription>The average number of days between slave rebellion attempts. Only time awake is counted. This is affected by suppression, mood, health, proximity to weapons, the number of slaves on the map, and the presence of colonists on the map.</SlaveRebellionMTBDaysDescription>
+
+  <!-- Slave tab -->
+  <Suppression>Suppression</Suppression>
+  <SuppressionDesc>Suppression is the psychological effect of fear and control on a slave. If suppression is low, slaves are more likely to rebel.</SuppressionDesc>
+  <SuppressionFallRate>Suppression fall rate</SuppressionFallRate>
+  <SuppressionFallRateDesc>Suppression falls over time depending on its current level:\n\n- {1}+ suppression: {0} per day\n- {4}-{3} suppression: {2} per day\n- {6}- suppression: {5} per day\n\nApparel and terror can also affect the suppression fall rate. This slave's fall rate calculation is</SuppressionFallRateDesc>
+  <CannotEmancipate>Cannot emancipate</CannotEmancipate>
+  <CannotImprison>Cannot imprison</CannotImprison>
+  <CurrentSuppression>Current suppression</CurrentSuppression>
+  <Terror>Terror</Terror>
+  <TerrorDescription>Terror is a way to keep slaves suppressed. It rises when the slave spends time near terrifying things like terror sculptures. A slave can only be affected by three terror sources at a time.\n\nWhile terror is high, suppression falls slower as follows</TerrorDescription>
+  <TerrorCurrentThoughts>Recent terrifying observations</TerrorCurrentThoughts>
+
+  <SuppressionBaseInterval>Base interval</SuppressionBaseInterval>
+  <SuppressionMovingCapacityFactor>Moving capacity</SuppressionMovingCapacityFactor>
+  <SuppressionFactor>Suppression</SuppressionFactor>
+  <SuppressionMoodFactor>Mood</SuppressionMoodFactor>
+  <SuppressionSlaveCountFactor>Slave count</SuppressionSlaveCountFactor>
+  <SuppressionEscapeFactor>Escape route</SuppressionEscapeFactor>
+  <SuppressionWeaponProximityFactor>Weapon proximity</SuppressionWeaponProximityFactor>
+  <SuppressionFinalInterval>Final interval</SuppressionFinalInterval>
+  <SuppressionUnattendedByColonists>Unattended</SuppressionUnattendedByColonists>
+  <SuppressionRebellionAnySlave>At least one of the {0} slaves on this map is expected rebel on average every {1}.</SuppressionRebellionAnySlave>
+
+  <WillLevel>Will</WillLevel>
+  <WillLevelDesc>How much the prisoner is determined not to submit. When this reaches zero, they can be enslaved.</WillLevelDesc>
+  <WillFromPawnKind>{0} base will</WillFromPawnKind>
+  <IdeoConversionTarget>Target ideoligion</IdeoConversionTarget>
+  <IdeoConversionTargetDesc>The ideoligion your wardens will attempt to convert this prisoner to.</IdeoConversionTargetDesc>
+
+  <!-- Social -->
+  <CertaintyChangePerDay>Change per day due to mood</CertaintyChangePerDay>
+  <MoodChangeRate>Change rate based on mood</MoodChangeRate>
+  <CertaintyInIdeo>{PAWN_nameDef}'s certainty in {IDEO_name}</CertaintyInIdeo>
+  <RoleDesc>A special status this person holds in their ideoligion. If you change or take away this role, they will become unhappy.</RoleDesc>
+  <RoleAssignmentTip>Changing roles requires a role change ritual. Select any ritual spot or altar and press 'Begin role change'.</RoleAssignmentTip>
+  <ConversionWeakerDueToTraitAgreements>Conversion attempts will be weaker because of trait/meme agreement</ConversionWeakerDueToTraitAgreements>
+  <ConversionStrongerDueToTraitAgreements>Conversion attempts will be stronger because of trait/meme conflict</ConversionStrongerDueToTraitAgreements>
+
+  <Cut>Cut</Cut>
+  <CutBothEyes>Cut both eyes</CutBothEyes>
+
+</LanguageData>

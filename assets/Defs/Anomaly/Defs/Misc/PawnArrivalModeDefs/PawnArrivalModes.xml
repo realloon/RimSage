@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnsArrivalModeDef>
+    <defName>EdgeWalkInHateChanters</defName>
+    <workerClass>PawnsArrivalModeWorker_EdgeWalkInHateChanters</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(300, 1.0)</li>
+        <li>(700, 0.4)</li>
+      </points>
+    </selectionWeightCurve>
+    <textEnemy>A group of {0} from {1} have arrived from nearby.</textEnemy>
+    <textFriendly>A group of friendly {0} from {1} have arrived nearby.</textFriendly>
+    <textWillArrive>{0_pawnsPluralDef} will arrive on foot.</textWillArrive>
+    <walkIn>true</walkIn>
+  </PawnsArrivalModeDef>
+
+  <PawnsArrivalModeDef>
+    <defName>EdgeWalkInDistributedGroups</defName>
+    <workerClass>PawnsArrivalModeWorker_EdgeWalkInDistributedGroups</workerClass>
+    <pointsFactorCurve>
+      <points>
+        <li>(0, 1)</li>
+      </points>
+    </pointsFactorCurve>
+    <selectionWeightCurve>
+      <points>
+        <li>(0, 1)</li>
+      </points>
+    </selectionWeightCurve>
+    <textEnemy>A horde of {0} shambling, rotting corpses is approaching.</textEnemy> 
+    <textWillArrive>A horde of {0} shambling, rotting corpses are about to arrive.</textWillArrive> 
+    <walkIn>true</walkIn>
+  </PawnsArrivalModeDef>
+
+  <PawnsArrivalModeDef>
+    <defName>EdgeWalkInDarkness</defName>
+    <workerClass>PawnsArrivalModeWorker_EdgeWalkInDarkness</workerClass>
+    <pointsFactorCurve>
+      <points>
+        <li>(0, 1)</li>
+      </points>
+    </pointsFactorCurve>
+    <selectionWeightCurve>
+      <points>
+        <li>(0, 1)</li>
+      </points>
+    </selectionWeightCurve>
+    <textEnemy>A group of {0} have arrived from nearby.</textEnemy>
+    <textFriendly>A group of friendly {0} have arrived nearby.</textFriendly>
+    <textWillArrive>{0_pawnsPluralDef} will arrive on foot.</textWillArrive>
+    <walkIn>true</walkIn>
+  </PawnsArrivalModeDef>
+  
+</Defs>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RitualPatternDef>
+    <defName>GravshipLaunch</defName>
+    <beginRitualOverride>launch...</beginRitualOverride>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>GravshipLaunch</ritualBehavior>
+    <ritualOutcomeEffect>GravshipLaunch</ritualOutcomeEffect>
+    <ritualObligationTargetFilter>GravshipLaunch</ritualObligationTargetFilter>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+    <iconPathOverride>UI/Commands/LaunchGravship</iconPathOverride>
+    <cancelIconPathOverride>UI/Commands/CancelLaunchGravship</cancelIconPathOverride>
+    <ignoreExtremeTemperatures>true</ignoreExtremeTemperatures>
+    <showIdeoIconsInDialog>false</showIdeoIconsInDialog>
+  </RitualPatternDef>
+
+</Defs>

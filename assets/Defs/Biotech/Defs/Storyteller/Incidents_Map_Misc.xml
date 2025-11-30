@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>NoxiousHaze</defName>
+    <label>acidic smog</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>NoxiousHaze</gameCondition>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+    <disabledWhen>
+      <extremeWeatherIncidentsDisabled>true</extremeWeatherIncidentsDisabled>
+    </disabledWhen>
+    <durationDays>1~2</durationDays>
+    <earliestDay>15</earliestDay>
+    <tale>NoxiousHaze</tale>
+  </IncidentDef>
+
+</Defs>

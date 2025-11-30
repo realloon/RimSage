@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>ArchonexusCore_Ambience</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <maxSimultaneous>1</maxSimultaneous>
+    <maxVoices>1</maxVoices>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Exotic/Archonexus/ArchonexusAmbience_Loop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>5</volumeRange>
+        <distRange>20~80</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

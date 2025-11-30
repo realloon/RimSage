@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GenStepDef>
+    <defName>ReserveGravshipArea</defName>
+    <order>600</order>
+    <genStep Class="GenStep_ReserveGravshipArea" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>GravshipMarker</defName>
+    <order>1700</order>
+    <genStep Class="GenStep_GravshipMarker" />
+  </GenStepDef>
+
+</Defs>

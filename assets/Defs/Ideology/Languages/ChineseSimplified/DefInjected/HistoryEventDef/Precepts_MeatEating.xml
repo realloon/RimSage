@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: ate meat -->
+  <AteMeat.label>吃了肉</AteMeat.label>
+  
+  <!-- EN: ate vegetarian -->
+  <AteNonMeat.label>吃素了</AteNonMeat.label>
+  
+</LanguageData>

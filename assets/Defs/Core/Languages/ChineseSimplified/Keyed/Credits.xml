@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- Main menu-->
+  <!-- EN: A story generator by Tynan Sylvester -->
+  <MainPageCredit>边缘世界 泰南·西尔维斯特的故事生成器</MainPageCredit>
+
+  <!-- Credits -->
+  <!-- EN: Design -->
+  <Credits_Design>设计</Credits_Design>
+  <!-- EN: Engineering -->
+  <Credits_Developers>工程师</Credits_Developers>
+  <!-- EN: Audio -->
+  <Credit_MusicAndSound>音效</Credit_MusicAndSound>
+  <!-- EN: Art -->
+  <Credit_GameArt>美术</Credit_GameArt>
+  <!-- EN: Testers -->
+  <Credit_Testers>测试人员</Credit_Testers>
+  <!-- EN: Additional development -->
+  <Credits_AdditionalDevelopment>附加开发</Credits_AdditionalDevelopment>
+  <!-- EN: Special thanks -->
+  <Credit_SpecialThanks>特别感谢</Credit_SpecialThanks>
+
+  <!-- EN: Volunteer testers -->
+  <Credits_TitleTester>社区测试者</Credits_TitleTester>
+
+  <!-- EN: Mods -->
+  <Credits_TitleMods>Mods</Credits_TitleMods>
+
+  <!-- EN: {0} ({1}) language -->
+  <Credits_TitleLanguage>语言: {0}（{1}）</Credits_TitleLanguage>
+  <!-- EN: Anomaly localization -->
+  <Credits_Localization_Anomaly>异象DLC本地化</Credits_Localization_Anomaly>
+  <!-- EN: Odyssey localization -->
+  <Credits_Localization_Odyssey>奥德赛DLC本地化</Credits_Localization_Odyssey>
+  <!-- EN: Lead Localization Project Manager -->
+  <Credits_LeadLocalizationProjectManager>本地化项目首席经理</Credits_LeadLocalizationProjectManager>
+  <!-- EN: Localization Project Manager -->
+  <Credits_LocalizationProjectManager>本地化项目经理</Credits_LocalizationProjectManager>
+  <!-- EN: Project Manager -->
+  <Credits_ProjectManager>项目经理</Credits_ProjectManager>
+  <!-- EN: Translator -->
+  <Credits_Translator>翻译者</Credits_Translator>
+  <!-- EN: Editor -->
+  <Credits_Editor>校对者</Credits_Editor>
+  <!-- EN: French -->
+  <Credits_French>法语</Credits_French>
+  <!-- EN: Japanese -->
+  <Credits_Japanese>日语</Credits_Japanese>
+  <!-- EN: Korean -->
+  <Credits_Korean>韩语</Credits_Korean>
+  <!-- EN: Polish -->
+  <Credits_Polish>波兰语</Credits_Polish>
+  <!-- EN: Russian -->
+  <Credits_Russian>俄语</Credits_Russian>
+  <!-- EN: Dutch -->
+  <Credits_Dutch>荷兰语</Credits_Dutch>
+  <!-- EN: Turkish -->
+  <Credits_Turkish>土耳其语</Credits_Turkish>
+  <!-- EN: Ukrainian -->
+  <Credits_Ukrainian>乌克兰语</Credits_Ukrainian>
+  <!-- EN: Simplified Chinese -->
+  <Credits_ChineseSimplified>简体中文</Credits_ChineseSimplified>
+  <!-- EN: Traditional Chinese -->
+  <Credits_ChineseTraditional>繁体中文</Credits_ChineseTraditional>
+
+  <!-- EN: and many other gracious volunteers! -->
+  <AndOtherVolunteers>以及其他超赞的志愿者们！</AndOtherVolunteers> <!-- text_todo -->
+
+  <!-- Credits - Currently unused -->
+  <!-- EN: Test lead -->
+  <Credit_TestLead>测试</Credit_TestLead>
+  <!-- EN: Community donations -->
+  <Credits_TitleCommunity>社区志愿者</Credits_TitleCommunity>
+  <!-- EN: Mod donors -->
+  <Credit_ModDonation>Mod贡献者</Credit_ModDonation>
+  <!-- EN: Writing donor -->
+  <Credit_WritingDonation>文案贡献者</Credit_WritingDonation>
+
+  <!-- Meta -->
+  <!-- EN: Thanks for playing! -->
+  <ThanksForPlaying>感谢游玩！</ThanksForPlaying>
+  <!-- EN: Skip credits -->
+  <SkipCredits>跳过</SkipCredits>
+
+
+
+</LanguageData>

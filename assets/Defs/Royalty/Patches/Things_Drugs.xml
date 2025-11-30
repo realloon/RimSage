@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="WakeUp"]/description</xpath>
+    <value>
+      <description>A synthetic stimulant. Wake-up fills the user's need for rest, allowing them to work for extended periods without getting tired. Psycasters on wake-up gain more psyfocus from meditation than they otherwise would. However, taking wake-up runs the risk of developing an addiction.\n\nIn the most competitive universities and companies of many worlds, high-achievers are sometimes called 'wake-ups' because of the association with this drug.</description>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="GoJuice"]/description</xpath>
+    <value>
+      <description>A synthetic performance-enhancing drug developed for space marines during the early days of interplanetary warfare. Go-juice blocks pain, increases movement speed, and improves the user's melee and shooting abilities. For psycasters, the drug also instantly increases psyfocus without meditation.\n\nThe military chemists who created it were never able to remove its addictiveness. Some saw this as a downside; others saw it as a benefit.</description>
+    </value>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RuleDef>
+    <defName>Interior_ThroneRoom</defName>
+    <symbol>interior_throneRoom</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Interior_ThroneRoom" />
+    </resolvers>
+  </RuleDef>
+  
+</Defs>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mental state: Crying -->
+  <Crying.baseInspectLine>精神状态：哭泣</Crying.baseInspectLine>
+  
+  <!-- EN: Mental state: Giggling -->
+  <Giggling.baseInspectLine>精神状态：咯咯笑</Giggling.baseInspectLine>
+  
+</LanguageData>

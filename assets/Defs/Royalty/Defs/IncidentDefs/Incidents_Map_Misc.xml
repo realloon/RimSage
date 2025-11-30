@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>WandererJoinAbasia</defName>
+    <label>abasia join</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <questScriptDef>WandererJoinAbasia</questScriptDef>
+    <baseChance>0.4</baseChance>
+    <populationEffect>IncreaseEasy</populationEffect>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>MechCluster</defName>
+    <label>mech cluster</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MechCluster</workerClass>
+    <letterLabel>Mechanoid cluster</letterLabel>
+    <letterText>A mechanoid combat cluster is landing nearby. The cluster will be initially dormant, so you can take time to decide how to attack it.\n\nIt may remain dormant until disturbed, or it may have a timer or proximity activators.\n\nEven dormant mech clusters aren't harmless. A dormant cluster may assemble mechanoid attackers from time to time, or have some broader negative effect that must be dealt with eventually.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.0</baseChance>
+    <baseChanceWithRoyalty>1.9</baseChanceWithRoyalty>
+    <minThreatPoints>400</minThreatPoints>
+    <pointsScaleable>true</pointsScaleable>
+    <category>ThreatBig</category>
+  </IncidentDef>
+
+</Defs>

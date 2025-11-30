@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>DetoxifierLung</defName>
+    <label>detoxifier lung</label>
+    <description>An advanced artificial lung that uses microfilters to reduce the intake of environmental toxins, allowing the user to survive longer in polluted environments. Additionally, it negates the irritation of acidic smog and prevents lung rot in this lung.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallDetoxifierLung</RecipeDef>
+    </descriptionHyperlinks>
+    <statBases>
+      <WorkToMake>26000</WorkToMake>
+      <MarketValue>925</MarketValue>
+    </statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>ToxFiltration</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+  </ThingDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>DetoxifierLung</defName>
+    <label>detoxifier lung</label>
+    <labelNoun>a detoxifier lung</labelNoun>
+    <description>An installed detoxifier lung. Prevents lung rot in this lung and negates the irritation of acidic smog.\n\nNote that the detoxifier lung does not prevent the irritating effect of tox gas.</description>
+    <preventsLungRot>true</preventsLungRot>
+    <descriptionHyperlinks>
+      <ThingDef>DetoxifierLung</ThingDef>
+      <HediffDef>LungRot</HediffDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>DetoxifierLung</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.1</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ToxicEnvironmentResistance>0.6</ToxicEnvironmentResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallDetoxifierLung</defName>
+    <label>install detoxifier lung</label>
+    <description>Install a detoxifier lung.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DetoxifierLung</ThingDef>
+      <HediffDef>DetoxifierLung</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing detoxifier lung.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DetoxifierLung</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DetoxifierLung</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Lung</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DetoxifierLung</addsHediff>
+    <deathOnFailedSurgeryChance>0</deathOnFailedSurgeryChance>
+  </RecipeDef>
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>DetoxifierKidney</defName>
+    <label>detoxifier kidney</label>
+    <description>An advanced artificial kidney. Using a series of nanofilters, it can rapidly remove a vast range of toxins from the blood, making it effective against environmental toxins, venoms, and injected poisons.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallDetoxifierKidney</RecipeDef>
+    </descriptionHyperlinks>
+    <statBases>
+      <WorkToMake>26000</WorkToMake>
+      <MarketValue>1080</MarketValue>
+    </statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>ToxFiltration</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+  </ThingDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>DetoxifierKidney</defName>
+    <label>detoxifier kidney</label>
+    <labelNoun>a detoxifier kidney</labelNoun>
+    <description>An installed detoxifier kidney. Using a series of nanofilters, it can rapidly remove a vast range of toxins from the blood, making it effective against environmental toxins, venoms, and injected poisons.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DetoxifierKidney</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>DetoxifierKidney</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.1</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ToxicResistance>0.5</ToxicResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallDetoxifierKidney</defName>
+    <label>install detoxifier kidney</label>
+    <description>Install a detoxifier kidney.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DetoxifierKidney</ThingDef>
+      <HediffDef>DetoxifierKidney</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing detoxifier kidney.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DetoxifierKidney</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DetoxifierKidney</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Kidney</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DetoxifierKidney</addsHediff>
+    <deathOnFailedSurgeryChance>0</deathOnFailedSurgeryChance>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PsychicRitualRoleDef>
+    <defName>Invoker</defName>
+    <label>invoker</label>
+    <allowedCount>1</allowedCount>
+    <canHandleOfferings>true</canHandleOfferings>
+    <showInvocationVfx>true</showInvocationVfx>
+    <allowedConditions>DefaultInvoker</allowedConditions>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef Abstract="True" Name="ChanterBase">
+    <label>chanter</label>
+    <description>Chanters add psychic power to the ritual.</description>
+    <showInvocationVfx>true</showInvocationVfx>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef ParentName="ChanterBase">
+    <defName>Chanter</defName>
+    <allowedCount>0~4</allowedCount>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef ParentName="ChanterBase">
+    <defName>ChanterAdvanced</defName> <!-- Used for advanced psychic rituals to allow a higher max count of chanters -->
+    <allowedCount>0~6</allowedCount>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef>
+    <defName>Defender</defName>
+    <label>defenders</label>
+    <description>Defenders protect the ritual participants from harm.</description>
+    <allowedCount>0~9999</allowedCount>
+    <psychicRitualWaitsForArrival>false</psychicRitualWaitsForArrival>
+    <allowedConditions>Default, Sleeping, Downed, Bleeding, Burning, NoPsychicSensitivity</allowedConditions>
+  </PsychicRitualRoleDef>
+  
+  <!-- Ritual-specific roles-->
+
+  <PsychicRitualRoleDef_DeathRefusalTarget>
+    <defName>DeathRefusalTarget</defName>
+    <label>target</label>
+    <allowedCount>1</allowedCount>
+    <allowedConditions>Default, Downed, Prisoner, Sleeping, IdeoUnwilling</allowedConditions>
+    <psychicRitualLeaveReason_MaxDeathRefusal>{PAWN_labelShort} cannot have any more death refusals stacked</psychicRitualLeaveReason_MaxDeathRefusal>
+    <applyPowerOffset>false</applyPowerOffset>
+  </PsychicRitualRoleDef_DeathRefusalTarget>
+
+  <PsychicRitualRoleDef>
+    <defName>PhilophagyTarget</defName>
+    <label>target</label>
+    <allowedCount>1</allowedCount>
+    <allowedConditions>Default, Downed, Prisoner, Sleeping, IdeoUnwilling</allowedConditions>
+    <applyPowerOffset>false</applyPowerOffset>
+    <removeOnLost>false</removeOnLost>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef>
+    <defName>ChronophagyTarget</defName>
+    <label>target</label>
+    <allowedCount>1</allowedCount>
+    <allowedConditions>Default, Downed, Prisoner, Sleeping, IdeoUnwilling</allowedConditions>
+    <applyPowerOffset>false</applyPowerOffset>
+    <removeOnLost>false</removeOnLost>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef>
+    <defName>BrainwipeTarget</defName>
+    <label>target</label>
+    <allowedCount>1</allowedCount>
+    <allowedConditions>Default, Downed, Prisoner, Sleeping, IdeoUnwilling</allowedConditions>
+    <applyPowerOffset>false</applyPowerOffset>
+    <removeOnLost>false</removeOnLost>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef>
+    <defName>PsychophagyTarget</defName>
+    <label>target</label>
+    <allowedCount>1</allowedCount>
+    <allowedConditions>Default, Downed, Prisoner, Sleeping, IdeoUnwilling</allowedConditions>
+    <applyPowerOffset>false</applyPowerOffset>
+    <removeOnLost>false</removeOnLost>
+  </PsychicRitualRoleDef>
+
+</Defs>

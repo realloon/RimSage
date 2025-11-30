@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>CommsConsoleBossgroupSummoned</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/CommsConsole/CommsConsoleBossgroupSummoned</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>   
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BurnoutMechlinkBoosterUsed</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/BurnoutMechlinkBooster/Burnout_Mechlink_Booster_Signal_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>   
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechbandDishUsed</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/BurnoutMechlinkDish/Burnout_Mechlink_Dish_Signal_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechChargerWasteProduced</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/Mechanoid/MechCharger/Mech_Charger_Waste_Produced_05a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>16</volumeRange>   
+        <pitchRange>0.9~1.1</pitchRange> 
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechChargerWasteRemoved</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/Mechanoid/MechCharger/Mech_Charger_Waste_Removed_03a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>18</volumeRange>   
+        <pitchRange>0.9~1.1</pitchRange>   
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PollutionPumped</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/PollutionPump/Pollution_Pump_Extract_02d</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>   
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PollutionExtractedPoluxTree</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/Plants/PoluxTree/Extract</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>   
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ReimplantXenogerm_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/Reimplant_Xenogerm</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Coagulate_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/Coagulate_Cast</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Resurrect_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/Resurrect/Resurrect_Cast</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Resurrect_Resolve</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/Resurrect/Resurrect_Resolve</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PiercingSpine_Launch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/PiercingSpine</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PollutionSpreading</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/PollutionSpreading</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>35</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechChargerStart</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/Mechanoid/MechCharger/Start</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>FoamSpray_Warmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/FoamSpray/Foam_Spray_Warmup_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>FoamSpray_Resolve</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/FoamSpray/Foam_Spray_Resolve_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Bloodfeed_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/Bloodfeed</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>true</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DeathrestCasket_Enter</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/DeathrestCasket/Enter</clipFolderPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DeathrestCasket_Exit</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/DeathrestCasket/Exit</clipFolderPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Hemopump_Start</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/Hemopump/Hemopump_Working_Start</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Hemopump_Stop</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/Hemopump/Hemopump_Working_Stop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>GlucosoidPump_Start</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/GlucosoidPump/GlucosoidPump_Working_Start</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>GlucosoidPump_Stop</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/GlucosoidPump/GlucosoidPump_Working_Stop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HemogenAmplifier_Start</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/HemogenAmplifier/HemogenAmplifier_Working_Start</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>HemogenAmplifier_Stop</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/HemogenAmplifier/Stop</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PsychofluidPump_Start</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/PsychofluidPump/PsychofluidPump_Working_Start</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PsychofluidPump_Stop</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/PsychofluidPump/PsychofluidPump_Working_Stop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  
+  <SoundDef>
+    <defName>MechResurrect_Warmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/MechResurrect/Warmup</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <volumeRange>50</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechResurrect_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/MechResurrect/Resurrect_Mech_Cast_01a</clipPath>
+          </li>
+        </grains>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <volumeRange>60</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>WastepackDissolution</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Item/Wastepack</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>AnimalWarcall_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/AnimalWarcall/Animal_Warcall_Resolve_A01</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>AnimalWarcall_Warmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Pawn/Abilities/AnimalWarcall/Animal_Warcall_Warmup_A01</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>JumpMechPreLaunch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/LongJumpMechLauncher/PreLaunch</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>JumpMechLaunch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/LongJumpMechLauncher/Launch</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>JumpMechLand</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Abilities/LongJumpMechLauncher/Land</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

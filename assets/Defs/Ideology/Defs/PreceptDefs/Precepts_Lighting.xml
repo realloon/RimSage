@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issues -->
+  <IssueDef>
+    <defName>Lighting</defName>
+    <label>lighting</label>
+    <iconPath>UI/Issues/Lighting</iconPath>
+  </IssueDef>
+
+  <IssueDef>
+    <defName>DarknessCombat</defName>
+    <label>combat in darkness</label>
+    <iconPath>UI/Issues/DarknessCombat</iconPath>
+  </IssueDef>
+
+  <IssueDef>
+    <defName>Eclipse</defName>
+    <label>eclipse</label>
+    <iconPath>UI/Issues/Eclipse</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+  <PreceptDef>
+    <defName>Darklight_Preferred</defName>
+    <issue>Lighting</issue>
+    <label>darklight preferred</label>
+    <description>Normal lights are too bright. Darklights are better.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <associatedMemes>
+      <li>Darkness</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>Blindsight</li>
+    </conflictingMemes>
+    <prefersDarkness>true</prefersDarkness>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Darklight_Preferred_BlindingLight</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Darklight_Preferred_IndoorLight</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Darklight_Preferred_Darklight</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>DarknessCombat_Preferred</defName>
+    <issue>DarknessCombat</issue>
+    <label>Preferred</label>
+    <description>We fight better in the dark.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>Darkness</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>Blindsight</li>
+    </conflictingMemes>
+    <statOffsets>
+      <ShootingAccuracyOutdoorsDarkOffset>0.25</ShootingAccuracyOutdoorsDarkOffset>
+      <ShootingAccuracyOutdoorsLitOffset>-0.2</ShootingAccuracyOutdoorsLitOffset>
+      <ShootingAccuracyIndoorsDarkOffset>0.25</ShootingAccuracyIndoorsDarkOffset>
+      <ShootingAccuracyIndoorsLitOffset>-0.2</ShootingAccuracyIndoorsLitOffset>
+      <MeleeHitChanceOutdoorsDarkOffset>0.1</MeleeHitChanceOutdoorsDarkOffset>
+      <MeleeHitChanceOutdoorsLitOffset>-0.1</MeleeHitChanceOutdoorsLitOffset>
+      <MeleeHitChanceIndoorsDarkOffset>0.1</MeleeHitChanceIndoorsDarkOffset>
+      <MeleeHitChanceIndoorsLitOffset>-0.1</MeleeHitChanceIndoorsLitOffset>
+      <MeleeDodgeChanceOutdoorsDarkOffset>0.1</MeleeDodgeChanceOutdoorsDarkOffset>
+      <MeleeDodgeChanceOutdoorsLitOffset>-0.1</MeleeDodgeChanceOutdoorsLitOffset>
+      <MeleeDodgeChanceIndoorsDarkOffset>0.1</MeleeDodgeChanceIndoorsDarkOffset>
+      <MeleeDodgeChanceIndoorsLitOffset>-0.1</MeleeDodgeChanceIndoorsLitOffset>
+    </statOffsets>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Eclipse_Beautiful</defName>
+    <issue>Eclipse</issue>
+    <label>Beautiful</label>
+    <description>Eclipses are a beautiful respite from the blinding sunlight.</description>
+    <impact>Low</impact>
+    <requiredMemes>
+      <li>Darkness</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>Darkness</li>
+    </associatedMemes>
+    <conflictingMemes>
+      <li>Blindsight</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Eclipse_Beautiful</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+  <ThoughtDef>
+    <defName>Darklight_Preferred_BlindingLight</defName>
+    <workerClass>ThoughtWorker_Precept_OutdoorBlindingLight</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>blinding light</label>
+        <description>I cannot stand this terrible light. My senses are overwhelmed!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Darklight_Preferred_IndoorLight</defName>
+    <workerClass>ThoughtWorker_Precept_IndoorLight</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>indoor light</label>
+        <description>This indoor light is too bright. I would prefer something dimmer.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Darklight_Preferred_Darklight</defName>
+    <workerClass>ThoughtWorker_Precept_Darklight</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <stages>
+      <li>
+        <label>darklight</label>
+        <description>This dim light is perfect. I feel focused and energized.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Eclipse_Beautiful</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_Eclipse</workerClass>
+    <stages>
+      <li>
+        <label>beautiful eclipse</label>
+        <description>I have a moment's respite from the blinding sunlight.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

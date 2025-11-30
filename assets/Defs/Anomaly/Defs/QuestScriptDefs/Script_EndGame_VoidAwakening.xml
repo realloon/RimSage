@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <QuestScriptDef>
+    <defName>EndGame_VoidMonolith</defName>
+    <isRootSpecial>true</isRootSpecial>
+    <autoAccept>true</autoAccept>
+    <defaultChallengeRating>4</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Anomaly monolith</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-></li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Root_VoidMonolith" />
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>EndGame_VoidAwakening</defName>
+    <autoAccept>true</autoAccept>
+    <defaultHidden>true</defaultHidden>
+    <isRootSpecial>true</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->void awakening</li> <!-- hidden -->
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-></li> <!-- hidden -->
+      </rulesStrings>
+    </questDescriptionRules>
+    <questContentRules>
+      <rulesStrings>
+        <li>darknessStartedLetterLabel->Unnatural darkness</li>
+        <li>darknessStartedLetterText->An unnatural darkness has descended. Inhuman things move just outside the light. Keep colonists in well-lit areas.</li>
+
+        <li>structuresArrivingAlertLabel->Void structures arriving</li>
+        <li>structuresArrivingAlertExplanation->The boundary between our world and the void is breaking down. Soon, void structures will manifest nearby. To fully awaken the void monolith, you must activate them.\n\nPrepare for their arrival.</li>
+
+        <li>voidStructuresLetterLabel->Void structures</li>
+        <li>voidStructuresLetterText->Several twisted structures are appearing, seemingly from nowhere. They pulse with a dark psychic energy which wilts nearby plant life.\n\nActivate the structures to progress further.</li>
+
+        <li>gleamingMonolithWarningLetterLabel->Twisting intensifies</li>
+        <li>gleamingMonolithWarningLetterText->The monolith's shape has begun to distort and shift with growing intensity. Something is about to happen...</li>
+
+        <li>gleamingMonolithLetterLabel->Void monolith</li>
+        <li>gleamingMonolithLetterText->The monolith has fully awakened. A swirling dark vortex sits atop its peak, forming a conduit to the void.\n\nGo to the monolith and use it to pass through to the other side. Doing so will end the unnatural darkness and end the horror assault.</li>
+
+        <li>monolithTwistingAlertLabel->Monolith twisting</li>
+        <li>monolithTwistingAlertExplanation->The monolith is twisting without moving, bending itself and the minds of those who look at it. Something is happening - get ready.</li>
+      </rulesStrings>
+    </questContentRules>
+    <root Class="QuestNode_Root_VoidAwakening" />
+  </QuestScriptDef>
+</Defs>

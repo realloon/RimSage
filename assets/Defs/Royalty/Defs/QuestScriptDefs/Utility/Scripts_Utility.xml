@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>Util_DecideRandomAsker</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_IsSet">
+          <name>askerIsNullChance</name>
+          <elseNode Class="QuestNode_Set">
+            <name>askerIsNullChance</name>
+            <value>0.15</value>
+          </elseNode>
+        </li>
+        <li Class="QuestNode_RandomNode">
+          <nodes>
+            <li Class="QuestNode_Set">   <!-- null asker -->
+              <selectionWeight>$askerIsNullChance</selectionWeight>
+              <name>askerIsNull</name>
+              <value>true</value>
+            </li>
+            <li Class="QuestNode_GetPawn">   <!-- any faction leader -->
+              <selectionWeight>0.25</selectionWeight>
+              <storeAs>asker</storeAs>
+              <mustBeFactionLeader>true</mustBeFactionLeader>
+              <mustBeNonHostileToPlayer>$askerMustBeNonHostileToPlayer</mustBeNonHostileToPlayer>
+              <ifWorldPawnThenMustBeFreeOrLeader>$ifWorldPawnThenMustBeFreeOrLeader</ifWorldPawnThenMustBeFreeOrLeader>
+              <excludeFactionDefs>$excludeFactionDefs</excludeFactionDefs>
+              <hostileWeight>0.15</hostileWeight>
+            </li>
+            <li Class="QuestNode_Sequence">
+              <selectionWeight>0.6</selectionWeight>
+              <nodes>
+                <li Class="QuestNode_IsSet">
+                  <name>askerSeniorityRange</name>
+                  <elseNode Class="QuestNode_Set">    <!-- any royal title holder, not too senior -->
+                    <name>askerSeniorityRange</name>
+                    <value>100~850</value>
+                  </elseNode>
+                </li>
+                <li Class="QuestNode_GetPawn">
+                  <storeAs>asker</storeAs>
+                  <mustHaveRoyalTitleInCurrentFaction>true</mustHaveRoyalTitleInCurrentFaction>
+                  <mustBeNonHostileToPlayer>$askerMustBeNonHostileToPlayer</mustBeNonHostileToPlayer>
+                  <ifWorldPawnThenMustBeFree>$ifWorldPawnThenMustBeFree</ifWorldPawnThenMustBeFree>
+                  <canGeneratePawn>true</canGeneratePawn>
+                  <seniorityRange>$askerSeniorityRange</seniorityRange>
+                  <requireResearchedBedroomFurnitureIfRoyal>$royalAskerNeedsResearchedFurniture</requireResearchedBedroomFurnitureIfRoyal>
+                  <excludeFactionDefs>$excludeFactionDefs</excludeFactionDefs>
+                  <mustHaveSettlementOnLayer>$mustHaveSettlementOnLayer</mustHaveSettlementOnLayer>
+                  <hostileWeight>0.15</hostileWeight>
+                </li>
+              </nodes>
+            </li>
+          </nodes>
+        </li>
+      </nodes>
+    </root>
+    
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>Util_Constants_Monuments</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_Set">
+          <name>keepMonumentTicks</name>
+          <value>$(15*60000)</value>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>goodwillChangeIfMonumentDestroyed</name>
+          <value>-10</value>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/TraitDef[defName="Kind"]/degreeDatas/li[1]/description</xpath>
+    <value>
+      <description>{PAWN_nameDef} is an exceptionally agreeable and giving person. {PAWN_pronoun} rarely insults others and will sometimes offer kind words to brighten the moods of those around {PAWN_objective}. {PAWN_pronoun} also never judges people by their appearance. {PAWN_possessive} agreeableness also makes {PAWN_objective} more likely to conform to prevailing opinions.</description>
+    </value>
+  </Operation>
+
+</Patch>

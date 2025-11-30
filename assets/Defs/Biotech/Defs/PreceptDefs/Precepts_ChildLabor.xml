@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>ChildLabor</defName>
+    <label>child labor</label>
+    <iconPath>UI/Issues/ChildLabor</iconPath>
+  </IssueDef>
+
+  <PreceptDef>
+    <defName>ChildLabor_Encouraged</defName>
+    <issue>ChildLabor</issue>
+    <label>encouraged</label>
+    <description>Children build character through work. It's important for everyone to contribute.</description>
+    <impact>Medium</impact>
+    <associatedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
+    </associatedMemes>
+    <conditionalStatAffecters>
+      <li Class="ConditionalStatAffecter_Child">
+        <statOffsets>
+          <WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </conditionalStatAffecters>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ChildLabor_Encouraged_ChildAssignedRecreation</thought>
+        <description>Children assigned recreation</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>ChildLabor_Disapproved</defName>
+    <issue>ChildLabor</issue>
+    <label>disapproved</label>
+    <description>Childhood is sacred. We should let kids be kids.</description>
+    <impact>Low</impact>
+    <associatedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Individualist</li>
+    </associatedMemes>
+    <statOffsets>
+      <LearningRateFactor>0.2</LearningRateFactor>
+    </statOffsets>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>ChildLabor_Encouraged_ChildAssignedWork</thought>
+        <description>Children assigned work</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>ChildLabor_Encouraged_ChildAssignedRecreation</defName>
+    <workerClass>ThoughtWorker_Precept_ChildLabor_ChildAssignedRecreation</workerClass>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>children assigned recreation</label>
+        <description>Why are we letting children waste their youth on games?</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ChildLabor_Encouraged_ChildAssignedWork</defName>
+    <workerClass>ThoughtWorker_Precept_ChildLabor_ChildAssignedWork</workerClass>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>children assigned work</label>
+        <description>It's upsetting to see children forced to work. They only get one childhood.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

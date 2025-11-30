@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- Audiovisuals -->
+  <!-- EN: Audiovisuals -->
+  <Audiovisuals>图像/声音</Audiovisuals>
+  <!-- EN: Master volume -->
+  <MasterVolume>主音量</MasterVolume>
+  <!-- EN: Game volume -->
+  <GameVolume>游戏音量</GameVolume>
+  <!-- EN: Music volume -->
+  <MusicVolume>音乐音量</MusicVolume>
+  <!-- EN: Ambience volume -->
+  <AmbientVolume>环境音量</AmbientVolume>
+  <!-- EN: UI volume -->
+  <UIVolume>界面音量</UIVolume>
+  <!-- EN: Affects all sounds. -->
+  <MasterVolumeTooltip>影响全部声音。</MasterVolumeTooltip>
+  <!-- EN: Affects all in world sounds, e.g. chopping trees, building walls. -->
+  <GameVolumeTooltip>影响所有在世界上的声音，例如伐木、砌墙等。</GameVolumeTooltip>
+  <!-- EN: Affects music. -->
+  <MusicVolumeTooltip>影响音乐。</MusicVolumeTooltip>
+  <!-- EN: Affects all ambient sounds, e.g. wind, insects. -->
+  <AmbientVolumeTooltip>影响所有环境音效，例如风、动物嚎叫等。</AmbientVolumeTooltip>
+  <!-- EN: Affects all interface sounds, e.g. button clicks, messages. -->
+  <UIVolumeTooltip>影响全部界面声音，例如拨动按钮、信件等。</UIVolumeTooltip>
+  <!-- EN: Anti-aliasing -->
+  <Antialiasing>抗锯齿</Antialiasing>
+
+  <!-- Gameplay -->
+  <!-- EN: Remember draw styles -->
+  <RememberDrawStyle>记住绘制形状</RememberDrawStyle>
+  <!-- EN: When enabled, draw styles won't reset to the default draw style when placing new buildings or zones. -->
+  <RememberDrawStyle_Tooltip>如果启用此项，则当放置新的区域、计划标记或墙体、地板等建筑时，其绘制形状不会被重置为默认的绘制形状。</RememberDrawStyle_Tooltip>
+  <!-- EN: Zoom switches world map layers -->
+  <ZoomSwitchLayer>世界地图层缩放切换</ZoomSwitchLayer>
+  <!-- EN: When enabled, zooming out on the world map will switch to an orbital view. Zooming in will show the planet again. -->
+  <ZoomSwitchLayer_Tooltip>如果启用此项，则缩小世界地图会切换至轨道视图。放大则将会重新展示星球。</ZoomSwitchLayer_Tooltip>
+  <!-- EN: Screen-edge mouse scroll -->
+  <EdgeScreenScroll>屏幕边缘滚动</EdgeScreenScroll>
+  <!-- EN: Zoom to mouse -->
+  <ZoomToMouse>鼠标缩放</ZoomToMouse>
+  <!-- EN: Pause on load -->
+  <PauseOnLoad>载入游戏后暂停游戏</PauseOnLoad>
+  <!-- EN: Pause on urgent letter -->
+  <PauseOnUrgentLetter>紧急提示时暂停游戏</PauseOnUrgentLetter>
+  <!-- EN: Pause on letter -->
+  <AutomaticPauseModeSetting>暂停</AutomaticPauseModeSetting>
+  <!-- EN: Disable game-specific cursor -->
+  <CustomCursor>禁用游戏鼠标指针</CustomCursor>
+  <!-- EN: Hide hats on UI -->
+  <HatsShownOnlyOnMap>在UI隐藏帽子</HatsShownOnlyOnMap>
+  <!-- EN: UI scale -->
+  <UIScale>界面缩放</UIScale>
+  <!-- EN: Keyboard configuration -->
+  <KeyboardConfig>按键设置</KeyboardConfig>
+  <!-- EN: Controller configuration -->
+  <ControllerConfig>控制设置</ControllerConfig>
+  <!-- EN: Modify -->
+  <ModifyConfig>修改</ModifyConfig>
+  <!-- EN: Choose language -->
+  <ChooseLanguage>选择语言</ChooseLanguage>
+  <!-- EN: Reset learning helper -->
+  <ResetAdaptiveTutor>重置教程助手</ResetAdaptiveTutor>
+  <!-- EN: Tutor is reset. You will be now be re-taught all lessons from scratch. -->
+  <AdaptiveTutorIsReset>教程助手已重置。现在教程助手将会从头教你如何游戏。</AdaptiveTutorIsReset>
+  <!-- EN: Keyboard mode -->
+  <SteamDeckKeyboardMode>键盘模式</SteamDeckKeyboardMode>
+  <!-- EN: Run in background -->
+  <RunInBackground>后台运行模式</RunInBackground>
+  <!-- EN: Development mode -->
+  <DevelopmentMode>开发者模式</DevelopmentMode>
+  <!-- EN: Auto-reset mods config on crash -->
+  <ResetModsConfigOnCrash>崩溃后重置Mod配置</ResetModsConfigOnCrash>
+  <!-- EN: Quick start has no cryptosleep sickness -->
+  <DisableQuickStartCryptoSickness>快速测试没有低温休眠症</DisableQuickStartCryptoSickness>
+  <!-- EN: Start game with dev palette on -->
+  <StartDevPaletteOn>开始游戏时启用开发者调色盘</StartDevPaletteOn>
+  <!-- EN: Open log on warnings -->
+  <OpenLogOnWarnings>打开警告日志</OpenLogOnWarnings>
+  <!-- EN: Close log by pressing cancel -->
+  <CloseLogWindowOnEscape>按取消键关闭日志</CloseLogWindowOnEscape>
+  <!-- EN: Verbose logging -->
+  <LogVerbose>详细日志</LogVerbose>
+  <!-- EN: Save data folder -->
+  <SaveGameDataFolder>存档目录</SaveGameDataFolder>
+  <!-- EN: Save data location -->
+  <SaveGameDataLocation>存档位置</SaveGameDataLocation>
+  <!-- EN: Log file folder -->
+  <LogFileFolder>日志文件目录</LogFileFolder>
+  <!-- EN: Log file location -->
+  <LogFileLocation>日志文件位置</LogFileLocation>
+  <!-- EN: Open -->
+  <OpenFolder>打开</OpenFolder>
+  <!-- EN: Show -->
+  <ShowFolder>显示</ShowFolder>
+  <!-- EN: Preferred "Name in Game" characters -->
+  <NamesYouWantToSee>喜好角色</NamesYouWantToSee>
+  <!-- EN: These characters will be more likely to appear randomly during play. -->
+  <NamesYouWantToSeeSubText>这些角色将更可能随机地出现在游戏中。</NamesYouWantToSeeSubText>
+  <!-- EN: Add name -->
+  <AddName>添加名称</AddName>
+  <!-- EN: Type the first name, nickname, or last name. -->
+  <TypeFirstNickOrLastName>输入姓氏，名字或昵称。</TypeFirstNickOrLastName>
+  <!-- EN: This name is already on the preferred list. -->
+  <MessageAlreadyPreferredName>这个名字已经在你的偏好列表中了。</MessageAlreadyPreferredName>
+  <!-- EN: Storyteller settings -->
+  <ChangeStoryteller>选择故事叙述者</ChangeStoryteller>
+  <!-- EN: Autosave interval -->
+  <AutosaveInterval>自动保存间隔</AutosaveInterval>
+  <!-- EN: The number of in game days between each auto save. -->
+  <AutosaveIntervalTooltip>两次保存的间隔，使用游戏内的天数计算。</AutosaveIntervalTooltip>
+  <!-- EN: Temperature unit -->
+  <TemperatureMode>温度单位</TemperatureMode>
+  <!-- EN: Show realtime clock -->
+  <ShowRealtimeClock>显示现实时钟</ShowRealtimeClock>
+  <!-- EN: Use 12 hour clock -->
+  <TwelveHourClockMode>使用12小时制</TwelveHourClockMode>
+  <!-- EN: Disable tiny font -->
+  <DisableTinyText>禁用小号字体</DisableTinyText>
+  <!-- EN: Maximum number of colonies: {0} -->
+  <MaxNumberOfPlayerSettlements>最大殖民地数量：{0}</MaxNumberOfPlayerSettlements>
+  <!-- EN: Autosaves count: {0} -->
+  <AutosavesCount>自动保存计数:{0}</AutosavesCount>
+  <!-- EN: Map mouse drag sensitivity -->
+  <MapDragSensitivity>鼠标拖动地图灵敏度</MapDragSensitivity>
+  <!-- EN: Plant wind sway -->
+  <PlantWindSway>植物随风飘动</PlantWindSway>
+  <!-- EN: Enable test map sizes -->
+  <EnableTestMapSizes>启用测试地图尺寸</EnableTestMapSizes>
+  <!-- EN: Maximum autosave interval in permadeath mode is {0} day. -->
+  <MaxPermadeathAutosaveIntervalInfo>永久死亡模式下自动存档的最大间隔为{0}天。</MaxPermadeathAutosaveIntervalInfo>
+  <!-- EN: Mod Settings -->
+  <ModSettings>Mod 设置</ModSettings>
+  <!-- EN: Permanently disable development mode -->
+  <PermanentlyDisableDevMode>永久禁用开发者模式</PermanentlyDisableDevMode>
+  <!-- EN: Texture compression -->
+  <TextureCompression>压缩画质</TextureCompression>
+  <!-- EN: Turning off texture compression will use much more video memory, but makes textures look slightly better in detailed areas. Only turn this off if you know you have lots of extra video memory.\n\nNote that using certain mods will often consume much more video memory, so you may need to turn this on if you add certain mods. -->
+  <TextureCompression_Tooltip>开启此选项能够对图形进行压缩，这样可以节省内存，并且使游戏运行更加流畅。\n\n关闭此选项可以显示更多的图形细节，但是会消耗更多的内存。关闭此选项最好有足够的内存。\n\n注意：有些mod会占用相当大的内存，如果你添加了这些mod，可能会需要开启此选项。</TextureCompression_Tooltip>
+  <!-- EN: Smooth camera jumps -->
+  <SmoothCameraJumps>镜头平滑移动</SmoothCameraJumps>
+  <!-- EN: When enabled, the camera will quickly pan when focusing on a new location. When disabled, the camera will jump instantly. -->
+  <SmoothCameraJumpsDesc>当启用时，摄像机在对准一个新的位置时将迅速平移。当禁用时，摄像机将立即跳转。</SmoothCameraJumpsDesc>
+
+  <!-- Resolution -->
+  <!-- EN: Resolution -->
+  <Resolution>分辨率</Resolution>
+  <!-- EN: Fullscreen -->
+  <Fullscreen>全屏显示</Fullscreen>
+  <!-- EN: Borderless fullscreen -->
+  <BorderlessFullscreen>无边界全屏</BorderlessFullscreen>
+  <!-- EN: To run RimWorld in borderless fullscreen mode:\n\n1) Open Steam\n2) Go to the "Library" tab at the top\n3) Find RimWorld on the list and right-click it\n4) Choose "Properties..."\n5) Add "-popupwindow" without quotes to "Launch options" in the "General" tab\n6) Restart game\n7) If done correctly, you won't see this window\n\nHint: Use Windows Key + Shift + Left/Right to move the window between your monitors. -->
+  <BorderlessFullscreenInstructions>要在无边界全屏模式下运行RimWorld。\n\n1.打开Steam\n\n2.进入顶部的“库”标签\n\n3.在列表中找到RimWorld并鼠标右键单击它，选择“属性”\n\n4.在“通用”选项卡的“启动选项”中添加“-popupwindow”（不带引号）。\n\n5.重新启动游戏\n\n6.如果操作正确，你将不会看到此窗口\n\n提示：使用Windows键+Shift+左/右键在你的显示器之间移动窗口。</BorderlessFullscreenInstructions>
+
+  <!-- Mods -->
+  <!-- EN: Select mod... -->
+  <SelectMod>选择 Mod</SelectMod>
+  <!-- EN: No configurable mods loaded. -->
+  <NoConfigurableMods>已载入的 Mod 中无可设置的内容。</NoConfigurableMods>
+  
+  <!-- Options reset -->
+  <!-- EN: Restore all settings to default -->
+  <RestoreToDefaultSettingsLabel>重置所有选项为默认值</RestoreToDefaultSettingsLabel>
+  <!-- EN: Restore defaults -->
+  <RestoreToDefaultSettings>还原默认设置</RestoreToDefaultSettings>
+  <!-- EN: All settings have been reset. The game will now restart automatically. -->
+  <ResetAndRestart>所有选项已重置。游戏将会立刻自动重启。</ResetAndRestart>
+  <!-- EN: All settings will be reset to the default and the game will be restarted. Unsaved progress will be lost,\n\nContinue? -->
+  <ResetAndRestartConfirmationDialog>你的所有设置都将重置为默认设置，并且游戏将重新启动。所有未保存的进度将丢失！\n\n是否继续？</ResetAndRestartConfirmationDialog>
+  <!-- EN: Changing texture compression settings requires a restart. Unsaved progress will be lost.\n\nContinue? -->
+  <ChangedTextureCompressionRestart>改变「压缩画质」选项需要重启游戏，所有未保存的进度都会丢失！\n\n是否继续？</ChangedTextureCompressionRestart>
+  
+  <!-- Background image -->
+  <!-- EN: Menu background -->
+  <SetBackgroundImage>主菜单背景</SetBackgroundImage>
+
+</LanguageData>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <AnomalyPlaystyleDef>
+    <defName>Standard</defName>
+    <label>standard with monolith</label>
+    <description>The standard Anomaly experience. Anomaly threats are linked to the activation of the void monolith.</description>
+  </AnomalyPlaystyleDef>
+  
+  <AnomalyPlaystyleDef>
+    <defName>AmbientHorror</defName>
+    <label>ambient horror</label>
+    <description>The monolith does not appear. Any Anomaly threat can occur, but Anomaly threats will be rare by default. Good if you want to interact with Anomaly expansion content without it being the focus. Note: The monolith endgame cannot occur in this mode.</description>
+    <displayThreatFractionSliders>false</displayThreatFractionSliders>
+    <overrideThreatFraction>true</overrideThreatFraction>
+    <generateMonolith>false</generateMonolith>
+    <alwaysShowCodex>true</alwaysShowCodex>
+  </AnomalyPlaystyleDef>
+  
+  <AnomalyPlaystyleDef>
+    <defName>Disabled</defName>
+    <label>anomaly incidents disabled</label>
+    <description>Anomaly threats do not occur. Good if you don't want to interact with most Anomaly expansion content.</description>
+    <displayThreatFractionSliders>false</displayThreatFractionSliders>
+    <displayStudyFactorSlider>false</displayStudyFactorSlider>
+    <generateMonolith>false</generateMonolith>
+    <enableAnomalyContent>false</enableAnomalyContent>
+  </AnomalyPlaystyleDef>
+  
+</Defs>

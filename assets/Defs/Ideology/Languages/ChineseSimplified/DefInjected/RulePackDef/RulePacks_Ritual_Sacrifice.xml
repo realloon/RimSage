@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>r_ritualName(p=2)->[memeAdjective] [sacrifice]</li>
+    <li>r_ritualName->[sacrifice] of [chosenTheme]</li>
+    <li>r_ritualName->[chosenAdjective] [sacrifice]</li>
+    <li>r_ritualName->[keyDeity]'s [sacrifice]</li>
+    <li>r_ritualName->[sacrifice] of [keyDeity]</li>
+    <li>r_ritualName->[sacrifice] of [memeConcept]</li>
+    <li>r_ritualName->[sacrifice] of [chosenIdeoName]</li>
+    <li>sacrifice->sacrifice</li>
+    <li>sacrifice->offering</li>
+    <li>sacrifice->immolation</li>
+    <li>sacrifice->oblation</li>
+    <li>sacrifice->slaughtering</li>
+  -->
+  <NamerRitualSacrifice.rulePack.rulesStrings>
+    <li>r_ritualName(p=2)->[memeAdjective][sacrifice]</li>
+    <li>r_ritualName->[chosenTheme][sacrifice]</li>
+    <li>r_ritualName->[chosenAdjective][sacrifice]</li>
+    <li>r_ritualName->[keyDeity][sacrifice]</li>
+    <li>r_ritualName->[keyDeity]的[sacrifice]</li>
+    <li>r_ritualName->[memeConcept]之[sacrifice]</li>
+    <li>r_ritualName->[chosenIdeoName][sacrifice]</li>
+    <li>sacrifice->祭品</li>
+    <li>sacrifice->供品</li>
+    <li>sacrifice->献祭</li>
+    <li>sacrifice->供奉</li>
+    <li>sacrifice->屠宰</li>
+  </NamerRitualSacrifice.rulePack.rulesStrings>
+  
+</LanguageData>

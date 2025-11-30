@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <PrisonerInteractionModeDef>
+    <defName>MaintainOnly</defName>
+    <label>maintain only</label>
+    <listOrder>0</listOrder>
+    <description>Just feed the prisoner and provide for their basic needs, without attempting any other interaction.</description>
+  </PrisonerInteractionModeDef>
+
+  <PrisonerInteractionModeDef>
+    <defName>AttemptRecruit</defName>
+    <label>recruit</label>
+    <listOrder>10</listOrder>
+    <allowOnWildMan>False</allowOnWildMan>
+    <description>Wardens will attempt to recruit the prisoner. If the prisoner still has resistance, wardens will speak to them to reduce it.</description>
+    <hideIfNotRecruitable>true</hideIfNotRecruitable>
+  </PrisonerInteractionModeDef>
+
+  <PrisonerInteractionModeDef>
+    <defName>ReduceResistance</defName>
+    <label>reduce resistance only</label>
+    <isChildInteraction>true</isChildInteraction>
+    <listOrder>11</listOrder>
+    <allowOnWildMan>False</allowOnWildMan>
+    <description>If the prisoner still has resistance, wardens will speak to them to reduce it. No recruit attempts will be made.</description>
+    <hideIfNotRecruitable>true</hideIfNotRecruitable>
+  </PrisonerInteractionModeDef>
+
+  <PrisonerInteractionModeDef>
+    <defName>Release</defName>
+    <label>release</label>
+    <listOrder>35</listOrder>
+    <description>A warden will release the prisoner.</description>
+  </PrisonerInteractionModeDef>
+
+  <PrisonerInteractionModeDef>
+    <defName>Execution</defName>
+    <label>execute</label>
+    <listOrder>40</listOrder>
+    <description>A warden will execute the prisoner on the spot by cutting. This can affect the mood of other prisoners and colonists.</description>
+    <mustBeAwake>false</mustBeAwake>
+  </PrisonerInteractionModeDef>
+
+</Defs>

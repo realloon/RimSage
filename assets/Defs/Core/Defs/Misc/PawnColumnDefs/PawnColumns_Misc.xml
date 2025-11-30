@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnColumnDef Name="Label">
+    <defName>Label</defName>
+    <label>name</label>
+    <workerClass>PawnColumnWorker_Label</workerClass>
+    <widthPriority>100</widthPriority>
+    <headerTip>Name</headerTip>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef Name="LabelWithIcon" ParentName="Label">
+    <defName>LabelWithIcon</defName>
+    <showIcon>true</showIcon>
+  </PawnColumnDef>
+
+  <PawnColumnDef ParentName="LabelWithIcon">
+    <defName>LabelShortWithIcon</defName>
+    <useLabelShort>true</useLabelShort>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>Age</defName>
+    <label>age</label>
+    <workerClass>PawnColumnWorker_Age</workerClass>
+    <sortable>true</sortable>
+    <width>30</width>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>Master</defName>
+    <label>master</label>
+    <workerClass>PawnColumnWorker_Master</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>MedicalCare</defName>
+    <headerIcon>UI/Icons/ThingCategories/Medicine</headerIcon>
+    <workerClass>PawnColumnWorker_MedicalCare</workerClass>
+    <headerTip>Medical care</headerTip>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef Name="AllowedArea">
+    <defName>AllowedArea</defName>
+    <label>allowed area</label>
+    <workerClass>PawnColumnWorker_AllowedArea</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>AllowedAreaWide</defName>
+    <label>allowed area</label>
+    <workerClass>PawnColumnWorker_AllowedAreaWide</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>HostilityResponse</defName>
+    <headerIcon>UI/Icons/PawnHostility</headerIcon>
+    <workerClass>PawnColumnWorker_HostilityResponse</workerClass>
+    <headerTip>Hostility response</headerTip>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>Outfit</defName>
+    <label>apparel policy</label>
+    <workerClass>PawnColumnWorker_Outfit</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>DrugPolicy</defName>
+    <label>drug policy</label>
+    <workerClass>PawnColumnWorker_DrugPolicy</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>FoodRestriction</defName>
+    <label>food policy</label>
+    <workerClass>PawnColumnWorker_FoodRestriction</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>Reading</defName>
+    <label>reading policy</label>
+    <workerClass>PawnColumnWorker_Reading</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>Timetable</defName>
+    <workerClass>PawnColumnWorker_Timetable</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>Carry</defName>
+    <label>carry</label>
+    <workerClass>PawnColumnWorker_Carry</workerClass>
+    <sortable>true</sortable>
+  </PawnColumnDef>
+
+</Defs>

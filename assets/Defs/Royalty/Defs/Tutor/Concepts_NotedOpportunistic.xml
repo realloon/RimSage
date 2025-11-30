@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>MeditationSchedule</defName>
+    <label>Meditation schedule</label>
+    <helpText>You can assign your colonists to meditate on a specific schedule.\n\nOpen the SCHEDULE tab, select the 'Meditate' assignment and click-drag the times when you want someone to meditate.</helpText>
+    <highlightTags>
+      <li>MainTab-Schedule-Closed</li>
+      <li>TimeAssignmentButton-Meditate-NotSelected</li>
+      <li>TimeAssignmentTableRow-IfMeditateSelected</li>
+    </highlightTags>
+  </ConceptDef>
+
+  <ConceptDef ParentName="NotedOpportunisticBase">
+    <defName>MeditationDesiredPsyfocus</defName>
+    <label>Meditation desired psyfocus</label>
+    <helpText>You can set a desired psyfocus level for each colonist. To do this, select a colonist with psylink, and click on their psyfocus bar.\n\nIf a colonist's psyfocus is below their desired level, they will meditate automatically during the "Anything" time assignment.</helpText>
+    <highlightTags>
+      <li>PsyfocusBar</li>
+    </highlightTags>
+  </ConceptDef>
+  
+</Defs>

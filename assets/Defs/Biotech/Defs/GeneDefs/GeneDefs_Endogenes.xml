@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Body type -->
+
+  <GeneDef Name="GeneBodyBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>BodyType</endogeneCategory>
+    <displayCategory>Cosmetic_Body</displayCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>BodyType</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBodyBase">
+    <defName>Body_Fat</defName>
+    <label>fat body</label>
+    <description>Carriers can have fat bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.</description>
+    <iconPath>UI/Icons/Genes/Gene_BodyFat</iconPath>
+    <bodyType>Fat</bodyType>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>fat</symbol></li>
+        <li><symbol>blub</symbol></li>
+        <li><symbol>heavy</symbol></li>
+        <li><symbol>stomp</symbol></li>
+        <li><symbol>flub</symbol></li>
+        <li><symbol>grease</symbol></li>
+        <li><symbol>bulk</symbol></li>
+        <li><symbol>flab</symbol></li>
+        <li><symbol>lard</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>lard</symbol></li>
+        <li><symbol>blub</symbol></li>
+        <li><symbol>stomp</symbol></li>
+        <li><symbol>ball</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBodyBase">
+    <defName>Body_Thin</defName>
+    <label>thin body</label>
+    <description>Carriers can have thin bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.</description>
+    <iconPath>UI/Icons/Genes/Gene_BodyThin</iconPath>
+    <bodyType>Thin</bodyType>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>thin</symbol></li>
+        <li><symbol>scrawn</symbol></li>
+        <li><symbol>lean</symbol></li>
+        <li><symbol>slim</symbol></li>
+        <li><symbol>pole</symbol></li>
+        <li><symbol>wan</symbol></li>
+        <li><symbol>bony</symbol></li>
+        <li><symbol>lank</symbol></li>
+        <li><symbol>reed</symbol></li>
+        <li><symbol>slink</symbol></li>
+        <li><symbol>stilt</symbol></li>
+        <li><symbol>twig</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>stick</symbol></li>
+        <li><symbol>bone</symbol></li>
+        <li><symbol>pole</symbol></li>
+        <li><symbol>lank</symbol></li>
+        <li><symbol>reed</symbol></li>
+        <li><symbol>slink</symbol></li>
+        <li><symbol>stilt</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBodyBase">
+    <defName>Body_Hulk</defName>
+    <label>hulk body</label>
+    <description>Carriers can have large bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.</description>
+    <iconPath>UI/Icons/Genes/Gene_BodyHulk</iconPath>
+    <bodyType>Hulk</bodyType>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>hulk</symbol></li>
+        <li><symbol>big</symbol></li>
+        <li><symbol>broad</symbol></li>
+        <li><symbol>hunk</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>hulk</symbol></li>
+        <li><symbol>chunk</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBodyBase">
+    <defName>Body_Standard</defName>
+    <label>standard body</label>
+    <description>Carriers can have average-shaped bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.</description>
+    <iconPath>UI/Icons/Genes/Gene_BodyStandard</iconPath>
+    <bodyType>Standard</bodyType>
+    <displayOrderInCategory>0</displayOrderInCategory>
+  </GeneDef>
+
+
+  <!-- Ears -->
+
+  <GeneDef Name="GeneEarsBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>Ears</endogeneCategory>
+    <displayCategory>Cosmetic</displayCategory>
+    <displayOrderInCategory>70</displayOrderInCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>Ears</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEarsBase">
+    <defName>Ears_Human</defName>
+    <label>human ears</label>
+    <description>Carriers of this gene have regular human ears.</description>
+    <iconPath>UI/Icons/Genes/Gene_EarHuman</iconPath>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEarsBase">
+    <defName>Ears_Pig</defName>
+    <label>pig ears</label>
+    <description>Carriers of this gene will grow pointed pig-like ears.</description>
+    <iconPath>UI/Icons/Genes/Gene_EarPig</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/PigEars/PigEars</texPath>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>70</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>pig</symbol></li>
+        <li><symbol>pork</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>pig</symbol></li>
+        <li><symbol>pork</symbol></li>
+        <li><symbol>ear</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEarsBase">
+    <defName>Ears_Floppy</defName>
+    <label>floppy ears</label>
+    <description>Carriers of this gene grow long, floppy hound-like ears.</description>
+    <iconPath>UI/Icons/Genes/Gene_EarFloppy</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/FloppyEars/FloppyEars</texPath>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>70</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>flop</symbol></li>
+        <li><symbol>flap</symbol></li>
+        <li><symbol>dog</symbol></li>
+        <li><symbol>droop</symbol></li>
+        <li><symbol>sag</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>hound</symbol></li>
+        <li><symbol>ear</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEarsBase">
+    <defName>Ears_Cat</defName>
+    <label>cat ears</label>
+    <description>Carriers of this gene have cat-like ears.</description>
+    <iconPath>UI/Icons/Genes/Gene_EarCat</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/CatEars/CatEars</texPath>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>70</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>cat</symbol></li>
+        <li><symbol>kitty</symbol></li>
+        <li><symbol>kit</symbol></li>
+        <li><symbol>tabby</symbol></li>
+        <li><symbol>tom</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>cat</symbol></li>
+        <li><symbol>kitten</symbol></li>
+        <li><symbol>tabby</symbol></li>
+        <li><symbol>tom</symbol></li>
+        <li><symbol>ear</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEarsBase">
+    <defName>Ears_Pointed</defName>
+    <label>pointed ears</label>
+    <description>Carriers of this gene have pointed ears.</description>
+    <iconPath>UI/Icons/Genes/Gene_EarPointed</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/PointedEars/PointedEars</texPath>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>70</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>point</symbol></li>
+        <li><symbol>sharp</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>ear</symbol></li>
+        <li><symbol>point</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Nose -->
+
+  <GeneDef Name="GeneNoseBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>Nose</endogeneCategory>
+    <displayCategory>Cosmetic</displayCategory>
+    <displayOrderInCategory>80</displayOrderInCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>Nose</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneNoseBase">
+    <defName>Nose_Human</defName>
+    <label>human nose</label>
+    <description>Carriers of this gene have regular human noses.</description>
+    <iconPath>UI/Icons/Genes/Gene_NoseHuman</iconPath>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneNoseBase">
+    <defName>Nose_Pig</defName>
+    <label>pig nose</label>
+    <description>Carriers of this gene have pig-like snouts.</description>
+    <iconPath>UI/Icons/Genes/Gene_NosePig</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/PigNose/PigNose</texPath>
+        <narrowCrownHorizontalOffset>0.03</narrowCrownHorizontalOffset>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <visibleFacing>
+          <li>East</li>
+          <li>South</li>
+          <li>West</li>
+        </visibleFacing>
+        <drawData>
+          <defaultData>
+            <layer>66</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <missingGeneRomanceChanceFactor>0.2</missingGeneRomanceChanceFactor>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>410</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>pig</symbol></li>
+        <li><symbol>pork</symbol></li>
+        <li><symbol>snout</symbol></li>
+        <li><symbol>boar</symbol></li>
+        <li><symbol>hog</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>pig</symbol></li>
+        <li><symbol>snout</symbol></li>
+        <li><symbol>swine</symbol></li>
+        <li><symbol>boar</symbol></li>
+        <li><symbol>hog</symbol></li>
+        <li><symbol>nose</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Jaw -->
+
+  <GeneDef Name="GeneJawBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>Jaw</endogeneCategory>
+    <displayCategory>Cosmetic</displayCategory>
+    <randomChosen>true</randomChosen>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <exclusionTags>
+      <li>Jaw</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneJawBase">
+    <defName>Jaw_Baseline</defName>
+    <label>human jaw</label>
+    <description>Carriers of this gene have regularly-shaped jaws.</description>
+    <iconPath>UI/Icons/Genes/Gene_JawBaseline</iconPath>
+    <displayOrderInCategory>90</displayOrderInCategory>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneJawBase">
+    <defName>Jaw_Heavy</defName>
+    <label>heavy jaw</label>
+    <description>Carriers of this gene have large jaws.</description>
+    <iconPath>UI/Icons/Genes/Gene_JawHeavy</iconPath>
+    <forcedHeadTypes>
+      <li>Male_HeavyJawNormal</li>
+      <li>Female_HeavyJawNormal</li>
+      <li>Furskin_Heavy1</li>
+      <li>Furskin_Heavy2</li>
+      <li>Furskin_Heavy3</li>
+    </forcedHeadTypes>
+    <displayOrderInCategory>95</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>grunt</symbol></li>
+        <li><symbol>jaw</symbol></li>
+        <li><symbol>lug</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>grunt</symbol></li>
+        <li><symbol>jaw</symbol></li>
+        <li><symbol>lug</symbol></li>
+        <li><symbol>thal</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneJawBase">
+    <defName>Head_Gaunt</defName>
+    <label>gaunt head</label>
+    <description>Carriers of this gene have a pinched, gaunt appearance in their face and head.</description>
+    <iconPath>UI/Icons/Genes/Gene_GauntHead</iconPath>
+    <forcedHeadTypes>
+      <li>Gaunt</li>
+      <li>Furskin_Gaunt</li>
+    </forcedHeadTypes>
+    <displayOrderInCategory>97</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>gaunt</symbol></li>
+        <li><symbol>skull</symbol></li>
+        <li><symbol>dead</symbol></li>
+        <li><symbol>bone</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Hands -->
+
+  <GeneDef Name="GeneHandsBase" Abstract="True">
+    <endogeneCategory>Hands</endogeneCategory>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>Hands</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHandsBase">
+    <defName>Hands_Human</defName>
+    <label>human hands</label>
+    <description>Carriers of this gene have regular human hands.</description>
+    <iconPath>UI/Icons/Genes/Gene_HandsHuman</iconPath>
+    <displayOrderInCategory>300</displayOrderInCategory>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <biostatCpx>0</biostatCpx>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHandsBase">
+    <defName>Hands_Pig</defName>
+    <label>trotter hands</label>
+    <description>Carriers of this gene have hands that partially resemble pig trotters. This reduces their ability to manipulate objects.</description>
+    <iconPath>UI/Icons/Genes/Gene_HandsTrotter</iconPath>
+    <displayOrderInCategory>310</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>1</biostatMet>
+    <capMods>
+      <li>
+        <capacity>Manipulation</capacity>
+        <postFactor>0.85</postFactor>
+      </li>
+    </capMods>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>trotter</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>trot</symbol></li>
+        <li><symbol>pig</symbol></li>
+        <li><symbol>pork</symbol></li>
+        <li><symbol>boar</symbol></li>
+        <li><symbol>hog</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>trot</symbol></li>
+        <li><symbol>pig</symbol></li>
+        <li><symbol>swine</symbol></li>
+        <li><symbol>boar</symbol></li>
+        <li><symbol>hog</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHandsBase">
+    <defName>ElongatedFingers</defName>
+    <label>elongated fingers</label>
+    <description>Long, delicate fingers improve the carrier's manipulation capacity. This aids with many tasks, especially crafting and construction.</description>
+    <iconPath>UI/Icons/Genes/Gene_ElongatedFingers</iconPath>
+    <displayOrderInCategory>320</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <capMods>
+      <li>
+        <capacity>Manipulation</capacity>
+        <postFactor>1.1</postFactor>
+      </li>
+    </capMods>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>long</symbol></li>
+        <li><symbol>elon</symbol></li>
+        <li><symbol>pencil</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>finger</symbol></li>
+        <li><symbol>dactyl</symbol></li>
+        <li><symbol>digit</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Headbone -->
+
+  <GeneDef Name="GeneHeadboneBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>Headbone</endogeneCategory>
+    <displayCategory>Cosmetic</displayCategory>
+    <displayOrderInCategory>110</displayOrderInCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>Headbone</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHeadboneBase">
+    <defName>Headbone_Human</defName>
+    <label>human headbone</label>
+    <description>Carriers of this gene have regular human skulls.</description>
+    <iconPath>UI/Icons/Genes/Gene_HeadboneHuman</iconPath>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHeadboneBase">
+    <defName>Headbone_MiniHorns</defName>
+    <label>mini-horns</label>
+    <description>Carriers of this gene grow two small horns protruding from the forehead.</description>
+    <iconPath>UI/Icons/Genes/Gene_HeadboneMinihorns</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/MiniHorns/MiniHorns</texPath>
+        <color>(255, 255, 255)</color>
+        <parentTagDef>Head</parentTagDef>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <layer>10</layer>
+          </dataNorth>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>horn</symbol></li>
+        <li><symbol>knob</symbol></li>
+        <li><symbol>spike</symbol></li>
+        <li><symbol>devil</symbol></li>
+        <li><symbol>demon</symbol></li>
+        <li><symbol>luci</symbol></li>
+        <li><symbol>beelze</symbol></li>
+        <li><symbol>hell</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>horn</symbol></li>
+        <li><symbol>spike</symbol></li>
+        <li><symbol>vil</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHeadboneBase">
+    <defName>Headbone_CenterHorn</defName>
+    <label>center-horn</label>
+    <description>Carriers of this gene grow a single horn protruding from the center of the forehead.</description>
+    <iconPath>UI/Icons/Genes/Gene_HeadboneCenterhorn</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/CenterHorn/CenterHorn</texPath>
+        <color>(255, 255, 255)</color>
+        <parentTagDef>Head</parentTagDef>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <layer>10</layer>
+          </dataNorth>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>rhino</symbol>
+          <weight>2</weight>
+        </li>
+        <li><symbol>horn</symbol></li>
+        <li><symbol>knob</symbol></li>
+        <li><symbol>spike</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>horn</symbol></li>
+        <li><symbol>spike</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Voice -->
+
+  <GeneDef Name="GeneVoiceBase" Abstract="True">
+    <biostatCpx>0</biostatCpx>
+    <endogeneCategory>Voice</endogeneCategory>
+    <displayCategory>Cosmetic</displayCategory>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>Voice</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneVoiceBase">
+    <defName>Voice_Human</defName>
+    <label>human voice</label>
+    <description>Carriers of this gene have regular human vocal cords.</description>
+    <iconPath>UI/Icons/Genes/Gene_VoiceHuman</iconPath>
+    <displayOrderInCategory>120</displayOrderInCategory>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneVoiceBase">
+    <defName>VoicePig</defName>
+    <label>pig voice</label>
+    <description>Carriers have a squealing voice like that of a pig.</description>
+    <iconPath>UI/Icons/Genes/Gene_VoicePig</iconPath>
+    <displayOrderInCategory>125</displayOrderInCategory>
+    <soundCall>Pawn_Pigskin_Call</soundCall>
+    <soundDeath>Pawn_Pigskin_Death</soundDeath>
+    <soundWounded>Pawn_Pigskin_Wounded</soundWounded>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>squealer</symbol></li>
+        <li><symbol>oinker</symbol></li>
+        <li><symbol>snorter</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>squeal</symbol></li>
+        <li><symbol>oink</symbol></li>
+        <li><symbol>snuffle</symbol></li>
+        <li><symbol>snort</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>oinker</symbol></li>
+        <li><symbol>hog</symbol></li>
+        <li><symbol>pig</symbol></li>
+        <li><symbol>snorter</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+   <GeneDef ParentName="GeneVoiceBase">
+    <defName>VoiceRoar</defName>
+    <label>roar voice</label>
+    <description>Carriers have an animal-like roaring voice.</description>
+    <iconPath>UI/Icons/Genes/Gene_VoiceRoar</iconPath>
+    <displayOrderInCategory>130</displayOrderInCategory>
+    <soundCall>Pawn_Furskin_Call</soundCall>
+    <soundDeath>Pawn_Furskin_Death</soundDeath>
+    <soundWounded>Pawn_Furskin_Wounded</soundWounded>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>roarer</symbol></li>
+        <li><symbol>growler</symbol></li>
+        <li><symbol>snarler</symbol></li>
+        <li><symbol>bellower</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>roar</symbol></li>
+        <li><symbol>growl</symbol></li>
+        <li><symbol>snarl</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>roar</symbol></li>
+        <li><symbol>snarl</symbol></li>
+        <li><symbol>growl</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+</Defs>

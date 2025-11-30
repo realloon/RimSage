@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: outpost -->
+  <Outpost.label>哨所</Outpost.label>
+  <!-- EN: A small, guarded outpost. -->
+  <Outpost.description>一个存在守卫的小型哨所。</Outpost.description>
+  <!-- EN: Attacking {0}. -->
+  <Outpost.approachingReportString>正在进攻{0}。</Outpost.approachingReportString>
+  <!-- EN: Attack {0} -->
+  <Outpost.approachOrderString>进攻{0}</Outpost.approachOrderString>
+  <!-- EN: There is an enemy outpost in this area. -->
+  <Outpost.arrivedLetter>这片区域存在一个敌人的哨所。</Outpost.arrivedLetter>
+  
+</LanguageData>

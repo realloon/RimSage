@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ShaderTypeDef>
+    <defName>MoteHeatDistortionIntense</defName>
+    <shaderPath>Map/MoteHeatDistortionIntense</shaderPath>
+  </ShaderTypeDef>
+  <ShaderTypeDef>
+    <defName>MoteGlowMasked</defName>
+    <shaderPath>Map/MoteGlowMasked</shaderPath>
+  </ShaderTypeDef>
+  <ShaderTypeDef>
+    <defName>ShallowLava</defName>
+    <shaderPath>Map/TerrainLavaShallow</shaderPath>
+  </ShaderTypeDef>
+  <ShaderTypeDef>
+    <defName>TransparentGravshipMask</defName>
+    <shaderPath>Map/TransparentGravshipMask</shaderPath>
+  </ShaderTypeDef>
+  <ShaderTypeDef>
+    <defName>FishShadow</defName>
+    <shaderPath>Map/FishShadow</shaderPath>
+  </ShaderTypeDef>
+</Defs>

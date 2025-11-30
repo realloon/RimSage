@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>Digested</defName>
+    <label>digestion</label> 
+    <labelNoun>a digested part</labelNoun>
+    <labelNounPretty>digested {1}</labelNounPretty>
+    <description>This part has been digested.</description> 
+    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+    <injuryProps>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <destroyedLabel>Digested</destroyedLabel> 
+      <alwaysUseDestroyedLabel>true</alwaysUseDestroyedLabel>
+    </injuryProps>
+  </HediffDef>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>EnergyBolt</defName>
+    <label>energy bolt</label>
+    <labelNoun>an energy bolt wound</labelNoun>
+    <description>A wound from an energy bolt.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.05</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>old energy bolt wound</permanentLabel>
+        <instantlyPermanentLabel>permanent energy bolt wound</instantlyPermanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.03</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Blasted off</destroyedLabel>
+      <destroyedOutLabel>Blasted out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>PsychicInjury</defName>
+    <label>psychic burn</label>
+    <labelNoun>a psychic burn</labelNoun>
+    <description>A psychic burn.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>treated</labelTendedWell>
+        <labelTendedWellInner>treated</labelTendedWellInner>
+        <labelSolidTendedWell>treated</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>psychic scarring</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Psychically incinerated</destroyedLabel>
+      <alwaysUseDestroyedLabel>true</alwaysUseDestroyedLabel>
+    </injuryProps>
+  </HediffDef>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>PsychicInjurySkin</defName>
+    <label>psychic burn</label>
+    <labelNoun>a psychic burn</labelNoun>
+    <description>A psychic burn.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>dressed</labelTendedWellInner>
+        <labelSolidTendedWell>treated</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.15</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>psychic scarring</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Psychically incinerated</destroyedLabel>
+      <alwaysUseDestroyedLabel>true</alwaysUseDestroyedLabel>
+    </injuryProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="InjuryBase">
+    <defName>PsychicInjurySolid</defName>
+    <label>psychic burn</label>
+    <labelNoun>a psychic burn</labelNoun>
+    <description>A psychic burn.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>treated</labelTendedWell>
+        <labelTendedWellInner>treated</labelTendedWellInner>
+        <labelSolidTendedWell>treated</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>permanent psychic scarring</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.01</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <destroyedLabel>Psychically incinerated</destroyedLabel>
+      <alwaysUseDestroyedLabel>true</alwaysUseDestroyedLabel>
+    </injuryProps>
+  </HediffDef>
+  
+</Defs>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SitePartDef>
+    <defName>BanditGang</defName>
+    <label>ancient mercenaries</label>
+    <description>A hostile company of mercenaries hiding out in an ancient structure.</description>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/AncientMercenaries</expandingIconTexture>
+    <tags>
+      <li>BanditGang</li>
+    </tags>
+  </SitePartDef>
+
+</Defs>

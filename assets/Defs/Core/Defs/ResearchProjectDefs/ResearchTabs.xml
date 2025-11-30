@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- To add a research tab, make a new ResearchTabDef here and then set the <tab> field of your research project to match it -->
+  
+  <ResearchTabDef>
+    <defName>Main</defName>
+    <label>Main</label>
+    <generalTitle>Main research projects</generalTitle>
+    <generalDescription>Unlock new technologies by researching at a research bench. You can only have one active project at a time.</generalDescription>
+  </ResearchTabDef>
+
+</Defs>

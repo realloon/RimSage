@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef Abstract="True" Name="RoleStatBuff">
+    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+  </HediffDef>
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>WorkDrive</defName>
+    <label>work drive</label>
+    <description>The sense of being called upon by a leader to work harder.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_CombatCommand</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <solidTime>9999999</solidTime>
+      <needsMaintenance>true</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <texPath>Things/Mote/CombatCommandMask</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(32, 17, 0)</color>
+      <drawSize>20</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_CombatCommandLinkLine</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Things/Mote/CombatCommandLinkLine</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_WorkCommand</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <solidTime>9999999</solidTime>
+      <needsMaintenance>true</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <texPath>Things/Mote/CombatCommandMask</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(0, 20, 32)</color>
+      <drawSize>20</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_WorkCommandLinkLine</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Things/Mote/WorkCommandLinkLine</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>CombatCommand</defName>
+    <label>combat command</label>
+    <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_CombatCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>CombatCommandBuff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>CombatCommandBuff</defName>
+    <label>combat command</label>
+    <description>Combat abilities are boosted thanks to being near someone who is using the combat command ability.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>10</maxDistance>
+        <customMote>Mote_CombatCommandLinkLine</customMote>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+          <MeleeHitChance>3</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>PreachHealth</defName>
+    <label>preach health</label>
+    <description>This person's will to survive was reinforced by a talk with a moral guide of their ideoligion. That moral certainty has improved their healing and immunization gain rates.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+          <InjuryHealingFactor>0.25</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef Abstract="True" Name="CombatRoleAuraBuffHediffBase" ParentName="RoleStatBuff">
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>10</maxDistance>
+        <customMote>Mote_CombatCommandLinkLine</customMote>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef Abstract="True" Name="WorkRoleAuraBuffHediffBase" ParentName="RoleStatBuff">
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>10</maxDistance>
+        <customMote>Mote_WorkCommandLinkLine</customMote>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+  
+  <!-- Shooting specialist -->
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>MarksmanCommand</defName>
+    <label>marksman command</label>
+    <description>This person is using a special ability to call out shots. Everyone within an effect radius gains shooting bonuses.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_CombatCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>MarksmanCommandBuff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="CombatRoleAuraBuffHediffBase">
+    <defName>MarksmanCommandBuff</defName>
+    <label>marksman command</label>
+    <description>Someone is using the marksman command ability nearby, boosting this person's shooting abilities.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.4</AimingDelayFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Melee specialist -->
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>BerserkTrance</defName>
+    <label>berserk trance</label>
+    <description>Driven by fierce moral certainty and stories of ideoligious grievance, this person has driven him or herself into a rage. Every muscle is at peak performance, but it's hard to shut down the anger.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>8</MeleeHitChance>
+          <MeleeDodgeChance>8</MeleeDodgeChance>
+        </statOffsets>
+        <painFactor>0.1</painFactor>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <requiredMentalState>BerserkTrance</requiredMentalState>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <!-- Research specialist -->
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>ResearchCommand</defName>
+    <label>research command</label>
+    <description>This person is using a special ability to provide suggestions and mental support, boosting the research speed of everyone nearby.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_WorkCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>ResearchCommandBuff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="WorkRoleAuraBuffHediffBase">
+    <defName>ResearchCommandBuff</defName>
+    <label>research command</label>
+    <description>This person's research speed is boosted because they are near someone who is using the research command ability.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <stages>
+      <li>
+        <statOffsets>
+          <ResearchSpeed>0.3</ResearchSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  
+  <!-- Farming specialist -->
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>FarmingCommand</defName>
+    <label>farming command</label>
+    <description>This person is offering guidance on farming techniques, boosting the farming abilities for everyone nearby.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_WorkCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>FarmingCommandBuff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="WorkRoleAuraBuffHediffBase">
+    <defName>FarmingCommandBuff</defName>
+    <label>farming command</label>
+    <description>This person's farming abilities are boosted thanks to being near someone who is using the farming command ability.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <stages>
+      <li>
+        <statOffsets>
+          <PlantWorkSpeed>0.4</PlantWorkSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Production specialist -->
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>ProductionCommand</defName>
+    <label>production command</label>
+    <description>This person is offering guidance on construction techniques, boosting construction and crafting abilities for everyone nearby.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_WorkCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>ProductionCommandBuff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="WorkRoleAuraBuffHediffBase">
+    <defName>ProductionCommandBuff</defName>
+    <label>production command</label>
+    <description>This person's construction and crafting speeds are boosted thanks to being near someone who is using the production command ability.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <stages>
+      <li>
+        <statOffsets>
+          <ConstructionSpeed>0.4</ConstructionSpeed>
+          <GeneralLaborSpeed>0.2</GeneralLaborSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Mining specialist -->
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>MiningCommand</defName>
+    <label>mining command</label>
+    <description>This person is offering guidance on mining techniques, boosting the mining speed for everyone nearby.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_WorkCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>MiningCommandBuff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="WorkRoleAuraBuffHediffBase">
+    <defName>MiningCommandBuff</defName>
+    <label>mining command</label>
+    <description>This person's mining speed is boosted thanks to being near someone who is using the mining command ability.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <stages>
+      <li>
+        <statOffsets>
+          <MiningSpeed>0.4</MiningSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>ImmunityDrive</defName>
+    <label>immunity drive</label>
+    <description>This person has received moral support of an ideoligious nature. Their mental certainty has energized their body and boosted their immune system.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+        <statFactors>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+</Defs>

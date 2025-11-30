@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SoundDef>
+    <defName>Radiotalking</defName>
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Learning/Radiotalking</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <volumeRange>30</volumeRange>
+        <distRange>10~50</distRange>
+        <sustainLoopDurationRange>10~20</sustainLoopDurationRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Floordrawing</defName>
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Learning/Floordrawing</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <volumeRange>8~12</volumeRange>
+        <distRange>10~30</distRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <sustainLoop>False</sustainLoop>
+        <sustainIntervalRange>0~0.5</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

@@ -1,0 +1,16 @@
+﻿//Common with outlanders
+union
+nation
+confederacy
+confederation
+alliance
+league
+covenant
+treaty
+pact
+coalition
+
+//Tribe specific
+kinship
+people
+tribe

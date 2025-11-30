@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_RevenantSmear</defName>
+    <thingClass>FilthRevenantSmear</thingClass>
+    <label>revenant smear</label>
+    <useHitPoints>true</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <Beauty>-30</Beauty>
+      <Cleanliness>-15</Cleanliness>
+      <MaxHitPoints>250</MaxHitPoints>
+    </statBases>
+    <graphicData>
+      <onGroundRandomRotateAngle>360</onGroundRandomRotateAngle>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Filth/RevenantSmear</texPath>
+      <drawSize>1.25</drawSize>
+    </graphicData>
+    <filth>
+      <disappearsInDays>4~6</disappearsInDays>
+      <rainWashes>false</rainWashes>
+      <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+      <canFilthAttach>false</canFilthAttach>
+      <maxThickness>1</maxThickness>
+      <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+    </filth>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_RevenantBloodPool</defName>
+    <thingClass>Filth</thingClass>
+    <label>revenant gore pool</label>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <Beauty>-30</Beauty>
+      <Cleanliness>-15</Cleanliness>
+      <MaxHitPoints>250</MaxHitPoints>
+    </statBases>
+    <graphicData>
+      <onGroundRandomRotateAngle>360</onGroundRandomRotateAngle>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Filth/RevenantBloodPool</texPath>
+      <drawSize>4.5</drawSize>
+    </graphicData>
+    <filth>
+      <disappearsInDays>45~50</disappearsInDays>
+      <rainWashes>false</rainWashes>
+      <cleaningWorkToReduceThickness>2000</cleaningWorkToReduceThickness>
+      <canFilthAttach>false</canFilthAttach>
+      <maxThickness>1</maxThickness>
+      <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+    </filth>
+  </ThingDef>
+
+  <ThingDef Name="Filth_GrayFlesh" ParentName="BaseFilth">
+    <defName>Filth_GrayFlesh</defName>
+    <label>gray flesh</label>
+    <statBases>
+      <Beauty>-25</Beauty>
+      <Cleanliness>-5</Cleanliness>
+    </statBases>
+    <graphicData>
+      <onGroundRandomRotateAngle>360</onGroundRandomRotateAngle>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Filth/Spatter</texPath>
+      <color>(128, 128, 128, 200)</color>
+      <drawSize>1.25</drawSize>
+    </graphicData>
+    <filth>
+      <disappearsInDays>4~6</disappearsInDays>
+      <rainWashes>false</rainWashes>
+      <cleaningWorkToReduceThickness>160</cleaningWorkToReduceThickness>
+      <canFilthAttach>false</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+      <maxThickness>1</maxThickness>
+    </filth>
+  </ThingDef>
+
+  <ThingDef ParentName="Filth_GrayFlesh">
+    <thingClass>FilthGrayFleshNoticeable</thingClass>
+    <defName>Filth_GrayFleshNoticeable</defName>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_TwistedFlesh</defName>
+    <label>twisted flesh</label>
+    <statBases>
+      <Beauty>-50</Beauty>
+      <Cleanliness>-20</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Filth/TwistedFlesh</texPath>
+    </graphicData>
+    <filth>
+      <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+      <disappearsInDays>10~15</disappearsInDays>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>80</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+    </filth>
+    <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_Fleshmass</defName>
+    <label>fleshmass debris</label>
+    <statBases>
+      <Beauty>-50</Beauty>
+      <Cleanliness>-20</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Filth/FleshmassFilth</texPath>
+      <drawSize>1.25</drawSize>
+    </graphicData>
+    <filth>
+      <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+      <disappearsInDays>10~15</disappearsInDays>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>100</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+    </filth>
+    <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+  </ThingDef>
+
+  <ThingDef ParentName="FilthBlood">
+    <defName>Filth_DarkBlood</defName>
+    <label>dark blood</label>
+    <graphicData>
+      <texPath>Things/Filth/Spatter</texPath>
+      <color>(74, 0, 0, 180)</color>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="FilthBlood">
+    <defName>Filth_DarkBloodSmear</defName>
+    <label>dark blood smear</label>
+    <graphicData>
+      <texPath>Things/Filth/CrawlSmear</texPath>
+      <color>(74, 0, 0, 180)</color>
+      <graphicClass>Graphic_ClusterTight</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_MetalhorrorDebris</defName>
+    <label>metalhorror debris</label>
+    <statBases>
+      <Beauty>-30</Beauty>
+      <Cleanliness>-10</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Filth/MetalhorrorDebris</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <filth>
+      <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+      <disappearsInDays>35~40</disappearsInDays>
+      <cleaningWorkToReduceThickness>140</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Scattered</cleaningSound>
+    </filth>
+  </ThingDef>
+</Defs>

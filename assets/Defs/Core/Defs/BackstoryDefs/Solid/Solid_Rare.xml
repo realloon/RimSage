@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackStoryDef Abstract="True" Name="Solid">
+    <shuffleable>false</shuffleable>
+  </BackStoryDef>
+
+  <!-- Tynan -->
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>TynanCustomChildhood</defName>
+    <title>punk</title>
+    <titleShort>punk</titleShort>
+    <description>[PAWN_nameDef] spent his childhood selling knockoff cigarettes to 15-year-olds. The cigarettes were often full of grass clippings.</description>
+    <skillGains>
+      <Intellectual>-2</Intellectual>
+      <Social>-2</Social>
+    </skillGains>
+  </BackstoryDef>
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>TynanCustomAdulthood</defName>
+    <title>game developer</title>
+    <titleShort>game dev</titleShort>
+    <description>[PAWN_nameDef] was an independent game developer.\n\nAfter an early success, [PAWN_possessive] career quickly degenerated into a circus of misguided ideas, deals gone wrong, and desperate, failed PR stunts.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <skillGains>
+      <Construction>-2</Construction>
+      <Mining>-2</Mining>
+    </skillGains>
+    <spawnCategories>
+      <li>Pirate</li>
+    </spawnCategories>
+    <forcedTraits>
+      <Industriousness>-2</Industriousness>
+    </forcedTraits>
+    <possessions>
+      <GameOfUrBoard>1</GameOfUrBoard>
+    </possessions>
+  </BackstoryDef>
+
+  <!-- Joe -->
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>JoeCustomChildhood</defName>
+    <title>drummer</title>
+    <titleShort>drummer</titleShort>
+    <description>[PAWN_nameDef] was born into a family of musicians. When hard times came, [PAWN_pronoun] was forced to play the drum in a traveling band.</description>
+    <skillGains>
+      <Artistic>2</Artistic>
+    </skillGains>
+    <possessions>
+      <Drum MayRequire="Ludeon.RimWorld.Ideology">1</Drum>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef ParentName="Solid">
+    <defName>JoeCustomAdulthood</defName>
+    <title>game developer</title>
+    <titleShort>game dev</titleShort>
+    <description>[PAWN_nameDef] was a hobbyist game developer who lived in an endless cycle of unfinished projects and lofty ideas.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Scientist</li>
+    </spawnCategories>
+    <skillGains>
+      <Artistic>-2</Artistic>
+    </skillGains>
+  </BackstoryDef>
+  
+  <!-- Liam -->
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>LiamCustomChildhood</defName>
+    <title>sim addict</title>
+    <titleShort>sim addict</titleShort>
+    <description>Born and raised on a glitterworld, [PAWN_nameDef] was obsessed with simulation software. [PAWN_pronoun] spent far too much time plugged in.</description>
+    <skillGains>
+      <Intellectual>2</Intellectual>
+    </skillGains>
+  </BackstoryDef>
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>LiamCustomAdulthood</defName>
+    <title>simulation developer</title>
+    <titleShort>sim dev</titleShort>
+    <description>[PAWN_nameDef] worked on a peaceful glitterworld developing hyper-realistic war crime simulation software.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Scientist</li>
+    </spawnCategories>
+    <skillGains>
+      <Construction>-3</Construction>
+      <Crafting>4</Crafting>
+      <Intellectual>6</Intellectual>
+    </skillGains>
+    <forcedTraits>
+      <Industriousness>1</Industriousness>
+    </forcedTraits>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+  </BackstoryDef>
+
+
+  <!-- Matt -->
+
+  <BackstoryDef ParentName="Solid">
+    <defName>CynapseCustomChildhood</defName>
+    <title>tinkerer</title>
+    <titleShort>tinkerer</titleShort>
+    <description>[PAWN_nameDef] spent most of [PAWN_possessive] time disassembling and reassembling electronic devices in order to figure out how they function. [PAWN_nameDef] became so preoccupied with [PAWN_possessive] tinkering that [PAWN_pronoun] forgot to develop social relationships with other humans.</description>
+    <skillGains>
+      <Intellectual>2</Intellectual>
+      <Crafting>2</Crafting>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+    </workDisables>
+  </BackstoryDef>
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>CynapseCustomAdulthood</defName>
+    <title>hermit</title>
+    <titleShort>hermit</titleShort>
+    <description>[PAWN_nameDef] spent almost all of [PAWN_possessive] time indoors, away from other humans. To survive, [PAWN_pronoun] trained and sold messenger rats.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <skillGains>
+      <Animals>3</Animals>
+    </skillGains>
+    <forcedTraits>
+      <Neurotic>2</Neurotic>
+      <Bisexual />
+    </forcedTraits>
+  </BackstoryDef>
+
+
+  <!-- Oskar -->
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>OskarCustomChildhood</defName>
+    <slot>Childhood</slot>
+    <title>art slave</title>
+    <titleShort>artist</titleShort>
+    <description>[PAWN_nameDef] was born on the dark edge of a tidally-locked urbworld. After an argument, [PAWN_possessive] father sold [PAWN_objective] to a local district lord as a slave artist.\n\nForced to create art or be punished, [PAWN_pronoun] withdrew and became unable to form relations with others.</description>
+    <skillGains>
+      <Artistic>4</Artistic>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <BackstoryDef ParentName="Solid">
+    <defName>OskarCustomAdulthood</defName>
+    <slot>Adulthood</slot>
+    <title>mod designer</title>
+    <titleShort>modder</titleShort>
+    <description>[PAWN_nameDef] designed combat modifications for frontline soldiers.\n\nOne night, in a nightmare, [PAWN_nameDef] was confronted by all the men and women killed by [PAWN_possessive] work. [PAWN_pronoun] decided to travel to the rimworlds and use [PAWN_possessive] skills for good.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <skillGains>
+      <Intellectual>5</Intellectual>
+      <Crafting>5</Crafting>
+      <Medicine>2</Medicine>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <!-- Will -->
+
+  <BackstoryDef ParentName="Solid">
+    <defName>WillCustomChildhood</defName>
+    <title>maze child</title>
+    <titleShort>maze child</titleShort>
+    <description>[PAWN_nameDef] grew up in a research camp on a deadworld. [PAWN_possessive] parents were astrobiologists studying mysterious labyrinthine formations beneath the planet's crust. [PAWN_pronoun] spent most of his time wandering those tunnels, wondering what otherworldly entity could have created them.</description> 
+    <skillGains>
+      <Intellectual>1</Intellectual>
+      <Mining>1</Mining>
+    </skillGains>
+    <forcedTraits>
+      <Undergrounder>0</Undergrounder>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef ParentName="Solid">
+    <defName>WillCustomAdulthood</defName>
+    <title>labyrinth maker</title>
+    <titleShort>labyrinth maker</titleShort>
+    <description>[PAWN_nameDef] designed elaborate entertainment mazes for the glitterworld elite. Even now, [PAWN_pronoun] thinks of little else.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <skillGains>
+      <Construction>2</Construction>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <!-- Mate -->
+
+  <BackstoryDef ParentName="Solid">
+    <defName>MateCustomChildhood</defName>
+    <title>curious kid</title>
+    <titleShort>curious kid</titleShort>
+    <description>[PAWN_nameDef] spent most of [PAWN_possessive] childhood dreaming of becoming a famous artist who could impress people with [PAWN_possessive] creations.</description>
+    <skillGains>
+      <Intellectual>1</Intellectual>
+      <Artistic>1</Artistic>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef ParentName="Solid">
+    <defName>MateCustomAdulthood</defName>
+    <title>busker</title>
+    <titleShort>busker</titleShort>
+    <description>After being laid off by an interplanetary megacorp, [PAWN_nameDef] spent several years disillusioned and fighting alcohol addiction.\n\n[PAWN_pronoun] ended up busking aboard a space freighter, playing a beaten-up guitar and entertaining the crew with blues and folk songs from the distant past.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <skillGains>
+      <Cooking>2</Cooking>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Scientist</li>
+    </spawnCategories>
+    <forcedTraits>
+      <TorturedArtist />
+    </forcedTraits>
+    <possessions>
+      <Beer>1</Beer>
+    </possessions>
+  </BackstoryDef>
+  
+  <!-- Nathan - Copied from existing backstories with slight trait changes -->
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>NathanCustomChildhood</defName>
+    <title>cave child</title>
+    <titleShort>cave child</titleShort>
+    <description>[PAWN_nameDef] grew up in a large and intricate cave complex that extended deep into a mountainside. [PAWN_pronoun] helped the adults maintain and improve the deep caves.</description>
+    <skillGains>
+      <Mining>3</Mining>
+      <Construction>3</Construction>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+    </spawnCategories>
+    <forcedTraits>
+      <Undergrounder>0</Undergrounder>
+      <QuickSleeper>0</QuickSleeper>
+    </forcedTraits>
+  </BackstoryDef>
+  
+  <BackstoryDef ParentName="Solid">
+    <defName>NathanCustomAdulthood</defName>
+    <title>digger</title>
+    <titleShort>digger</titleShort>
+    <description>[PAWN_nameDef] carved living spaces and mined minerals from the sides of hills and mountains. [PAWN_pronoun] learned to feel at home picking through rock and shoring up cave walls.</description>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>TribalMiner</li>
+    </spawnCategories>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Hulk</bodyTypeFemale>
+    <skillGains>
+      <Mining>6</Mining>
+      <Construction>2</Construction>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Mining</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Undergrounder>0</Undergrounder>
+      <QuickSleeper>0</QuickSleeper>
+    </forcedTraits>
+    <possessions>
+      <Jade>3</Jade>
+    </possessions>
+  </BackstoryDef>
+
+  <!-- Fey -->
+
+  <BackstoryDef ParentName="Solid">
+    <defName>FeyCustomChildhood</defName>
+    <title>wargame fanatic</title>
+    <titleShort>wargame fanatic</titleShort>
+    <description>Growing up sheltered in an urbworld archology, [PAWN_nameDef] distracted [PAWN_objective]self by playing wargames and painting miniatures. While [PAWN_pronoun] was never very good at the game itself, it helped to connect [PAWN_objective] with others.</description>
+    <skillGains>
+      <Crafting>2</Crafting>
+      <Social>1</Social>
+    </skillGains>
+    <forcedTraits>
+      <Undergrounder>0</Undergrounder>
+    </forcedTraits>
+  </BackstoryDef>
+
+  <BackstoryDef ParentName="Solid">
+    <defName>FeyCustomAdulthood</defName>
+    <title>game master</title>
+    <titleShort>game master</titleShort>
+    <description>[PAWN_nameDef] spent all [PAWN_possessive] time running tabletop role-playing games as a way to connect socially with others. The game changed every year, and other players always loved [PAWN_possessive] worldbuilding and stories.</description>
+    <bodyTypeGlobal>Female</bodyTypeGlobal>
+    <skillGains>
+      <Artistic>2</Artistic>
+      <Social>1</Social>
+      <Intellectual>1</Intellectual>
+      <Mining>-2</Mining>
+    </skillGains>
+    <forcedTraits>
+      <Neurotic>2</Neurotic>
+      <Gay />
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+    </spawnCategories>
+  </BackstoryDef>
+  
+</Defs>

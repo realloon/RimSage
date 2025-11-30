@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ComplexLayoutDef Name="AncientComplex">
+    <defName>AncientComplex</defName>
+    <workerClass>LayoutWorkerComplex_Ancient</workerClass>
+    <clearDoorFaction>false</clearDoorFaction>
+    <minRoomWidth>7</minRoomWidth>
+    <minRoomHeight>7</minRoomHeight>
+    <corridorDef>ComplexCorridor</corridorDef>
+    <canDisconnectRooms>false</canDisconnectRooms>
+    <areaPrunePercent>0.1</areaPrunePercent>
+    <roomDefs>
+      <AncientEquipmentRoom>1</AncientEquipmentRoom>
+      <AncientStorageRoom>0.5</AncientStorageRoom>
+      <AncientArmory>1</AncientArmory>
+      <AncientPowerRoom>
+        <weight>1</weight>
+        <countRange>0~3</countRange>
+      </AncientPowerRoom>
+      <AncientLab>
+        <weight>2</weight>
+        <countRange>0~1</countRange>
+      </AncientLab>
+      <AncientBarracks>
+        <weight>2</weight>
+        <countRange>0~2</countRange>
+      </AncientBarracks>
+    </roomDefs>
+    <threats>
+      <SleepingMechanoids />
+      <SleepingInsects />
+      <Ambush />
+      <CryptosleepPods />
+      <Infestation />
+      <SecurityCrate>4</SecurityCrate>
+      <FuelNode>
+        <maxPerRoom>1</maxPerRoom>
+        <selectionWeight>3</selectionWeight>
+      </FuelNode>
+      <RaidTerminal>
+        <maxPerRoom>1</maxPerRoom>
+        <chancePerComplex>0.5</chancePerComplex>
+      </RaidTerminal>
+    </threats>
+    <rewardThingSetMakerDef>MapGen_AncientComplexRoomLoot_Default</rewardThingSetMakerDef>
+  </ComplexLayoutDef>
+  
+  <ComplexLayoutDef ParentName="AncientComplex">
+    <defName>AncientComplex_Loot</defName>
+    <rewardThingSetMakerDef>MapGen_AncientComplexRoomLoot_Better</rewardThingSetMakerDef>
+  </ComplexLayoutDef>
+
+</Defs>

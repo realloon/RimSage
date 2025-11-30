@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--########################### JoinerThreat quest roots ############################### -->
+  <!--Note: JoinerRaid is in vanilla -->
+
+  <QuestScriptDef>
+    <defName>ThreatReward_Infestation_Joiner</defName>
+    <rootSelectionWeight>1</rootSelectionWeight>
+    <rootMinPoints>220</rootMinPoints> <!-- Cost of 1 hive -->
+    <expireDaysRange>0.3</expireDaysRange>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_ThreatReward_Joiner</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_ThreatReward_Joiner</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[joiner_nameDef]'s infestation</li>
+        <li>questName->[joiner_nameDef]'s hives</li>
+        <li>questName->[joiner_nameDef]'s bugs</li>
+        <li>questName->[joiner_nameDef]'s insects</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[introduction] named [joiner_nameDef] is calling from nearby. [joiner_pronoun] says [joiner_pronoun] poisoned an underground insect colony, but now [joiner_pronoun] is soaked in insect pheromones and the bugs are hunting [joiner_objective]!
+\n[joiner_pronoun] begs for safety and offers to join you at [map_definite].[joiner_relationInfo]
+\nIf you accept, (*Threat)an infestation of [hivesCount] hives(/Threat) will begin in [infestationDelayTicks_duration].
+\n[joiner_nameDef] is too frantic to offer more information.</li>
+        <li>introduction(childCount==1,priority=1)->A [joiner_age]-year-old child</li>
+        <li>introduction->A [joiner_age]-year-old [joiner_title]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+        <li Class="QuestNode_GetMap">
+          <mustBeInfestable>true</mustBeInfestable>
+        </li>
+
+        <!-- Charity on accept -->
+        <li Class="QuestNode_RecordHistoryEvent" MayRequire="Ludeon.RimWorld.Ideology">
+          <historyDef>CharityFulfilled_ThreatReward_Joiner</historyDef>
+        </li>
+
+        <!-- Joiner -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_JoinerThreat_Joiner</def>
+          <parms>
+            <customLetterText TKey="LetterTextJoinerArrived">{BASETEXT}
+            \n[joiner_nameDef] is soaked in insect pheromones and is fleeing from an infestation. The pursuing insects will arrive shortly.</customLetterText>
+          </parms>
+        </li>
+
+        <!-- Infestation -->
+        <li Class="QuestNode_Set">
+          <name>infestationDelayTicks</name>
+          <value>$(roundToTicksRough(randInt(6000, 300000)))</value>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$infestationDelayTicks</delayTicks>
+          <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Util_Infestation</def>
+                <parms>
+                  <customLetterLabel TKey="LetterLabelChasing">{BASELABEL}: Chasing [joiner_nameDef]</customLetterLabel>
+                  <customLetterText TKey="LetterTextChasing">{BASETEXT}
+                  \nThe insects are here for [joiner_nameDef].</customLetterText>
+                </parms>
+              </li>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>InfestationStarted</outSignals>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- End -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>InfestationStarted</li>
+            <li>JoinerArrived</li>
+          </inSignals>
+          <node Class="QuestNode_End" />
+        </li>
+
+        <!-- Map removed -->
+        <li Class="QuestNode_Signal">
+          <inSignal>map.MapRemoved</inSignal>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>ThreatReward_Manhunters_Joiner</defName>
+    <rootSelectionWeight>1</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <expireDaysRange>0.3</expireDaysRange>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_ThreatReward_Joiner</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_ThreatReward_Joiner</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName(animalCount==1)->[joiner_nameDef]'s [animalKind_label]</li>
+        <li>questName(animalCount==1)->[joiner_nameDef] and the [animalKind_label]</li>
+        <li>questName(animalCount==1)->the [animalKind_label] and [joiner_nameDef]</li>
+        <li>questName(animalCount>=2)->[joiner_nameDef]'s [animalKind_labelPlural]</li>
+        <li>questName(animalCount>=2)->[joiner_nameDef] and the [animalKind_labelPlural]</li>
+        <li>questName(animalCount>=2)->the [animalKind_labelPlural] and [joiner_nameDef]</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription(animalCount==1)->[introduction] named [joiner_nameDef] is calling from nearby. [joiner_pronoun] says (*Threat)a manhunting [animalKind_label](/Threat) is hunting [joiner_objective]!
+\n[joiner_pronoun] begs for safety and offers to join you at [map_definite].[joiner_relationInfo]
+\nIf you accept [joiner_nameDef], the manhunting [animalKind_label] will follow in [manhuntersDelayTicks_duration].
+\n[joiner_nameDef] is too frantic to offer more information.</li>
+        <li>manhunterArrivalLetterEnd(animalCount==1)->The [animalKind_label] is chasing [joiner_nameDef].</li>
+
+        <li>questDescription(animalCount>=2)->[introduction] named [joiner_nameDef] is calling from nearby. [joiner_pronoun] says (*Threat)a pack of [animalCount] manhunting [animalKind_labelPlural](/Threat) are hunting [joiner_objective]!
+\n[joiner_pronoun] begs for safety and offers to join you at [map_definite].[joiner_relationInfo]
+\nIf you accept [joiner_nameDef], the manhunting [animalKind_labelPlural] will follow in [manhuntersDelayTicks_duration].
+\n[joiner_nameDef] is too frantic to offer more information.</li>
+        <li>manhunterArrivalLetterEnd(animalCount>=2)->The [animalKind_labelPlural] are chasing [joiner_nameDef].</li>
+
+        <li>introduction(childCount==1,priority=1)->A [joiner_age]-year-old child</li>
+        <li>introduction->A [joiner_age]-year-old [joiner_title]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetWalkInSpot" /> <!-- So joiner and manhunters come from the same spot -->
+        
+        <!-- Charity on accept -->
+        <li Class="QuestNode_RecordHistoryEvent" MayRequire="Ludeon.RimWorld.Ideology">
+          <historyDef>CharityFulfilled_ThreatReward_Joiner</historyDef>
+        </li>
+
+        <!-- Joiner -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_JoinerThreat_Joiner</def>
+        </li>
+
+        <!-- Manhunter pack -->
+        <li Class="QuestNode_Set">
+          <name>manhuntersDelayTicks</name>
+          <value>$(roundToTicksRough(randInt(2500, 3400)))</value>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$manhuntersDelayTicks</delayTicks>
+          <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_ManhunterPack">
+                <customLetterLabel TKey="LetterLabelChasing">{BASELABEL}: Chasing [joiner_nameDef]</customLetterLabel>
+                <customLetterText TKey="LetterTextChasing">{BASETEXT}\n\n[manhunterArrivalLetterEnd]</customLetterText>
+              </li>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>ManhuntersArrived</outSignals>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- End -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>ManhuntersArrived</li>
+            <li>JoinerArrived</li>
+          </inSignals>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>ThreatReward_GameCondition_Joiner</defName>
+    <rootSelectionWeight>0.7</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <expireDaysRange>1~2</expireDaysRange>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_ThreatReward_Joiner</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_ThreatReward_Joiner</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[joiner_nameDef]'s [gameCondition_label]</li>
+        <li>questName->[joiner_nameDef] and the [gameCondition_label]</li>
+        <li>questName->the [gameCondition_label] and [joiner_nameDef]</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[introduction] named [joiner_nameFull] is calling for help! [joiner_pronoun] is hiding from [hidingFrom]. [joiner_pronoun] wants to flee and join you at [map_definite].[joiner_relationInfo]
+\n[condDesc]
+\nDesperate to stay hidden, [joiner_nameDef] claims to be unable to tell you more about [joiner_objective]self.</li>
+        <li>hidingFrom(gameCondition==ToxicFallout)->a pack of starving wolves</li>
+        <li>condDesc(gameCondition==ToxicFallout)->However, [joiner_nameDef] can only kill the wolves by setting fire to a massive toxic chemical dump nearby. [gameConditionDuration_duration] of toxic fallout will follow.</li>
+        <li>hidingFrom(gameCondition==VolcanicWinter)->a gang of cannibals</li>
+        <li>condDesc(gameCondition==VolcanicWinter)->However, [joiner_nameDef] can only kill the gang by setting fire to a massive abandoned garbage pile nearby. If [joiner_pronoun] joins you, smoky fallout will block the sun for [gameConditionDuration_duration].</li>
+        <li>hidingFrom(gameCondition==EMIField)->a group of mechanoids</li>
+        <li>condDesc(gameCondition==EMIField)->However, [joiner_nameDef] can only destroy the mechanoids by activating an ancient EMI dynamo. If [joiner_pronoun] joins you, an EMI field will be generated, shutting down electrical devices for [gameConditionDuration_duration].</li>
+        <li>hidingFrom(gameCondition==HeatWave)->a malfunctioning climate control satellite</li>
+        <li>condDesc(gameCondition==HeatWave)->If [joiner_pronoun] joins you, an intense heat wave will last for [gameConditionDuration_duration] until the satellite resets.</li>
+        <li>hidingFrom(gameCondition==ColdSnap)->a malfunctioning climate control satellite</li>
+        <li>condDesc(gameCondition==ColdSnap)->If [joiner_pronoun] joins you, an intense cold snap will last for [gameConditionDuration_duration] until the satellite resets.</li>
+        <li>hidingFrom(gameCondition==WeatherController)->a malfunctioning weather control satellite</li>
+        <li>condDesc(gameCondition==WeatherController)->If [joiner_pronoun] joins you, the weather will be [forcedWeather_label] for [gameConditionDuration_duration] until the satellite resets.</li>
+        <li>hidingFrom(gameCondition==PsychicDrone)->a vengeful machine persona who [joiner_pronoun] recently offended</li>
+        <li>condDesc(gameCondition==PsychicDrone)->If [joiner_pronoun] joins you, the machine mind will blast [map_definite] with a [psychicDroneLevel]-level psychic drone for [gameConditionDuration_duration], reducing mood of all [psychicDroneGender]s.</li>
+        <li>hidingFrom(gameCondition==PsychicSuppression)->a hostile machine persona whom [joiner_pronoun] recently awoke</li>
+        <li>condDesc(gameCondition==PsychicSuppression)->If [joiner_pronoun] joins you, the persona will hit [map_definite] with psychic suppression waves for [gameConditionDuration_duration], reducing consciousness of all [psychicSuppressorGender]s.</li>
+        <li>introduction(childCount==1,priority=1)->A [joiner_age]-year-old child</li>
+        <li>introduction->A [joiner_age]-year-old [joiner_title]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <selectionWeightOneStar>0.4</selectionWeightOneStar>
+            <selectionWeightTwoStar>0.3</selectionWeightTwoStar>
+            <selectionWeightThreeStar>0.3</selectionWeightThreeStar>
+          </parms>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_Set">
+          <name>mustHaveSettlementOnLayer</name>
+          <value>true</value>
+          <convertTo>Boolean</convertTo>
+        </li>
+        
+        <!-- Charity on accept -->
+        <li Class="QuestNode_RecordHistoryEvent" MayRequire="Ludeon.RimWorld.Ideology">
+          <historyDef>CharityFulfilled_ThreatReward_Joiner</historyDef>
+        </li>
+
+        <!-- Joiner -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_JoinerThreat_Joiner</def>
+        </li>
+
+        <!-- Game condition -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>600</delayTicks>
+          <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Util_GameConditionNegativeRandom</def>
+              </li>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>GameConditionStarted</outSignals>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- End -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>GameConditionStarted</li>
+            <li>JoinerArrived</li>
+          </inSignals>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>ThreatReward_SiteThreat_Joiner</defName>
+    <rootSelectionWeight>1.1</rootSelectionWeight>
+    <rootMinPoints>300</rootMinPoints>
+    <rootMinProgressScore>7</rootMinProgressScore>
+    <expireDaysRange>1~2</expireDaysRange>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_ThreatReward_Joiner</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_ThreatReward_Joiner</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[joiner_nameDef]'s [site/site_label]</li>
+        <li>questName->[joiner_nameDef] and the [site/site_label]</li>
+        <li>questName->the [site/site_label] and [joiner_nameDef]</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[introduction] named [joiner_nameFull] is calling from nearby. [joiner_pronoun] is hiding from [threat]. [joiner_pronoun] wants to flee [joiner_possessive] hiding spot and join you at [map_definite].[joiner_relationInfo]
+\nIf you accept [joiner_objective], [joinersEnemies] will set up a site nearby to harass you. [site/allSitePartsDescriptions]
+\nThe threat will remain until you go to destroy it.</li>
+        <li>introduction(childCount==1,priority=1)->A [joiner_age]-year-old child</li>
+        <li>introduction->A [joiner_age]-year-old [joiner_title]</li>
+        <li>threat(priority=1,site/Outpost_exists==True)->[site/enemyFaction_pawnsPlural] of [site/enemyFaction_name]</li>
+        <li>threat(priority=1,site/MechCluster_exists==True)->mechanoids</li>
+        <li>threat(priority=1,site/SleepingMechanoids_exists==True)->mechanoids</li>
+        <li>threat->[joiner_possessive] enemies</li>
+        <li>joinersEnemies(priority=1,site/Outpost_exists==True)->[site/enemyFaction_name]</li>
+        <li>joinersEnemies(priority=1,site/MechCluster_exists==True)->mechanoids</li>
+        <li>joinersEnemies(priority=1,site/SleepingMechanoids_exists==True)->mechanoids</li>
+        <li>joinersEnemies->[joiner_possessive] enemies</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <selectionWeightOneStar>0.4</selectionWeightOneStar>
+            <selectionWeightTwoStar>0.35</selectionWeightTwoStar>
+            <selectionWeightThreeStar>0.25</selectionWeightThreeStar>
+          </parms>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+
+        <!-- Charity on accept -->
+        <li Class="QuestNode_RecordHistoryEvent" MayRequire="Ludeon.RimWorld.Ideology">
+          <historyDef>CharityFulfilled_ThreatReward_Joiner</historyDef>
+        </li>
+
+        <!-- Joiner -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_JoinerThreat_Joiner</def>
+        </li>
+
+        <!-- Active threat site -->
+        <li Class="QuestNode_GetFaction">
+          <storeAs>site/enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$(randInt(1800,3000))</delayTicks>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Util_SpawnSiteThreat</def>
+                <prefix>site</prefix>
+                <parms>
+                  <inSignal>$inSignal</inSignal>
+                  <map>$map</map>
+                  <points>$points</points>
+                  <customLetterText TKey="LetterTextSiteAppeared">Since you accepted [../joiner_nameDef], [../threat] have set up a nearby site to harass you.
+                    \n[allSitePartsDescriptions]</customLetterText>
+                </parms>
+              </li>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>SiteAppeared</outSignals>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- End -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>SiteAppeared</li>
+            <li>JoinerArrived</li>
+          </inSignals>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>ThreatReward_RaidMultiFaction_Joiner</defName>
+    <rootSelectionWeight>1.5</rootSelectionWeight>
+    <rootMinPoints>300</rootMinPoints>
+    <expireDaysRange>0.3</expireDaysRange>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_ThreatReward_Joiner</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_ThreatReward_Joiner</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[joiner_nameDef]'s Many Friends</li>
+        <li>questName->[joiner_nameDef]'s Many Enemies</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[introduction] named [joiner_nameDef] is calling from nearby. [joiner_pronoun] admits [joiner_pronoun] profaned a peace ritual between [raid1/enemyFaction_name] and [raid2/enemyFaction_name]. Now they are both chasing [joiner_objective]!
+\n[joiner_pronoun] begs for safety and offers to join you at [map_definite].[joiner_relationInfo]
+\nIf you accept [joiner_nameDef], both [raid1/enemyFaction_name] and [raid2/enemyFaction_name] will raid you in [raidDelayTicks_duration].
+\n[joiner_nameDef] is too frantic to offer more information.</li>
+        <li>introduction(childCount==1,priority=1)->A [joiner_age]-year-old child</li>
+        <li>introduction->A [joiner_age]-year-old [joiner_title]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+        
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+        
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetWalkInSpot" /> <!-- Joiner and first raid come from this spot -->
+        
+        <li Class="QuestNode_GetWalkInSpot">   <!-- Second raid comes from this spot-->
+          <storeAs>raid2/walkInSpot</storeAs>
+        </li>
+
+        <!-- Charity on accept -->
+        <li Class="QuestNode_RecordHistoryEvent" MayRequire="Ludeon.RimWorld.Ideology">
+          <historyDef>CharityFulfilled_ThreatReward_Joiner</historyDef>
+        </li>
+
+        <!-- Joiner -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_JoinerThreat_Joiner</def>
+        </li>
+
+        <!-- Raids -->
+        <li Class="QuestNode_GetFaction">
+          <storeAs>raid1/enemyFaction</storeAs> <!-- var name prefixed for use by subscript with the same prefix -->
+          <allowEnemy>true</allowEnemy>
+          <mustBePermanentEnemy>true</mustBePermanentEnemy>
+        </li>
+        <li Class="QuestNode_GetFaction">
+          <storeAs>raid2/enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+          <mustBePermanentEnemy>true</mustBePermanentEnemy>
+          <exclude>$raid1/enemyFaction</exclude>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>raidDelayTicks</name>
+          <value>$(roundToTicksRough(randInt(6000, 300000)))</value>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$raidDelayTicks</delayTicks>
+          <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_SubScript">
+                <def>Util_Raid</def>
+                <prefix>raid1</prefix>
+                <parms>
+                  <inSignal>$inSignal</inSignal>
+                  <map>$map</map>
+                  <enemyFaction>$enemyFaction</enemyFaction>
+                  <points>$points</points>
+                  <walkInSpot>$walkInSpot</walkInSpot>
+                  <customLetterLabel TKey="LetterLabelChasingRaid1">{BASELABEL} chasing [../joiner_nameDef]</customLetterLabel>
+                  <customLetterText TKey="LetterTextChasingRaid1">{BASETEXT}
+                  \nThe [enemyFaction_pawnsPlural] are coming for [../joiner_nameFull].</customLetterText>
+                </parms>
+              </li>
+              <li Class="QuestNode_Delay">
+                <delayTicks>$(randInt(5,15)*60)</delayTicks> <!-- Raid 2 comes 5-15 seconds after raid 1 -->
+                <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_SubScript">
+                      <def>Util_Raid</def>
+                      <prefix>raid2</prefix>
+                      <parms>
+                        <inSignal>$inSignal</inSignal>
+                        <map>$map</map>
+                        <enemyFaction>$enemyFaction</enemyFaction>
+                        <points>$points</points>
+                        <customLetterLabel TKey="LetterLabelChasingRaid2">{BASELABEL} chasing [../joiner_nameDef]</customLetterLabel>
+                        <customLetterText TKey="LetterTextChasingRaid2">{BASETEXT}
+                        \nThe [enemyFaction_pawnsPlural] are coming for [../joiner_nameFull].</customLetterText>
+                      </parms>
+                    </li>
+                    <li Class="QuestNode_SendSignals">
+                      <outSignals>AllRaidsSent</outSignals>
+                    </li>
+                  </nodes>
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- End -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>AllRaidsSent</li>
+            <li>JoinerArrived</li>
+          </inSignals>
+          <node Class="QuestNode_End" />
+        </li>
+
+        <!-- Map removed -->
+        <li Class="QuestNode_Signal">
+          <inSignal>map.MapRemoved</inSignal>
+          <node Class="QuestNode_End">
+            <outcome>Fail</outcome>
+            <sendStandardLetter>true</sendStandardLetter>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>ThreatReward_MysteryThreat_Joiner</defName>
+    <rootSelectionWeight>1.5</rootSelectionWeight>
+    <rootMinPoints>200</rootMinPoints>
+    <rootMinProgressScore>5</rootMinProgressScore>
+    <expireDaysRange>0.3</expireDaysRange>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_ThreatReward_Joiner</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_ThreatReward_Joiner</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[joiner_nameDef]'s [problem]</li>
+        <li>questName->The [problem] of [joiner_nameDef]</li>
+
+        <li>problem->Problem</li>
+        <li>problem->Shame</li>
+        <li>problem->Secret</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[introduction] named [joiner_nameDef] is calling from nearby. [joiner_pronoun] is begging to join you at [map_definite].[joiner_relationInfo]
+\nThere's some kind of threat following [joiner_nameDef], but [joiner_pronoun] is unwilling to say what it is or when it might follow. [joiner_pronoun] is also unwilling to tell you more about [joiner_objective]self.</li>
+        <li>introduction(childCount==1,priority=1)->A [joiner_age]-year-old child</li>
+        <li>introduction->A [joiner_age]-year-old [joiner_title]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <selectionWeightOneStar>0.4</selectionWeightOneStar>
+            <selectionWeightTwoStar>0.35</selectionWeightTwoStar>
+            <selectionWeightThreeStar>0.25</selectionWeightThreeStar>
+          </parms>
+        </li>
+        
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+        
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetWalkInSpot" /> <!-- So joiner and raiders/manhunters come from the same spot -->
+
+        <!-- Charity on accept -->
+        <li Class="QuestNode_RecordHistoryEvent" MayRequire="Ludeon.RimWorld.Ideology">
+          <historyDef>CharityFulfilled_ThreatReward_Joiner</historyDef>
+        </li>
+
+        <!-- Joiner -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_JoinerThreat_Joiner</def>
+        </li>
+
+        <!-- Delay before any threat -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>$(randInt(2000,300000))</delayTicks>
+          <waitUntilPlayerHasHomeMap>true</waitUntilPlayerHasHomeMap>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_RandomNode">
+                <nodes>
+
+                  <!-- Random choice: Raid -->
+                  <li Class="QuestNode_Sequence">
+                    <nodes>
+                      <li Class="QuestNode_GetFaction">
+                        <storeAs>enemyFaction</storeAs>
+                        <allowEnemy>true</allowEnemy>
+                        <mustBePermanentEnemy>true</mustBePermanentEnemy>
+                      </li>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterLabel</name>
+                        <value TKey="LetterLabelChasingRaid">{BASELABEL} chasing [joiner_nameDef]</value>
+                      </li>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterText</name>
+                        <value TKey="LetterTextChasingRaid">[joiner_nameDef] has admitted what [joiner_pronoun] was fleeing from.
+    \n[joiner_pronoun] was supposed to marry the child of [enemyFaction_leader_nameFull], leader of [enemyFaction_name]. [joiner_pronoun] became drunk before the ceremony and vomited on the altar - a flagrant insult towards [enemyFaction_leader_nameDef]'s whole family.
+    \n[enemyFaction_leader_nameDef] swore to seek revenge on [joiner_nameDef] and all those associated with [joiner_objective], and sent [enemyFaction_pawnsPlural] to carry out the task.
+    \n{BASETEXT}</value>
+                      </li>
+                      <li Class="QuestNode_SubScript">
+                        <def>Util_Raid</def>
+                      </li>
+                    </nodes>
+                  </li>
+
+                  <!-- Random choice: Infestation -->
+                  <li Class="QuestNode_Sequence">
+                    <nodes>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterLabel</name>
+                        <value TKey="LetterLabelChasingInfestation">{BASELABEL}: Chasing [joiner_nameDef]</value>
+                      </li>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterText</name>
+                        <value TKey="LetterTextChasingInfestation">[joiner_nameDef] has admitted what [joiner_pronoun] was fleeing from.
+    \n[joiner_nameDef], greedy for the pleasures and money insect jelly can bring, intended to destroy a massive insect hive using poison. [joiner_pronoun] failed, but was doused in insect threat pheromones. Insects have been hunting [joiner_objective] ever since. Now they've launched their final attack.
+    \n{BASETEXT}</value>
+                      </li>
+                      <li Class="QuestNode_SubScript">
+                        <def>Util_Infestation</def>
+                      </li>
+                    </nodes>
+                  </li>
+
+                  <!-- Random choice: Active threat site -->
+                  <li Class="QuestNode_Sequence">
+                    <nodes>
+                      <li Class="QuestNode_GetFaction">
+                        <storeAs>enemyFaction</storeAs>
+                        <allowEnemy>true</allowEnemy>
+                      </li>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterLabel</name>
+                        <value TKey="LetterLabelSiteAppeared">Site appeared to harass [joiner_nameDef]: [site_label]</value>
+                      </li>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterText</name>
+                        <value TKey="LetterTextSiteAppeared">[joiner_nameDef] has admitted what [joiner_pronoun] was fleeing from.
+    \n[joiner_nameDef] was traveling when [joiner_pronoun] happened upon [enemyFaction_leader_nameFull], leader of [enemyFaction_name], sick on the side of the road. [joiner_nameDef] insulted [enemyFaction_leader_nameDef] by comparing [enemyFaction_leader_objective] to a [Animal].
+    \nNow [enemyFaction_leader_nameDef]'s [enemyFaction_pawnsPlural] are activating a site nearby to harass you.
+    \n[allSitePartsDescriptions]</value>
+                      </li>
+                      <li Class="QuestNode_SubScript">
+                        <def>Util_SpawnSiteThreat</def>
+                      </li>
+                    </nodes>
+                  </li>
+
+                  <!-- Random choice: Manhunter -->
+                  <li Class="QuestNode_Sequence">
+                    <nodes>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterLabel</name>
+                        <value TKey="LetterLabelChasingManhunter">{BASELABEL}: Chasing [joiner_nameDef]</value>
+                      </li>
+                      <li Class="QuestNode_Set">
+                        <name>customLetterText</name>
+                        <value TKey="LetterTextChasingManhunter">[joiner_nameDef] has admitted what [joiner_pronoun] was fleeing from.
+    \n[joiner_nameDef] was traveling when [joiner_pronoun] came upon a lost group of [animalKind_labelPlural]. [joiner_pronoun], in a bad mood, goaded the [animalKind_labelPlural]. Unexpectedly, they attacked [joiner_objective]. And they have followed [joiner_objective] a long distance.
+    \n{BASETEXT}</value>
+                      </li>
+                      <li Class="QuestNode_SubScript">
+                        <def>Util_ManhunterPack</def>
+                      </li>
+                    </nodes>
+                  </li>
+
+                </nodes>
+
+              </li>
+              <li Class="QuestNode_SendSignals">
+                <outSignals>ThreatAppeared</outSignals>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <!-- End -->
+        <li Class="QuestNode_AllSignals">
+          <inSignals>
+            <li>ThreatAppeared</li>
+            <li>JoinerArrived</li>
+          </inSignals>
+          <node Class="QuestNode_End" />
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

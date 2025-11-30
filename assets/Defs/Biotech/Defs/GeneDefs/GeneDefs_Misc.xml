@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef>
+    <defName>KindInstinct</defName>
+    <label>kind instinct</label>
+    <labelShortAdj>kind</labelShortAdj>
+    <description>Carriers of this gene are high in trait agreeableness and are very conscientious. They rarely insult others and will sometimes offer kind words to brighten the moods of those around them. They also never judge people by their appearance.</description>
+    <iconPath>UI/Icons/Genes/Gene_KindInstinct</iconPath>
+    <displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>60</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Kind</def>
+      </li>
+    </forcedTraits>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>kind</symbol>
+          <weight>3</weight>
+        </li>
+        <li><symbol>nice</symbol></li>
+        <li><symbol>gentle</symbol></li>
+        <li><symbol>ami</symbol></li>
+        <li><symbol>cool</symbol></li>
+        <li><symbol>mellow</symbol></li>
+        <li><symbol>soft</symbol></li>
+        <li><symbol>tame</symbol></li>
+        <li><symbol>pleas</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>ViolenceDisabled</defName>
+    <label>violence disabled</label>
+    <labelShortAdj>nonviolent</labelShortAdj>
+    <description>Carriers of this gene are emotionally and mentally incapable of engaging in violence. They are overwhelmingly resistant to and horrified by the idea of hurting another.</description>
+    <iconPath>UI/Icons/Genes/Gene_ViolenceDisabled</iconPath>
+    <displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>50</displayOrderInCategory> 
+    <disabledWorkTags>
+      <li>Violent</li>
+    </disabledWorkTags>
+    <biostatMet>3</biostatMet>
+    <exclusionTags>
+      <li>MeleeDamage</li>
+      <li>ShootingAccuracy</li>
+      <li>Aggressive</li>
+      <li>KillThirst</li>
+    </exclusionTags>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>paci</symbol>
+          <weight>2</weight>
+        </li>
+        <li><symbol>calm</symbol></li>
+        <li><symbol>peace</symbol></li>
+        <li><symbol>dove</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>dove</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>Nearsighted</defName>
+    <label>nearsighted</label>
+    <iconPath>UI/Icons/Genes/Gene_Nearsighted</iconPath>
+    <description>Carriers of this gene have difficulty seeing at a distance. Their shooting accuracy at long ranges is reduced.</description>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>50</displayOrderInCategory>
+    <statFactors>
+      <ShootingAccuracyFactor_Long>0.25</ShootingAccuracyFactor_Long>
+      <ShootingAccuracyFactor_Medium>0.5</ShootingAccuracyFactor_Medium>
+    </statFactors>
+    <biostatMet>2</biostatMet>
+    <exclusionTags>
+      <li>ShootingAccuracy</li>
+    </exclusionTags>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>blind</symbol></li>
+        <li><symbol>blur</symbol></li>
+        <li><symbol>squint</symbol></li>
+        <li><symbol>peek</symbol></li>
+        <li><symbol>cross</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>sighter</symbol></li>
+        <li><symbol>peeker</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>StrongStomach</defName>
+    <label>strong stomach</label>
+    <description>Carriers of this gene have an extra toxin-filtering organ in their stomach and will never suffer from food poisoning even after eating rotten food.</description>
+    <iconPath>UI/Icons/Genes/Gene_StrongStomach</iconPath>
+    <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+    <biostatMet>-1</biostatMet>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>9</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dura</symbol></li>
+        <li><symbol>eat</symbol></li>
+        <li><symbol>feed</symbol></li>
+        <li><symbol>cram</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>vore</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>DarkVision</defName>
+    <label>dark vision</label>
+    <description>Carriers of this gene see well in low light and are unaffected by mood penalties related to darkness. They have a reflective layer behind the retina that amplifies their ability to see in the dark.</description>
+    <iconPath>UI/Icons/Genes/Gene_Darkvision</iconPath>
+    <ignoreDarkness>true</ignoreDarkness>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>60</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dark</symbol></li>
+        <li><symbol>night</symbol></li>
+        <li><symbol>dim</symbol></li>
+        <li><symbol>gloom</symbol></li>
+        <li><symbol>murk</symbol></li>
+        <li><symbol>deep</symbol></li>
+        <li><symbol>umbra</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>shadow</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+  
+  <GeneDef>
+    <defName>CaveDweller</defName>
+    <label>indoor dweller</label>
+    <description>Carriers of this gene have no need for the outdoors and will never feel cooped up no matter how long they stay inside.</description>
+    <iconPath>UI/Icons/Genes/Gene_CaveDweller</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>70</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <disablesNeeds>
+      <li>Outdoors</li>
+    </disablesNeeds>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>KillThirst</defName>
+    <label>kill thirst</label>
+    <labelShortAdj>kill-thirsty</labelShortAdj>
+    <description>Carriers of this gene lust for the feeling of ending another's life. They will become irritated if they go for too long without killing someone in close combat.</description>
+    <displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>60</displayOrderInCategory>
+    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <enablesNeeds>
+      <li>KillThirst</li>
+    </enablesNeeds>
+    <biostatMet>4</biostatMet>
+    <minAgeActive>13</minAgeActive>
+    <exclusionTags>
+      <li>KillThirst</li>
+    </exclusionTags>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>murder</symbol></li>
+        <li><symbol>death</symbol></li>
+        <li><symbol>kill</symbol></li>
+        <li><symbol>slay</symbol></li>
+        <li><symbol>rage</symbol></li>
+        <li><symbol>hate</symbol></li>
+        <li><symbol>snuff</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>vore</symbol></li>
+        <li><symbol>killer</symbol></li>
+        <li><symbol>slayer</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>FireResistant</defName>
+    <label>fire resistant</label> 
+    <labelShortAdj>fireproof</labelShortAdj> 
+    <description>Carriers of this gene have special fast-acting sweat glands and heat-resistant skin. They only take 25% of the normal damage from fire. The chance of them catching on fire is also drastically reduced.</description>
+    <iconPath>UI/Icons/Genes/Gene_FireResistant</iconPath>
+    <displayCategory>ResistanceAndWeakness</displayCategory>
+    <displayOrderInCategory>60</displayOrderInCategory>
+    <statFactors>
+      <Flammability>0.1</Flammability>
+    </statFactors>
+    <damageFactors>
+      <Flame>0.25</Flame>
+    </damageFactors>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>foam</symbol></li>
+        <li><symbol>wet</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>foam</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+    <exclusionTags>
+      <li>FireDamage</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>Inbred</defName>
+    <label>inbred</label>
+    <description>This genetic condition affects a person's fertility, immunity, and mental capacity.</description>
+    <iconPath>UI/Icons/Genes/Gene_Inbred</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <biostatMet>-2</biostatMet>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <removeOnRedress>true</removeOnRedress>
+    <displayOrderInCategory>110</displayOrderInCategory>
+    <passOnDirectly>false</passOnDirectly>
+    <forcedTraits>
+      <li>
+        <def>SlowLearner</def>
+      </li>
+    </forcedTraits>
+    <statFactors>
+      <Fertility>0.5</Fertility>
+      <ImmunityGainSpeed>0.85</ImmunityGainSpeed>
+    </statFactors>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>RobustDigestion</defName>
+    <label>robust digestion</label>
+    <description>Carriers of this gene grow a multi-fold stomach, allowing them to digest raw foods more efficiently than baseline humans. In general, they get the same nutrition from raw food as from if it is cooked. They also don't mind the taste of raw food at all.</description>
+    <iconPath>UI/Icons/Genes/Gene_RobustDigestion</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <dontMindRawFood>true</dontMindRawFood>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-2</biostatMet>
+    <statFactors>
+      <RawNutritionFactor>1.8</RawNutritionFactor>
+    </statFactors>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>hardeater</symbol></li>
+        <li><symbol>muncher</symbol></li>
+        <li><symbol>grubber</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>eat</symbol></li>
+        <li><symbol>raw</symbol></li>
+        <li><symbol>quad</symbol></li>
+        <li><symbol>moo</symbol></li>
+        <li><symbol>raw</symbol></li>
+        <li><symbol>munch</symbol></li>
+        <li><symbol>cow</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>eater</symbol></li>
+        <li><symbol>mouth</symbol></li>
+        <li><symbol>vore</symbol></li>
+        <li><symbol>munch</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef Name="CellInstabilityBase" Abstract="True">
+    <displayCategory>Miscellaneous</displayCategory>
+    <exclusionTags>
+      <li>CellInstability</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="CellInstabilityBase">
+    <defName>Instability_Mild</defName>
+    <label>mild cell instability</label>
+    <description>Carriers of this gene need less metabolic energy to stay alive, at the cost of reduced stability in their cell-replication machinery.</description>
+    <iconPath>UI/Icons/Genes/Gene_MildCellInstability</iconPath>
+    <displayOrderInCategory>130</displayOrderInCategory>
+    <biostatMet>2</biostatMet>
+    <statFactors>
+      <LifespanFactor>0.8</LifespanFactor>
+      <CancerRate>3</CancerRate>
+      <ImmunityGainSpeed>0.96</ImmunityGainSpeed>
+    </statFactors>
+  </GeneDef>
+
+  <GeneDef ParentName="CellInstabilityBase">
+    <defName>Instability_Major</defName>
+    <label>major cell instability</label>
+    <description>Carriers of this gene need much less metabolic energy to stay alive, at the cost of greatly-reduced stability in their cell-replication machinery.</description>
+    <iconPath>UI/Icons/Genes/Gene_MajorCellInstability</iconPath>
+    <displayOrderInCategory>135</displayOrderInCategory>
+    <biostatMet>4</biostatMet>
+    <statFactors>
+      <LifespanFactor>0.6</LifespanFactor>
+      <CancerRate>5</CancerRate>
+      <ImmunityGainSpeed>0.92</ImmunityGainSpeed>
+    </statFactors>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>PsychicBonding</defName>
+    <label>psychic bonding</label>
+    <description>Carriers of this gene have a special neural organ that makes them psychically bond with a lover for life. As long as the lovers are together, they will be happy. If they are physically separated, they will be disturbed by the distance. If one dies, the other's mind will be badly disrupted.</description>
+    <geneClass>Gene_PsychicBonding</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_PsychicBonding</iconPath>
+    <displayCategory>Psychic</displayCategory>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <customEffectDescriptions>
+      <li>Romance attempts always succeed.</li>
+      <li>Gains psychic bond with first romantic partner.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>PollutionRush</defName>
+    <label>pollution stimulus</label>
+    <description>Carriers of this gene get a chemical rush from being exposed to pollution. This makes them move faster and helps them think clearer. A similar gene is found in combat-engineered mega-insects.</description>
+    <geneClass>Gene_PollutionRush</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_PollutionRush</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>500</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <customEffectDescriptions>
+      <li>Gain stat bonuses when exposed to pollution.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>Unstoppable</defName>
+    <label>unstoppable</label>
+    <description>Carriers of this gene are not slowed down when taking damage.</description>
+    <iconPath>UI/Icons/Genes/Gene_Unstoppable</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>550</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-2</biostatMet>
+    <statFactors>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+    </statFactors>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>NakedSpeed</defName>
+    <label>naked speed</label>
+    <description>Carriers of this gene move slower while clothed, and faster while naked.</description>
+    <iconPath>UI/Icons/Genes/Gene_NakedSpeed</iconPath>
+    <displayCategory>Movement</displayCategory>
+    <displayOrderInCategory>500</displayOrderInCategory>
+    <conditionalStatAffecters>
+      <li Class="ConditionalStatAffecter_Clothed">
+        <statOffsets>
+          <MoveSpeed>-0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+      <li Class="ConditionalStatAffecter_Unclothed">
+        <statOffsets>
+          <MoveSpeed>0.1</MoveSpeed>
+        </statOffsets>
+      </li>
+    </conditionalStatAffecters>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>2</biostatMet>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>WebbedPhalanges</defName>
+    <label>webbed phalanges</label>
+    <description>Carriers of this gene have webbed fingers and toes, allowing them to move faster in water. Webbed fingers slightly reduce fine motor control.</description>
+    <iconPath>UI/Icons/Genes/Gene_WebbedPhalanges</iconPath>
+    <displayCategory>Movement</displayCategory>
+    <displayOrderInCategory>500</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <waterCellCost>1</waterCellCost>
+    <capMods>
+      <li>
+        <capacity>Manipulation</capacity>
+        <offset>-0.05</offset>
+      </li>
+    </capMods>
+  </GeneDef>
+
+</Defs>

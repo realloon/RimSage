@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ScenarioDef ParentName="ScenarioBase">
+    <defName>TheGravship</defName>
+    <label>The Gravship</label>
+    <description>Your gravship sits docked at the orbital relay. As your crew begins to salvage the equipment, you realize that this isn't ancient human tech - it's a mechanoid beacon. The relay crackles to life and broadcasts its war alert to a distant mechhive. They're hunting you now, and they will eventually find you wherever you go.\n\nNote: This is a difficult scenario and is not recommended for new players.</description>
+    <scenario>
+      <summary>A crew of three hunted by mechanoids.</summary>
+      <playerFaction>
+        <factionDef>GravshipCrew</factionDef>
+      </playerFaction>
+      <parts Inherit="False">
+        
+        <!-- Layers -->
+        <li Class="ScenPart_PlanetLayer">
+          <def>PlanetLayerFixed</def>
+          <tag>Orbit</tag>
+          <layer>Orbit</layer>
+          <settingsDef>Orbit</settingsDef>
+          <hide>true</hide>
+          <connections>
+            <Surface>
+              <zoomMode>ZoomIn</zoomMode>
+            </Surface>
+          </connections>
+        </li>
+        
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>You screwed up, and now the mechhive wants you dead. Its terrifying murder machines will arrive soon. Gather the valuable gravlite panels, then use your gravship to flee to a safe location on the planet below.\n\nTo launch the gravship, select the pilot console, then select the launch command.\n\nOn the world map, select ‘view planet' to choose a landing spot on the planet.\n\nFrom now on, wherever you go, the mechanoids will eventually find you. To stop them, you must find and defeat the mechhive itself.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>3</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+          <allowedDevelopmentalStages>Adult, Child</allowedDevelopmentalStages>
+        </li>
+
+        <li Class="ScenPart_ForcedMap">
+          <def>ForcedMap</def>
+          <mapGenerator>OrbitalRelay</mapGenerator>
+          <layerDef>Orbit</layerDef>
+        </li>
+
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Gravship</method>
+        </li>
+
+        <li Class="ScenPart_PursuingMechanoids">
+          <def>PursuingMechanoids</def>
+        </li>
+
+        <li Class="ScenPart_DisableQuest">
+          <def>DisableQuest</def>
+          <questDef>MechanoidSignal</questDef>
+        </li>
+
+        <!-- Starting research -->
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>BasicGravtech</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>BiofuelRefining</project>
+        </li>
+
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Chemfuel</thingDef>
+          <count>100</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>WoodLog</thingDef>
+          <count>250</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>60</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>40</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>40</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_Autopistol</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_MachinePistol</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_BreachAxe</thingDef>
+          <stuff>Steel</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>350</count>
+        </li>
+
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Silver</thingDef>
+          <count>300</count>
+          <allowRoofed>false</allowRoofed>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>500</count>
+          <allowRoofed>false</allowRoofed>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>GravlitePanel</thingDef>
+          <count>400</count>
+          <allowRoofed>false</allowRoofed>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>
