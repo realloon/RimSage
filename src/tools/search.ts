@@ -27,12 +27,9 @@ export async function searchSource(
   // search pattern
   args.push('-e', query)
 
-  // search path
-  args.push(sandbox.getBasePath())
-
   try {
-    // exec search
-    const result = await $`rg ${args}`.text()
+    // exec search from the base directory to allow relative glob patterns to work
+    const result = await $`cd ${sandbox.getBasePath()} && rg ${args} .`.text()
 
     if (!result || result.trim().length === 0) {
       return 'No results found. Try adjusting your search query or file pattern.'
