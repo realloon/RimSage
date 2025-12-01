@@ -36,7 +36,7 @@ export async function searchSource(
     }
 
     // lines limited
-    const lines = result.split('\n')
+    const lines = result.split(/\r?\n/)
     if (lines.length > MAX_RESULT_LINES) {
       const truncatedLines = lines.slice(0, MAX_RESULT_LINES)
       const truncated = truncatedLines.join('\n')
