@@ -11,7 +11,7 @@ const sandbox = new PathSandbox('assets/')
 
 const server = new McpServer({
   name: 'rimworld-source',
-  version: '1.0.0',
+  version: '0.5.0',
 })
 
 // tool: search

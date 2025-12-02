@@ -1,6 +1,6 @@
 {
   "name": "rimcp",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
