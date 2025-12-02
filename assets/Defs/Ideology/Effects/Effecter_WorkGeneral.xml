@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <EffecterDef>
+    <defName>HairCutting</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>HairCutting</fleckDef>
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+        <positionLerpFactor>0.6</positionLerpFactor>
+        <scale>0.3~0.5</scale>
+        <color>(255, 255, 255)</color>
+        <positionRadius>0.4</positionRadius>
+        <ticksBetweenMotes>40</ticksBetweenMotes>
+        <speed>1.6</speed>
+        <airTime>0.75</airTime>
+        <angle>170~190</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>HairCutting</defName>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/HairCutting/HairCuttingA</texPath>
+        <shaderType>Mote</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <drawSize>(1.5,1.5)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/HairCutting/HairCuttingB</texPath>
+        <shaderType>Mote</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <drawSize>(1.5,1.5)</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/HairCutting/HairCuttingC</texPath>
+        <shaderType>Mote</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <drawSize>(1.5,1.5)</drawSize>
+      </li>
+    </randomGraphics>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.075</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+  </FleckDef>
+
+</Defs>

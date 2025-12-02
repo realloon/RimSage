@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MapGeneratorDef>
+    <defName>InsectLair</defName>
+    <label>insect lair</label>
+    <isUnderground>true</isUnderground>
+    <forceCaves>true</forceCaves>
+    <ignoreAreaRevealedLetter>true</ignoreAreaRevealedLetter>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <temperature>15</temperature>
+      <tileMutators>
+        <li>UndergroundCave</li>
+      </tileMutators>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>MutatorPostElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>MutatorPostTerrain</li>
+      <li>Underground_ScatterRuinsSimple</li>
+      <li>MutatorCriticalStructures</li>
+      <li>MutatorNonCriticalStructures</li>
+      <li>RockChunks</li>
+      <li>PlaceCaveExit</li>
+      <li>InsectLair_Cave</li>
+      <li>InsectLair_GlowPods</li>
+      <li>Plants</li>
+      <li>MutatorFinal</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>InsectLair_Cave</defName>
+    <order>551</order>
+    <genStep Class="GenStep_InsectLairCave" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <order>552</order>
+    <defName>InsectLair_GlowPods</defName>
+    <genStep Class="GenStep_ScatterGroup">
+      <minSpacing>20</minSpacing>
+      <count>5</count>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <affordance>Light</affordance>
+        </li>
+        <li Class="ScattererValidator_TerrainDef">
+          <terrainDef>InsectSludge</terrainDef>
+        </li>
+      </validators>
+      <groups>
+        <li>
+          <things>
+            <GlowPod>1</GlowPod>
+          </things>
+          <coveredCellsPer10Cells>0.5~1.5</coveredCellsPer10Cells>
+          <clusterRectRadius>2~3</clusterRectRadius>
+        </li>
+      </groups>
+    </genStep>
+  </GenStepDef>
+</Defs>

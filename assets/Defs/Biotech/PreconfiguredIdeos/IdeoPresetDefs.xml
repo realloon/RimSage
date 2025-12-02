@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <!-- Strong ideos -->
+
+  <IdeoPresetDef>
+    <defName>Blood_Worshippers</defName>
+    <label>blood worshippers</label>
+    <description>We are the children of the night, the thralls of the ancient blood drinkers. Let us bring them strength and glory.\n\nBelievers will be happy if there's a bloodfeeder in the colony but have an aversion to outdoor light.</description>
+    <categoryDef MayRequire="Ludeon.RimWorld.Ideology">Strong</categoryDef>
+    <memes>
+      <li>Bloodfeeding</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Darkness</li>
+    </memes>
+  </IdeoPresetDef>
+  
+</Defs>

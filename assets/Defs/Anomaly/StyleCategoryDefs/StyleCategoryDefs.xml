@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <StyleCategoryDef>
+    <defName>Horaxian</defName>
+    <label>horaxian</label>
+    <iconPath>UI/StyleCategories/Horaxian</iconPath>
+    <fixedIdeoOnly>true</fixedIdeoOnly>
+    <thingDefStyles>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+        <thingDef MayRequire="Ludeon.RimWorld.Royalty">MeleeWeapon_Axe</thingDef>
+        <styleDef>Horaxian_Axe</styleDef>
+      </li>
+      <li>
+        <thingDef>MeleeWeapon_Knife</thingDef>
+        <styleDef>Horaxian_Knife</styleDef>
+      </li>
+      <li>
+        <thingDef>MeleeWeapon_Gladius</thingDef>
+        <styleDef>Horaxian_Gladius</styleDef>
+      </li>
+      <li>
+        <thingDef>MeleeWeapon_Mace</thingDef>
+        <styleDef>Horaxian_Mace</styleDef>
+      </li>
+      <li>
+        <thingDef>MeleeWeapon_Club</thingDef>
+        <styleDef>Horaxian_Club</styleDef>
+      </li>
+    </thingDefStyles>
+  </StyleCategoryDef>
+
+</Defs>

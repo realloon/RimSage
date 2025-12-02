@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThinkTreeDef>
+    <defName>Revenant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <!-- Downed -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>BurningResponse</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalRevenantState">
+          <state>Wander</state>
+          <subNodes>
+            <li Class="JobGiver_RevenantWander" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalRevenantState">
+          <state>Attack</state>
+          <subNodes>
+            <li Class="JobGiver_RevenantAttack" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalRevenantState">
+          <state>Escape</state>
+          <subNodes>
+            <li Class="JobGiver_RevenantEscape" />
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalRevenantState">
+          <state>Sleep</state>
+          <subNodes>
+            <li Class="JobGiver_RevenantSleep" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>RevenantConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</Defs>

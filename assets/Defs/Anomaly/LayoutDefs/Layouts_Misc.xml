@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <LayoutDef>
+    <defName>Labyrinth</defName>
+    <workerClass>LayoutWorker_Labyrinth</workerClass>
+    <canHaveMultipleLayoutsInRoom>true</canHaveMultipleLayoutsInRoom>
+    <multipleLayoutRoomChance>0.15</multipleLayoutRoomChance>
+    <noRoof>true</noRoof>
+    <roomDefs>
+      <LabyrinthObelisk />
+      <LabyrinthEmpty>0.15</LabyrinthEmpty>
+      <LabyrinthEndlessPit>0.1</LabyrinthEndlessPit>
+      <LabyrinthFloorEtchings>0.15</LabyrinthFloorEtchings>
+      <LabyrinthDeadBody>0.05</LabyrinthDeadBody>
+      <LabyrinthCorpseRoom>0.01</LabyrinthCorpseRoom>
+      <LabyrinthStatueDeadlife>0.025</LabyrinthStatueDeadlife>
+      <LabyrinthStatueTeleporter>0.025</LabyrinthStatueTeleporter>
+      <LabyrinthSleepingFleshbeast>0.05</LabyrinthSleepingFleshbeast>
+      <LabyrinthAbandonedCamp>0.02</LabyrinthAbandonedCamp>
+      <LabyrinthAnimalCorpses>0.01</LabyrinthAnimalCorpses>
+      <LabyrinthHarbinger>0.01</LabyrinthHarbinger>
+      <LabyrinthTrees>0.03</LabyrinthTrees>
+      <LabyrinthAnimals>0.0075</LabyrinthAnimals>
+      <LabyrinthGrayBox>0.05</LabyrinthGrayBox>
+      <LabyrinthLargeGrayBox>0.025</LabyrinthLargeGrayBox>
+      <LabyrinthLargeEmptyGrayBox>0.025</LabyrinthLargeEmptyGrayBox>
+      <LabyrinthFloorRamblings>0.05</LabyrinthFloorRamblings>
+      <LabyrinthChildRoom MayRequire="Ludeon.RimWorld.Biotech">0.01</LabyrinthChildRoom>
+    </roomDefs>
+  </LayoutDef>
+  
+</Defs>

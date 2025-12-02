@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>RelicHunt</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <isRootSpecial>true</isRootSpecial>
+    <rootMinPoints>300</rootMinPoints>
+    <defaultChallengeRating>3</defaultChallengeRating>
+    <epic>true</epic>
+    <successHistoryEvent>RelicHuntSuccess</successHistoryEvent>
+    <questNameRules>
+      <rulesStrings> 
+
+        <!-- quest name -->
+        <li>questName->The [hunt] for the [item]</li>
+        <li>questName->The [itemAdj] [item]</li>
+        <li>questName(classicMode==False)->The [item] of [ideo_name]</li>
+
+        <!-- pieces -->
+        <li>hunt->hunt</li>
+        <li>hunt->search</li>
+        <li>hunt->quest</li>
+
+        <li>item(p=4)->[relic_name]</li>
+        <li>item->relic</li>
+        <li>item->artifact</li>
+
+        <li>itemAdj->ancient</li>
+        <li>itemAdj->revered</li>
+        <li>itemAdj->venerated</li>
+
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+      
+        <!-- description -->
+        <li>questDescription(classicMode==True)->You've learned that a valuable relic is nearby.\n\nThe [relic_name] is one of [relicGlobalCount] ancient objects venerated by many people. If you could collect it, you could build a reliquary to make your colonists happy and attract wealthy pilgrims.</li>
+        <li>questDescription(classicMode==False)->You've learned that a relic of [ideo_name] is nearby.\n\nThe [relic_name] is an ancient object venerated by all [ideo_memberNamePlural]. If you could collect it, you could build a great reliquary to make [ideo_memberNamePlural] happy, attract wealthy pilgrims, and bring more people to [ideo_name].</li>
+        <li>questDescriptionPartBeforeDiscovery->First, you need to find the [relic_name]. Watch for opportunities to gather information about it.</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Root_RelicHunt" />
+  </QuestScriptDef>
+
+</Defs>

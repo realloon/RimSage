@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Execution_Abhorrent</defName>
+    <issue>Execution</issue>
+    <label>always abhorrent</label>
+    <description>Executing a prisoner is an abhorrent evil under any circumstances.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <conflictingMemes>
+      <li>PainIsVirtue</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <nullifyingTraits>
+          <li>Bloodlust</li>
+          <li>Psychopath</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+      </li>
+
+      <!-- on instigator -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>InnocentPrisonerDied_Abhorrent</thought>
+      </li>
+
+      <!-- know opinion -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>ExecutedPrisoner_Know_Abhorrent</thought>
+        <description>Executed prisoner</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>InnocentPrisonerDied_Know_Abhorrent</thought>
+        <description>Responsible for prisoner death</description>
+      </li>
+
+      <!-- know mood -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedColonist</eventDef>
+        <thought>ExecutedColonist_Know_Abhorrent_Mood</thought>
+        <description>Someone executed a colonist</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedGuest</eventDef>
+        <thought>ExecutedGuest_Know_Abhorrent_Mood</thought>
+        <description>Someone executed a guest</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>ExecutedGuest_Know_Abhorrent_Mood</thought> <!-- we use the same thought as for guests -->
+        <description>Someone executed a prisoner</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>InnocentPrisonerDied_Know_Abhorrent_Mood</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Execution_Horrible</defName>
+    <issue>Execution</issue>
+    <label>always horrible</label>
+    <description>Executing a prisoner is a horrible thing under any circumstances.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <conflictingMemes>
+      <li>PainIsVirtue</li>
+      <li>Cannibal</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <!-- on instigator -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>ExecutedPrisoner_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>InnocentPrisonerDied_Horrible</thought>
+      </li>
+
+      <!-- know opinion -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>ExecutedPrisoner_Know_Horrible</thought>
+        <description>Executed prisoner</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>InnocentPrisonerDied_Know_Horrible</thought>
+        <description>Responsible for prisoner death</description>
+      </li>
+
+      <!-- know mood -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>KnowPrisonerDiedInnocent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedColonist</eventDef>
+        <thought>KnowColonistExecuted</thought>
+        <description>Someone executed a colonist</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedGuest</eventDef>
+        <thought>KnowGuestExecuted</thought>
+        <description>Someone executed a guest</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>KnowGuestExecuted</thought> <!-- we use the same thought as for guests -->
+        <description>Someone executed a prisoner</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Execution_HorribleIfInnocent</defName>
+    <issue>Execution</issue>
+    <label>horrible if innocent</label>
+    <description>Executing an innocent prisoner is a horrible thing. If the prisoner is guilty, it's acceptable.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <conflictingMemes>
+      <li>Cannibal</li>
+    </conflictingMemes>
+    <comps>
+      <!-- on instigator -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ExecutedPrisonerInnocent</eventDef>
+        <thought>ExecutedPrisonerInnocent_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>InnocentPrisonerDied_Horrible</thought>
+      </li>
+
+      <!-- know opinion -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisonerInnocent</eventDef>
+        <thought>ExecutedPrisonerInnocent_Know_Horrible</thought>
+        <description>Executed innocent prisoner</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>InnocentPrisonerDied_Know_Horrible</thought>
+        <description>Responsible for innocent prisoner death</description>
+      </li>
+
+      <!-- know mood -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InnocentPrisonerDied</eventDef>
+        <thought>KnowPrisonerDiedInnocent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedColonist</eventDef>
+        <thought>KnowColonistExecuted</thought>
+        <description>Someone executed a colonist</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedGuest</eventDef>
+        <thought>KnowGuestExecuted</thought>
+        <description>Someone executed a guest</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>KnowGuestExecuted</thought> <!-- we use the same thought as for guests -->
+        <description>Someone executed a prisoner</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Execution_DontCare</defName>
+    <issue>Execution</issue>
+    <label>don't care</label>
+    <description>Executing prisoners is acceptable, whether they are guilty or innocent.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Execution_RespectedIfGuilty</defName>
+    <issue>Execution</issue>
+    <label>respected if guilty</label>
+    <description>Executing prisoners is acceptable. If the prisoner is guilty, it is cause for great happiness.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+      <li>Collectivist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ExecutedPrisonerGuilty</eventDef>
+        <thought>ExecutedPrisonerGuilty_Respected</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisonerGuilty</eventDef>
+        <thought>ExecutedPrisonerGuilty_Know_Respected</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisonerGuilty</eventDef>
+        <thought>ExecutedPrisonerGuilty_Know_Respected_Mood</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>ExecutedPrisonerGuilty</eventDef>
+        <eventLabel>executed someone</eventLabel>
+        <points>1</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Execution_Required</defName>
+    <issue>Execution</issue>
+    <label>required</label>
+    <description>Prisoners must be executed on a regular basis. When they are, it is a happy occasion.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>Supremacist</li>
+      <li>PainIsVirtue</li>
+    </associatedMemes>
+    <comps>
+      <!-- on instigator -->
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>ExecutedPrisoner_Respected</thought>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>PrisonerDied</eventDef>
+        <thought>PrisonerDied_Respected</thought>
+      </li>
+
+      <!-- know social -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>ExecutedPrisoner_Know_Respected</thought>
+        <description>Executed prisoner</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>PrisonerDied</eventDef>
+        <thought>PrisonerDied_Know_Respected</thought>
+        <description>Responsible for prisoner death</description>
+      </li>
+
+      <!-- know mood -->
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <thought>Execution_Know_Respected_Mood</thought>
+        <description>Someone executed a prisoner</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ExecutedGuest</eventDef>
+        <thought>Execution_Know_Respected_Mood</thought>
+        <description>Someone executed a guest</description>
+      </li>
+
+      <!-- no execution -->
+      <li Class="PreceptComp_SituationalThought">
+        <thought>NoRecentExecution</thought>
+        <description>No execution for {MINDAYSLASTEXECUTION} days</description>
+      </li>
+
+      <!-- development points -->
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>ExecutedPrisoner</eventDef>
+        <eventLabel>executed someone</eventLabel>
+        <points>1</points>
+      </li>
+
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts: More intense version of vanilla "know X executed" thoughts -->
+
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>ExecutedGuest_Know_Abhorrent_Mood</defName>
+    <durationDays>6</durationDays>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <!-- justified -->
+      <li>
+        <label>justified execution</label>
+        <description>A guilty prisoner or guest was executed. It was justified, but still sad.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <!-- generic humane -->
+      <li>
+        <label>someone was euthanized</label>
+        <description>A prisoner or guest was euthanized. It was humane, but still sad.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <!-- generic brutal -->
+      <li>
+        <label>someone was executed</label>
+        <description>A prisoner or guest was killed in cold blood. It seemed a bit evil.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+      <!-- died because of organ harvesting -->
+      <li>
+        <label>someone was organ-murdered</label>
+        <description>A prisoner or guest died because the colony took body parts from them. It's horrible.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+      <!-- died due to ripscanning -->
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <label>someone was ripscanned</label>
+        <description>A prisoner died in our ripscanner, their brain burned to ash to feed the machine. It's horrifying.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>ExecutedColonist_Know_Abhorrent_Mood</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <!-- justified execution -->
+      <li>
+        <label>justified execution of colonist</label>
+        <description>A guilty colonist was executed. It was justified, but still sad.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <!-- generic humane, can't be worse than KnowColonistDied -->
+      <li>
+        <label>colonist euthanized</label>
+        <description>A colonist was euthanized. It was humane, but still sad.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <!-- generic brutal -->
+      <li>
+        <label>colonist executed</label>
+        <description>A colonist was killed in cold blood. It seemed a bit evil.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+      <!-- died because of organ harvesting -->
+      <li>
+        <label>colonist organ-harvested</label>
+        <description>A colonist died because someone took body parts from them. It's horrible.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+      <!-- died due to ripscanning -->
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <label>colonist ripscanned</label>
+        <description>A colonist died in our ripscanner, their brain burned to ash to feed the machine. It's horrifying.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+  <!-- Thoughts: Executed prisoner -->
+
+  <ThoughtDef>
+    <defName>ExecutedPrisoner_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>executed prisoner</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InnocentPrisonerDied_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>responsible for the death of a prisoner</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>InnocentPrisonerDied_Know_Abhorrent_Mood</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>innocent prisoner died</label>
+        <description>One of our prisoners died despite being harmless. We should be able to take care of our prisoners. If we wanted them dead, we could have at least conducted an orderly execution rather than permit that barbarism.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+  <ThoughtDef>
+    <defName>InnocentPrisonerDied_Abhorrent</defName>
+    <durationDays>6</durationDays>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>innocent prisoner died (responsible)</label>
+        <description>I was responsible for the death of a prisoner. I must be truly evil.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisoner_Horrible</defName>
+    <durationDays>6</durationDays>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>executed prisoner</label>
+        <description>I had to execute a prisoner. It's a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InnocentPrisonerDied_Horrible</defName>
+    <durationDays>6</durationDays>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>innocent prisoner died (responsible)</label>
+        <description>I was responsible for the death of a prisoner. Am I not a terrible person?</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisoner_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>executed prisoner</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InnocentPrisonerDied_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>responsible for the death of a prisoner</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+  <ThoughtDef>
+    <defName>ExecutedPrisonerInnocent_Horrible</defName>
+    <durationDays>6</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>executed innocent prisoner</label>
+        <description>I had to execute an innocent prisoner. It's a horrible offense against my beliefs.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisonerInnocent_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>executed innocent prisoner</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisonerGuilty_Respected</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>executed guilty prisoner</label>
+        <description>I executed a guilty prisoner. Justice has been served!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>GuiltyPrisonerDied_Respected</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>guilty prisoner died (responsible)</label>
+        <description>I caused the death of a guilty prisoner. Let justice be served.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisonerGuilty_Know_Respected</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>executed guilty prisoner</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisonerGuilty_Know_Respected_Mood</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>guilty prisoner executed</label>
+        <description>We executed a guilty prisoner. Justice has been served!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>GuiltyPrisonerDied_Know_Respected</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>responsible for the death of a prisoner</label>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisoner_Respected</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>executed prisoner</label>
+        <description>I executed a prisoner. Victory has consequences.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PrisonerDied_Respected</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>prisoner died (responsible)</label>
+        <description>I was responsible for the death of a prisoner! Now they'll all respect me.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ExecutedPrisoner_Know_Respected</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>executed prisoner</label>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PrisonerDied_Know_Respected</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>responsible for the death of a prisoner</label>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>Execution_Know_Respected_Mood</defName>
+    <durationDays>2</durationDays>
+    <stages>
+      <li>
+        <label>execution</label>
+        <description>We executed a prisoner or guest. Our dominance is clear!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>NoRecentExecution</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NoRecentExecution</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>no execution</label>
+        <description>It has been too long since we executed a prisoner. Are we so weak as to take no life?</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

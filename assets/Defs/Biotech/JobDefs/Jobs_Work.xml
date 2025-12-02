@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>EmptyWasteContainer</defName>
+    <driverClass>JobDriver_EmptyThingContainer</driverClass>
+    <reportString>extracting TargetB from TargetA.</reportString>
+    <containerReservationLayer>Empty</containerReservationLayer>
+  </JobDef>
+
+  <JobDef>
+    <defName>HaulToAtomizer</defName>
+    <driverClass>JobDriver_HaulToAtomizer</driverClass>
+    <reportString>hauling TargetA.</reportString>
+  </JobDef>
+
+</Defs>

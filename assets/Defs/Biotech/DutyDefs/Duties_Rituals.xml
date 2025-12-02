@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>DeliverPawnToBedForBirth</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalTargetPawnNotInBed">
+          <subNodes>
+            <li Class="JobGiver_DeliverPawnToBed">
+              <exactCell>true</exactCell>
+              <locomotionUrgency>Jog</locomotionUrgency>
+              <ignoreOtherReservations>true</ignoreOtherReservations>
+            </li>
+          </subNodes>
+        </li>
+        <!-- or just walk in there -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

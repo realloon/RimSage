@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>FarmAnimalsWanderIn</defName>
+    <workerClass>RitualAttachableOutcomeEffectWorker_FarmAnimalsWanderIn</workerClass>
+    <label>farm animals wander in</label>
+    <effectDesc>a group of farm animals will be attracted and join the colony.</effectDesc>
+    <letterInfoText>Curious farm animals have wandered in, attracted by the commotion.</letterInfoText>
+    <requiredMemeAny>
+      <li>Rancher</li>
+      <li>AnimalPersonhood</li>
+      <li>NaturePrimacy</li>
+    </requiredMemeAny>
+  </RitualAttachableOutcomeEffectDef>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>GauranlenTreePod</defName>
+    <workerClass>RitualAttachableOutcomeEffectWorker_GauranlenPosSprout</workerClass>
+    <label>gauranlen pod sprout</label>
+    <effectDesc>a Gauranlen pod will sprout at a random location on the map, if it can.</effectDesc>
+    <letterInfoText>A Gauranlen pod sprouted nearby.</letterInfoText>
+    <requiredMemeAny>
+      <li>TreeConnection</li>
+      <li>NaturePrimacy</li>
+    </requiredMemeAny>
+  </RitualAttachableOutcomeEffectDef>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>InsectJellyTunnels</defName>
+    <workerClass>RitualAttachableOutcomeEffectWorker_InsectJellyTunnels</workerClass>
+    <label>insect jelly</label>
+    <effectDesc>insect jelly deposits will be deposited from underground.</effectDesc>
+    <letterInfoText>A giant insect colony underground has deposited some insect jelly.</letterInfoText>
+    <requiredMemeAny>
+      <li>Tunneler</li>
+    </requiredMemeAny>
+    <requiredFaction>Insect</requiredFaction>
+  </RitualAttachableOutcomeEffectDef>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>NearbyFactionGoodwill</defName>
+    <label>nearby faction goodwill</label>
+    <effectDesc>you will gain goodwill from the nearest faction base.</effectDesc>
+    <letterInfoText>You gained {AMOUNT} goodwill with {FACTION_name}.</letterInfoText>
+    <workerClass>RitualAttachableOutcomeEffectWorker_NearbyFactionGoodwill</workerClass>
+  </RitualAttachableOutcomeEffectDef>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>RandomRecruit</defName>
+    <label>random recruit</label>
+    <effectDesc>50% chance of random recruit of the same ideoligion joining your colony.</effectDesc>
+    <letterInfoText>A wanderer has arrived and wants to join your colony.</letterInfoText>
+    <workerClass>RitualAttachableOutcomeEffectWorker_RandomRecruit</workerClass>
+    <disallowedRituals>
+      <li>FuneralStandard</li>
+      <li>FuneralNoCorpse</li>
+    </disallowedRituals>
+  </RitualAttachableOutcomeEffectDef>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>DiscoverAncientComplex</defName>
+    <label>discover ancient complex</label>
+    <effectDesc>you will discover the location of an ancient complex nearby.</effectDesc>
+    <letterInfoText>You've discovered the location of an ancient complex.</letterInfoText>
+    <workerClass>RitualAttachableOutcomeEffectWorker_DiscoverAncientComplex</workerClass>
+  </RitualAttachableOutcomeEffectDef>
+  
+</Defs>

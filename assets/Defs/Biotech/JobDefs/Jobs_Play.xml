@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef Abstract="True" Name="BabyPlay">
+    <reportString>playing with TargetA.</reportString>
+  </JobDef>
+
+  <JobDef ParentName="BabyPlay">
+    <defName>PlayStatic</defName>
+    <driverClass>JobDriver_PlayStatic</driverClass>
+  </JobDef>
+
+  <JobDef ParentName="BabyPlay">
+    <defName>PlayWalking</defName>
+    <driverClass>JobDriver_PlayWalking</driverClass>
+  </JobDef>
+
+  <JobDef ParentName="BabyPlay">
+    <defName>PlayToys</defName>
+    <driverClass>JobDriver_PlayToys</driverClass>
+  </JobDef>
+
+</Defs>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LearningDesireDef>
+    <defName>Skydreaming</defName>
+    <label>sky dreaming</label>
+    <description>Find a spot outside and watch the sky. Requires access to the outdoors.</description>
+    <workerClass>LearningGiver_Skydreaming</workerClass>
+    <iconPath>UI/Icons/Learning/Skydreaming</iconPath>
+    <jobDef>Skydreaming</jobDef>
+  </LearningDesireDef>
+
+  <LearningDesireDef>
+    <defName>Radiotalking</defName>
+    <label>radio talking</label>
+    <description>Chat with people over the radio. Requires a powered comms console.</description>
+    <iconPath>UI/Icons/Learning/Radiotalking</iconPath>
+    <workerClass>LearningGiver_Radiotalking</workerClass>
+    <jobDef>Radiotalking</jobDef>
+  </LearningDesireDef>
+
+  <LearningDesireDef>
+    <defName>Floordrawing</defName>
+    <label>floor drawing</label>
+    <description>Draw designs on the ground using chalk. A cleaner will eventually remove the drawings.</description>
+    <iconPath>UI/Icons/Learning/FloorDrawing</iconPath>
+    <workerClass>LearningGiver_Floordrawing</workerClass>
+    <jobDef>Floordrawing</jobDef>
+  </LearningDesireDef>
+
+  <LearningDesireDef>
+    <defName>NatureRunning</defName>
+    <label>nature running</label>
+    <description>Explore the local outdoors. Requires access to the outdoors.</description>
+    <workerClass>LearningGiver_NatureRunning</workerClass>
+    <iconPath>UI/Icons/Learning/NatureRunning</iconPath>
+    <jobDef>NatureRunning</jobDef>
+  </LearningDesireDef>
+
+  <LearningDesireDef>
+    <defName>Workwatching</defName>
+    <label>work watching</label>
+    <description>Follow an adult and watch them as they work. This gives experience in skills.</description>
+    <workerClass>LearningGiver_Workwatching</workerClass>
+    <iconPath>UI/Icons/Learning/Workwatching</iconPath>
+    <jobDef>Workwatching</jobDef>
+    <xpPerTick>0.16</xpPerTick>
+  </LearningDesireDef>
+
+  <LearningDesireDef>
+    <defName>Lessontaking</defName>
+    <label>lesson taking</label>
+    <description>An adult assigned to childcare will teach about various topics. This gives experience in skills. Requires a school desk.</description>
+    <workerClass>LearningGiver_Lessontaking</workerClass>
+    <iconPath>UI/Icons/Learning/Lessontaking</iconPath>
+    <selectionWeight>2.5</selectionWeight>
+    <jobDef>Lessontaking</jobDef>
+    <xpPerTick>0.25</xpPerTick>
+  </LearningDesireDef>
+  
+  <LearningDesireDef>
+    <defName>Reading</defName>
+    <label>reading</label>
+    <description>Find a book and practice reading.</description>
+    <workerClass>LearningGiver_Reading</workerClass>
+    <iconPath>UI/Icons/Learning/Reading</iconPath>
+    <jobDef>Reading</jobDef>
+  </LearningDesireDef>
+
+</Defs>

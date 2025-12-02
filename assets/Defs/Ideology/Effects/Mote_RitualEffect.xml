@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RitualGlowRays</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.4</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualGlow</shaderType>
+      <texPath>Things/Mote/RitualEffects/GlowRays</texPath>
+      <shaderParameters>
+        <_MaskTex>/Things/Mote/RitualEffects/GlowRayMask</_MaskTex>
+        <_ScrollSpeed>0.13</_ScrollSpeed>
+        <_Intensity>0.78</_Intensity>
+      </shaderParameters>
+      <drawSize>(28.0, 25.0)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RitualSmoke</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>Weather</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.4</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualSmoke</shaderType>
+      <texPath>Things/Mote/RitualEffects/Smoke2</texPath>
+      <shaderParameters>
+        <_SmokeTex1>/Things/Mote/RitualEffects/Smoke1</_SmokeTex1>
+        <_SmokeTex2>/Things/Mote/RitualEffects/Smoke2</_SmokeTex2>
+        <_MaskTex>/Things/Mote/RitualEffects/GlowRayMask</_MaskTex>
+        <_DistortionTex>/Things/Mote/RitualEffects/DistortionSoft</_DistortionTex>
+        <_ScrollSpeed>0.016</_ScrollSpeed>
+        <_Thickness>10</_Thickness>
+        <_Distortion>1</_Distortion>
+      </shaderParameters>
+      <drawSize>(30.0, 27.0)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RitualSmokeThick</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>Weather</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.4</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualSmoke</shaderType>
+      <texPath>Things/Mote/RitualEffects/Smoke2_Thick</texPath>
+      <shaderParameters>
+        <_SmokeTex1>/Things/Mote/RitualEffects/Smoke1_Thick</_SmokeTex1>
+        <_SmokeTex2>/Things/Mote/RitualEffects/Smoke2_Thick</_SmokeTex2>
+        <_MaskTex>/Things/Mote/RitualEffects/GlowRayMask</_MaskTex>
+        <_DistortionTex>/Things/Mote/RitualEffects/DistortionSoft</_DistortionTex>
+        <_ScrollSpeed>0.016</_ScrollSpeed>
+        <_Thickness>13</_Thickness>
+        <_Distortion>0.6</_Distortion>
+      </shaderParameters>
+      <drawSize>(32.0, 32.0)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RitualSmokeThickSlim</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>Weather</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.4</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualSmoke</shaderType>
+      <texPath>Things/Mote/RitualEffects/Smoke2_Dust</texPath>
+      <shaderParameters>
+        <_SmokeTex1>/Things/Mote/RitualEffects/Smoke1_Dust</_SmokeTex1>
+        <_SmokeTex2>/Things/Mote/RitualEffects/Smoke2_Dust</_SmokeTex2>
+        <_MaskTex>/Things/Mote/RitualEffects/GlowRayMask</_MaskTex>
+        <_DistortionTex>/Things/Mote/RitualEffects/DistortionSoft</_DistortionTex>
+        <_ScrollSpeed>0.016</_ScrollSpeed>
+        <_Thickness>25</_Thickness>
+        <_Distortion>0.6</_Distortion>
+        <_VerticalScale>1.36</_VerticalScale>
+      </shaderParameters>
+      <drawSize>(32.0, 32.0)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RitualSmokeDust</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>Weather</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.4</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualSmoke</shaderType>
+      <texPath>Things/Mote/RitualEffects/Smoke2_Dust</texPath>
+      <shaderParameters>
+        <_SmokeTex1>/Things/Mote/RitualEffects/Smoke1_Dust</_SmokeTex1>
+        <_SmokeTex2>/Things/Mote/RitualEffects/Smoke2_Dust</_SmokeTex2>
+        <_MaskTex>/Things/Mote/RitualEffects/GlowRayMask</_MaskTex>
+        <_DistortionTex>/Things/Mote/RitualEffects/DistortionSoft</_DistortionTex>
+        <_ScrollSpeed>0.016</_ScrollSpeed>
+        <_Thickness>17</_Thickness>
+        <_Distortion>0.6</_Distortion>
+        <_Detail>2</_Detail>
+      </shaderParameters>
+      <drawSize>(32.0, 32.0)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RitualSmokeDustVague</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>Weather</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.4</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualSmoke</shaderType>
+      <texPath>Things/Mote/RitualEffects/Smoke2_Dust</texPath>
+      <shaderParameters>
+        <_SmokeTex1>/Things/Mote/RitualEffects/Smoke1_Dust</_SmokeTex1>
+        <_SmokeTex2>/Things/Mote/RitualEffects/Smoke2_Dust</_SmokeTex2>
+        <_MaskTex>/Things/Mote/RitualEffects/GlowRayMask</_MaskTex>
+        <_DistortionTex>/Things/Mote/RitualEffects/DistortionSoft</_DistortionTex>
+        <_ScrollSpeed>0.02</_ScrollSpeed>
+        <_Thickness>13</_Thickness>
+        <_Distortion>0.6</_Distortion>
+        <_Detail>2</_Detail>
+      </shaderParameters>
+      <drawSize>(34.0, 34.0)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_TotemOutline</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualOutline</shaderType>
+      <texPath>Things/Mote/RitualEffects/TotemPole</texPath>
+      <shaderParameters>
+        <_GradientTex>/Things/Mote/RitualEffects/DustyGradient</_GradientTex>
+        <_ScrollSpeed>0.15</_ScrollSpeed>
+      </shaderParameters>
+      <drawSize>(1.4, 2.8)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RolePositionHighlight</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.2</fadeInTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualOutline</shaderType>
+      <texPath>Things/Mote/RitualEffects/PositionHighlight</texPath>
+      <color>(255, 227, 89)</color>
+      <shaderParameters>
+        <_GradientTex>/Things/Mote/RitualEffects/DustyGradient</_GradientTex>
+        <_GradientScale>0.6</_GradientScale>
+        <_ScrollSpeed>0.15</_ScrollSpeed>
+      </shaderParameters>
+      <drawSize>(1.3, 1.3)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RolePawnHighlight</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.2</fadeInTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualOutline</shaderType>
+      <texPath>Things/Mote/RitualEffects/PawnHighlight</texPath>
+      <color>(255, 227, 89)</color>
+      <shaderParameters>
+        <_GradientTex>/Things/Mote/RitualEffects/DustyGradient</_GradientTex>
+        <_GradientScale>0.6</_GradientScale>
+        <_ScrollSpeed>0.15</_ScrollSpeed>
+      </shaderParameters>
+      <drawSize>(1.3, 1.3)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_SpikePipe</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <texPath>Things/Mote/RitualEffects/SpikePipe</texPath>
+      <drawSize>(1.2, 2.4)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase" Name="Mote_RitualTechLine" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <color>(49, 255, 208)</color>
+      <shaderType>RitualOutline</shaderType>
+      <shaderParameters>
+        <_GradientTex>/Things/Mote/RitualEffects/Gradient</_GradientTex>
+        <_ScrollSpeed>0.15</_ScrollSpeed>
+        <_GradientScale>0.5</_GradientScale>
+      </shaderParameters>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <altitudeLayer>FloorCoverings</altitudeLayer>
+    <mote>
+      <fadeInTime>0.6</fadeInTime>
+      <solidTime>99999</solidTime>
+      <fadeOutTime>0.6</fadeOutTime>
+      <needsMaintenance>true</needsMaintenance>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="Mote_RitualTechLine">
+    <defName>Mote_RitualTechLineA</defName>
+    <graphicData>
+      <texPath>Things/Mote/RitualEffects/TechistLines/Lines</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="Mote_RitualTechLine">
+    <defName>Mote_RitualTechLineB</defName>
+    <graphicData>
+      <texPath>Things/Mote/RitualEffects/TechistLines/Lines2</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="Mote_RitualTechLine">
+    <defName>Mote_RitualTechLineC</defName>
+    <graphicData>
+      <texPath>Things/Mote/RitualEffects/TechistLines/Lines3</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RitualGlowSingleRay</defName>
+    <thingClass>MoteThrown</thingClass>
+    <altitudeLayer>VisEffects</altitudeLayer>
+    <mote>
+      <solidTime>99999</solidTime>
+      <fadeInTime>0.4</fadeInTime>
+      <fadeOutTime>1</fadeOutTime>
+      <needsMaintenance>True</needsMaintenance>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>RitualGlowSingleRay</shaderType>
+      <color>(255, 180, 122)</color>
+      <texPath>Things/Mote/RitualEffects/GlowSingleRay</texPath>
+      <shaderParameters>
+        <_ExtraTex>/Things/Mote/RitualEffects/GlowRays</_ExtraTex>
+        <_ScrollSpeed>0.13</_ScrollSpeed>
+        <_Intensity>24</_Intensity>
+      </shaderParameters>
+      <drawSize>(3.0, 8.0)</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+</Defs>

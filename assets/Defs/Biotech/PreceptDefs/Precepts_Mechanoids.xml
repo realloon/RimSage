@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>MechanoidLabor</defName>
+    <label>mechanoid labor</label>
+    <iconPath>UI/Issues/MechanoidLabor</iconPath>
+  </IssueDef>
+
+  <PreceptDef>
+    <defName>MechanoidLabor_Enhanced</defName>
+    <issue>MechanoidLabor</issue>
+    <label>enhanced</label>
+    <description>Why should we work when we have machines?</description>
+    <impact>Medium</impact>
+    <statOffsets>
+      <WorkSpeedGlobalOffsetMech>0.2</WorkSpeedGlobalOffsetMech>
+      <WorkSpeedGlobal>-0.08</WorkSpeedGlobal>
+    </statOffsets>
+  </PreceptDef>
+
+</Defs>

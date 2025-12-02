@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <SoundDef>
+    <defName>Mechlink_Removed</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Misc/MechlinkRemoved</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <distRange>5~20</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MechlinkCorpseReveal</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Misc/MechlinkCorpseReveal</clipPath>
+          </li>
+        </grains>
+        <volumeRange>45</volumeRange>
+        <distRange>10~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PawnBecameSanguophage</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Misc/PawnBecameSanguophage</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>55</volumeRange>
+        <distRange>10~35</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>SanguophageMeeting</defName>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustain>True</sustain>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Misc/SanguophageMeeting</clipFolderPath>
+          </li>
+        </grains>
+        <repeatMode>NeverLastHalf</repeatMode>
+        <volumeRange>20</volumeRange>
+        <distRange>30~80</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainLoopDurationRange>12</sustainLoopDurationRange>
+        <sustainIntervalRange>-5</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

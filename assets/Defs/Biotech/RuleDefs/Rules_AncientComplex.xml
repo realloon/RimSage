@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+  <RuleDef>
+    <defName>AncientComplex_Mechanitor</defName>
+    <symbol>ancientMechanitorComplex</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientComplex_Mechanitor">
+        <minRectSize>(18, 18)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+</Defs>

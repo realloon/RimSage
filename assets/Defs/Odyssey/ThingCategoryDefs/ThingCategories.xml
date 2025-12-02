@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>Fish</defName>
+    <label>fish</label>
+    <parent>MeatRaw</parent>
+    <iconPath>UI/Icons/ThingCategories/Category_Fish</iconPath>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>CorpsesDrone</defName>
+    <label>drone corpses</label>
+    <parent>Corpses</parent>
+  </ThingCategoryDef>
+
+</Defs>

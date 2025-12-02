@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <!-- Mutations -->
+
+  <HediffDef Name="AddedMutationBase" ParentName="AddedBodyPartBase" Abstract="True">
+    <organicAddedBodypart>true</organicAddedBodypart>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedMutationBase">
+    <defName>FleshmassStomach</defName>
+    <label>fleshmass stomach</label>
+    <labelNoun>a fleshmass stomach</labelNoun>
+    <description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+    <defaultInstallPart>Stomach</defaultInstallPart>
+    <stages>
+      <li>
+        <painOffset>0.08</painOffset>
+        <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+        <makeImmuneTo>
+          <li>GutWorms</li>
+        </makeImmuneTo>
+      </li>
+    </stages>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <comps>
+      <li Class="HediffCompProperties_FleshbeastEmerge">
+        <letterLabel>Fleshmass operation</letterLabel>
+        <letterText>Attempting to remove {PAWN_nameDef}'s fleshmass stomach has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedMutationBase">
+    <defName>FleshmassLung</defName>
+    <label>fleshmass lung</label>
+    <labelNoun>a fleshmass lung</labelNoun>
+    <description>A cancerous mass of semi-sentient flesh. The tissue constantly regrows and replaces itself, making it immune to effects like lung rot and asthma.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+    <preventsLungRot>true</preventsLungRot>
+    <defaultInstallPart>Lung</defaultInstallPart>
+    <stages>
+      <li>
+        <painOffset>0.06</painOffset>
+        <statOffsets>
+          <ToxicEnvironmentResistance>0.3</ToxicEnvironmentResistance>
+        </statOffsets>
+      </li>
+    </stages>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+    <comps>
+      <li Class="HediffCompProperties_FleshbeastEmerge">
+        <letterLabel>Fleshmass operation</letterLabel>
+        <letterText>Attempting to remove {PAWN_nameDef}'s fleshmass lung has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedMutationBase">
+    <defName>Tentacle</defName>
+    <label>flesh tentacle</label>
+    <labelNoun>a flesh tentacle</labelNoun>
+    <description>A fleshy, muscled tentacle resembling a partial transformation into a fleshbeast. The tentacle is excellent at manipulation.\n\nThe flesh tentacle has its own neural structures and may become dangerous if removed.</description>
+    <defaultInstallPart>Shoulder</defaultInstallPart>
+    <stages>
+      <li>
+        <statOffsets>
+          <PawnBeauty>-1</PawnBeauty>
+        </statOffsets>
+      </li>
+    </stages>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Spastic">
+        <texPaths>
+          <li>Things/Pawn/Humanlike/BodyAttachments/TentacleLimb/TentacleLimbA</li>
+          <li>Things/Pawn/Humanlike/BodyAttachments/TentacleLimb/TentacleLimbB</li>
+          <li>Things/Pawn/Humanlike/BodyAttachments/TentacleLimb/TentacleLimbC</li>
+        </texPaths>
+        <parentTagDef>Body</parentTagDef>
+        <overrideMeshSize>1</overrideMeshSize>
+        <drawSize>1.3</drawSize>
+        <colorType>Skin</colorType>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotationRange>-30~30</rotationRange>
+        <durationTicksRange>10~35</durationTicksRange>
+        <nextSpasmTicksRange>10~50</nextSpasmTicksRange>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <useBodyPartAnchor>true</useBodyPartAnchor>
+          <childScale>0.7</childScale>
+          <bodyTypeScales>
+            <Hulk>1.2</Hulk>
+            <Fat>1.4</Fat>
+            <Thin>0.8</Thin>
+          </bodyTypeScales>
+          <defaultData>
+            <layer>49</layer>
+          </defaultData>
+          <dataNorth>
+            <rotationOffset>310</rotationOffset>
+            <flip>true</flip>
+            <layer>0</layer>
+          </dataNorth>
+          <dataEast>
+            <rotationOffset>270</rotationOffset>
+            <flip>true</flip>
+          </dataEast>
+          <dataSouth>
+            <rotationOffset>220</rotationOffset>
+          </dataSouth>
+          <dataWest>
+            <rotationOffset>270</rotationOffset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.20</partEfficiency>
+    </addedPartProps>
+    <comps>
+      <li Class="HediffCompProperties_FleshbeastEmerge">
+        <letterLabel>Fleshmass operation</letterLabel>
+        <letterText>Attempting to remove {PAWN_nameDef}'s tentacle has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedMutationBase">
+    <defName>FleshWhip</defName>
+    <label>flesh whip</label>
+    <labelNoun>a flesh whip</labelNoun>
+    <description>A fleshy, muscled tentacle with a blade at the end. The flesh whip makes an excellent melee weapon.\n\nIt has its own neural structures and may become dangerous if removed.</description>
+    <defaultInstallPart>Shoulder</defaultInstallPart>
+    <stages>
+      <li>
+        <statOffsets>
+          <PawnBeauty>-1</PawnBeauty>
+        </statOffsets>
+      </li>
+    </stages>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Spastic">
+        <texPaths>
+          <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbA</li>
+          <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbB</li>
+          <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbC</li>
+          <li>Things/Pawn/Humanlike/BodyAttachments/FleshWhipLimb/FleshWhipLimbD</li>
+        </texPaths>
+        <parentTagDef>Body</parentTagDef>
+        <overrideMeshSize>1</overrideMeshSize>
+        <drawSize>1.4</drawSize>
+        <colorType>Skin</colorType>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotationRange>-30~30</rotationRange>
+        <durationTicksRange>10~35</durationTicksRange>
+        <nextSpasmTicksRange>10~50</nextSpasmTicksRange>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <useBodyPartAnchor>true</useBodyPartAnchor>
+          <childScale>0.7</childScale>
+          <bodyTypeScales>
+            <Hulk>1.2</Hulk>
+            <Fat>1.4</Fat>
+            <Thin>0.8</Thin>
+          </bodyTypeScales>
+          <defaultData>
+            <layer>49</layer>
+          </defaultData>
+          <dataNorth>
+            <rotationOffset>310</rotationOffset>
+            <flip>true</flip>
+            <layer>0</layer>
+          </dataNorth>
+          <dataEast>
+            <rotationOffset>270</rotationOffset>
+            <flip>true</flip>
+          </dataEast>
+          <dataSouth>
+            <rotationOffset>220</rotationOffset>
+          </dataSouth>
+          <dataWest>
+            <rotationOffset>270</rotationOffset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>blade</label>
+            <capacities>
+              <li>Cut</li>
+            </capacities>
+            <armorPenetration>0.6</armorPenetration>
+            <power>20.5</power> <!-- 2.5x natural fist -->
+            <cooldownTime>2</cooldownTime>
+          </li>
+        </tools>
+      </li>
+      <li Class="HediffCompProperties_FleshbeastEmerge">
+        <letterLabel>Fleshmass operation</letterLabel>
+        <letterText>Attempting to remove {PAWN_nameDef}'s flesh whip has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+      </li>
+    </comps>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+
+  <!-- Ghoul Prosthetics -->
+
+  <ThingDef Name="BodyPartGhoulBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>BodyPartsGhoul</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <color>(122, 115, 113)</color>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <tradeTags Inherit="false" />
+    <statBases>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>UnfinishedHealthItemGhoul</defName>
+    <label>unfinished ghoul prosthetic</label>
+    <description>An unfinished ghoul prosthetic.</description>
+    <statBases>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedHealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(122, 115, 113)</color>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+
+  <!-- Ghoul Plating -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>GhoulPlating</defName>
+    <label>ghoul plating</label>
+    <description>A number of large bioferrite plates have been surgically attached to this ghoul.</description>
+    <stages>
+      <li>
+        <statFactors>
+          <IncomingDamageFactor>0.5</IncomingDamageFactor>
+        </statFactors>
+        <statOffsets>
+          <MoveSpeed>-0.7</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <renderNodeProperties>
+      <li>
+        <debugLabel>Ghoul plates</debugLabel>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPaths>
+          <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_A</li>
+          <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_B</li>
+          <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_C</li>
+          <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_D</li>
+          <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_E</li>
+          <li>Things/Pawn/Ghoul/Attachments/Plates/GhoulPlating_F</li>
+        </texPaths>
+        <baseLayer>60</baseLayer>
+        <texSeed>1</texSeed>
+      </li>
+    </renderNodeProperties>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartGhoulBase">
+    <defName>GhoulPlating</defName>
+    <label>ghoul plating</label>
+    <description>Bioferrite plates that can be surgically attached to a ghoul, protecting vulnerable areas. The plates will reduce incoming damage significantly but also slow the ghoul down.\n\nDue to the extremely painful nature of the prosthetic, only ghouls can tolerate this enhancement.</description>
+    <descriptionHyperlinks><RecipeDef>InstallGhoulPlating</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <Mass>0.3</Mass>
+      <WorkToMake>9000</WorkToMake>
+    </statBases>
+    <techHediffsTags>
+      <li>Ghoul</li>
+    </techHediffsTags>
+    <costList>
+      <Bioferrite>70</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemGhoul</unfinishedThingDef>
+      <researchPrerequisite>GhoulEnhancements</researchPrerequisite>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <displayPriority>140</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallGhoulPlating</defName>
+    <label>install ghoul plating</label>
+    <description>Install ghoul plating.</description>
+    <descriptionHyperlinks>
+      <ThingDef>GhoulPlating</ThingDef>
+      <HediffDef>GhoulPlating</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing ghoul plating.</jobString>
+    <skillRequirements Inherit="false" />
+    <anesthetize>false</anesthetize>
+    <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+    <mutantPrerequisite>
+      <li>Ghoul</li>
+    </mutantPrerequisite>
+    <ingredients Inherit="false">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>GhoulPlating</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>GhoulPlating</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>GhoulPlating</addsHediff>
+  </RecipeDef>
+
+  <!-- Ghoul Barbs -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>GhoulBarbs</defName>
+    <label>ghoul barbs</label>
+    <description>A number of barbed bioferrite spikes have been surgically attached to this ghoul.</description>
+    <stages>
+      <li>
+        <statFactors>
+          <MeleeDamageFactor>1.5</MeleeDamageFactor>
+        </statFactors>
+        <statOffsets>
+          <MoveSpeed>-0.25</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <renderNodeProperties>
+      <li>
+        <debugLabel>Ghoul spikes</debugLabel>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPaths>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_A</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_B</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_C</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_D</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_E</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_F</li>
+        </texPaths>
+        <baseLayer>65</baseLayer>
+        <texSeed>1</texSeed>
+      </li>
+      <li>
+        <debugLabel>Ghoul spikes</debugLabel>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPaths>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_A</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_B</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_C</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_D</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_E</li>
+          <li>Things/Pawn/Ghoul/Attachments/Barbs/GhoulBarb_F</li>
+        </texPaths>
+        <baseLayer>65</baseLayer>
+        <texSeed>2</texSeed>
+        <flipGraphic>true</flipGraphic>
+      </li>
+    </renderNodeProperties>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartGhoulBase">
+    <defName>GhoulBarbs</defName>
+    <label>ghoul barbs</label>
+    <description>A number of barbed bioferrite spikes that can be surgically attached to a ghoul. They drastically increase a ghoul's melee damage but also limit its range of motion, slowing it down.\n\nDue to the extremely painful nature of the prosthetic, only ghouls can tolerate this enhancement.</description>
+    <descriptionHyperlinks><RecipeDef>InstallGhoulBarbs</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <Mass>0.3</Mass>
+      <WorkToMake>6000</WorkToMake>
+    </statBases>
+    <techHediffsTags>
+      <li>Ghoul</li>
+    </techHediffsTags>
+    <costList>
+      <Bioferrite>35</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemGhoul</unfinishedThingDef>
+      <researchPrerequisite>GhoulEnhancements</researchPrerequisite>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <displayPriority>150</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallGhoulBarbs</defName>
+    <label>install ghoul barbs</label>
+    <description>Install ghoul barbs.</description>
+    <descriptionHyperlinks>
+      <ThingDef>GhoulBarbs</ThingDef>
+      <HediffDef>GhoulBarbs</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing ghoul barbs.</jobString>
+    <skillRequirements Inherit="false" />
+    <anesthetize>false</anesthetize>
+    <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+    <mutantPrerequisite>
+      <li>Ghoul</li>
+    </mutantPrerequisite>
+    <ingredients Inherit="false">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>GhoulBarbs</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>GhoulBarbs</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>GhoulBarbs</addsHediff>
+  </RecipeDef>
+
+  <!-- Adrenal Heart -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>AdrenalHeart</defName>
+    <label>adrenal heart</label>
+    <description>A modified human heart that can release stress hormones and liquid energy into the bloodstream, allowing a ghoul to move and attack at incredible speeds.</description>
+    <stages>
+      <li>
+        <hungerRateFactorOffset>0.15</hungerRateFactorOffset>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>AdrenalHeart</spawnThingOnRemoved>
+    <abilities>
+      <li>GhoulFrenzy</li>
+    </abilities>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartGhoulBase">
+    <defName>AdrenalHeart</defName>
+    <label>adrenal heart</label>
+    <description>A special bioferrite prosthetic that allows a ghoul to saturate its bloodstream with stress hormones and liquid energy. The ghoul will move and attack at incredible speeds for a short amount of time. The prosthetic slightly increases the ghoul's metabolism, causing it to eat more.\n\nDue to the extremely painful nature of the prosthetic, only ghouls can tolerate this enhancement.</description>
+    <descriptionHyperlinks><RecipeDef>InstallAdrenalHeart</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <Mass>0.3</Mass>
+      <WorkToMake>13200</WorkToMake>
+    </statBases>
+    <techHediffsTags>
+      <li>Ghoul</li>
+    </techHediffsTags>
+    <costList>
+      <Bioferrite>20</Bioferrite>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemGhoul</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>GhoulEnhancements</researchPrerequisite>
+      <recipeUsers>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <displayPriority>160</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallAdrenalHeart</defName>
+    <label>install adrenal heart</label>
+    <description>Install adrenal heart.</description>
+    <descriptionHyperlinks>
+      <ThingDef>AdrenalHeart</ThingDef>
+      <HediffDef>AdrenalHeart</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing adrenal heart.</jobString>
+    <anesthetize>false</anesthetize>
+    <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+    <skillRequirements>
+      <Medicine>4</Medicine>
+    </skillRequirements>
+    <mutantPrerequisite>
+      <li>Ghoul</li>
+    </mutantPrerequisite>
+    <ingredients Inherit="false">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AdrenalHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AdrenalHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>AdrenalHeart</addsHediff>
+  </RecipeDef>
+
+  <!-- Corrosive Heart -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>CorrosiveHeart</defName>
+    <label>corrosive heart</label>
+    <description>A modified human heart that allows a ghoul to spray corrosive fluid.</description>
+    <spawnThingOnRemoved>CorrosiveHeart</spawnThingOnRemoved>
+    <abilities>
+      <li>CorrosiveSpray</li>
+    </abilities>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.85</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartGhoulBase">
+    <defName>CorrosiveHeart</defName>
+    <label>corrosive heart</label>
+    <description>A special bioferrite prosthetic that allows the ghoul to spray a corrosive fluid. The prosthetic repurposes a chamber of the ghoul's heart to create a strong acid, which can be projected from the ghoul's mouth.\n\nDue to the extremely painful nature of the prosthetic, only ghouls can tolerate this enhancement.</description>
+    <descriptionHyperlinks><RecipeDef>InstallCorrosiveHeart</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <Mass>0.3</Mass>
+      <WorkToMake>13200</WorkToMake>
+    </statBases>
+    <techHediffsTags>
+      <li>Ghoul</li>
+    </techHediffsTags>
+    <costList>
+      <Bioferrite>20</Bioferrite>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemGhoul</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>GhoulEnhancements</researchPrerequisite>
+      <recipeUsers>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <displayPriority>160</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallCorrosiveHeart</defName>
+    <label>install corrosive heart</label>
+    <description>Install corrosive heart.</description>
+    <descriptionHyperlinks>
+      <ThingDef>CorrosiveHeart</ThingDef>
+      <HediffDef>CorrosiveHeart</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing corrosive heart.</jobString>
+    <anesthetize>false</anesthetize>
+    <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+    <skillRequirements>
+      <Medicine>4</Medicine>
+    </skillRequirements>
+    <mutantPrerequisite>
+      <li>Ghoul</li>
+    </mutantPrerequisite>
+    <ingredients Inherit="false">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>CorrosiveHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>CorrosiveHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>CorrosiveHeart</addsHediff>
+  </RecipeDef>
+
+  <!-- Metalblood Heart -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>MetalbloodHeart</defName>
+    <label>metalblood heart</label>
+    <description>A modified human heart that can pump metalblood into the bloodstream, making the ghoul more resistant to damage for a short period of time. Metalblood also makes the ghoul more vulnerable to fire.</description>
+    <spawnThingOnRemoved>MetalbloodHeart</spawnThingOnRemoved>
+    <abilities>
+      <li>MetalbloodInjection</li>
+    </abilities>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartGhoulBase">
+    <defName>MetalbloodHeart</defName>
+    <label>metalblood heart</label>
+    <description>A special bioferrite prosthetic that can pump a small amount of metalblood into a ghoul's bloodstream, making it more resistant to damage for a short period of time. Metalblood also makes the ghoul more vulnerable to fire. The prosthetic causes widespread swelling, slowing the ghoul down.\n\nDue to the extremely painful nature of the prosthetic, only ghouls can tolerate this enhancement.</description>
+    <descriptionHyperlinks><RecipeDef>InstallMetalbloodHeart</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <Mass>0.3</Mass>
+      <WorkToMake>13200</WorkToMake>
+    </statBases>
+    <techHediffsTags>
+      <li>Ghoul</li>
+    </techHediffsTags>
+    <costList>
+      <Bioferrite>20</Bioferrite>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemGhoul</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>GhoulEnhancements</researchPrerequisite>
+      <recipeUsers>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <displayPriority>160</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallMetalbloodHeart</defName>
+    <label>install metalblood heart</label>
+    <description>Install metalblood heart.</description>
+    <descriptionHyperlinks>
+      <ThingDef>MetalbloodHeart</ThingDef>
+      <HediffDef>MetalbloodHeart</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing metalblood heart.</jobString>
+    <anesthetize>false</anesthetize>
+    <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+    <skillRequirements>
+      <Medicine>4</Medicine>
+    </skillRequirements>
+    <mutantPrerequisite>
+      <li>Ghoul</li>
+    </mutantPrerequisite>
+    <ingredients Inherit="false">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MetalbloodHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MetalbloodHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>MetalbloodHeart</addsHediff>
+  </RecipeDef>
+
+  <!-- Misc -->
+
+  <!-- Revenant Vertebrae -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RevenantVertebrae</defName>
+    <label>revenant vertebrae</label>
+    <description>An installed prosthetic that allows the user to temporarily become invisible. The prosthetic is crafted from a modified revenant spine, using archotech shards to restrain the dormant revenant. The user can manipulate the visual centers of those nearby, effectively turning themself invisible for a short time.</description>
+    <abilities>
+      <li>RevenantInvisibility</li>
+    </abilities>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>RevenantVertebrae</defName>
+    <label>revenant vertebrae</label>
+    <description>A prosthetic spine that allows the user to temporarily become invisible. The prosthetic is crafted from a modified revenant spine and uses archotech shards to restrain the dormant revenant. The user can manipulate the visual centers of those nearby, effectively turning themself invisible for a short time.</description>
+    <descriptionHyperlinks><RecipeDef>InstallRevenantVertebrae</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <Mass>0.3</Mass>
+      <WorkToMake>24000</WorkToMake>
+    </statBases>
+    <techHediffsTags>
+      <li>Anomaly</li>
+    </techHediffsTags>
+    <costList>
+      <Bioferrite>10</Bioferrite>
+      <Shard>2</Shard>
+      <RevenantSpine>1</RevenantSpine>
+    </costList>
+    <tradeTags Inherit="false" />
+    <recipeMaker Inherit="false">
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>RevenantInvisibility</researchPrerequisite>
+      <recipeUsers>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <displayPriority>160</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallRevenantVertebrae</defName>
+    <label>install revenant vertebrae</label>
+    <description>Install revenant vertebrae.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RevenantVertebrae</ThingDef>
+      <HediffDef>RevenantVertebrae</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing revenant vertebrae.</jobString>
+    <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+    <mutantBlacklist>
+      <li>Ghoul</li>
+    </mutantBlacklist>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RevenantVertebrae</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RevenantVertebrae</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Spine</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>RevenantVertebrae</addsHediff>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>GiveQuest_EndGame_RoyalAscent</defName>
+    <label>royal ascent</label>
+    <questScriptDef>EndGame_RoyalAscent</questScriptDef>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+  </IncidentDef>
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>GiveQuest_Intro_Wimp</defName>
+    <label>imperial wimp</label>
+    <questScriptDef>Intro_Wimp</questScriptDef>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+  </IncidentDef>
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>GiveQuest_Intro_Deserter</defName>
+    <label>imperial deserter</label>
+    <questScriptDef>Intro_Deserter</questScriptDef>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>ProblemCauser</defName>
+    <label>problem causer</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GiveQuest_Map</workerClass>
+    <questScriptDef>ProblemCauser</questScriptDef>
+    <baseChance>0</baseChance>
+    <letterDef>NewQuest_ThreatBig</letterDef>
+    <baseChanceWithRoyalty>0.95</baseChanceWithRoyalty>
+    <category>ThreatBig</category>
+    <minThreatPoints>400</minThreatPoints>
+    <minPopulation>4</minPopulation>
+    <minRefireDays>30</minRefireDays>
+    <earliestDay>20</earliestDay>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+
+</Defs>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>SandBits</defName>
+    <graphicData>
+      <texPath>Things/Mote/SandBit</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>0.15</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <speedPerTime>-40</speedPerTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>MechStabilizerRedPulse</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.9</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>BlastMechDeactivated</defName>
+    <graphicData>
+      <texPath>Things/Mote/BlastEMP</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+  </FleckDef>
+    
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>SulfurCloud</defName>
+    <graphicData>
+      <texPath>Things/Mote/SulfurCloudLowContrast</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(0.15,0.15,0.16,0.3)</color>
+      <drawSize>(1.5, 1.5)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.5</fadeInTime>
+    <solidTime>0.5</solidTime>
+    <fadeOutTime>16.2</fadeOutTime>
+    <growthRate>0.04</growthRate>
+    <acceleration>(0.05, 0.0, 0.0)</acceleration>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>AncientSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/SulfurCloud</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(0.15,0.2,0.25,0.48)</color>
+      <drawSize>(2.5, 2.5)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1.0</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>14.2</fadeOutTime>
+    <growthRate>0.04</growthRate>
+    <acceleration>(0.05, 0.0, 0.0)</acceleration>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>AncientToxicCloud</defName>
+    <graphicData>
+      <texPath>Things/Mote/DustPuff</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(0.95,1.0,0.7,0.7)</color>
+      <drawSize>(2.5, 2.5)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>1.0</fadeInTime>
+    <solidTime>1</solidTime>
+    <fadeOutTime>14.2</fadeOutTime>
+    <growthRate>0.04</growthRate>
+    <acceleration>(0.07, 0.0, -0.01)</acceleration>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>AncientVentHeatGlow</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Building/AncientHeatVentGlow</texPath>
+      <shaderType>MoteGlowMasked</shaderType>
+      <shaderParameters>
+        <_MaskTex>/Things/Building/AncientHeatVentM</_MaskTex>
+        <_UnmaskedContribution>0.7</_UnmaskedContribution>
+      </shaderParameters>
+      <color>(1.0,0.8,0.8,0.75)</color>
+      <drawOffset>(0, 0, 0.1)</drawOffset>
+      <drawSize>(1.25,1.25)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>3.0</fadeInTime>
+    <solidTime>3.0</solidTime>
+    <fadeOutTime>3.0</fadeOutTime>
+    <growthRate>0</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>AncientVentHeatShimmer</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Other/Perlin</texPath>
+      <drawOffset>(0,0,4.0)</drawOffset>
+      <drawSize>(1.25,2.0)</drawSize>
+      <shaderType>MoteHeatDistortionIntense</shaderType>
+      <shaderParameters>
+        <_MaskTex>/Things/Mote/HeatVentDistortionMask</_MaskTex>
+        <_DistortionSpeed>0.6</_DistortionSpeed>
+        <_DistortionIntensity>0.01</_DistortionIntensity>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>10</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>0</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>LavaSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/DarkSmoke</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>1.5</solidTime>
+    <fadeOutTime>1.0</fadeOutTime>
+    <growthRate>0.2</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>GravshipThrusterExhaust</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <renderInstanced>true</renderInstanced>
+      <renderQueue>3181</renderQueue>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <growthRate>1.0</growthRate>
+  </FleckDef>
+
+  <FleckDef Name="FishShadow" ParentName="FleckBase">
+    <defName>FishShadow</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <graphicData>
+      <texPath>Things/Mote/FishShadow</texPath>
+      <shaderType>FishShadow</shaderType>
+      <color>(1.0, 1.0, 1.0, 0.2)</color>
+      <shaderParameters>
+        <_SwimFrequency>5.0</_SwimFrequency>
+        <_SwimSpeed>0.4</_SwimSpeed>
+      </shaderParameters>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <fadeInTime>1.5</fadeInTime>
+    <solidTime>2.0</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <growthRate>0.0</growthRate>
+  </FleckDef>
+
+  <!-- There's no way to scale it on one axis at runtime -->
+  <FleckDef ParentName="FishShadow">
+    <defName>FishShadowReverse</defName>
+    <graphicData>
+      <drawSize>(-1.0, 1.0)</drawSize>
+    </graphicData>
+  </FleckDef>
+</Defs>

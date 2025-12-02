@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>OpportunitySite_WorkSite</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <isRootSpecial>true</isRootSpecial>
+    <autoAccept>true</autoAccept>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">Raided_WorkSite</successHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[site_label] [detected]</li>
+        <li>detected->detected</li>
+        <li>detected->discovered</li>
+        <li>detected->nearby</li>
+        <li>detected->found</li>
+        <li>detected->identified</li>
+        <li>detected->noticed</li>
+        <li>detected->observed</li>
+        <li>detected->revealed</li>
+        <li>detected->uncovered</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->You've detected a [siteLabel] nearby controlled by [faction_name].\n\nIf you wish, you can raid the camp to collect loot ([loot]). [raidConsequences]\n\nThe camp will pack up and move on in [timeout_duration].</li>
+        <li>raidConsequences(faction_temporary==false)->If you do, [faction_name] will become hostile if they are not already.</li>
+        <li>raidConsequences(faction_temporary==true)->Since [faction_name] is just a small, independent group, you can attack them without any broader diplomatic consequences.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Root_WorkSite" />
+  </QuestScriptDef>
+
+</Defs>

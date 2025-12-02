@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef Abstract="True" Name="BaseHeardBaby">
+    <durationDays>0.25</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <showBubble>true</showBubble>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="BaseHeardBaby">
+    <defName>CryingBaby</defName>
+    <icon>Things/Mote/Childcare/BabyCrying/BabyCryingIcon</icon>
+    <stages>
+      <li>
+        <label>baby crying</label>
+        <description>That shrill wailing sound is so irritating!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="BaseHeardBaby">
+    <defName>MyCryingBaby</defName>
+    <icon>Things/Mote/Childcare/BabyCrying/BabyCryingIcon</icon>
+    <stages>
+      <li>
+        <label>my baby is crying</label>
+        <description>My baby is crying. I hope it stops soon.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="BaseHeardBaby">
+    <defName>GigglingBaby</defName>
+    <icon>Things/Mote/Childcare/BabyGiggling/BabyGigglingIcon</icon>
+    <stages>
+      <li>
+        <label>baby giggling</label>
+        <description>A giggling baby just brings a smile to my face.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="BaseHeardBaby">
+    <defName>MyGigglingBaby</defName>
+    <icon>Things/Mote/Childcare/BabyGiggling/BabyGigglingIcon</icon>
+    <stages>
+      <li>
+        <label>my baby giggling</label>
+        <description>My baby is the cutest in the anthrosphere!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

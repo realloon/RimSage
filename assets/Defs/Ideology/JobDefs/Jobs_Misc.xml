@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>MeditatePray</defName>
+    <driverClass>JobDriver_Meditate</driverClass>
+    <reportString>praying.</reportString>
+    <joyDuration>5000</joyDuration>
+    <joyKind>Meditative</joyKind>
+    <taleOnCompletion>Prayed</taleOnCompletion>
+    <isCrawlingIfDowned>false</isCrawlingIfDowned>
+  </JobDef>
+  
+  <JobDef>
+    <defName>InduceSlaveToRebel</defName>
+    <driverClass>JobDriver_SingleInteraction</driverClass>
+    <reportString>inducing TargetA to rebel.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>GiveToPawn</defName>
+    <driverClass>JobDriver_GiveToPawn</driverClass>
+    <reportString>giving TargetA to TargetB.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>OpenStylingStationDialog</defName>
+    <driverClass>JobDriver_OpenStylingStationDialog</driverClass>
+    <reportString>changing style at TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>UseStylingStation</defName>
+    <driverClass>JobDriver_UseStylingStation</driverClass>
+    <reportString>changing style at TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>UseStylingStationAutomatic</defName>
+    <driverClass>JobDriver_UseStylingStationAutomatic</driverClass>
+    <reportString>changing style at TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>DeliverToAltar</defName>
+    <driverClass>JobDriver_DeliverPawnToAltar</driverClass>
+    <reportString>delivering TargetA to altar.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>Sacrifice</defName>
+    <driverClass>JobDriver_Sacrifice</driverClass>
+    <reportString>Sacrificing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>Scarify</defName>
+    <driverClass>JobDriver_Scarify</driverClass>
+    <reportString>Scarifying TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>Blind</defName>
+    <driverClass>JobDriver_Blind</driverClass>
+    <reportString>Blinding TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>ExtractRelic</defName>
+    <driverClass>JobDriver_EmptyThingContainer</driverClass>
+    <reportString>extracting TargetB from TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>InstallRelic</defName>
+    <driverClass>JobDriver_InstallRelic</driverClass>
+    <reportString>installing TargetA in TargetB</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>ExtractToInventory</defName>
+    <driverClass>JobDriver_ExtractToInventory</driverClass>
+    <reportString>extracting TargetB to inventory.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>GetNeuralSupercharge</defName>
+    <driverClass>JobDriver_GetNeuralSupercharge</driverClass>
+    <reportString>getting neural supercharge from TargetA</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>EnterBiosculpterPod</defName>
+    <driverClass>JobDriver_EnterBiosculpterPod</driverClass>
+    <reportString>entering biosculpter pod.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryToBiosculpterPod</defName>
+    <driverClass>JobDriver_CarryToBiosculpterPod</driverClass>
+    <reportString>carrying TargetA to biosculpter pod.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>RecolorApparel</defName>
+    <driverClass>JobDriver_RecolorApparel</driverClass>
+    <reportString>recoloring apparel</reportString>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+
+  <JobDef>
+    <defName>DyeHair</defName>
+    <driverClass>JobDriver_DyeHair</driverClass>
+    <reportString>dyeing hair</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>ActivateArchonexusCore</defName>
+    <driverClass>JobDriver_ActivateArchonexusCore</driverClass>
+    <reportString>invoking archotech.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+  
+</Defs>

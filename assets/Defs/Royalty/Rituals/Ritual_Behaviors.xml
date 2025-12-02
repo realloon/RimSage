@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualBehaviorDef>
+    <defName>ThroneSpeech</defName>
+    <workerClass>RitualBehaviorWorker_ThroneSpeech</workerClass>
+    <durationTicks>5000</durationTicks>
+    <letterTitle>Speech from the throne</letterTitle>
+    <letterText>{ORGANIZER_labelShort} is giving a speech from the throne.
+\nIf all goes well, listeners will feel inspired, and gain respect for {ORGANIZER_labelShort}. If it goes poorly, the speech will do social damage. The outcome depends on {ORGANIZER_labelShort}'s social abilities.</letterText>
+    <roles>
+      <li Class="RitualRoleOrganizer">
+        <label>organizer</label>
+        <id>speaker</id>
+        <maxCount>1</maxCount>
+        <allowChild>false</allowChild>
+      </li>
+    </roles>
+    <stages>
+      <li Class="RitualStage_OnTheThrone">
+        <defaultDuty>Spectate</defaultDuty>
+        <spectatorsRequired>true</spectatorsRequired>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1.0</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>speaker</roleId>
+            <dutyDef>GiveSpeech</dutyDef>
+          </li>
+        </roleBehaviors>
+        <visualEffectDef>Speech</visualEffectDef>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualBehaviorDef>
+    <defName>AnimaTreeLinking</defName>
+    <durationTicks>15000</durationTicks>
+    <workerClass>RitualBehaviorWorker_AnimaLinking</workerClass>
+    <roles>
+      <li Class="RitualRoleAnimaLinker">
+        <label>linker</label>
+        <id>organizer</id>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <defaultForSelectedColonist>true</defaultForSelectedColonist>
+        <noCandidatesGizmoDesc>Need a colonist with the natural meditation focus type who is below maximum psylink level and not psychically deaf.</noCandidatesGizmoDesc>
+        <allowChild>false</allowChild>
+        <customChildDisallowMessage>Only adults can link with an anima tree.</customChildDisallowMessage>
+      </li>
+    </roles>
+    <spectatorFilter Class="RitualSpectatorFilter_NatureFocus">
+      <description>Must have natural focus type.</description>
+    </spectatorFilter>
+    <spectatorsLabel>Participants</spectatorsLabel>
+    <spectatorGerund>participate</spectatorGerund>
+    <stages>
+      <li Class="RitualStage_AnimaTreeLinking">
+        <defaultDuty>LinkWithAnimaTreeSecondary</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <spectateDistanceOverride>3~4</spectateDistanceOverride>
+        <roleBehaviors>
+          <li>
+            <roleId>organizer</roleId>
+            <dutyDef>LinkWithAnimaTree</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_AnimaLinkingSpot" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+  
+</Defs>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>Pilgrims_Spectate</defName>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Spectate -->
+        <li Class="JobGiver_SpectateDutySpectateRect" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>PartyDance</defName>
+    <label>dance party</label>
+    <hook>MediumPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalInGatheringArea">
+          <subNodes>
+
+            <!-- Stand where you are and do dance moves -->
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.4</chance>
+              <subNodes>
+                <li Class="JobGiver_Dance">
+                  <ticksRange>480</ticksRange>
+                </li>
+              </subNodes>
+            </li>
+
+            <!-- Get joy -->
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.1</chance>
+              <subNodes>
+                <li Class="JobGiver_GetJoyInGatheringArea">
+                  <desiredRadius>8</desiredRadius>
+                </li>
+              </subNodes>
+            </li>
+
+            <!-- Wander -->
+            <li Class="JobGiver_WanderInGatheringArea">
+              <ticksBetweenWandersRange>50</ticksBetweenWandersRange>
+              <desiredRadius>6</desiredRadius>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Reach the party area -->
+        <li Class="JobGiver_WanderInGatheringArea">
+          <ticksBetweenWandersRange>50~250</ticksBetweenWandersRange>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <desiredRadius>6</desiredRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>PlayTargetInstrument</defName>
+    <label>playing music</label>
+    <hook>HighPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Spectate -->
+        <li Class="JobGiver_PlayTargetInstrument" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>PartyCloseWander</defName>
+    <label>party</label>
+    <hook>MediumPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalInGatheringArea">
+          <subNodes>
+            <!-- Eat -->
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.05</chance>
+              <subNodes>
+                <li Class="JobGiver_EatInGatheringArea" />
+              </subNodes>
+            </li>
+            
+            <!-- Stand where you are and be socially active -->
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.35</chance>
+              <subNodes>
+                <li Class="JobGiver_StandAndBeSociallyActive">
+                  <ticksRange>350~750</ticksRange>
+                </li>
+              </subNodes>
+            </li>
+            
+            <!-- Get joy -->
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.1</chance>
+              <subNodes>
+                <li Class="JobGiver_GetJoyInGatheringArea" />
+              </subNodes>
+            </li>
+            
+            <!-- Wander -->
+            <li Class="JobGiver_WanderInGatheringArea">
+              <ticksBetweenWandersRange>50~250</ticksBetweenWandersRange>
+              <desiredRadius>6</desiredRadius>
+            </li>
+          </subNodes>
+        </li>
+        
+        <!-- Reach the party area -->
+        <li Class="JobGiver_WanderInGatheringArea">
+          <ticksBetweenWandersRange>50~250</ticksBetweenWandersRange>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <desiredRadius>6</desiredRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>EatAtCannibalPlatter</defName>
+    <hook>HighPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_EatAtCannibalPlatter" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>SpectateSmokeCircle</defName>
+    <hook>HighPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalInGatheringArea">
+          <subNodes>
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.1</chance>
+              <subNodes>
+                <li Class="JobGiver_GetJoyInGatheringArea" />
+              </subNodes>
+            </li>
+
+            <li Class="ThinkNode_ConditionalHasHediff">
+              <hediff>SmokeleafHigh</hediff>
+              <severityRange>0.4~0.6</severityRange>
+              <subNodes>
+                <li Class="JobGiver_LayDownResting"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <li Class="JobGiver_WanderInGatheringArea">
+          <ticksBetweenWandersRange>600~1200</ticksBetweenWandersRange>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <desiredRadius>6</desiredRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>AcceptRole</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <ritualSpectateTarget>true</ritualSpectateTarget>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+
+        <!-- Arrived -->
+        <li Class="ThinkNode_ConditionalAtDutyLocation">
+          <subNodes>
+            <li Class="JobGiver_AcceptRole">
+              <soundDefMale>Speech_Ideoligious_Male</soundDefMale>
+              <soundDefFemale>Speech_Ideoligious_Female</soundDefFemale>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Patch>
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/ThingDef[defName="Shuttle"]/description</xpath>
-    <value>
-      <description>A spacer-tech uranium-powered shuttle designed for transit between surface and orbit, or between moons of a planetary system. To prevent unsanctioned use, the shuttle is locked to the pilot's bio-signature. Destroying the shuttle will yield a shuttle engine and other valuable resources.</description>
-    </value>
-  </Operation>
-</Patch>

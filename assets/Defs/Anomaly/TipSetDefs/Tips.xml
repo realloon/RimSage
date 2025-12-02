@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TipSetDef>
+    <defName>AnomalyTips</defName>
+    <tips>
+
+      <li TKey="AbductionPsychicRitual">The skip abduction psychic ritual prioritizes nearby enemies, letting you abduct raiders on your map.</li>
+      <li TKey="BrainwipeUnwaveringlyLoyal">Have an unwaveringly loyal prisoner? The brainwipe psychic ritual will make them recruitable.</li>
+      <li TKey="AdvancedProjectRollover">Want to finish a basic Anomaly research project faster? Advanced entities will contribute to your current basic research project if you don't have an active advanced project.</li>
+
+    </tips>
+  </TipSetDef>
+
+</Defs>

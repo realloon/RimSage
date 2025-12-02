@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <PawnKindDef ParentName="TradersGuildGunnerBase">
+    <defName>Salvager_Pirate</defName>
+    <label>salvager pirate</label>
+    <initialResistanceRange>4~8</initialResistanceRange>
+    <combatEnhancingDrugsChance>0.25</combatEnhancingDrugsChance>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~10</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TradersGuildSlasherBase">
+    <defName>Salvager_Scrapper</defName>
+    <label>scrapper</label>
+    <initialResistanceRange>6~10</initialResistanceRange>
+    <combatEnhancingDrugsChance>0.25</combatEnhancingDrugsChance>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TradersGuildEliteBase">
+    <defName>Salvager_Elite</defName>
+    <label>salvager elite</label>
+    <labelPlural>salvager elites</labelPlural>
+    <initialResistanceRange>10~15</initialResistanceRange>
+    <combatEnhancingDrugsChance>0.25</combatEnhancingDrugsChance>
+  </PawnKindDef>
+  
+</Defs>

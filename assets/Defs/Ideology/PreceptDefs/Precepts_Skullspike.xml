@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Issue -->
+
+    <IssueDef>
+      <defName>Skullspike</defName>
+      <label>skullspike</label>
+      <iconPath>UI/Issues/SkullSpike</iconPath>
+    </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Skullspike_Desired</defName>
+    <issue>Skullspike</issue>
+    <label>desired</label>
+    <description>A skull on a spike symbolizes our superiority.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+      <li>Supremacist</li>
+      <li>Raider</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <description>Skullspike encounter</description>
+        <thought>Skullspike_Desired</thought>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Skullspike_Disapproved</defName>
+    <issue>Skullspike</issue>
+    <label>disapproved</label>
+    <description>Putting skulls on spikes is a barbaric practice.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <conflictingMemes>
+      <li>PainIsVirtue</li>
+      <li>Supremacist</li>
+      <li>Raider</li>
+    </conflictingMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <description>Skullspike encounter</description>
+        <thought>Skullspike_Disapproved</thought>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>Skullspike_Desired</defName>
+    <workerClass>ThoughtWorker_Precept_Skullspike</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Masochist</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>skullspikes</label> <!-- 1~3 -->
+        <description>I've been around a few skullspikes recently. I like being reminded of our power.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>skullspikes</label> <!-- 4~8 -->
+        <description>I've been around quite a few skullspikes recently. All will fear us.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>skullspikes</label> <!-- 9+ -->
+        <description>Surrounded by the dead grin of spiked skulls, nobody could doubt our power! </description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Skullspike_Disapproved</defName>
+    <workerClass>ThoughtWorker_Precept_Skullspike</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Masochist</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>skullspikes</label> <!-- 1~3 -->
+        <description>I've been around skulls on spikes. Just a few of them, but it's still disturbing.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>skullspikes</label> <!-- 4~8 -->
+        <description>There are quite a few skulls on spikes around here. It's rather disturbing.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>skullspikes</label> <!-- 9+ -->
+        <description>Why am I surrounded by a forest of heads on spikes? This is horrific.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

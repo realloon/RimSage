@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BookBase">
+    <thingClass>Book</thingClass>
+    <defName>Tome</defName>
+    <label>tome</label>
+    <description>A book which explores dark psychic powers, the void hidden under space, and the dreams of evil superintelligences. These volumes can help a reader harness dark entities and powers.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/Tome/Tome</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Book/Tome/Tome</uiIconPath>
+    <statBases>
+      <MarketValue>250</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Book">
+        <nameMaker>Namer_Tome</nameMaker>
+        <descriptionMaker>Description_Tome</descriptionMaker>
+        <ageYearsRange>500~2000</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/Tome/Tome_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.7</drawSize>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/Tome/Tome_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+        </verticalGraphic>
+        <doers>
+          <li Class="BookOutcomeProperties_GainAnomalyResearch">
+            <tabs>
+              <Anomaly />
+            </tabs>
+            <ignoreZeroBaseCost>false</ignoreZeroBaseCost>
+            <usesHiddenProjects>true</usesHiddenProjects>
+          </li>
+          <li Class="BookOutcomeProperties_MentalBreak">
+            <chancePerHourRange>0.01~0.05</chancePerHourRange>
+          </li>
+          <li Class="BookOutcomeProperties_GiveQuest">
+            <questChance>0.15</questChance>
+          </li>
+        </doers>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>

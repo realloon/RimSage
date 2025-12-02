@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LetterDef ParentName="PositiveEvent">
+    <defName>RelicHuntInstallationFound</defName>
+    <arriveSound>RelicHuntInstallationFound</arriveSound>
+  </LetterDef>
+
+</Defs>

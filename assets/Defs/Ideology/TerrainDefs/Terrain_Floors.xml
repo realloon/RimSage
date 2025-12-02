@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainDef ParentName="FloorBase" Name="IdeoStoneTileBase" Abstract="True">
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <Beauty>3</Beauty>
+      <StyleDominance>1</StyleDominance>
+      <CleaningTimeFactor>0.8</CleaningTimeFactor>
+    </statBases>
+    <renderPrecedence>220</renderPrecedence>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+  </TerrainDef>
+
+  <TerrainDef ParentName="FloorBase" Name="IdeoCarpetBase" Abstract="True">
+    <statBases>
+      <Beauty>4</Beauty>
+      <Flammability>0.32</Flammability>
+      <WorkToBuild>4000</WorkToBuild>
+      <StyleDominance>1</StyleDominance>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <renderPrecedence>200</renderPrecedence>
+    <burnedDef>BurnedCarpet</burnedDef>
+    <researchPrerequisites>
+      <li>CarpetMaking</li>
+    </researchPrerequisites>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+  </TerrainDef>
+
+  <TerrainTemplateDef Name="IdeoCarpetTemplateBase" Abstract="True">
+    <burnedDef>BurnedCarpet</burnedDef>
+    <researchPrerequisites>
+      <li>CarpetMaking</li>
+    </researchPrerequisites>
+    <costList>
+      <Cloth>35</Cloth>
+    </costList>
+    <uiOrder>2115</uiOrder>
+    <tags>
+      <li>Floor</li>
+      <li>FineFloor</li>
+    </tags>
+    <statBases>
+      <Beauty>4</Beauty>
+      <Flammability>0.32</Flammability>
+      <WorkToBuild>4000</WorkToBuild>
+      <StyleDominance>1</StyleDominance>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+    <renderPrecedenceStart>220</renderPrecedenceStart>
+  </TerrainTemplateDef>
+
+
+  <!-- Morbid -->           
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Morbid_Stone</defName>
+    <label>morbid tile</label>
+  </DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Morbid_Carpet</defName>
+    <label>morbid carpet</label>
+    <iconSource>Placed</iconSource>
+    <useGridMenu>true</useGridMenu>
+    <includeEyeDropperTool>true</includeEyeDropperTool>
+  </DesignatorDropdownGroupDef>
+
+  <TerrainDef ParentName="IdeoStoneTileBase" Name="MorbidStoneTile" Abstract="True">
+    <description>Fine stone tiles in a morbid style.</description>
+    <texturePath>Terrain/Surfaces/MorbidTile</texturePath>
+    <designatorDropdown>Floor_Morbid_Stone</designatorDropdown>
+    <dominantStyleCategory>Morbid</dominantStyleCategory>
+    <uiOrder>2065</uiOrder>
+  </TerrainDef>
+
+  <TerrainDef ParentName="MorbidStoneTile">
+    <defName>Tile_MorbidSandstone</defName>
+    <label>morbid sandstone tile</label>
+    <color>(147,127,118)</color>
+    <costList>
+      <BlocksSandstone>20</BlocksSandstone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="MorbidStoneTile">
+    <defName>Tile_MorbidGranite</defName>
+    <label>morbid granite tile</label>
+    <color>(105,95,97)</color>
+    <costList>
+      <BlocksGranite>20</BlocksGranite>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="MorbidStoneTile">
+    <defName>Tile_MorbidLimestone</defName>
+    <label>morbid limestone tile</label>
+    <color>(158,153,135)</color>
+    <costList>
+      <BlocksLimestone>20</BlocksLimestone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="MorbidStoneTile">
+    <defName>Tile_MorbidSlate</defName>
+    <label>morbid slate tile</label>
+    <color>(70,70,70)</color>
+    <costList>
+      <BlocksSlate>20</BlocksSlate>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="MorbidStoneTile">
+    <defName>Tile_MorbidMarble</defName>
+    <label>morbid marble tile</label>
+    <color>(180,180,180)</color>
+    <costList>
+      <BlocksMarble>20</BlocksMarble>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="MorbidStoneTile" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>Tile_MorbidVacstone</defName>
+    <label>morbid vacstone tile</label>
+    <color>(115,106,98)</color>
+    <costList>
+      <BlocksVacstone>20</BlocksVacstone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainTemplateDef ParentName="IdeoCarpetTemplateBase">
+    <defName>Carpet_Morbid</defName>
+    <label>morbid carpet ({0})</label>
+    <description>Fine carpet in a morbid style.</description>
+    <texturePath>Terrain/Surfaces/MorbidCarpet</texturePath>
+    <designatorDropdown>Floor_Morbid_Carpet</designatorDropdown>
+    <dominantStyleCategory>Morbid</dominantStyleCategory>
+  </TerrainTemplateDef>
+
+
+  <!-- Spikecore -->
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Spikecore_Tile</defName>
+    <label>spikecore tile</label>
+  </DesignatorDropdownGroupDef>
+
+  <TerrainDef ParentName="IdeoStoneTileBase" Name="SpikecoreStoneTile" Abstract="True">
+    <description>Fine stone tiles in a spikecore style.</description>
+    <texturePath>Terrain/Surfaces/SpikecoreTile</texturePath>
+    <designatorDropdown>Floor_Spikecore_Tile</designatorDropdown>
+    <dominantStyleCategory>Spikecore</dominantStyleCategory>
+  </TerrainDef>
+
+  <TerrainDef ParentName="SpikecoreStoneTile">
+    <defName>Tile_SpikecoreSandstone</defName>
+    <label>sandstone spikecore tile</label>
+    <color>(147,127,118)</color>
+    <costList>
+      <BlocksSandstone>20</BlocksSandstone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="SpikecoreStoneTile">
+    <defName>Tile_SpikecoreGranite</defName>
+    <label>granite spikecore tile</label>
+    <color>(105,95,97)</color>
+    <costList>
+      <BlocksGranite>20</BlocksGranite>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="SpikecoreStoneTile">
+    <defName>Tile_SpikecoreLimestone</defName>
+    <label>limestone spikecore tile</label>
+    <color>(158,153,135)</color>
+    <costList>
+      <BlocksLimestone>20</BlocksLimestone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="SpikecoreStoneTile">
+    <defName>Tile_SpikecoreSlate</defName>
+    <label>slate spikecore tile</label>
+    <color>(70,70,70)</color>
+    <costList>
+      <BlocksSlate>20</BlocksSlate>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="SpikecoreStoneTile">
+    <defName>Tile_SpikecoreMarble</defName>
+    <label>marble spikecore tile</label>
+    <color>(180,180,180)</color>
+    <costList>
+      <BlocksMarble>20</BlocksMarble>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="SpikecoreStoneTile" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>Tile_SpikecoreVacstone</defName>
+    <label>vacstone spikecore tile</label>
+    <color>(115,106,98)</color>
+    <costList>
+      <BlocksVacstone>20</BlocksVacstone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>Plates_Spikecore</defName>
+    <label>spikecore plates</label>
+    <description>Fine steel plates decorated in an aggressive spikecore style.</description>
+    <texturePath>Terrain/Surfaces/SpikecorePlates</texturePath>
+    <renderPrecedence>240</renderPrecedence>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <dominantStyleCategory>Spikecore</dominantStyleCategory>
+    <color>(105,105,105)</color>
+    <costList>
+      <Steel>12</Steel>
+    </costList>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <Beauty>3</Beauty>
+      <StyleDominance>1</StyleDominance>
+      <CleaningTimeFactor>0.6</CleaningTimeFactor>
+    </statBases>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+  </TerrainDef>
+
+
+  <!-- Totemic -->
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Totemic_Tile</defName>
+    <label>totemic tile</label>
+  </DesignatorDropdownGroupDef>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>Boards_Totemic</defName>
+    <label>totemic boards</label>
+    <description>Fine wood boards decorated in a totemic style.</description>
+    <texturePath>Terrain/Surfaces/TotemicBoards</texturePath>
+    <renderPrecedence>250</renderPrecedence>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <dominantStyleCategory>Totemic</dominantStyleCategory>
+    <color>(133,97,67)</color>
+    <costList>
+      <WoodLog>20</WoodLog>
+    </costList>
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <Beauty>3</Beauty>
+      <StyleDominance>1</StyleDominance>
+      <Flammability>0.22</Flammability>
+    </statBases>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+  </TerrainDef>
+
+  <TerrainDef ParentName="IdeoStoneTileBase" Name="TotemicStoneTile" Abstract="True">
+    <description>Fine stone tiles in a totemic style.</description>
+    <texturePath>Terrain/Surfaces/TotemicTiles</texturePath>
+    <designatorDropdown>Floor_Totemic_Tile</designatorDropdown>
+    <dominantStyleCategory>Totemic</dominantStyleCategory>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TotemicStoneTile">
+    <defName>Tile_TotemicSandstone</defName>
+    <label>totemic sandstone tile</label>
+    <color>(147,127,118)</color>
+    <costList>
+      <BlocksSandstone>20</BlocksSandstone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TotemicStoneTile">
+    <defName>Tile_TotemicGranite</defName>
+    <label>totemic granite tile</label>
+    <color>(105,95,97)</color>
+    <costList>
+      <BlocksGranite>20</BlocksGranite>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TotemicStoneTile">
+    <defName>Tile_TotemicLimestone</defName>
+    <label>totemic limestone tile</label>
+    <color>(158,153,135)</color>
+    <costList>
+      <BlocksLimestone>20</BlocksLimestone>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TotemicStoneTile">
+    <defName>Tile_TotemicSlate</defName>
+    <label>totemic slate tile</label>
+    <color>(70,70,70)</color>
+    <drawStyleCategory>FilledRectangle</drawStyleCategory>
+    <costList>
+      <BlocksSlate>20</BlocksSlate>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TotemicStoneTile">
+    <defName>Tile_TotemicMarble</defName>
+    <label>totemic marble tile</label>
+    <color>(180,180,180)</color>
+    <costList>
+      <BlocksMarble>20</BlocksMarble>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TotemicStoneTile" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>Tile_TotemicVacstone</defName>
+    <label>totemic vacstone tile</label>
+    <color>(115,106,98)</color>
+    <costList>
+      <BlocksVacstone>20</BlocksVacstone>
+    </costList>
+  </TerrainDef>
+
+
+  <!-- High life -->
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_MindbendCarpet</defName>
+    <label>mindbend carpet</label>
+    <iconSource>Placed</iconSource>
+  </DesignatorDropdownGroupDef>
+
+  <TerrainDef Name="Carpet_Mindbend" ParentName="IdeoCarpetBase" Abstract="True">
+    <defName>Carpet_Mindbend</defName>
+    <label>mindbend carpet</label>
+    <description>Fine carpet decorated in a mind-bending style often associated with drug use.</description>
+    <designatorDropdown>Floor_MindbendCarpet</designatorDropdown>
+    <costList>
+      <Cloth>35</Cloth>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Carpet_Mindbend">
+    <defName>Carpet_MindbendA</defName>
+    <label>diamond mindbend carpet</label>
+    <texturePath>Terrain/Surfaces/MindbendCarpet/MindbendCarpet_a</texturePath>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Carpet_Mindbend">
+    <defName>Carpet_MindbendB</defName>
+    <label>purple mindbend carpet</label>
+    <texturePath>Terrain/Surfaces/MindbendCarpet/MindbendCarpet_b</texturePath>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Carpet_Mindbend">
+    <defName>Carpet_MindbendC</defName>
+    <label>green mindbend carpet</label>
+    <texturePath>Terrain/Surfaces/MindbendCarpet/MindbendCarpet_c</texturePath>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Carpet_Mindbend">
+    <defName>Carpet_MindbendD</defName>
+    <label>blue mindbend carpet</label>
+    <texturePath>Terrain/Surfaces/MindbendCarpet/MindbendCarpet_d</texturePath>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Carpet_Mindbend">
+    <defName>Carpet_MindbendE</defName>
+    <label>yellow mindbend carpet</label>
+    <texturePath>Terrain/Surfaces/MindbendCarpet/MindbendCarpet_e</texturePath>
+  </TerrainDef>
+
+
+  <!-- Transhumanist -->
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Transhumanist_Carpet</defName>
+    <label>hex carpet</label>
+    <iconSource>Placed</iconSource>
+    <useGridMenu>true</useGridMenu>
+    <includeEyeDropperTool>true</includeEyeDropperTool>
+  </DesignatorDropdownGroupDef>
+
+  <TerrainTemplateDef ParentName="IdeoCarpetTemplateBase">
+    <defName>Carpet_Transhumanist</defName>
+    <label>hex carpet ({0})</label>
+    <description>Fine carpet with a hexagonal pattern for that ultra-technological look.</description>
+    <texturePath>Terrain/Surfaces/HexCarpet</texturePath>
+    <designatorDropdown>Floor_Transhumanist_Carpet</designatorDropdown>
+    <dominantStyleCategory>Techist</dominantStyleCategory>
+  </TerrainTemplateDef>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>Tile_Transhumanist</defName>
+    <label>hex tile</label>
+    <description>Fine steel plates with a hexagonal pattern for that ultra-technological look.</description>
+    <texturePath>Terrain/Surfaces/HexTile</texturePath>
+    <renderPrecedence>228</renderPrecedence>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <dominantStyleCategory>Techist</dominantStyleCategory>
+    <color>(105,105,105)</color>
+    <costList>
+      <Steel>12</Steel>
+    </costList>
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <Beauty>3</Beauty>
+      <StyleDominance>1</StyleDominance>
+      <CleaningTimeFactor>0.6</CleaningTimeFactor>
+    </statBases>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+    <uiOrder>2055</uiOrder>
+  </TerrainDef>
+
+</Defs>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>MedievalFarmOaf58</defName>
+    <title>medieval farm oaf</title>
+    <titleShort>oaf</titleShort>
+    <description>Tilling, hoeing, guiding ox carts, pushing wheelbarrows. Digging ditches, planting seeds, predicting the harvest.\n\nMedieval-level farmers aren't educated in the usual sense, but they know a lot about growing plants without technology. That said, such a life can leave one  incapable of participating in technology-driven activities.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Plants>8</Plants>
+      <Mining>3</Mining>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+	    <li>Farmer</li>
+    </spawnCategories>
+    <workDisables>
+      <li>Intellectual</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>ManualDumb</li>
+      <li>PlantWork</li>
+      <li>Mining</li>
+    </requiredWorkTags>
+    <bodyTypeGlobal>Fat</bodyTypeGlobal>
+</BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MedievalLord57</defName>
+    <title>medieval lord</title>
+    <titleShort>noble</titleShort>
+    <description>[PAWN_nameDef] was a lord on a pre-industrial planet. [PAWN_pronoun] went to parties, managed the underlings, and even learned some swordplay.\n\n[PAWN_possessive] soft hands did not hold a tool once during that entire time. Now, [PAWN_pronoun] considers manual labor to be beneath [PAWN_objective].</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Social>7</Social>
+      <Melee>5</Melee>
+      <Shooting>5</Shooting>
+    </skillGains>
+    <spawnCategories><li>Offworld</li></spawnCategories>
+    <workDisables>
+      <li>ManualDumb</li>
+      <li>ManualSkilled</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <possessions>
+      <Apparel_Cape MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">1</Apparel_Cape>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MedievalMinstrel95</defName>
+    <title>medieval minstrel</title>
+    <titleShort>minstrel</titleShort>
+    <description>[PAWN_nameDef] was a traveling entertainer on a medieval world and [PAWN_pronoun] could always be found telling stories or singing songs.\n\nThe roads were dangerous, so [PAWN_pronoun] is capable of protecting [PAWN_objective]self. However, [PAWN_pronoun] would always move on when there was hard labour to be done.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>ManualSkilled</li>
+      <li>Hauling</li>
+    </workDisables>
+    <skillGains>
+      <Social>4</Social>
+      <Artistic>3</Artistic>
+      <Melee>2</Melee>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <bodyTypeMale>Fat</bodyTypeMale>
+    <bodyTypeFemale>Fat</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Taster16</defName>
+    <title>taster</title>
+    <titleShort>taster</titleShort>
+    <description>As the food taster for a medieval king, [PAWN_nameDef] sampled any dish served at the royal table. [PAWN_pronoun] lived a decadent lifestyle at court, growing fat and doing very little real work.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Cooking</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Cooking>7</Cooking>
+      <Construction>-4</Construction>
+      <Crafting>-4</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <bodyTypeMale>Fat</bodyTypeMale>
+    <bodyTypeFemale>Fat</bodyTypeFemale>
+    <possessions>
+      <MealLavish>1</MealLavish>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Blacksmith72</defName>
+    <title>blacksmith</title>
+    <titleShort>blacksmith</titleShort>
+    <description>As a smith on a medieval world, [PAWN_nameDef] gained a reputation for the high quality of [PAWN_possessive] work. [PAWN_pronoun] wasn't bad at using the swords [PAWN_pronoun] forged either.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Intellectual</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>ManualDumb</li>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Shooting>-5</Shooting>
+      <Melee>4</Melee>
+      <Crafting>6</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <possessions>
+      <MeleeWeapon_LongSword>1</MeleeWeapon_LongSword>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MessageCarrier77</defName>
+    <title>message carrier</title>
+    <titleShort>messenger</titleShort>
+    <description>On a medieval world, the fastest way to send a message is to give it to somebody on a horse and hope they survive the journey. [PAWN_nameDef] was that somebody.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Intellectual</li>
+    </workDisables>
+    <skillGains>
+      <Melee>3</Melee>
+      <Animals>4</Animals>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Hulk</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MedievalDoctor40</defName>
+    <title>medieval doctor</title>
+    <titleShort>quack</titleShort>
+    <description>[PAWN_nameDef] worked as a doctor on a medieval planet. [PAWN_pronoun] firmly believes that most ailments can be cured with a little bloodletting.\n\n[PAWN_pronoun] was also a master anaesthetist, developing a specialty technique that involved a heavy blow to the head.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>6</Melee>
+      <Medicine>1</Medicine>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Caring</li>
+    </requiredWorkTags>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>Herbalist54</defName>
+    <title>herbalist</title>
+    <titleShort>herbalist</titleShort>
+    <description>[PAWN_nameDef] lived in the forest near a village. Though many of the villagers feared [PAWN_objective], sick villagers would come to [PAWN_objective] to purchase salves and poultices made from the herbs [PAWN_pronoun] grew in [PAWN_possessive] garden. [PAWN_pronoun] was happy to help them — for a price.</description>
+    <slot>Adulthood</slot>
+    <requiredWorkTags>
+      <li>Caring</li>
+      <li>PlantWork</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Plants>4</Plants>
+      <Medicine>4</Medicine>
+      <Social>-2</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+      <li>Farmer</li>
+      <li>Cult</li>
+    </spawnCategories>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <possessions>
+      <MedicineHerbal>5</MedicineHerbal>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MedievalSailor97</defName>
+    <title>medieval sailor</title>
+    <titleShort>sailor</titleShort>
+    <description>[PAWN_nameDef] explored the oceans on a wooden ship, seeking out plant and animal specimens from exotic places, and occasionally fending off pirates. [PAWN_pronoun] loved the sea so much [PAWN_pronoun] refused to do all but the barest minimum of work on land, except to sell the treasures [PAWN_pronoun] had collected.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>ManualSkilled</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>ManualDumb</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Melee>4</Melee>
+      <Social>4</Social>
+      <Animals>4</Animals>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+</Defs>

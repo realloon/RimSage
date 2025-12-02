@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MechWorkModeDef>
+    <defName>Work</defName>
+    <label>work</label>
+    <description>Work autonomously according to mechanoid type. Automatically go to rechargers and recharge when needed.</description>
+    <iconPath>UI/Icons/WorkMode/Work</iconPath>
+  </MechWorkModeDef>
+
+  <MechWorkModeDef>
+    <defName>Escort</defName>
+    <label>escort</label>
+    <uiOrder>200</uiOrder>
+    <description>Stay near the mechanitor and fight nearby enemies. Follow the mechanitor, even off the map.</description>
+    <iconPath>UI/Icons/WorkMode/Escort</iconPath>
+    <workerClass>WorkModeDrawer_Escort</workerClass>
+  </MechWorkModeDef>
+
+  <MechWorkModeDef>
+    <defName>Recharge</defName>
+    <label>recharge</label>
+    <uiOrder>300</uiOrder>
+    <description>Go to rechargers and recharge, even if already well-charged.</description>
+    <iconPath>UI/Icons/WorkMode/Recharge</iconPath>
+    <ignoreGroupChargeLimits>true</ignoreGroupChargeLimits>
+  </MechWorkModeDef>
+
+  <MechWorkModeDef>
+    <defName>SelfShutdown</defName>
+    <label>dormant self-charge</label>
+    <uiOrder>400</uiOrder>
+    <description>Go into a dormant self-charging state that very slowly regains energy without a recharger.</description>
+    <iconPath>UI/Icons/WorkMode/SelfShutdown</iconPath>
+  </MechWorkModeDef>
+
+
+</Defs>

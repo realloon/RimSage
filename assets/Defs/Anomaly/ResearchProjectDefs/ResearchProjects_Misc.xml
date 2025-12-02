@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>TurretPack</defName>
+    <label>turret pack</label>
+    <description>Build a wearable pack that allows the user to deploy a battery-powered turret.</description>
+    <baseCost>1400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <hiddenPrerequisites>
+      <li>Batteries</li>
+      <li>GunTurrets</li>
+    </hiddenPrerequisites>  
+    <hideWhen>
+      <turretsDisabled>true</turretsDisabled>
+    </hideWhen>
+    <researchViewX>11.00</researchViewX>
+    <researchViewY>1.80</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->deployable turrets</li>
+
+        <li>subject_story->defended a feralworld castle from assault</li>
+        <li>subject_story->manned a tailgun on an Imperial dropship</li>
+        <li>subject_story->researched deployable military technology</li>
+        <li>subject_story->fought in the trench battles of the [worldname] War</li>
+
+        <li>subject_gerund->crafting deployable gun turrets</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>SecurityDoor</defName>
+    <label>security door</label>
+    <description>Build a heavily reinforced door. It is slow to open and requires power, but is very strong. It's a good choice if you want to keep something dangerous out - or in.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Autodoors</li>
+    </prerequisites>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>0.30</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->security door</li>
+
+        <li>subject_story->worked as a security drone in a sealed research facility</li>
+        <li>subject_story->engineered security devices for a stellar trader</li>
+        <li>subject_story->researched materials science for a mercenary firm</li>
+        <li>subject_story->worked in a Glitterworld zoo</li>
+
+        <li>subject_gerund->constructing security doors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>

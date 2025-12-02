@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Patch>
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/InstructionDef[defName="ChooseLandingSite"]/rejectInputMessage</xpath>
-    <value>
-      <rejectInputMessage>Please choose a temperate forest (light green color) site with no landmarks, no mixed biomes, and no hills.</rejectInputMessage>
-    </value>
-  </Operation>
-</Patch>

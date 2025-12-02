@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Corpses_DontCare</defName>
+    <issue>Corpses</issue>
+    <label>don't care</label>
+    <description>The sight of a dead person is nothing to be concerned about.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <selectionWeight>0.75</selectionWeight>
+    <associatedMemes>
+      <li>PainIsVirtue</li>
+      <li>Cannibal</li>
+      <li>Raider</li>
+    </associatedMemes>
+    <requiredMemes>
+      <li>PainIsVirtue</li>
+      <li>Cannibal</li>
+      <li>Supremacist</li>
+      <li>Raider</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhuman</li>
+    </requiredMemes>
+  </PreceptDef>
+
+</Defs>

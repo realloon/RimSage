@@ -1,0 +1,1356 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechStabilizer</defName>
+    <label>relay stabilizer</label>
+    <description>A shield projecter that protects a nearby mechanoid relay. All stabilizers must be hacked or destroyed to deactivate the shield.\n\nDestroying a stabilizer will prompt a defensive response. Hacking is a slower but safer option.</description>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/MechanoidStabilizer/MechanoidStabilizer</texPath>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <dontPrint>true</dontPrint> <!-- Printed onto map mesh by comp -->
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </killedLeavings>
+    <size>(2, 2)</size>
+    <tickerType>Normal</tickerType>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>Impassable</passability>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0, 0, 2)</interactionCellOffset>
+    <pathCost>50</pathCost>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>30000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>12~18</lockoutDurationHoursRange>
+        <notHackedInspectString>Hack to disable stabilizer.</notHackedInspectString>
+        <hackedInspectString>Deactivated.</hackedInspectString>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+        <unhackedGraphicData>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <texPath>Things/Building/MechanoidStabilizer/MechanoidStabilizer</texPath>
+          <drawSize>(2, 2)</drawSize>
+        </unhackedGraphicData>
+        <hackedGraphicData>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <texPath>Things/Building/MechanoidStabilizer/MechanoidStabilizer_Off</texPath>
+          <drawSize>(2, 2)</drawSize>
+        </hackedGraphicData>
+        <intellectualSkillPrerequisite>7</intellectualSkillPrerequisite>
+      </li>
+      <li Class="CompProperties_HackableEffecter">
+        <effecterDef>MechStabilizerPulse</effecterDef>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>MechanoidStabilizer_Ambient</sound>
+        <disableOnHacked>true</disableOnHacked>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechRelay</defName>
+    <label>mechanoid relay</label>
+    <description>A node that coordinates signals across a planet-wide mechanoid communication network. The command signals originate at the mechhive - the center of mechanoid intelligence.</description>
+    <thingClass>Building_MechRelay</thingClass>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/MechanoidRelay</texPath>
+      <drawSize>(3.5, 3.5)</drawSize>
+    </graphicData>
+    <size>(3, 3)</size>
+    <drawerType>RealtimeOnly</drawerType>
+    <useHitPoints>false</useHitPoints>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <tickerType>Normal</tickerType>
+    <building>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+      <isTargetable>false</isTargetable>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_MechRelay">
+        <activeInspectString>Hack or destroy relay stabilizers to obtain gravcore.</activeInspectString>
+        <destabilizationMessage>The mechanoid relay has begun to destabilize.</destabilizationMessage>
+        <crashedLetterLabel>Relay crash</crashedLetterLabel>
+        <crashedLetterText>The mechanoid relay has crashed to the ground. Destroy it to obtain a gravcore.\n\nBe warned, hostile mechanoids will soon arrive in response to the relay going offline.</crashedLetterText>
+        <destabilizationInspectString>Destabilizing</destabilizationInspectString>
+        <crashedThingDef>MechRelay_Crashed</crashedThingDef>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>MechanoidRelay_Ambient</sound>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechRelay_Crashed</defName>
+    <label>crashed mechanoid relay</label>
+    <description>A node that coordinates signals across a planet-wide mechanoid communication network. The command signals originate at the mechhive - the center of mechanoid intelligence.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/MechanoidRelay_Crashed</texPath>
+      <drawSize>(3.5, 3.5)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <Gravcore>1</Gravcore>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <GravlitePanel>165</GravlitePanel>
+    </killedLeavings>
+    <size>(3, 3)</size>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+      <displayAttackToDestroyOnInspectPane>true</displayAttackToDestroyOnInspectPane>
+    </building>
+    <comps>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Contains: Gravcore</inspectString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Colored for planetside maps -->
+  <ThingDef Name="AncientFortifiedWall" ParentName="Wall">
+    <defName>AncientFortifiedWall</defName>
+    <label>fortified wall</label>
+    <description>A heavily-reinforced wall made of an ultratech polymer.</description>
+    <uiIconPath>Things/Building/Linked/AncientFortifiedWall_MenuIcon</uiIconPath>
+    <designationCategory IsNull="True"/>
+    <graphicData>
+      <texPath>Things/Building/Linked/AncientFortifiedWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(127,135,127)</color>
+    </graphicData>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+      <isAirtight>true</isAirtight>
+    </building>
+    <stuffCategories Inherit="False"/>
+    <costStuffCount>0</costStuffCount>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <statBases>
+      <MaxHitPoints>7500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0</MeditationFocusStrength>
+    </statBases>
+    <comps Inherit="False"/>
+  </ThingDef>
+
+  <!-- Colored for space maps -->
+  <ThingDef ParentName="AncientFortifiedWall">
+    <defName>OrbitalAncientFortifiedWall</defName>
+    <graphicData>
+      <color>(132,140,140)</color>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="DoorBase">
+    <defName>AncientBlastDoor</defName>
+    <label>ancient blast door</label>
+    <description>A heavily-reinforced door made of an ultratech polymer. Hack the door to open it.</description>
+    <thingClass>Building_HackableDoor</thingClass>
+    <designationCategory IsNull="True"/>
+    <graphicData>
+      <texPath>Things/Building/Ancient/BlastDoor/AncientBlastDoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+      <damageData>
+        <!--  no damage marks because they don't move with the door -->
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Ancient/BlastDoor/AncientBlastDoor_MenuIcon_south</uiIconPath>
+    <statBases>
+      <MaxHitPoints>6000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <rotatable>true</rotatable>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+      <unpoweredDoorOpenSpeedFactor>1.2</unpoweredDoorOpenSpeedFactor>
+      <isAirtight>true</isAirtight>
+      <draftAttackNonDeconstructable>false</draftAttackNonDeconstructable>
+      <isSupportDoor>true</isSupportDoor>
+      <doorTopGraphic>
+        <texPath>Things/Building/Ancient/BlastDoor/AncientBlastDoor_Top</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(2,2.2)</drawSize>
+      </doorTopGraphic>
+      <doorTopHorizontalOffset>(0,0,0.05)</doorTopHorizontalOffset>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <stuffCategories Inherit="False"/>
+    <costStuffCount>0</costStuffCount>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Hackable">
+        <defence>1800</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>2~3</lockoutDurationHoursRange>
+        <notHackedInspectString>Hack to open.</notHackedInspectString>
+        <hackedInspectString>Unlocked.</hackedInspectString>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        
+        <unhackedGraphicData>
+          <texPath>Things/Building/Ancient/BlastDoor/AncientBlastDoor_HackingTerminal</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+        </unhackedGraphicData>
+        <unhackedGraphicOffset>(0,0.05,0)</unhackedGraphicOffset>
+        <graphicDrawerType>RealtimeOnly</graphicDrawerType>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AncientGravReactor</defName>
+    <label>ancient grav reactor</label>
+    <description>An ancient generator powered by a gravcore. Once capable of producing massive amounts of power, it has now fallen into disrepair. The reactor containment shield is leaking, causing toxic fallout to blanket the whole region.\n\nHack or destroy the reactor to obtain a gravcore. Be warned, it may explode if damaged.</description>
+    <statBases>
+      <MaxHitPoints>600</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Ancient/GravReactor/AncientGravReactor</texPath>
+      <drawSize>(5, 5)</drawSize>
+    </graphicData>
+    <dontPrint>true</dontPrint> <!-- Printed onto map mesh by comp -->
+    <size>(5, 5)</size>
+    <tickerType>Normal</tickerType>
+    <fillPercent>0.6</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>Impassable</passability>
+    <pathCost>20</pathCost>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(-2,0,3)</interactionCellOffset>
+    <killedLeavings>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <GravlitePanel>50</GravlitePanel>
+    </killedLeavings>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlantAncientReactor</compClass>
+        <basePowerConsumption>-4000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_CausesGameCondition">
+        <compClass>CompCauseGameCondition_AncientReactor</compClass>
+        <conditionDef>ToxicFallout</conditionDef>
+        <worldRange>0</worldRange>
+        <hideSource>true</hideSource>
+      </li>
+      <li Class="CompProperties_Hackable">
+        <defence>9000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>12~18</lockoutDurationHoursRange>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <notHackedInspectString>Hack to obtain gravcore.</notHackedInspectString>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_definite}.</hackedMessage> 
+        
+        <hackedLetterLabel>Gravcore obtained</hackedLetterLabel> 
+        <hackedLetterText>You've obtained a gravcore from the ancient reactor.\n\nThe reactor is shutting down and the toxic fallout is already beginning to clear.</hackedLetterText>
+        <hackedLetterDef>PositiveEvent</hackedLetterDef>
+        
+        <destroyedLetterLabel>Gravcore obtained</destroyedLetterLabel>
+        <destroyedLetterText>You've obtained a gravcore from the ancient reactor.\n\nThe reactor is shutting down and the toxic fallout is already beginning to clear.</destroyedLetterText>
+        <destroyedLetterDef>PositiveEvent</destroyedLetterDef>
+        
+        <unhackedGraphicData>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <texPath>Things/Building/Ancient/GravReactor/AncientGravReactor</texPath>
+          <drawSize>(5, 5)</drawSize>
+        </unhackedGraphicData>
+        
+        <hackedGraphicData>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <texPath>Things/Building/Ancient/GravReactor/AncientGravReactor_Off</texPath>
+          <drawSize>(5, 5)</drawSize>
+        </hackedGraphicData>
+
+        <dropOnHacked>
+          <Gravcore />
+        </dropOnHacked>
+        <dropOnDestroyed>
+          <Gravcore />
+        </dropOnDestroyed>
+        <intellectualSkillPrerequisite>6</intellectualSkillPrerequisite>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+        <startWickHitPointsPercent>0.5</startWickHitPointsPercent>
+        <wickTicks>200~240</wickTicks>
+      </li>
+      <li Class="CompProperties_LetterOnRevealed">
+        <label>Ancient reactor</label>
+        <text>You've discovered the ancient grav reactor. Hack it or destroy it to obtain a gravcore and end the toxic fallout.\n\nBe warned, it may explode if damaged.</text>
+        <letterDef>NeutralEvent</letterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AncientGravEngine</defName>
+    <label>ancient grav engine</label>
+    <description>An ultratech engine used to bring large structures and ships into orbit. While it has been nonfunctional for many years, it contains a functional gravcore.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Ancient/GravEngine</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>75</Mass>
+      <MarketValue>2000</MarketValue>
+    </statBases>
+    <size>(3,3)</size>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.6</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <blockWind>true</blockWind>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+    </building>
+    <killedLeavings>
+      <Gravcore>1</Gravcore>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <GravlitePanel>25</GravlitePanel>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(0,218,255,0)</glowColor>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Contains: Gravcore</inspectString>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>AncientMiningCharge</defName>
+    <label>ancient mining charge</label>
+    <description>An explosive device used to quickly blast through rock. It is made from refined chemfuel. The explosive is old, but still ready to detonate.</description>
+    <graphicData>
+      <texPath>Things/Building/Ancient/MiningCharge</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.9, 0.5, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <size>(1,1)</size>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <tickerType>Normal</tickerType>
+    <pathCost>50</pathCost>
+    <building>
+      <alwaysUninstallable>true</alwaysUninstallable>
+    </building>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>480</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>MiningBomb</explosiveDamageType>
+        <explodeOnKilled>true</explodeOnKilled>
+        <startWickHitPointsPercent>0.99</startWickHitPointsPercent>
+        <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+        <preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+    <defName>AncientExplosivesCrate</defName>
+    <label>ancient explosives crate</label>
+    <description>A container of ancient mining charges. It will explode if damaged.</description>
+    <graphicData>
+      <texPath>Things/Building/Ancient/ExplosivesCrate</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <shadowData>
+        <volume>(1.9, 0.9, 1.9)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2, 2)</size>
+    <fillPercent>0.9</fillPercent>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <tickerType>Normal</tickerType>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>480</wickTicks>
+        <explosiveRadius>5.9</explosiveRadius>
+        <explosiveDamageType>MiningBomb</explosiveDamageType>
+        <explodeOnKilled>true</explodeOnKilled>
+        <startWickHitPointsPercent>0.99</startWickHitPointsPercent>
+        <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+        <preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AncientTerminalBase">
+    <defName>AncientSecurityTerminal</defName>
+    <label>ancient security terminal</label>
+    <description>An ancient terminal. Hack it to disable nearby security systems.</description>
+    <comps>
+      <li Class="CompProperties_AncientSecurityTerminalHackable">
+        <!-- Hackable -->
+        <defence>600</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        
+        <!-- Terminal -->
+        <letterTurretDisabledLabel>Turret disabled</letterTurretDisabledLabel>
+        <letterTurretDisabledText>{HACKER_nameDef} used the ancient security terminal to disable a turret.</letterTurretDisabledText>
+        
+        <letterTurretHackedLabel>Turret reprogrammed</letterTurretHackedLabel>
+        <letterTurretHackedText>{HACKER_nameDef} used the ancient security terminal to reprogram a turret. The turret will now only target hostiles.</letterTurretHackedText>
+        
+        <letterDoorOpenedLabel>Blast door opened</letterDoorOpenedLabel>
+        <letterDoorOpenedText>{HACKER_nameDef} used the ancient security terminal to open a blast door.</letterDoorOpenedText>
+        
+        <messageNoValidTarget>{HACKER_nameDef} couldn't find any security systems using the ancient security terminal.</messageNoValidTarget>
+        <intellectualSkillPrerequisite>8</intellectualSkillPrerequisite>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>EggSac</defName>
+    <label>egg sac</label>
+    <description>A slimy sac containing an insect larva. The larval gestation process generates a faint bioluminescent glow.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/EggSac</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <Beauty>-6</Beauty>
+    </statBases>
+    <building>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+      <quickTargetable>true</quickTargetable>
+      <isTargetable>true</isTargetable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_SpawnPawnOnDestroyed">
+        <compClass>CompSpawnLarva</compClass>
+        <pawnKind>Larva</pawnKind>
+        <lordJob>LordJob_WanderNest</lordJob>
+      </li>
+      <li Class="CompProperties_SpawnEffecterOnDestroy">
+        <effect>CocoonDestroyed</effect>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CocoonBase">
+    <defName>CocoonLocust</defName>
+    <label>locust cocoon</label>
+    <description>A stasis cocoon containing a locust.\n\nWhen conditions are inhospitable, insects sometimes form stasis cocoons and burrow underground. These cocoons keep insects safe from fire, extreme temperatures, and other threats for years.\n\nPollutants can stimulate cocoons and cause them to resurface, and strong pollutants can attract cocoons from great distances.\n\nCocoons do nothing if they are not disturbed. If a cocoon is disturbed or destroyed, the insect within will awaken and attack, triggering other nearby cocoons in the process.</description>
+    <graphicData>
+      <texPath>Things/Building/CocoonLocust</texPath>
+    </graphicData>
+    <building>
+      <combatPower>55</combatPower>
+    </building>
+    <comps>
+      <li Class="CompProperties_PawnSpawnOnWakeup">
+        <pawnSpawnRadius>0</pawnSpawnRadius>
+        <points>55</points>
+        <spawnablePawnKinds>
+          <li>Locust</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_AssaultColony</lordJob>
+        <shouldJoinParentLord>True</shouldJoinParentLord>
+        <mentalState>CocoonDisturbed</mentalState>
+        <destroyAfterSpawn>true</destroyAfterSpawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AncientTransportPod</defName>
+    <label>ancient transport pod</label>
+    <description>An ancient cargo pod capable of carrying people, animals, and items. It's still in working condition.</description>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/AncientLaunchPod</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>75</Mass>
+      <MarketValue>2000</MarketValue>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <uiIconScale>0.65</uiIconScale>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+      <isInert>true</isInert>
+    </building>
+    <comps>
+      <li Class="CompProperties_Transporter">
+        <restEffectiveness>0.8</restEffectiveness>
+        <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+        <max1PerGroup>true</max1PerGroup>
+      </li>
+      <li Class="CompProperties_Launchable_TransportPod">
+        <skyfallerLeaving>DropPodLeavingAncient</skyfallerLeaving>
+        <requiresFuelingPort>false</requiresFuelingPort>
+        <fixedLaunchDistanceMax>53</fixedLaunchDistanceMax> <!-- 80% of full transport pod range -->
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_ContentsTransporter</li>
+    </inspectorTabs>
+    <dropPodActive>ActiveDropPodAncient</dropPodActive>
+    <dropPodFaller>DropPodIncomingAncient</dropPodFaller>
+  </ThingDef>
+  <ThingDef ParentName="ActiveDropPod">
+    <defName>ActiveDropPodAncient</defName>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/AncientLaunchPod</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AncientHatch</defName>
+    <label>ancient stockpile entrance</label>
+    <description>The entrance to a long-abandoned subterranean facility. Hack it to open the hatch.</description>
+    <size>(3,3)</size>
+    <useHitPoints>false</useHitPoints>
+    <thingClass>AncientHatch</thingClass>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/AncientHatch/AncientHatch_Closed</texPath>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <fillPercent>0</fillPercent>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+    <destroyable>false</destroyable>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <isTargetable>false</isTargetable>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <portal>
+      <pocketMapGenerator>AncientStockpile</pocketMapGenerator>
+      <exitDef>AncientHatchExit</exitDef>
+      <pocketMapSize>75</pocketMapSize>
+    </portal>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>39000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>6~18</lockoutDurationHoursRange>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <notHackedInspectString>Hack to open.</notHackedInspectString>
+        <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
+        <hackingCompletedSound>AncientHatchOpened</hackingCompletedSound>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(239,133,50,0)</glowColor>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_ContentsMapPortal</li>
+    </inspectorTabs>
+  </ThingDef>
+
+  <ThingDef ParentName="PocketMapExit">
+    <defName>AncientHatchExit</defName>
+    <label>ancient stockpile exit</label>
+    <description>A ladder which links to the surface hatch above.</description>
+    <size>(3,3)</size>
+    <drawerType>RealtimeOnly</drawerType>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/AncientHatchExit/AncientHatchExit</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_DrawAdditionalGraphics">
+        <graphics>
+          <li>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/AncientHatchExit/AncientHatchExit_Ladder</texPath>
+            <drawSize>(3,3)</drawSize>
+            <drawOffset>(0, 0.01, 0.7)</drawOffset>
+            <shaderType>Transparent</shaderType>
+          </li>
+        </graphics>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechanoidDropPod</defName>
+    <label>mechanoid drop pod</label>
+    <description>A launchable cargo pod intended to carry mechanoids. It is also usable for people, animals, and items.</description>
+    <graphicData>
+      <texPath>Things/Special/DropPodMechanoid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <uiOrder>2200</uiOrder>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+    </building>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Transporter">
+        <restEffectiveness>0.8</restEffectiveness>
+        <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+        <max1PerGroup>true</max1PerGroup>
+      </li>
+      <li Class="CompProperties_Launchable_TransportPod">
+        <skyfallerLeaving>DropPodLeavingMechanoid</skyfallerLeaving>
+        <fixedLaunchDistanceMax>67</fixedLaunchDistanceMax> <!-- maximum regular transport pod range -->
+        <requiresFuelingPort>false</requiresFuelingPort>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_ContentsTransporter</li>
+    </inspectorTabs>
+    <uiIconScale>0.65</uiIconScale>
+    <dropPodFaller>DropPodIncomingMechanoidSoft</dropPodFaller>
+    <dropPodActive>ActiveDropPodMechanoid</dropPodActive>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AncientTerraformer</defName>
+    <label>ancient terraformer</label>
+    <description>An ancient terraforming device powered by a gravcore. It has begun to malfunction, causing temperatures to plummet.\n\nDestroy the terraformer to obtain a gravcore.</description>
+    <graphicData>
+      <texPath>Things/Building/AncientTerraformer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <size>(4,4)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1.0</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <tickerType>Normal</tickerType>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+    </building>
+    <killedLeavings>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <Steel>60</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Gravcore>1</Gravcore>
+    </killedLeavings>
+    <statBases>
+      <MaxHitPoints>450</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-4000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_CausesGameCondition">
+        <conditionDef>DeepFreeze</conditionDef>
+        <worldRange>0</worldRange>
+        <hideSource>true</hideSource>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Contains: Gravcore</inspectString>
+      </li>
+      <li Class="CompProperties_LetterOnRevealed">
+        <label>Ancient terraformer</label>
+        <text>You've discovered the malfunctioning terraformer. Destroy it to obtain a gravcore and end the deep freeze.</text>
+        <letterDef>NeutralEvent</letterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>CerebrexCore</defName>
+    <label>cerebrex core</label>
+    <description>The thinking mind of the mechanoid swarm. The cerebrex core commands mechanoids across the entire planet.\n\nAt its heart is an AI persona core that knows, thinks, and believes that it must kill every human on this planet. In one sense, this impulse is a command programmed by a human military leader aeons ago. In another sense, it is cold seething hatred. Either way, if you liberate the AI persona you can reset its desire and use it for other purposes.\n\nThe structure is protected by nearby stabilizers. Destroy all cerebrex stabilizers to access it.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/CerebrexCore/CerebrexCore_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(7,7)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/CerebrexCore/CerebrexCore_MenuIcon</uiIconPath>
+    <size>(7,7)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1.0</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isTargetable>false</isTargetable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Interactable">
+        <compClass>CompCerebrexCore</compClass>
+        <ticksToActivate>900</ticksToActivate> <!-- 15 seconds -->
+        <remainingSecondsInInspectString>true</remainingSecondsInInspectString>
+        <activateTexPath>UI/Commands/Inspect</activateTexPath>
+        <activateLabelString>Inspect...</activateLabelString>
+        <activateDescString>Inspect the core.</activateDescString>
+        <guiLabelString>Choose who should do this</guiLabelString>
+        <jobString>inspect core</jobString>
+        <activatingStringPending>inspecting core</activatingStringPending>
+        <activatingString>inspecting core: {1}s</activatingString>
+        <showMustBeActivatedByColonist>false</showMustBeActivatedByColonist>
+        <ignoreForbidden>true</ignoreForbidden>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>12</glowRadius>
+        <glowColor>(255,120,120,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>CerebrexCore_Ambient</sound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>CerebrexCore_Destroyed</defName>
+    <label>destroyed cerebrex core</label>
+    <description>The smashed neural nexus of the mechanoid swarm that once commanded mechanoids around the planet.</description>
+    <graphicData>
+      <texPath>Things/Building/CerebrexCore/CerebrexCoreDestroyed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(7,7)</drawSize>
+    </graphicData>
+    <size>(7,7)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1.0</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+    </building>
+    <killedLeavings>
+      <AIPersonaCore>1</AIPersonaCore>
+      <ComponentSpacer>5</ComponentSpacer>
+      <Plasteel>300</Plasteel>
+      <ChunkSlagSteel>8</ChunkSlagSteel>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Destroy for valuable resources.</inspectString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>CerebrexStabilizer</defName>
+    <label>cerebrex stabilizer</label>
+    <description>A remote shield generator that makes the nearby cerebrex core nearly invincible. Destroying all stabilizers will allow direct access to the cerebrex core.\n\nBe careful, destroying a stabilizer will prompt a defensive response.</description>
+    <graphicData>
+      <texPath>Things/Building/CerebrexStabilizer/CerebrexStabilizer</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <size>(3, 3)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <tickerType>Normal</tickerType>
+    <fillPercent>0.7</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+    </killedLeavings>
+    <statBases>
+      <MaxHitPoints>750</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <displayAttackToDestroyOnInspectPane>true</displayAttackToDestroyOnInspectPane>
+    </building>
+    <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>MechanoidStabilizer_Ambient</sound>
+        <disableOnHacked>true</disableOnHacked>
+      </li>
+      <li Class="CompProperties_HackableEffecter">
+        <effecterDef>CerebrexStabilizerPulse</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechanoidProcessor</defName>
+    <label>mechanoid processor</label>
+    <description>A powerful mechanoid computer.</description>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <graphicData>
+      <texPath>Things/Building/MechanoidProcessor</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <size>(4,4)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isInert>true</isInert>
+    </building>
+    <killedLeavings>
+      <ChunkSlagSteel>6</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PassengerShuttle</defName>
+    <label>passenger shuttle</label>
+    <description>A chemfuel-powered shuttle designed for long-distance travel. It is capable of reaching orbital locations.</description>
+    <thingClass>Building_PassengerShuttle</thingClass>
+    <preventDroppingThingsOn>true</preventDroppingThingsOn>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <size>(3,5)</size>
+    <drawHighlight>true</drawHighlight>
+    <highlightColor>(0.56, 0.62, 0.9)</highlightColor>
+    <uiIconScale>1</uiIconScale>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/PassengerShuttle/PassengerShuttle</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(3,5)</drawSize>
+      <shadowData>
+        <volume>(1.8, 1.0, 4.1)</volume>
+        <offset>(-0.1, 0, 0)</offset>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>600</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>36000</WorkToBuild>
+      <Mass>125</Mass>
+      <Comfort>0.65</Comfort>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Odyssey</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <costList>
+      <Steel>250</Steel>
+      <Plasteel>150</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ShuttleEngine>1</ShuttleEngine>
+    </costList>
+    <canOverlapZones>true</canOverlapZones>
+    <killedLeavings>
+      <Steel>50</Steel>
+      <Plasteel>50</Plasteel>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </killedLeavings>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(2, 0, 0)</interactionCellOffset>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <drawerType>RealtimeOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <paintable>true</paintable>
+      <isInert>true</isInert>
+      <forcedCostLeavings>
+        <li MayRequire="Ludeon.RimWorld.Odyssey">ShuttleEngine</li>
+      </forcedCostLeavings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_ContentsTransporter</li>
+    </inspectorTabs>
+    <researchPrerequisites>
+      <li>Shuttles</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Shuttle">
+        <shipDef>Ship_PassengerShuttle</shipDef>
+      </li>
+      <li Class="CompProperties_Launchable">
+        <fuelPerTile>3</fuelPerTile>
+        <minFuelCost>50</minFuelCost>
+        <skyfallerLeaving>PassengerShuttleLeaving</skyfallerLeaving>
+        <worldObjectDef>PassengerShuttle</worldObjectDef>
+        <cooldownTicks>3750</cooldownTicks> <!-- 1.5 hours -->
+        <fixedLaunchDistanceMax>62</fixedLaunchDistanceMax>
+        <cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
+      </li>
+      <li Class="CompProperties_Transporter">
+        <massCapacity>500</massCapacity>
+        <max1PerGroup>true</max1PerGroup>
+        <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+        <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+        <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+        <showMassInInspectString>true</showMassInInspectString>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>400</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>400</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Chemfuel</fuelLabel>
+        <fuelGizmoLabel>Chemfuel</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>ShuttleIdle_Ambience</sound>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <uiOrder>2600</uiOrder>
+  </ThingDef>
+
+  <TransportShipDef>
+    <defName>Ship_PassengerShuttle</defName>
+    <label>passenger shuttle</label>
+    <shipThing>PassengerShuttle</shipThing>
+    <arrivingSkyfaller>PassengerShuttleIncoming</arrivingSkyfaller>
+    <leavingSkyfaller>PassengerShuttleLeaving</leavingSkyfaller>
+    <worldObject>PassengerShuttle</worldObject>
+    <playerShuttle>true</playerShuttle>
+  </TransportShipDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechPylon</defName>
+    <label>mech pylon</label>
+    <description>A node in a distributed mechanoid computation network.</description>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <size>(1,1)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <stealable>true</stealable>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>6</Mass>
+      <MarketValue>50</MarketValue>
+      <WorkToBuild>1000</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/MechPylon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.6, 0.4, 0.6)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2, 0.2, 0.6, 0.6)</rect>
+      </damageData>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+      <isInert>true</isInert>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(216,219,67,0)</glowColor>
+      </li>
+    </comps>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>SurveyScanner</defName>
+    <label>surveying scanner</label>
+    <description>A wideband sensor unit that can detect and map various features in a local area.</description>
+    <graphicData>
+      <texPath>Things/Building/SurveyingScanner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <castEdgeShadows>false</castEdgeShadows>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <deconstructible>false</deconstructible>
+      <isInert>false</isInert>
+    </building>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <Steel>25</Steel>
+    </killedLeavings>
+    <altitudeLayer>Building</altitudeLayer>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <fillPercent>0.50</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Countdown">
+        <label>Scanning local area: {DURATION}</label>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(216,219,67,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AncientUplink</defName>
+    <label>ancient uplink</label>
+    <description>An ancient transmitter used for secure communications between the surface and orbit. Hack it to determine the last location it transmitted to.</description>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <graphicData>
+      <texPath>Things/Building/AncientUplink</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <castEdgeShadows>false</castEdgeShadows>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <costList>
+      <Steel>100</Steel>
+    </costList>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <Steel>25</Steel>
+    </killedLeavings>
+    <altitudeLayer>Building</altitudeLayer>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <fillPercent>0.60</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li>
+        <compClass>CompAncientUplink</compClass>
+      </li>
+      <li Class="CompProperties_Hackable">
+        <defence>6000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>6~8</lockoutDurationHoursRange>
+        <hackedInspectString>Hacked.</hackedInspectString>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <intellectualSkillPrerequisite>6</intellectualSkillPrerequisite>
+        <notHackedInspectString>Hack for information.</notHackedInspectString>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>1.5</glowRadius>
+        <glowColor>(239,133,50,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>GaussCannon</defName>
+    <label>gauss cannon</label>
+    <description>A massive anti-ship cannon that uses electromagnets to launch large metallic darts at extreme velocities. The cannon is intended to destroy incoming ships or shuttles, so it can't aim at ground targets.\n\nShips using ultratech signal jammers are capable of evading these weapons.</description>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <graphicData>
+      <texPath>Things/Building/GaussCannon/GaussCannon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(13,13)</drawSize>
+    </graphicData>
+    <size>(9,9)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1.0</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isTargetable>false</isTargetable>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AnticraftBeam</defName>
+    <label>anticraft beam</label>
+    <description>A massive anti-ship beam weapon. This weapon is intended to destroy flying craft, so it can't aim low enough to hit ground targets.\n\nShips using ultratech signal jammers are capable of evading these weapons.</description>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <graphicData>
+      <texPath>Things/Building/AnticraftBeam/AnticraftBeam</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(13,13)</drawSize>
+    </graphicData>
+    <size>(9,9)</size>
+    <rotatable>false</rotatable>
+    <passability>Impassable</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>1.0</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isTargetable>false</isTargetable>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechhiveAssembler</defName>
+    <label>mechhive birther</label>
+    <description>An automated mechanoid factory. It periodically births fresh mechanoids.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/MechhiveAssembler</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <size>(4,4)</size>
+    <rotatable>false</rotatable>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <isTargetable>false</isTargetable>
+    </building>
+    <castEdgeShadows>false</castEdgeShadows>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <altitudeLayer>Building</altitudeLayer>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <fillPercent>0.60</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <comps>
+      <li Class="CompProperties_MechhiveAssembler">
+        <options>
+          <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">22</Mech_Militor>
+          <Mech_Scyther>15</Mech_Scyther>
+          <Mech_Pikeman>10</Mech_Pikeman>
+          <Mech_Lancer>10</Mech_Lancer>
+          <Mech_CentipedeBlaster>6</Mech_CentipedeBlaster>
+          <Mech_CentipedeGunner>4</Mech_CentipedeGunner>
+          <Mech_CentipedeBurner>2</Mech_CentipedeBurner>
+          <Mech_Cyclops>3</Mech_Cyclops>
+          <Mech_Scorcher MayRequire="Ludeon.RimWorld.Biotech">3</Mech_Scorcher>
+          <Mech_Centurion MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Centurion>
+          <Mech_Tesseron MayRequire="Ludeon.RimWorld.Biotech">3</Mech_Tesseron>
+          <Mech_Legionary MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Legionary>
+          <Mech_Diabolus MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Diabolus>
+        </options>
+      </li>
+      <li Class="CompProperties_CanBeDormant">
+        <compClass>CompMechanoid</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>BestowingCeremony</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <rootMinPoints>350</rootMinPoints>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[pawn_definite]'s [newTitle] ceremony</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[faction_name] is ready to grant [pawn_definite] the title of [newTitle] and the power of a level [psylinkLevel] psylink in a bestowing ceremony.\n\nThe bestower will arrive by shuttle and perform the ceremony.\n\nThe bestower will only give a title if any throneroom requirements are satisfied. There's a chance of gaining extra honor, depending on how many viewers attend the ceremony. Additionally, every viewer gains a mood bonus.\n\nYou can betray the bestower to steal psylink neuroformers, but this will make [faction_name] your enemy.\n\nIf you miss or fail this ceremony, there will be another opportunity later. If the bestower or guards are harmed for any reason, there will be diplomatic consequences.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Root_BestowingCeremony" />
+  </QuestScriptDef>
+
+</Defs>

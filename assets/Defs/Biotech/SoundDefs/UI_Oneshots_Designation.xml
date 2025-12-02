@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <SoundDef>
+    <defName>Designate_ZoneAdd_RemovePollution</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>UI/Designate/AddZone/RemovePollution</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>14</volumeRange>     
+        <repeatMode>NeverTwice</repeatMode>      
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

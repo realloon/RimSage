@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Horror Relax -->
+
+  <SongDef>
+    <defName>Abandoned_By_The_Light</defName>
+    <clipPath>Songs/Horror_Relax/Abandoned_By_The_Light</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+  
+  <SongDef>
+    <defName>Blood_Rain_Falling</defName>
+    <clipPath>Songs/Horror_Relax/Blood_Rain_Falling</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Shamblers_Blues</defName>
+    <clipPath>Songs/Horror_Relax/Shamblers_Blues</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+  
+  <SongDef>
+    <defName>A_Twisted_Path</defName>
+    <clipPath>Songs/Horror_Relax/A_Twisted_Path</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <!-- Tension -->
+  
+  <SongDef>
+    <defName>Have_They_Come_For_Us</defName>
+    <clipPath>Songs/Horror_Tension/Have_They_Come_For_Us</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Is_It_Truly_Alive</defName>
+    <clipPath>Songs/Horror_Tension/Is_It_Truly_Alive</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <!-- Combat -->
+  
+  <SongDef>
+    <defName>They_See_You</defName>
+    <clipPath>Songs/Horror_Combat/They_See_You</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+  
+  <SongDef>
+    <defName>Death_Pall_Rising</defName>
+    <clipPath>Songs/Horror_Combat/Death_Pall_Rising</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Shadow_Work</defName>
+    <clipPath>Songs/Horror_Combat/Shadow_Work</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Spent_Introject</defName>
+    <clipPath>Songs/Horror_Combat/Spent_Introject</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <!-- Metal Hell -->
+  <SongDef>
+    <defName>MetalHell_Ambience</defName>
+    <clipPath>Ambience/MetalHell/MetalHell_Ambience_Loop_B_Stereo</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <!-- Corpse Attack -->
+  <SongDef>
+    <defName>Corpse_Attack</defName>
+    <clipPath>Songs/Corpse_Attack</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+  
+</Defs>

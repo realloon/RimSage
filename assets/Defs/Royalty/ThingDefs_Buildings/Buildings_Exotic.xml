@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>BroadshieldProjector</defName>
+    <label>burnout low-shield</label>
+    <description>A man-portable low-angle shield projector. Bullets can go out, but not in. Its compact power source burns out after a few seconds of use.</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <pathCost>0</pathCost>
+    <passability>Standable</passability>
+    <fillPercent>0.35</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Security/BroadshieldProjector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.7</drawSize>
+      <shadowData>
+        <volume>(0.3, 0.2, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <killedLeavings/>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <repairEffect>ConstructMetal</repairEffect>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isEdifice>false</isEdifice>
+      <destroyEffecter>Broadshield_Burnout</destroyEffecter>
+    </building>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>4.9</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+        <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <color>(0.6, 0.6, 0.8)</color>
+        <idlePulseSpeed>3</idlePulseSpeed>
+        <minIdleAlpha>0.05</minIdleAlpha>
+        <disarmedByEmpForTicks>600</disarmedByEmpForTicks>
+        <activeSound>Broadshield_Ambience</activeSound>
+      </li>
+      <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>1800</delayTicks>
+        <destroyMode>KillFinalize</destroyMode>
+        <countdownLabel>Burnout in</countdownLabel>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

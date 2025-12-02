@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>MechanitorStartingMech</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <isRootSpecial>true</isRootSpecial>
+    <autoAccept>true</autoAccept>
+    <defaultHidden>true</defaultHidden>
+    <questContentRules>
+      <rulesStrings>
+        <li>arrivalLetterLabel->[mech_label] attached: [mechanitor_nameDef]</li>
+        <li>arrivalLetterText->A [mech_label] has dropped from orbit and is placing itself under the control of [mechanitor_nameDef].\n\nIt seems to have been attached to [mechanitor_possessive] mechlink and is eager to serve its purpose once again.</li>
+      </rulesStrings>
+    </questContentRules>
+    <root Class="QuestNode_Root_MechanitorStartingMech">
+      <mechTypes>
+        <li>Mech_Lifter</li>
+        <li>Mech_Constructoid</li>
+      </mechTypes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

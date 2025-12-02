@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Issue -->
+
+    <IssueDef>
+      <defName>Pain</defName>
+      <label>pain</label>
+      <iconPath>UI/Issues/Pain</iconPath>
+    </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Pain_Idealized</defName>
+    <issue>Pain</issue>
+    <label>idealized</label>
+    <description>To experience nerve-singing pain is a mark of morality.</description>
+    <impact>Medium</impact>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <requiredMemes>
+      <li>PainIsVirtue</li>
+      <li>Guilty</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <description>Pain</description>
+        <thought>Pain_Idealized</thought>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>Pain_Idealized</defName>
+    <workerClass>ThoughtWorker_Precept_Pain</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Masochist</li>
+      <li>Wimp</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>minor pain</label>
+        <description>The pain grounds me. I appreciate it.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>serious pain</label>
+        <description>The pain cleanses me. I like it.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>intense pain</label>
+        <description>The pain purifies me. I need it!</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+      <li>
+        <label>mind-shattering pain</label>
+        <description>The pain makes me sublime! I wish to become it!</description>
+        <baseMoodEffect>9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

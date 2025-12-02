@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnColumnDef>
+    <defName>SpecialTrainable</defName>
+    <workerClass>PawnColumnWorker_Trainable_Special</workerClass>
+    <headerIcon>UI/Icons/AnimalTrainingIcons/Special</headerIcon>
+    <headerTip>Special training\n\nIncludes any uncommon behaviors this animal can be trained to do.</headerTip>
+    <sortable>true</sortable>
+    <paintable>true</paintable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>AnimalForage</defName>
+    <workerClass>PawnColumnWorker_AnimalForage</workerClass>
+    <headerIcon>UI/Icons/AnimalTrainingIcons/Forage</headerIcon>
+    <headerTip>Forage</headerTip>
+    <sortable>true</sortable>
+    <paintable>true</paintable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+    <defName>AnimalDig</defName>
+    <workerClass>PawnColumnWorker_AnimalDig</workerClass>
+    <headerIcon>UI/Icons/AnimalTrainingIcons/Mining</headerIcon>
+    <headerTip>Dig</headerTip>
+    <sortable>true</sortable>
+    <paintable>true</paintable>
+  </PawnColumnDef>
+
+</Defs>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SlaveInteractionModeDef>
+    <defName>NoInteraction</defName>
+    <label>no interaction</label>
+    <listOrder>0</listOrder>
+    <description>Wardens will not interact with this slave.</description>
+  </SlaveInteractionModeDef>
+
+  <SlaveInteractionModeDef>
+    <defName>Suppress</defName>
+    <label>suppress</label>
+    <listOrder>10</listOrder>
+    <description>Wardens will periodically intimidate the slave to increase their suppression level and reduce the chance of rebellion.</description>
+  </SlaveInteractionModeDef>
+
+  <SlaveInteractionModeDef>
+    <defName>Imprison</defName>
+    <label>imprison</label>
+    <listOrder>20</listOrder>
+    <description>A warden will imprison this slave. Once imprisoned, they can be recruited, or enslaved once again.</description>
+  </SlaveInteractionModeDef>
+
+  <SlaveInteractionModeDef>
+    <defName>Emancipate</defName>
+    <label>emancipate</label>
+    <listOrder>30</listOrder>
+    <description>A warden will free this slave.</description>
+  </SlaveInteractionModeDef>
+
+  <SlaveInteractionModeDef>
+    <defName>Execute</defName>
+    <label>execute</label>
+    <listOrder>40</listOrder>
+    <description>A warden will execute this slave on the spot by cutting.</description>
+  </SlaveInteractionModeDef>
+
+</Defs>

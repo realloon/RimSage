@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthEmpty</defName>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>LabyrinthEndlessPit</defName>
+    <roomContentsWorkerType>RoomContents_EndlessPit</roomContentsWorkerType>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthObelisk</defName>
+    <roomContentsWorkerType>RoomContents_Obelisk</roomContentsWorkerType>
+    <dontPlaceRandomly>true</dontPlaceRandomly>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthFloorEtchings</defName>
+    <roomContentsWorkerType>RoomContents_Etchings</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthStatueDeadlife</defName>
+    <roomContentsWorkerType>RoomContents_StatueDeadlife</roomContentsWorkerType>
+    <minSingleRectWidth>7</minSingleRectWidth>
+    <minSingleRectHeight>7</minSingleRectHeight>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>LabyrinthStatueTeleporter</defName>
+    <roomContentsWorkerType>RoomContents_StatueTeleporter</roomContentsWorkerType>
+    <minSingleRectWidth>7</minSingleRectWidth>
+    <minSingleRectHeight>7</minSingleRectHeight>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthDeadBody</defName>
+    <roomContentsWorkerType>RoomContents_DeadBodyLabyrinth</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthCorpseRoom</defName>
+    <roomContentsWorkerType>RoomContents_CorpseRoom</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthSleepingFleshbeast</defName>
+    <roomContentsWorkerType>RoomContents_SleepingFleshbeast</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthAbandonedCamp</defName>
+    <roomContentsWorkerType>RoomContents_AbandonedCamp</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthAnimalCorpses</defName>
+    <roomContentsWorkerType>RoomContents_AnimalCorpses</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthAnimals</defName>
+    <roomContentsWorkerType>RoomContents_Animals</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthHarbinger</defName>
+    <roomContentsWorkerType>RoomContents_Harbinger</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+  
+  <LayoutRoomDef>
+    <defName>LabyrinthTrees</defName>
+    <roomContentsWorkerType>RoomContents_Trees</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>LabyrinthGrayBox</defName>
+    <roomContentsWorkerType>RoomContents_GrayBox</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>LabyrinthLargeGrayBox</defName>
+    <roomContentsWorkerType>RoomContents_LargeGrayBox</roomContentsWorkerType>
+    <canBeInMixedRoom>false</canBeInMixedRoom>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>LabyrinthLargeEmptyGrayBox</defName>
+    <roomContentsWorkerType>RoomContents_LargeEmptyGrayBox</roomContentsWorkerType>
+    <canBeInMixedRoom>false</canBeInMixedRoom>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>LabyrinthFloorRamblings</defName>
+    <roomContentsWorkerType>RoomContents_Ramblings</roomContentsWorkerType>
+    <canBeInMixedRoom>true</canBeInMixedRoom>
+  </LayoutRoomDef>
+
+  <LayoutRoomDef>
+    <defName>LabyrinthChildRoom</defName>
+    <roomContentsWorkerType>RoomContents_ChildRoom</roomContentsWorkerType>
+  </LayoutRoomDef>
+  
+</Defs>

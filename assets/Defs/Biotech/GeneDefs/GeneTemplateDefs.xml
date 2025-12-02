@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Aptitudes -->
+
+  <GeneTemplateDef Name="GeneAptitudeBase" Abstract="True">
+    <geneClass>Gene</geneClass>
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+    <exclusionTagPrefix>Aptitude</exclusionTagPrefix>
+    <geneTemplateType>Skill</geneTemplateType>
+    <displayCategory>Aptitudes</displayCategory>
+    <selectionWeight>0.2</selectionWeight>
+  </GeneTemplateDef>
+
+  <GeneTemplateDef ParentName="GeneAptitudeBase">
+    <defName>AptitudeTerrible</defName>
+    <label>awful {0}</label>
+    <description>The carrier's aptitude in {0} is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from {0}.</description>
+    <iconPath>UI/Icons/Genes/Skills/{0}/Terrible</iconPath>
+    <aptitudeOffset>-8</aptitudeOffset>
+    <passionModType>DropAll</passionModType>
+    <displayOrderOffset>0</displayOrderOffset>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>2</biostatMet>
+  </GeneTemplateDef>
+
+  <GeneTemplateDef ParentName="GeneAptitudeBase">
+    <defName>AptitudePoor</defName>
+    <label>poor {0}</label>
+    <description>The carrier's aptitude in {0} is reduced by 4. Aptitude acts like an offset on skill level.</description>
+    <iconPath>UI/Icons/Genes/Skills/{0}/Poor</iconPath>
+    <aptitudeOffset>-4</aptitudeOffset>
+    <displayOrderOffset>10</displayOrderOffset>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>1</biostatMet>
+  </GeneTemplateDef>
+
+  <GeneTemplateDef ParentName="GeneAptitudeBase">
+    <defName>AptitudeStrong</defName>
+    <label>strong {0}</label>
+    <description>The carrier's aptitude in {0} is increased by 4. Aptitude acts like an offset on skill level.</description>
+    <iconPath>UI/Icons/Genes/Skills/{0}/Strong</iconPath>
+    <aptitudeOffset>4</aptitudeOffset>
+    <displayOrderOffset>20</displayOrderOffset>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-1</biostatMet>
+  </GeneTemplateDef>
+
+  <GeneTemplateDef ParentName="GeneAptitudeBase">
+    <defName>AptitudeRemarkable</defName>
+    <label>great {0}</label>
+    <description>The carrier's aptitude in {0} is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to {0}.</description>
+    <iconPath>UI/Icons/Genes/Skills/{0}/Remarkable</iconPath>
+    <aptitudeOffset>8</aptitudeOffset>
+    <passionModType>AddOneLevel</passionModType>
+    <displayOrderOffset>30</displayOrderOffset>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-3</biostatMet>
+  </GeneTemplateDef>
+
+  <!-- Chemical -->
+
+  <GeneTemplateDef Name="GeneChemicalBase" Abstract="True">
+    <geneClass>Gene</geneClass>
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+    <exclusionTagPrefix>Addiction</exclusionTagPrefix>
+    <geneTemplateType>Chemical</geneTemplateType>
+    <displayCategory>Drugs</displayCategory>
+    <selectionWeight>0.25</selectionWeight>
+  </GeneTemplateDef>
+
+  <GeneTemplateDef ParentName="GeneChemicalBase">
+    <defName>ChemicalDependency</defName>
+    <label>{0} dependency</label>
+    <description>Carriers of this gene need to ingest {0} on a regular basis to survive. After {DEFICIENCYDURATION} without {0}, carriers will suffer from {0} deficiency. After {COMADURATION}, they will fall into a coma. After {DEATHDURATION}, they will die.</description>
+    <geneClass>Gene_ChemicalDependency</geneClass>
+    <labelShortAdj>{0}-dependent</labelShortAdj>
+    <iconPath>UI/Icons/Genes/Chemicals/{0}/ChemicalDependency</iconPath>
+    <addictionChanceFactor>0</addictionChanceFactor>
+    <displayOrderOffset>0</displayOrderOffset>
+    <minAgeActive>13</minAgeActive>
+    <chemicalBiostatOverrides>
+      <li>
+        <chemical>Alcohol</chemical>
+        <biostatMet>3</biostatMet>
+      </li>
+      <li>
+        <chemical>Smokeleaf</chemical>
+        <biostatMet>3</biostatMet>
+      </li>
+    </chemicalBiostatOverrides>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>4</biostatMet>
+  </GeneTemplateDef>
+
+  <GeneTemplateDef ParentName="GeneChemicalBase">
+    <defName>AddictionResistant</defName>
+    <label>{0} resistant</label>
+    <description>Carriers are only half as likely to become addicted to {0}.</description>
+    <labelShortAdj>{0}-resistant</labelShortAdj>
+    <iconPath>UI/Icons/Genes/Chemicals/{0}/AddictionResistant</iconPath>
+    <addictionChanceFactor>0.5</addictionChanceFactor>
+    <displayOrderOffset>10</displayOrderOffset>
+    <chemicalBiostatOverrides>
+      <li>
+        <chemical>Alcohol</chemical>
+        <biostatMet>-1</biostatMet>
+      </li>
+      <li>
+        <chemical>Smokeleaf</chemical>
+        <biostatMet>-1</biostatMet>
+      </li>
+    </chemicalBiostatOverrides>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-2</biostatMet>
+  </GeneTemplateDef>
+
+  <GeneTemplateDef ParentName="GeneChemicalBase">
+    <defName>AddictionImmune</defName>
+    <label>{0} impervious</label>
+    <description>Carriers of this gene never get addicted to {0}.</description>
+    <labelShortAdj>{0}-impervious</labelShortAdj>
+    <iconPath>UI/Icons/Genes/Chemicals/{0}/AddictionImmune</iconPath>
+    <addictionChanceFactor>0</addictionChanceFactor>
+    <displayOrderOffset>20</displayOrderOffset>
+    <chemicalBiostatOverrides>
+      <li>
+        <chemical>Alcohol</chemical>
+        <biostatMet>-3</biostatMet>
+      </li>
+      <li>
+        <chemical>Smokeleaf</chemical>
+        <biostatMet>-3</biostatMet>
+      </li>
+    </chemicalBiostatOverrides>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-5</biostatMet>
+  </GeneTemplateDef>
+
+<!-- Removed since the downsides are too easy and boring to avoid, and synergize with skill loss genes too much. If you already aren't using the skill it's too easy to just kill passion on it too. -Ty 
+  <GeneTemplateDef ParentName="GenePassionBase">
+    <defName>PassionDrop</defName>
+    <label>{0} apathy</label>
+    <description>The carrier will have no passion in {0}.</description>
+    <labelShortAdj>apathetic</labelShortAdj>
+    <iconPath>UI/Icons/Genes/Skills/{0}/PassionDrop</iconPath>
+    <passionModType>DropAll</passionModType>
+    <displayOrderOffset>50</displayOrderOffset>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>1</biostatMet>
+  </GeneTemplateDef>
+-->
+
+<!-- Removed since these just aren't very interesting, very narrow in application, and the downsides are too easy and boring to avoid. Just not much interaction or story here. -Ty
+  <GeneTemplateDef ParentName="GeneChemicalBase">
+    <defName>AddictionSensitivity</defName>
+    <label>{0} addict-sensitive</label>
+    <description>Carriers of this gene get addicted to {0} very easily.</description>
+    <labelShortAdj>{0}-sensitive</labelShortAdj>
+    <iconPath>UI/Icons/Genes/Chemicals/{0}/AddictionSensitivity</iconPath>
+    <addictionChanceFactor>9999</addictionChanceFactor>
+    <displayOrderOffset>0</displayOrderOffset>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>2</biostatMet>
+  </GeneTemplateDef>
+-->
+
+</Defs>

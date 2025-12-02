@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Issue -->
+
+    <IssueDef>
+      <defName>WorkDrive</defName>
+      <label>work drive</label>
+      <iconPath>UI/Issues/WorkDrive</iconPath>
+    </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>WorkDrive_Tripled</defName>
+    <issue>WorkDrive</issue>
+    <label>tripled</label>
+    <description>The duration of the leader's work drive ability is tripled.</description>
+    <impact>Low</impact>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <requiredMemes>
+      <li>Collectivist</li>
+    </requiredMemes>
+    <abilityStatFactors>
+      <li>
+        <ability>WorkDrive</ability>
+        <modifiers>
+          <Ability_Duration>3</Ability_Duration>
+        </modifiers>
+      </li>
+    </abilityStatFactors>
+  </PreceptDef>
+
+</Defs>

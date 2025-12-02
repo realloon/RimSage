@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <!-- Abandoned Platform -->
+  
+  <SitePartDef ParentName="SpaceSiteBase">
+    <defName>Opportunity_AbandonedPlatform</defName>
+    <description>An abandoned orbital platform containing valuable resources.</description>
+    <expandingIconTexture>World/WorldObjects/Expanding/AbandonedPlatform</expandingIconTexture>
+    <tags>
+      <li>Opportunity_AbandonedPlatform</li>
+    </tags>
+    <minMapSize>(200, 0, 200)</minMapSize>
+    <copyQuestName>true</copyQuestName>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+  </SitePartDef>
+  
+  <GenStepDef>
+    <defName>Opportunity_AbandonedPlatform</defName>
+    <linkWithSite>Opportunity_AbandonedPlatform</linkWithSite>
+    <order>200</order>
+    <genStep Class="GenStep_OrbitalPlatform">
+      <factionDef>AncientsHostile</factionDef>
+      <platformTerrain>OrbitalPlatform</platformTerrain>
+      <layoutDef>Opportunity_AbandonedPlatform</layoutDef>
+      <orbitalDebrisDef>Manmade</orbitalDebrisDef>
+      <temperature>20</temperature>
+      <spawnSentryDrones>true</spawnSentryDrones>
+      <exteriorPrefabs>
+        <CrashedShuttle>0~1</CrashedShuttle>
+        <BaricadeTurret>2~5</BaricadeTurret>
+      </exteriorPrefabs>
+    </genStep>
+  </GenStepDef>
+  
+  <!-- Mechanoid Platform -->
+  
+  <SitePartDef ParentName="SpaceSiteBase">
+    <defName>Opportunity_MechanoidPlatform</defName>
+    <description>An orbital platform used to produce mechanoids, controlled by a distant mechhive.</description>
+    <expandingIconTexture>World/WorldObjects/Expanding/MechanoidPlatform</expandingIconTexture>
+    <tags>
+      <li>Opportunity_MechanoidPlatform</li>
+    </tags>
+    <minMapSize>(200, 0, 200)</minMapSize>
+    <copyQuestName>true</copyQuestName>
+  </SitePartDef>
+  
+  <GenStepDef>
+    <defName>Opportunity_MechanoidPlatform</defName>
+    <linkWithSite>Opportunity_MechanoidPlatform</linkWithSite>
+    <order>200</order>
+    <genStep Class="GenStep_OrbitalPlatform">
+      <factionDef>Mechanoid</factionDef>
+      <platformTerrain>MechanoidPlatform</platformTerrain>
+      <layoutDef>Opportunity_OrbitalMechanoidPlatform</layoutDef>
+      <orbitalDebrisDef>Mechanoid</orbitalDebrisDef>
+      <fogOfWarColor>(52,55,45)</fogOfWarColor>
+    </genStep>
+  </GenStepDef>
+
+  <!-- Orbital Satellite -->
+
+  <SitePartDef ParentName="SpaceSiteBase">
+    <defName>OpportunitySite_Satellite</defName>
+    <description>An unmanned satellite incapable of supporting life. Satellites serve a wide variety of purposes, from power collection to weapons platforms.</description>
+    <expandingIconTexture>World/WorldObjects/Expanding/Satellite</expandingIconTexture>
+    <tags>
+      <li>OpportunitySite_Satellite</li>
+    </tags>
+    <minMapSize>(200, 0, 200)</minMapSize>
+    <copyQuestName>true</copyQuestName>
+  </SitePartDef>
+  
+  <GenStepDef>
+    <defName>OpportunitySite_Satellite</defName>
+    <linkWithSite>OpportunitySite_Satellite</linkWithSite>
+    <order>450</order>
+    <genStep Class="GenStep_OrbitalSatellite">
+      <layoutDef>OpportunitySite_Satellite</layoutDef>
+      <factionDef>AncientsHostile</factionDef>
+      <spawnSentryDrones>true</spawnSentryDrones>
+      <prefabs>
+        <SolarArray />
+        <AutoturretBarricade />
+      </prefabs>
+    </genStep>
+  </GenStepDef>
+
+  <!-- Oribtal Wreck -->
+  
+  <SitePartDef ParentName="SpaceSiteBase">
+    <defName>Opportunity_OrbitalWreck</defName>
+    <description>The wreckage of an orbital platform containing valuable resources. These wrecks are commonly guarded by orbital pirates.</description>
+    <expandingIconTexture>World/WorldObjects/Expanding/SpaceWreck</expandingIconTexture>
+    <tags>
+      <li>Opportunity_OrbitalWreck</li>
+    </tags>
+    <minMapSize>(200, 0, 200)</minMapSize>
+    <copyQuestName>true</copyQuestName>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+  </SitePartDef>
+  
+  <GenStepDef>
+    <defName>Opportunity_OrbitalWreck</defName>
+    <linkWithSite>Opportunity_OrbitalWreck</linkWithSite>
+    <order>200</order>
+    <genStep Class="GenStep_OrbitalWreck">
+      <factionDef>AncientsHostile</factionDef>
+      <orbitalDebrisDef>Manmade</orbitalDebrisDef>
+      <prefabs>
+        <Exterior_OrbitalRuinsLargeRectangle>2</Exterior_OrbitalRuinsLargeRectangle>
+        <AncientTransportPod />
+        <Exterior_OrbitalRuinsWall />
+        <Exterior_OrbitalRuinsSquare>0.05</Exterior_OrbitalRuinsSquare>
+        <Exterior_OrbitalRuinsSmallSquare>0.5</Exterior_OrbitalRuinsSmallSquare>
+        <Exterior_OrbitalRuinsRoomWithSteel>0.05</Exterior_OrbitalRuinsRoomWithSteel>
+        <AncientAntenna_Rows>0.5</AncientAntenna_Rows>
+        <Exterior_ShipChunk_Mech>0.5</Exterior_ShipChunk_Mech>
+      </prefabs>
+      <layouts>
+        <Opportunity_OrbitalWreck />
+      </layouts>
+    </genStep>
+  </GenStepDef>
+  
+  <GenStepDef>
+    <defName>Opportunity_OrbitalWreck_Salvagers</defName>
+    <linkWithSite>Opportunity_OrbitalWreck</linkWithSite>
+    <order>700</order>
+    <genStep Class="GenStep_SitePawns">
+      <factionDef>Salvagers</factionDef>
+      <pawnGroupKindDef>Combat</pawnGroupKindDef>
+      <letterLabel>Hostile salvagers</letterLabel> 
+      <letterDesc>The orbital wreck contains a number of scavengers. Be prepared for their assault!</letterDesc> 
+    </genStep>
+  </GenStepDef>
+  
+  <!-- Survey Site -->
+
+  <SitePartDef>
+    <defName>Opportunity_SurveySite</defName>
+    <label>survey site</label> 
+    <description>The site of a remote surveying operation.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/SurveySiteExpanding</expandingIconTexture>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <tags>
+      <li>SurveySite</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>Opportunity_SurveySite</defName>
+    <linkWithSite>Opportunity_SurveySite</linkWithSite>
+    <order>590</order>
+    <genStep Class="GenStep_SurveySite" />
+  </GenStepDef>
+  
+</Defs>

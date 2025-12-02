@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Params:
+    - helpersChance: Chance of helpers being included in the quest.
+    - helpersCount: The number of helpers to send. Default: 1-6.
+    - helpersLeaveAfterTicks: Ticks until helpers leave automatically. Default: 10 days (60000 ticks)
+        if -1, helpers won't leave until the quest has ended.
+    - generateShuttleOrPods: Whether or not this script handles pawns arriving. Hospitality quests add helpers into their loading list. -->
+
+  <QuestScriptDef>
+    <defName>Util_MaybeGenerateHelpers</defName>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>helpersParagraph(helpersCount==0)-></li>
+        <li>helpersParagraph(helpersCount==1)->\n\nA [helperKind_label] will be placed under your control. You will have to feed and house [helpers0_objective], but [helpers0_pronoun] may die in battle without consequence.\n\n</li>
+        <li>helpersParagraph(helpersCount>=2)->\n\n[helpersCount] [helperKind_labelPlural] will be placed under your control. You will have to feed and house them, but they may die in battle without consequence.\n\n</li>
+        <li>helpersArrivalLetterEnd(helpersCount==0)-></li>
+        <li>helpersArrivalLetterEnd(helpersCount>=1)->\n\n[helpersCount] [helpersLabelSingOrPlural] [helpersHasHave] been sent to assist you.</li>
+
+        <li>helpersLabelSingOrPlural(helpersCount==1)->[helperKind_label]</li>
+        <li>helpersLabelSingOrPlural(helpersCount>=2)->[helperKind_labelPlural]</li>
+        
+        <li>helpersHasHave(helpersCount==1)->has</li>
+        <li>helpersHasHave(helpersCount>=2)->have</li>
+        
+        <li>helpersIsAre(helpersCount==1)->is</li>
+        <li>helpersIsAre(helpersCount>=2)->are</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_IsNull">
+          <value>$asker</value>
+          <node Class="QuestNode_Set"> <!-- Needed for description text -->
+            <name>helpersCount</name>
+            <value>0</value>
+          </node>
+          <!-- We never spawn helpers from hostile factions to avoid situations where they attack the player when the quest ends -->
+          <elseNode Class="QuestNode_IsFactionHostileToPlayer">
+            <factionOf>$asker</factionOf>
+            <node Class="QuestNode_Set"> <!-- Needed for description text -->
+              <name>helpersCount</name>
+              <value>0</value>
+            </node>
+            <elseNode Class="QuestNode_Less">
+              <value1>$points</value1>
+              <value2>260</value2>
+              <node Class="QuestNode_Set"> <!-- Needed for description text -->
+                <name>helpersCount</name>
+                <value>0</value>
+              </node>
+              <elseNode Class="QuestNode_Chance">
+                <chance>$helpersChance</chance>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <!-- Set the number of helpers, with a default of 1-6. -->
+                    <li Class="QuestNode_IsSet">
+                      <name>helpersCount</name>
+                      <elseNode Class="QuestNode_Sequence">
+                        <nodes>
+                          <li Class="QuestNode_EvaluateSimpleCurve">
+                            <value>$points</value>
+                            <roundRandom>true</roundRandom>
+                            <storeAs>helpersMaxCount</storeAs>
+                            <curve>
+                              <points>
+                                <li>(260,  1)</li>
+                                <li>(1000, 6)</li>
+                                <li>(2000, 9)</li>
+                                <li>(5000, 15)</li>
+                              </points>
+                            </curve>
+                          </li>
+                          <li Class="QuestNode_Set">
+                            <name>helpersCount</name>
+                            <value>$(randInt(1, $helpersMaxCount))</value>
+                          </li>
+                        </nodes>
+                      </elseNode>
+                    </li>
+                    <!-- Set max duration helpers will stay for. Default of 10 days. -->
+                    <li Class="QuestNode_IsSet">
+                      <name>helpersLeaveAfterTicks</name>
+                      <elseNode Class="QuestNode_Set">
+                        <name>helpersLeaveAfterTicks</name>
+                        <value>$(10*60000)</value>
+                      </elseNode>
+                    </li>
+  
+                    <!-- Get asker's faction (if any) for proper faction name generation -->
+                    <li Class="QuestNode_GetFactionOf">
+                      <thing>$asker</thing>
+                      <storeAs>askerFaction</storeAs>
+                    </li>
+                    
+                    <!-- Generate helpers -->
+                    <li Class="QuestNode_SubScript">
+                      <def>Util_ChooseRandomQuestHelperKind</def>
+                      <parms>
+                        <factionOf>$asker</factionOf>
+                      </parms>
+                    </li>
+                    <li Class="QuestNode_LoopCount">
+                      <loopCount>$helpersCount</loopCount>
+                      <node Class="QuestNode_GeneratePawn">
+                        <kindDef>$helperKind</kindDef>
+                        <faction>$askerFaction</faction>
+                        <addToList>helpers</addToList>
+                        <biocodeWeaponChance>1</biocodeWeaponChance>
+                        <biocodeApparelChance>1</biocodeApparelChance>
+                        <mustBeCapableOfViolence>true</mustBeCapableOfViolence>
+                        <prohibitedTraits><li>Greedy</li></prohibitedTraits>
+                        <allowPregnant>false</allowPregnant>
+                        <giveDependentDrugs>true</giveDependentDrugs>
+                      </node>
+                    </li>
+                    <li Class="QuestNode_JoinPlayer">
+                      <pawns>$helpers</pawns>
+                      <joinPlayer>true</joinPlayer>
+                    </li>
+  
+                    <!-- Helpers come in drop pods or shuttle -->
+                    <li Class="QuestNode_IsTrueOrUnset">
+                      <value>$generateShuttleOrPods</value>
+                      <node Class="QuestNode_SubScript">
+                        <def>Util_ArriveByDropPodsOrShuttle</def>
+                        <parms>
+                          <arrivingPawns>$helpers</arrivingPawns>
+                          <customLetterLabel TKey="LetterLabelHelpersArrived">[helpersLabelSingOrPlural] arrived</customLetterLabel>
+                          <customLetterText TKey="LetterTextHelpersArrived">The [helpersLabelSingOrPlural] sent by [asker_nameDef] [helpersHasHave] arrived to aid you with the quest '[resolvedQuestName]'.</customLetterText>
+                          <arrivingPawnsLabelDef TKey="ArrivingPawnsLabelDefinite">the [helpersLabelSingOrPlural]</arrivingPawnsLabelDef>
+                        </parms>
+                      </node>                  
+                    </li>           
+  
+                    <!-- Assign home faction to helper(s) -->
+                    <li Class="QuestNode_ExtraFaction">
+                      <factionOf>$asker</factionOf>
+                      <pawns>$helpers</pawns>
+                      <factionType>HomeFaction</factionType>
+                      <areHelpers>true</areHelpers>
+                      <inSignalsRemovePawn>
+                        <li>lodgers.RanWild</li>
+                        <li>lodgers.BecameMutant</li>
+                      </inSignalsRemovePawn>
+                    </li>
+  
+                    <!-- Lock their apparel -->
+                    <li Class="QuestNode_SetAllApparelLocked">
+                      <pawns>$helpers</pawns>
+                    </li>
+                    
+                    <!-- Helpers leave after their duration expires. Only if helpersLeaveAfterTicks >= 0 -->
+                    <li Class="QuestNode_GreaterOrEqual">
+                      <value1>$helpersLeaveAfterTicks</value1>
+                      <value2>0</value2>
+                      <node Class="QuestNode_Delay">
+                        <delayTicks>$helpersLeaveAfterTicks</delayTicks>
+                        <node Class="QuestNode_Sequence">
+                          <nodes>
+                            <li Class="QuestNode_AnyPawnAlive">
+                              <pawns>$helpers</pawns>
+                              <node Class="QuestNode_Letter">
+                                <label TKey="LetterLabelHelpersLeaving">[helpersLabelSingOrPlural] leaving</label>
+                                <text TKey="LetterTextHelpersLeaving">The [helpersLabelSingOrPlural] sent by [asker_nameDef] to aid you [helpersHasHave] spent too much time with you, and [helpersIsAre] now leaving.</text>
+                                <lookTargets>$helpers</lookTargets>
+                                <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
+                              </node>
+                            </li>
+                            <li Class="QuestNode_Leave">
+                              <pawns>$helpers</pawns>
+                              <sendStandardLetter>false</sendStandardLetter>
+                              <inSignalRemovePawn>helpers.RanWild</inSignalRemovePawn>
+                            </li>
+                          </nodes>
+                        </node>
+                      </node>
+                    </li>
+  
+                    <li Class="QuestNode_LeaveOnCleanup">
+                      <pawns>$helpers</pawns>
+                      <sendStandardLetter>false</sendStandardLetter>
+                      <inSignalRemovePawn>helpers.RanWild</inSignalRemovePawn>
+                    </li>
+  
+                  </nodes>
+                </node>
+                <elseNode Class="QuestNode_Set"> <!-- Needed for description text -->
+                  <name>helpersCount</name>
+                  <value>0</value>
+                </elseNode>
+              </elseNode>
+            </elseNode>
+          </elseNode>
+        </li>
+        
+        <!-- Set the amount of points attributed to helpers. Useful for tuning threats. -->
+        <li Class="QuestNode_IsSet">
+          <name>helperKind</name>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_GetPawnKindCombatPower">
+                <kindDef>$helperKind</kindDef>
+                <storeAs>helperCombatPower</storeAs>
+              </li>
+              <li Class="QuestNode_Set">
+                <name>helpersPoints</name>
+                <value>$($helpersCount * $helperCombatPower)</value>
+              </li>
+            </nodes>
+          </node>
+          <elseNode Class="QuestNode_Set">
+            <name>helpersPoints</name>
+            <value>0</value>
+          </elseNode>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>Util_ChooseRandomQuestHelperKind</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetRandomPawnKindForFaction">
+          <factionOf>$factionOf</factionOf>
+          <storeAs>helperKind</storeAs>
+          <choices>
+            <li>
+              <factionDef>Empire</factionDef>
+              <pawnKinds>
+                <li>Empire_Fighter_Trooper</li>
+                <li>Empire_Fighter_Janissary</li>
+                <li>Empire_Fighter_Champion</li>
+                <li>Empire_Fighter_Cataphract</li>
+              </pawnKinds>
+            </li>
+            <li>
+              <categoryTag>Tribal</categoryTag>
+              <pawnKinds>
+                <li>Tribal_Archer</li>
+                <li>Tribal_Berserker</li>
+                <li>Tribal_HeavyArcher</li>
+                <li>Tribal_Warrior</li>
+              </pawnKinds>
+            </li>
+            <li>
+              <categoryTag>Outlander</categoryTag>
+              <pawnKinds>
+                <li>Mercenary_Elite_Acidifier</li>
+                <li>Mercenary_Slasher_Acidifier</li>
+                <li>Mercenary_Gunner_Acidifier</li>
+              </pawnKinds>
+            </li>
+            <li>
+              <factionDef>Pirate</factionDef>
+              <pawnKinds>
+                <li>Mercenary_Elite_Acidifier</li>
+                <li>Mercenary_Slasher_Acidifier</li>
+                <li>Mercenary_Sniper_Acidifier</li>
+                <li>Mercenary_Gunner_Acidifier</li>
+              </pawnKinds>
+            </li>
+          </choices>
+          <fallback>Mercenary_Gunner_Acidifier</fallback>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggMonitorLizardFertilized</defName>
+    <label>monitor lizard egg (fert.)</label>
+    <description>A fertilized monitor lizard egg. If all goes well, it should hatch into a baby monitor lizard. It can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggOval</texPath>
+      <color>(245,245,245)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>26.0</MarketValue>
+      <Nutrition>0.25</Nutrition>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>4</hatcherDaystoHatch>
+        <hatcherPawn>MonitorLizard</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggMonitorLizardUnfertilized</defName>
+    <label>monitor lizard egg (unfert.)</label>
+    <description>An unfertilized monitor lizard egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggOval</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>9.0</MarketValue>
+      <Nutrition>0.25</Nutrition>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase" Name="EggBirdFertBase" Abstract="True">
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <color>(236,217,184)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>11.0</MarketValue>
+      <Nutrition>0.25</Nutrition>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="EggUnfertBase" Name="EggBirdUnfertBase" Abstract="True">
+    <statBases>
+      <MarketValue>7.0</MarketValue>
+      <Nutrition>0.25</Nutrition>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggFlamingoFertilized</defName>
+    <label>flamingo egg (fert.)</label>
+    <description>A fertilized flamingo egg. If all goes well, it should hatch into a baby flamingo. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>26.0</MarketValue>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>6</hatcherDaystoHatch>
+        <hatcherPawn>Flamingo</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggFlamingoUnfertilized</defName>
+    <label>flamingo egg (unfert.)</label>
+    <description>An unfertilized flamingo egg. It can be eaten raw, but it's much better cooked.</description>
+    <statBases>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <graphicData>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggHeronFertilized</defName>
+    <label>heron egg (fert.)</label>
+    <description>A fertilized heron egg. If all goes well, it should hatch into a baby heron. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <color>(120, 222, 208)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>18.0</MarketValue>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>5</hatcherDaystoHatch>
+        <hatcherPawn>Heron</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggHeronUnfertilized</defName>
+    <statBases>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <label>heron egg (unfert.)</label>
+    <description>An unfertilized heron egg. It can be eaten raw, but it's much better cooked.</description>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggSwanFertilized</defName>
+    <label>swan egg (fert.)</label>
+    <graphicData>
+      <color>(116, 192, 219)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>15.0</MarketValue>
+    </statBases>
+    <description>A fertilized swan egg. If all goes well, it should hatch into a baby swan. It can be eaten raw, but it's much better cooked.</description>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>5</hatcherDaystoHatch>
+        <hatcherPawn>Swan</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggSwanUnfertilized</defName>
+    <label>swan egg (unfert.)</label>
+    <description>An unfertilized swan egg. It can be eaten raw, but it's much better cooked.</description>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggSparrowFertilized</defName>
+    <label>sparrow egg (fert.)</label>
+    <description>A fertilized sparrow egg. If all goes well, it should hatch into a baby sparrow. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>3</hatcherDaystoHatch>
+        <hatcherPawn>Sparrow</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggSparrowUnfertilized</defName>
+    <label>sparrow egg (unfert.)</label>
+    <description>An unfertilized sparrow egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggCrowFertilized</defName>
+    <label>crow egg (fert.)</label>
+    <description>A fertilized crow egg. If all goes well, it should hatch into a baby crow. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.8</drawSize>
+      <color>(116, 192, 219)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+        <hatcherPawn>Crow</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggCrowUnfertilized</defName>
+    <label>crow egg (unfert.)</label>
+    <description>An unfertilized crow egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggBluebirdFertilized</defName>
+    <label>bluebird egg (fert.)</label>
+    <description>A fertilized bluebird egg. If all goes well, it should hatch into a baby bluebird. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.75</drawSize>
+      <color>(120, 222, 208)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>4</hatcherDaystoHatch>
+        <hatcherPawn>Bluebird</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggBluebirdUnfertilized</defName>
+    <label>bluebird egg (unfert.)</label>
+    <description>An unfertilized bluebird egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggQuailFertilized</defName>
+    <label>quail egg (fert.)</label>
+    <description>A fertilized quail egg. If all goes well, it should hatch into a baby quail. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+        <hatcherPawn>Quail</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggQuailUnfertilized</defName>
+    <label>quail egg (unfert.)</label>
+    <description>An unfertilized quail egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggMacawFertilized</defName>
+    <label>macaw egg (fert.)</label>
+    <description>A fertilized macaw egg. If all goes well, it should hatch into a baby parrot. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+        <hatcherPawn>Macaw</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggMacawUnfertilized</defName>
+    <label>macaw egg (unfert.)</label>
+    <description>An unfertilized macaw egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggPeacockFertilized</defName>
+    <label>peacock egg (fert.)</label>
+    <statBases>
+      <MarketValue>26.0</MarketValue>
+    </statBases>
+    <description>A fertilized peacock egg. If all goes well, it should hatch into a baby peacock. It can be eaten raw, but it's much better cooked.</description>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>4.5</hatcherDaystoHatch>
+        <hatcherPawn>Peacock</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggPeacockUnfertilized</defName>
+    <label>peacock egg (unfert.)</label>
+    <description>An unfertilized peacock egg. It can be eaten raw, but it's much better cooked.</description>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggVultureFertilized</defName>
+    <label>vulture egg (fert.)</label>
+    <statBases>
+      <MarketValue>16.0</MarketValue>
+    </statBases>
+    <description>A fertilized vulture egg. If all goes well, it should hatch into a baby vulture. It can be eaten raw, but it's much better cooked.</description>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>5</hatcherDaystoHatch>
+        <hatcherPawn>Vulture</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggVultureUnfertilized</defName>
+    <label>vulture egg (unfert.)</label>
+    <description>An unfertilized vulture egg. It can be eaten raw, but it's much better cooked.</description>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggBirdFertBase">
+    <defName>EggPenguinFertilized</defName>
+    <label>penguin egg (fert.)</label>
+    <statBases>
+      <MarketValue>25.0</MarketValue>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <description>A fertilized penguin egg. If all goes well, it should hatch into a baby penguin. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>6</hatcherDaystoHatch>
+        <hatcherPawn>Penguin</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggBirdUnfertBase">
+    <defName>EggPenguinUnfertilized</defName>
+    <label>penguin egg (unfert.)</label>
+    <statBases>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <description>An unfertilized penguin egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+  </ThingDef>
+
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggSeaTurtleFertilized</defName>
+    <label>sea turtle egg (fert.)</label>
+    <description>A fertilized sea turtle egg. If all goes well, it should hatch into a baby sea turtle. It can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <color>(236,217,184)</color>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>20.0</MarketValue>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+        <hatcherPawn>SeaTurtle</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggSeaTurtleUnfertilized</defName>
+    <label>sea turtle egg (unfert.)</label>
+    <description>An unfertilized sea turtle egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <color>(228,185,135)</color>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>9.0</MarketValue>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggAlligatorFertilized</defName>
+    <label>alligator egg (fert.)</label>
+    <description>A fertilized alligator egg. If all goes well, it should hatch into a baby alligator. It can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggOval</texPath>
+      <color>(236,217,184)</color>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>20.0</MarketValue>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+        <hatcherPawn>Alligator</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggAlligatorUnfertilized</defName>
+    <label>alligator egg (unfert.)</label>
+    <description>An unfertilized alligator egg. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggOval</texPath>
+      <color>(228,185,135)</color>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>17.0</MarketValue>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="WoolBase">
+    <defName>WoolMastodon</defName>
+    <label>mastodon wool</label>
+    <description>Thick shaggy wool from a mastodon. Provides excellent insulation against the cold.</description>
+    <possessionCount>30</possessionCount>
+    <statBases>
+      <StuffPower_Insulation_Cold>32</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>14</StuffPower_Insulation_Heat>
+    </statBases>
+    <graphicData>
+      <color>(141,103,70)</color>
+    </graphicData>
+    <stuffProps>
+      <color>(141,103,70)</color>
+    </stuffProps>
+  </ThingDef>
+
+  <ThingDef ParentName="WoolBase">
+    <defName>WoolMuskox</defName>
+    <label>muskox wool</label>
+    <description>Itchy wool from a muskox. Good at keeping the cold out.</description>
+    <possessionCount>30</possessionCount>
+    <statBases>
+      <StuffPower_Insulation_Cold>30</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>10</StuffPower_Insulation_Heat>
+    </statBases>
+    <graphicData>
+      <color>(79,71,60)</color>
+    </graphicData>
+    <stuffProps>
+      <color>(79,71,60)</color>
+    </stuffProps>
+  </ThingDef>
+
+</Defs>

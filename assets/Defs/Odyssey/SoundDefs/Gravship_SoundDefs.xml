@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>Gravship_Engine_Start</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/Gravship_Engine_Start</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>80.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_Engine_Loop</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/Gravship_Engine_Loop</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>100.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_Antigrav_Loop</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/Gravship_Antigrav_Loop</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>80.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_RetroThruster_Loop</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/RetroThruster_Loop_A</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>100.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_RetroThruster_Oneshot_01</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/RetroThruster_Oneshot_A01</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>150.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_RetroThruster_Oneshot_02</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/RetroThruster_Oneshot_A02</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>150.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_RetroThruster_Oneshot_03</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/RetroThruster_Oneshot_A03</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>150.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_LandingServos</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/LandingServos_A</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>150.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_Touchdown</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/Touchdown_A</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>100.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Gravship_Engine_Stop</defName>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Gravship/GravshipEngineStop_B</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>80.0</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

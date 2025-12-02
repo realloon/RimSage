@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>OrbitalScanner</defName>
+    <label>orbital scanner</label>
+    <description>A sensor unit that passively scans for irregular objects orbiting the planet. It will periodically detect locations in orbit that can be visited with transport pods, shuttles, or gravships.\n\nThe scanner won't function under a roof. Building multiple orbital scanners does not increase the chance to find new locations.</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/OrbitalScanner/OrbitalScanner</texPath>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <tickerType>Normal</tickerType>
+    <castEdgeShadows>false</castEdgeShadows>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0.3</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <costList>
+      <Steel>180</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li>
+        <compClass>CompOrbitalScanner</compClass>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <altitudeLayer>Building</altitudeLayer>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <fillPercent>0.40</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <designationCategory>Odyssey</designationCategory>
+    <researchPrerequisites>
+      <li>OrbitalTech</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <uiOrder>2500</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>OxygenPump</defName>
+    <label>oxygen pump</label>
+    <description>A small wall-mounted unit that releases oxygen into the surrounding room, allowing enclosed areas to repressurize in space. Essential for long stays in orbit.</description>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <uiIconPath>Things/Building/OxygenPump/OxygenPump_MenuIcon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/OxygenPump/OxygenPump</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <designationCategory>Odyssey</designationCategory>
+    <statBases>
+      <MarketValue>200</MarketValue>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>8</Mass>
+    </statBases>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <building>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_LowPowerUnlessVacuum">
+        <lowPowerConsumptionFactor>0.1</lowPowerConsumptionFactor>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_OxygenPusher">
+        <requiresPower>true</requiresPower>
+        <airPerSecondPerHundredCells>0.01</airPerSecondPerHundredCells>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>OxygenPump_Ambient</sound>
+        <disabledOnUnpowered>true</disabledOnUnpowered>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>OrbitalTech</li>
+    </researchPrerequisites>
+    <uiOrder>2505</uiOrder>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase">
+    <defName>VacBarrier</defName>
+    <label>vac barrier</label>
+    <description>An ultrasonic barrier that prevents depressurization in space. The field compresses air molecules near the threshold, preventing gases from escaping while allowing people to freely travel through it. A vac barrier will do nothing to prevent intruders.\n\nMust be powered to prevent depressurization.</description>
+    <thingClass>Building_VacBarrier</thingClass>
+    <statBases>
+      <WorkToBuild>2000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Building/VacBarrier/VacBarrier_Barrier</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+      <shaderType>TransparentPostLight</shaderType>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+      <color>(142,142,142)</color>
+    </graphicData>
+    <uiIconPath>Things/Building/VacBarrier/VacBarrier_MenuIcon_south</uiIconPath>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <GravlitePanel>2</GravlitePanel>
+    </costList>
+    <stuffCategories Inherit="False"/>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <designationCategory>Odyssey</designationCategory>
+    <building>
+      <isAirtight>true</isAirtight>
+      <isSupportDoor>true</isSupportDoor>
+      <doorTopGraphic>
+        <texPath>Things/Building/VacBarrier/VacBarrier_Top</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(1.5,1.5)</drawSize>
+      </doorTopGraphic>
+      <blueprintClass>Blueprint_Door</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/VacBarrier/VacBarrier_MenuIcon</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(1.5,1.5)</drawSize>
+      </blueprintGraphicData>
+    </building>
+    <researchPrerequisites>
+      <li>OrbitalTech</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_LowPowerUnlessVacuum">
+        <lowPowerConsumptionFactor>0.1</lowPowerConsumptionFactor>
+        <checkRoomVacuum>false</checkRoomVacuum>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <designationHotKey>Misc1</designationHotKey>
+    <uiOrder>2015</uiOrder>
+  </ThingDef>
+
+</Defs>

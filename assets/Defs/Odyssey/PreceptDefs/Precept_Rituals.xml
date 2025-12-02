@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PreceptDef>
+    <defName>GravshipLaunch</defName>
+    <label>gravship launch</label>
+    <description>Travel to a remote destination using your gravship. Unless you build a grav anchor, your current map and anything not on gravship substructure will be permanently lost. You won't be able to return.</description>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <visible>false</visible>
+    <classic>true</classic>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <ritualPatternBase>GravshipLaunch</ritualPatternBase>
+    <iconPath>UI/Commands/LaunchGravship</iconPath>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <useRepeatPenalty>false</useRepeatPenalty>
+    <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+  </PreceptDef>
+
+</Defs>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ConceptDef>
+    <defName>CapturingEntities</defName>
+    <label>capturing entities</label>
+    <helpText>When an entity is downed but alive, you can CAPTURE it. To capture, select a colonist, right-click on the entity, and select 'Capture'. You'll need an empty holding platform or spot.\n\nOnce the entity has been brought to the holding platform, you can study it to gain Anomaly research.\n\nTend an injured entity's wounds to make sure it survives.</helpText>
+    <priority>20</priority>
+    <needsOpportunity>True</needsOpportunity>
+    <highlightTags>
+      <li>MainTab-Architect-Closed</li>
+      <li>DesignationCategoryButton-Anomaly-Closed</li>
+      <li>Designator-Build-HoldingPlatform</li>
+    </highlightTags>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>ContainingEntities</defName>
+    <label>containing entities</label>
+    <helpText>It's best to hold entities in secure chambers with high CONTAINMENT STRENGTH or they'll soon escape. Containment strength is increased by:\n\n - Strong walls and doors\n - Good lighting\n - Electric inhibitors (needs research)\n - Bioferrite plate floors (needs research)\n\nOpen the entity's 'Entity' tab to configure how your colonists will interact with it.</helpText>
+    <priority>20</priority>
+    <needsOpportunity>True</needsOpportunity>
+    <highlightTags>
+      <li>ITab-Entity-Closed</li>
+    </highlightTags>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>StudyingEntities</defName>
+    <label>studying entities</label>
+    <helpText>Colonists assigned to 'Dark study' work will STUDY diverse entities including creatures and structures.\n\nStudy structures like the void monolith by selecting it and toggling the 'Study' option. Some entities must be captured to a holding platform or spot before they can be studied.\n\nStudying advances Anomaly research projects. Open the 'Research' tab, then select the 'Anomaly' sub-tab to view Anomaly research projects.</helpText>
+    <priority>20</priority>
+    <needsOpportunity>True</needsOpportunity>
+    <highlightTags>
+      <li>ToggleStudy</li>
+      <li>MainTab-Research-Closed</li>
+      <li>Research-Tab-Anomaly</li>
+    </highlightTags>
+  </ConceptDef>
+  
+  <ConceptDef>
+    <defName>EntityCodex</defName>
+    <label>entity codex</label>
+    <helpText>Use the entity codex to track which entities you've discovered.\n\nDiscovering new entities will reveal hidden Anomaly research projects. Once enough entities have been discovered, you can increase the void monolith's level.\n\nOpen the entity codex using the entity codex icon in the lower right of the screen.</helpText>
+    <priority>15</priority>
+    <needsOpportunity>True</needsOpportunity>
+    <highlightTags>
+      <li>EntityCodex</li>
+    </highlightTags>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>SuppressingEntities</defName>
+    <label>suppressing entities</label>
+    <helpText>Some entities become more active over time, even in captivity. If an entity's activity bar fills completely, it will do something extremely dangerous.\n\nTo prevent full activation, you must periodically SUPPRESS it. Wardens will suppress entities.</helpText>
+    <priority>20</priority>
+    <needsOpportunity>True</needsOpportunity>
+    <highlightTags>
+      <li>ActivityGizmo</li>
+    </highlightTags>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>AnomalyResearch</defName>
+    <label>anomaly research</label>
+    <helpText>You must advance Anomaly research by studying unnatural entities.\n\nThere are two types of Anomaly research: BASIC and ADVANCED. Basic research projects progress when you study any entity; advanced projects only progress when you study advanced entities.\n\nYou can have a basic and an advanced project active at the same time. If no advanced project is active, advanced research will contribute to a basic project instead.</helpText>
+    <priority>40</priority>
+    <needsOpportunity>True</needsOpportunity>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>ColonyGhouls</defName>
+    <label>ghouls</label>
+    <helpText>Ghouls are humans twisted by bioferrite. They can quickly regenerate injuries, making them useful as melee fighters. However, they are incapable of work.\n\nGhouls only eat corpses and raw meat. If they go hungry, they can turn hostile.</helpText>
+    <priority>40</priority>
+    <needsOpportunity>True</needsOpportunity>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>VoidProvocation</defName>
+    <label>void provocation</label>
+    <helpText>Use the void provocation psychic ritual to discover and capture new entities.\n\nDiscovering entities will let you advance the void monolith to higher levels, and unlock new research projects. Capturing more entities will let you complete Anomaly research projects faster.\n\nPlace a psychic ritual spot in order to perform the void provocation ritual.</helpText>
+    <priority>25</priority>
+    <needsOpportunity>True</needsOpportunity>
+  </ConceptDef>
+
+</Defs>

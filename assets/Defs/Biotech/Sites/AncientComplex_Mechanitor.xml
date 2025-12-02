@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>AncientComplex_Mechanitor</defName>
+    <label>ancient mechanitor complex</label>
+    <description>An ancient complex containing the corpse of a mechanitor. You can try to penetrate this dangerous structure to extract the mechanitor's mechlink for your own use.</description>
+    <workerClass>SitePartWorker_AncientComplex</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/AncientMechanitorComplex</expandingIconTexture>
+    <approachOrderString>Investigate {0}</approachOrderString>
+    <approachingReportString>Investigating {0}.</approachingReportString>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>AncientComplex_Mechanitor</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>AncientComplex_Mechanitor</defName>
+    <linkWithSite>AncientComplex_Mechanitor</linkWithSite>
+    <order>470</order>
+    <genStep Class="GenStep_AncientComplex_Mechanitor" />
+  </GenStepDef>
+
+
+</Defs>

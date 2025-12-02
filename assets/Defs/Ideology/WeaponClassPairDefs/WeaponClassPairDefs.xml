@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WeaponClassPairDef>
+    <defName>MeleeRanged</defName>
+    <first>Melee</first>
+    <second>Ranged</second>
+  </WeaponClassPairDef>
+
+  <WeaponClassPairDef>
+    <defName>MeleePiercerBlunt</defName>
+    <first>MeleePiercer</first>
+    <second>MeleeBlunt</second>
+  </WeaponClassPairDef>
+
+  <WeaponClassPairDef>
+    <defName>LongShortShots</defName>
+    <first>LongShots</first>
+    <second>ShortShots</second>
+  </WeaponClassPairDef>
+
+  <WeaponClassPairDef>
+    <defName>RangedHeavyLight</defName>
+    <first>RangedHeavy</first>
+    <second>RangedLight</second>
+  </WeaponClassPairDef>
+
+  <WeaponClassPairDef>
+    <defName>NeolithicUltratech</defName>
+    <first>Neolithic</first>
+    <second>Ultratech</second>
+  </WeaponClassPairDef>
+
+</Defs>

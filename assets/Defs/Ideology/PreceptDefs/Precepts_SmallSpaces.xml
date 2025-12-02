@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>Indoors</defName>
+    <label>indoors</label>
+    <iconPath>UI/Issues/SmallSpaces</iconPath>
+  </IssueDef>
+
+  <PreceptDef>
+    <defName>Indoors_Acceptable</defName>
+    <label>preferred</label>
+    <issue>Indoors</issue>
+    <description>We were meant to live indoors. There's nothing bothersome about being in tight quarters.</description>
+    <impact>Medium</impact>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <requiredMemes>
+      <li>Tunneler</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Shipborn</li>
+    </requiredMemes>
+    <enablesNeeds>
+      <li>Indoors</li>
+    </enablesNeeds>
+    <disablesNeeds>
+      <li>Outdoors</li>
+    </disablesNeeds>
+  </PreceptDef>
+
+</Defs>

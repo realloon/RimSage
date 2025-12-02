@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+  <HediffDef ParentName="DiseaseBase">
+    <defName>PsychicEntropy</defName>
+    <label>neural heat</label>
+    <description>Despite being called "heat", neural heat is not a measure of temperature. It refers to a type of chaotic psychic energy in the mind which builds up when using psychic powers and dissipates over the course of a few seconds or minutes.\n\nIf neural heat is pushed past normal limits, it may cause temporary psychic breakdown and unconsciousness due to psychic shock. These conditions don't cause permanent damage.</description>
+    <descriptionShort>Chaotic energy in the mind which builds up when using psychic powers. If pushed past normal limits, it may cause psychic breakdown and unconsciousness.</descriptionShort>
+    <isBad>true</isBad>
+    <descriptionHyperlinks>
+      <HediffDef>PsychicBreakdown</HediffDef>
+      <HediffDef>PsychicShock</HediffDef>
+    </descriptionHyperlinks>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_SeverityFromEntropy" />
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.0</minSeverity>
+        <label>safe</label>
+      </li>
+      <li>
+        <minSeverity>1.0</minSeverity>
+        <label>overloaded</label>
+        <hediffGivers>
+          <li Class="HediffGiver_AddSeverity">
+            <hediff>PsychicBreakdown</hediff> <!-- bear in mind that when you go to a high level you also have to fall through the lower ones -->
+            <severityAmount>2</severityAmount>
+            <mtbHours>2</mtbHours>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <minSeverity>1.33</minSeverity>
+        <label>very overloaded</label>
+        <hediffGivers>
+          <li Class="HediffGiver_AddSeverity">
+            <hediff>PsychicBreakdown</hediff>
+            <severityAmount>4</severityAmount>
+            <mtbHours>2</mtbHours>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <minSeverity>1.66</minSeverity>
+        <label>extreme</label>
+        <hediffGivers>
+          <li Class="HediffGiver_AddSeverity">
+            <hediff>PsychicBreakdown</hediff>
+            <severityAmount>6</severityAmount>
+            <mtbHours>2</mtbHours>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <minSeverity>2.0</minSeverity>
+        <label>overwhelming</label>
+        <hediffGivers>
+          <li Class="HediffGiver_Refresh">
+            <hediff>PsychicShock</hediff>
+          </li>
+          <li Class="HediffGiver_AddSeverity">
+            <hediff>PsychicBreakdown</hediff>
+            <severityAmount>8</severityAmount>
+            <mtbHours>2</mtbHours>
+          </li>
+        </hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>PsychicBreakdown</defName>
+    <label>psychic breakdown</label>
+    <description>Deep psychic destabilization of the mind. Psychic breakdown last for days, causing mental disturbances of various kinds. It resolves itself with time.</description>
+    <isBad>true</isBad>
+    <initialSeverity>0</initialSeverity>
+    <maxSeverity>15</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <label>minor</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+        <mentalBreakMtbDays>5</mentalBreakMtbDays>
+        <allowedMentalBreakIntensities>
+          <li>Minor</li>
+        </allowedMentalBreakIntensities>
+      </li>
+      <li>
+        <minSeverity>5.0</minSeverity>
+        <label>major</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.5</offset>
+          </li>
+        </capMods>
+        <mentalBreakMtbDays>5</mentalBreakMtbDays>
+        <allowedMentalBreakIntensities>
+          <li>Minor</li>
+          <li>Major</li>
+        </allowedMentalBreakIntensities>
+      </li>
+      <li>
+        <minSeverity>10.0</minSeverity>
+        <label>total</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef Name="PsycastHediffBase" Abstract = "True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName = "PsycastHediffBase">
+    <defName>PsychicAnesthesia</defName>
+    <label>psychic anesthesia</label>
+    <description>Psychically-induced pain insensitivity.</description>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.1</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName = "PsycastHediffBase">
+    <defName>PsychicBurden</defName>
+    <label>psychic burden</label>
+    <description>Psychically-induced difficulty in locomotion.</description>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.4</setMax>
+          </li>
+        </capMods>
+        <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName = "PsycastHediffBase">
+    <defName>PsychicBlindness</defName>
+    <label>psychic blindness</label>
+    <description>Psychically-induced partial blindness.</description>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <postFactor>0.5</postFactor>
+          </li>
+        </capMods>
+        <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName = "PsycastHediffBase">
+    <defName>PsychicVertigo</defName>
+    <label>psychic vertigo</label>
+    <description>Psychically-induced loss of spatial orientation. This will cause flesh creatures to vomit.</description>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <vomitMtbDays>0.00005787</vomitMtbDays>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disorientation">
+        <wanderMtbHours>0.05</wanderMtbHours>
+        <singleWanderDurationTicks>180</singleWanderDurationTicks>
+        <wanderRadius>3</wanderRadius>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName = "PsycastHediffBase">
+    <defName>PsychicFocus</defName>
+    <label>psychic focus</label>
+    <description>Psychically-induced mental focus, increasing sight, hearing and movement capacities.</description>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <postFactor>1.3</postFactor>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <postFactor>1.3</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>1.3</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName = "PsycastHediffBase">
+    <defName>EntropyLink</defName>
+    <label>entropy link</label>
+    <description>A psychic link with another individual. Gain or loss of neural heat incurred by one will be shared equally between both.</description>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_EntropyLink">
+        <compClass>HediffComp_EntropyLink</compClass>
+        <entropyTransferAmount>0.5</entropyTransferAmount>
+      </li>
+      <li Class="HediffCompProperties_Link">
+        <maxDistance>30</maxDistance>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <PsychicEntropyGain>0.5</PsychicEntropyGain>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PsycastHediffBase">
+    <defName>Joyfuzz</defName>
+    <label>joyfuzz</label>
+    <description>Psychically-induced feelings of warmth, comfort, and acceptance. This improves mood, but the lack of negative stimulation induces a mild stupor and reduces consciousness.</description>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <partEfficiencyOffset>-0.20</partEfficiencyOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PsycastHediffBase">
+    <defName>PsychicLove</defName>
+    <label>psychic love</label>
+    <description>Psychically-induced adoration. This increases an individual's opinion of someone else, and between adults increases the likelihood of romantic advances and marriage proposals, while reducing the chance of a breakup.</description>
+    <hediffClass>Hediff_PsychicLove</hediffClass>
+    <targetPrefix>for</targetPrefix>
+    <isBad>false</isBad>
+    <stages><li></li></stages>
+  </HediffDef>
+
+</Defs>

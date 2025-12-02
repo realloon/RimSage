@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <AbilityDef>
+    <defName>LaunchFragGrenade</defName>
+    <label>launch frag grenade</label>
+    <description>Launch a grenade. Can be reloaded using steel.</description>
+    <iconPath>UI/Commands/LaunchFragGrenade</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>12.9</range>
+      <warmupTime>1.5</warmupTime>
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Proj_GrenadeFrag</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>LaunchEMPShell</defName>
+    <label>launch EMP shell</label>
+    <description>Launch a shell that releases a burst of electromagnetic energy, stunning mechanical targets. Can be reloaded using steel.</description>
+    <iconPath>UI/Commands/LaunchEMPShell</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>23.9</range>
+      <warmupTime>3.5</warmupTime>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Bullet_EMPLauncher</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>LaunchSmokeShell</defName>
+    <label>launch smoke shell</label>
+    <description>Launch a smoke shell that obscures incoming shots and prevents turrets from locking on. Can be reloaded using steel.</description>
+    <iconPath>UI/Commands/LaunchSmokeShell</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>23.9</range>
+      <warmupTime>3.5</warmupTime>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Bullet_SmokeLauncher</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>LaunchIncendiaryShell</defName>
+    <label>launch incendiary shell</label>
+    <description>Launch a shell that creates an explosion on impact, igniting everything nearby. Can be reloaded using chemfuel.</description>
+    <iconPath>UI/Commands/LaunchIncendiaryShell</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsIncendiary>true</ai_IsIncendiary>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>23.9</range>
+      <warmupTime>3.5</warmupTime>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Bullet_IncendiaryLauncher</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>EMPPulse</defName>
+    <label>fire EMP</label>
+    <description>Emit a burst of electromagnetic energy centered on the user. The burst will stun nearby mechanical targets like mechanoids or turrets.</description>
+    <iconPath>UI/Commands/LaunchEMPPulse</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <targetRequired>False</targetRequired>
+    <cooldownTicksRange>30000</cooldownTicksRange> <!-- 12 hours -->
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>4.9</range>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityExplosion">
+        <damageDef>EMP</damageDef>
+        <explosionRadius>4.9</explosionRadius>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

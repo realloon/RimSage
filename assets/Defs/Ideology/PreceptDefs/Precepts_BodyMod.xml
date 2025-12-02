@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>BodyModification</defName>
+    <label>body modification</label>
+    <iconPath>UI/Issues/BodyModifications</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>BodyMod_Abhorrent</defName>
+    <issue>BodyModification</issue>
+    <label>abhorrent</label>
+    <description>To modify the natural human body is a flagrant violation of clear moral laws.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <conflictingMemes>
+      <li>Transhumanist</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>FleshPurity</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InstalledProsthetic</eventDef>
+        <thought>InstalledProsthetic_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InstalledProsthetic</eventDef>
+        <thought>InstalledProsthetic_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasProsthetic_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasProsthetic_Abhorrent_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>BodyMod_Disapproved</defName>
+    <issue>BodyModification</issue>
+    <label>disapproved</label>
+    <description>To modify the natural human body is an ugly, dirty act.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <conflictingMemes>
+      <li>Transhumanist</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>FleshPurity</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InstalledProsthetic</eventDef>
+        <thought>InstalledProsthetic_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InstalledProsthetic</eventDef>
+        <thought>InstalledProsthetic_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasProsthetic_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasProsthetic_Disapproved_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>BodyMod_Approved</defName>
+    <issue>BodyModification</issue>
+    <label>approved</label>
+    <description>Humans should strive to reach our full potential by improving our flawed natural bodies.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <conflictingMemes>
+      <li>FleshPurity</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Transhumanist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasNoProsthetic_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasProsthetic_Approved</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HasNoProsthetic_Disapproved_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Related: Installed artificial part -->
+
+  <ThoughtDef>
+    <defName>InstalledProsthetic_Abhorrent</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>installed enhancement</label>
+        <description>I had to install an artificial body enhancement. This was deeply offensive to my beliefs.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InstalledProsthetic_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>installed enhancement</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InstalledProsthetic_Disapproved</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>installed enhancement</label>
+        <description>I had to install an artificial body enhancement. This was clearly against my beliefs.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InstalledProsthetic_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>installed enhancement</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+
+  <!-- Related: Has artificial part -->
+
+  <ThoughtDef>
+    <defName>HasProsthetic_Abhorrent</defName>
+    <workerClass>ThoughtWorker_Precept_HasProsthetic</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>artificial enhancement</label>
+        <description>I have an artificial body enhancement. It's an abhorrent offense against everything I believe!</description>
+        <baseMoodEffect>-18</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasProsthetic_Abhorrent_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_HasProsthetic_Social</workerClass>
+    <stages>
+      <li>
+        <label>artificial enhancement</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasProsthetic_Disapproved</defName>
+    <workerClass>ThoughtWorker_Precept_HasProsthetic</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>artificial enhancement</label>
+        <description>I have an artificial body enhancement. I don't believe such things are acceptable.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasProsthetic_Disapproved_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_HasProsthetic_Social</workerClass>
+    <stages>
+      <li>
+        <label>artificial enhancement</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasNoProsthetic_Disapproved</defName>
+    <workerClass>ThoughtWorker_Precept_HasNoProsthetic</workerClass>
+    <minExpectation>Moderate</minExpectation>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>no artificial enhancement</label>
+        <description>I don't have any artificial body enhancements. It's against my beliefs to be so unenhanced.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>BodyPurist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasNoProsthetic_Disapproved_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_HasNoProsthetic_Social</workerClass>
+    <minExpectation>Moderate</minExpectation>
+    <stages>
+      <li>
+        <label>no artificial enhancement</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>BodyPurist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>HasProsthetic_Approved</defName>
+    <workerClass>ThoughtWorker_Precept_HasProsthetic_Count</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Transhumanist</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>transhumanist modded</label>
+        <description>This artificial enhancement matches my belief.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>transhumanist connected</label>
+        <description>The more artificial enhancements I get, the stronger my expression of my beliefs.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>transhumanist enhanced</label>
+        <description>My connection to my belief is increased by my third artificial enhancement. But I could use more.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>transhumanist synchronized</label>
+        <description>Only two more artificial enhancements are required to fully synchronize with my beliefs.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>transhumanist integrated</label>
+        <description>Five artificial enhancements! I'm beginning to feel perfect integration with my beliefs.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>transhumanist transformed</label>
+        <description>It's as though I've left the weak flesh behind.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+
+
+    <!--
+      Removed installed prosthetic event thoughts since they're exploitable
+
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>InstalledProsthetic</eventDef>
+        <thought>InstalledProsthetic_Approved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>InstalledProsthetic</eventDef>
+        <thought>InstalledProsthetic_Know_Approved</thought>
+      </li>
+
+  <ThoughtDef>
+    <defName>InstalledProsthetic_Approved</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>installed prosthetic</label>
+        <description>I got to install a prosthetic. It's a good thing to do.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>InstalledProsthetic_Know_Approved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>installed prosthetic</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+    -->
+
+
+</Defs>

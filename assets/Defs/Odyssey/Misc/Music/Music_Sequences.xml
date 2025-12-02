@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Orbital Relax Music -->
+  
+  <MusicSequenceDef>
+    <defName>OrbitalRelax</defName>
+    <loopDelayRange>1~2</loopDelayRange>
+    <minTimeToPlay>30</minTimeToPlay>
+    <loop>true</loop>
+    <songs>
+      <li>Floating_Points</li>
+      <li>Low_Planetary_Orbit</li>
+      <li>Sky_Farmer</li>
+      <li>Wabi_Sabi</li>
+      <li>Impermanent_Waves</li>
+    </songs>
+  </MusicSequenceDef>
+
+  <!-- Oribtal Combat Music -->
+  
+  <MusicSequenceDef>
+    <defName>OrbitalCombat</defName>
+    <endOnNoDanger>true</endOnNoDanger>
+    <loopDelayRange>5~10</loopDelayRange>
+    <canBeInterrupted>false</canBeInterrupted>
+    <minTimeToPlay>30</minTimeToPlay>
+    <fadeoutLastSongDuration>5</fadeoutLastSongDuration>
+    <pausedVolumeFactor>0.5</pausedVolumeFactor>
+    <loop>true</loop>
+    <songs>
+      <li>Baubles</li>
+      <li>Is_There_Still_Time</li>
+    </songs>
+  </MusicSequenceDef>
+
+</Defs>

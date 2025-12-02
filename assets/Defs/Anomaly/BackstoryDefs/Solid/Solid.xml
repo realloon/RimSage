@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <BackstoryDef>
+    <defName>UnknownChildhood</defName>
+    <title>unknown</title>
+    <titleShort>unknown</titleShort>
+    <description>[PAWN_nameDef]'s origins are unknown.</description>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+  
+  <BackstoryDef>
+    <defName>UnknownAdulthood</defName>
+    <title>unknown</title>
+    <titleShort>unknown</titleShort>
+    <description>[PAWN_nameDef]'s origins are unknown.</description>
+    <bodyTypeGlobal>Male</bodyTypeGlobal>
+    <bodyTypeFemale>Male</bodyTypeFemale>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+
+</Defs>

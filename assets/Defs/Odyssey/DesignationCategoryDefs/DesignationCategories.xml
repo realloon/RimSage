@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DesignationCategoryDef>
+    <defName>Odyssey</defName>
+    <label>odyssey</label>
+    <order>10</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+      <li>Designator_RemoveFoundation</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+
+</Defs>

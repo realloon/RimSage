@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <TransportShipDef>
+    <defName>Ship_ShuttleCrashing</defName>
+    <label>crashed shuttle</label>
+    <shipThing>ShuttleCrashed_Exitable</shipThing>
+    <arrivingSkyfaller>ShuttleCrashing</arrivingSkyfaller>
+  </TransportShipDef>
+
+  <TransportShipDef>
+    <defName>Ship_ShuttleCrashing_Mechanitor</defName>
+    <label>crashed mechanitor ship</label>
+    <shipThing>ShuttleCrashed_Exitable_Mechanitor</shipThing>
+    <arrivingSkyfaller>ShuttleCrashing_Mechanitor</arrivingSkyfaller>
+  </TransportShipDef>
+
+</Defs>

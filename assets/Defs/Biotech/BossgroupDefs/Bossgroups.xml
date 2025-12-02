@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BossgroupDef Abstract="True" Name="BaseBossgroup">
+    <quest>Bossgroup</quest>
+    <repeatWaveStartIndex>2</repeatWaveStartIndex>
+  </BossgroupDef>
+
+  <!-- Diabolus -->
+
+  <BossDef>
+    <defName>Diabolus</defName>
+    <kindDef>Mech_Diabolus</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks><!-- 2 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroup">
+    <defName>Diabolus</defName>
+    <boss>Diabolus</boss>
+    <waves>
+      <li> <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>3</Mech_Militor>
+        </escorts>
+      </li>
+      <li> <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>4</Mech_Militor>
+          <Mech_Pikeman>2</Mech_Pikeman>
+        </escorts>
+      </li>
+      <li> <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>7</Mech_Militor>
+          <Mech_Pikeman>2</Mech_Pikeman>
+          <Mech_Tesseron>1</Mech_Tesseron>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 3 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Legionary>3</Mech_Legionary>
+          <Mech_Centurion>1</Mech_Centurion>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 4 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Scyther>5</Mech_Scyther>
+          <Mech_CentipedeGunner>3</Mech_CentipedeGunner>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 5 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_Militor>15</Mech_Militor>
+          <Mech_Pikeman>8</Mech_Pikeman>
+          <Mech_CentipedeGunner>4</Mech_CentipedeGunner>
+          <Mech_Centurion>1</Mech_Centurion>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 6 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_Militor>15</Mech_Militor>
+          <Mech_Lancer>10</Mech_Lancer>
+          <Mech_CentipedeGunner>5</Mech_CentipedeGunner>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 7 -->
+        <bossCount>3</bossCount>
+        <escorts>
+          <Mech_Militor>15</Mech_Militor>
+          <Mech_Tesseron>10</Mech_Tesseron>
+          <Mech_CentipedeGunner>6</Mech_CentipedeGunner>
+          <Mech_Centurion>1</Mech_Centurion>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>The {LEADERKIND_label} is equipped with a concrete-melting hellsphere cannon. It is slow to charge, but when it fires it will annihilate anything in the blast circle.</leaderDescription>
+    <rewardDef>SignalChip</rewardDef>
+  </BossgroupDef>
+
+
+  <!-- Warqueen -->
+
+  <BossDef>
+    <defName>Warqueen</defName>
+    <kindDef>Mech_Warqueen</kindDef>
+    <appearAfterTicks>14400000</appearAfterTicks><!-- 4 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroup">
+    <defName>Warqueen</defName>
+    <boss>Warqueen</boss>
+    <waves>
+      <li> <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Pikeman>5</Mech_Pikeman>
+          <Mech_Scyther>2</Mech_Scyther>
+        </escorts>
+      </li>
+      <li> <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>7</Mech_Militor>
+          <Mech_CentipedeBurner>2</Mech_CentipedeBurner>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Pikeman>5</Mech_Pikeman>
+          <Mech_Tesseron>2</Mech_Tesseron>
+          <Mech_Tunneler>3</Mech_Tunneler>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 3 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_Militor>8</Mech_Militor>
+          <Mech_Lancer>4</Mech_Lancer>
+          <Mech_CentipedeBurner>2</Mech_CentipedeBurner>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 4 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_Pikeman>5</Mech_Pikeman>
+          <Mech_Lancer>5</Mech_Lancer>
+          <Mech_Legionary>3</Mech_Legionary>
+          <Mech_CentipedeBurner>3</Mech_CentipedeBurner>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 5 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_Scyther>14</Mech_Scyther>
+          <Mech_CentipedeBurner>4</Mech_CentipedeBurner>
+          <Mech_Centurion>1</Mech_Centurion>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 6 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <Mech_CentipedeBurner>8</Mech_CentipedeBurner>
+          <Mech_Scorcher>18</Mech_Scorcher>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 7 -->
+        <bossCount>3</bossCount>
+        <escorts>
+          <Mech_Scyther>6</Mech_Scyther>
+          <Mech_Lancer>6</Mech_Lancer>
+          <Mech_Legionary>3</Mech_Legionary>
+          <Mech_CentipedeBurner>8</Mech_CentipedeBurner>
+          <Mech_Centurion>1</Mech_Centurion>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>The {LEADERKIND_label} has a built-in mech gestator and is capable of deploying war urchin combat mechs.</leaderDescription>
+    <rewardDef>PowerfocusChip</rewardDef>
+  </BossgroupDef>
+
+
+  <!-- Apocriton -->
+
+  <BossDef>
+    <defName>Apocriton</defName>
+    <kindDef>Mech_Apocriton</kindDef>
+    <appearAfterTicks>21600000</appearAfterTicks><!-- 6 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroup">
+    <defName>Apocriton</defName>
+    <boss>Apocriton</boss>
+    <waves>
+      <li> <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>6</Mech_Militor>
+          <Mech_Scyther>5</Mech_Scyther>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>6</Mech_Militor>
+          <Mech_Scyther>4</Mech_Scyther>
+          <Mech_Tesseron>4</Mech_Tesseron>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Scyther>6</Mech_Scyther>
+          <Mech_Diabolus>1</Mech_Diabolus>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 3 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Tunneler>2</Mech_Tunneler>
+          <Mech_Diabolus>2</Mech_Diabolus>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 4 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Tunneler>1</Mech_Tunneler>
+          <Mech_CentipedeBlaster>2</Mech_CentipedeBlaster>
+          <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Centurion>1</Mech_Centurion>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 5 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>10</Mech_Militor>
+          <Mech_Scyther>5</Mech_Scyther>
+          <Mech_CentipedeBlaster>2</Mech_CentipedeBlaster>
+          <Mech_Diabolus>3</Mech_Diabolus>
+          <Mech_Centurion>1</Mech_Centurion>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 6 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>12</Mech_Militor>
+          <Mech_Lancer>10</Mech_Lancer>
+          <Mech_Tunneler>5</Mech_Tunneler>
+          <Mech_CentipedeBlaster>4</Mech_CentipedeBlaster>
+          <Mech_Warqueen>1</Mech_Warqueen>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li> <!-- 7 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <Mech_Militor>15</Mech_Militor>
+          <Mech_Scyther>10</Mech_Scyther>
+          <Mech_CentipedeBlaster>8</Mech_CentipedeBlaster>
+          <Mech_Diabolus>2</Mech_Diabolus>
+          <Mech_Warqueen>1</Mech_Warqueen>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>The {LEADERKIND_label} is a psychically-present mechanoid commander who can resurrect recently-killed mechs and jump long distances. It carries a long-range toxic needle gun.</leaderDescription>
+    <rewardDef>NanostructuringChip</rewardDef>
+  </BossgroupDef>
+
+</Defs>

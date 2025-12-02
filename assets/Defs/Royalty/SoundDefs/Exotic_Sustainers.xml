@@ -1,0 +1,22 @@
+<Defs>
+
+  <SoundDef>
+    <defName>Bestowing_Warmup</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/Bestow_Warmup</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

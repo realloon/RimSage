@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  
+  <WorkGiverDef>
+    <defName>Fish</defName>
+    <label>fish</label>
+    <giverClass>WorkGiver_Fish</giverClass>
+    <workType>Hunting</workType>
+    <verb>fish</verb>
+    <gerund>fishing</gerund>
+    <tagToGive>Fieldwork</tagToGive>
+    <priorityInType>50</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+</Defs>

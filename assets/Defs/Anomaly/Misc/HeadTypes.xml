@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Ghoul_Normal</defName>
+    <graphicPath>Things/Pawn/Ghoul/Heads/GhoulskinHead_Normal</graphicPath>
+    <gender>None</gender>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.13, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Ghoul_Heavy</defName>
+    <graphicPath>Things/Pawn/Ghoul/Heads/GhoulskinHead_Heavy</graphicPath>
+    <gender>None</gender>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.13, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="NarrowBase">
+    <defName>Ghoul_Narrow</defName>
+    <graphicPath>Things/Pawn/Ghoul/Heads/GhoulskinHead_Narrow</graphicPath>
+    <gender>None</gender>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.13, 0, 0.18)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>Ghoul_Wide</defName>
+    <graphicPath>Things/Pawn/Ghoul/Heads/GhoulskinHead_Wide</graphicPath>
+    <gender>None</gender>
+    <hairMeshSize>(1.5, 1.5)</hairMeshSize>
+    <beardMeshSize>(1.7, 1.5)</beardMeshSize>
+    <randomChosen>false</randomChosen>
+    <requiredGenes>
+      <li>Jaw_Heavy</li>
+    </requiredGenes>
+    <eyeOffsetEastWest>(0.15, 0, 0.18)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>CultEscapee</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/CultEscapee_Head</graphicPath>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>TimelessOne</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/TimelessOne_Head</graphicPath>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.11, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>DarkScholar_Female</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/DarkScholarHead_Female</graphicPath>
+    <gender>Female</gender>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>DarkScholar_Male</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/DarkScholarHead_Male</graphicPath>
+    <gender>Male</gender>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Leathery_Female</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Leathery_Head_Female</graphicPath>
+    <gender>Female</gender>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Leathery_Male</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Leathery_Head_Male</graphicPath>
+    <gender>Male</gender>
+    <randomChosen>false</randomChosen>
+    <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+</Defs>

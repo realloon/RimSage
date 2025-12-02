@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-
-  <!-- EN: The spot directly in front of the electric inhibitor must be empty. -->
-  <InhibitorSpaceOccupied>电子阻滞器的正前方不能被其他建筑阻挡。</InhibitorSpaceOccupied>
-
-</LanguageData>

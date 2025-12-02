@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>AlphaThrumboSighting</defName>
+    <label>alpha thrumbo sighting</label>
+    <description>A rare alpha thrumbo was spotted here.</description>
+    <workerClass>SitePartWorker_AlphaThrumboSighting</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/ThrumboSightingsExpanding</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>AlphaThrumboSighting</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>AlphaThrumboSighting</defName>
+    <linkWithSite>AlphaThrumboSighting</linkWithSite>
+    <order>1600</order>
+    <genStep Class="GenStep_AlphaThrumboSighting" />
+  </GenStepDef>
+</Defs>

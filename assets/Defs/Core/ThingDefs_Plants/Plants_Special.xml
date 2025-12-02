@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="StumpBase" Abstract="True">
+    <category>Plant</category>
+    <thingClass>DeadPlant</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <useHitPoints>True</useHitPoints>
+    <minifiedDef IsNull="True" />
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <DeteriorationRate>4</DeteriorationRate>
+    </statBases>
+    <tickerType>Long</tickerType>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <drawerType>MapMeshOnly</drawerType>
+    <pathCostIgnoreRepeat>false</pathCostIgnoreRepeat>
+    <startingHpRange><min>0.5</min><max>1</max></startingHpRange>
+    <passability>PassThroughOnly</passability>
+    <pathCost>14</pathCost>
+    <messageOnDeteriorateInStorage>false</messageOnDeteriorateInStorage>
+    <plant>
+      <harvestWork>180</harvestWork>
+      <harvestMinGrowth>0</harvestMinGrowth> <!-- Always show "chop" designator -->
+      <harvestYield>4</harvestYield>
+      <fertilityMin>0.01</fertilityMin>
+      <fertilitySensitivity>0</fertilitySensitivity>
+      <soundHarvesting>Harvest_Tree</soundHarvesting>
+      <soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
+      <topWindExposure>0.05</topWindExposure>
+      <blockAdjacentSow>true</blockAdjacentSow>
+      <harvestedThingDef>WoodLog</harvestedThingDef>
+      <harvestFailable>false</harvestFailable>
+      <harvestTag>Wood</harvestTag>
+      <growDays>30</growDays>
+      <growMinGlow>0</growMinGlow>
+      <lifespanDaysPerGrowDays>0</lifespanDaysPerGrowDays>
+      <visualSizeRange>1.2~1.9</visualSizeRange>
+      <treeLoversCareIfChopped>false</treeLoversCareIfChopped>
+      <canDeteriorate>true</canDeteriorate>
+      <isStump>true</isStump>
+      <neverBlightable>true</neverBlightable>
+    </plant>
+    <thingCategories>
+      <li>Stumps</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="StumpBase">
+    <defName>BurnedTree</defName>
+    <label>burned stump</label>
+    <description>A burned tree stump. It's ugly and yields very little usable wood.</description>
+    <statBases>
+      <Beauty>-8</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/BurnedTree</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutPlant</shaderType>
+      <shadowData>
+        <volume>(0.15, 0.15, 0.13)</volume>
+        <offset>(-0.03,0,-0.44)</offset>
+      </shadowData>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="StumpBase" Name="StumpChoppedBase">
+    <defName>ChoppedStump</defName>
+    <label>chopped stump</label>
+    <description>A stump left behind after a tree has been felled. The stump can be extracted but yields very little usable wood. Left outdoors, the stump will deteriorate in time.</description>
+    <statBases>
+      <Beauty>0</Beauty>
+      <DeteriorationRate>20</DeteriorationRate>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/Stumps/Chopped</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutPlant</shaderType>
+      <shadowData>
+        <volume>(0.15, 0.1, 0.15)</volume>
+        <offset>(0,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <plant>
+      <harvestWork>90</harvestWork>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="StumpBase" Name="StumpSmashedBase">
+    <defName>SmashedStump</defName>
+    <label>smashed stump</label>
+    <description>The remnants of a tree destroyed by damage. It's ugly. The stump can be extracted but yields very little usable wood. Left outdoors, the stump will deteriorate in time.</description>
+    <statBases>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/Stumps/Smashed</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutPlant</shaderType>
+      <shadowData>
+        <volume>(0.15, 0.15, 0.15)</volume>
+        <offset>(0,0,-0.2)</offset>
+      </shadowData>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="PlantBase">
+    <defName>Plant_Ambrosia</defName>
+    <label>ambrosia bush</label>
+    <description>A rare wild bush which yields the ambrosia fruit. Ambrosia fruit is delicious and produces a drug-like mood boost. Ambrosia cannot be farmed, which makes wild ambrosia groves very valuable.\n\nIts rarity, beauty, and desirability are why ambrosia was named after the food of the ancient Greek gods.</description>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/Ambrosia</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shadowData>
+        <volume>(0.1, 0.2, 0.1)</volume>
+      </shadowData>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <fertilitySensitivity>0.15</fertilitySensitivity>
+      <growDays>6</growDays>
+      <leaflessGraphicPath>Things/Plant/Ambrosia_Leafless</leaflessGraphicPath>
+      <immatureGraphicPath>Things/Plant/Ambrosia_Immature</immatureGraphicPath>
+      <harvestYield>4</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <harvestAfterGrowth>0.3</harvestAfterGrowth>
+      <harvestedThingDef>Ambrosia</harvestedThingDef>
+      <visualSizeRange>0.6~1.1</visualSizeRange>
+      <topWindExposure>0.1</topWindExposure>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+      <allowAutoCut>false</allowAutoCut>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="PlantBaseNonEdible" Name="PlantTinctoria">
+    <defName>Plant_Tinctoria</defName>
+    <label>tinctoria</label>
+    <description>A genetically-engineered flower-like crop which secretes a self-altering dye. Tinctoria dye can be coaxed into different colors and used to change the color of walls, buildings, and more.</description>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>1</Beauty>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/Tinctoria</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <plant>
+      <dieIfLeafless>true</dieIfLeafless>
+      <sowWork>540</sowWork>
+      <growMinGlow>0.3</growMinGlow>
+      <topWindExposure>0.1</topWindExposure>
+      <growDays>2</growDays>
+      <lifespanDaysPerGrowDays>6</lifespanDaysPerGrowDays>
+      <allowAutoCut>false</allowAutoCut>
+      <harvestedThingDef>Dye</harvestedThingDef>
+      <harvestYield>1</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <purpose>Misc</purpose>
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
+    </plant>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Dye</defName>
+    <label>dye</label>
+    <description>Dye extracted from a tinctoria plant. It can be used to change the color of walls, buildings, and more.</description>
+    <possessionCount>25</possessionCount>
+    <descriptionHyperlinks>
+      <ThingDef>Plant_Tinctoria</ThingDef>
+    </descriptionHyperlinks>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>2.65</MarketValue>
+      <Mass>0.3</Mass>
+      <Beauty>0</Beauty>
+      <DeteriorationRate>1</DeteriorationRate>
+      <Flammability>1</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Dye</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="TreeBase">
+    <defName>Plant_Timbershroom</defName>
+    <label>timbershroom</label>
+    <description>A tall brown mushroom with a long stem. When harvested, it yields a wood-like substance.</description>
+    <fillPercent>0.4</fillPercent>
+    <graphicData>
+      <texPath>Things/Plant/Timbershroom</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <addTopAltitudeBias>true</addTopAltitudeBias>
+      <shadowData>
+        <volume>(0.2, 0.6, 0.2)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </shadowData>
+    </graphicData>
+    <neverMultiSelect>false</neverMultiSelect>
+    <minifiedDef IsNull="True" />
+    <plant>
+      <topWindExposure>0.1</topWindExposure>
+      <fertilityMin>0.01</fertilityMin>
+      <growDays>20</growDays>
+      <harvestYield>25</harvestYield>
+      <neverBlightable>true</neverBlightable>
+      <wildClusterWeight>0</wildClusterWeight>
+      <growMinGlow>0</growMinGlow>
+      <growOptimalGlow>0</growOptimalGlow>
+      <cavePlant>true</cavePlant>
+      <diesToLight>true</diesToLight>
+      <wildOrder>1</wildOrder>
+      <sowResearchPrerequisites Inherit="False" />
+      <sowTags Inherit="False" />
+      <treeLoversCareIfChopped>false</treeLoversCareIfChopped>
+      <burnedThingDef IsNull="True" />
+      <choppedThingDef IsNull="True" />
+      <smashedThingDef IsNull="True" />
+      <pollution>Any</pollution>
+    </plant>
+  </ThingDef>
+
+</Defs>

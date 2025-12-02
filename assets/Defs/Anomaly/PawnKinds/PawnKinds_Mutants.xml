@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef Name="MutantBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionDef>Entities</defaultFactionDef>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>7~12</initialResistanceRange>
+    <isGoodBreacher>true</isGoodBreacher>
+    <overrideDebugActionCategory>Entity</overrideDebugActionCategory>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.1</Dirtmole>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.05</Hussar>
+        <Waster MayRequire="Ludeon.RimWorld.Biotech">0.025</Waster>
+        <Pigskin MayRequire="Ludeon.RimWorld.Biotech">0.025</Pigskin>
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.025</Neanderthal>
+        <Impid MayRequire="Ludeon.RimWorld.Biotech">0.025</Impid>
+        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.025</Genie>
+        <Yttakin MayRequire="Ludeon.RimWorld.Biotech">0.025</Yttakin>
+        <Starjack MayRequire="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Odyssey">0.025</Starjack>
+      </xenotypeChances>
+    </xenotypeSet>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelIgnorePollution MayRequire="Ludeon.RimWorld.Biotech">true</apparelIgnorePollution>
+    <ignoreFactionApparelStuffRequirements>true</ignoreFactionApparelStuffRequirements>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MutantBase" Name="ShamblerBase" Abstract="True">
+    <mutant>Shambler</mutant>
+    <generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="ShamblerBase">
+    <defName>ShamblerSwarmer</defName>
+    <label>shambler swarmer</label>
+    <combatPower>40</combatPower>
+    <gearHealthRange>0.2~0.4</gearHealthRange>
+    <itemQuality>Poor</itemQuality>
+    <apparelMoney>0~100</apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>Neolithic</li>
+    </apparelTags>
+    <meleeAttackInfectionPathways>
+      <li>EntityAttacked</li>
+    </meleeAttackInfectionPathways>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="ShamblerBase">
+    <defName>ShamblerSoldier</defName>
+    <label>shambler soldier</label>
+    <combatPower>45</combatPower>
+    <gearHealthRange>0.2~0.4</gearHealthRange>
+    <itemQuality>Poor</itemQuality>
+    <apparelMoney>200~3000</apparelMoney>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <techHediffsMoney>1000~2000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Simple</li>
+      <li>Advanced</li>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+    <meleeAttackInfectionPathways>
+      <li>EntityAttacked</li>
+    </meleeAttackInfectionPathways>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="Gorehulk">
+    <defName>ShamblerGorehulk</defName>
+    <label>gorehulk</label> <!-- shambler is prepended in code -->
+    <mutant>Shambler</mutant>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MutantBase">
+    <defName>Ghoul</defName>
+    <label>ghoul</label>
+    <defaultFactionDef>PlayerColony</defaultFactionDef>
+    <mutant>Ghoul</mutant>
+    <generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+    <combatPower>90</combatPower>
+    <gearHealthRange>0.2~0.4</gearHealthRange>
+    <itemQuality>Poor</itemQuality>
+    <apparelMoney>0~100</apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>Neolithic</li>
+    </apparelTags>
+    <techHediffsTags>
+      <li>Ghoul</li>
+    </techHediffsTags>
+    <techHediffsChance>0.2</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <techHediffsMaxAmount>3</techHediffsMaxAmount>
+  </PawnKindDef>
+</Defs>

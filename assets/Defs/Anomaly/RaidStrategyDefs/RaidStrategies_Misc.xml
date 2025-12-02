@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RaidStrategyDef>
+    <defName>PsychicRitualSiege</defName>
+    <workerClass>RaidStrategyWorker_PsychicRitualSiege</workerClass>
+    <pawnsCanBringFood>true</pawnsCanBringFood>
+    <arriveModes>
+      <li>EdgeWalkIn</li>
+    </arriveModes>
+    <pointsFactorCurve>
+      <points>
+        <li>(0, 0.7)</li>
+        <li>(5000, 0.5)</li>
+      </points>
+    </pointsFactorCurve>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <letterLabelEnemy>Raid: Horax cultists</letterLabelEnemy>
+    <arrivalTextEnemy>They intend to perform {RITUAL_definite} ritual. Interrupt them before they can complete it. If they aren't stopped they may invoke the ritual multiple times.</arrivalTextEnemy>
+  </RaidStrategyDef>
+
+  <RaidStrategyDef>
+    <defName>ShamblerAssault</defName>
+    <workerClass>RaidStrategyWorker_ShamblerAssault</workerClass>
+    <arriveModes>
+      <li>EdgeWalkInDistributedGroups</li>
+    </arriveModes>
+    <pointsFactorCurve>
+      <points>
+        <li>(0, 1)</li>
+      </points>
+    </pointsFactorCurve>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <letterLabelEnemy>Shambler assault</letterLabelEnemy>
+    <arrivalTextEnemy>Some unnatural force is animating these lifeless corpses. They are intent on attacking your colony. As they exhaust their strange energy, they will begin to collapse within hours.</arrivalTextEnemy>
+  </RaidStrategyDef>
+
+</Defs>

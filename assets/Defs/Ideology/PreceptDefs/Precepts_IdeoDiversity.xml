@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>IdeoDiversity</defName>
+    <label>diversity of thought</label>
+    <iconPath>UI/Issues/IdeoDiversity</iconPath>
+  </IssueDef>
+
+  <!-- History events -->
+
+  <HistoryEventDef>
+    <defName>ParticipatedInOthersRitual</defName>
+    <label>participated in other ideoligion's ritual</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>IdeoDiversity_Abhorrent</defName>
+    <issue>IdeoDiversity</issue>
+    <label>intense bigotry</label>
+    <description>Other beliefs are evil deceptions ruining the world. It's totally unacceptable to let them exist in the community.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>60</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Abhorrent_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Abhorrent_Uniform</thought>
+        <description>All colonists have same ideoligion</description>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoLeaderResentmentAbhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiverity_Abhorrent_AltarSharing</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Abhorrent_StyleDominance</thought>
+        <thoughtStageDescriptions>
+          <li>Uniform surroundings</li>
+          <li>Diverse surroundings</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ParticipatedInOthersRitual</eventDef>
+        <thought>IdeoDiversity_Abhorrent_ParticipatedInOthersRitual</thought>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>IdeoDiversity_Horrible</defName>
+    <issue>IdeoDiversity</issue>
+    <label>moderate bigotry</label>
+    <description>Other beliefs are immoral delusions which do real harm. It's bad to let them exist in the community.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Horrible_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Horrible_Uniform</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoLeaderResentmentHorrible</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiverity_Horrible_AltarSharing</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Horrible_StyleDominance</thought>
+        <thoughtStageDescriptions>
+          <li>Uniform surroundings</li>
+          <li>Diverse surroundings</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ParticipatedInOthersRitual</eventDef>
+        <thought>IdeoDiversity_Horrible_ParticipatedInOthersRitual</thought>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>IdeoDiversity_Disapproved</defName>
+    <issue>IdeoDiversity</issue>
+    <label>mild bigotry</label>
+    <description>Other beliefs are clearly folly. It's not good to let them exist in the community.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Disapproved_Social</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Disapproved_Uniform</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoLeaderResentmentDisapproved</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiverity_Disapproved_AltarSharing</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Disapproved_StyleDominance</thought>
+        <thoughtStageDescriptions>
+          <li>Uniform surroundings</li>
+          <li>Diverse surroundings</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>ParticipatedInOthersRitual</eventDef>
+        <thought>IdeoDiversity_Disapproved_ParticipatedInOthersRitual</thought>
+        <onlyForNonSlaves>true</onlyForNonSlaves>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>IdeoDiversity_Standard</defName>
+    <issue>IdeoDiversity</issue>
+    <label>neutral</label>
+    <description>Other beliefs are neither approved or disapproved.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoLeaderResentmentStandard</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Standard_StyleDominance</thought>
+        <thoughtStageDescriptions>
+          <li>Uniform surroundings</li>
+          <li>Diverse surroundings</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>IdeoDiversity_Approved</defName>
+    <issue>IdeoDiversity</issue>
+    <label>appreciated</label>
+    <description>Other beliefs are worth understanding. It's good to live with others who think differently.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <willingToConstructOtherIdeoBuildables>true</willingToConstructOtherIdeoBuildables>
+    <associatedMemes>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Approved</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Approved_StyleDominance</thought>
+        <thoughtStageDescriptions>
+          <li>Uniform surroundings</li>
+          <li>Diverse surroundings</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>IdeoDiversity_Respected</defName>
+    <issue>IdeoDiversity</issue>
+    <label>highly appreciated</label>
+    <description>Other beliefs hold unique knowledge. It's great to live with others who think differently.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <willingToConstructOtherIdeoBuildables>true</willingToConstructOtherIdeoBuildables>
+    <requiredMemes>
+      <li>Individualist</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Respected</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Respected_StyleDominance</thought>
+        <thoughtStageDescriptions>
+          <li>Uniform surroundings</li>
+          <li>Diverse surroundings</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>IdeoDiversity_Exalted</defName>
+    <issue>IdeoDiversity</issue>
+    <label>exalted</label>
+    <description>Working through disagreement is the height of morality. It's very moral to live with others who think differently.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <willingToConstructOtherIdeoBuildables>true</willingToConstructOtherIdeoBuildables>
+    <requiredMemes>
+      <li>Individualist</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>Individualist</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Exalted</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IdeoDiversity_Exalted_StyleDominance</thought>
+        <thoughtStageDescriptions>
+          <li>Uniform surroundings</li>
+          <li>Diverse surroundings</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts: Ideo diversity -->
+
+  <!-- Abhorrent -->
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Abhorrent</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is so pure and obvious, yet some of those around me are captured by evil. It's abhorrent.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is so pure and obvious, yet many of those around me are captured by evil. It's abhorrent.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is so pure and obvious, yet almost all of those around me are captured by evil. It's abhorrent.</description>
+        <baseMoodEffect>-9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Abhorrent_Uniform</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity_Uniform</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>uniform thoughts</label>
+        <description>Our community is free from evil thoughts, as it should be.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Abhorrent_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity_Social</workerClass>
+    <stages>
+      <li>
+        <label>different ideoligion</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiverity_Abhorrent_AltarSharing</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_AltarSharing</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>false altar</label>
+        <description>The altar of a false belief is in the room with our {ALTAR_labelShort}! It's a disgusting violation of our sanctity.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Abhorrent_StyleDominance</defName>
+    <workerClass>ThoughtWorker_StyleDominance</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by constructions which match the style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Non-{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by constructions that do not match the style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Abhorrent_ParticipatedInOthersRitual</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>false ritual</label>
+        <description>I took part in a ritual based on evil beliefs. Whether I liked it or not, I should not have done it.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Horrible -->
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Horrible</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is so obvious, yet some of those around me are so deluded. It's horrible.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is so obvious, yet many those around me are so deluded. It's horrible.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is so obvious, yet almost all of those around me are so deluded. It's horrible.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Horrible_Uniform</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity_Uniform</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>uniform thoughts</label>
+        <description>Our community is free of filthy delusions, as it should be.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Horrible_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity_Social</workerClass>
+    <stages>
+      <li>
+        <label>different ideoligion</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiverity_Horrible_AltarSharing</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_AltarSharing</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>false altar</label>
+        <description>The altar of a false belief is in the room with our {ALTAR_labelShort}. It's a violation of our sanctity.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Horrible_StyleDominance</defName>
+    <workerClass>ThoughtWorker_StyleDominance</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by constructions which match the style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Non-{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by constructions that do not match the style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Horrible_ParticipatedInOthersRitual</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>false ritual</label>
+        <description>I took part in a ritual based on false beliefs. Whether I liked it or not, I should not have done it.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Disapproved -->
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Disapproved</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is clear, yet some of those around me are so foolish they can't see it. I don't like being subjected to their idiocy.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is clear, yet many of those around me are so foolish they can't see it. I don't like being subjected to their idiocy.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>My truth is clear, yet almost all of those around me are so foolish they can't see it. I don't like being subjected to their idiocy.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Disapproved_Uniform</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity_Uniform</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>uniform thoughts</label>
+        <description>Our community is free of foolishness, as it should be.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Disapproved_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity_Social</workerClass>
+    <stages>
+      <li>
+        <label>different ideoligion</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiverity_Disapproved_AltarSharing</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_AltarSharing</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>false altar</label>
+        <description>The altar of a false belief is in the room with our {ALTAR_labelShort}. It's wrong.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Disapproved_StyleDominance</defName>
+    <workerClass>ThoughtWorker_StyleDominance</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by constructions which match the style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>Non-{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by constructions that do not match the style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Disapproved_ParticipatedInOthersRitual</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>false ritual</label>
+        <description>I took part in a ritual based on other beliefs. Whether I liked it or not, it wasn't the best thing to do.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Standard -->
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Standard_StyleDominance</defName>
+    <workerClass>ThoughtWorker_StyleDominance</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by constructions which match the style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Non-{ADJECTIVE}-style surroundings</label>
+        <description>I am surrounded by non-{ADJECTIVE} constructions. That's fine, but I'd prefer being in a more {ADJECTIVE} environment with constructions that match style(s) that reflect my {ADJECTIVE} beliefs. My beliefs are reflected by these styles: {STYLES}</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Approved -->
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Approved</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Some others here have different beliefs. It's a sign of a healthy community.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Many others here have different beliefs. It's a sign of a healthy community.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Almost all others here have different beliefs. It's a sign of a healthy community.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Approved_StyleDominance</defName>
+    <workerClass>ThoughtWorker_StyleDominance</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>{ADJECTIVE} surroundings</label>
+        <description>My surroundings are very {ADJECTIVE}. That's fine, but a diverse environment would be better.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>Non-{ADJECTIVE} surroundings</label>
+        <description>My surroundings are not at all {ADJECTIVE}. I enjoy the diversity.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Respected -->
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Respected</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Some others here have different beliefs. It's an important sign of a healthy community.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Many others here have different beliefs. It's an important sign of a healthy community.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Almost all others here have different beliefs. It's an important sign of a healthy community.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Respected_StyleDominance</defName>
+    <workerClass>ThoughtWorker_StyleDominance</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>{ADJECTIVE} surroundings</label>
+        <description>My surroundings are very {ADJECTIVE}. That's fine, but a diverse environment would be better.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>Non-{ADJECTIVE} surroundings</label>
+        <description>My surroundings are not at all {ADJECTIVE}. I am happy to be a part of a diverse community.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Exalted -->
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Exalted</defName>
+    <workerClass>ThoughtWorker_Precept_IdeoDiversity</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Some others here have different beliefs. I'm so proud to be part of such a community.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Many others here have different beliefs. I'm so proud to be part of such a community.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>diverse thoughts</label>
+        <description>Almost all others here have different beliefs. I'm so proud to be part of such a community.</description>
+        <baseMoodEffect>9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoDiversity_Exalted_StyleDominance</defName>
+    <workerClass>ThoughtWorker_StyleDominance</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>{ADJECTIVE} surroundings</label>
+        <description>My surroundings are very {ADJECTIVE}. That's fine, but a diverse environment would be better.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>Non-{ADJECTIVE} surroundings</label>
+        <description>My surroundings are not at all {ADJECTIVE}. I'm very happy to be part of this diverse community.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

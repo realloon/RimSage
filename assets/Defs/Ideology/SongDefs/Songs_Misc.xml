@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SongDef>
+    <defName>ArchonexusVictorySong</defName>
+    <playOnMap>false</playOnMap>
+    <clipPath>Songs/Misc/ArchonexusEndCredits</clipPath>
+    <volume>0.8</volume>
+  </SongDef>
+
+</Defs>

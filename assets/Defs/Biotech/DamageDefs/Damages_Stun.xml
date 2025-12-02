@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef ParentName="StunBase">
+    <defName>MechBandShockwave</defName>
+    <label>mech-band shockwave</label>
+    <workerClass>DamageWorker_Stun</workerClass>
+    <externalViolenceForMechanoids>true</externalViolenceForMechanoids>
+    <deathMessage>{0} has been shocked to death.</deathMessage>
+    <harmsHealth>false</harmsHealth>
+    <impactSoundType>MechBandShockwave</impactSoundType>
+    <defaultDamage>50</defaultDamage>
+    <explosionSnowMeltAmount>0</explosionSnowMeltAmount>
+    <explosionCenterEffecter>BlastMechBandShockwave</explosionCenterEffecter>
+    <explosionCellEffecter>MechBandElectricityArc</explosionCellEffecter>
+    <explosionCellEffecterChance>0.1</explosionCellEffecterChance>
+    <explosionCellEffecterMaxRadius>10</explosionCellEffecterMaxRadius>
+    <soundExplosion>Explosion_MechBandShockwave</soundExplosion>
+    <combatLogRules>Damage_MechBandShockwave</combatLogRules>
+    <causeStun>true</causeStun>
+    <constantStunDurationTicks>1200</constantStunDurationTicks>
+  </DamageDef>
+
+</Defs>

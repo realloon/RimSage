@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="PotatoPlant">
+    <defName>Plant_Toxipotato</defName>
+    <label>toxipotato plant</label>
+    <description>A genetically-engineered variant of potato adapted for growing in polluted areas. Compared to regular potatoes, toxipotatoes take less time to grow but yield a meager harvest of food. When eaten raw, they have a high chance of causing food poisoning. In spite of this, they have saved many settlers from starvation after toxic events.</description>
+    <graphicData>
+      <texPath>Things/Plant/Toxipotato</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <plant>
+      <harvestedThingDef>RawToxipotato</harvestedThingDef>
+      <harvestYield>7</harvestYield>
+      <growDays>4.9</growDays>
+      <immatureGraphicPath>Things/Plant/Toxipotato_Immature</immatureGraphicPath>
+      <pollution>PollutedOnly</pollution>
+      <fertilityMin>0.50</fertilityMin>
+      <fertilitySensitivity>0</fertilitySensitivity>
+    </plant>
+  </ThingDef>
+
+</Defs>

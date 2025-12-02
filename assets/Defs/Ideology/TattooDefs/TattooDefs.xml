@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Tribal -->
+
+  <TattooDef>
+    <defName>Face_Tiger</defName>
+    <label>tiger</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Tiger/Face_Tiger</texPath>
+    <tattooType>Face</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Cobweb</defName>
+    <label>cobweb</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Cobweb/FaceTattooCobweb</texPath>
+    <tattooType>Face</tattooType>
+    <visibleNorth>false</visibleNorth>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Eclipse</defName>
+    <label>eclipse</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Eclipse/FaceTattooEclipse</texPath>
+    <tattooType>Face</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Line</defName>
+    <label>line</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Line/FaceTattooLine</texPath>
+    <tattooType>Face</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Oracle</defName>
+    <label>oracle</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Oracle/FaceTattooOracle</texPath>
+    <tattooType>Face</tattooType>
+    <visibleNorth>false</visibleNorth>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Pantheon</defName>
+    <label>pantheon</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Pantheon/FaceTattooPantheon</texPath>
+    <tattooType>Face</tattooType>
+    <visibleNorth>false</visibleNorth>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Warpaint</defName>
+    <label>war paint</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Warpaint/FaceTattooWarpaint</texPath>
+    <tattooType>Face</tattooType>
+    <visibleNorth>false</visibleNorth>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Worried</defName>
+    <label>worried</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Worried/FaceTattooWorried</texPath>
+    <tattooType>Face</tattooType>
+    <visibleNorth>false</visibleNorth>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooFaceTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Tiger</defName>
+    <label>tiger</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Tiger/Body_Tiger</texPath>
+    <tattooType>Body</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooBodyTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Buttons</defName>
+    <label>buttons</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Buttons/TattooButtons</texPath>
+    <tattooType>Body</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooBodyTribal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Rings</defName>
+    <label>rings</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Rings/TattooRings</texPath>
+    <tattooType>Body</tattooType>
+    <category>Tribal</category>
+    <styleTags>
+      <li>TattooBodyTribal</li>
+    </styleTags>
+  </TattooDef>
+
+
+  <!-- Gang -->
+
+  <TattooDef>
+    <defName>Face_Tear</defName>
+    <label>tear</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Tear/Face_Tear</texPath>
+    <tattooType>Face</tattooType>
+    <category>Punk</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>TattooFacePunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Headshot</defName>
+    <label>headshot</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Headshot/FaceTattooHeadshot</texPath>
+    <tattooType>Face</tattooType>
+    <category>Punk</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>TattooFacePunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Love</defName>
+    <label>love</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Love/FaceTattooLove</texPath>
+    <tattooType>Face</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooFacePunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Stars</defName>
+    <label>stars</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Stars/FaceTattooStars</texPath>
+    <tattooType>Face</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooFacePunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Heart</defName>
+    <label>heart</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Heart/Body_Heart</texPath>
+    <tattooType>Body</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooBodyPunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Cross</defName>
+    <label>cross</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Cross/TattooCross</texPath>
+    <tattooType>Body</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooBodyPunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Jester</defName>
+    <label>jester</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Jester/TattooJester</texPath>
+    <tattooType>Body</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooBodyPunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Moon</defName>
+    <label>moon</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Moon/TattooMoon</texPath>
+    <tattooType>Body</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooBodyPunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Power</defName>
+    <label>power</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Power/TattooPower</texPath>
+    <tattooType>Body</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooBodyPunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Royal</defName>
+    <label>royal</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Royal/TattooRoyal</texPath>
+    <tattooType>Body</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooBodyPunk</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Wings</defName>
+    <label>wings</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Wings/TattooWings</texPath>
+    <iconPath>Things/Pawn/Humanlike/Tattoos/Body_Wings/TattooWings_north</iconPath>
+    <tattooType>Body</tattooType>
+    <category>Punk</category>
+    <styleTags>
+      <li>TattooBodyPunk</li>
+    </styleTags>
+  </TattooDef>
+
+
+  <!-- Cannibal -->
+
+  <TattooDef>
+    <defName>Body_Skull</defName>
+    <label>skull</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Skull/Body_Skull</texPath>
+    <tattooType>Body</tattooType>
+    <category>Cannibal</category>
+    <styleTags>
+      <li>TattooBodyCannibal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Face_Spider</defName>
+    <label>spider</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_Spider/FaceTattooSpider</texPath>
+    <tattooType>Face</tattooType>
+    <category>Cannibal</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>TattooFaceCannibal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Scar</defName>
+    <label>scar</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Scar/TattooScar</texPath>
+    <tattooType>Body</tattooType>
+    <category>Cannibal</category>
+    <styleTags>
+      <li>TattooFaceCannibal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Skeleton</defName>
+    <label>skeleton</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Skeleton/TattooSkeleton</texPath>
+    <tattooType>Body</tattooType>
+    <category>Cannibal</category>
+    <styleTags>
+      <li>TattooFaceCannibal</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Spike</defName>
+    <label>spike</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Spike/TattooSpike</texPath>
+    <tattooType>Body</tattooType>
+    <category>Cannibal</category>
+    <styleTags>
+      <li>TattooFaceCannibal</li>
+    </styleTags>
+  </TattooDef>
+
+
+  <!-- Misc -->
+
+  <TattooDef>
+    <defName>Body_Insect</defName>
+    <label>insect</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Insect/TattooInsect</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <styleTags>
+      <li>TattooBodyInsect</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Body_Sun</defName>
+    <label>sun</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_Sun/TattooSun</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <styleTags>
+      <li>TattoBodyBuddhist</li>
+    </styleTags>
+  </TattooDef>
+
+</Defs>

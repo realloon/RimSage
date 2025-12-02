@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BodyDef>
+    <defName>Crab</defName>
+    <label>crab</label>
+    <corePart>
+      <def>AnimalShell</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>Stomach</def>
+          <coverage>0.04</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>InsectHeart</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Gills</def>
+          <coverage>0.08</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>HeadWithEarHoles</def>
+          <coverage>0.15</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>Brain</def>
+              <coverage>0.60</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>Eye</def>
+              <customLabel>left eye</customLabel>
+              <coverage>0.05</coverage>
+            </li>
+            <li>
+              <def>Eye</def>
+              <customLabel>right eye</customLabel>
+              <coverage>0.05</coverage>
+            </li>
+            <li>
+              <def>InsectMouth</def>
+              <coverage>0.10</coverage>
+              <groups>
+                <li>Teeth</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>Arm</def>
+          <customLabel>left claw</customLabel>
+          <coverage>0.06</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>FrontLeftClaws</li>
+          </groups>
+        </li>
+        <li>
+          <def>Arm</def>
+          <customLabel>right claw</customLabel>
+          <coverage>0.06</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>FrontRightClaws</li>
+          </groups>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>left first leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>right first leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>left second leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>right second leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>left third leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>right third leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>left swimming leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>right swimming leg</customLabel>
+          <coverage>0.05</coverage>
+          <height>Bottom</height>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+</Defs>

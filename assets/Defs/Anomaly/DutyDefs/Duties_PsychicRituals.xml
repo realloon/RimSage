@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>Goto</defName>
+    <thinkNode Class="JobGiver_GotoTravelDestination">
+      <tag>goto</tag>
+      <exactCell>true</exactCell>
+      <allowZeroLengthPaths>true</allowZeroLengthPaths>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>Invoke</defName>
+    <thinkNode Class="JobGiver_StandAndStare" />
+  </DutyDef>
+
+  <DutyDef>
+    <defName>PsychicRitualDance</defName>
+    <thinkNode Class="JobGiver_StandAndStare" />
+  </DutyDef>
+
+  <DutyDef>
+    <defName>WaitForRitualParticipants</defName>
+    <thinkNode Class="JobGiver_StandAndStare" />
+  </DutyDef>
+
+  <DutyDef>
+    <defName>DeliverPawnToPsychicRitualCell</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_DeliverPawnToPsychicRitualCell">
+          <tag>carry</tag>
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <wanderOnArrival>false</wanderOnArrival>
+          <skipIfTargetCanReach>true</skipIfTargetCanReach>
+        </li>
+        <li Class="JobGiver_GotoTravelDestination">
+          <tag>goto</tag>
+          <exactCell>true</exactCell>
+          <allowZeroLengthPaths>true</allowZeroLengthPaths>
+        </li>
+        <li Class="JobGiver_Idle" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>GatherOfferingsForPsychicRitual</defName>
+    <thinkNode Class="JobGiver_GatherOfferingsForPsychicRitual" />
+  </DutyDef>
+
+  <DutyDef>
+    <defName>DefendInvoker</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_TakeCombatEnhancingDrug">
+          <onlyIfInDanger>true</onlyIfInDanger>
+        </li>
+        <li Class="JobGiver_AIDefendPoint">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+        <li Class="ThinkNode_ForbidOutsideFlagRadius">
+          <maxDistToSquadFlag>16</maxDistToSquadFlag>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>SatisfyVeryUrgentNeeds</treeDef>
+            </li>
+          </subNodes> 
+        </li>
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>8</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Sprint</locomotionUrgencyOutsideRadius>
+        </li>
+        <li Class="JobGiver_Idle" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

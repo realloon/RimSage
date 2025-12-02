@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Apostasy</defName>
+    <label>apostasy</label>
+    <iconPath>UI/Issues/Apostasy</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>ChangedIdeo</defName>
+    <label>changed ideoligion</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Apostasy_Abhorrent</defName>
+    <issue>Apostasy</issue>
+    <label>abhorrent</label>
+    <description>To leave our ideoligion after having known it is the depth of immorality.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <conflictingMemes>
+      <li>Guilty</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Loyalist</li>
+      <li>Proselytizer</li>
+    </associatedMemes>
+    <statFactors>
+      <CertaintyLossFactor>0.4</CertaintyLossFactor>
+    </statFactors>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ChangedIdeo</eventDef>
+        <thought>ChangedIdeo_Know_Abhorrent</thought>
+        <description>Changed ideoligion</description>
+        <doerMustBeMyIdeo>true</doerMustBeMyIdeo>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IsApostate_Abhorrent_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Apostasy_Horrible</defName>
+    <issue>Apostasy</issue>
+    <label>horrible</label>
+    <description>To leave our ideoligion after having known it indicates deep moral flaws.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <conflictingMemes>
+      <li>Guilty</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Loyalist</li>
+      <li>Proselytizer</li>
+    </associatedMemes>
+    <statFactors>
+      <CertaintyLossFactor>0.6</CertaintyLossFactor>
+    </statFactors>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ChangedIdeo</eventDef>
+        <thought>ChangedIdeo_Know_Horrible</thought>
+        <description>Changed ideoligion</description>
+        <doerMustBeMyIdeo>true</doerMustBeMyIdeo>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IsApostate_Horrible_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Apostasy_Disapproved</defName>
+    <issue>Apostasy</issue>
+    <label>disapproved</label>
+    <description>To leave our ideoligion after having known it indicates character flaws.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <conflictingMemes>
+      <li>Guilty</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>Loyalist</li>
+      <li>Proselytizer</li>
+    </associatedMemes>
+    <statFactors>
+      <CertaintyLossFactor>0.8</CertaintyLossFactor>
+    </statFactors>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>ChangedIdeo</eventDef>
+        <thought>ChangedIdeo_Know_Disapproved</thought>
+        <description>Changed ideoligion</description>
+        <doerMustBeMyIdeo>true</doerMustBeMyIdeo>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>IsApostate_Disapproved_Social</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Related content -->
+
+  <ThoughtDef>
+    <defName>ChangedIdeo_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>30</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>recent apostasy</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ChangedIdeo_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>30</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>recent apostasy</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ChangedIdeo_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>30</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>recent apostasy</label>
+        <baseOpinionOffset>-8</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IsApostate_Abhorrent_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IsApostate_Social</workerClass>
+    <stages>
+      <li>
+        <label>apostate</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IsApostate_Horrible_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IsApostate_Social</workerClass>
+    <stages>
+      <li>
+        <label>apostate</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IsApostate_Disapproved_Social</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_IsApostate_Social</workerClass>
+    <stages>
+      <li>
+        <label>apostate</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

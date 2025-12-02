@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>TreeCutting</defName>
+    <label>cutting trees</label>
+    <iconPath>UI/Issues/TreeCutting</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>TreeCutting_Prohibited</defName>
+    <issue>TreeCutting</issue>
+    <label>prohibited</label>
+    <description>To violate the forest by cutting down a tree is a deeply abhorrent act and should never be done.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <warnPlayerOnDesignateChopTree>true</warnPlayerOnDesignateChopTree>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <disallowLoggingCamps>true</disallowLoggingCamps>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>CutTree</eventDef>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Know_Prohibited</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Know_Prohibited_Mood</thought>
+        <description>Someone cut down a tree</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>MinifiedTreeDied</eventDef>
+        <thought>MinifiedTreeDied_Know_Prohibited_Mood</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>TreeCutting_Horrible</defName>
+    <issue>TreeCutting</issue>
+    <label>horrible</label>
+    <description>To cut down a tree is a horrible act.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <warnPlayerOnDesignateChopTree>true</warnPlayerOnDesignateChopTree>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <disallowLoggingCamps>true</disallowLoggingCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Know_Horrible_Mood</thought>
+        <description>Someone cut down a tree</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>MinifiedTreeDied</eventDef>
+        <thought>MinifiedTreeDied_Know_Horrible_Mood</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>TreeCutting_Disapproved</defName>
+    <issue>TreeCutting</issue>
+    <label>disapproved</label>
+    <description>To cut down a tree is a distasteful thing to do.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <warnPlayerOnDesignateChopTree>true</warnPlayerOnDesignateChopTree>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+    </associatedMemes>
+    <disallowLoggingCamps>true</disallowLoggingCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>CutTree</eventDef>
+        <thought>CutTree_Know_Disapproved_Mood</thought>
+        <description>Someone cut down a tree</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>MinifiedTreeDied</eventDef>
+        <thought>MinifiedTreeDied_Know_Disapproved_Mood</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Tree died -->
+
+  <ThoughtDef>
+    <defName>MinifiedTreeDied_Know_Prohibited_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>extracted tree died</label>
+        <description>We extracted a tree from the ground and then let it die. Such things violations of nature should never be done.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MinifiedTreeDied_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>extracted tree died</label>
+        <description>We extracted a tree from the ground and let it die. It's wrong to scar nature this way.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MinifiedTreeDied_Know_Disapproved_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>extracted tree died</label>
+        <description>We extracted a tree from the ground and let it die. It wasn't good to harm nature this way.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Cut tree -->
+
+  <ThoughtDef>
+    <defName>CutTree_Know_Prohibited</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>cut tree</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CutTree_Horrible</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>cut tree</label>
+        <description>I had to cut down a tree. It was horrible to scar nature this way.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CutTree_Know_Prohibited_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>tree felled</label>
+        <description>We cut down a tree. Such things violations of nature should never be done.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CutTree_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>cut tree</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CutTree_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>tree felled</label>
+        <description>We cut down a tree. It's wrong to scar nature this way.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CutTree_Disapproved</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>cut tree</label>
+        <description>I had to cut down a tree. It was wrong to scar nature this way.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CutTree_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>cut tree</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CutTree_Know_Disapproved_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>tree felled</label>
+        <description>We cut down a tree. It wasn't good to harm nature this way.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

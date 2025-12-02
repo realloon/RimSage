@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>FleckGivingBirth</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.4</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <growthRate>0.4</growthRate>
+    <randomGraphics>
+      <li>
+        <texPath>Things/Mote/Childcare/GivingBirth/GivingBirthA</texPath>
+        <graphicClass>Graphic_FleckPulse</graphicClass>
+        <shaderType>TransparentShaking</shaderType>
+        <drawSize>0.5</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/Childcare/GivingBirth/GivingBirthB</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.5</drawSize>
+      </li>
+      <li>
+        <texPath>Things/Mote/Childcare/GivingBirth/GivingBirthC</texPath>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <shaderType>Mote</shaderType>
+        <drawSize>0.5</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <EffecterDef Abstract="True" Name="GivingBirth">
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>FleckGivingBirth</fleckDef>
+        <positionRadiusMin>0.35</positionRadiusMin>
+        <positionRadius>0.4</positionRadius>
+        <chancePerTick>0.023</chancePerTick>
+        <rotation>180</rotation>
+        <speed>0.35</speed>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <rotateTowardsTargetCenter>True</rotateTowardsTargetCenter>
+        <avoidLastPositionRadius>0.35</avoidLastPositionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef Parent="GivingBirth">
+    <defName>LaborEarly</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>LaborEarly</soundDef>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef Parent="GivingBirth">
+    <defName>LaborLate</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>LaborLate</soundDef>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

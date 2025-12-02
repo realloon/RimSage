@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Wound healing rate -->
+
+  <GeneDef Name="GeneHealingRateBase" Abstract="True">
+    <displayCategory>Healing</displayCategory>
+    <exclusionTags>
+      <li>WoundHealingRate</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHealingRateBase">
+    <defName>WoundHealing_Slow</defName>
+    <label>slow wound healing</label>
+    <labelShortAdj>slow-heal</labelShortAdj>
+    <description>Carriers of this gene heal from wounds half as fast as normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_WoundHealingRateSlow</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <statFactors>
+      <InjuryHealingFactor>0.5</InjuryHealingFactor>
+    </statFactors>
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>soft</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHealingRateBase">
+    <defName>WoundHealing_Fast</defName>
+    <label>fast wound healing</label>
+    <labelShortAdj>fast-heal</labelShortAdj>
+    <description>Carriers of this gene heal from wounds twice as fast as normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_WoundHealingRateFast</iconPath>
+    <displayOrderInCategory>40</displayOrderInCategory>
+    <statFactors>
+      <InjuryHealingFactor>2</InjuryHealingFactor>
+    </statFactors>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>stout</symbol></li>
+        <li><symbol>hard</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHealingRateBase">
+    <defName>WoundHealing_SuperFast</defName>
+    <label>superfast wound healing</label>
+    <labelShortAdj>super-heal</labelShortAdj>
+    <description>Carriers of this gene heal from wounds four times as fast as normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_WoundHealingRateSuperfast</iconPath>
+    <displayOrderInCategory>50</displayOrderInCategory>
+    <marketValueFactor>1.25</marketValueFactor>
+    <statFactors>
+      <InjuryHealingFactor>4</InjuryHealingFactor>
+    </statFactors>
+    <biostatMet>-3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>stout</symbol></li>
+        <li><symbol>hard</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Immunity -->
+
+  <GeneDef Name="GeneImmunityBase" Abstract="True">
+    <displayCategory>Healing</displayCategory>
+    <exclusionTags>
+      <li>Immunity</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneImmunityBase">
+    <defName>Immunity_Weak</defName>
+    <label>weak immunity</label>
+    <labelShortAdj>susceptible</labelShortAdj>
+    <description>Carriers of this gene gain immunity to diseases more slowly than normal. They may die from infections that others would survive.</description>
+    <iconPath>UI/Icons/Genes/Gene_WeakImmunity</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statFactors>
+      <ImmunityGainSpeed>0.9</ImmunityGainSpeed>
+    </statFactors>
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>sick</symbol>
+          <weight>3</weight>
+        </li>
+        <li><symbol>frail</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneImmunityBase">
+    <defName>Immunity_Strong</defName>
+    <label>strong immunity</label>
+    <labelShortAdj>immune</labelShortAdj>
+    <description>Carriers of this gene gain immunity to diseases faster than normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_StrongImmunity</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <statFactors>
+      <ImmunityGainSpeed>1.1</ImmunityGainSpeed>
+    </statFactors>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>stout</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneImmunityBase">
+    <defName>Immunity_SuperStrong</defName>
+    <label>super immunity</label>
+    <labelShortAdj>super-immune</labelShortAdj>
+    <description>Carriers of this gene gain immunity to diseases considerably faster than normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_SuperStrongImmunity</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <marketValueFactor>1.25</marketValueFactor>
+    <statFactors>
+      <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+    </statFactors>
+    <biostatMet>-2</biostatMet>
+    <biostatCpx>2</biostatCpx>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>stout</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- antitoxic lungs -->
+
+  <GeneDef Name="GenePollutionBase" Abstract="True">
+    <displayCategory>ResistanceAndWeakness</displayCategory>
+    <exclusionTags>
+      <li>ToxicEnvironmentResistance</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePollutionBase">
+    <defName>ToxicEnvironmentResistance_Partial</defName>
+    <label>partial antitoxic lungs</label>
+    <labelShortAdj>tox-resistant</labelShortAdj>
+    <description>Carriers of this gene are resistant to environmental toxins. They get less toxic buildup from tox gas, polluted terrain, and toxic fallout, but are still vulnerable to direct attacks with venom or injected poison. Additionally, they build up rot stink exposure slower.</description>
+    <iconPath>UI/Icons/Genes/Gene_PartialPollutionResistance</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <statOffsets>
+      <ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+    </statOffsets>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>tox</symbol>
+          <weight>2</weight>
+        </li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePollutionBase">
+    <defName>ToxicEnvironmentResistance_Total</defName>
+    <label>total antitoxic lungs</label>
+    <labelShortAdj>tox-immune</labelShortAdj>
+    <description>Carriers of this gene are immune to environmental toxins, but not from direct toxic attacks. They get no toxic buildup from tox gas, polluted terrain, or toxic fallout, and they are not bothered by acidic smog. They are still vulnerable to direct attacks like venom and injected poison. Additionally, they are immune to rot stink exposure.</description>
+    <iconPath>UI/Icons/Genes/Gene_TotalPollutionResistance</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <immuneToToxGasExposure>true</immuneToToxGasExposure>
+    <customEffectDescriptions>
+      <li>Tox gas immunity</li>
+    </customEffectDescriptions>
+    <statOffsets>
+      <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+    </statOffsets>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>tox</symbol>
+          <weight>4</weight>
+        </li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Misc -->
+
+  <GeneDef Name="FertilityBase" Abstract="True">
+    <displayCategory>Reproduction</displayCategory>
+    <exclusionTags>
+      <li>Fertility</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="FertilityBase">
+    <defName>Sterile</defName>
+    <label>sterile</label>
+    <description>Carriers of this gene cannot reproduce by natural means.</description>
+    <iconPath>UI/Icons/Genes/Gene_Sterile</iconPath>
+    <sterilize>true</sterilize>
+    <biostatMet>1</biostatMet>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <statFactors>
+      <Fertility>0</Fertility>
+    </statFactors>
+  </GeneDef>
+
+  <GeneDef ParentName="FertilityBase">
+    <defName>Fertile</defName>
+    <label>fertile</label>
+    <description>Carriers of this gene have a higher chance of becoming pregnant or impregnating others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Fertile</iconPath>
+    <displayOrderInCategory>110</displayOrderInCategory>
+    <statFactors>
+      <Fertility>2</Fertility>
+    </statFactors>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>Superclotting</defName>
+    <label>superclotting</label>
+    <description>Carriers of this gene have extra-power coagulating factors in their blood, and will stop bleeding very quickly when wounded.</description>
+    <iconPath>UI/Icons/Genes/Gene_Superclotting</iconPath>
+    <geneClass>Gene_Clotting</geneClass>
+    <displayCategory>Healing</displayCategory>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <customEffectDescriptions>
+      <li>Bleeding wounds close very quickly.</li>
+    </customEffectDescriptions>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>clot</symbol></li>
+        <li><symbol>scab</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>clot</symbol></li>
+        <li><symbol>scab</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+</Defs>

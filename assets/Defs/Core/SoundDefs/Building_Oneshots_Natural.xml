@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>GeyserSpray</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <sustainFadeoutTime>1</sustainFadeoutTime>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/Steam_Geyser/SteamGeyser_Venting</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>5~6</volumeRange>      
+        <pitchRange>0.9088235~1</pitchRange>      
+        <distRange>10~34</distRange>      
+        <sustainAttack>2</sustainAttack>      
+        <sustainSkipFirstAttack>False</sustainSkipFirstAttack>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>CocoonDestroyed</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/InsectCocoon/Destroyed</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>35</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Crater_FilledIn</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/CraterFilledIn</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~40</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

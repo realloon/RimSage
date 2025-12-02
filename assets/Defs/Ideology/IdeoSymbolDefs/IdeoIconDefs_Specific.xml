@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoIconDef>
+    <defName>AnimalsA</defName>
+    <iconPath>UI/Ideoligions/AnimalsA</iconPath>
+    <memes>
+      <li>Rancher</li>
+      <li>AnimalPersonhood</li>
+    </memes>
+  </IdeoIconDef> 
+
+  <IdeoIconDef>
+    <defName>AnimalsB</defName>
+    <iconPath>UI/Ideoligions/AnimalsB</iconPath>
+    <memes>
+      <li>Rancher</li>
+      <li>AnimalPersonhood</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AnimalsC</defName>
+    <iconPath>UI/Ideoligions/AnimalsC</iconPath>
+    <memes>
+      <li>Rancher</li>
+      <li>AnimalPersonhood</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AnimalsD</defName>
+    <iconPath>UI/Ideoligions/AnimalsD</iconPath>
+    <memes>
+      <li>Rancher</li>
+      <li>AnimalPersonhood</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AnimalsE</defName>
+    <iconPath>UI/Ideoligions/AnimalsE</iconPath>
+    <memes>
+      <li>Rancher</li>
+      <li>AnimalPersonhood</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Archist_Lance</defName>
+    <iconPath>UI/Ideoligions/Archist_Lance</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Archist_Spikes</defName>
+    <iconPath>UI/Ideoligions/Archist_Spikes</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ArchotechA</defName>
+    <iconPath>UI/Ideoligions/ArchotechA</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ArchotechB</defName>
+    <iconPath>UI/Ideoligions/ArchotechB</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ArchotechC</defName>
+    <iconPath>UI/Ideoligions/ArchotechC</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ArchotechD</defName>
+    <iconPath>UI/Ideoligions/ArchotechD</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ArchotechE</defName>
+    <iconPath>UI/Ideoligions/ArchotechE</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>DownBurst</defName>
+    <iconPath>UI/Ideoligions/DownBurst</iconPath>
+    <memes>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_TheistEmbodied</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Eagle</defName>
+    <iconPath>UI/Ideoligions/Eagle</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>AnimalPersonhood</li>
+      <li>NaturePrimacy</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ElementA</defName>
+    <iconPath>UI/Ideoligions/ElementA</iconPath>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ElementB</defName>
+    <iconPath>UI/Ideoligions/ElementB</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ElementC</defName>
+    <iconPath>UI/Ideoligions/ElementC</iconPath>
+    <memes>
+      <li>PainIsVirtue</li>
+      <li>Guilty</li>
+      <li>Cannibal</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ElementD</defName>
+    <iconPath>UI/Ideoligions/ElementD</iconPath>
+    <memes>
+      <li>HighLife</li>
+      <li>Raider</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ElementE</defName>
+    <iconPath>UI/Ideoligions/ElementE</iconPath>
+    <memes>
+      <li>AnimalPersonhood</li>
+      <li>Rancher</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>EmbodiedTheist_Bolthand</defName>
+    <iconPath>UI/Ideoligions/EmbodiedTheist_Bolthand</iconPath>
+    <memes>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_TheistEmbodied</li>
+    </memes>
+  </IdeoIconDef>
+  
+  <IdeoIconDef>
+    <defName>EmbodiedTheist_Punchcloud</defName>
+    <iconPath>UI/Ideoligions/EmbodiedTheist_Punchcloud</iconPath>
+    <memes>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_TheistEmbodied</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>FireLeaves</defName>
+    <iconPath>UI/Ideoligions/FireLeaves</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>NaturePrimacy</li>
+      <li>HighLife</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>FistRaised</defName>
+    <iconPath>UI/Ideoligions/FistRaised</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>FleshPurity</li>
+      <li>Supremacist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>FlowerSharp</defName>
+    <iconPath>UI/Ideoligions/FlowerSharp</iconPath>
+    <memes>
+      <li>NaturePrimacy</li>
+    </memes>
+  </IdeoIconDef>
+
+
+  <IdeoIconDef>
+    <defName>GeometryA</defName>
+    <iconPath>UI/Ideoligions/GeometryA</iconPath>
+    <memes>
+      <li>Structure_TheistEmbodied</li>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_Ideological</li>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>GeometryB</defName>
+    <iconPath>UI/Ideoligions/GeometryB</iconPath>
+    <memes>
+      <li>Structure_TheistEmbodied</li>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_Ideological</li>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>GeometryC</defName>
+    <iconPath>UI/Ideoligions/GeometryC</iconPath>
+    <memes>
+      <li>Structure_TheistEmbodied</li>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_Ideological</li>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>GeometryD</defName>
+    <iconPath>UI/Ideoligions/GeometryD</iconPath>
+    <memes>
+      <li>Structure_TheistEmbodied</li>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_Ideological</li>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>GeometryE</defName>
+    <iconPath>UI/Ideoligions/GeometryE</iconPath>
+    <memes>
+      <li>Structure_TheistEmbodied</li>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_Ideological</li>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>KnivesDown</defName>
+    <iconPath>UI/Ideoligions/KnivesDown</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+      <li>Rustican</li>
+    </cultures>
+    <memes>
+      <li>PainIsVirtue</li>
+      <li>Cannibal</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ManFlower</defName>
+    <iconPath>UI/Ideoligions/ManFlower</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>FleshPurity</li>
+      <li>HumanPrimacy</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>NatureB</defName>
+    <iconPath>UI/Ideoligions/NatureB</iconPath>
+    <memes>
+      <li>NaturePrimacy</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>NatureC</defName>
+    <iconPath>UI/Ideoligions/NatureC</iconPath>
+    <memes>
+      <li>Proselytizer</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>NatureD</defName>
+    <iconPath>UI/Ideoligions/NatureD</iconPath>
+    <memes>
+      <li>NaturePrimacy</li>
+      <li>HighLife</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>NatureE</defName>
+    <iconPath>UI/Ideoligions/NatureE</iconPath>
+    <memes>
+      <li>NaturePrimacy</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>OliveBranches</defName>
+    <iconPath>UI/Ideoligions/OliveBranches</iconPath>
+    <memes>
+      <li>NaturePrimacy</li>
+      <li>Collectivist</li>
+      <li>Structure_Ideological</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Orbit</defName>
+    <iconPath>UI/Ideoligions/Orbit</iconPath>
+    <cultures>
+      <li>Astropolitan</li>
+    </cultures>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Ouroboros</defName>
+    <iconPath>UI/Ideoligions/Ouroboros</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>AnimalPersonhood</li>
+      <li>NaturePrimacy</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>PirateC</defName>
+    <iconPath>UI/Ideoligions/PirateC</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Loyalist</li>
+      <li>Supremacist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>PirateD</defName>
+    <iconPath>UI/Ideoligions/PirateD</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Cannibal</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>PirateE</defName>
+    <iconPath>UI/Ideoligions/PirateE</iconPath>
+    <memes>
+      <li>Tunneler</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>PoliticalC</defName>
+    <iconPath>UI/Ideoligions/PoliticalC</iconPath>
+    <cultures>
+      <li>Astropolitan</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Tunneler</li>
+      <li>Structure_Ideological</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>PoliticalD</defName>
+    <iconPath>UI/Ideoligions/PoliticalD</iconPath>
+    <memes>
+      <li>Guilty</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ReligionC</defName>
+    <iconPath>UI/Ideoligions/ReligionC</iconPath>
+    <memes>
+      <li>Structure_TheistEmbodied</li>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_OriginChristian</li>
+      <li>Structure_OriginIslamic</li>
+      <li>Structure_OriginBuddhist</li>
+      <li>Structure_OriginHindu</li>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ReligionD</defName>
+    <iconPath>UI/Ideoligions/ReligionD</iconPath>
+    <memes>
+      <li>Structure_TheistEmbodied</li>
+      <li>Structure_TheistAbstract</li>
+      <li>Structure_OriginChristian</li>
+      <li>Structure_OriginIslamic</li>
+      <li>Structure_OriginBuddhist</li>
+      <li>Structure_OriginHindu</li>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ReligionE</defName>
+    <iconPath>UI/Ideoligions/ReligionE</iconPath>
+    <memes>
+      <li>Structure_Archist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>ScarHands</defName>
+    <iconPath>UI/Ideoligions/ScarHands</iconPath>
+    <memes>
+      <li>PainIsVirtue</li>
+      <li>Guilty</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Skull</defName>
+    <iconPath>UI/Ideoligions/Skull</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>PainIsVirtue</li>
+      <li>Cannibal</li>
+      <li>Raider</li>
+    </memes>
+  </IdeoIconDef>
+
+
+  <IdeoIconDef>
+    <defName>SpikeyA</defName>
+    <iconPath>UI/Ideoligions/SpikeyA</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Supremacist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpikeyB</defName>
+    <iconPath>UI/Ideoligions/SpikeyB</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Supremacist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpikeyC</defName>
+    <iconPath>UI/Ideoligions/SpikeyC</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Supremacist</li>
+      <li>Structure_OriginIslamic</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpikeyD</defName>
+    <iconPath>UI/Ideoligions/SpikeyD</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Supremacist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpikeyE</defName>
+    <iconPath>UI/Ideoligions/SpikeyE</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Supremacist</li>
+      <li>Structure_OriginIslamic</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>SpiralsA</defName>
+    <iconPath>UI/Ideoligions/SpiralsA</iconPath>
+    <cultures>
+      <li>Kriminul</li>
+    </cultures>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Steer</defName>
+    <iconPath>UI/Ideoligions/Steer</iconPath>
+    <cultures>
+      <li>Corunan</li>
+      <li>Rustican</li>
+    </cultures>
+    <memes>
+      <li>Raider</li>
+      <li>Rancher</li>
+      <li>AnimalPersonhood</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TechAtom</defName>
+    <iconPath>UI/Ideoligions/TechAtom</iconPath>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TechGearchains</defName>
+    <iconPath>UI/Ideoligions/TechGearchains</iconPath>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TechHand</defName>
+    <iconPath>UI/Ideoligions/TechHand</iconPath>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoIconDef>
+  
+  <IdeoIconDef>
+    <defName>TechLighthouse</defName>
+    <iconPath>UI/Ideoligions/TechLighthouse</iconPath>
+    <cultures>
+      <li>Rustican</li>
+    </cultures>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TechPulse</defName>
+    <iconPath>UI/Ideoligions/TechPulse</iconPath>
+    <cultures>
+      <li>Rustican</li>
+    </cultures>
+    <memes>
+      <li>Transhumanist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>Treeflat</defName>
+    <iconPath>UI/Ideoligions/Treeflat</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>NaturePrimacy</li>
+      <li>TreeConnection</li>
+      <li>Structure_Animist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TribalA</defName>
+    <iconPath>UI/Ideoligions/TribalA</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>Structure_Animist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TribalB</defName>
+    <iconPath>UI/Ideoligions/TribalB</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>Structure_Animist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TribalC</defName>
+    <iconPath>UI/Ideoligions/TribalC</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>Structure_Animist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TribalD</defName>
+    <iconPath>UI/Ideoligions/TribalD</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>Structure_Animist</li>
+    </memes>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>TribalE</defName>
+    <iconPath>UI/Ideoligions/TribalE</iconPath>
+    <cultures>
+      <li>Corunan</li>
+    </cultures>
+    <memes>
+      <li>Structure_Animist</li>
+    </memes>
+  </IdeoIconDef>
+
+</Defs>

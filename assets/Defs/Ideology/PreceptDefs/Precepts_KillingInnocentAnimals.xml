@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>KillingInnocentAnimals</defName>
+    <label>killing innocent animals</label>
+    <iconPath>UI/Issues/KillingInnocentAnimals</iconPath>
+  </IssueDef>
+
+  <!-- 
+    KilledInnocentAnimal HistoryEvent will trigger if any of the following are true:
+      - Animal is in no mental state
+      - Animal is in a mental state caused by damage (e.g. Manhunter, PanicFlee)
+      - Animal is in a mental state caused by a psycast (e.g. Berserk, Neuroquake psycast)
+    Except in these cases:
+      - Animal belongs to a faction that is hostile to the killer
+      - Animal is hunting a human of any faction
+      - Animal is hunting an animal in any human faction
+      - Animal has scaria
+  -->
+  <HistoryEventDef>
+    <defName>KilledInnocentAnimal</defName>
+    <label>killed innocent animal</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>KillingInnocentAnimals_Abhorrent</defName>
+    <issue>KillingInnocentAnimals</issue>
+    <label>abhorrent</label>
+    <description>To kill an innocent animal is a horrifically inhuman act. Innocent animals are those who are not attacking, or who were only driven to attack by human provocation.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <opposedWorkTypes>
+      <li>Hunting</li>
+    </opposedWorkTypes>
+    <exclusionTags>
+      <li>KillingAnimalsBad</li>
+    </exclusionTags>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+      <li>AnimalPersonhood</li>
+    </associatedMemes>
+    <disallowHuntingCamps>true</disallowHuntingCamps>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Know_Abhorrent_Mood</thought>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <description>Kill innocent animal</description>
+        <nullifyingTraits>
+          <li>Psychopath</li>
+        </nullifyingTraits>
+        <nullifyingHediffs>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>KillingInnocentAnimals_Horrible</defName>
+    <issue>KillingInnocentAnimals</issue>
+    <label>horrible</label>
+    <description>To kill an innocent animal is a horrible act. Innocent animals are those who are not attacking, or who were only driven to attack by human provocation.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <opposedWorkTypes>
+      <li>Hunting</li>
+    </opposedWorkTypes>
+    <exclusionTags>
+      <li>KillingAnimalsBad</li>
+    </exclusionTags>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+      <li>AnimalPersonhood</li>
+    </associatedMemes>
+    <disallowHuntingCamps>true</disallowHuntingCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Horrible</thought>
+        <description>Killed innocent animal</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Know_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Know_Horrible_Mood</thought>
+        <description>Someone killed an innocent animal</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>KillingInnocentAnimals_Disapproved</defName>
+    <issue>KillingInnocentAnimals</issue>
+    <label>disapproved</label>
+    <description>To kill an innocent animal is an ugly act. Innocent animals are those who are not attacking, or who were only driven to attack by human provocation.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <opposedWorkTypes>
+      <li>Hunting</li>
+    </opposedWorkTypes>
+    <exclusionTags>
+      <li>KillingAnimalsBad</li>
+    </exclusionTags>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+      <li>AnimalPersonhood</li>
+    </associatedMemes>
+    <disallowHuntingCamps>true</disallowHuntingCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Disapproved</thought>
+        <description>Killed innocent animal</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Know_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>KilledInnocentAnimal</eventDef>
+        <thought>KilledInnocentAnimal_Know_Disapproved_Mood</thought>
+        <description>Someone killed an innocent animal</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts: Killed innocent animal -->
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>killed innocent animal</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Know_Abhorrent_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>innocent animal killed</label>
+        <description>An innocent, adorable animal was killed! That's murder!</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Horrible</defName>
+    <thoughtClass>Thought_KilledInnocentAnimal</thoughtClass>
+    <durationDays>6</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>killed innocent {0}</label>
+        <description>I had to kill an innocent animal. It was almost like being forced to murder.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>killed innocent animal</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>innocent animal killed</label>
+        <description>An innocent animal was killed. What a terrible, heartless act against another being.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Disapproved</defName>
+    <thoughtClass>Thought_KilledInnocentAnimal</thoughtClass>
+    <durationDays>6</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>killed innocent {0}</label>
+        <description>I had to kill an innocent animal. It was not something I approve of.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>killed innocent animal</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledInnocentAnimal_Know_Disapproved_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>innocent animal killed</label>
+        <description>An innocent animal was killed. I do not approve of this.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

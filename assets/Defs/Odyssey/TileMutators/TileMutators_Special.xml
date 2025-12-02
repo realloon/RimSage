@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TileMutatorDef>
+    <defName>InsectMegahive</defName>
+    <label>insect megahive</label>
+    <description>This area hosts a massive subterranean insect hive.</description>
+    <workerClass>TileMutatorWorker_InsectMegahive</workerClass>
+    <minHilliness>Mountainous</minHilliness>
+    <requiresFactionOfDef>Insect</requiresFactionOfDef>
+  </TileMutatorDef>
+
+</Defs>

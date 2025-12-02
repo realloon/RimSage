@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef Name="PsychicArchotechEmanator" Abstract="True">
+    <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="PsychicArchotechEmanator">        
+    <defName>PsychicArchotechEmanator_Major</defName>
+    <workerClass>ThoughtWorker_PsychicArchotechEmanator_Major</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>archotech emanation</label>
+        <description>These thoughts coming from the structure, they open doors to such vastness... I feel so small that I might disappear.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>archotech emanation</label>
+        <description>I can feel the edge of its wordless whispers... They make me uneasy.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="PsychicArchotechEmanator">        
+    <defName>PsychicArchotechEmanator_Grand</defName>
+    <workerClass>ThoughtWorker_PsychicArchotechEmanator_Grand</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>archotech emanation</label>
+        <description>It makes me perceive so much. Eyeless knowledge of absolute existence, all minds speaking and dying and birthing at once. It's hard not to lose connection with myself.</description>
+        <baseMoodEffect>-14</baseMoodEffect>
+      </li>
+      <li>
+        <label>archotech emanation</label>
+        <description>It pays no attention to me but I sense the edge of its perception. Flashes of terrifying timeless sight. Hard to ignore.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="PsychicArchotechEmanator">        
+    <defName>PsychicArchotechEmanator_Core</defName>
+    <workerClass>ThoughtWorker_PsychicArchotechEmanator_Core</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>archotech emanation</label>
+        <description>The scale of it. The fractal logic-scape of the multiversal hyperplane. No distance. No time. No me or them. I'm everything. I'm nothing.</description>
+        <baseMoodEffect>-18</baseMoodEffect>
+      </li>
+      <li>
+        <label>archotech emanation</label>
+        <description>I can feel the edge of its thoughts, see the endless scope when I close my eyes. I need to focus on my physical body or I drift away.</description>
+        <baseMoodEffect>-9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef ParentName="VillagerBase">
+    <defName>Villager_Pig</defName>
+    <weaponTags>
+      <li>ShortShots</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <defaultFactionDef>OutlanderRoughPig</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="Villager_Child">
+    <defName>Villager_Child_Pig</defName>
+    <defaultFactionDef>OutlanderRoughPig</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="GuardBase">
+    <defName>Town_Guard_Pig</defName>
+    <weaponTags>
+      <li>ShortShots</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <defaultFactionDef>OutlanderRoughPig</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="CouncilmanBase">
+    <defName>Town_Councilman_Pig</defName>
+    <weaponTags>
+      <li>ShortShots</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <defaultFactionDef>OutlanderRoughPig</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TraderBase">
+    <defName>Town_Trader_Pig</defName>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <defaultFactionDef>OutlanderRoughPig</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MercenaryGunnerBase">
+    <defName>Mercenary_Gunner_Pig</defName>
+    <label>pig gunner</label>
+    <initialResistanceRange>6~10</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>ShortShots</li>
+    </weaponTags>
+    <defaultFactionDef>OutlanderRoughPig</defaultFactionDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MercenaryEliteBase">
+    <defName>Mercenary_Elite_Pig</defName>
+    <label>pig elite</label>
+    <initialResistanceRange>15~23</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>ShortShots</li>
+    </weaponTags>
+    <defaultFactionDef>OutlanderRoughPig</defaultFactionDef>
+  </PawnKindDef>
+
+</Defs>

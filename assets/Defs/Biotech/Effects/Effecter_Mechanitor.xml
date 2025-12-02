@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <EffecterDef>
+    <defName>MechRepairing</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>DustPuff</fleckDef>
+        <chancePerTick>0.035</chancePerTick>
+        <scale>0.9~1.3</scale>
+        <rotationRate>-60~60</rotationRate>
+        <speed>0.6~1.8</speed>
+        <spawnLocType>OnTarget</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>SparkFlash</fleckDef>
+        <positionLerpFactor>0.49</positionLerpFactor>
+        <chancePerTick>0.2</chancePerTick>
+        <scale>2.5~3.5</scale>
+        <spawnLocType>OnTarget</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <moteDef>Mote_SparkThrown</moteDef>
+        <positionLerpFactor>0.49</positionLerpFactor>
+        <chancePerTick>0.2</chancePerTick>
+        <scale>0.24~0.34</scale>
+        <airTime>0.08~0.16</airTime>
+        <rotationRate>-240~240</rotationRate>
+        <speed>7.2~24</speed>
+        <angle>135~225</angle>
+        <positionRadius>0.02</positionRadius>
+        <spawnLocType>OnTarget</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>CommsConsoleBossgroupSummoned</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>CommsConsoleBossgroupSummoned</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>BurnoutMechlinkBoosterUsed</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>BurnoutMechlinkBoosterUsed</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MechbandAntennaWaves</moteDef>
+        <positionOffset>(0, 0, 0.5)</positionOffset>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>AntennaFlash</fleckDef>
+        <burstCount>1~1</burstCount>
+        <positionOffset>(0, 0, 0.5)</positionOffset>
+        <scale>4</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>PlainFlash</fleckDef>
+        <burstCount>1~1</burstCount>
+        <positionOffset>(0, 0, 0.5)</positionOffset>
+        <scale>2.0</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>MechbandDishUsed</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>MechbandDishUsed</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MechbandDishWaves</moteDef>
+        <positionOffset>(-0.5, 0, -0.5)</positionOffset>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>AntennaFlash</fleckDef>
+        <burstCount>1~1</burstCount>
+        <positionOffset>(-0.5, 0, -0.5)</positionOffset>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <scale>5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>MechBandAntennaPrepared</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>MechbandDishPrepared_Mechanical</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>MechbandDishPrepared_Electronic</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <ticksBeforeSustainerStart>600</ticksBeforeSustainerStart>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MechbandPreparing</moteDef>
+        <burstCount>1~1</burstCount>
+        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+        <perRotationOffsets>
+          <li>-0.72, 0, 0.1</li>
+          <li>0, 0, 0.8</li>
+          <li>0.75, 0, 0.075</li>
+          <li>0, 0, -0.7</li>
+        </perRotationOffsets>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>MechBandDishPrepared</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>MechbandDishPrepared_Mechanical</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>MechbandDishPrepared_Electronic</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <ticksBeforeSustainerStart>600</ticksBeforeSustainerStart>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MechbandPreparing</moteDef>
+        <burstCount>1~1</burstCount>
+        <positionOffset>(0.575, 0, 0.3)</positionOffset>
+        <perRotationOffsets>
+          <li>-1.1, 0, 0.45</li>
+          <li>0.14, 0, 0.50</li>
+          <li>-1.13, 0, -0.61</li>
+          <li>-1.27, 0, 0.5</li>
+        </perRotationOffsets>
+        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>MechbandBuildingDestroyed</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MechbandElectricity</moteDef>
+        <burstCount>3</burstCount>
+        <positionRadius>0.6</positionRadius>
+        <positionOffset>(-0.5, 0, -0.5)</positionOffset>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <scale>1~1.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BrightFlashLong</fleckDef>
+        <burstCount>1~1</burstCount>
+        <positionOffset>(-0.5, 0, -0.5)</positionOffset>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <scale>2.7</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>MechChargerWasteProduced</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>MechChargerWasteProduced</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>MechChargerWasteRemoved</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>MechChargerWasteRemoved</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>PollutionPumped</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>PollutionPumped</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>PollutionExtractedPoluxTree</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>PollutionExtractedPoluxTree</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>ControlMech</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>ControlMech</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MechControlTakingSparkArch</moteDef>
+        <burstCount>1~1</burstCount>
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <rotation>-90</rotation>
+        <spawnLocType>RandomDrawPosOnTarget</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_RedFlash</moteDef>
+        <ticksBetweenMotes>17</ticksBetweenMotes>
+        <burstCount>1</burstCount>
+        <spawnLocType>OnTarget</spawnLocType>
+        <positionRadius>0.35</positionRadius>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <scale>2.66</scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>BandNodeTuning</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>BandNodeTuning_Ambience</soundDef>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>BandNodeRetuning</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>BandNodeTuning_Ambience</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>BandNodeYellowPulse</fleckDef>
+        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>BandNodeTuned</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>BandNodeTuned_Ambience</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>BandNodeGreenPulse</fleckDef>
+        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>BandNodeUntuned</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>BandNodeRedPulse</fleckDef>
+        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

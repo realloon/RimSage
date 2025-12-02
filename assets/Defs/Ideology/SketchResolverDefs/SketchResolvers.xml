@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SketchResolverDef>
+    <defName>AncientBarracks</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientBarracks" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientStorageRoom</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientStorageRoom" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientEquipmentRoom</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientEquipmentRoom" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientPowerRoom</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientPowerRoom" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientLab</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientLab" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientArmory</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientArmory" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientUtilityBuilding</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientUtilityBuilding" />
+  </SketchResolverDef>
+
+  <SketchResolverDef>
+    <defName>AncientLandingPad</defName>
+    <isRoot>true</isRoot>
+    <resolver Class="SketchResolver_AncientLandingPad" />
+  </SketchResolverDef>
+
+</Defs>

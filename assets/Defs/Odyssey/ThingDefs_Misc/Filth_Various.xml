@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_VolcanicAsh</defName>
+    <label>volcanic ash</label>
+    <statBases>
+      <Beauty>-12</Beauty>
+      <Cleanliness>-5</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Filth/VolcanicAsh</texPath>
+      <color>(255, 255, 255, 220)</color>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <filth>
+      <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+      <disappearsInDays>10~15</disappearsInDays>
+      <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <rainWashes>true</rainWashes>
+    </filth>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_ChemfuelStain</defName>
+    <label>chemfuel stain</label>
+    <useHitPoints>true</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <Beauty>-10</Beauty>
+      <Cleanliness>-15</Cleanliness>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>2.0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Filth/LiquidFuel</texPath>
+    </graphicData>
+    <filth>
+      <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+      <disappearsInDays>60~80</disappearsInDays>
+      <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <maxThickness>1</maxThickness>
+      <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+    </filth>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>Filth_ChippedIce</defName>
+    <label>chipped ice</label>
+    <graphicData>
+      <texPath>Things/Filth/ChippedIce</texPath>
+    </graphicData>
+    <filth>
+      <disappearsInDays>10~15</disappearsInDays>
+      <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+    </filth>
+    <statBases>
+      <BeautyOutdoors>-2</BeautyOutdoors>
+    </statBases>
+  </ThingDef>
+
+</Defs>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <NeedDef>
+    <defName>Suppression</defName>
+    <needClass>Need_Suppression</needClass>
+    <label>suppression</label>
+    <showOnNeedList>false</showOnNeedList>
+    <baseLevel>0.5</baseLevel>
+    <slavesOnly>true</slavesOnly>
+    <fallPerDay>0</fallPerDay>
+  </NeedDef>
+
+</Defs>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>InstallMechlink</defName>
+    <driverClass>JobDriver_UseItem</driverClass>
+    <reportString>installing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RemoveMechlink</defName>
+    <driverClass>JobDriver_RemoveMechlink</driverClass>
+  </JobDef>
+
+  <JobDef>
+    <defName>MechCharge</defName>
+    <driverClass>JobDriver_MechCharge</driverClass>
+    <reportString>charging.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>HaulMechToCharger</defName>
+    <driverClass>JobDriver_HaulMechToCharger</driverClass>
+    <reportString>hauling TargetA to charger.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>RepairMech</defName>
+    <driverClass>JobDriver_RepairMech</driverClass>
+    <reportString>repairing TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>RepairMechRemote</defName>
+    <driverClass>JobDriver_RepairMechRemote</driverClass>
+    <reportString>repairing TargetA.</reportString>
+    <abilityCasting>true</abilityCasting>
+  </JobDef>
+
+  <JobDef>
+    <defName>ShieldMech</defName>
+    <driverClass>JobDriver_ShieldMech</driverClass>
+    <reportString>shielding TargetA.</reportString>
+    <abilityCasting>true</abilityCasting>
+  </JobDef>
+
+  <JobDef>
+    <defName>ControlMech</defName>
+    <driverClass>JobDriver_ControlMech</driverClass>
+    <reportString>taking control of TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>DisassembleMech</defName>
+    <driverClass>JobDriver_DisassembleMech</driverClass>
+    <reportString>disassembling TargetA.</reportString>
+  </JobDef>
+
+
+  <JobDef>
+    <defName>PrisonerBloodfeed</defName>
+    <driverClass>JobDriver_PrisonerBloodfeed</driverClass>
+    <reportString>feeding on TargetA.</reportString> 
+  </JobDef>
+
+  <JobDef>
+    <defName>Deathrest</defName>
+    <driverClass>JobDriver_Deathrest</driverClass>
+    <reportString>deathresting.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>CreateXenogerm</defName>
+    <driverClass>JobDriver_CreateXenogerm</driverClass>
+    <reportString>creating xenogerm.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>EnterBuilding</defName>
+    <driverClass>JobDriver_EnterBuilding</driverClass>
+    <reportString>entering TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryToBuilding</defName>
+    <driverClass>JobDriver_CarryToBuilding</driverClass>
+    <reportString>carrying TargetB to TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>AbsorbXenogerm</defName>
+    <driverClass>JobDriver_AbsorbXenogerm</driverClass>
+    <reportString>absorbing xenogerm from TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>GetReimplanted</defName>
+    <driverClass>JobDriver_GetReimplanted</driverClass>
+    <reportString>absorbing xenogerm from TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryGenepackToContainer</defName>
+    <driverClass>JobDriver_CarryGenepackToContainer</driverClass>
+    <reportString>hauling TargetA to TargetB.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef ParentName="CastAbilityOnThing">
+    <defName>CastAbilityOnThingWithoutWeapon</defName>
+    <neverShowWeapon>true</neverShowWeapon>
+    <playerInterruptible>false</playerInterruptible>
+  </JobDef>
+
+  <JobDef ParentName="CastAbilityOnThing">
+    <defName>CastAbilityOnThingWithoutWeaponInterruptible</defName>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+
+  <JobDef ParentName="CastAbilityOnThing">
+    <defName>CastAbilityGoToThing</defName>
+    <driverClass>JobDriver_CastAbilityGoTo</driverClass>
+    <neverShowWeapon>true</neverShowWeapon>
+    <playerInterruptible>false</playerInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>Wait_WithSleeping</defName>
+    <driverClass>JobDriver_WaitWithSleeping</driverClass>
+    <reportString>waiting.</reportString>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>ReleaseMechs</defName>
+    <driverClass>JobDriver_ReleaseMechs</driverClass>
+    <reportString>releasing mechanoids.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>SelfShutdown</defName>
+    <driverClass>JobDriver_SelfShutdown</driverClass>
+    <reportString>dormant self-charging.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+
+  <JobDef>
+    <defName>ReadDatacore</defName>
+    <driverClass>JobDriver_UseItemResearchBench</driverClass>
+    <reportString>decrypting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>ClearPollution</defName>
+    <driverClass>JobDriver_ClearPollution</driverClass>
+    <reportString>cleaning pollution.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>TryRomance</defName>
+    <driverClass>JobDriver_Romance</driverClass>
+    <reportString>romancing TargetA.</reportString>
+  </JobDef>
+  
+</Defs>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>Deathrest</defName>
+    <label>deathresting</label>
+    <description>A deep coma-like sleep that lasts several days and restores the body's resources. Certain genes create a need for deathrest. Deathrest can also be enhanced with various support buildings that give special bonuses to the deathrester.</description>
+    <hediffClass>Hediff_Deathrest</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <recordDownedTale>false</recordDownedTale>
+    <defaultLabelColor>(149, 189, 252)</defaultLabelColor>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>InterruptedDeathrest</defName>
+    <label>interrupted deathrest</label>
+    <description>Deathrest was interrupted while this person's metabolism was still out of balance. They will be sick for days while regaining equilibrium.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <makesSickThought>true</makesSickThought>
+    <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>300000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.8</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>DeathrestExhaustion</defName>
+    <label>deathrest exhaustion</label>
+    <description>This person desperately needs to deathrest to rebalance their metabolism.</description>
+    <hediffClass>Hediff</hediffClass>
+    <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.5</setMax>
+          </li>
+        </capMods>
+        <statOffsets>
+          <PsychicSensitivity>-1</PsychicSensitivity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>HemogenCraving</defName>
+    <label>hemogen craving</label>
+    <description>Due to a lack of hemogen, this person's body is breaking down hemogen reserves in their bone marrow. This causes disorientation and a painful craving for human blood.</description>
+    <hediffClass>Hediff_HemogenCraving</hediffClass>
+    <defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor>
+    <initialSeverity>0.01</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <label>minor</label>
+        <painOffset>0.05</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.9</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.35</minSeverity>
+        <painOffset>0.1</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.8</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>major</label>
+        <minSeverity>0.7</minSeverity>
+        <painOffset>0.15</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.5</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SeverityFromHemogen">
+        <severityPerHourEmpty>0.05</severityPerHourEmpty>
+        <severityPerHourHemogen>-0.1</severityPerHourHemogen>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>RegenerationComa</defName>
+    <label>regeneration coma</label>
+    <description>Had this person not been genetically deathless, they would have already died from their health conditions. Instead, they have fallen into a regeneration coma, during which they will regenerate their body.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+    <forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <compClass>HediffComp_DisappearsPausable_LethalInjuries</compClass>
+        <disappearsAfterTicks>420000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>XenogerminationComa</defName>
+    <label>xenogermination coma</label>
+    <description>A xenogerm was implanted in this person. The xenogerm needs time to integrate itself into the host and modify the genes and chemistry of various tissues throughout the body. During this time, the person cannot safely wake up, so the xenogerm keeps them in a coma.\n\nThe duration of this coma can be reduced by implanting a xenogerm with better medical facilities and more skilled doctors.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120000</disappearsAfterTicks> <!-- Average coma duration based on ImplantXenogerm surgery outcome. -->
+        <showRemainingTime>true</showRemainingTime>
+        <canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+      </li>
+    </comps>
+  </HediffDef>
+
+
+  <HediffDef>
+    <defName>XenogermLossShock</defName>
+    <label>gene loss shock</label>
+    <description>This person's genes were recently removed or expelled. This has destabilized the person's metabolism and hormones, leaving them temporarily weak and drowsy, with a weakened immune system.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+    <deprioritizeHealing>true</deprioritizeHealing>
+    <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+    <stages>
+      <li>
+        <painOffset>0.05</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>XenogermReplicating</defName>
+    <label>genes regrowing</label>
+    <description>This person's genetic material is regrowing. This process doesn't have any direct health effects. However, extracting their genes while they are regrowing will kill them.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+    <initialSeverity>1</initialSeverity>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <lifeThreatening>true</lifeThreatening>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>6000000~8400000</disappearsAfterTicks><!-- 100~140 days -->
+        <showRemainingTime>true</showRemainingTime>
+        <canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+        <messageOnDisappear>{PAWN_nameDef}'s genes have finished regrowing.</messageOnDisappear>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>GeneticDrugNeed</defName>
+    <label>chemical dependency</label>
+    <description>This person has a genetically-induced biochemical dependency on a specific drug. Without regular doses of the drug, their body cannot maintain itself in a healthy state and they will suffer degrading health and mood until they die.\n\nTakes effect after age: 13.</description>
+    <hediffClass>Hediff_ChemicalDependency</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <initialSeverity>0</initialSeverity>
+    <maxSeverity>12</maxSeverity>
+    <lethalSeverity>12</lethalSeverity>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <minSeverity>0.001</minSeverity>
+        <becomeVisible>true</becomeVisible>
+      </li>
+      <li>
+        <label>deficiency</label>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.7</setMax>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.8</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <setMax>0.5</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <overrideLabel>deficiency coma</overrideLabel>
+        <minSeverity>6</minSeverity>
+        <lifeThreatening>true</lifeThreatening>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.2</severityPerDay>
+        <minAge>13</minAge>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BioStarvation</defName>
+    <label>bio-starvation</label>
+    <description>This person was in a growth vat which wasn't functioning properly due to lack of power or nutrition feedstock. This has left their body in a state of bio-starvation.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+    <maxSeverity>6</maxSeverity>
+    <stages>
+      <li>
+        <painOffset>0.15</painOffset>
+        <hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>VatLearning</defName>
+    <label>vat learning</label>
+    <description>The growth vat is electrically stimulating this person's brain to induce skill development. This process is not very effective, and will only partially replace the skills missed from not growing in the outside world.</description>
+    <hediffClass>Hediff_VatLearning</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.33</severityPerDay>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>VatGrowing</defName>
+    <label>vat growing</label>
+    <description>The growth vat is stimulating this person's body to increase the rate of cell division and aging.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <comps>
+      <li>
+        <compClass>HediffComp_VatGrowing</compClass>
+      </li>
+    </comps>
+  </HediffDef>
+
+  
+  <HediffDef ParentName="DiseaseBase">
+    <defName>ScanningSickness</defName>
+    <label>Scanning sickness</label>
+    <description>This person was scanned by a softscanner to produce a mechanoid subcore. The high-energy scanning device has caused disturbances in their brain chemistry which will take time to resolve themselves. There won't be any long-term damage.</description>
+    <initialSeverity>4</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+        <mechanitorFactor>2</mechanitorFactor>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <vomitMtbDays>1.5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>PsychicBond</defName>
+    <label>psychic bond</label>
+    <description>This person has a psychic bond with another person based on the psychic bonding gene. The bond itself grants some limited psychic awareness, allowing it to connect even with the psychically deaf.</description>
+    <hediffClass>Hediff_PsychicBond</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <overrideLabel>psychic bond</overrideLabel>
+        <extraTooltip>This person's bonded individual is nearby.</extraTooltip>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <PsychicSensitivity>0.1</PsychicSensitivity>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <overrideLabel>psychic bond distance</overrideLabel>
+        <extraTooltip>This person feels separated from their bonded individual.</extraTooltip>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <PsychicSensitivity>0.05</PsychicSensitivity>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- A marker hediff that will recreate the psychic bond between two pawns if dead one is resurrected. -->
+  <HediffDef>
+    <defName>PsychicBondTorn</defName>
+    <label>psychic bond torn</label>
+    <description>This person had a psychic bond with another, but the bond was torn when their partner died.</description>
+    <hediffClass>Hediff_PsychicBondTorn</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+  </HediffDef>
+
+</Defs>

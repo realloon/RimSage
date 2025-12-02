@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issues -->
+
+  <IssueDef>
+    <defName>Trees</defName>
+    <label>trees</label>
+    <iconPath>UI/Issues/Trees</iconPath>
+  </IssueDef>
+
+  <IssueDef>
+    <defName>GauranlenConnection</defName>
+    <label>Gauranlen connection</label>
+    <iconPath>UI/Issues/GauranlenConnection</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>PlantedGauranlenTree</defName>
+    <label>planted Gauranlen tree</label>
+  </HistoryEventDef>
+
+  <!-- Precept -->
+
+  <PreceptDef>
+    <defName>Trees_Desired</defName>
+    <issue>Trees</issue>
+    <label>desired</label>
+    <description>It's essential to live surrounded by beautiful trees.</description>
+    <impact>Medium</impact>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <associatedMemes>
+      <li>TreeConnection</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TreesDesired</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>TreeDensityReduced</thought>
+        <thoughtStageDescriptions>
+          <li>Healthy trees</li>
+          <li>Trees disturbed</li>
+          <li>Trees defaced</li>
+          <li>Trees damaged</li>
+          <li>Trees harmed</li>
+          <li>Trees defiled</li>
+          <li>Trees wrecked</li>
+          <li>Trees ravaged</li>
+        </thoughtStageDescriptions>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>GauranlenConnection_Strong</defName>
+    <issue>GauranlenConnection</issue>
+    <label>strong</label>
+    <description>We have a special connection with the Gauranlen trees. The trees refocus production easily under our influence, and we are not satisfied unless we have that connection.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <requiredMemes>
+      <li>TreeConnection</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>TreeConnection</li>
+    </associatedMemes>
+    <statOffsets>
+      <PruningSpeed>0.25</PruningSpeed>
+    </statOffsets>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GauranlenConnectionDesired</thought>
+        <thoughtStageDescriptions>
+          <li>Gauranlen connection</li>
+          <li>Want Gauranlen connection (min expectation: Very low)</li>
+          <li>Want Gauranlen connection (min expectation: Low)</li>
+          <li>Want Gauranlen connection (min expectation: Moderate)</li>
+          <li>Want Gauranlen connection (min expectation: High)</li>
+          <li>Want Gauranlen connection (min expectation: Sky high)</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>PlantedGauranlenTree</eventDef>
+        <eventLabel>planted Gauranlen tree</eventLabel>
+        <points>1</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>GauranlenConnectionDesired</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_GauranlenConnectionDesired</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>Gauranlen connection</label>
+        <description>I am happily connected to a Gauranlen tree.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>want Gauranlen connection</label>
+        <description>Without a connection to a Gauranlen tree, I feel disconnected from nature.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>want Gauranlen connection</label>
+        <description>Without a connection to a Gauranlen tree, I feel disconnected from nature.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>want Gauranlen connection</label>
+        <description>Without a connection to a Gauranlen tree, I feel disconnected from nature.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>want Gauranlen connection</label>
+        <description>Without a connection to a Gauranlen tree, I feel disconnected from nature.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>want Gauranlen connection</label>
+        <description>Without a connection to a Gauranlen tree, I feel disconnected from nature.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TreesDesired</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_TreesDesired</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>amazing trees</label>
+        <description>I am surrounded by several massive, beautiful trees. The glory of nature astounds me!</description>
+        <baseMoodEffect>9</baseMoodEffect>
+      </li>
+      <li>
+        <label>amazing tree</label>
+        <description>I very recently encountered a massive, beautiful tree - a physical seat of morality!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+      <li>
+        <label>remarkable trees</label>
+        <description>I am surrounded by a lush forest.</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+      <li>
+        <label>amazing tree</label>
+        <description>I recently encountered a massive, beautiful tree.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>rich forest</label>
+        <description>I was recently surrounded by a lush forest.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>full trees</label>
+        <description>I recently walked among many full trees.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>mixed trees</label>
+        <description>I recently walked among a wide variety of trees.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>full tree</label>
+        <description>I recently encountered a full tree.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>mini trees</label>
+        <description>I was recently surrounded by plenty of miniature trees.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>mini tree</label>
+        <description>I recently got to enjoy the company of a miniature tree.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>no tree</label>
+        <description>I haven't been around any trees in a while.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>no tree</label>
+        <description>I miss having trees around me.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees missed</label>
+        <description>It has been a while since I've been near a tree.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees missed</label>
+        <description>It has been too long since I've been near a tree.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees sorely missed</label>
+        <description>It has been way too long since I've been near a tree!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>TreeDensityReduced</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_TreeDensity</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>healthy trees</label>
+        <description>In the past quadrum, we didn't destroy many trees at all. Harmony with the trees is the basic foundation for a good life.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees disturbed</label>
+        <description>In the past quadrum, we have destroyed trees we shouldn't have. It might have been necessary, but it is still an occasion for sadness.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees defaced</label>
+        <description>In the past quadrum, we have destroyed a lot of trees we shouldn't have. I don't think this was necessary.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees damaged</label>
+        <description>In the past quadrum, we have destroyed many trees we shouldn't have. This crime was not necessary, but we did it anyways.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees harmed</label>
+        <description>In the past quadrum, we have destroyed an inexcusable number of trees. We need to do so much better.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees defiled</label>
+        <description>In the past quadrum, we have destroyed an inexcusably large number of trees. The guilt lays heavy upon us.</description>
+        <baseMoodEffect>-13</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees wrecked</label>
+        <description>In the past quadrum, we have destroyed a very large number of trees. I can hear the leafy screams even now.</description>
+        <baseMoodEffect>-16</baseMoodEffect>
+      </li>
+      <li>
+        <label>trees ravaged</label>
+        <description>In the past quadrum, we have destroyed a horrific number of trees. We are the blight on this universe.</description>
+        <baseMoodEffect>-20</baseMoodEffect> <!-- note that this needs to counteract the likely 'amazing trees' buff -->
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

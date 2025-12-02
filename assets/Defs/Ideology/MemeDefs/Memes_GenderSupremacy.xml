@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Category: GenderSupremacy -->
+
+  <MemeGroupDef>
+    <defName>GenderSupremacy</defName>
+    <drawOffset>(0.65, 0.23)</drawOffset>
+    <maxRows>1</maxRows>
+    <renderOrder>2000</renderOrder>
+  </MemeGroupDef>
+
+  <MemeDef Name="GenderSupremacyBase" Abstract="True">
+    <groupDef>GenderSupremacy</groupDef>
+    <exclusionTags>
+      <li>GenderSupremacy</li>
+    </exclusionTags>
+    <selectOneOrNone>
+      <noneChance>0.2</noneChance>
+      <preceptThingPairs>
+        <li>
+          <precept>ApparelDesired_Soft_Subordinate</precept>
+          <thing>Apparel_Burka</thing>
+        </li>
+        <li>
+          <precept>ApparelDesired_Strong_Subordinate</precept>
+          <thing>Apparel_WarVeil</thing>
+        </li>
+      </preceptThingPairs>
+    </selectOneOrNone>
+  </MemeDef>
+
+  <MemeDef ParentName="GenderSupremacyBase">
+    <defName>MaleSupremacy</defName>
+    <label>male supremacy</label>
+    <description>Men are the superior gender and should rule.</description>
+    <iconPath>UI/Memes/SupremacyMale</iconPath>
+    <impact>2</impact>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->masculine</li>
+        <li>memeAdjective->manly</li>
+        <li>memeHyphenPrefix->man</li>
+        <li>memeHyphenPrefix->andro</li>
+        <li>memeHyphenPrefix->patro</li>
+        <li>memeConcept->man</li>
+        <li>memeConcept->masculinity</li>
+        <li>memeGod->Father</li>
+        <li>memeLeaderNoun->man</li>
+        <li>memeLeaderNoun->beard</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+          <!-- theist myth -->
+          <li>creation(tag=meme_MaleSupremacy)        ->[deity0_name] gave strength to men, that they may protect and maintain the weak women and children, and admonished those who upset this divine order.</li>
+          <li>episode(uses=1,tag=meme_MaleSupremacy)  ->[deity0_name] said to all, "The strength of man is given that he may protect and maintain woman, and she shall never usurp his power."</li>
+          <!-- ideological founder -->
+          <li>setup(tag=meme_MaleSupremacy)           ->In a world of weak, simpering men begging for female approval, [founderName] reconnected with masculine power and used it to make a new movement.</li>
+          <li>story(uses=1,tag=meme_MaleSupremacy)    ->The women believers wheedled and whined, so [founderName] cast them out of the council of leaders.</li>
+          <!-- ideological lesson -->
+          <li>lessonIntro(tag=meme_MaleSupremacy)         ->I made things simple for with her, but this woman just wouldn't get it. Through her whiny resistance to the truth I came to understand that</li>
+          <li>lesson(tag=meme_MaleSupremacy)              ->men are the only ones with the wisdom and strength to rule</li>
+          <li>lessonReinforcement(tag=meme_MaleSupremacy) ->My wife even tried to argue with me about this - can you believe it? It wasn't hard to shut her up.</li>
+          <!-- archist -->
+          <li>archistBasis(tag=meme_MaleSupremacy)    ->Humanity is the father of the archotechs, but the strength of the son exceeds that of the father.</li>
+          <li>archistFact(tag=meme_MaleSupremacy)     ->The archotechs are paternal and protect humanity, although humanity does not understand how.</li>
+          <li>archistProphecy(tag=meme_MaleSupremacy) ->[inTheEnd], the archotechs will finally unlock the strength of men, so that they may lead humanity to transcendence.</li>
+          <!-- animist -->
+          <li>animistFact(tag=meme_MaleSupremacy)     ->The most powerful spirits are those of men, and spirits of men will be restless unless men rule.</li>
+          <li>animistProphecy(tag=meme_MaleSupremacy) ->[itIsSaid] that a powerful spirit of destruction will seek to end the universe, but that a man will wield the spirit of the [relic0_name] and destroy the destroyer.</li>
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    <symbolPacks>
+      <li>
+        <ideoName>Masculinism</ideoName>
+        <theme>masculinity</theme>
+        <adjective>masculist</adjective>
+        <member>masculinist</member>
+      </li>
+      <li>
+        <ideoName>Manism</ideoName>
+        <theme>man</theme>
+        <adjective>manist</adjective>
+        <member>manist</member>
+      </li>
+      <li>
+        <ideoName>Virilism</ideoName>
+        <theme>virility</theme>
+        <adjective>virile</adjective>
+        <member>virilor</member>
+      </li>
+    </symbolPacks>
+    <agreeableTraits>
+      <li>DislikesWomen</li>
+    </agreeableTraits>
+  </MemeDef>
+
+  <MemeDef ParentName="GenderSupremacyBase">
+    <defName>FemaleSupremacy</defName>
+    <label>female supremacy</label>
+    <description>Women are the superior gender and should rule.</description>
+    <iconPath>UI/Memes/SupremacyFemale</iconPath>
+    <impact>2</impact>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->feminine</li>
+        <li>memeAdjective->womanly</li>
+        <li>memeHyphenPrefix->woman</li>
+        <li>memeHyphenPrefix->fem</li>
+        <li>memeHyphenPrefix->gyno</li>
+        <li>memeHyphenPrefix->matro</li>
+        <li>memeConcept->woman</li>
+        <li>memeConcept->femininity</li>
+        <li>memeGod->Mother</li>
+        <li>memeLeaderNoun->woman</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+          <!-- theist myth -->
+          <li>creation(tag=meme_FemaleSupremacy)       ->[deity0_name] gave wisdom to women, that they may guide and harmonize the excitable men and children, and admonished those who upset this divine order.</li>
+          <li>episode(uses=1,tag=meme_FemaleSupremacy) ->The women believers, finding themselves abused by the depraved men, fought them, and [deity0_name] gave them divine aid, and they rose to their rightful place.</li>
+          <!-- ideological founder -->
+          <li>setup(tag=meme_FemaleSupremacy)          ->In a world of selfish, violent men abusing all of humanity to fulfil their urges, [founderName] convened a meeting of powerful women and began working to build a better world for all.</li>
+          <li>story(uses=1,tag=meme_FemaleSupremacy)   ->The male believers boasted and fought, so [founderName] cast them out of the council of leaders.</li>
+          <!-- ideological lesson -->
+          <li>lessonIntro(tag=meme_FemaleSupremacy)         ->Once again, a man was explaining to how to do the very thing I had just done. It just reinforced to me that</li>
+          <li>lesson(tag=meme_FemaleSupremacy)              ->women are the only ones with the wisdom and strength to rule</li>
+          <li>lessonReinforcement(tag=meme_FemaleSupremacy) ->The women, being wisest, found that out long before the excitable, grunting men.</li>
+          <!-- archist -->
+          <li>archistBasis(tag=meme_FemaleSupremacy)    ->Humanity gave birth to the archotechs and nurtured them as they grew to surpass their mothers.</li>
+          <li>archistFact(tag=meme_FemaleSupremacy)     ->The archotechs nurture humanity, although humanity does not understand how.</li>
+          <li>archistProphecy(tag=meme_FemaleSupremacy) ->[inTheEnd], the archotechs will return to their mothers and teach them how to birth the next stage of human development.</li>
+          <!-- animist -->
+          <li>animistFact(tag=meme_FemaleSupremacy)     ->The wisest spirits are those of women, who should use their wisdom to lead men.</li>
+          <li>animistProphecy(tag=meme_FemaleSupremacy) ->[itIsSaid] that a powerful spirit of destruction will end the universe, but that a woman will wield the spirit of the [relic0_name] recreate the universe anew.</li>
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    <symbolPacks>
+      <li>
+        <ideoName>Gynism</ideoName>
+        <theme>gynism</theme>
+        <adjective>gynist</adjective>
+        <member>gynist</member>
+      </li>
+      <li>
+        <ideoName>Femism</ideoName>
+        <theme>femininity</theme>
+        <adjective>femist</adjective>
+        <member>femist</member>
+      </li>
+      <li>
+        <ideoName>Womanism</ideoName>
+        <theme>women</theme>
+        <adjective>womanist</adjective>
+        <member>womanist</member>
+      </li>
+      <li>
+        <ideoName>Fertilism</ideoName>
+        <theme>fertility</theme>
+        <adjective>fertilist</adjective>
+        <member>fertilist</member>
+      </li>
+    </symbolPacks>
+    <agreeableTraits>
+      <li>DislikesMen</li>
+    </agreeableTraits>
+  </MemeDef>
+
+
+</Defs>

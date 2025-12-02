@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BiomeDef Name="SpaceBiome">
+    <defName>Space</defName>
+    <label>space</label>
+    <description>Empty void.</description>
+    <workerClass>BiomeWorker_Space</workerClass>
+    <wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
+    <generatesNaturally>false</generatesNaturally>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <noAmbientWind>true</noAmbientWind>
+    <constantOutdoorTemperature>-75</constantOutdoorTemperature>
+    <inVacuum>true</inVacuum>
+    <canAutoChoose>false</canAutoChoose>
+    <maxFishPopulation>0</maxFishPopulation>
+    <allowRoads>false</allowRoads>
+    <allowRivers>false</allowRivers>
+    <allowFarmingCamps>false</allowFarmingCamps>
+    <hasVirtualPlants>false</hasVirtualPlants>
+    <allowPollution>true</allowPollution>
+    <hasBedrock>false</hasBedrock>
+    <baseWeatherCommonalities>
+      <Orbit>1</Orbit>
+    </baseWeatherCommonalities>
+    <diseases>
+      <li>
+        <diseaseInc>Disease_OrganDecay</diseaseInc>
+        <commonality>20</commonality>
+      </li>
+    </diseases>
+    <soundsAmbient>
+      <li>Ambient_SpaceMap</li>
+    </soundsAmbient>
+    <forceRockTypes>
+      <li>Vacstone</li>
+    </forceRockTypes>
+    <canExitMap>false</canExitMap>
+  </BiomeDef>
+  
+  <BiomeDef ParentName="SpaceBiome">
+    <defName>Orbit</defName>
+    <label>orbit</label>
+    <description>Empty space a few hundred kilometers above the surface of the world.</description>
+  </BiomeDef>
+
+</Defs>

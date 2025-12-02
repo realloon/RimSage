@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>MeleeDoorDamageFactor</defName>
+    <label>melee door damage factor</label>
+    <description>A special multiplier on the amount of melee damage inflicted on doors.</description>
+    <category>PawnCombat</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnHumanlikes>false</showOnHumanlikes>
+    <showOnMechanoids>true</showOnMechanoids>
+    <displayPriorityInCategory>5000</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>ShootingAccuracyChildFactor</defName>
+    <label>shooting accuracy multiplier</label>
+    <category>PawnCombat</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <showDevelopmentalStageFilter>Child</showDevelopmentalStageFilter>
+    <alwaysHide>true</alwaysHide>
+    <parts>
+      <li Class="StatPart_Age">
+        <useBiologicalYears>true</useBiologicalYears>
+        <humanlikeOnly>true</humanlikeOnly>
+        <curve>
+          <points>
+            <li>(4,0.95)</li> 
+            <li>(12,0.98)</li>
+            <li>(13,1)</li>
+          </points>
+        </curve>
+      </li>
+    </parts>
+  </StatDef>
+
+</Defs>

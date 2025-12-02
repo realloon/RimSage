@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- History events -->
+
+  <HistoryEventDef>
+    <defName>GotMarried_SpouseCount_Three</defName>
+    <label>married to three or more spouses</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>GotMarried_SpouseCount_Four</defName>
+    <label>married to four or more spouses</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>GotMarried_SpouseCount_FiveOrMore</defName>
+    <label>married to five or more spouses</label>
+  </HistoryEventDef>
+
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>SpouseCount_Male_MaxTwo</defName>
+    <issue>SpouseCount_Male</issue>
+    <label>two or fewer</label>
+    <description>Men may have up to two spouses.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>70</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>MaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Three</eventDef>
+        <gender>Male</gender>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Four</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>Male</gender>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>Male</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SpouseCount_Female_MaxTwo</defName>
+    <issue>SpouseCount_Female</issue>
+    <label>two or fewer</label>
+    <description>Women may have up to two spouses.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>60</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>FemaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Three</eventDef>
+        <gender>Female</gender>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Four</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>Female</gender>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>Female</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SpouseCount_Male_MaxThree</defName>
+    <issue>SpouseCount_Male</issue>
+    <label>three or fewer</label>
+    <description>Men may have up to three spouses.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>MaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Four</eventDef>
+        <gender>Male</gender>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>Male</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SpouseCount_Female_MaxThree</defName>
+    <issue>SpouseCount_Female</issue>
+    <label>three or fewer</label>
+    <description>Women may have up to three spouses.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>FemaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Four</eventDef>
+        <gender>Female</gender>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>Female</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SpouseCount_Male_MaxFour</defName>
+    <issue>SpouseCount_Male</issue>
+    <label>four or fewer</label>
+    <description>Men may have up to four spouses.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>MaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+        <gender>Male</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SpouseCount_Female_MaxFour</defName>
+    <issue>SpouseCount_Female</issue>
+    <label>four or fewer</label>
+    <description>Women may have up to four spouses.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>FemaleSupremacy</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+        <gender>Female</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SpouseCount_Male_Unlimited</defName>
+    <issue>SpouseCount_Male</issue>
+    <description>Men may have as many spouses as they like.</description>
+    <label>unlimited</label>
+    <impact>Medium</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>MaleSupremacy</li>
+    </associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SpouseCount_Female_Unlimited</defName>
+    <issue>SpouseCount_Female</issue>
+    <description>Women may have as many spouses as they like.</description>
+    <label>unlimited</label>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>FemaleSupremacy</li>
+    </associatedMemes>
+  </PreceptDef>
+
+</Defs>

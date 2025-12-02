@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>Hospitality_Prisoners</defName>
+    <rootSelectionWeight>1.15</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <rootMinProgressScore>5</rootMinProgressScore>
+    <expireDaysRange>4~8</expireDaysRange>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <questDescriptionAndNameRules>
+      <rulesStrings>
+        <li>lodgersLabel->prisoner</li>
+        <li>lodgersLabelPlural->prisoners</li>
+      </rulesStrings>
+    </questDescriptionAndNameRules>
+    <questNameRules>
+      <rulesStrings>
+        <!-- Universal -->
+        <li>questName->Guarding for [asker_nameDef]</li>
+
+        <!-- Single prisoner -->
+        <li>questName(lodgersCount==1)->guarding [lodgers0_nameDef]</li>
+        <li>questName(lodgersCount==1)->prisoner [lodgers0_nameDef]</li>
+        <li>questName(lodgersCount==1)->the [adjAny] prisoner</li>
+        <li>questName(lodgersCount==1)->one [adjAny] prisoner</li>
+
+        <!-- Multiple prisoners -->
+        <li>questName(lodgersCount>=2)->warden for hire</li>
+        <li>questName(lodgersCount>=2)->prison warden</li>
+        <li>questName(lodgersCount>=2)->contract prison</li>
+        <li>questName(lodgersCount>=2)->the wanted prisoners</li>
+        <li>questName(lodgersCount>=2)->the [adjAny] prisoners</li>
+        <li>questName(lodgersCount>=2)->[asker_nameDef]'s prisoners</li>
+
+        <!-- Util -->
+        <li>adjAny->[AdjectiveBadass]</li>
+        <li>adjAny->[AdjectiveAngsty]</li>
+        <li>adjAny->[AdjectiveFriendly]</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <include>
+        <li>QuestHospitalityCommon</li>
+      </include>
+      <rulesStrings>
+        <!-- Asker is null, single prisoner -->
+        <li>questDescription(askerIsNull==true,lodgersCount==1)->An orbiting ship captain wants you to guard a prisoner named [lodgers0_nameFull] at [map_definite] for [shuttleDelayTicks_duration]. [allLodgerInfo][threatsInfo1][commonDescEnding]</li>
+        <li>threatsInfo1(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\n[lodgers0_nameDef] recently spat on the most loved child of [enemyFaction_leader_nameFull], [enemyFaction_leaderTitle] of [enemyFaction_name]. [enemyFaction_leader_nameDef] will send [enemyFaction_pawnsPlural] to seek revenge on any who would protect [lodgers0_objective]. [enemyGroupsParagraph]</li>
+        <li>threatsInfo1(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\n[threatsInfoMechRaidsSingleHuman] [enemyGroupsParagraph]</li>
+        <li>threatsInfo1(generateThreats==true,threatType==MechClusters)->\n\n[threatsInfoMechClustersSingleHuman] [enemyGroupsParagraph]</li>
+        <li>threatsInfo1(generateThreats==false)-></li>
+
+        <!-- Asker is null, multiple prisoners  -->
+        <li>questDescription(askerIsNull==true,lodgersCount>=2)->An orbiting ship captain wants you to guard [lodgersCount] prisoners at [map_definite] for [shuttleDelayTicks_duration]. [allLodgerInfo][threatsInfo2][commonDescEnding]</li>
+        <li>threatsInfo2(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\nThe prisoners committed a string of murders against the [enemyFaction_pawnsPlural] of [enemyFaction_name], and their victims' families will send raids to seek revenge. [enemyGroupsParagraph]</li>
+        <li>threatsInfo2(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\nThe prisoners recently [mechViolation], and have been targeted by a mechanoid hive. [enemyGroupsParagraph]</li>
+        <li>threatsInfo2(generateThreats==true,threatType==MechClusters)->\n\n[threatsInfoMechClustersMultiPrisoners] [enemyGroupsParagraph]</li>
+        <li>threatsInfo2(generateThreats==false)-></li>
+
+        <!-- Asker is faction leader, single prisoner -->
+        <li>questDescription(asker_factionLeader==True,lodgersCount==1)->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], wants you to stash a special prisoner for [asker_objective]. The prisoner, a [lodgers0_age]-year-old [lodgers0_title] named [lodgers0_nameFull], knows embarrassing information about [asker_nameDef]'s [PersonalCharacteristic], and [asker_nameDef] doesn't want [lodgers0_objective] to be freed. You only need to keep the prisoner for [shuttleDelayTicks_duration] until the scandal passes. [allLodgerInfo][threatsInfo3][commonDescEnding]</li>
+        <li>threatsInfo3(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\nUnfortunately, [enemyFaction_name] wants to spread the shameful story and is sending raids to break [lodgers0_nameDef] out of jail. [enemyGroupsParagraph]</li>
+        <li>threatsInfo3(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\n[threatsInfoMechRaidsSingleHuman] [enemyGroupsParagraph]</li>
+        <li>threatsInfo3(generateThreats==true,threatType==MechClusters)->\n\n[threatsInfoMechClustersSingleHuman] [enemyGroupsParagraph]</li>
+        <li>threatsInfo3(generateThreats==false)-></li>
+
+        <!-- Asker is faction leader, multiple prisoners -->
+        <li>questDescription(asker_factionLeader==True,lodgersCount>=2)->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has captured [lodgersCount] prisoners from an enemy faction. With no place to store them, [asker_nameDef] wants you to watch over them for [shuttleDelayTicks_duration], until [asker_possessive] prison is ready.[allLodgerInfo][threatsInfo4][commonDescEnding]</li>
+        <li>threatsInfo4(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\nThe prisoners have a paid rescue contract with [enemyFaction_name], so they will send [enemyFaction_pawnsPlural] after you. [enemyGroupsParagraph]</li>
+        <li>threatsInfo4(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\n[asker_nameDef]'s enemies have some provoked a mechanoid hive into hunting the prisoners, so it will send mechanoid attack groups. [enemyGroupsParagraph]</li>
+        <li>threatsInfo4(generateThreats==true,threatType==MechClusters)->\n\n[threatsInfoMechClustersMultiPrisoners] [enemyGroupsParagraph]</li>
+        <li>threatsInfo4(generateThreats==false)-></li>
+
+        <!-- Asker is royal, single prisoner -->
+        <li>questDescription(asker_royalInCurrentFaction==True,lodgersCount==1)->[asker_nameFull], a [asker_royalTitleInCurrentFaction] of [asker_faction_name] has been caught in bed with the wrong person. [asker_pronoun] imprisoned the inappropriate lover in a show of rejection. Now [asker_pronoun] wants you to keep the prisoner [lodgers0_nameFull] caged until the scandal blows over in [shuttleDelayTicks_duration]. [allLodgerInfo][threatsInfo5][commonDescEnding]</li>
+        <li>threatsInfo5(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\nUnfortunately, [asker_nameDef]'s court rivals are paying [enemyFaction_name] to try to break the lover out and bring the story to light. [enemyGroupsParagraph]</li>
+        <li>threatsInfo5(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\nUnfortunately, [asker_nameDef]'s court rivals have provoked mechanoids attacks from [enemyFaction_name] to try to break the lover out and bring the story to light. [enemyGroupsParagraph]</li>
+        <li>threatsInfo5(generateThreats==true,threatType==MechClusters)->\n\n[threatsInfoMechClustersSingleHuman] [enemyGroupsParagraph]</li>
+        <li>threatsInfo5(generateThreats==false)-></li>
+
+        <!-- Asker is royal, multiple prisoners -->
+        <li>questDescription(asker_royalInCurrentFaction==True,lodgersCount>=2)->[asker_nameFull], a [asker_royalTitleInCurrentFaction] of [asker_faction_name], seeks your help. [asker_nameDef]'s royal archaeologists recently extracted [lodgersCount] prisoners from an ancient cryptosleep vault, and intend to question them. To keep the prisoners secret from court rivals, [asker_nameDef] wants you to hold them for [shuttleDelayTicks_duration]. [allLodgerInfo][threatsInfo6][commonDescEnding]</li>
+        <li>threatsInfo6(generateThreats==true,threatType==Raids,enemyFaction!=Mechanoid)->\n\nUnfortunately, [enemyFaction_pawnsPlural] from [enemyFaction_name] revered the vault that the prisoners were extracted from. They'll send raids to seek revenge on anyone who holds them. [enemyGroupsParagraph]</li>
+        <li>threatsInfo6(generateThreats==true,threatType==Raids,enemyFaction==Mechanoid)->\n\nUnfortunately, [enemyFaction_pawnsPlural] from [enemyFaction_name] were guarding the vault that the prisoners were extracted from. They'll send mechanoids to hunt down the lost sleepers. [enemyGroupsParagraph]</li>
+        <li>threatsInfo6(generateThreats==true,threatType==MechClusters)->\n\n[threatsInfoMechClustersMultiPrisoners] [enemyGroupsParagraph]</li>
+        <li>threatsInfo6(generateThreats==false)-></li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Hospitality_Util_Setup</def>
+          <parms>
+            <canBeSpace>true</canBeSpace>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>lodgersArePrisoners</name>
+          <value>true</value>
+        </li>
+
+        <!-- Decide random lodger conditions -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_DecideRandomLodgerConditions</def>
+          <parms>
+            <noConditionsWeight>1</noConditionsWeight>
+            <noWorkWeight>0</noWorkWeight>
+            <paralysisWeight>1</paralysisWeight>
+            <bloodRotWeight>1</bloodRotWeight>
+            <bloodRotAndParalysisWeight>0</bloodRotAndParalysisWeight>
+            <moodThresholdWeight>0</moodThresholdWeight>
+            <bloodRotMinPoints>499</bloodRotMinPoints>
+          </parms>
+        </li>
+
+        <!-- If 1 star quest with no lodger conditions, increase number of lodgers with points -->
+        <li Class="QuestNode_Less">
+          <value1>$challengeRating</value1>
+          <value2>2</value2>
+          <node Class="QuestNode_IsTrue">
+            <value>$lodgersHaveNoConditions</value>
+            <node Class="QuestNode_SubScript">
+              <def>Hospitality_Util_DecideLodgerCountFromPoints</def>
+              <parms>
+                <pointsCurve>
+                  <points>
+                    <li>(0,  1)</li>
+                    <li>(3000, 10)</li>
+                    <li>(4000, 15)</li>
+                  </points>
+                </pointsCurve>
+              </parms>
+            </node>
+          </node>
+        </li>  
+
+        <li Class="QuestNode_IsSet">
+          <name>lodgersCount</name>
+          <elseNode Class="QuestNode_SubScript">
+            <def>Hospitality_Util_DecideRandomLodgerCount</def>
+          </elseNode>
+        </li>
+
+        <!-- Choose lodgers pawn kind -->
+        <li Class="QuestNode_GetPawnKind">
+          <storeAs>lodgersPawnKind</storeAs>
+          <options>
+            <li>
+              <kindDef>SpaceRefugee_Clothed</kindDef>
+              <weight>1</weight>
+            </li>
+          </options>
+        </li>
+
+        <!-- Generate lodgers -->
+        <li Class="QuestNode_LoopCount">
+          <loopCount>$lodgersCount</loopCount>
+          <node Class="QuestNode_GeneratePawn">
+            <kindDef>$lodgersPawnKind</kindDef>
+            <addToList>lodgers</addToList>
+            <allowAddictions>false</allowAddictions>
+            <allowPregnant>false</allowPregnant>
+          </node>
+        </li>  
+
+        <!-- Assign host faction to lodger(s) -->
+        <li Class="QuestNode_IsTrue">
+          <value>$askerIsNull</value>
+          <elseNode Class="QuestNode_ExtraFaction">
+            <factionOf>$asker</factionOf>
+            <pawns>$lodgers</pawns>
+            <factionType>HostFaction</factionType>
+            <inSignalsRemovePawn>
+              <li>lodgers.BecameMutant</li>
+            </inSignalsRemovePawn>
+          </elseNode>
+        </li>
+
+        <!-- Apply lodger conditions -->
+        <li Class="QuestNode_SubScript">
+          <def>Util_ApplyLodgerConditions</def>
+        </li>
+
+        <!-- Execute main worker script -->
+        <li Class="QuestNode_SubScript">
+          <def>Hospitality_Util_Worker</def>
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

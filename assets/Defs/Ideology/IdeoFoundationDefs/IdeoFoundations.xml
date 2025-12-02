@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoFoundationDef>
+    <defName>Deity</defName>
+    <foundationClass>IdeoFoundation_Deity</foundationClass>
+  </IdeoFoundationDef>
+
+</Defs>

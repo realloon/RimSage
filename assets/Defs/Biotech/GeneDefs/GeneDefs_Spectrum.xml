@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Temperature -->
+
+  <GeneDef Name="GeneMinTempBase" Abstract="True">
+    <displayCategory>Temperature</displayCategory>
+    <exclusionTags>
+      <li>MinTemperature</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMinTempBase">
+    <defName>MinTemp_SmallIncrease</defName>
+    <label>cold weakness</label>
+    <labelShortAdj>warm</labelShortAdj>
+    <description>Carriers of this gene are slightly less comfortable in cold temperatures.</description>
+    <iconPath>UI/Icons/Genes/Gene_MinTemperatureSmallIncrease</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMin>5</ComfyTemperatureMin>
+    </statOffsets>
+    <biostatMet>1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>warm</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMinTempBase">
+    <defName>MinTemp_SmallDecrease</defName>
+    <label>cold tolerant</label>
+    <labelShortAdj>cool</labelShortAdj>
+    <description>Carriers of this gene are slightly more comfortable in cold temperatures.</description>
+    <iconPath>UI/Icons/Genes/Gene_MinTemperatureSmallDecrease</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+    </statOffsets>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>cold</symbol></li>
+        <li><symbol>cool</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMinTempBase">
+    <defName>MinTemp_LargeDecrease</defName>
+    <label>cold super-tolerant</label>
+    <labelShortAdj>cold</labelShortAdj>
+    <description>Carriers of this gene are much more comfortable in cold temperatures.</description>
+    <iconPath>UI/Icons/Genes/Gene_MinTemperatureLargeDecrease</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+    </statOffsets>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>ice</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef Name="GeneMaxTempBase" Abstract="True">
+    <displayCategory>Temperature</displayCategory>
+    <exclusionTags>
+      <li>MaxTemperature</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMaxTempBase">
+    <defName>MaxTemp_LargeIncrease</defName>
+    <label>heat super-tolerant</label>
+    <labelShortAdj>hot</labelShortAdj>
+    <description>Carriers of this gene are more comfortable in warm temperatures.</description>
+    <iconPath>UI/Icons/Genes/Gene_MaxTemperatureLargeIncrease</iconPath>
+    <displayOrderInCategory>50</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMax>20</ComfyTemperatureMax>
+    </statOffsets>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>hot</symbol></li>
+        <li><symbol>heat</symbol></li>
+        <li><symbol>sun</symbol></li>
+        <li><symbol>sweat</symbol></li>
+        <li><symbol>bake</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMaxTempBase">
+    <defName>MaxTemp_SmallIncrease</defName>
+    <label>heat tolerant</label>
+    <labelShortAdj>warm</labelShortAdj>
+    <description>Carriers of this gene are slightly more comfortable in warm temperatures.</description>
+    <iconPath>UI/Icons/Genes/Gene_MaxTemperatureSmallIncrease</iconPath>
+    <displayOrderInCategory>40</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMax>10</ComfyTemperatureMax>
+    </statOffsets>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>warm</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMaxTempBase">
+    <defName>MaxTemp_SmallDecrease</defName>
+    <label>heat weakness</label>
+    <labelShortAdj>cool</labelShortAdj>
+    <description>Carriers of this gene are slightly less comfortable in warm temperatures.</description>
+    <iconPath>UI/Icons/Genes/Gene_MaxTemperatureSmallDecrease</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMax>-5</ComfyTemperatureMax>
+    </statOffsets>
+    <biostatMet>1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>cold</symbol></li>
+        <li><symbol>cool</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Psychic ability -->
+
+  <GeneDef Name="GenePsychicAbilityBase" Abstract="True">
+    <displayCategory>Psychic</displayCategory>
+    <exclusionTags>
+      <li>PsychicAbility</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePsychicAbilityBase">
+    <defName>PsychicAbility_Deaf</defName>
+    <label>psychically deaf</label>
+    <labelShortAdj>psy-deaf</labelShortAdj>
+    <description>Carriers of this gene are deaf to all psychic energy and influence outside their own minds. They cannot be affected by psychic influence, nor can they ever wield psychic power.</description>
+    <iconPath>UI/Icons/Genes/Gene_PsychicallyDeaf</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>PsychicSensitivity</def>
+        <degree>-2</degree>
+      </li>
+    </forcedTraits>
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>deaf</symbol></li>
+        <li><symbol>blank</symbol></li>
+        <li><symbol>null</symbol></li>
+        <li><symbol>vac</symbol></li>
+        <li><symbol>void</symbol></li>
+        <li><symbol>nego</symbol></li>
+        <li><symbol>nullo</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePsychicAbilityBase">
+    <defName>PsychicAbility_Dull</defName>
+    <label>psychically dull</label>
+    <labelShortAdj>psy-dull</labelShortAdj>
+    <description>Carriers of this gene are less psychically-sensitive than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_PsychicallyDull</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>PsychicSensitivity</def>
+        <degree>-1</degree>
+      </li>
+    </forcedTraits>
+    <biostatMet>1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dull</symbol></li>
+        <li><symbol>flat</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePsychicAbilityBase">
+    <defName>PsychicAbility_Enhanced</defName>
+    <label>psy-sensitive</label> 
+    <labelShortAdj>psy-enhanced</labelShortAdj>
+    <description>Carriers of this gene are more psychically-sensitive than average.</description>
+    <iconPath>UI/Icons/Genes/Gene_EnhancedPsychicAbility</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <statOffsets>
+      <PsychicSensitivity>0.2</PsychicSensitivity>
+      <MeditationFocusGain>0.1</MeditationFocusGain>
+      <PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
+    </statOffsets>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>psy</symbol></li>
+        <li><symbol>senso</symbol></li>
+        <li><symbol>sensi</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePsychicAbilityBase">
+    <defName>PsychicAbility_Extreme</defName>
+    <label>super psy-sensitive</label> 
+    <labelShortAdj>psy-extreme</labelShortAdj>
+    <description>Carriers of this gene are much more psychically-sensitive than most.</description>
+    <iconPath>UI/Icons/Genes/Gene_ExtremePsychicAbility</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <statOffsets>
+      <PsychicSensitivity>0.4</PsychicSensitivity>
+      <MeditationFocusGain>0.2</MeditationFocusGain>
+      <PsychicEntropyRecoveryRate>0.2</PsychicEntropyRecoveryRate>
+    </statOffsets>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-5</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>psy</symbol>
+          <weight>3</weight>
+        </li>
+        <li><symbol>senso</symbol></li>
+        <li><symbol>sensi</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Move speed -->
+
+  <GeneDef Name="GeneMoveSpeedBase" Abstract="True">
+    <displayCategory>Movement</displayCategory>
+    <exclusionTags>
+      <li>MoveSpeed</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMoveSpeedBase">
+    <defName>MoveSpeed_Slow</defName>
+    <label>slow runner</label> 
+    <labelShortAdj>slow</labelShortAdj>
+    <description>Carriers of this gene move more slowly than normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_SlowMovespeed</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <MoveSpeed>-0.2</MoveSpeed>
+    </statOffsets>
+    <biostatMet>3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>slow</symbol></li>
+        <li><symbol>plod</symbol></li>
+        <li><symbol>grado</symbol></li>
+        <li><symbol>letho</symbol></li>
+        <li><symbol>slug</symbol></li>
+        <li><symbol>slack</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>slug</symbol></li>
+        <li><symbol>plodder</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMoveSpeedBase">
+    <defName>MoveSpeed_Quick</defName>
+    <label>fast runner</label> 
+    <labelShortAdj>quick</labelShortAdj>
+    <description>Carriers of this gene move more quickly than normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_QuickMovespeed</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <statOffsets>
+      <MoveSpeed>0.2</MoveSpeed>
+    </statOffsets>
+    <biostatMet>-3</biostatMet>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>speeder</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>speed</symbol></li>
+        <li><symbol>fast</symbol></li>
+        <li><symbol>quick</symbol></li>
+        <li><symbol>agi</symbol></li>
+        <li><symbol>nimb</symbol></li>
+        <li><symbol>swift</symbol></li>
+        <li><symbol>flash</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>flash</symbol></li>
+        <li><symbol>runner</symbol></li>
+        <li><symbol>sprinter</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMoveSpeedBase">
+    <defName>MoveSpeed_VeryQuick</defName>
+    <label>very fast runner</label> 
+    <labelShortAdj>fast</labelShortAdj>
+    <description>Carriers of this gene move much more quickly than normal.</description>
+    <iconPath>UI/Icons/Genes/Gene_VeryQuickMovespeed</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <statOffsets>
+      <MoveSpeed>0.4</MoveSpeed>
+    </statOffsets>
+    <biostatMet>-5</biostatMet>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>speeder</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>speed</symbol></li>
+        <li><symbol>fast</symbol></li>
+        <li><symbol>quick</symbol></li>
+        <li><symbol>agi</symbol></li>
+        <li><symbol>nimb</symbol></li>
+        <li><symbol>swift</symbol></li>
+        <li><symbol>flash</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>flash</symbol></li>
+        <li><symbol>runner</symbol></li>
+        <li><symbol>sprinter</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Beauty -->
+
+  <GeneDef Name="GeneBeautyBase" Abstract="True">
+    <displayCategory>Beauty</displayCategory>
+    <exclusionTags>
+      <li>Beauty</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBeautyBase">
+    <defName>Beauty_VeryUgly</defName>
+    <label>very unattractive</label>
+    <labelShortAdj>hideous</labelShortAdj>
+    <description>Carriers of this gene have misshapen, asymmetrical facial structures and blotchy skin. They're hard to look at.</description>
+    <iconPath>UI/Icons/Genes/Gene_StaggeringlyUgly</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <PawnBeauty>-2</PawnBeauty>
+    </statOffsets>
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>gris</symbol></li>
+        <li><symbol>hideo</symbol></li>
+        <li><symbol>grote</symbol></li>
+        <li><symbol>horri</symbol></li>
+        <li><symbol>freak</symbol></li>
+        <li><symbol>foul</symbol></li>
+        <li><symbol>gross</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBeautyBase">
+    <defName>Beauty_Ugly</defName>
+    <label>unattractive</label>
+    <description>Carriers of this gene have exaggerated facial features and poor skin that are generally considered ugly.</description>
+    <iconPath>UI/Icons/Genes/Gene_Ugly</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <statOffsets>
+      <PawnBeauty>-1</PawnBeauty>
+    </statOffsets>
+    <biostatMet>1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>ug</symbol>
+          <weight>3</weight>
+        </li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBeautyBase">
+    <defName>Beauty_Pretty</defName>
+    <label>attractive</label>
+    <description>Carriers of this gene have unusually symmetrical, balanced facial features and extra-clear skin which gives them a pleasing appearance.</description>
+    <iconPath>UI/Icons/Genes/Gene_Pretty</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <statOffsets>
+      <PawnBeauty>1</PawnBeauty>
+    </statOffsets>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>charm</symbol></li>
+        <li><symbol>ele</symbol></li>
+        <li><symbol>grace</symbol></li>
+        <li><symbol>neat</symbol></li>
+        <li><symbol>cute</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneBeautyBase">
+    <defName>Beauty_Beautiful</defName>
+    <label>very attractive</label>
+    <description>Carriers of this gene have remarkably precise and symmetrical faces. Their features are distinctive and strong without being exaggerated, and their skin is nearly perfect. They are generally seen as beautiful.</description>
+    <iconPath>UI/Icons/Genes/Gene_Beautiful</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <statOffsets>
+      <PawnBeauty>2</PawnBeauty>
+    </statOffsets>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>charm</symbol></li>
+        <li><symbol>ele</symbol></li>
+        <li><symbol>grace</symbol></li>
+        <li><symbol>neat</symbol></li>
+        <li><symbol>cute</symbol></li>
+        <li><symbol>beauti</symbol></li>
+        <li><symbol>smooth</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Learning -->
+
+  <GeneDef Name="GeneLearningBase" Abstract="True">
+    <displayCategory>Miscellaneous</displayCategory>
+    <exclusionTags>
+      <li>Learning</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneLearningBase">
+    <defName>Learning_Slow</defName>
+    <label>slow study</label>
+    <description>Carriers of this gene have deficient long-term memories and don't understand new ideas quickly. They are slow at learning new skills and knowledge.</description>
+    <iconPath>UI/Icons/Genes/Gene_SlowLearning</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <statFactors>
+      <GlobalLearningFactor>0.5</GlobalLearningFactor>
+    </statFactors>
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>thag</symbol></li>
+        <li><symbol>grunt</symbol></li>
+        <li><symbol>slow</symbol></li>
+        <li><symbol>dull</symbol></li>
+        <li><symbol>dumb</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>grunt</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneLearningBase">
+    <defName>Learning_Fast</defName>
+    <label>quick study</label>
+    <description>Carriers of this gene have excellent memories and grasp new ideas quickly. They learn faster than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_FastLearning</iconPath>
+    <displayOrderInCategory>35</displayOrderInCategory>
+    <statOffsets>
+      <GlobalLearningFactor>0.5</GlobalLearningFactor>
+    </statOffsets>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>brain</symbol></li>
+        <li><symbol>nerd</symbol></li>
+        <li><symbol>smart</symbol></li>
+        <li><symbol>corti</symbol></li>
+        <li><symbol>neuro</symbol></li>
+        <li><symbol>mnemo</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>nerd</symbol></li>
+        <li><symbol>brain</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Mood -->
+
+  <GeneDef Name="GeneMoodBase" Abstract="True">
+    <displayCategory>Mood</displayCategory>
+    <exclusionTags>
+      <li>Mood</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMoodBase">
+    <defName>Mood_Depressive</defName>
+    <label>very unhappy</label>
+    <description>Carriers of this gene are highly predisposed to negative emotion. They'll see the bad in every situation and have a much lower mood than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Depressive</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <biostatMet>5</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>sad</symbol></li>
+        <li><symbol>gray</symbol></li>
+        <li><symbol>rain</symbol></li>
+        <li><symbol>lachry</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMoodBase">
+    <defName>Mood_Pessimist</defName>
+    <label>unhappy</label>
+    <description>Carriers of this gene are predisposed to pessimistic perceptions. They'll tend to interpret things negatively and have lower mood than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Pessimist</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <biostatMet>3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>sad</symbol></li>
+        <li><symbol>gray</symbol></li>
+        <li><symbol>rain</symbol></li>
+        <li><symbol>lachry</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMoodBase">
+    <defName>Mood_Optimist</defName>
+    <label>happy</label>
+    <description>Carriers of this gene are predisposed to optimistic feelings. They'll have higher mood than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Optimist</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>bright</symbol></li>
+        <li><symbol>sun</symbol></li>
+        <li><symbol>light</symbol></li>
+        <li><symbol>cheer</symbol></li>
+        <li><symbol>glad</symbol></li>
+        <li><symbol>up</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>bright</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMoodBase">
+    <defName>Mood_Sanguine</defName>
+    <label>very happy</label>
+    <description>Carriers of this gene are highly predisposed to optimism and not at all inclined to think negatively. They'll have much higher mood than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Sanguine</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <biostatCpx>3</biostatCpx>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>bright</symbol></li>
+        <li><symbol>sun</symbol></li>
+        <li><symbol>light</symbol></li>
+        <li><symbol>cheer</symbol></li>
+        <li><symbol>glad</symbol></li>
+        <li><symbol>up</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>bright</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Toxicity resistance -->
+
+  <GeneDef Name="GeneToxResistBase" Abstract="True">
+    <displayCategory>ResistanceAndWeakness</displayCategory>
+    <exclusionTags>
+      <li>ToxResistance</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneToxResistBase">
+    <defName>ToxResist_Partial</defName>
+    <label>tox resistance</label>
+    <labelShortAdj>tox-resistant</labelShortAdj>
+    <description>Carriers of this gene are resistant to toxic buildup from any source. This includes pollution, toxic fallout, tox gas, and direct attacks with venom or injected poison. They'll gain half the amount of toxic buildup compared to others.\n\nCellular filters in the lung and skin reduce the dose of toxins entering the bloodstream.</description>
+    <iconPath>UI/Icons/Genes/Gene_PartialToxicityResistance</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <ToxicResistance>0.5</ToxicResistance>
+    </statOffsets>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>tox</symbol>
+          <weight>3</weight>
+        </li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneToxResistBase">
+    <defName>ToxResist_Total</defName>
+    <label>tox immunity</label>
+    <labelShortAdj>tox-immune</labelShortAdj>
+    <description>Carriers of this gene are totally immune to toxic buildup from all sources including polluted terrain, toxic fallout, tox gas, and direct attacks with venom or injected poison. They are also not bothered by acidic smog.\n\nThe carrier's biochemical pathways are modified to route around interference from nearly all known toxins. Along with enhancements to the kidneys and liver, this keeps carriers comfortable in even the most toxic of environments.</description>
+    <iconPath>UI/Icons/Genes/Gene_TotalToxicityResistance</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <immuneToToxGasExposure>true</immuneToToxGasExposure>
+    <customEffectDescriptions>
+      <li>Tox gas immunity</li>
+    </customEffectDescriptions>
+    <statOffsets>
+      <ToxicResistance>1</ToxicResistance>
+    </statOffsets>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-4</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>tox</symbol>
+          <weight>3</weight>
+        </li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Toughness -->
+
+  <GeneDef Name="GeneToughnessBase" Abstract="True">
+    <displayCategory>Pain</displayCategory>
+    <exclusionTags>
+      <li>Toughness</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneToughnessBase">
+    <defName>Delicate</defName>
+    <label>delicate</label>
+    <description>Carriers of this gene take greater injuries than others from the same damage. They have thin, brittle bones and less binding molecules in joints and flesh.</description>
+    <iconPath>UI/Icons/Genes/Gene_Delicate</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Delicate</def>
+      </li>
+    </forcedTraits>
+    <biostatMet>3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>frail</symbol></li>
+        <li><symbol>thin</symbol></li>
+        <li><symbol>deli</symbol></li>
+        <li><symbol>snap</symbol></li>
+        <li><symbol>ail</symbol></li>
+        <li><symbol>feeb</symbol></li>
+        <li><symbol>fragi</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneToughnessBase">
+    <defName>Robust</defName>
+    <label>robust</label>
+    <description>Carriers of this gene take less injuries than others from the same damage. They have thickened, densified bones, nearly-solid ribcages, and strengthened binding factors in joints and flesh.</description>
+    <iconPath>UI/Icons/Genes/Gene_Tough</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <statFactors>
+      <IncomingDamageFactor>0.75</IncomingDamageFactor>
+    </statFactors>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>tough</symbol></li>
+        <li><symbol>stout</symbol></li>
+        <li><symbol>rough</symbol></li>
+        <li><symbol>lump</symbol></li>
+        <li><symbol>bruise</symbol></li>
+        <li><symbol>stiff</symbol></li>
+        <li><symbol>hard</symbol></li>
+        <li><symbol>vigo</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Pain -->
+
+  <GeneDef Name="GenePainBase" Abstract="True">
+    <displayCategory>Pain</displayCategory>
+    <exclusionTags>
+      <li>Pain</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePainBase">
+    <defName>Pain_Reduced</defName>
+    <label>reduced pain</label>
+    <labelShortAdj>pain-dull</labelShortAdj>
+    <description>Carriers of this gene feel half as much pain compared to a baseliner. Reduced neuron activity in the brain's nociception centers makes pain dull and faint. This can be advantageous sometimes, and dangerous other times.</description>
+    <iconPath>UI/Icons/Genes/Gene_PainReduced</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <painFactor>0.5</painFactor>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dull</symbol></li>
+        <li><symbol>daze</symbol></li>
+        <li><symbol>tough</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GenePainBase">
+    <defName>Pain_Extra</defName>
+    <label>extra pain</label>
+    <labelShortAdj>wimpy</labelShortAdj>
+    <description>Carriers of this gene feel more pain than others given the same injuries. Neuron activity in the brain's nociception center is amplified, so pain feels extra-intense and fiery. This can be protective, but overall it's considered a negative and makes it hard to push through difficult situations.</description>
+    <iconPath>UI/Icons/Genes/Gene_ExtraPain</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Wimp</def>
+      </li>
+    </forcedTraits>
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>wimpo</symbol></li>
+        <li><symbol>whino</symbol></li>
+        <li><symbol>cowar</symbol></li>
+        <li><symbol>cry</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>whiner</symbol></li>
+        <li><symbol>wimp</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Aggression -->
+
+  <GeneDef Name="GeneAggressionBase" Abstract="True">
+    <displayCategory>Violence</displayCategory>
+    <exclusionTags>
+      <li>Aggression</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneAggressionBase">
+    <defName>Aggression_DeadCalm</defName>
+    <label>dead calm</label>
+    <labelShortAdj>calm</labelShortAdj>
+    <description>Carriers of this gene feel calm in every situation and have a very placid demeanor. They will never start social fights or have aggressive mental breaks.</description>
+    <iconPath>UI/Icons/Genes/Gene_DeadCalm</iconPath>
+    <socialFightChanceFactor>0</socialFightChanceFactor>
+    <aggroMentalBreakSelectionChanceFactor>0</aggroMentalBreakSelectionChanceFactor>
+    <prisonBreakMTBFactor>-1</prisonBreakMTBFactor> <!-- Never prison breaks -->
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>still</symbol></li>
+        <li><symbol>seren</symbol></li>
+        <li><symbol>tranqu</symbol></li>
+        <li><symbol>hush</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneAggressionBase">
+    <defName>Aggression_Aggressive</defName>
+    <label>aggressive</label>
+    <description>Carriers of this gene are quick to anger. They are twice as likely to start social fights. When they have mental breaks, they are twice as likely to choose an aggressive kind of break.</description>
+    <iconPath>UI/Icons/Genes/Gene_Aggressive</iconPath>
+    <socialFightChanceFactor>2</socialFightChanceFactor>
+    <aggroMentalBreakSelectionChanceFactor>2</aggroMentalBreakSelectionChanceFactor>
+    <prisonBreakMTBFactor>0.6</prisonBreakMTBFactor>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <biostatMet>2</biostatMet>
+    <exclusionTags>
+      <li>Aggressive</li>
+    </exclusionTags>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>aggro</symbol></li>
+        <li><symbol>hate</symbol></li>
+        <li><symbol>fight</symbol></li>
+        <li><symbol>destro</symbol></li>
+        <li><symbol>barb</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>fighter</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneAggressionBase">
+    <defName>Aggression_HyperAggressive</defName>
+    <label>hyper-aggressive</label>
+    <description>Carriers of this gene are hormonally high-strung and very aggressive. They are three times as likely to start social fights. Any mental break they have will be of an aggressive type.</description>
+    <iconPath>UI/Icons/Genes/Gene_HyperAggressive</iconPath>
+    <socialFightChanceFactor>3</socialFightChanceFactor>
+    <aggroMentalBreakSelectionChanceFactor>999</aggroMentalBreakSelectionChanceFactor>
+    <prisonBreakMTBFactor>0.4</prisonBreakMTBFactor>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <biostatMet>3</biostatMet>
+    <exclusionTags>
+      <li>Aggressive</li>
+    </exclusionTags>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>aggro</symbol></li>
+        <li><symbol>hate</symbol></li>
+        <li><symbol>fight</symbol></li>
+        <li><symbol>destro</symbol></li>
+        <li><symbol>barb</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>fighter</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Rest -->
+
+  <GeneDef Name="GeneSleepBase" Abstract="True">
+    <displayCategory>Sleep</displayCategory>
+    <exclusionTags>
+      <li>Sleep</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSleepBase">
+    <defName>VerySleepy</defName>
+    <label>very sleepy</label>
+    <description>Carriers of this gene get tired much faster than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_VerySleepy</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statFactors>
+      <RestFallRateFactor>1.8</RestFallRateFactor>
+    </statFactors>
+    <biostatMet>4</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>sleep</symbol></li>
+        <li><symbol>bed</symbol></li>
+        <li><symbol>somno</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>loaf</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSleepBase">
+    <defName>Sleepy</defName>
+    <label>sleepy</label>
+    <description>Carriers of this gene get tired somewhat faster than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Sleepy</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <statFactors>
+      <RestFallRateFactor>1.4</RestFallRateFactor>
+    </statFactors>
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>sleep</symbol></li>
+        <li><symbol>bed</symbol></li>
+        <li><symbol>somno</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>loaf</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSleepBase">
+    <defName>LowSleep</defName>
+    <label>low sleep</label>
+    <description>Carriers of this gene get tired less quickly than others.</description>
+    <iconPath>UI/Icons/Genes/Gene_QuickSleeper</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <statFactors>
+      <RestFallRateFactor>0.4</RestFallRateFactor>
+    </statFactors>
+    <biostatMet>-4</biostatMet>
+    <biostatCpx>2</biostatCpx>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>wake</symbol></li>
+        <li><symbol>night</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSleepBase">
+    <defName>Neversleep</defName>
+    <label>never sleep</label>
+    <description>Carriers of this gene have a unique metabolic process which allows clusters of neurons to sleep while the rest of the brain stays awake. They never need to sleep.</description>
+    <iconPath>UI/Icons/Genes/Gene_Neversleep</iconPath>
+    <marketValueFactor>1.25</marketValueFactor>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <disablesNeeds>
+      <li>Rest</li>
+    </disablesNeeds>
+    <biostatMet>-6</biostatMet>
+    <biostatCpx>3</biostatCpx>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>wake</symbol></li>
+        <li><symbol>night</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- Melee damage -->
+
+  <GeneDef Name="GeneMeleeDamageBase" Abstract="True">
+    <displayCategory>Violence</displayCategory>
+    <exclusionTags>
+      <li>MeleeDamage</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMeleeDamageBase">
+    <defName>MeleeDamage_Weak</defName>
+    <label>weak melee damage</label>
+    <labelShortAdj>weak</labelShortAdj>
+    <description>Carriers of this gene do less damage in close-quarters combat. Weak fast-twitch muscle fibers make their strikes shaky and weak.</description>
+    <iconPath>UI/Icons/Genes/Gene_WeakMeleeDamage</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <statFactors>
+      <MeleeDamageFactor>0.5</MeleeDamageFactor>
+    </statFactors>
+    <biostatMet>1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>puno</symbol></li>
+        <li><symbol>weak</symbol></li>
+        <li><symbol>poke</symbol></li>
+        <li><symbol>flab</symbol></li>
+        <li><symbol>anemo</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneMeleeDamageBase">
+    <defName>MeleeDamage_Strong</defName>
+    <label>strong melee damage</label>
+    <labelShortAdj>strong</labelShortAdj>
+    <description>Carriers of this gene do more damage in close-quarters combat. Extra-strong fast-twitch muscle fibers make their strikes accurate and powerful.</description>
+    <iconPath>UI/Icons/Genes/Gene_StrongMeleeDamage</iconPath>
+    <displayOrderInCategory>40</displayOrderInCategory>
+    <statFactors>
+      <MeleeDamageFactor>1.5</MeleeDamageFactor>
+    </statFactors>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>basher</symbol></li>
+        <li><symbol>striker</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>bash</symbol></li>
+        <li><symbol>strong</symbol></li>
+        <li><symbol>strike</symbol></li>
+        <li><symbol>hercu</symbol></li>
+        <li><symbol>achillo</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!-- UV Sensitivity -->
+
+  <GeneDef Name="UVSensitivityBase" Abstract="True">
+    <displayCategory>ResistanceAndWeakness</displayCategory>
+    <dislikesSunlight>true</dislikesSunlight>
+    <exclusionTags>
+      <li>UVSensitivity</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="UVSensitivityBase">
+    <defName>UVSensitivity_Mild</defName>
+    <label>mild UV sensitivity</label>
+    <labelShortAdj>UV-sensitive</labelShortAdj>
+    <description>Carriers of this gene have biological compounds in their skin that react painfully to UV radiation. They are unusually sensitive to sunlight.</description>
+    <iconPath>UI/Icons/Genes/Gene_MildUVSensitivity</iconPath>
+    <displayOrderInCategory>40</displayOrderInCategory>
+    <conditionalStatAffecters>
+      <li Class="ConditionalStatAffecter_InSunlight">
+        <statFactors>
+          <MoveSpeed>0.9</MoveSpeed>
+        </statFactors>
+      </li>
+    </conditionalStatAffecters>
+    <biostatMet>3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dark</symbol></li>
+        <li><symbol>tunnel</symbol></li>
+        <li><symbol>under</symbol></li>
+        <li><symbol>cave</symbol></li>
+        <li><symbol>crypt</symbol></li>
+        <li><symbol>dim</symbol></li>
+        <li><symbol>night</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="UVSensitivityBase">
+    <defName>UVSensitivity_Intense</defName>
+    <label>intense UV sensitivity</label>
+    <labelShortAdj>UV-vulnerable</labelShortAdj>
+    <description>Carriers of this gene have biological compounds in their skin that react dangerously to UV radiation. They are intensely sensitive to sunlight.</description>
+    <iconPath>UI/Icons/Genes/Gene_IntenseUVSensitivity</iconPath>
+    <displayOrderInCategory>50</displayOrderInCategory>
+    <conditionalStatAffecters>
+      <li Class="ConditionalStatAffecter_InSunlight">
+        <statFactors>
+          <MoveSpeed>0.8</MoveSpeed>
+        </statFactors>
+      </li>
+    </conditionalStatAffecters>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>4</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dark</symbol></li>
+        <li><symbol>tunnel</symbol></li>
+        <li><symbol>under</symbol></li>
+        <li><symbol>cave</symbol></li>
+        <li><symbol>crypt</symbol></li>
+        <li><symbol>dim</symbol></li>
+        <li><symbol>night</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+
+  <!--  Libido -->
+
+  <GeneDef Name="LibidoBase" Abstract="True">
+    <displayCategory>Reproduction</displayCategory>
+    <exclusionTags>
+      <li>Libido</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="LibidoBase">
+    <defName>Libido_Low</defName>
+    <label>low libido</label>
+    <description>Carriers of this gene are less likely to engage in lovin' with their partner.</description>
+    <customEffectDescriptions>
+      <li>Decreases the chance of lovin'.</li>
+    </customEffectDescriptions>
+    <iconPath>UI/Icons/Genes/Gene_LowLibido</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <lovinMTBFactor>2</lovinMTBFactor>
+  </GeneDef>
+
+  <GeneDef ParentName="LibidoBase">
+    <defName>Libido_High</defName>
+    <label>high libido</label>
+    <description>Carriers of this gene are more likely to engage in lovin' with their partner.</description>
+    <customEffectDescriptions>
+      <li>Increases the chance of lovin'.</li>
+    </customEffectDescriptions>
+    <iconPath>UI/Icons/Genes/Gene_HighLibido</iconPath>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <lovinMTBFactor>0.5</lovinMTBFactor>
+  </GeneDef>
+
+</Defs>

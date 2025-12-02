@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Name="HeavyMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
+    <gestationCycles>4</gestationCycles>
+    <displayPriority>300</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef ParentName="HeavyMechanoidRecipe">
+    <defName>Tunneler</defName>
+    <label>gestate tunneler</label>
+    <description>Gestate a tunneler mechanoid.</description>
+    <researchPrerequisite>StandardMechtech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreRegular</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Mech_Tunneler>1</Mech_Tunneler>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_Tunneler</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+  <RecipeDef Name="CentipedeMechanoidRecipe" ParentName="HeavyMechanoidRecipe" Abstract="True">
+    <gestationCycles>6</gestationCycles>
+    <researchPrerequisite>HighMechtech</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>255</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>255</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CentipedeMechanoidRecipe">
+    <defName>CentipedeGunner</defName>
+    <label>gestate centipede gunner</label>
+    <description>Gestate a centipede mechanoid armed with a minigun.</description>
+    <products>
+      <Mech_CentipedeGunner>1</Mech_CentipedeGunner>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_CentipedeGunner</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CentipedeMechanoidRecipe">
+    <defName>CentipedeBurner</defName>
+    <label>gestate centipede burner</label>
+    <description>Gestate a centipede mechanoid armed with an inferno cannon.</description>
+    <products>
+      <Mech_CentipedeBurner>1</Mech_CentipedeBurner>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_CentipedeBurner</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+  <RecipeDef ParentName="HeavyMechanoidRecipe">
+    <defName>Diabolus</defName>
+    <label>gestate diabolus</label>
+    <description>Gestate a diabolus mech.</description>
+    <gestationCycles>12</gestationCycles>
+    <researchPrerequisite>HighMechtech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SignalChip</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreHigh</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Mech_Diabolus>1</Mech_Diabolus>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Mech_Diabolus</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef>
+
+</Defs>

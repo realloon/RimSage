@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>ObservedTerror</defName>
+    <thoughtClass>Thought_MemoryObservationTerror</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>300</stackLimit>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>{THING_label}</label>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ObservedGibbetCage</defName>
+    <thoughtClass>Thought_MemoryObservation</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>observed gibbet cage</label>
+        <description>What a terrible sight.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ObservedSkullspike</defName>
+    <thoughtClass>Thought_MemoryObservation</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>observed skullspike</label>
+        <description>What a terrible sight.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

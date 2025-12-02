@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Spacedrone</defName>
+    <label>spacedrone</label>
+    <description>An ancient ultratech spacedrone.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <canOverlapZones>true</canOverlapZones>
+    <fillPercent>1.0</fillPercent>
+    <size>(5,3)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/Spacedrone</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <color>(158,158,158)</color>
+      <shadowData>
+        <volume>(4.1, 1.0, 1.8)</volume>
+        <offset>(0, 0, -0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Flammability>1</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <killedLeavings>
+      <Uranium>50</Uranium>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </killedLeavings>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <uiIconScale>1.4</uiIconScale>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>45000</defence>  <!-- ~ 18 hrs for 10 intellect hacker -->
+        <effectHacking>HackingTerminal</effectHacking>
+        <notHackedInspectString>Hack to access computer.</notHackedInspectString>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>6</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <wickTicks>1800</wickTicks>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+        <wickMessages>
+          <li>
+            <wickMessagekey>SelfDestructCountdown</wickMessagekey>
+            <messageType>NeutralEvent</messageType>
+            <ticksLeft>1800</ticksLeft><!-- 30 seconds -->
+          </li>
+          <li>
+            <wickMessagekey>SelfDestructCountdown</wickMessagekey>
+            <messageType>NeutralEvent</messageType>
+            <ticksLeft>1200</ticksLeft><!-- 20 seconds -->
+          </li>
+          <li>
+            <wickMessagekey>SelfDestructCountdown</wickMessagekey>
+            <messageType>NeutralEvent</messageType>
+            <ticksLeft>600</ticksLeft><!-- 10 seconds -->
+          </li>
+        </wickMessages>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>SpacedroneIdle_Ambience</sound>
+        <disableOnHacked>true</disableOnHacked>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

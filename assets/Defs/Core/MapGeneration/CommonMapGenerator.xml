@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+  General order:
+  - 10-100:   Underlying grids (Elevation/Fertility/Caves)
+  - 200-300:  Natural terrain gen
+  - 400-500:  Critical large structures (quest locations, settlements, etc.)
+  - 600:      Reserve Gravship area
+  - 700-800:  Non-critical large structures (ruins, etc.) - these must take into account UsedRects
+  - 850:      Player start spot
+  - 900-1200: Non-critical gen (geysers, plants, animals, etc)
+  - 1500:     Fog
+  - 1600+:    Important buildings/features that need to be unfogged
+  - 1700:     Place gravship marker
+  -->
+
+  <MapGeneratorDef Name="MapCommonBase" Abstract="True">
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>MutatorPostElevationFertility</li>
+      <li>Terrain</li>
+      <li>MutatorPostTerrain</li>
+      <li>Roads</li>
+      <li>RockChunks</li>
+      <li>MutatorCriticalStructures</li>
+      <li>MutatorNonCriticalStructures</li>
+      <li>ScatterRuinsSimple</li>
+      <li>SteamGeysers</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">ScatterRoadDebris</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">ScatterCaveDebris</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientUtilityBuilding</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MechanoidRemains</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientTurret</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientMechs</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientLandingPad</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientFences</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientPipelineSection</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientJunkClusters</li>
+      <li>FindPlayerStartSpot</li>
+      <li>ScenParts</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Pollution</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">AncientPollutionJunk</li>
+      <li>Plants</li>
+      <li>Snow</li>
+      <li>MutatorFinal</li>
+      <li>Animals</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <!-- Generate abstract grids-->
+  <GenStepDef>
+    <defName>ElevationFertility</defName>
+    <order>10</order>
+    <genStep Class="GenStep_ElevationFertility"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>MutatorPostElevationFertility</defName>
+    <order>20</order>
+    <genStep Class="GenStep_MutatorPostElevationFertility" />
+  </GenStepDef>
+
+  <!-- Generate basic rocks and terrain from grid-->
+  <GenStepDef>
+    <defName>RocksFromGrid</defName>
+    <order>200</order>
+    <genStep Class="GenStep_RocksFromGrid"/>
+  </GenStepDef>
+  
+  <GenStepDef>
+    <defName>RocksFromGrid_NoMinerals</defName>
+    <order>200</order>
+    <genStep Class="GenStep_RocksFromGrid">
+      <maxMineableValue>0</maxMineableValue>
+      <ignoreMaxIfGravship>true</ignoreMaxIfGravship>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Terrain</defName>
+    <order>210</order>
+    <genStep Class="GenStep_Terrain"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>MutatorPostTerrain</defName>
+    <order>220</order>
+    <genStep Class="GenStep_MutatorPostTerrain" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>RemoveTinyIslands</defName>
+    <order>240</order>
+    <genStep Class="GenStep_RemoveTinyIslands"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Roads</defName>
+    <order>390</order>
+    <genStep Class="GenStep_Roads"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>RockChunks</defName>
+    <order>970</order>
+    <genStep Class="GenStep_RockChunks"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>MutatorCriticalStructures</defName>
+    <order>500</order>
+    <genStep Class="GenStep_MutatorCriticalStructures"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>MutatorNonCriticalStructures</defName>
+    <order>700</order>
+    <genStep Class="GenStep_MutatorNonCriticalStructures"/>
+  </GenStepDef>
+
+  <!-- Empty ruins -->
+  <GenStepDef>
+    <defName>ScatterRuinsSimple</defName>
+    <order>750</order>
+    <genStep Class="GenStep_ScatterRuinsSimple">
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <countPer10kCellsRange>0~3</countPer10kCellsRange>
+      <canBeOnEdge>true</canBeOnEdge>
+      <ignoreUsedRects>true</ignoreUsedRects>
+    </genStep>
+  </GenStepDef>
+
+  <!-- Steam geysers -->
+  <GenStepDef>
+    <defName>SteamGeysers</defName>
+    <order>950</order>
+    <genStep Class="GenStep_ScatterGeysers">
+      <thingDef>SteamGeyser</thingDef>
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <minSpacing>25</minSpacing>
+      <extraNoBuildEdgeDist>4</extraNoBuildEdgeDist>
+      <countPer10kCellsRange>0.7~1</countPer10kCellsRange>
+      <clearSpaceSize>30</clearSpaceSize>
+      <terrainValidationRadius>4</terrainValidationRadius>
+      <terrainValidationDisallowed>
+        <li>Road</li>
+      </terrainValidationDisallowed>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <radius>4</radius>
+          <affordance>Heavy</affordance>
+        </li>
+        <li Class="ScattererValidator_NoNonNaturalEdifices">
+          <radius>4</radius>
+        </li>
+        <li Class="ScattererValidator_AvoidSpecialThings" />
+        <li Class="ScatterValidator_AvoidUsedRects">
+          <size>(6, 6)</size> <!-- For geothermal generators -->
+        </li>
+      </validators>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>FindPlayerStartSpot</defName>
+    <order>850</order>
+    <genStep Class="GenStep_FindPlayerStartSpot"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>ScenParts</defName>
+    <order>875</order>
+    <genStep Class="GenStep_ScenParts"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Plants</defName>
+    <order>900</order>
+    <genStep Class="GenStep_Plants"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Snow</defName>
+    <order>1150</order>
+    <genStep Class="GenStep_Snow"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Animals</defName>
+    <order>1200</order>
+    <genStep Class="GenStep_Animals"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Fog</defName>
+    <order>1500</order>
+    <genStep Class="GenStep_Fog"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>MutatorFinal</defName>
+    <order>1600</order>
+    <genStep Class="GenStep_MutatorFinal" />
+  </GenStepDef>
+
+  <!-- Underground maps -->
+  <GenStepDef>
+    <defName>Underground_RocksFromGrid</defName>
+    <order>200</order>
+    <genStep Class="GenStep_RocksFromGrid">
+      <overrideBlotchesPer10kCells>10</overrideBlotchesPer10kCells>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>PlaceCaveExit</defName>
+    <order>400</order>
+    <genStep Class="GenStep_PlaceCaveExit"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Underground_ScatterRuinsSimple</defName>
+    <order>700</order>
+    <genStep Class="GenStep_ScatterRuinsSimple">
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <countPer10kCellsRange>2~3</countPer10kCellsRange>
+      <mustBeStandable>true</mustBeStandable>
+      <canBeOnEdge>true</canBeOnEdge>
+      <ignoreUsedRects>true</ignoreUsedRects>
+      <ruinSizeChanceCurve>
+        <points>
+          <li>(6, 0)</li>
+          <li>(6.001, 4)</li>
+          <li>(10, 0)</li>
+        </points>
+      </ruinSizeChanceCurve>
+      <destroyChanceExp>3</destroyChanceExp>
+      <clearSurroundingArea>true</clearSurroundingArea>
+    </genStep>
+  </GenStepDef>
+
+  <!-- Junk -->
+  <GenStepDef Abstract="True" Name="AncientMiscDebris">
+    <order>960</order>
+    <genStep Class="GenStep_ScatterThings">
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <isJunk>true</isJunk>
+      <minSpacing>50</minSpacing>
+      <countPer10kCellsRange>0.25~0.5</countPer10kCellsRange>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <radius>5</radius>
+          <affordance>Heavy</affordance>
+        </li>
+      </validators>
+      <filthDef>Filth_MachineBits</filthDef>
+      <filthExpandBy>1</filthExpandBy>
+      <filthChance>0.4</filthChance>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

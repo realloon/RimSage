@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>GravshipRange</defName>
+    <label>gravship range</label>
+    <description>The maximum distance this gravship can travel with its connected substructure.</description>
+    <category>Building</category>
+    <showIfUndefined>false</showIfUndefined>
+    <roundValue>true</roundValue>
+    <toStringStyle>Integer</toStringStyle>
+    <hideAtValue>0</hideAtValue>
+  </StatDef>
+  
+  <StatDef>
+    <defName>SubstructureSupport</defName>
+    <label>substructure support</label>
+    <description>The maximum amount of substructure supported by this gravship.</description>
+    <category>Building</category>
+    <showIfUndefined>false</showIfUndefined>
+    <roundValue>true</roundValue>
+    <toStringStyle>Integer</toStringStyle>
+  </StatDef>
+  
+</Defs>

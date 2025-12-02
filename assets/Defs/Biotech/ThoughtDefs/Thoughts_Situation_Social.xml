@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>BreastfedBaby</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <durationDays>20</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>breastfed</label>
+        <baseOpinionOffset>8</baseOpinionOffset>
+      </li>
+    </stages>
+    <socialTargetDevelopmentalStageFilter>Baby</socialTargetDevelopmentalStageFilter>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BreastfedMe</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <durationDays>3</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>breastfed me</label>
+        <baseOpinionOffset>16</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FedBaby</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <durationDays>20</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>fed</label>
+        <baseOpinionOffset>4</baseOpinionOffset>
+      </li>
+    </stages>
+    <socialTargetDevelopmentalStageFilter>Baby</socialTargetDevelopmentalStageFilter>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FedMe</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <durationDays>3</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>fed me</label>
+        <baseOpinionOffset>16</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PlayedWithMe</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <durationDays>3</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>played with me</label>
+        <baseOpinionOffset>8</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BabyGiggledSocial</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <durationDays>10</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>giggled</label>
+        <baseOpinionOffset>12</baseOpinionOffset>
+      </li>
+    </stages>
+    <socialTargetDevelopmentalStageFilter>Baby</socialTargetDevelopmentalStageFilter>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BabyCriedSocial</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <durationDays>10</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>cried</label>
+        <baseOpinionOffset>-12</baseOpinionOffset>
+      </li>
+    </stages>
+    <socialTargetDevelopmentalStageFilter>Baby</socialTargetDevelopmentalStageFilter>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PsychicBond</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
+    <hediff>PsychicBond</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>psychic bond</label>
+        <baseOpinionOffset>50</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>KilledChild_Opinion</defName>
+    <thoughtClass>Thought_Tale</thoughtClass>
+    <workerClass>ThoughtWorker_Tale</workerClass>
+    <taleDef>KilledChild</taleDef>
+    <stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>killed a child</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+
+</Defs>

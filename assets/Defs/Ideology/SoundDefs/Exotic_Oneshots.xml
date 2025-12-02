@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>ArchonexusThreatsAwakened_Alarm</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Exotic/Archonexus/ArchonexusThreatsAwakened_Alarm</clipPath>
+          </li>
+        </grains>
+        <distRange>10~100</distRange>
+        <volumeRange>30</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

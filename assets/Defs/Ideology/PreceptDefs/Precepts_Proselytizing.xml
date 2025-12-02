@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Proselytizing</defName>
+    <label>proselytizing</label>
+    <iconPath>UI/Issues/Proselytizing</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>ConvertedNewMember</defName>
+    <label>converted new member</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>ReliquaryPilgrimsSuccess</defName>
+    <label>pilgrims visited relic</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>RelicHuntSuccess</defName>
+    <label>relic obtained</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+  <PreceptDef Abstract="True" Name="ProselytizingBase">
+    <issue>Proselytizing</issue>
+    <impact>Low</impact>
+    <requiredMemes>
+      <li>Proselytizer</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>Proselytizer</li>
+    </associatedMemes>
+    <proselytizes>true</proselytizes>
+    <comps>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>ConvertedNewMember</eventDef>
+        <eventLabel>converted new member</eventLabel>
+        <points>1</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>RelicHuntSuccess</eventDef>
+        <points>5</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>ReliquaryPilgrimsSuccess</eventDef>
+        <points>2</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef ParentName="ProselytizingBase">
+    <defName>Proselytizing_Occasionally</defName>
+    <label>occasional</label>
+    <description>Those who know the truth should try to bring it to others, when it seems appropriate.</description>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <statFactors>
+      <SocialIdeoSpreadFrequencyFactor>3</SocialIdeoSpreadFrequencyFactor>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef ParentName="ProselytizingBase">
+    <defName>Proselytizing_Sometimes</defName>
+    <label>sometimes</label>
+    <description>Those who know the truth should bring it to others at every opportunity.</description>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <statFactors>
+      <SocialIdeoSpreadFrequencyFactor>5</SocialIdeoSpreadFrequencyFactor>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef ParentName="ProselytizingBase">
+    <defName>Proselytizing_Frequently</defName>
+    <label>frequent</label>
+    <description>Those who know the truth have a duty to always spread it and drive out other beliefs.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <statFactors>
+      <SocialIdeoSpreadFrequencyFactor>7</SocialIdeoSpreadFrequencyFactor>
+    </statFactors>
+  </PreceptDef>
+
+</Defs>

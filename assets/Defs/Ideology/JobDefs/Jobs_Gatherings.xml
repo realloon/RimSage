@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>Dance</defName>
+    <driverClass>JobDriver_Dance</driverClass>
+    <reportString>dancing.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>GotoAndBeSociallyActive</defName>
+    <driverClass>JobDriver_GotoAndStandSociallyActive</driverClass>
+    <reportString>relaxing socially.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>PrepareSkylantern</defName>
+    <driverClass>JobDriver_PrepareSkylantern</driverClass>
+    <reportString>making a skylantern.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>EatAtCannibalPlatter</defName>
+    <driverClass>JobDriver_EatAtCannibalPlatter</driverClass>
+    <reportString>eating at TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>AcceptRole</defName>
+    <driverClass>JobDriver_AcceptRole</driverClass>
+    <reportString>accepting role.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+</Defs>

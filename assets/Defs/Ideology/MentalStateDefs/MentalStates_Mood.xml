@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalBreakDef>
+    <defName>IdeoChange</defName>
+    <workerClass>MentalBreakWorker_IdeoChange</workerClass>
+    <mentalState>IdeoChange</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>IdeoChange</defName>
+    <stateClass>MentalState_IdeoChange</stateClass>
+    <label>crisis of belief</label>
+    <category>Misc</category>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+    <nameColor>(0.8,0.36,1)</nameColor>
+    <beginLetter>{PAWN_nameDef}'s spirit has broken. As a result, {PAWN_pronoun} was forced to question everything.</beginLetter>
+    <beginLetterDef>NeutralEvent</beginLetterDef>
+    <baseInspectLine>Mental state: Crisis of belief</baseInspectLine>
+  </MentalStateDef>
+
+  <MentalBreakDef>
+    <defName>Rebellion</defName>
+    <mentalState>Rebellion</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>Rebellion</defName>
+    <stateClass>MentalState_SlaveRebellion</stateClass>
+    <workerClass>MentalStateWorker_SlaveRebellion</workerClass>
+    <label>rebelling</label>
+    <category>Malicious</category>
+    <slavesOnly>true</slavesOnly>
+    <minTicksBeforeRecovery>60000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
+    <recoverFromSleep>true</recoverFromSleep>
+    <nameColor>(0.8,0.36,1)</nameColor>
+    <beginLetterLabel>rebel</beginLetterLabel>
+    <beginLetter>{0} has reached a psychological limit and is going to induce other slaves to rebel.</beginLetter>
+    <beginLetterDef>ThreatSmall</beginLetterDef>
+    <baseInspectLine>Mental state: Rebelling</baseInspectLine>
+  </MentalStateDef>
+
+</Defs>

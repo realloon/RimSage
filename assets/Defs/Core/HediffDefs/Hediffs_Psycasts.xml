@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+    <defName>PsychicAmplifier</defName>
+    <label>psylink neuroformer</label>
+    <description>A consumable archotech-created device that forms or upgrades a psylink in the user's mind.\n\nThe user presses the device over the eyes, where it links to the brain directly and restructures part of it. Afterwards, the device disintegrates into worthless ash.</description>
+    <descriptionHyperlinks><HediffDef>PsychicAmplifier</HediffDef></descriptionHyperlinks>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <techLevel>Archotech</techLevel>
+    <useHitPoints>true</useHitPoints>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <thingCategories>
+      <li>BodyPartsArchotech</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>1</Mass>
+      <MarketValue>2600</MarketValue>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Special/PsylinkNeuroformer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tradeTags>
+      <li>PsylinkNeuroformer</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Use neuroformer to form psylink</useLabel>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>PsychicAmplifier</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>PsyAmpInstalled</soundOnUsed>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+  <HediffDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+    <defName>PsychicAmplifier</defName>
+    <hediffClass>Hediff_Psylink</hediffClass>
+    <descriptionHyperlinks><ThingDef>PsychicAmplifier</ThingDef></descriptionHyperlinks>
+    <label>psylink</label>
+    <description>An organic connection to a larger psychic field. This allows a person to psychically induce a distant archotech superintelligence to influence reality in ways that seem impossible.\n\nHigher levels of psylink permit the use of more powers. Regardless of psylink level, a person can only use specific powers that they have learned.\n\nPsylink comes from a variety of sources. Single-use psylink neuroformer devices can create a psylink. Tribal peoples also know how to develop it through ritual linking with the legendary anima tree.\n\nAs a physical phenomenon in the brain, psylink is poorly-understood by scientists, not least because it seems to actively conceal itself if studied too closely. One thing most agree on is that it somehow connects people to archotechs and harnesses their power, possibly through some sort of negotiation or sympathy mechanism.</description>
+    <descriptionShort>Allows a person to psychically-induce an archotech to influence reality in ways that seem impossible. Higher levels of psylink permit the use of more powers.</descriptionShort>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>true</priceImpact>
+    <initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
+    <minSeverity>0</minSeverity>
+    <maxSeverity>6</maxSeverity>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statFactors>
+          <PsychicEntropyMax>1.0</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate>1</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statFactors>
+          <PsychicEntropyMax>1.3334</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate>1.125</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statFactors>
+          <PsychicEntropyMax>1.6667</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate>1.25</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <statFactors>
+          <PsychicEntropyMax>2.0</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate>1.375</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <statFactors>
+          <PsychicEntropyMax>2.3334</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate>1.5</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>6</minSeverity>
+        <statFactors>
+          <PsychicEntropyMax>2.6667</PsychicEntropyMax>
+          <PsychicEntropyRecoveryRate>1.625</PsychicEntropyRecoveryRate>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <SoundDef>
+    <defName>PsyAmpInstalled</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/Psycasts/PsyampInstalled_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <distRange>10~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

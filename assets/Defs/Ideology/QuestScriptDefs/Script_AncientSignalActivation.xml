@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>AncientSignalActivation</defName>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->ancient signal activation</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->ancient signal activation</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <defaultHidden>true</defaultHidden>
+    <autoAccept>true</autoAccept>
+    <root Class="QuestNode_Root_AncientSignalActivation" />
+  </QuestScriptDef>
+
+</Defs>

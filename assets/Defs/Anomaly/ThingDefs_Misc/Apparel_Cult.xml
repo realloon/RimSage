@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  
+  <ThingDef ParentName="HatBase">
+    <defName>Apparel_CultistMask</defName>
+    <label>ritual mask</label>
+    <description>A haunting mask worn by those that worship the void.</description>
+    <techLevel>Neolithic</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/TwistedMask/TwistedMask</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Bioferrite</li>
+    </stuffCategories>
+    <costStuffCount>25</costStuffCount>
+    <statBases>
+      <WorkToMake>3000</WorkToMake>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Mass>1.4</Mass>
+      <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <equippedStatOffsets>
+      <PainShockThreshold>0.15</PainShockThreshold>
+    </equippedStatOffsets>
+    <randomStyleChance>1</randomStyleChance>
+    <randomStyle>
+      <li>
+        <styleDef>CultistMask_TwistedMask</styleDef>
+      </li>
+      <li>
+        <styleDef>CultistMask_Dreadmask</styleDef>
+      </li>
+      <li>
+        <styleDef>CultistMask_SpikedApex</styleDef>
+      </li>
+      <li>
+        <styleDef>CultistMask_Spikemask</styleDef>
+      </li>
+    </randomStyle>
+    <apparel>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/TwistedMask/TwistedMask</wornGraphicPath>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>Horaxian</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <drawData>
+        <dataNorth>
+          <layer>-3</layer>
+        </dataNorth>
+      </drawData>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    </apparel>
+    <tradeTags>
+      <li>HoraxArmor</li>
+    </tradeTags>
+    <recipeMaker>
+      <researchPrerequisite>BioferriteExtraction</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <displayPriority>10</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="HatBase">
+    <defName>Apparel_CeremonialCultistMask</defName>
+    <label>ceremonial hood</label>
+    <description>A ceremonial mask typically worn by those that worship the void and its ruler.</description>
+    <techLevel>Neolithic</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/WhispererMask/WhispererMask</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <stuffCategories>
+      <li>Fabric</li>
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount>
+    <costList>
+      <Bioferrite>10</Bioferrite>
+    </costList>
+    <statBases>
+      <WorkToMake>2000</WorkToMake>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>0.1</Mass>
+      <EquipDelay>1.5</EquipDelay>
+      <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+      <Beauty>3</Beauty>
+    </statBases>
+    <randomStyleChance>1</randomStyleChance>
+    <randomStyle>
+      <li>
+        <styleDef>CeremonialCultistMask_WhispererMask</styleDef>
+      </li>
+      <li>
+        <styleDef>CeremonialCultistMask_CeremonialDreadcap</styleDef>
+      </li>
+    </randomStyle>
+    <apparel>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/WhispererMask/WhispererMask</wornGraphicPath>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>HoraxianCeremonial</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    </apparel>
+    <tradeTags>
+      <li>HoraxArmor</li>
+    </tradeTags>
+    <recipeMaker>
+      <researchPrerequisite>BioferriteExtraction</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <displayPriority>20</displayPriority>
+    </recipeMaker>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+</Defs>

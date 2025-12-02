@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <EffecterDef>
+    <defName>ClearSand</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_ClearSnow</moteDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>SandBits</fleckDef>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <chancePerTick>0.06</chancePerTick>
+        <burstCount>5</burstCount>
+        <scale>0.5~0.6</scale>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <angle>-25~25</angle>
+        <speed>5</speed>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>Fishing</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass> <!-- Using this type instead of InteractSymbol to get better positioning -->
+        <spawnLocType>OnSource</spawnLocType>
+        <maxMoteCount>1</maxMoteCount>
+        <destroyMoteOnCleanup>True</destroyMoteOnCleanup>
+        <positionOffset>(0, 0, .55)</positionOffset>
+        <moteDef>Mote_FishingRod</moteDef>
+        <angle>0</angle>
+        <rotation>0</rotation>
+        <absoluteAngle>True</absoluteAngle>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <perRotationOffsets>
+          <li>(0, -1, 0)</li>
+          <li>(0, 0.1, 0)</li>
+          <li>(0, 1, 0)</li> <!-- make it render above the pawn when the pawn is facing south -->
+          <li>(0, 0.1, 0)</li>
+        </perRotationOffsets>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

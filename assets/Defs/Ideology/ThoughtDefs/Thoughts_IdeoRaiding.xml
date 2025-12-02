@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>ParticipatedInRaid_Respected</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stackLimit>300</stackLimit>
+    <stages>
+      <li>
+        <label>participated in raid</label>
+        <description>I participated in a raid! That's how we do it!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>ParticipatedInRaid_Required</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stackLimit>300</stackLimit>
+    <stages>
+      <li>
+        <label>participated in raid</label>
+        <description>I participated in a raid! Now they'll all know me!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>RecentConquest_Respected</defName>
+    <workerClass>ThoughtWorker_Precept_RecentConquest</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>recent conquest</label>
+        <description>We recently raided another faction. That'll show them who's boss.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>no recent conquest</label>
+        <description>It's been far too long since we raided anyone. They might stop fearing and respecting us.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>RecentConquest_Required</defName>
+    <workerClass>ThoughtWorker_Precept_RecentConquest</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>recent conquest</label>
+        <description>We recently raided another faction. Their suffering will be their teacher.</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+      <li>
+        <label>no recent conquest</label>
+        <description>We haven't raided anyone for so long. We're despicable - helpless worms like the rest.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

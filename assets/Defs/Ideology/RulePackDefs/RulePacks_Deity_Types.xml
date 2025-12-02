@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Shared content -->
+
+  <RulePackDef>
+    <defName>DeityTypeMakerGlobal</defName>
+    <include>
+      <li>GlobalUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_deityType->[god] of [memeConcept]</li>
+
+        <li>god(p=7, gender!=Female)->God</li>
+        <li>god(p=7, gender==Female)->Goddess</li>
+        <li>god(p=4)->[memeGod]</li>
+        <li>god(p=3)->Spirit</li>
+        <li>god->Creator</li>
+        <li>god->Master</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Culture-specific content -->
+
+  <RulePackDef>
+    <defName>DeityTypeMakerCorunan</defName>
+    <include>
+      <li>DeityTypeMakerGlobal</li>
+    </include>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>DeityTypeMakerRustican</defName>
+    <include>
+      <li>DeityTypeMakerGlobal</li>
+    </include>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>DeityTypeMakerKriminul</defName>
+    <include>
+      <li>DeityTypeMakerGlobal</li>
+    </include>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>DeityTypeMakerSophian</defName>
+    <include>
+      <li>DeityTypeMakerGlobal</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>DeityTypeMakerAstropolitan</defName>
+    <include>
+      <li>DeityTypeMakerGlobal</li>
+    </include>
+  </RulePackDef>
+
+</Defs>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ModMetaData>
-  <packageId>Ludeon.RimWorld</packageId>
-  <author>Ludeon Studios</author>
-  <forceLoadBefore>
-    <li>Ludeon.RimWorld.Ideology</li>
-    <li>Ludeon.RimWorld.Royalty</li>
-  </forceLoadBefore>
-</ModMetaData>

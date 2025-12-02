@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>Damage_MechBandShockwave</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>damaged_past->electrified</li>
+        <li>damaged_past->shocked</li>
+        <li>damaged_past->zapped</li>
+        <li>destroyed_past->damaged_past</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

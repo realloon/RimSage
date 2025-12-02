@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PitGate</defName>
+    <label>pit gate</label>
+    <description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
+    <size>(8,8)</size>
+    <useHitPoints>false</useHitPoints>
+    <thingClass>PitGate</thingClass>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/PitGate/PitGate</texPath>
+      <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+    <destroyable>false</destroyable>
+    <building>
+      <isEdifice>true</isEdifice>
+      <deconstructible>false</deconstructible>
+      <isTargetable>false</isTargetable>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <portal>
+      <pocketMapGenerator>Undercave</pocketMapGenerator>
+      <exitDef>CaveExit</exitDef>
+      <enteredLetterLabel>Fleshbeast lair</enteredLetterLabel>
+      <enteredLetterText>In the depths of the pit gate, you have discovered a massive cavern system infested with fleshbeasts.\n\nThe cavern system is clogged with masses of living flesh that block your progress. Attack the fleshmass to destroy it.\n\nThe entire cavern system seems unstable. If you find what lies behind the fleshmass, you may be able to collapse the tunnels and close the pit gate.</enteredLetterText>
+      <enteredLetterDef>ThreatBig</enteredLetterDef>
+      <traverseSound>TraversePitGate</traverseSound>
+    </portal>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_ContentsMapPortal</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_LeaveFilthOnDestroyed">
+        <filthDef>Filth_LooseGround</filthDef>
+        <thickness>5</thickness>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>PitGateSpawner</defName>
+    <label>underground emergence</label>
+    <description>Something is emerging from the ground here.</description>
+    <thingClass>BuildingGroundSpawner</thingClass>
+    <destroyable>false</destroyable>
+    <holdsRoof>true</holdsRoof>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <drawerType>RealtimeOnly</drawerType>
+    <size>(8, 8)</size>
+    <uiIconPath>UI/Icons/UndergroundEmergence</uiIconPath>
+    <building>
+      <groundSpawnerSustainedEffecter>EmergencePointSustained8X8</groundSpawnerSustainedEffecter>
+      <groundSpawnerCompleteEffecter>EmergencePointComplete8X8</groundSpawnerCompleteEffecter>
+      <groundSpawnerThingToSpawn>PitGate</groundSpawnerThingToSpawn>
+      <groundSpawnerSpawnDelay>5000~20000</groundSpawnerSpawnDelay>
+      <groundSpawnerDestroyAdjacent>true</groundSpawnerDestroyAdjacent>
+      <groundSpawnerSustainerSound>PitGateOpening</groundSpawnerSustainerSound>
+      <groundSpawnerLetterLabel>Pit gate opened</groundSpawnerLetterLabel>
+      <groundSpawnerLetterText>The shifting terrain has fallen into the depths below, forming a massive hole.\n\nThis pit gate will remain open until you collapse its entrance. Explore the pit gate to find a way to collapse it from underneath and to find useful items in the undercaves.</groundSpawnerLetterText>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="CaveExit">
+    <defName>PitGateExit</defName>
+    <label>pit gate exit</label>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>PitBurrowSpawner</defName>
+    <label>underground emergence</label>
+    <description>Something is emerging from the ground here.</description>
+    <thingClass>BuildingGroundSpawner</thingClass>
+    <destroyable>false</destroyable>
+    <holdsRoof>true</holdsRoof>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <drawerType>RealtimeOnly</drawerType>
+    <size>(3, 3)</size>
+    <uiIconPath>UI/Icons/UndergroundEmergence</uiIconPath>
+    <building>
+      <groundSpawnerSustainedEffecter>EmergencePointSustained2X2</groundSpawnerSustainedEffecter>
+      <groundSpawnerCompleteEffecter>EmergencePointComplete2X2</groundSpawnerCompleteEffecter>
+      <groundSpawnerThingToSpawn>PitBurrow</groundSpawnerThingToSpawn>
+      <groundSpawnerSpawnDelay>600</groundSpawnerSpawnDelay>
+      <groundSpawnerDestroyAdjacent>true</groundSpawnerDestroyAdjacent>
+      <groundSpawnerSustainerSound>PitBurrowOpening</groundSpawnerSustainerSound>
+    </building>
+  </ThingDef>
+
+  <ThingDef Name="HoldingPlatformBase" ParentName="FurnitureBase" Abstract="True">
+    <thingClass>Building_HoldingPlatform</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <passability>PassThroughOnly</passability>
+    <rotatable>false</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <drawerType>RealtimeOnly</drawerType> <!-- Prevents items clipping into it -->
+    <tickerType>Normal</tickerType>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <uiOrder>100</uiOrder>
+    <pathCost>30</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3, 3)</size>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <minMonolithLevel>1</minMonolithLevel>
+    <descriptionHyperlinks>
+      <ThingDef>Electroharvester</ThingDef>
+      <ThingDef>ElectricInhibitor</ThingDef>
+      <ThingDef>ShardInhibitor</ThingDef>
+      <ThingDef>BioferriteHarvester</ThingDef>
+    </descriptionHyperlinks>
+    <thingCategories Inherit="False">
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Entity</li>
+    </inspectorTabs>
+    <designationCategory>Anomaly</designationCategory>
+    <statBases>
+      <MeditationFocusStrength>0</MeditationFocusStrength>
+    </statBases>
+    <building>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>Electroharvester</li>
+          <li>ElectricInhibitor</li>
+          <li>ShardInhibitor</li>
+          <li>BioferriteHarvester</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Void</li>
+        </focusTypes>
+        <offsets>
+          <li Class="FocusStrengthOffset_OccupiedHoldingPlatform">
+            <offset>0.16</offset>
+          </li>
+        </offsets>
+      </li>
+      <li Class="CompProperties_AttachPoints">
+        <points>
+          <!-- CABLES TO HARVESTERS/POWER -->
+          <li>
+            <offset>(0, 0, 0)</offset>
+            <type>CableConnection0</type>
+          </li>
+          <li>
+            <offset>(0, 0, 0)</offset>
+            <type>CableConnection1</type>
+          </li>
+          <li>
+            <offset>(0, 0, 0)</offset>
+            <type>CableConnection2</type>
+          </li>
+          <li>
+            <offset>(0, 0, 0)</offset>
+            <type>CableConnection3</type>
+          </li>
+
+          <!-- FOR HOLDING ENTITIES -->
+          <li>
+            <offset>(-1.32, 0, 1.3)</offset>
+            <type>PlatformRestraint0</type>
+          </li>
+          <li>
+            <offset>(1.32, 0, 1.3)</offset>
+            <type>PlatformRestraint1</type>
+          </li>
+          <li>
+            <offset>(1.32, 0, -1.3)</offset>
+            <type>PlatformRestraint2</type>
+          </li>
+          <li>
+            <offset>(-1.32, 0, -1.3)</offset>
+            <type>PlatformRestraint3</type>
+          </li>
+        </points>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="HoldingPlatformBase">
+    <defName>HoldingSpot</defName>
+    <label>holding spot</label>
+    <description>A spot for holding dangerous entities. Not as good as a steel holding platform, but a lot better than nothing.\n\nDowned entities can be secured at a holding spot where they can be studied. Increase containment strength by building strong walls and doors, and other special containment devices.</description>
+    <fillPercent>0</fillPercent>
+    <pathCost>0</pathCost>
+    <canOverlapZones>true</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <passability>Standable</passability>
+    <graphicData>
+      <texPath>Things/Building/HoldingSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <building>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <statBases>
+      <MaxHitPoints>0</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+    </statBases>
+    <minifiedDef IsNull="True" />
+    <thingCategories Inherit="False" />
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.7</containmentFactor>
+        <untetheredGraphicTexPath>Things/Building/HoldingPlatform/HoldingPlatform_RopesUntethered</untetheredGraphicTexPath>
+        <tilingChainTexPath>Things/Building/HoldingPlatform/HoldingPlatform_EntityRope</tilingChainTexPath>
+        <baseChainFastenerTexPath>Things/Building/HoldingPlatform/HoldingPlatform_ChainFastener</baseChainFastenerTexPath>
+        <targetChainFastenerTexPath>Things/Building/HoldingPlatform/HoldingPlatform_ChainFastener_StrongOutline</targetChainFastenerTexPath>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="HoldingPlatformBase">
+    <defName>HoldingPlatform</defName>
+    <label>holding platform</label>
+    <description>A platform for holding dangerous entities. The corners have eyelets where strong chains can be attached.\n\nDowned entities can be captured and secured on a holding platform, where they can be studied for Anomaly knowledge. Increase containment strength by building strong walls and doors, and other special containment devices.</description>
+    <graphicData>
+      <texPath>Things/Building/HoldingPlatform/HoldingPlatform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>EntityContainment</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <untetheredGraphicTexPath>Things/Building/HoldingPlatform/HoldingPlatform_ChainsUntethered</untetheredGraphicTexPath>
+        <tilingChainTexPath>Things/Building/HoldingPlatform/HoldingPlatform_EntityChain_StrongOutline</tilingChainTexPath>
+        <baseChainFastenerTexPath>Things/Building/HoldingPlatform/HoldingPlatform_ChainFastener</baseChainFastenerTexPath>
+        <targetChainFastenerTexPath>Things/Building/HoldingPlatform/HoldingPlatform_ChainFastener_StrongOutline</targetChainFastenerTexPath>
+        <entityLungeSoundHi>EntityChainHigh</entityLungeSoundHi>
+        <entityLungeSoundLow>EntityChainLow</entityLungeSoundLow>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef Name="CubeSculptureBase" ParentName="ArtBuildingBase" Abstract="True">
+    <label>cube sculpture</label>
+    <description>A hastily constructed sculpture resembling a cube.</description>
+    <fillPercent>0.35</fillPercent>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsArt</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>3</Mass>
+      <Beauty>4</Beauty>
+      <WorkToMake>5000</WorkToMake>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <expandHomeArea>false</expandHomeArea>
+      <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtCubeSculpture</nameMaker>
+        <descriptionMaker>ArtDescription_CubeSculpture</descriptionMaker>
+        <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="CubeSculptureBase">
+    <defName>DirtCubeSculpture</defName>
+    <label>dirt cube sculpture</label>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/CubeSculptures/CubeSculpture_Dirt</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="CubeSculptureBase">
+    <defName>StoneCubeSculpture</defName>
+    <label>stone cube sculpture</label>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/CubeSculptures/CubeSculpture_Stone</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="CubeSculptureBase">
+    <defName>SandCubeSculpture</defName>
+    <label>sand cube sculpture</label>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/CubeSculptures/CubeSculpture_Sand</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="CubeSculptureBase">
+    <defName>ScrapCubeSculpture</defName>
+    <label>scrap cube sculpture</label>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/CubeSculptures/CubeSculpture_Scrap</texPath>
+    </graphicData>
+    <statBases>
+      <Flammability>0.4</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="CraterBase">
+    <defName>PitBurrow</defName>
+    <label>pit burrow</label>
+    <description>A small hole connecting to some unseen cave network deep under the surface. The walls are too steep to climb. It is inherently unstable and will collapse after some time.</description>
+    <thingClass>PitBurrow</thingClass>
+    <size>(3, 3)</size>
+    <tickerType>Normal</tickerType>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/PitBurrow</texPath>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <building>
+      <uninstallWork>2500</uninstallWork>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_TacticalTurret</defName>
+    <label>tactical turret</label>
+    <description>A short-range turret. It will stop functioning once its battery runs out. If damaged sufficiently, it may explode.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/TacticalTurret/TacticalTurret_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+      <drawSize>(1.2, 1.2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>8</Mass>
+      <Beauty>-20</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <compClass>CompExplosivePowered</compClass>
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+        <adaptableDamageDefs>
+          <li>EMP</li>
+        </adaptableDamageDefs>
+      </li>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>12500</totalPowerTicks>
+        <killWhenDepleted>false</killWhenDepleted>
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>This turret has a limited battery life. Once it runs out, it will stop working entirely.</tooltipOverride>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>40</Steel>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <combatPower>45</combatPower>   <!-- same as a scavenger -->
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_TacticalTurret</turretGunDef>
+      <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+      <turretBurstCooldownTime>2.4</turretBurstCooldownTime>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+      <turretTopDrawSize>1.2</turretTopDrawSize>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_TacticalTurret</defName>
+    <label>tactical turret gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/TacticalTurret/TacticalTurret_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.77</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.24</AccuracyLong>
+      <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_TacticalTurret</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>19.9</range> <!-- Must be kept in sync with "explosion radius" of Grenade_TurretPack -->
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>2</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_TacticalTurret</defName>
+    <label>tactical turret bullet</label> 
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.7, 0.7)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Labyrinth -->
+  
+  <ThingDef ParentName="Door">
+    <thingClass>Building_JammedDoor</thingClass>
+    <defName>GrayDoor</defName>
+    <description>A strange gray door.</description>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <designationCategory IsNull="True"/>
+    <graphicData>
+      <texPath>Things/Building/GrayDoor/GrayDoor_Mover</texPath>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <isAirtight>true</isAirtight>
+    </building>
+    <comps Inherit="False">
+      <li Class="CompProperties_LabyrinthDoor">
+        <jammed>
+          <texPath>Things/Building/GrayDoor/GrayDoor_Jammed</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <ignoreThingDrawColor>true</ignoreThingDrawColor>
+        </jammed>
+        
+        <unlockedChance>0.3</unlockedChance>
+        
+        <!-- Interactable -->
+        
+        <activeTicks>1</activeTicks>
+        <ticksToActivate>3600</ticksToActivate>
+        <activateTexPath>UI/Commands/ForceOpenDoor</activateTexPath>
+        
+        <activateLabelString>Force open...</activateLabelString>
+        <activateDescString>Choose someone to force this door open.</activateDescString>
+        <guiLabelString>Choose who should do this</guiLabelString>
+        <jobString>Force this door open</jobString>
+        <activatingStringPending>forcing door open</activatingStringPending>
+        <activatingString>forcing door open: {1}s</activatingString>
+        <messageCompletedString>{PAWN_nameDef} has successfully forced the door open.</messageCompletedString>
+        
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="Wall">
+    <defName>GrayWall</defName>
+    <label>wall</label>
+    <description>An impassable gray wall.</description>
+    <selectable>false</selectable>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <designationCategory IsNull="True"/>
+    <uiIconPath>Things/Building/Linked/GreyWall_MenuIcon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/Linked/GrayWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+      <isAirtight>true</isAirtight>
+    </building>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef Name="FloorEtching" ParentName="BuildingBase">
+    <defName>FloorEtching</defName>
+    <label>floor etching</label>
+    <description>A crude sketch drawn onto the ground.\n\nWith sufficient time, you may be able to decipher it. Select a colonist and right-click the etching to inspect it.</description>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <passability>Standable</passability>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <selectable>true</selectable>
+    <hasTooltip>true</hasTooltip>
+    <drawerType>MapMeshOnly</drawerType>
+    <neverMultiSelect>True</neverMultiSelect>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <paintable>false</paintable>
+      <neverBuildable>true</neverBuildable>
+      <isTargetable>false</isTargetable>
+      <isInert>true</isInert>
+    </building>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Filth/FloorEtchings</texPath>
+      <shaderType>TransparentBelowSnow</shaderType>
+    </graphicData>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Interactable">
+        <compClass>CompFloorEtching</compClass>
+        <ticksToActivate>2500</ticksToActivate> <!-- ~40 seconds -->
+        <activateTexPath>UI/Commands/DecipherEtchings</activateTexPath>
+        
+        <activateLabelString>Decipher...</activateLabelString>
+        <activateDescString>Choose someone to decipher this floor etching.</activateDescString>
+        <guiLabelString>Choose who should do this</guiLabelString>
+        <jobString>Decipher floor etching</jobString>
+        <activatingStringPending>Deciphering floor etching</activatingStringPending>
+        <activatingString>Deciphering floor etching: {1}s</activatingString>
+        <inspectString>Send a colonist to decipher this.</inspectString>
+        <messageCompletedString>{PAWN_nameDef} has successfully deciphered the floor etching.</messageCompletedString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="FloorEtching">
+    <thingClass>FloorEtchingRambling</thingClass>
+    <defName>FloorEtchingRambling</defName>
+
+    <comps Inherit="False">
+      <li Class="CompProperties_Interactable">
+        <compClass>CompFloorEtchingRambling</compClass>
+        <ticksToActivate>2500</ticksToActivate> <!-- 10 seconds -->
+        <activateTexPath>UI/Commands/DecipherEtchings</activateTexPath>
+
+        <activateLabelString>Decipher...</activateLabelString>
+        <activateDescString>Choose someone to decipher this floor etching.</activateDescString>
+        <guiLabelString>Choose who should do this</guiLabelString>
+        <jobString>Decipher floor etching</jobString>
+        <activatingStringPending>Deciphering floor etching</activatingStringPending>
+        <activatingString>Deciphering floor etching: {1}s</activatingString>
+        <inspectString>Send a colonist to decipher this.</inspectString>
+        <messageCompletedString>{PAWN_nameDef} has successfully deciphered the floor etching.</messageCompletedString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CrateBase">
+    <defName>GrayBox</defName>
+    <label>gray box</label>
+    <description>A strange gray container. It is featureless and the surfaces are smooth. The material is not metal, concrete, or any other identifiable material.</description>
+    <size>(1, 1)</size>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/GrayBox/GrayBox</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+      <drawRotated>false</drawRotated>
+      <shadowData>
+        <volume>(1, 0.45, 1)</volume>
+      </shadowData>
+    </graphicData>
+    <building>
+      <openingEffect>GrayBoxOpened</openingEffect>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <comps>
+      <li Class="CompProperties_EmptyStateGraphic">
+        <graphicData>
+          <texPath>Things/Building/GrayBox/GrayBox_Open</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawRotated>false</drawRotated>
+          <drawSize>(1, 1)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+  <ThingDef Name="GrayStatueBase" ParentName="BuildingBase" Abstract="True">
+    <label>gray statue</label>
+    <description>A strange, twisted sculpture shaped into a disturbing form. It hums gently with some strange internal energy.</description>
+    <size>(1, 1)</size>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/GrayStatue</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1.5, 1.5)</drawSize>
+      <drawRotated>false</drawRotated>
+      <shadowData>
+        <volume>(0.3, 0.45, 0.3)</volume>
+        <offset>(0, 0, -0.5)</offset>
+      </shadowData>
+    </graphicData>
+    <building>
+      <paintable>false</paintable>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+  
+  <ThingDef ParentName="GrayStatueBase">
+    <defName>GrayStatueDeadlifeDust</defName>
+    <comps>
+      <li Class="CompProperties_GrayStatueGas">
+        <gas>DeadlifeDust</gas>
+        <triggerRadiusRange>3~8</triggerRadiusRange>
+        <letterLabel>Gray statue activated</letterLabel>
+        <letterText>Reacting to {PAWN_nameDef}'s presence, the strange statue has begun to release a cloud of deadlife dust!\n\nThis dust-like substance will settle on nearby corpses and raise them as dangerous shamblers.</letterText>
+        <letterDef>ThreatBig</letterDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="GrayStatueBase">
+    <defName>GrayStatueTeleporter</defName>
+    <comps>
+      <li Class="CompProperties_GrayStatueTeleporter">
+        <letterLabel>{PAWN_nameDef} teleported</letterLabel>
+        <letterText>After approaching the strange statue, {PAWN_nameDef} blinked and found {PAWN_objective}self transported to a new location.</letterText>
+        <letterDef>ThreatSmall</letterDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="DoorBase">
+    <defName>SecurityDoor</defName>
+    <label>security door</label>
+    <description>A heavily reinforced door. It is slow to open and requires electricity, but is very strong. It's a good choice if you want to keep something dangerous out - or in. The door requires walls on either side to function.</description>
+    <thingClass>Building_MultiTileDoor</thingClass>
+    <statBases>
+      <WorkToBuild>6000</WorkToBuild>
+      <MaxHitPoints>800</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(2, 1)</size>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/SecurityDoor/SecurityDoor2x1_Underlayer_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <!--  no damage marks because they don't move with the door -->
+        <enabled>false</enabled>
+      </damageData>
+      <color>(105,105,105)</color>
+    </graphicData>
+    <uiIconPath>Things/Building/SecurityDoor/SecurityDoor_MenuIcon_south</uiIconPath>
+    <uiIconColor>(105,105,105)</uiIconColor>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <stuffCategories Inherit="False"/>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <poweredDoorOpenSpeedFactor>4</poweredDoorOpenSpeedFactor>
+      <unpoweredDoorOpenSpeedFactor>2</unpoweredDoorOpenSpeedFactor>
+      <unpoweredDoorCloseSpeedFactor>2</unpoweredDoorCloseSpeedFactor>
+      <isAirtight>true</isAirtight>
+      <blueprintClass>Blueprint_Build</blueprintClass>
+      <blueprintGraphicData>
+        <texPath>Things/Building/SecurityDoor/SecurityDoor_MenuIcon</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(2.6, 3.1)</drawSize>
+      </blueprintGraphicData>
+      <isSupportDoor>true</isSupportDoor>
+      <doorTopGraphic>
+        <texPath>Things/Building/SecurityDoor/SecurityDoor2x1_Top</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(3,2.4)</drawSize>
+        <color>(105,105,105)</color>
+      </doorTopGraphic>
+      <doorSupportGraphic>
+        <texPath>Things/Building/SecurityDoor/SecurityDoor2x1_Support</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(3,2.4)</drawSize>
+        <color>(105,105,105)</color>
+      </doorSupportGraphic>
+      <upperMoverGraphic>
+        <texPath>Things/Building/SecurityDoor/SecurityDoor2x1_Upper_Mover</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <color>(105,105,105)</color>
+      </upperMoverGraphic>
+      <soundDoorOpenPowered>SecurityDoor_Open</soundDoorOpenPowered>
+      <soundDoorClosePowered>SecurityDoor_BeginClosing</soundDoorClosePowered>
+      <soundDoorOpenManual>SecurityDoor_Open</soundDoorOpenManual>
+      <soundDoorCloseManual>SecurityDoor_BeginClosing</soundDoorCloseManual>
+      <soundDoorCloseEnd>SecurityDoor_EndClosing</soundDoorCloseEnd>
+    </building>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+      <li>SecurityDoor</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>PlaceWorker_MultiCellDoor</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Styleable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>ElectricInhibitor</defName>
+    <label>electric inhibitor</label>
+    <description>A device that emits a specially tuned electromagnetic field which numbs the neural activity of captured entities. As long as it is powered, it improves the containment strength of any holding platform that it is pointed at. The electric field does not affect humans or normal animals.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,2)</size>
+    <graphicData>
+      <texPath>Things/Building/ElectricInhibitor/ElectricInhibitor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+      <damageData>
+        <rect>(0, 0.3, 1, 1.7)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.6, 0.5, 1.8)</volume>
+        <offset>(0, 0, 0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <pathCost>50</pathCost>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <designationCategory>Anomaly</designationCategory>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <uiOrder>105</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>20</Mass>
+    </statBases>
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Steel>25</Steel>
+    </costList>
+    <researchPrerequisites>
+      <li>EntityContainment</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ElectricInhibitor</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>70</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>4</maxDistance>
+        <minDistance>1</minDistance>
+        <mustBePlacedFacingThingLinear>true</mustBePlacedFacingThingLinear>
+        <statOffsets>
+          <ContainmentStrength>10</ContainmentStrength>
+        </statOffsets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>ShardInhibitor</defName>
+    <label>shard inhibitor</label>
+    <description>A shard of dark archotechnology that resonates with psychic energy, increasing the containment strength of any holding platform or spot within its radius.\n\nThe effect does not stack.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <graphicData>
+      <texPath>Things/Building/ShardInhibitor/ShardInhibitor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <pathCost>50</pathCost>
+    <designationCategory>Anomaly</designationCategory>
+    <uiOrder>106</uiOrder>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>10</Mass>
+    </statBases>
+    <costList>
+      <Steel>15</Steel>
+      <Shard>1</Shard>
+    </costList>
+    <researchPrerequisites>
+      <li>EntityContainment</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_ShowFacilitiesRange</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>5.9</maxDistance>
+        <requiresLOS>false</requiresLOS>
+        <statOffsets>
+          <ContainmentStrength>20</ContainmentStrength>
+        </statOffsets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>ProximityDetector</defName>
+    <label>proximity detector</label>
+    <thingClass>Building_ProximityDetector</thingClass>
+    <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible biosignatures within its radius.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <graphicData>
+      <texPath>Things/Building/ProximityDetector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.25</fillPercent>
+    <designationCategory>Anomaly</designationCategory>
+    <uiOrder>500</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>20</Mass>
+    </statBases>
+    <costList>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Bioferrite>15</Bioferrite>
+    </costList>
+    <researchPrerequisites>
+      <li>ProximityDetector</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ProximityDetector</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4.9</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>75</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AtmosphericHeater</defName>
+    <label>atmospheric heater</label>
+    <description>A thermal projection device powered by scavenged shards of dark archotechnology. The device burns bioferrite to agitate gas molecules in the atmosphere, raising the local outdoor temperature. The building itself also produces huge amounts of waste heat.</description>
+    <graphicData>
+      <texPath>Things/Building/AtmosphericHeater</texPath>
+      <graphicClass>Graphic_Indexed</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <designationCategory>Anomaly</designationCategory>
+    <castEdgeShadows>true</castEdgeShadows>
+    <uiOrder>400</uiOrder>
+    <size>(3,3)</size>
+    <fillPercent>0.75</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <researchPrerequisites>
+      <li>AtmosphericHeater</li>
+    </researchPrerequisites>
+    <building>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <costList>
+      <Shard>2</Shard>
+      <Bioferrite>150</Bioferrite>
+      <Steel>150</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <Beauty>-40</Beauty>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <comps>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>120</heatPerSecond> <!-- Same as active steam geyser -->
+      </li>
+      <li Class="CompProperties_TempControl">
+        <compClass>Comp_AtmosphericHeater</compClass>
+        <lowPowerConsumptionFactor>0.05</lowPowerConsumptionFactor>
+        <inspectString>Target outdoor temperature</inspectString>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>8</fuelConsumptionRate>
+        <fuelCapacity>80.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Bioferrite</li>
+          </thingDefs>
+        </fuelFilter>
+        <externalTicking>true</externalTicking>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(230,100,100,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1500</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_HeatPusherEffecter">
+        <effecterDef>AtmosphericHeaterAmbience</effecterDef>
+      </li>
+      <li Class="CompProperties_AttachPoints">
+        <points>
+          <li>
+            <offset>(-.5, 0, 1)</offset>
+            <type>Exhaust</type>
+          </li>
+        </points>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>FrenzyInducer</defName>
+    <label>frenzy inducer</label>
+    <description>A scavenged archotech shard mounted in an electrical stimulation frame. The device creates a frenzied psychic vibration in the local area which stimulates everyone nearby to move and work faster. However, any mental breaks they have are guaranteed to be violent.</description>
+    <thingClass>Building_FrenzyInducer</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/FrenzyInducer</texPath>
+      <drawSize>(1.5,1.5)</drawSize>
+    </graphicData>
+    <designationCategory>Anomaly</designationCategory>
+    <uiOrder>600</uiOrder>
+    <uiIconScale>0.7</uiIconScale>
+    <fillPercent>0.40</fillPercent>
+    <researchPrerequisites>
+      <li>FrenzyInducer</li>
+    </researchPrerequisites>
+    <building>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <costList>
+      <Shard>1</Shard>
+      <Bioferrite>100</Bioferrite>
+    </costList>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>-10</Beauty>
+      <Mass>50</Mass>
+    </statBases>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <placeWorkers>
+      <li>PlaceWorker_NoiseSource</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_NoiseSource">
+        <radius>8.9</radius>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>SleepSuppressor</defName>
+    <label>sleep suppressor</label>
+    <description>A scavenged archotech shard mounted in an electrical control frame. The device creates a psychic pulsation in the local area which alters the brain chemistry of those nearby, halting the buildup of fatigue toxins and removing the need for sleep. However, it also irritates anyone nearby.</description>
+    <thingClass>Building_SleepSuppressor</thingClass> 
+    <graphicData>
+      <texPath>Things/Building/SleepSuppressor/SleepSuppressor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <designationCategory>Anomaly</designationCategory>
+    <uiOrder>700</uiOrder>
+    <size>(2,1)</size>
+    <fillPercent>0.40</fillPercent>
+    <researchPrerequisites>
+      <li>SleepSuppressor</li>
+    </researchPrerequisites>
+    <building>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <costList>
+      <Shard>1</Shard>
+      <Bioferrite>100</Bioferrite>
+      <Steel>25</Steel>
+    </costList>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>6000</WorkToBuild>
+      <Mass>100</Mass>
+      <Beauty>-10</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <placeWorkers>
+      <li>PlaceWorker_NoiseSource</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_NoiseSource">
+        <radius>8.9</radius>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Noctolith</defName>
+    <label>noctolith</label>
+    <description>A twisted pillar of jagged blade-like structures made of dark, oily metal. It pulses with energy, powered by dark archotechnology at its core.\n\nIf you destroy the pillar, you can recover a shard of dark archotech.</description>
+    <size>(2,2)</size>
+    <tickerType>Normal</tickerType>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <useHitPoints>true</useHitPoints>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Building/Noctolith/Noctolith</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(1.9, 1.3, 1.2)</volume>
+        <offset>(0, 0, -0.2)</offset>
+      </shadowData>
+    </graphicData>
+    <passability>Impassable</passability>
+    <blockLight>true</blockLight>
+    <fillPercent>1</fillPercent>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <statBases>
+      <Flammability>0</Flammability>
+      <MaxHitPoints>1000</MaxHitPoints>
+    </statBases>
+    <killedLeavingsRanges>
+      <Shard>1</Shard>
+      <Bioferrite>30~50</Bioferrite>
+    </killedLeavingsRanges>
+    <comps>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Contains: Unknown\nDestroy noctoliths to end the unnatural darkness.</inspectString>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>11</glowRadius>
+        <glowColor>(74, 37, 2, 0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TrapIEDBase">
+    <defName>TrapIED_Deadlife</defName>
+    <label>IED deadlife trap</label>
+    <description>A pair of deadlife shells connected to a trigger which detonates on touch or bullet impact. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.\n\nThe trap needs corpses nearby to be raised by the deadlife dust.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/IEDDeadlife</texPath>
+    </graphicData>
+    <uiOrder>44</uiOrder>
+    <costList>
+      <Shell_Deadlife>2</Shell_Deadlife>
+    </costList>
+    <designationHotKey>Misc12</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>8.9</explosiveRadius>
+        <explosiveDamageType>DeadlifeDust</explosiveDamageType>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+        <postExplosionGasType>DeadlifeDust</postExplosionGasType>
+        <postExplosionGasRadiusOverride>4.9</postExplosionGasRadiusOverride>
+        <postExplosionGasAmount>100</postExplosionGasAmount>
+        <wickTicks>15</wickTicks>
+        <startWickOnDamageTaken>
+          <li>Bullet</li>
+          <li>Arrow</li>
+          <li>ArrowHighVelocity</li>
+        </startWickOnDamageTaken>
+      </li>
+    </comps>
+    <specialDisplayRadius>5.9</specialDisplayRadius>
+  </ThingDef>
+  
+  <ThingDef>
+    <defName>DelayedMetalhorrorEmerger</defName>
+    <label>delayed metalhorror emerge</label> <!-- hidden -->
+    <thingClass>DelayedMetalhorrorEmerger</thingClass>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <hideInspect>true</hideInspect>
+    <drawerType>None</drawerType>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase" Name="EndlessPit" Abstract="True">
+    <label>endless pit</label>
+    <description>A smooth-sided hole that extends endlessly downwards.</description>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <drawerType>RealtimeOnly</drawerType>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Impassable</passability>
+    <building>
+      <deconstructible>false</deconstructible>
+      <isTargetable>false</isTargetable>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <statBases>
+      <Flammability>0</Flammability>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="EndlessPit">
+    <defName>EndlessPit2x2c</defName>
+    <size>(2, 2)</size>
+    <graphicData>
+      <texPath>Things/Building/EndlessPit/EndlessPit_Small</texPath>
+      <graphicClass>Graphic_Single_AgeSecs</graphicClass>
+      <shaderType>EndlessPit</shaderType>
+      <drawSize>(2, 2)</drawSize>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/SoftNoise</_NoiseTex>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EndlessPit">
+    <defName>EndlessPit3x2c</defName>
+    <size>(3, 2)</size>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/EndlessPit/EndlessPit_Medium</texPath>
+      <graphicClass>Graphic_Multi_AgeSecs</graphicClass>
+      <shaderType>EndlessPit</shaderType>
+      <drawSize>(3, 2)</drawSize>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/SoftNoise</_NoiseTex>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EndlessPit">
+    <defName>EndlessPit3x3c</defName>
+    <size>(3, 3)</size>
+    <graphicData>
+      <texPath>Things/Building/EndlessPit/EndlessPit_Large</texPath>
+      <graphicClass>Graphic_Single_AgeSecs</graphicClass>
+      <shaderType>EndlessPit</shaderType>
+      <drawSize>(3, 3)</drawSize>
+      <shaderParameters>
+        <_NoiseTex>/Things/Mote/SoftNoise</_NoiseTex>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

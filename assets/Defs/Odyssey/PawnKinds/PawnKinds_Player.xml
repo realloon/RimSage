@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>CrewMember</defName>
+    <label>crew member</label>
+    <defaultFactionDef>GravshipCrew</defaultFactionDef>
+    <chemicalAddictionChance>0.06</chemicalAddictionChance>
+    <apparelColor>(255,255,255)</apparelColor>
+    <apparelTags>
+      <li>Vacsuit</li>
+    </apparelTags>
+    <ignoreApparelAllowChance>true</ignoreApparelAllowChance>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>FullHead</bodyPartGroup>
+        <requiredTag>Vacsuit</requiredTag>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <requiredTag>Vacsuit</requiredTag>
+      </li>
+    </specificApparelRequirements>
+    <apparelMoney>1500~2000</apparelMoney>
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+    <techHediffsChance>0.03</techHediffsChance>
+    <techHediffsMoney>50~800</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <techHediffsDisallowTags>
+      <li>PainCauser</li>
+    </techHediffsDisallowTags>
+    <initialResistanceRange>13~21</initialResistanceRange>
+  </PawnKindDef>
+</Defs>

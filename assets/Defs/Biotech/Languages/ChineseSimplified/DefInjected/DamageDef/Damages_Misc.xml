@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: tox gas -->
-  <ToxGas.label>毒气</ToxGas.label>
-  <!-- EN: {0} has been killed. -->
-  <ToxGas.deathMessage>{0}被杀死了。</ToxGas.deathMessage>
-  
-</LanguageData>

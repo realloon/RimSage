@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>AnimalSlaughter</defName>
+    <label>slaughtering animals</label>
+    <iconPath>UI/Issues/AnimalSlaughter</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>AnimalSlaughter_Prohibited</defName>
+    <issue>AnimalSlaughter</issue>
+    <label>prohibited</label>
+    <description>Slaughtering animals is absolutely prohibited.</description>
+    <impact>High</impact>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <exclusionTags>
+      <li>SlaughteringAnimalsBad</li>
+    </exclusionTags>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+      <li>AnimalPersonhood</li>
+    </associatedMemes>
+    <disallowHuntingCamps>true</disallowHuntingCamps>
+    <comps>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Know_Prohibited</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Know_Prohibited_Mood</thought>
+        <description>Someone slaughtered an animal</description>
+      </li>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <description>Slaughter animal</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>AnimalSlaughter_Horrible</defName>
+    <issue>AnimalSlaughter</issue>
+    <label>horrible</label>
+    <description>To slaughter an animal is a horrible thing.</description>
+    <impact>Medium</impact>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <exclusionTags>
+      <li>SlaughteringAnimalsBad</li>
+    </exclusionTags>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+      <li>AnimalPersonhood</li>
+    </associatedMemes>
+    <disallowHuntingCamps>true</disallowHuntingCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Horrible</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Know_Horrible_Mood</thought>
+        <description>Someone slaughtered an animal</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Know_Horrible</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>AnimalSlaughter_Disapproved</defName>
+    <issue>AnimalSlaughter</issue>
+    <label>disapproved</label>
+    <description>To slaughter an animal is an ugly thing.</description>
+    <impact>Low</impact>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <exclusionTags>
+      <li>SlaughteringAnimalsBad</li>
+    </exclusionTags>
+    <conflictingMemes>
+      <li>HumanPrimacy</li>
+    </conflictingMemes>
+    <associatedMemes>
+      <li>NaturePrimacy</li>
+      <li>AnimalPersonhood</li>
+    </associatedMemes>
+    <disallowHuntingCamps>true</disallowHuntingCamps>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Disapproved</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Know_Disapproved_Mood</thought>
+        <description>Someone slaughtered an animal</description>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>SlaughteredAnimal</eventDef>
+        <thought>SlaughteredAnimal_Know_Disapproved</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Related content -->
+
+  <HistoryEventDef>
+    <defName>SlaughteredAnimal</defName>
+    <label>slaughtered animal</label>
+  </HistoryEventDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Know_Prohibited</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>slaughtered animal</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Know_Prohibited_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>animal slaughtered</label>
+        <description>Someone slaughtered an animal! A tragic loss of a unique life.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Horrible</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>slaughtered animal</label>
+        <description>I had to slaughter an animal! It was horrible to snuff out a mind like that.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Know_Horrible</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>slaughtered animal</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Know_Horrible_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>animal slaughtered</label>
+        <description>Someone slaughtered an animal! What a horrible thing, to snuff out a mind like that.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Disapproved</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>slaughtered animal</label>
+        <description>I had to slaughter an animal. It was an ugly thing to do.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Know_Disapproved</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>slaughtered animal</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>SlaughteredAnimal_Know_Disapproved_Mood</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>animal slaughtered</label>
+        <description>Someone slaughtered an animal. It's a sad thing.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

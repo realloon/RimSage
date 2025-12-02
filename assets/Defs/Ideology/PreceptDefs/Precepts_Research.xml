@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Research</defName>
+    <label>research</label>
+    <iconPath>UI/Issues/Research</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Research_None</defName>
+    <issue>Research</issue>
+    <label>not allowed</label>
+    <description>To research technology is an immoral act. It is not to be done.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>60</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>Researching</eventDef>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Research_ExtremelySlow</defName>
+    <issue>Research</issue>
+    <label>extremely slow</label>
+    <description>Research isn't a worthwhile activity at all. Why try hard at it?</description>
+    <impact>High</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <statFactors>
+      <ResearchSpeed>0.25</ResearchSpeed>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Research_VerySlow</defName>
+    <issue>Research</issue>
+    <label>very slow</label>
+    <description>Research work is unworthy of serious respect. Better not to be seen trying hard at it.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>40</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <statFactors>
+      <ResearchSpeed>0.5</ResearchSpeed>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Research_Slow</defName>
+    <issue>Research</issue>
+    <label>slow</label>
+    <description>Research work just isn't particularly meaningful. Why try hard at it?</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <statFactors>
+      <ResearchSpeed>0.75</ResearchSpeed>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Research_Normal</defName>
+    <issue>Research</issue>
+    <label>normal</label>
+    <description>Research is a worthwhile form of work that the community needs.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Research_Fast</defName>
+    <issue>Research</issue>
+    <label>fast</label>
+    <description>Research is an especially virtuous activity.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <statFactors>
+      <ResearchSpeed>1.25</ResearchSpeed>
+    </statFactors>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>Research_VeryFast</defName>
+    <issue>Research</issue>
+    <label>very fast</label>
+    <description>Research is among the most meaningful acts a person can perform.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <statFactors>
+      <ResearchSpeed>1.5</ResearchSpeed>
+    </statFactors>
+  </PreceptDef>
+
+</Defs>

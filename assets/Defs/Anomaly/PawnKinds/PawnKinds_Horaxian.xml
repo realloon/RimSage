@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef Name="HoraxianBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionDef>HoraxCult</defaultFactionDef>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>55~65</initialResistanceRange>
+    <styleItemTags>
+      <li>
+        <tag>Cultist</tag>
+        <baseWeight>5</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    </styleItemTags>
+    <startingHediffs>
+      <li>
+        <def>Inhumanized</def>
+      </li>
+    </startingHediffs>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.05</Hussar>
+        <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.05</Dirtmole>
+        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.025</Genie>
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.025</Neanderthal>
+      </xenotypeChances>
+    </xenotypeSet>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="HoraxianBase" Name="UnderthrallBase">
+    <defName>Horaxian_Underthrall</defName>
+    <label>underthrall grunt</label>
+    <combatPower>55</combatPower>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <studiableAsPrisoner>true</studiableAsPrisoner>
+    <nakedChance>0.5</nakedChance>
+    <apparelMoney>400~1000</apparelMoney>
+    <isGoodPsychicRitualInvoker>true</isGoodPsychicRitualInvoker>
+    <apparelTags>
+      <li>Horaxian</li>
+    </apparelTags>
+    <disallowedTraitsWithDegree>
+      <PsychicSensitivity>-2</PsychicSensitivity>
+    </disallowedTraitsWithDegree>
+    <specificApparelRequirements>
+      <li>
+        <apparelLayer>Shell</apparelLayer>
+        <color>(85, 85, 85)</color>
+        <alternateTagChoices>
+          <li>
+            <tag>Robe</tag>
+            <chance>1</chance>
+          </li>
+        </alternateTagChoices>
+      </li>
+    </specificApparelRequirements>
+    <weaponTags>
+      <li>NeolithicMeleeBasic</li>
+      <li>MedievalMeleeDecent</li>
+    </weaponTags>
+    <weaponMoney>100~160</weaponMoney>
+    <startingHediffs>
+      <li>
+        <def>Tentacle</def>
+        <chance>0.15</chance>
+      </li>
+      <li>
+        <def>BlissLobotomy</def>
+        <chance>0.05</chance>
+      </li>
+      <li>
+        <def>FleshWhip</def>
+        <chance>0.05</chance>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="UnderthrallBase">
+    <defName>Horaxian_Gunner</defName>
+    <label>underthrall gunner</label>
+    <combatPower>80</combatPower>
+    <nakedChance>0</nakedChance>
+    <isGoodPsychicRitualInvoker>false</isGoodPsychicRitualInvoker>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <startingHediffs>
+      <li>
+        <def>DeathRefusal</def>
+      </li>
+    </startingHediffs>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>FullHead</bodyPartGroup>
+        <requiredTag>Horaxian</requiredTag>
+        <useRandomStyleDef>true</useRandomStyleDef>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <color>(85, 85, 85)</color>
+      </li>
+    </specificApparelRequirements>
+    <weaponTags Inherit="False">
+      <li>SimpleGun</li>
+      <li>ShortShots</li>
+    </weaponTags>
+    <weaponMoney>400~700</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="HoraxianBase">
+    <defName>Horaxian_Highthrall</defName>
+    <label>highthrall</label>
+    <combatPower>90</combatPower>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <studiableAsPrisoner>true</studiableAsPrisoner>
+    <isGoodPsychicRitualInvoker>true</isGoodPsychicRitualInvoker>
+    <disallowedTraitsWithDegree>
+      <PsychicSensitivity>-2</PsychicSensitivity>
+    </disallowedTraitsWithDegree>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <alternateTagChoices>
+          <li>
+            <tag>Robe</tag>
+            <chance>1</chance>
+          </li>
+        </alternateTagChoices>
+      </li>
+      <li>
+        <bodyPartGroup>FullHead</bodyPartGroup>
+        <requiredTag>HoraxianCeremonial</requiredTag>
+        <useRandomStyleDef>true</useRandomStyleDef>
+      </li>
+      <li>
+        <color>(85, 85, 85)</color>
+      </li>
+    </specificApparelRequirements>
+    <weaponTags>
+      <li>NerveSpiker</li>
+    </weaponTags>
+    <weaponMoney>300~500</weaponMoney>
+    <startingHediffs>
+      <li>
+        <def>Tentacle</def>
+        <chance>0.05</chance>
+      </li>
+      <li>
+        <def>Metalblood</def>
+        <durationTicksRange>60000~300000</durationTicksRange> <!-- 1~5 days -->
+      </li>
+      <li>
+        <def>DeathRefusal</def>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
+</Defs>

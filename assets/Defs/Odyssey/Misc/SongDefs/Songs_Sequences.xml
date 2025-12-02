@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Orbital Relax -->
+
+  <SongDef>
+    <defName>Floating_Points</defName>
+    <clipPath>Songs/Orbital_Relax/Floating_Points</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Low_Planetary_Orbit</defName>
+    <clipPath>Songs/Orbital_Relax/Low_Planetary_Orbit</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Sky_Farmer</defName>
+    <clipPath>Songs/Orbital_Relax/Sky_Farmer</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Wabi_Sabi</defName>
+    <clipPath>Songs/Orbital_Relax/Wabi_Sabi</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Impermanent_Waves</defName>
+    <clipPath>Songs/Orbital_Relax/Impermanent_Waves</clipPath>
+    <volume>1.00</volume>
+    <commonality>1</commonality> <!-- This one can play on the ground, not just in orbit -->
+  </SongDef>
+
+  <!-- Orbital Combat -->
+  
+  <SongDef>
+    <defName>Baubles</defName>
+    <clipPath>Songs/Orbital_Combat/Baubles</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+
+  <SongDef>
+    <defName>Is_There_Still_Time</defName>
+    <clipPath>Songs/Orbital_Combat/Is_There_Still_Time</clipPath>
+    <volume>1.00</volume>
+    <commonality>0</commonality>
+  </SongDef>
+  
+</Defs>

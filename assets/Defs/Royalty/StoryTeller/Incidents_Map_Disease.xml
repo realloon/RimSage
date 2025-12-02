@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef ParentName="DiseaseIncident">
+    <defName>Disease_Abasia</defName>
+    <label>paralytic abasia</label>
+    <diseaseIncident>Abasia</diseaseIncident>
+    <letterLabel>Disease: Paralytic abasia</letterLabel>
+    <diseaseVictimFractionRange>0~0.25</diseaseVictimFractionRange>
+    <minThreatPoints>300</minThreatPoints>
+    <minPopulation>4</minPopulation>
+  </IncidentDef>
+
+  <IncidentDef ParentName="DiseaseIncident">
+    <defName>Disease_BloodRot</defName>
+    <label>blood rot</label>
+    <diseaseIncident>BloodRot</diseaseIncident>
+    <letterLabel>Disease: Blood rot</letterLabel>
+    <diseaseVictimFractionRange>0~0.2</diseaseVictimFractionRange>
+    <minThreatPoints>700</minThreatPoints>
+    <minPopulation>4</minPopulation>
+  </IncidentDef>
+
+</Defs>

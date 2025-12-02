@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <PlanetLayerSettingsDef>
+    <defName>Orbit</defName>
+    <label>Default orbit</label>
+    <settings>
+      <radius>130</radius>
+      <subdivisions>5</subdivisions>
+      <extraCameraAltitude>300</extraCameraAltitude>
+      <backgroundWorldCameraOffset>160</backgroundWorldCameraOffset>
+      <backgroundWorldCameraParallaxDistancePer100Cells>2.5</backgroundWorldCameraParallaxDistancePer100Cells>
+      <useSurfaceViewAngle>true</useSurfaceViewAngle>
+    </settings>
+  </PlanetLayerSettingsDef>
+
+  <!-- Moon settings example -->
+  <!--
+  <PlanetLayerSettingsDef>
+    <defName>Moon</defName>
+    <label>Default moon</label>
+    <settings>
+      <radius>15</radius>
+      <subdivisions>5</subdivisions>
+      <origin>(200,50,0)</origin>
+    </settings>
+  </PlanetLayerSettingsDef>
+  -->
+  
+</Defs>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--============= Abilities ============-->
+
+  <ThinkTreeDef>
+    <defName>Abilities_Aggressive</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalColonist">
+          <invert>true</invert>
+          <subNodes>
+
+            <!-- Animal warcall -->
+            <li Class="ThinkNode_ConditionalHasAbility" MayRequire="Ludeon.RimWorld.Biotech">
+              <ability>AnimalWarcall</ability>
+              <subNodes>
+                <li Class="ThinkNode_ConditionalHashIntervalTick">
+                  <interval>65</interval>
+                  <subNodes>
+                    <li Class="JobGiver_AICastAnimalWarcall">
+                      <ability>AnimalWarcall</ability>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+            
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>Abilities_Escape</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalColonist">
+          <invert>true</invert>
+          <subNodes>
+
+            <!-- Longjump -->
+            <li Class="ThinkNode_ConditionalHasAbility" MayRequire="Ludeon.RimWorld.Biotech">
+              <ability>Longjump</ability>
+              <subNodes>
+                <li Class="ThinkNode_ConditionalTotalDamage">
+                  <thresholdPercent>0.25</thresholdPercent>
+                  <subNodes>
+                    <li Class="ThinkNode_HarmedRecently">
+                      <thresholdTicks>120</thresholdTicks>
+                      <subNodes>
+                        <li Class="ThinkNode_ConditionalUnderCombatPressure">
+                          <maxThreatDistance>2</maxThreatDistance>
+                          <minCloseTargets>2</minCloseTargets>
+                          <subNodes>
+                            <li Class="JobGiver_AIJumpEscapeEnemies">
+                              <ability>Longjump</ability>
+                            </li>
+                          </subNodes>
+                        </li>
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

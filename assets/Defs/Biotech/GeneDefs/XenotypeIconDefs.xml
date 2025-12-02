@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <XenotypeIconDef>
+    <defName>Basic</defName>
+    <texPath>UI/Icons/Xenotypes/Other</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Crown</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Horn</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon2</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Ears</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon3</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Frown</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon4</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Skull</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon5</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>SkullThin</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon6</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Crescent</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon7</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Lop</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon8</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Rect</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon9</texPath>
+  </XenotypeIconDef>
+
+  <XenotypeIconDef>
+    <defName>Furred</defName>
+    <texPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon10</texPath>
+  </XenotypeIconDef>
+
+</Defs>

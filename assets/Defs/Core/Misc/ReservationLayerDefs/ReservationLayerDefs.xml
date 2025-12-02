@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <ReservationLayerDef>
+    <defName>Floor</defName>
+  </ReservationLayerDef>
+
+  <ReservationLayerDef>
+    <defName>Ceiling</defName>
+  </ReservationLayerDef>
+
+  <ReservationLayerDef>
+    <defName>Empty</defName>
+  </ReservationLayerDef>
+
+</Defs>

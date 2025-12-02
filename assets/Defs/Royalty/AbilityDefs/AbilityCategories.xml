@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <AbilityCategoryDef>
+    <defName>WordOf</defName>
+    <displayOrder>0</displayOrder>
+  </AbilityCategoryDef>
+
+  <AbilityCategoryDef>
+    <defName>Psychic</defName>
+    <displayOrder>1</displayOrder>
+  </AbilityCategoryDef>
+
+  <AbilityCategoryDef>
+    <defName>Skip</defName>
+    <displayOrder>2</displayOrder>
+  </AbilityCategoryDef>
+  
+</Defs>

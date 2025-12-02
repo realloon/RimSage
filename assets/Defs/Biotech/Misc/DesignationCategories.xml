@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <DesignationCategoryDef>
+    <defName>Biotech</defName>
+    <label>biotech</label>
+    <order>12</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+    <preferredColumn>1</preferredColumn>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+  </DesignationCategoryDef>
+</Defs>

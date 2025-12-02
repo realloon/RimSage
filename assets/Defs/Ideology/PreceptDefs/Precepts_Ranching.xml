@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Ranching</defName>
+    <label>ranching</label>
+    <iconPath>UI/Issues/Ranching</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>HospitalitySuccess_Animals</defName>
+    <label>animal hospitality success</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Ranching_Central</defName>
+    <issue>Ranching</issue>
+    <label>central</label>
+    <description>We must raise and consume many large animals, and we must not eat plants.</description>
+    <impact>Medium</impact>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <requiredMemes>
+      <li>Rancher</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Ranching_Central_AnimalMassPerCapita</thought>
+        <thoughtStageDescriptions>
+          <li>No animals</li>
+          <li>Scarce animals {STAGE1}</li>
+          <li>Few animals {STAGE2}</li>
+          <li>Some animals {STAGE4}</li>
+          <li>Lots of animals {STAGE5}</li>
+          <li>Tons of animals</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>SowedHumanFoodPlant</eventDef>
+        <thought>Ranching_SowedPlant</thought>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>HospitalitySuccess_Animals</eventDef>
+        <points>2</points>
+      </li>
+    </comps>
+    <statFactors>
+      <PlantWorkSpeed>0.70</PlantWorkSpeed>
+      <TameAnimalChance>1.2</TameAnimalChance>
+      <AnimalGatherYield>1.2</AnimalGatherYield>
+      <ButcheryFleshEfficiency>1.2</ButcheryFleshEfficiency>
+      <AnimalsLearningFactor>2.0</AnimalsLearningFactor>
+    </statFactors>
+    <statOffsets>
+      <AnimalProductsSellImprovement>0.1</AnimalProductsSellImprovement>
+    </statOffsets>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+  <!-- Ranching animal mass per capita -->
+  <ThoughtDef>
+    <defName>Ranching_Central_AnimalMassPerCapita</defName>
+    <workerClass>ThoughtWorker_Precept_AnimalBodySizePerCapita</workerClass>
+    <minExpectationForNegativeThought>Low</minExpectationForNegativeThought>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>no animals</label>
+        <description>We have no animals at all! It's everything I am against.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>scarce animals</label>
+        <description>We have far too few animals in our colony. We are not even close to living the right way.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>few animals</label>
+        <description>We have few animals in our colony. It's not right.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>some animals</label>
+        <description>It's good to be raising animals here, though more would be even better.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>lots of animals</label>
+        <description>It's great we're raising lots of animals here, though a few more wouldn't hurt.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>tons of animals</label>
+        <description>Our ranch is thriving. This is the right way to be.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Ranching_SowedPlant</defName>
+    <durationDays>2</durationDays>
+    <minExpectation>Low</minExpectation>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>sowed human food plant</label>
+        <description>I sowed a human food plant. It was wrong - humans should eat animals, and animals should eat nature-made plants.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

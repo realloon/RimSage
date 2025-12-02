@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RuleDef>
+    <defName>LandingPad</defName>
+    <symbol>landingPad</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_LandingPad" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>ThroneRoom</defName>
+    <symbol>throneRoom</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_GenericRoom">
+        <minRectSize>(3, 3)</minRectSize>
+        <interior>interior_throneRoom</interior>
+        <useRandomCarpet>true</useRandomCarpet>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+</Defs>

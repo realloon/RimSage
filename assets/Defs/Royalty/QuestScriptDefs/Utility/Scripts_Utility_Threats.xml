@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>Util_ManhunterPack</defName>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>threatDescription->a pack of (*Threat)[animalCount] manhunting [animalKind_labelPlural](/Threat) will arrive.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_ManhunterPack">
+      <customLetterLabel>$customLetterLabel</customLetterLabel>
+      <customLetterText>$customLetterText</customLetterText>
+      <customLetterLabelRules>$customLetterLabelRules</customLetterLabelRules>
+      <customLetterTextRules>$customLetterTextRules</customLetterTextRules>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>Util_Infestation</defName>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>threatDescription->(*Threat)[hivesCount] insect hives(/Threat) will burrow up from underground.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetHivesCountFromPoints">
+          <storeAs>hivesCount</storeAs>
+        </li>
+
+        <li Class="QuestNode_Infestation">
+          <tag>$tag</tag>
+          <hivesCount>$hivesCount</hivesCount>
+          <customLetterLabel>$customLetterLabel</customLetterLabel>
+          <customLetterText>$customLetterText</customLetterText>
+          <customLetterLabelRules>$customLetterLabelRules</customLetterLabelRules>
+          <customLetterTextRules>$customLetterTextRules</customLetterTextRules>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>Util_SpawnSiteThreat</defName>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>threatDescription->a new site will appear nearby, where [allSitePartsDescriptions] This threat will remain until you go destroy it.</li>
+        <li>defaultSiteAppearedLetterText->A new site has appeared nearby.\n\n[allSitePartsDescriptions]</li>
+        <li>defaultSiteAppearedLetterLabel->Site appeared: [site_label]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>siteDistRange</name>
+          <value>1~10</value>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>hiddenSitePartsPossible</name>
+          <value>true</value>
+        </li>
+
+        <li Class="QuestNode_Greater">
+          <value1>$points</value1>
+          <value2>1500</value2> <!-- Given the 1000-point limit of Util_AdjustPointsForDistantFight, I believe this will never happen -Ty -->
+          <node Class="QuestNode_Set">
+            <name>sitePartsTags</name>
+            <value>
+              <li>
+                <tag>QuestActiveThreat</tag>
+              </li>
+              <li>
+                <tag>QuestActiveThreatDefense</tag>
+              </li>
+              <li>
+                <tag>QuestActiveThreatDefense</tag>
+                <chance>0.25</chance>
+              </li>
+              <li>
+                <tag>QuestActiveThreatDefense</tag>
+                <chance>0.05</chance>
+              </li>
+            </value>
+          </node>
+          <elseNode Class="QuestNode_Greater">
+            <value1>$points</value1>
+            <value2>500</value2>
+            <node Class="QuestNode_Set">
+              <name>sitePartsTags</name>
+              <value>
+                <li>
+                  <tag>QuestActiveThreat</tag>
+                </li>
+                <li>
+                  <tag>QuestActiveThreatDefense</tag>
+                </li>
+                <li>
+                  <tag>QuestActiveThreatDefense</tag>
+                  <chance>0.25</chance>
+                </li>
+              </value>
+            </node>
+            <elseNode Class="QuestNode_Sequence">
+              <nodes>
+                <li Class="QuestNode_Set">
+                  <name>sitePartsTags</name>
+                  <value>
+                    <li>
+                      <tag>QuestActiveThreat</tag>
+                    </li>
+                    <li>
+                      <tag>QuestActiveThreatDefenseNoHidden</tag>
+                    </li>
+                  </value>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>hiddenSitePartsPossible</name>
+                  <value>false</value>
+                </li>
+              </nodes>
+            </elseNode>
+          </elseNode>
+        </li>
+
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>$sitePartsTags</sitePartsTags>
+        </li>
+        
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+          <clampRangeBySiteParts>true</clampRangeBySiteParts>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+        </li>
+
+        <!-- 50% chance we don't say there may be a hidden threat if there's no such threat at all -->
+        <li Class="QuestNode_IsTrue">
+          <value>$hiddenSitePartsPossible</value>
+          <node Class="QuestNode_AnyHiddenSitePart">
+            <sitePartDefs>$sitePartDefs</sitePartDefs>
+            <elseNode Class="QuestNode_Chance">
+              <chance>0.5</chance>
+              <node Class="QuestNode_Set">
+                <name>hiddenSitePartsPossible</name>
+                <value>false</value>
+              </node>
+            </elseNode>
+          </node>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>$hiddenSitePartsPossible</hiddenSitePartsPossible>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_IsNull">
+          <value>$customLetterText</value>
+          <node Class="QuestNode_IsNull">
+            <value>$customLetterTextRules</value>
+            <node Class="QuestNode_Set">
+              <name>customLetterText</name>
+              <value TKey="LetterLabelSiteAppeared">[defaultSiteAppearedLetterText]</value>
+            </node>
+          </node>
+        </li>
+        <li Class="QuestNode_IsNull">
+          <value>$customLetterLabel</value>
+          <node Class="QuestNode_IsNull">
+            <value>$customLetterLabelRules</value>
+            <node Class="QuestNode_Set">
+              <name>customLetterLabel</name>
+              <value TKey="LetterTextSiteAppeared">[defaultSiteAppearedLetterLabel]</value>
+            </node>
+          </node>
+        </li>
+        <li Class="QuestNode_Letter">
+          <label>$customLetterLabel</label>
+          <text>$customLetterText</text>
+          <labelRules>$customLetterLabelRules</labelRules>
+          <textRules>$customLetterTextRules</textRules>
+          <letterDef>NegativeEvent</letterDef>
+          <lookTargets>$site</lookTargets>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+  <!-- Initiate a random negative game condition. Duration will be something typical for that condition.
+    Params:
+      map                     : Map to get the condition
+    Out:
+      gameConditionDifficulty : A rating of the difficulty of the chosen game condition, per day. Useful for calculating rewards
+       -->
+  <QuestScriptDef>
+    <defName>Util_GameConditionNegativeRandom</defName>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>threatDescription->[gameConditionDescriptionFuture].</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetRandomNegativeGameCondition">
+          <storeGameConditionAs>gameCondition</storeGameConditionAs>
+          <storeGameConditionDurationAs>gameConditionDuration</storeGameConditionDurationAs>
+          <storeGameConditionDifficultyAs>gameConditionDifficulty</storeGameConditionDifficultyAs>
+        </li>
+        
+        <li Class="QuestNode_GameCondition">
+          <gameCondition>$gameCondition</gameCondition>
+          <duration>$gameConditionDuration</duration>
+          <storeGameConditionDescriptionFutureAs>gameConditionDescriptionFuture</storeGameConditionDescriptionFutureAs>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

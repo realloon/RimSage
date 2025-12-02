@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualAttachableOutcomeEffectDef>
+    <defName>RechargePsyfocus</defName>
+    <label>recharge psyfocus</label>
+    <effectDesc>the psyfocus of all participants will be recharged to full.</effectDesc>
+    <letterInfoText>The psyfocus of all participants has been fully recharged.</letterInfoText>
+    <workerClass>RitualAttachableOutcomeEffectWorker_PsyfocusRecharge</workerClass>
+  </RitualAttachableOutcomeEffectDef>
+
+</Defs>

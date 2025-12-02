@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PreceptDef ParentName="SpeechPreceptBase">
+    <defName>ThroneSpeech</defName>
+    <label>throne speech</label>
+    <description>Initiate a speech from the throne. {ORGANIZER_labelShort} will go to {ORGANIZER_possessive} throne and call all colonists to listen to a speech there. If all goes well, listeners will feel inspired, and gain respect for {ORGANIZER_labelShort}. If it goes poorly, the speech will do social damage. The outcome depends on {ORGANIZER_labelShort}'s social abilities.</description>
+    <ritualPatternBase>ThroneSpeech</ritualPatternBase>
+    <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+    <classic>true</classic>
+    <ignoreNameUniqueness>true</ignoreNameUniqueness>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+  </PreceptDef>
+  
+  <PreceptDef>
+    <defName>AnimaTreeLinking</defName>
+    <label>anima tree linking</label>
+    <description>One person will link with an anima tree. The linker will meditate in front of the anima tree, forming a psychic link. Others gather in a circle to watch and add psychic strength to the ritual.</description>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <visible>false</visible>
+    <classic>true</classic>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <ritualPatternBase>AnimaTreeLinking</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/AnimaTreeLinking</iconPath>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <useRepeatPenalty>false</useRepeatPenalty>
+    <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+  </PreceptDef>
+  
+</Defs>

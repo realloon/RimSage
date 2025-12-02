@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <HediffDef Name="OrganDecayUndiagnosedBase" ParentName="OrganDecayDetailsBase" Abstract="True">
+    <description>This person is showing early signs of a severe condition which will cause their organs to rapidly deteriorate. They will begin to display symptoms within a matter of days.</description>
+    <stages>
+      <li>
+        <label>diagnosed</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfOtherHediff">
+        <hediffs>
+          <li>OrganDecay</li>
+          <li>OrganDecayCreepjoiner</li>
+        </hediffs>
+      </li>
+      <li Class="HediffCompProperties_SurgeryInspectable">
+        <surgicalDetectionDesc>{PAWN_nameDef} is showing early signs of a severe condition which will cause their organs to rapidly deteriorate. {SURGEON_nameDef} can't yet tell exactly what is causing this, but {PAWN_nameDef} will become very ill within the next few days.</surgicalDetectionDesc>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="OrganDecayUndiagnosedBase">
+    <defName>OrganDecayUndiagnosedDuplicaton</defName>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDayRange>0.5~2</severityPerDayRange>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_ReplaceHediff">
+        <hediffs>
+          <li>
+            <hediff>OrganDecay</hediff>
+            <countRange>3~5</countRange>
+            <severityRange>0.02~0.15</severityRange>
+            <partsToAffect>
+              <li>Heart</li>
+              <li>Lung</li>
+              <li>Kidney</li>
+            </partsToAffect>
+          </li>
+        </hediffs>
+        <letterLabel>Organ decay: {PAWN_nameDef}</letterLabel>
+        <letterDesc>{PAWN_nameDef} can no longer hide {PAWN_possessive} crippling condition. The duplication process has left {PAWN_possessive} body riddled with rotting organs. {PAWN_nameDef} has organ decay affecting the following body parts:\n\n{ORGANS}\n\nReplace the organs soon to keep {PAWN_nameDef} healthy. You can use bionic organs or natural ones taken from donors.</letterDesc>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="OrganDecayUndiagnosedBase">
+    <defName>OrganDecayUndiagnosedCreepjoiner</defName>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDayRange>0.3~0.5</severityPerDayRange>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+      <li Class="HediffCompProperties_ReplaceHediff">
+        <hediffs>
+          <li>
+            <hediff>OrganDecayCreepjoiner</hediff>
+            <countRange>3~5</countRange>
+            <severityRange>0.02~0.15</severityRange>
+            <partsToAffect>
+              <li>Heart</li>
+              <li>Lung</li>
+              <li>Kidney</li>
+            </partsToAffect>
+          </li>
+        </hediffs>
+        <manuallyTriggered>true</manuallyTriggered>
+        <letterLabel>Organ decay: {PAWN_nameDef}</letterLabel>
+        <letterDesc>{PAWN_nameDef} can no longer hide {PAWN_possessive} crippling condition. {PAWN_possessive} body is riddled with rotting organs - {PAWN_pronoun} is little more than a walking corpse. {PAWN_nameDef} has organ decay affecting the following body parts:\n\n{ORGANS}\n\nReplace the organs soon to keep {PAWN_nameDef} healthy. You can use bionic organs or natural ones taken from donors.</letterDesc>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="OrganDecayBase">
+    <defName>OrganDecayCreepjoiner</defName>
+    <debugLabelExtra>accelerated</debugLabelExtra>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDayRange>0.05~0.1</severityPerDayRange> <!-- 10 to 20 days -->
+      </li>
+    </comps>
+  </HediffDef>
+  
+</Defs>

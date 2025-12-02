@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartDef>
+    <defName>SmallMechanicalLeg</defName>
+    <label>small leg</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>SmallMechanicalFoot</defName>
+    <label>small foot</label>
+    <hitPoints>5</hitPoints>
+    <frostbiteVulnerability>2</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+  
+  <BodyPartDef>
+    <defName>PowerClaw</defName>
+    <label>power claw</label>
+    <hitPoints>40</hitPoints>
+    <frostbiteVulnerability>5</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>BulbTurret</defName>
+    <label>bulb turret</label>
+    <hitPoints>40</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <alive>false</alive>
+  </BodyPartDef>
+  
+  <!-- Warqueen -->
+  <BodyPartDef Abstract="True" Name="MechanicalWarqueenRingBase">
+    <labelShort>body ring</labelShort>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalWarqueenRingBase">
+    <defName>MechanicalWarqueenBodyFirstRing</defName>
+    <label>first body ring</label>
+    <hitPoints>55</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalWarqueenRingBase">
+    <defName>MechanicalWarqueenBodySecondRing</defName>
+    <label>second body ring</label>
+    <hitPoints>50</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalWarqueenRingBase">
+    <defName>MechanicalWarqueenBodyThirdRing</defName>
+    <label>third body ring</label>
+    <hitPoints>45</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalWarqueenRingBase">
+    <defName>MechanicalWarqueenBodyFourthRing</defName>
+    <label>fourth body ring</label>
+    <hitPoints>40</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalWarqueenRingBase">
+    <defName>MechanicalWarqueenBodyFifthRing</defName>
+    <label>fifth body ring</label>
+    <hitPoints>35</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>MechanicalWarqueenFormingPod</defName>
+    <label>forming sack</label>
+    <hitPoints>200</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+  <!-- Diabolus -->
+  <BodyPartDef Abstract="True" Name="MechanicalDiabolusRingBase">
+    <labelShort>body ring</labelShort>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalDiabolusRingBase">
+    <defName>MechanicalDiabolusBodyFirstRing</defName>
+    <label>first body ring</label>
+    <hitPoints>55</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalDiabolusRingBase">
+    <defName>MechanicalDiabolusBodySecondRing</defName>
+    <label>second body ring</label>
+    <hitPoints>55</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalDiabolusRingBase">
+    <defName>MechanicalDiabolusBodyThirdRing</defName>
+    <label>third body ring</label>
+    <hitPoints>50</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalDiabolusRingBase">
+    <defName>MechanicalDiabolusBodyFourthRing</defName>
+    <label>fourth body ring</label>
+    <hitPoints>45</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalDiabolusRingBase">
+    <defName>MechanicalDiabolusBodyFifthRing</defName>
+    <label>fifth body ring</label>
+    <hitPoints>40</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef ParentName="MechanicalDiabolusRingBase">
+    <defName>MechanicalDiabolusBodySixthRing</defName>
+    <label>sixth body ring</label>
+    <hitPoints>35</hitPoints>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>DiabolusCapacitor</defName>
+    <label>hypercapacitor</label>
+    <hitPoints>50</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+</Defs>

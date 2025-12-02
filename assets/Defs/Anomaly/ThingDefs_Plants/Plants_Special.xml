@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="TreeBase">
+    <defName>Plant_TreeHarbinger</defName>
+    <label>harbinger tree</label>
+    <description>A gnarled tree that grows a flesh-like covering around a bioferrite skeleton. Harbinger trees are capable of feeding on corpses and raw meat, and will consume those placed nearby. If well fed, the grove will continue to grow.\n\nThe tree can be harvested for twisted meat and bioferrite.\n\nIn a tribal myth, these trees are the emissaries of a mad, shapeless god who rules an endless black ocean. The myth ends after the shapeless god reaches up from the water and tears down the sky.</description>
+    <thingClass>HarbingerTree</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Indexed</graphicClass>
+      <texPath>Things/Plant/TreeHarbinger</texPath>
+      <shadowData>
+        <volume>(0.4, 0.3, 0.1)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </shadowData>
+    </graphicData>
+    <minifiedDef IsNull="True" />
+    <statBases>
+      <Beauty>-10</Beauty>
+      <BeautyOutdoors>-10</BeautyOutdoors>
+      <Flammability>0</Flammability>
+      <MaxHitPoints>230</MaxHitPoints>
+      <MeditationFocusStrength>0.14</MeditationFocusStrength>
+    </statBases>
+    <ingestible />
+    <neverMultiSelect>false</neverMultiSelect>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <canScatterOver>false</canScatterOver>
+    <plant>
+      <pollution>Any</pollution>
+      <growDays>10</growDays>
+      <visualSizeRange>1.5~2.1</visualSizeRange>
+      <sowMinSkill>0</sowMinSkill>
+      <sowTags Inherit="False"/>
+      <lifespanDaysPerGrowDays>0</lifespanDaysPerGrowDays>
+      <fertilityMin>0.5</fertilityMin>
+      <fertilitySensitivity>0.5</fertilitySensitivity>
+      <wildClusterWeight>0</wildClusterWeight>
+      <sowWork>400</sowWork>
+      <harvestYield>15</harvestYield>
+      <harvestedThingDef>Bioferrite</harvestedThingDef>
+      <treeCategory>Super</treeCategory>
+      <dieIfNoSunlight>false</dieIfNoSunlight>
+      <growMinGlow>0</growMinGlow>
+      <sowResearchPrerequisites Inherit="False" />
+      <dieFromToxicFallout>False</dieFromToxicFallout>
+      <showGrowthInInspectPane>true</showGrowthInInspectPane>
+      <minSpacingBetweenSamePlant>4.9</minSpacingBetweenSamePlant>
+      <harvestWork>1000</harvestWork>
+      <choppedThingDef>ChoppedStump_Harbinger</choppedThingDef>
+      <smashedThingDef>SmashedStump_Harbinger</smashedThingDef>
+    </plant>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>2000</ticksPerHeal> <!-- 30 hp per day, must be a multiple of 2000, since plants have Long ticker -->
+      </li>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Void</li>
+        </focusTypes>
+      </li>
+      <li Class="CompProperties_PlantPreventCutting"/>
+    </comps>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+
+  <ThingDef ParentName="StumpChoppedBase">
+    <defName>ChoppedStump_Harbinger</defName>
+    <label>chopped harbinger stump</label>
+    <description>A stump left behind after an harbinger tree has been felled. The stump can be extracted but yields very little usable material. Left outdoors, the stump will deteriorate in time.</description>
+    <graphicData>
+      <texPath>Things/Plant/Stumps/StumpChopped_HarbingerTree</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="StumpSmashedBase">
+    <defName>SmashedStump_Harbinger</defName>
+    <label>smashed harbinger stump</label>
+    <description>The remnants of an harbinger tree destroyed by damage. It's ugly. The stump can be extracted but yields very little usable material. Left outdoors, the stump will deteriorate in time.</description>
+    <graphicData>
+      <texPath>Things/Plant/Stumps/StumpSmashed_HarbingerTree</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>HarbingerSeed</defName>
+    <label>harbinger seed</label>
+    <description>The seed of a harbinger tree. It can be planted to grow a new harbinger tree, which will eat any corpses or meat placed nearby.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Plant_TreeHarbinger</ThingDef>
+    </descriptionHyperlinks>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <Mass>0.5</Mass>
+      <Beauty>0</Beauty>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/HarbingerSeed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>(0.6, 0.6)</drawSize>
+    </graphicData>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Plantable">
+        <plantDefToSpawn>Plant_TreeHarbinger</plantDefToSpawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

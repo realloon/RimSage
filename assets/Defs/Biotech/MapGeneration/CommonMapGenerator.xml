@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GenStepDef>
+    <defName>Pollution</defName>
+    <order>890</order><!-- after player starting spot and before plants -->
+    <genStep Class="GenStep_Pollution"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <order>960</order>
+    <defName>AncientPollutionJunk</defName>
+    <genStep Class="GenStep_ScatterGroup">
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <isJunk>true</isJunk>
+      <minPollution>0.25</minPollution>
+      <minSpacing>85</minSpacing>
+      <countPer10kCellsRange>0.2~0.4</countPer10kCellsRange>
+      <spotMustBeStandable>true</spotMustBeStandable>
+      <allowRoofed>false</allowRoofed>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <radius>5</radius>
+          <affordance>Heavy</affordance>
+        </li>
+      </validators>
+      <groups>
+        <li>
+          <things>
+            <AncientToxifierGenerator>1</AncientToxifierGenerator>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>3~5</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientBandNode>1</AncientBandNode>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>3~5</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientBandNode>0.6</AncientBandNode>
+            <AncientToxifierGenerator>0.4</AncientToxifierGenerator>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>3~5</clusterRectRadius>
+        </li>
+      </groups>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

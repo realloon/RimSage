@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>IdeoBuilding</defName>
+    <label>building</label>
+    <allowMultiplePrecepts>true</allowMultiplePrecepts>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>IdeoBuilding</defName>
+    <label>building</label>
+    <description>A building of ideoligious significance. Only those who follow this ideoligion can build it. It may be used as a focus for rituals.</description>
+    <issue>IdeoBuilding</issue>
+    <preceptClass>Precept_Building</preceptClass>
+    <workerClass>PreceptWorker_Building</workerClass>
+    <nameMaker>NamerIdeoBuilding</nameMaker>
+    <impact>Medium</impact>
+    <buildingDefChances>
+      <Altar_Small>1</Altar_Small>
+      <Altar_Medium>1</Altar_Medium>
+      <Altar_Large>1</Altar_Large>
+      <Altar_Grand>1</Altar_Grand>
+      <Ideogram>4</Ideogram>
+      <SculptureSmall>1</SculptureSmall>
+      <SculptureLarge>1</SculptureLarge>
+      <SculptureGrand>1</SculptureGrand>
+      <ChristmasTree>0</ChristmasTree>
+    </buildingDefChances>
+    <useChoicesFromBuildingDefs>true</useChoicesFromBuildingDefs>
+    <allowDuplicates>true</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <maxCount>5</maxCount>
+    <buildingMinExpectations>
+      <li>Moderate</li>
+      <li>High</li>
+    </buildingMinExpectations>
+    <preceptInstanceCountCurve>
+      <points>
+        <li>(0.5, 1)</li>
+        <li>(1.0, 2)</li>
+      </points>
+    </preceptInstanceCountCurve>
+    <roomRequirementCountCurve>
+      <points>
+        <li>(0.5, 1)</li>
+        <li>(1.0, 2)</li>
+      </points>
+    </roomRequirementCountCurve>
+    <buildingRoomRequirements>
+      <li Class="RoomRequirement_Area">
+        <area>25</area>
+      </li>
+      <li Class="RoomRequirement_TerrainWithTags">
+        <labelKey>RoomRequirementAllFloored</labelKey>
+        <tags>
+          <li>Floor</li>
+          <li>FineFloor</li>
+        </tags>
+      </li>
+      <li Class="RoomRequirement_Impressiveness">
+        <impressiveness>60</impressiveness>
+      </li>
+      <li Class="RoomRequirement_ThingCount">
+        <thingDef>Column</thingDef>
+        <count>4</count>
+      </li>
+    </buildingRoomRequirements>
+    <buildingRoomRequirementsFixed>
+      <li Class="RoomRequirement_ForbiddenBuildings">
+        <labelKey>RoomRequirementNoBeds</labelKey>
+        <buildingTags><li>Bed</li></buildingTags>
+      </li>
+      <li Class="RoomRequirement_ForbiddenBuildings">
+        <labelKey>RoomRequirementNoProductionFacilities</labelKey>
+        <buildingTags><li>Production</li></buildingTags>
+      </li>
+    </buildingRoomRequirementsFixed>
+  </PreceptDef>
+
+</Defs>

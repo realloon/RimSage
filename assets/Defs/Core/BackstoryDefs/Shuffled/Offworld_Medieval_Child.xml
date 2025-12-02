@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>MedievalSlave49</defName>
+    <title>medieval slave</title>
+    <titleShort>slave</titleShort>
+    <description>[PAWN_nameDef] grew up pulling carts and digging holes on a medieval world. Simple manual labor is [PAWN_possessive] oldest companion - along with the master's lash.\n\n[PAWN_pronoun] didn't learn to read until age nine.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Plants>2</Plants>
+      <Construction>2</Construction>
+      <Mining>2</Mining>
+      <Intellectual>-3</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+      <li>Cult</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>MedievalLordling19</defName>
+    <title>medieval lordling</title>
+    <titleFemale>medieval lady</titleFemale>
+    <titleShort>lordling</titleShort>
+    <titleShortFemale>lady</titleShortFemale>
+    <description>[PAWN_nameDef] was a minor noble in an old kingdom on a medieval world. [PAWN_pronoun] grew up in a manor made of handcut stone, served by servants of the lower classes.\n\nSuch a life teaches no technical skills and instils a lifelong aversion to manual labor - but [PAWN_nameDef] learned early the ways of social manipulation.</description>
+    <slot>Childhood</slot>
+    <spawnCategories><li>Offworld</li></spawnCategories>
+    <skillGains>
+      <Social>4</Social>
+      <Construction>-1</Construction>
+      <Mining>-1</Mining>
+      <Plants>-1</Plants>
+    </skillGains>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>ConventChild16</defName>
+    <title>convent child</title>
+    <titleShort>illicit</titleShort>
+    <description>The child of an illicit affair, [PAWN_nameDef] was brought up by ascetics in a medieval convent. [PAWN_pronoun] learned the value of hard work and submission, but was taught that technology is heretical and violence immoral.</description>
+    <slot>Childhood</slot>
+    <workDisables>
+      <li>Intellectual</li>
+      <li>Violent</li>
+    </workDisables>
+    <skillGains>
+      <Construction>3</Construction>
+      <Plants>3</Plants>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Farmer</li>
+      <li>Cult</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+</Defs>

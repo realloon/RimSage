@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FurDef>
+    <defName>Furskin</defName>
+    <noGraphic>true</noGraphic>
+    <bodyTypeGraphicPaths>
+      <Male>Things/Pawn/Humanlike/Bodies/FurCovered_Male</Male>
+      <Female>Things/Pawn/Humanlike/Bodies/FurCovered_Female</Female>
+      <Hulk>Things/Pawn/Humanlike/Bodies/FurCovered_Hulk</Hulk>
+      <Fat>Things/Pawn/Humanlike/Bodies/FurCovered_Fat</Fat>
+      <Thin>Things/Pawn/Humanlike/Bodies/FurCovered_Thin</Thin>
+      <Child>Things/Pawn/Humanlike/Bodies/Naked_FurChild</Child>
+      <Baby>Things/Pawn/Humanlike/Bodies/Naked_FurChild</Baby><!-- Always covered by swaddled graphic -->
+    </bodyTypeGraphicPaths>
+  </FurDef>
+
+</Defs>

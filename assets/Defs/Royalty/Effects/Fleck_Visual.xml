@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <!--=============== Psycasts ==============-->
+  <ThingDef Abstract="True" Name="FleckGlowDistorted" ParentName="FleckBase_Thrown">
+    <graphicData>
+      <shaderType>MoteGlowDistorted</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Other/Ripples</_DistortionTex>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckPsycastAreaEffect">
+    <defName>FlashstormAreaEffect</defName>
+    <graphicData>
+      <drawSize>15.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckPsycastAreaEffect">
+    <defName>BulletShieldAreaEffect</defName>
+    <graphicData>
+      <drawSize>5.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>WordOfApply</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <fadeOutTime>0.08</fadeOutTime>
+    <solidTime>0.15</solidTime>
+    <growthRate>3</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionRing</_DistortionTex>
+        <_distortionIntensity>0.03</_distortionIntensity>
+        <_brightnessMultiplier>1.5</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>2</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>PsychicApplyNeuroquake</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <fadeOutTime>0.6</fadeOutTime>
+    <solidTime>4.5</solidTime>
+    <growthRate>3.0</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.12</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>WaterskipSplashParticles</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.05</solidTime>
+    <fadeOutTime>0.55</fadeOutTime>
+    <acceleration>(0,0,-0.03)</acceleration>
+    <growthRate>0.37</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/WaterSplash</texPath>
+      <drawSize>3.5</drawSize>
+      <drawOffset>(0.0, 0, 0.65)</drawOffset>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+  </FleckDef>
+
+
+  <!--=============== Broadshield Projector ==============-->
+  <FleckDef ParentName="FleckBase">
+    <defName>BroadshieldActivation</defName>
+    <graphicData>
+      <texPath>Other/ForceField</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(0.6, 0.6, 0.8)</color>
+    </graphicData>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+    <growthRate>33</growthRate>
+  </FleckDef>
+
+  <FleckDef Name="PsycastSkipEffect" ParentName="FleckGlowDistorted">
+    <defName>PsycastSkipEffect</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <solidTime>0.07</solidTime>
+    <graphicData>
+      <texPath>Things/Mote/PsycastSkipFlash</texPath>
+      <shaderParameters>
+        <_distortionScrollSpeed>(0.2, 0.0, 0.0)</_distortionScrollSpeed>
+        <_distortionScale>0.1</_distortionScale>
+        <_distortionIntensity>0.1</_distortionIntensity>
+      </shaderParameters>
+      <drawSize>2.7</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckGlowDistorted">
+    <defName>EntropyPulse</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <solidTime>0.1</solidTime>
+    <attachedToHead>True</attachedToHead>
+    <graphicData>
+      <texPath>Things/Mote/PsychicEntropy</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.1</_distortionIntensity>
+      </shaderParameters>
+      <drawSize>1.55</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <!--=============== JumpPack ==============-->
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>JumpFlame</defName>
+    <graphicData>
+      <texPath>Things/Mote/JumpFlame</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <solidTime>0.2</solidTime>
+    <fadeOutTime>0.05</fadeOutTime>
+    <growthRate>-4</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>JumpFlameGlow</defName>
+    <graphicData>
+      <texPath>Things/Mote/JumpFlame</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(1,0.6,0.6,0.3)</color>
+    </graphicData>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <growthRate>-3</growthRate>
+  </FleckDef>
+
+  <!--=============== Misc ==============-->
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>MechDropBeaconActivated</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <color>(0.55, 0.65, 0.15, 0.25)</color>
+      <shaderType>MoteGlowPulse</shaderType>
+      <shaderParameters>
+        <_Interval>0.04</_Interval>
+      </shaderParameters>
+      <drawSize>7</drawSize>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.8</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <growthRate>0.5</growthRate>
+  </FleckDef>
+
+</Defs>

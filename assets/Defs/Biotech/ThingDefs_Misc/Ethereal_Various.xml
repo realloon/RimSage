@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>MechShield</defName>
+    <label>mech shield</label>
+    <thingClass>MechShield</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>1.5</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+        <color>(0.4, 0.4, 0.4)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>26</hitPoints><!-- ~ the same strength as a poor shieldbelt -->
+        <minAlpha>0.5</minAlpha>
+        <interceptOutgoingProjectiles>true</interceptOutgoingProjectiles>
+        <disarmedByEmpForTicks>3200</disarmedByEmpForTicks>
+        <gizmoTipKey>RemoteMechShieldTip</gizmoTipKey>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>CocoonSpawner</defName>
+    <label>insect cocoon</label>
+    <thingClass>CocoonSpawner</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <alwaysFlee>true</alwaysFlee>
+  </ThingDef>
+
+</Defs>

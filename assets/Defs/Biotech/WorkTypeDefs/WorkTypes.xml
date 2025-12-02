@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkTypeDef>
+    <defName>Childcare</defName>
+    <labelShort>childcare</labelShort>
+    <pawnLabel>Childcarer</pawnLabel>
+    <gerundLabel>caring</gerundLabel>
+    <description>Care for a baby or child of the colony.</description>
+    <verb>Care</verb>
+    <alwaysStartActive>true</alwaysStartActive>
+    <requireCapableColonist>true</requireCapableColonist>
+    <naturalPriority>1175</naturalPriority>
+    <relevantSkills>
+      <li>Social</li>
+    </relevantSkills>
+    <workTags>
+      <li>Social</li>
+      <li>Caring</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+
+</Defs>

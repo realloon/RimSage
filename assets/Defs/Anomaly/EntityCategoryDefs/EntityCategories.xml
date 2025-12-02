@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <EntityCategoryDef>
+    <defName>Basic</defName>
+    <label>basic</label>
+    <listOrder>0</listOrder>
+  </EntityCategoryDef>
+
+  <EntityCategoryDef>
+    <defName>Advanced</defName>
+    <label>advanced</label>
+    <listOrder>1</listOrder>
+  </EntityCategoryDef>
+
+  <EntityCategoryDef>
+    <defName>Ultimate</defName>
+    <label>ultimate</label>
+    <listOrder>2</listOrder>
+  </EntityCategoryDef>
+
+</Defs>

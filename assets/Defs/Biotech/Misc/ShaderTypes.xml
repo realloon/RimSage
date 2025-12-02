@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ShaderTypeDef>
+    <defName>MoteMechGestatorGlow</defName>
+    <shaderPath>Map/MoteMechGestatorGlow</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MotePollutionPump</defName>
+    <shaderPath>Map/MotePollutionPump</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteSoftScannerGlow</defName>
+    <shaderPath>Map/MoteSoftScannerGlow</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteSubcoreEncoder</defName>
+    <shaderPath>Map/MoteSubcoreEncoder</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteGlowParentRotation</defName>
+    <shaderPath>Map/MoteGlowParentRotation</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MotePawnBodyColor</defName>
+    <shaderPath>Map/MotePawnBodyColor</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MotePawnBodyGlow</defName>
+    <shaderPath>Map/MotePawnBodyGlow</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>PollutionCloud</defName>
+    <shaderPath>Map/PollutionCloud</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>TerrainWaterPolluted</defName>
+    <shaderPath>Map/TerrainWaterPolluted</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>TerrainFadeRoughLinearBurn</defName>
+    <shaderPath>Map/TerrainFadeRoughLinearBurn</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteGradientScan</defName>
+    <shaderPath>Map/MoteGradientScan</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>RitualSmokeNoMask</defName>
+    <shaderPath>Map/RitualSmokeNoMask</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>TransparentShaking</defName>
+    <shaderPath>Map/TransparentShaking</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>TransparentColoredMask</defName>
+    <shaderPath>Map/TransparentColoredMask</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteGlowCircularScrollingDistortion</defName>
+    <shaderPath>Map/MoteGlowCircularScrollingDistortion</shaderPath>
+  </ShaderTypeDef>
+
+  <ShaderTypeDef>
+    <defName>MoteApocritonPulse</defName>
+    <shaderPath>Map/MoteApocritonPulse</shaderPath>
+  </ShaderTypeDef>
+
+</Defs>

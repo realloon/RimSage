@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>DecreeMet</defName>
+    <durationDays>15.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>decree satisfied</label>
+        <description>My noble authority has been respected as it should be.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DecreeFailed</defName>
+    <durationDays>15.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>decree failed</label>
+        <description>My noble authority has not been respected as it should be.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Disinherited</defName>
+    <durationDays>30.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stages>
+      <li>
+        <label>disinherited</label>
+        <description>I was disinherited of my title. Do I need to get medieval on these people?</description>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>NeuroquakeEcho</defName>
+    <durationDays>10.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>neuroquake echo</label>
+        <description>Distant, unfamilliar echoes of terror and grief. It makes me feel nervous and shaky.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

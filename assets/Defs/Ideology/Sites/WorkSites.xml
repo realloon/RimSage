@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef Name="WorkSiteBase" Abstract="True">
+    <description>A work site built by another faction. It will expire in time. Until then, you can raid it if you wish.</description>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <approachOrderString>Attack {0}</approachOrderString>
+    <approachingReportString>Attacking {0}.</approachingReportString>
+    <arrivedLetter>There is a neutral camp in this area.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>350</minThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>WorkSite</li>
+    </tags>
+  </SitePartDef>
+
+  <SitePartDef ParentName="WorkSiteBase">
+    <defName>WorkSite_Logging</defName>
+    <label>logging work site</label>
+    <workerClass>SitePartWorker_WorkSite_Logging</workerClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/LoggingWorkSite</expandingIconTexture>
+    <selectionWeight>1</selectionWeight>
+    <lootTable>
+      <li>
+        <thing>WoodLog</thing>
+        <weight>1</weight>
+      </li>
+    </lootTable>
+  </SitePartDef>
+
+  <SitePartDef ParentName="WorkSiteBase">
+    <defName>WorkSite_Mining</defName>
+    <label>{THING_label} mining work site</label>
+    <workerClass>SitePartWorker_WorkSite_Mining</workerClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/MiningWorkSite</expandingIconTexture>
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+    <selectionWeight>2</selectionWeight>
+    <lootTable>
+      <li>
+        <thing>Steel</thing>
+        <weight>1</weight>
+      </li>
+      <li>
+        <thing>Gold</thing>
+        <weight>0.25</weight>
+      </li>
+      <li>
+        <thing>Silver</thing>
+        <weight>0.25</weight>
+      </li>
+      <li>
+        <thing>ComponentIndustrial</thing>
+        <weight>0.5</weight>
+      </li>
+    </lootTable>
+  </SitePartDef>
+
+  <SitePartDef ParentName="WorkSiteBase">
+    <defName>WorkSite_Hunting</defName>
+    <label>hunting work site</label>
+    <workerClass>SitePartWorker_WorkSite_Hunting</workerClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/HuntingWorkSite</expandingIconTexture>
+    <selectionWeight>1</selectionWeight>
+  </SitePartDef>
+
+  <SitePartDef ParentName="WorkSiteBase">
+    <defName>WorkSite_Farming</defName>
+    <label>farming work site</label>
+    <workerClass>SitePartWorker_WorkSite_Farming</workerClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/FarmingWorkSite</expandingIconTexture>
+    <selectionWeight>1</selectionWeight>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Logging_Outpost</defName>
+    <linkWithSite>WorkSite_Logging</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost">
+      <allowGeneratingThronerooms>false</allowGeneratingThronerooms>
+      <settlementDontGeneratePawns>true</settlementDontGeneratePawns>
+      <allowGeneratingFarms>false</allowGeneratingFarms>
+      <generateLoot>false</generateLoot>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Logging</defName>
+    <linkWithSite>WorkSite_Logging</linkWithSite>
+    <order>405</order>
+    <genStep Class="GenStep_WorkSiteStash">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <symbolName>WorkSite_logging</symbolName>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Logging_Pawns</defName>
+    <linkWithSite>WorkSite_Logging</linkWithSite>
+    <order>406</order>
+    <genStep Class="GenStep_WorkSitePawns" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Logging_Power</defName>
+    <linkWithSite>WorkSite_Logging</linkWithSite>
+    <order>410</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Logging_ChopTrees</defName>
+    <linkWithSite>WorkSite_Logging</linkWithSite>
+    <order>2000</order>
+    <genStep Class="GenStep_ChopTrees"/>
+  </GenStepDef>
+
+  <RuleDef>
+    <defName>WorkSite_Logging</defName>
+    <symbol>WorkSite_logging</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_WorkSite_Logging">
+        <minRectSize>(5, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Mining_Outpost</defName>
+    <linkWithSite>WorkSite_Mining</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost">
+      <allowGeneratingThronerooms>false</allowGeneratingThronerooms>
+      <settlementDontGeneratePawns>true</settlementDontGeneratePawns>
+      <allowGeneratingFarms>false</allowGeneratingFarms>
+      <generateLoot>false</generateLoot>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Mining</defName>
+    <linkWithSite>WorkSite_Mining</linkWithSite>
+    <order>405</order>
+    <genStep Class="GenStep_WorkSiteStash">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <symbolName>WorkSite_mining</symbolName>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Mining_Pawns</defName>
+    <linkWithSite>WorkSite_Mining</linkWithSite>
+    <order>406</order>
+    <genStep Class="GenStep_WorkSitePawns" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Mining_Power</defName>
+    <linkWithSite>WorkSite_Mining</linkWithSite>
+    <order>410</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+  <RuleDef>
+    <defName>WorkSite_Mining</defName>
+    <symbol>WorkSite_mining</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_WorkSite_Mining">
+        <minRectSize>(5, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Farming_Outpost</defName>
+    <linkWithSite>WorkSite_Farming</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost">
+      <allowGeneratingThronerooms>false</allowGeneratingThronerooms>
+      <settlementDontGeneratePawns>true</settlementDontGeneratePawns>
+      <allowGeneratingFarms>false</allowGeneratingFarms>
+      <generateLoot>false</generateLoot>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Farming</defName>
+    <linkWithSite>WorkSite_Farming</linkWithSite>
+    <order>405</order>
+    <genStep Class="GenStep_WorkSiteStash">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <symbolName>WorkSite_farming</symbolName>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Farming_Pawns</defName>
+    <linkWithSite>WorkSite_Farming</linkWithSite>
+    <order>406</order>
+    <genStep Class="GenStep_WorkSitePawns" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Farming_Power</defName>
+    <linkWithSite>WorkSite_Farming</linkWithSite>
+    <order>410</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+  <RuleDef>
+    <defName>WorkSite_Farming</defName>
+    <symbol>WorkSite_farming</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_WorkSite_Farming">
+        <minRectSize>(5, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Hunting_Outpost</defName>
+    <linkWithSite>WorkSite_Hunting</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost">
+      <allowGeneratingThronerooms>false</allowGeneratingThronerooms>
+      <settlementDontGeneratePawns>true</settlementDontGeneratePawns>
+      <allowGeneratingFarms>false</allowGeneratingFarms>
+      <generateLoot>false</generateLoot>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Hunting</defName>
+    <linkWithSite>WorkSite_Hunting</linkWithSite>
+    <order>405</order>
+    <genStep Class="GenStep_WorkSiteStash">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <symbolName>WorkSite_hunting</symbolName>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Hunting_Pawns</defName>
+    <linkWithSite>WorkSite_Hunting</linkWithSite>
+    <order>406</order>
+    <genStep Class="GenStep_WorkSitePawns" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>WorkSite_Hunting_Power</defName>
+    <linkWithSite>WorkSite_Hunting</linkWithSite>
+    <order>410</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+  <RuleDef>
+    <defName>WorkSite_Hunting</defName>
+    <symbol>WorkSite_hunting</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_WorkSite_Hunting">
+        <minRectSize>(5, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>GiveQuest_WorkSite</defName>
+    <label>work site</label>
+    <letterLabel>Work site</letterLabel>
+    <questScriptDef>OpportunitySite_WorkSite</questScriptDef>
+    <pointsScaleable>true</pointsScaleable>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+  </IncidentDef>
+
+</Defs>

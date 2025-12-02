@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GenStepDef>
+    <defName>AncientExostriderRemains</defName>
+    <order>1600</order><!-- after fogged -->
+    <genStep Class="GenStep_ScatterLayout">
+      <count>1</count>
+      <allowMechanoidDatacoreReadOrLost>false</allowMechanoidDatacoreReadOrLost>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <radius>5</radius>
+          <affordance>Light</affordance>
+        </li>
+        <li Class="ScattererValidator_AvoidSpecialThings" />
+      </validators>
+      <fallbackValidators>
+        <li Class="ScattererValidator_Buildable">
+          <radius>5</radius>
+          <affordance>Light</affordance>
+        </li>
+      </fallbackValidators>
+      <allowRoofed>false</allowRoofed>
+      <minEdgeDistPct>0.166667</minEdgeDistPct>
+      <minDistToPlayerStartPct>0.333</minDistToPlayerStartPct>
+      <allowFoggedPositions>false</allowFoggedPositions>
+      <onlyOnStartingMap>true</onlyOnStartingMap>
+      <layout>
+        <li>
+          <thing>AncientExostriderHead</thing>
+          <offset>(2, 0, 0)</offset>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+        </li>
+        <li>
+          <thing>AncientExostriderRemains</thing>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+        </li>
+        <li>
+          <thing>AncientExostriderCannon</thing>
+          <offset>(-1, 0, 2)</offset>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+        </li>
+        <li>
+          <thing>AncientExostriderLeg</thing>
+          <offset>(-3, 0, 1)</offset>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+        </li>
+        <li>
+          <thing>AncientExostriderLeg</thing>
+          <offset>(-4, 0, 0)</offset>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+        </li>
+        <li>
+          <thing>AncientExostriderLeg</thing>
+          <offset>(1, 0, -2)</offset>
+          <rotation>West</rotation>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+        </li>
+      </layout>
+    </genStep>
+  </GenStepDef>
+
+   <!-- Polux trees -->
+   <GenStepDef>
+    <defName>PoluxTrees</defName>
+    <order>1100</order>
+    <genStep Class="GenStep_PoluxTrees">
+      <treeDef>Plant_TreePolux</treeDef>
+      <minProximityToSameTree>16</minProximityToSameTree>
+      <pollutionNone>0</pollutionNone>
+      <pollutionLight>0</pollutionLight>
+      <pollutionModerate>1</pollutionModerate>
+      <pollutionExtreme>3</pollutionExtreme>
+    </genStep>
+  </GenStepDef>
+
+
+</Defs>

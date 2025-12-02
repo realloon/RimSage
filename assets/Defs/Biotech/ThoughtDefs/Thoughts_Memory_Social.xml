@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>FedOn_Social</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>60</durationDays>
+    <stackLimit>50</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Masochist</li>
+    </nullifyingTraits>
+    <nullifyingPrecepts>
+      <li>Bloodfeeders_Revered</li>
+    </nullifyingPrecepts>
+    <stages>
+      <li>
+        <label>fed on</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef Abstract="True" Name="BaseTeaching">
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <durationDays>20</durationDays>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="BaseTeaching">
+    <defName>WasTaught</defName>
+    <stages>
+      <li>
+        <label>taught me a skill</label>
+        <baseOpinionOffset>8</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="BaseTeaching">
+    <defName>GaveLesson</defName>
+    <stages>
+      <li>
+        <label>listened to my lesson</label>
+        <baseOpinionOffset>4</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

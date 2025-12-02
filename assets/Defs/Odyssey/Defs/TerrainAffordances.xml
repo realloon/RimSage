@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Defs>
-  <TerrainAffordanceDef>
-    <defName>Substructure</defName>
-    <label>substructure</label> <!-- text_todo: This doesn't really make sense, it displays as "X requires terrain that supports: Substructure" -->
-    <order>3700</order>
-  </TerrainAffordanceDef>
-</Defs>

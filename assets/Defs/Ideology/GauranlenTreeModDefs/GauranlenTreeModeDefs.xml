@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GauranlenTreeModeDef>
+    <defName>Carrier</defName>
+    <label>carrier</label>
+    <description>A dryad caste specialized in carrying items. Under human influence, it can help haul things where they need to go.</description>
+    <pawnKindDef>Dryad_Carrier</pawnKindDef>
+    <drawPosition>(0, 0)</drawPosition>
+    <displayedStats>
+      <li>MaxHitPoints</li>
+      <li>MoveSpeed</li>
+      <li>CarryingCapacity</li>
+    </displayedStats>
+    <hyperlinks>
+      <ThingDef>Dryad_Carrier</ThingDef>
+    </hyperlinks>
+  </GauranlenTreeModeDef>
+
+  <GauranlenTreeModeDef>
+    <defName>Clawer</defName>
+    <label>clawer</label>
+    <description>A dryad caste specialized in aggression and damage-dealing attacks. The clawer dryad is named for its massive claws. Though it can do tremendous damage, it is vulnerable to attacks itself.</description>
+    <pawnKindDef>Dryad_Clawer</pawnKindDef>
+    <drawPosition>(0, 0.333)</drawPosition>
+    <displayedStats>
+      <li>MaxHitPoints</li>
+      <li>MoveSpeed</li>
+      <li>ArmorRating_Blunt</li>
+      <li>ArmorRating_Sharp</li>
+    </displayedStats>
+    <hyperlinks>
+      <ThingDef>Dryad_Clawer</ThingDef>
+    </hyperlinks>
+  </GauranlenTreeModeDef>
+
+  <GauranlenTreeModeDef>
+    <defName>Barkskin</defName>
+    <label>barkskin</label>
+    <description>A dryad caste specialized in absorbing hits during combat. Barkskin dryads are covered by a thick bark-like hide which is partly formed by the Gauranlen tree itself. Under human influence, it can act as a damage-absorbing fighter.</description>
+    <pawnKindDef>Dryad_Barkskin</pawnKindDef>
+    <drawPosition>(0, 0.1665)</drawPosition>
+    <displayedStats>
+      <li>MaxHitPoints</li>
+      <li>MoveSpeed</li>
+      <li>ArmorRating_Blunt</li>
+      <li>ArmorRating_Sharp</li>
+    </displayedStats>
+    <hyperlinks>
+      <ThingDef>Dryad_Barkskin</ThingDef>
+    </hyperlinks>
+  </GauranlenTreeModeDef>
+
+  <GauranlenTreeModeDef>
+    <defName>Woodmaker</defName>
+    <label>woodmaker</label>
+    <description>A slow, bumbling caste of dryad which specializes in wood production. Together with its Gauranlen tree, this dryad can generate a wood-like material on an ongoing basis. However, it is slow and ineffective at work or combat.</description>
+    <drawPosition>(0, 0.5)</drawPosition>
+    <pawnKindDef>Dryad_Woodmaker</pawnKindDef>
+    <displayedStats>
+      <li>MaxHitPoints</li>
+      <li>MoveSpeed</li>
+    </displayedStats>
+    <hyperlinks>
+      <ThingDef>Dryad_Woodmaker</ThingDef>
+      <ThingDef>WoodLog</ThingDef>
+    </hyperlinks>
+  </GauranlenTreeModeDef>
+
+  <GauranlenTreeModeDef>
+    <defName>Medicinemaker</defName>
+    <label>medicinemaker</label>
+    <description>A dryad caste specialized in medicine production. Together with its Gauranlen tree, this dryad can generate medicinal herbs on an ongoing basis. However, it is slow and ineffective at work or combat.</description>
+    <drawPosition>(0, 0.665)</drawPosition>
+    <pawnKindDef>Dryad_Medicinemaker</pawnKindDef>
+    <displayedStats>
+      <li>MaxHitPoints</li>
+      <li>MoveSpeed</li>
+    </displayedStats>
+    <hyperlinks>
+      <ThingDef>Dryad_Medicinemaker</ThingDef>
+      <ThingDef>MedicineHerbal</ThingDef>
+    </hyperlinks>
+  </GauranlenTreeModeDef>
+
+  <GauranlenTreeModeDef>
+    <defName>Berrymaker</defName>
+    <label>berrymaker</label>
+    <description>A dryad caste specialized in food production. Together with its Gauranlen tree, this dryad can generate nourishing berries on an ongoing basis. However, it is slow and ineffective at work or combat.</description>
+    <drawPosition>(0, 0.833)</drawPosition>
+    <pawnKindDef>Dryad_Berrymaker</pawnKindDef>
+    <displayedStats>
+      <li>MaxHitPoints</li>
+      <li>MoveSpeed</li>
+    </displayedStats>
+    <hyperlinks>
+      <ThingDef>Dryad_Berrymaker</ThingDef>
+      <ThingDef>RawBerries</ThingDef>
+    </hyperlinks>
+  </GauranlenTreeModeDef>
+
+  <GauranlenTreeModeDef>
+    <defName>Gaumaker</defName>
+    <label>gaumaker</label>
+    <description>A dryad caste with the unique ability to produce new Gauranlen pods and reproduce the Gauranlen tree along with its symbiote, the dryad queen. To do this, three gaumaker dryads must slowly merge.</description>
+    <drawPosition>(0, 1)</drawPosition>
+    <pawnKindDef>Dryad_Gaumaker</pawnKindDef>
+    <displayedStats>
+      <li>MaxHitPoints</li>
+      <li>MoveSpeed</li>
+    </displayedStats>
+    <hyperlinks>
+      <ThingDef>Dryad_Gaumaker</ThingDef>
+      <ThingDef>Plant_PodGauranlen</ThingDef>
+    </hyperlinks>
+    <requiredMemes>
+      <li>TreeConnection</li>
+    </requiredMemes>
+  </GauranlenTreeModeDef>
+
+</Defs>

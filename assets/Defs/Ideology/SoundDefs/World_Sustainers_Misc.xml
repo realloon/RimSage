@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>Ambience_Autobong</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ambience/Autobong_Ambience_Loop</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>40~40</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+        <distRange><min>5</min><max>20</max></distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

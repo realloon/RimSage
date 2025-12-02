@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaleDef>
+    <defName>MajorThreat</defName>
+    <taleClass>Tale</taleClass>
+    <type>PermanentHistorical</type>
+    <usableForArt>false</usableForArt>
+    <historyGraphColor>(0.8, 0.45, 0.45)</historyGraphColor>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>TileSettled</defName>
+    <taleClass>Tale</taleClass>
+    <type>PermanentHistorical</type>
+    <usableForArt>false</usableForArt>
+    <historyGraphColor>(0.46, 0.98, 0.97)</historyGraphColor>
+  </TaleDef>
+  
+</Defs>

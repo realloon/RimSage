@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Issue -->
+
+    <IssueDef>
+      <defName>Comfort</defName>
+      <label>comfort</label>
+      <iconPath>UI/Issues/Comfort</iconPath>
+    </IssueDef>
+
+    <IssueDef>
+      <defName>SlabBed</defName>
+      <label>slab bed</label>
+      <iconPath>Things/Building/Misc/SlabBed/SlabBed_north</iconPath>
+    </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Comfort_Ignored</defName>
+    <issue>Comfort</issue>
+    <label>ignored</label>
+    <description>We should pay no attention to comfort.</description>
+    <impact>Medium</impact>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <requiredMemes>
+      <li>PainIsVirtue</li>
+    </requiredMemes>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>SlabBed_Preferred</defName>
+    <issue>SlabBed</issue>
+    <label>preferred</label>
+    <description>The right way to sleep is on a slab bed.</description>
+    <impact>Medium</impact>
+    <requiredMemes>
+      <li>PainIsVirtue</li>
+    </requiredMemes>
+    <prefersSlabBed>true</prefersSlabBed>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <description>Slept in slab bed</description>
+        <thought>SlabBed_Preferred</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- Thoughts -->
+
+  <ThoughtDef>
+    <defName>SlabBed_Preferred</defName>
+    <workerClass>ThoughtWorker_Precept_SlabBed_Preferred</workerClass>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>slept on slab bed</label>
+        <description>I demonstrated my morality by accepting the discomfort of the slab bed.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

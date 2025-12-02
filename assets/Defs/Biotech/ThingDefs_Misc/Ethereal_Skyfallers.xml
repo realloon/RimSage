@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ShuttleCrashingSkyfallerBase">
+    <defName>ShuttleCrashing_Mechanitor</defName>
+    <label>mechanitor ship (crashing)</label>
+    <description>A short-range ship used by a mechanitor to transport mechs for low-orbit or planetary travel.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/MechanitorShip</texPath>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

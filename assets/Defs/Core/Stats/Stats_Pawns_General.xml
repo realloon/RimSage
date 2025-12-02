@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>MoveSpeed</defName>
+    <label>move speed</label>
+    <description>Speed of movement in cells per second.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>3.0</defaultBaseValue>
+    <minValue>0.15</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} c/s</formatString>
+    <capacityFactors>
+      <li>
+        <capacity>Moving</capacity>
+        <weight>1</weight>
+      </li>
+    </capacityFactors>
+    <parts>
+      <li Class="StatPart_Glow">
+        <pawnOnly>true</pawnOnly>
+        <humanlikeOnly>true</humanlikeOnly>
+        <factorFromGlowCurve>
+          <points>
+            <li>(0,0.80)</li>
+            <li>(0.30,1.00)</li>
+          </points>
+        </factorFromGlowCurve>
+        <ignoreIfIncapableOfSight>true</ignoreIfIncapableOfSight>
+        <ignoreIfPrefersDarkness>true</ignoreIfPrefersDarkness>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly" Class="StatPart_RevenantSpeed" />
+      <li MayRequire="Ludeon.RimWorld.Odyssey" Class="StatPart_TerrainMoveSpeed" />
+    </parts>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>2500</displayPriorityInCategory>
+  </StatDef>
+  
+  <StatDef>
+    <defName>CrawlSpeed</defName>
+    <label>crawl speed</label>
+    <description>Speed of crawling in cells per second.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>0.6</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <formatString>{0} c/s</formatString>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>1</weight>
+      </li>
+    </capacityFactors>
+    <displayPriorityInCategory>2499</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>MentalBreakThreshold</defName>
+    <label>mental break threshold</label>
+    <description>As long as someone's mood is below this level, they are in danger of having a mental break.\n\nThe severity of the mental break will depend on how far below the threshold they are.</description>
+    <category>PawnResistances</category>
+    <defaultBaseValue>0.35</defaultBaseValue>
+    <minValue>0.01</minValue>
+    <maxValue>0.50</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>2000</displayPriorityInCategory>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <cacheable>true</cacheable>
+  </StatDef>
+
+  <StatDef>
+    <defName>PsychicSensitivity</defName>
+    <label>psychic sensitivity</label>
+    <description>More sensitive people suffer more from negative psychic effects, and benefit more from positive ones. Higher psychic sensitivity also increases neural heat limit.</description>
+    <category>PawnResistances</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <minValue>0</minValue>
+    <displayPriorityInCategory>4012</displayPriorityInCategory>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <parts>
+      <li Class="StatPart_GearStatOffset">
+        <apparelStat>PsychicSensitivityOffset</apparelStat>
+        <includeWeapon>true</includeWeapon>
+      </li>
+      <li Class="StatPart_GearStatFactor">
+        <apparelStat>PsychicSensitivityFactor</apparelStat>
+        <includeWeapon>true</includeWeapon>
+      </li>
+      <li Class="StatPart_SightPsychicSensitivityOffset" />
+      <li Class="StatPart_BlindPsychicSensitivityOffset" MayRequire="Ludeon.RimWorld.Ideology" />
+    </parts>
+    <cacheable>true</cacheable>
+  </StatDef>
+  
+  <StatDef>
+    <defName>ToxicResistance</defName>
+    <label>toxic resistance</label>
+    <description>How well this creature resists toxic buildup.</description>
+    <category>PawnResistances</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <hideAtValue>0</hideAtValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>3451</displayPriorityInCategory>
+  </StatDef>
+  
+  <StatDef>
+    <defName>GlobalLearningFactor</defName>
+    <label>global learning factor</label>
+    <description>A multiplier on the learning rate for all skills.</description>
+    <category>PawnHealth</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnDrones>false</showOnDrones>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0</minValue>
+    <displayPriorityInCategory>3500</displayPriorityInCategory>
+    <scenarioRandomizable>true</scenarioRandomizable>
+  </StatDef>
+
+  <StatDef> <!-- Hidden stat only used by facilities to control hunger rate of sleeping pawns -->
+    <defName>BedHungerRateFactor</defName>
+    <label>bed hunger rate multiplier</label>
+    <alwaysHide>true</alwaysHide>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1.0</defaultBaseValue>
+  </StatDef>
+
+  <StatDef>
+    <defName>RestRateMultiplier</defName>
+    <label>rest rate multiplier</label>
+    <description>A multiplier on how quickly a creature rests while sleeping.</description>
+    <category>PawnHealth</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.05</minValue>
+    <displayPriorityInCategory>2501</displayPriorityInCategory>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnDrones>false</showOnDrones>
+    <capacityFactors>
+      <li>
+        <capacity>BloodPumping</capacity>
+        <weight>0.3</weight>
+      </li>
+      <li>
+        <capacity>Metabolism</capacity>
+        <weight>0.3</weight>
+      </li>
+      <li>
+        <capacity>Breathing</capacity>
+        <weight>0.3</weight>
+      </li>
+    </capacityFactors>
+  </StatDef>
+
+  <StatDef>
+    <defName>EatingSpeed</defName>
+    <label>eating speed</label>
+    <description>A multiplier on eating speed.</description>
+    <category>PawnFood</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.15</minValue>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <capacityFactors>
+      <li>
+        <capacity>Eating</capacity>
+        <weight>0.95</weight>
+      </li>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>0.3</weight>
+      </li>
+    </capacityFactors>
+    <displayPriorityInCategory>1000</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>ComfyTemperatureMin</defName>
+    <label>min comfortable temperature</label>
+    <description>Below this temperature, characters will be unhappy.\n\nSignificantly below this temperature, they will develop hypothermia and frostbite and eventually die.</description>
+    <category>PawnResistances</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>Temperature</toStringStyle>
+    <minValue>-2000</minValue>
+    <maxValue>2000</maxValue>
+    <parts>
+      <li Class="StatPart_GearStatOffset">
+        <apparelStat>Insulation_Cold</apparelStat>
+        <subtract>true</subtract>
+      </li>
+    </parts>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>4101</displayPriorityInCategory>
+    <cacheable>true</cacheable>
+  </StatDef>
+
+  <StatDef>
+    <defName>ComfyTemperatureMax</defName>
+    <label>max comfortable temperature</label>
+    <description>Above this temperature, characters will be unhappy.\n\nSignificantly above this temperature, they will develop heatstroke and eventually die.</description>
+    <category>PawnResistances</category>
+    <defaultBaseValue>40</defaultBaseValue>
+    <toStringStyle>Temperature</toStringStyle>
+    <minValue>-2000</minValue>
+    <maxValue>2000</maxValue>
+    <parts>
+      <li Class="StatPart_GearStatOffset">
+        <apparelStat>Insulation_Heat</apparelStat>
+      </li>
+    </parts>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>4100</displayPriorityInCategory>
+    <cacheable>true</cacheable>
+  </StatDef>
+
+  <StatDef>
+    <defName>ImmunityGainSpeed</defName>
+    <label>immunity gain speed</label>
+    <description>The speed at which this character gains immunity to diseases.\n\nIf this is too slow, the character will die from a disease before developing immunity.</description>
+    <category>PawnHealth</category>
+    <showOnEntities>false</showOnEntities>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <capacityFactors>
+      <li>
+        <capacity>BloodFiltration</capacity>
+        <weight>0.5</weight>
+      </li>
+    </capacityFactors>
+    <parts>
+      <li Class="StatPart_Food">
+        <factorUrgentlyHungry>0.9</factorUrgentlyHungry>
+        <factorStarving>0.7</factorStarving>
+      </li>
+      <li Class="StatPart_Rest">
+        <factorTired>0.96</factorTired>
+        <factorVeryTired>0.92</factorVeryTired>
+        <factorExhausted>0.8</factorExhausted>
+      </li>
+      <li Class="StatPart_BedStat">
+        <stat>ImmunityGainSpeedFactor</stat>
+      </li>
+      <li Class="StatPart_Resting">
+        <factor>1.1</factor>
+      </li>
+      <li Class="StatPart_Age">
+        <curve>
+          <points>
+            <li>(0.65,1)</li>
+            <li>(0.8,0.95)</li>
+            <li>(1.0,0.9)</li>
+            <li>(1.2,0.8)</li>
+            <li>(1.5,0.5)</li>
+          </points>
+        </curve>
+      </li>
+    </parts>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>2000</displayPriorityInCategory>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnDrones>false</showOnDrones>
+  </StatDef>
+
+  <StatDef>
+    <defName>InjuryHealingFactor</defName>
+    <label>injury healing factor</label>
+    <description>The multiplier applied to a person's injury healing rate.</description>
+    <category>PawnHealth</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <minValue>0</minValue>
+    <displayPriorityInCategory>2201</displayPriorityInCategory>
+    <hideAtValue>1</hideAtValue>
+    <parts>
+      <li MayRequire="Ludeon.RimWorld.Biotech" Class="StatPart_Deathresting">
+        <factor>5</factor>
+      </li>
+    </parts>
+  </StatDef>
+
+  <StatDef>
+    <defName>CarryingCapacity</defName>
+    <label>carrying capacity</label>
+    <description>The amount of stuff this creature can carry in its hands, mouth, or other manipulators.\n\nThis is separate from the ability to carry cargo on long cross-world trips.</description>
+    <category>BasicsPawn</category>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <defaultBaseValue>75</defaultBaseValue>
+    <minValue>1</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <parts>
+      <li Class="StatPart_BodySize" />
+    </parts>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>1.0</weight>
+      </li>
+    </capacityFactors>
+    <displayPriorityInCategory>2205</displayPriorityInCategory>
+  </StatDef>
+  
+  <StatDef>
+    <defName>MeatAmount</defName>
+    <label>meat amount</label>
+    <description>The amount of meat yielded when butchering this creature. This value is reduced if the creature is not slaughtered cleanly, or if it is wounded when killed.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>140</defaultBaseValue>
+    <workerClass>StatWorker_MeatAmount</workerClass>
+    <minValue>0</minValue>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnDrones>false</showOnDrones>
+    <toStringStyle>Integer</toStringStyle>
+    <parts>
+      <li Class="StatPart_BodySize" />
+      <li Class="StatPart_NaturalNotMissingBodyPartsCoverage" />
+      <li Class="StatPart_NotCarefullySlaughtered">
+        <factor>0.66</factor>
+      </li>
+      <li Class="StatPart_Difficulty_ButcherYield"/>
+      <li Class="StatPart_Malnutrition">
+        <curve>
+          <points>
+            <li>
+              <loc>
+                <x>0</x>                  
+                <y>1</y>
+              </loc>
+            </li>              
+            <li>
+              <loc>
+                <x>1</x>                  
+                <y>0.4</y>
+              </loc>
+            </li>              
+          </points>
+        </curve>
+      </li>
+    </parts>
+    <postProcessCurve>
+      <points>
+        <li>(0,0)</li>
+        <li>(5,14)</li>
+        <li>(40,40)</li>
+        <li>(100000,100000)</li>
+      </points>
+    </postProcessCurve>
+    <displayPriorityInCategory>3552</displayPriorityInCategory>
+  </StatDef>
+  
+  <StatDef>
+    <defName>LeatherAmount</defName>
+    <label>leather amount</label>
+    <description>The amount of leather yielded when butchering this creature. This value is reduced if the creature is not slaughtered cleanly, or if it is wounded when killed.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <workerClass>StatWorker_LeatherAmount</workerClass>
+    <minValue>0</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <hideAtValue>0</hideAtValue>
+    <parts>
+      <li Class="StatPart_BodySize" />
+      <li Class="StatPart_NaturalNotMissingBodyPartsCoverage" />
+      <li Class="StatPart_NotCarefullySlaughtered">
+        <factor>0.66</factor>
+      </li>
+    </parts>
+    <postProcessCurve>
+      <points>
+        <li>(0,0)</li>
+        <li>(5,14)</li>
+        <li>(40,40)</li>
+        <li>(100000,100000)</li>
+      </points>
+    </postProcessCurve>
+    <displayPriorityInCategory>3551</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>MinimumHandlingSkill</defName>
+    <workerClass>StatWorker_MinimumHandlingSkill</workerClass>
+    <label>minimum handling skill</label>
+    <description>This creature cannot be tamed, trained, or commanded by anyone with less than this skill in animals.</description>
+    <category>Animals</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <roundValue>true</roundValue>
+    <toStringStyle>Integer</toStringStyle>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <showOnNonWildManHumanlikes>false</showOnNonWildManHumanlikes>
+    <parts>
+      <li Class="StatPart_WildManOffset">
+        <offset>7</offset>
+      </li>
+    </parts>
+    <displayPriorityInCategory>1500</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>PainShockThreshold</defName>
+    <label>pain shock threshold</label>
+    <description>The pain level at which this creature is downed from pain.</description>
+    <category>PawnResistances</category>
+    <minValue>0.01</minValue>
+    <maxValue>0.99</maxValue>
+    <defaultBaseValue>0.8</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>2000</displayPriorityInCategory>
+  </StatDef>
+  
+  <StatDef>
+    <defName>ForagedNutritionPerDay</defName>
+    <label>foraged food amount</label>
+    <description>The amount of nutrition this person will automatically forage per day while traveling by caravan.</description>
+    <category>PawnFood</category>
+    <minValue>0</minValue>
+    <defaultBaseValue>0</defaultBaseValue>
+    <hideAtValue>0</hideAtValue>
+    <toStringStyle>FloatMaxTwo</toStringStyle>
+    <workerClass>StatWorker_ForagedNutritionPerDay</workerClass>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <skillNeedOffsets>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Plants</skill>
+        <baseValue>0</baseValue>
+        <bonusPerLevel>0.09</bonusPerLevel>
+      </li>
+    </skillNeedOffsets>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>0.5</weight>
+        <max>1</max>
+      </li>
+      <li>
+        <capacity>Sight</capacity>
+        <weight>0.9</weight>
+      </li>
+    </capacityFactors>
+    <displayPriorityInCategory>1000</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>FilthRate</defName>
+    <label>filth rate</label>
+    <description>How much filth this creature produces.\n\nIt's best to keep filth-producing animals outdoors or on straw matting where their filth won't be a problem.</description>
+    <category>BasicsPawn</category>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <displayPriorityInCategory>2203</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AnimalsLearningFactor</defName>
+    <label>animals learning factor</label>
+    <description>A multiplier on the learning rate for animals skill.</description>
+    <category>PawnHealth</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnDrones>false</showOnDrones>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0</minValue>
+    <displayPriorityInCategory>3500</displayPriorityInCategory>
+    <scenarioRandomizable>true</scenarioRandomizable>
+  </StatDef>
+
+  <StatDef>
+    <defName>CaravanRidingSpeedFactor</defName>
+    <label>caravan riding speed</label>
+    <description>The multiplier applied to a person's movement speed when they ride this animal as part of a caravan. Animals can only be ridden in caravans.</description>
+    <workerClass>StatWorker_CaravanRidingSpeedFactor</workerClass>
+    <category>BasicsPawn</category>
+    <showIfUndefined>false</showIfUndefined>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <minValue>1</minValue>
+    <displayPriorityInCategory>2203</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>MaxNutrition</defName>
+    <label>max nutrition</label>
+    <description>The amount of nutrition needed to completely fill this creature's stomach.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.01</minValue>
+    <category>PawnFood</category>
+    <toStringStyle>FloatMaxTwo</toStringStyle>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>2501</displayPriorityInCategory>
+    <parts>
+      <li Class="StatPart_BodySize" />
+      <li Class="StatPart_LifeStageMaxFood" />
+    </parts>
+    <cacheable>true</cacheable>
+  </StatDef>
+
+  <StatDef>
+    <defName>LifespanFactor</defName>
+    <label>lifespan factor</label>
+    <description>Lifespan factor alters the effective lifespan of a creature by shortening or lengthening the time until they develop age-related diseases. A lifespan factor over 100% delays disease onset and increases overall lifespan, while a lifespan factor under 100% speeds up disease onset and reduces lifespan.</description>
+    <category>PawnHealth</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.01</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>4299</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="MeditationFocusBase" MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+    <defName>MeditationFocusGain</defName>
+    <label>meditation psyfocus gain</label>
+    <description>The amount of psyfocus a person gains per day of meditation, ignoring bonuses from focus objects.</description>
+    <category>PawnPsyfocus</category>
+    <defaultBaseValue>0.5</defaultBaseValue>
+    <minValue>0</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+    <displayPriorityInCategory>4010</displayPriorityInCategory>
+    <showIfModsLoadedAny>
+      <li>ludeon.rimworld.biotech</li>
+    </showIfModsLoadedAny>
+  </StatDef>
+
+  <StatDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+    <defName>PsychicEntropyMax</defName>
+    <label>neural heat limit</label>
+    <description>The maximum amount of neural heat individual can tolerate safely.</description>
+    <category>PawnPsyfocus</category>
+    <defaultBaseValue>30</defaultBaseValue>
+    <minValue>0</minValue>
+    <hideAtValue>0</hideAtValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnDrones>false</showOnDrones>
+    <showIfModsLoaded><li>ludeon.rimworld.royalty</li></showIfModsLoaded>
+    <showIfHediffsPresent><li>PsychicAmplifier</li></showIfHediffsPresent>
+    <showIfModsLoadedAny>
+      <li>ludeon.rimworld.royalty</li>
+      <li>ludeon.rimworld.biotech</li>
+    </showIfModsLoadedAny>
+    <displayPriorityInCategory>3500</displayPriorityInCategory>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <statFactors>
+      <li>PsychicSensitivity</li>
+    </statFactors>
+    <parts>
+      <li Class="StatPart_GearStatOffset" MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+        <apparelStat>PsychicEntropyMaxOffset</apparelStat>
+        <includeWeapon>true</includeWeapon>
+      </li>
+    </parts>
+  </StatDef>
+
+  <StatDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+    <defName>PsychicEntropyRecoveryRate</defName>
+    <label>neural heat recovery rate</label>
+    <description>The rate at which this person reduces neural heat.</description>
+    <category>PawnPsyfocus</category>
+    <minValue>0</minValue>
+    <hideAtValue>0</hideAtValue>
+    <defaultBaseValue>0.54</defaultBaseValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0}/s</formatString>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnDrones>false</showOnDrones>
+    <showIfModsLoaded><li>ludeon.rimworld.royalty</li></showIfModsLoaded>
+    <showIfHediffsPresent><li>PsychicAmplifier</li></showIfHediffsPresent>
+    <showIfModsLoadedAny>
+      <li>ludeon.rimworld.royalty</li>
+      <li>ludeon.rimworld.biotech</li>
+    </showIfModsLoadedAny>
+    <displayPriorityInCategory>4000</displayPriorityInCategory>
+    <parts>
+      <li Class="StatPart_Pain">
+        <factor>3</factor>
+      </li>
+      <li Class="StatPart_GearStatOffset" MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+        <apparelStat>PsychicEntropyRecoveryRateOffset</apparelStat>
+        <includeWeapon>true</includeWeapon>
+      </li>
+    </parts>
+  </StatDef>
+
+  <StatDef>
+    <defName>ToxicEnvironmentResistance</defName>
+    <label>toxic environment resistance</label>
+    <description>How resistant this creature is to the effects of environmental toxins. This protects against toxic fallout and rot stink exposure, but not against direct attacks with venom or injected poison.</description>
+    <category>PawnResistances</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>0</defaultBaseValue>
+    <hideAtValue>0</hideAtValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <displayPriorityInCategory>3450</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>RestFallRateFactor</defName>
+    <label>sleep fall rate</label>
+    <description>A multiplier on the speed that a person's sleep need falls.</description>
+    <category>PawnHealth</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.0001</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnDrones>false</showOnDrones>
+  </StatDef>
+
+  <StatDef Name="MechStatBase" Abstract="True" MayRequireAnyOf="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Anomaly">
+    <showOnAnimals>false</showOnAnimals>
+    <showOnHumanlikes>false</showOnHumanlikes>
+    <showOnMechanoids>true</showOnMechanoids>
+    <category>Mechanoid</category>
+  </StatDef>
+
+  <StatDef ParentName="MechStatBase" MayRequireAnyOf="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Anomaly">
+    <defName>EMPResistance</defName>
+    <label>EMP resistance</label>
+    <description>This mechanoid has special shielding and shock-dissipation filaments that reduce the effect of EMP damage by this percentage. This reduces the duration of stuns caused by EMP.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>2030</displayPriorityInCategory>
+    <showIfUndefined>false</showIfUndefined>
+  </StatDef>
+
+  <StatDef>
+    <defName>JoyFallRateFactor</defName>
+    <label>recreation fall rate</label>
+    <description>A multiplier on the speed that a person's recreation need falls.</description>
+    <category>PawnHealth</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.0001</minValue>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnDrones>false</showOnDrones>
+  </StatDef>
+  
+  <StatDef>
+    <defName>MaxFlightTime</defName>
+    <label>max flight time</label>
+    <description>The maximum amount of time this creature can stay in flight before landing.</description>
+    <category>BasicsPawn</category>
+    <toStringStyle>FloatMaxOne</toStringStyle>
+    <showIfUndefined>false</showIfUndefined>
+    <defaultBaseValue>0</defaultBaseValue>
+    <formatString>{0}s</formatString>
+    <cacheable>true</cacheable>
+    <showOnDrones>false</showOnDrones>
+  </StatDef>
+  
+  <StatDef>
+    <defName>FlightCooldown</defName>
+    <label>flight cooldown</label>
+    <description>The rest time needed before this creature can fly again.</description>
+    <category>BasicsPawn</category>
+    <toStringStyle>FloatMaxOne</toStringStyle>
+    <showIfUndefined>false</showIfUndefined>
+    <defaultBaseValue>0</defaultBaseValue>
+    <formatString>{0}s</formatString>
+  </StatDef>
+
+  <StatDef>
+    <defName>Wildness</defName>
+    <label>wildness</label>
+    <description>Wilder creatures are naturally more difficult to tame, train, and handle.</description>
+    <category>Animals</category>
+    <workerClass>StatWorker_Wildness</workerClass>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>2050</displayPriorityInCategory>
+    <defaultBaseValue>-1</defaultBaseValue> <!-- -1 so we can catch missing wildness stats on animals -->
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showIfUndefined>false</showIfUndefined>
+  </StatDef>
+
+</Defs>

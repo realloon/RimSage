@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>Dryad</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalMustKeepLyingDown">
+          <subNodes>
+            <li Class="JobGiver_KeepLyingDown" />
+          </subNodes>
+        </li>
+
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+
+        <li Class="ThinkNode_Subtree">
+          <treeDef>BurningResponse</treeDef>
+        </li>
+
+        <li Class="ThinkNode_Subtree">
+          <treeDef>MentalStateCritical</treeDef>
+        </li>
+
+        <li Class="ThinkNode_Subtree">
+          <treeDef>MentalStateNonCritical</treeDef>
+        </li>
+
+        <li Class="JobGiver_FightFiresNearConnectedTree" />
+        <li Class="JobGiver_ReactToCloseMeleeThreat" />
+        <li Class="ThinkNode_QueuedJob" />
+
+        <!-- If no Gauranlen tree, leave the map -->
+        <li Class="ThinkNode_ConditionalNoConnectedThings">
+          <subNodes>
+            <li Class="ThinkNode_ConditionalCanReachMapEdge">
+              <subNodes>
+                <li Class="JobGiver_ExitMapRandom">
+                  <defaultLocomotion>Walk</defaultLocomotion>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- If more dryads spawned than the tree can handle, return to the tree and merge with it -->
+        <li Class="JobGiver_ReturnToGauranlenTree">
+          <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+        </li>
+
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+
+        <!-- Primary faction actions -->
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <subNodes>
+            <!-- Dryad mode changed, return to cocoon and change type. -->
+            <li Class="JobGiver_CreateAndEnterCocoon">
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+            <!-- Ordered to return to a healing pod to tend wounds. -->
+            <li Class="JobGiver_CreateAndEnterHealingPod">
+              <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+            </li>
+            <!-- Create gauranlen pod -->
+            <li Class="ThinkNode_ConditionalPawnKind">
+              <pawnKind>Dryad_Gaumaker</pawnKind>
+              <subNodes>
+                <li Class="JobGiver_MergeIntoGaumakerPod">
+                  <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+                </li>
+              </subNodes>
+            </li>
+
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>TrainedAnimalBehavior</tagToGive>
+              <subNodes>
+                <!-- Trained behavior: obedience: Follow and defend master -->
+                <li Class="ThinkNode_ConditionalTrainableCompleted">
+                  <trainable>Obedience</trainable>
+                  <subNodes>
+                    <li Class="ThinkNode_ConditionalShouldFollowMaster" >
+                      <subNodes>
+                        <li Class="JobGiver_AIDefendMaster">
+                          <attackMeleeThreatEvenIfNotHostile>true</attackMeleeThreatEvenIfNotHostile>
+                        </li>
+                        <li Class="JobGiver_AIFollowMaster"/>
+                        <li Class="JobGiver_WanderNearMaster" />
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Needs -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>SatisfyBasicNeeds</treeDef>
+        </li>
+
+        <!-- Secondary faction actions -->
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <subNodes>
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>RestingForMedicalReasons</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_PatientGoToBed" />
+              </subNodes>
+            </li>
+            <li Class="JobGiver_SeekAllowedArea" />
+            <li Class="JobGiver_SeekSafeTemperature" />
+
+            <li Class="ThinkNode_Tagger">
+              <tagToGive>RestingForMedicalReasons</tagToGive>
+              <subNodes>
+                <li Class="JobGiver_PatientGoToBed" />
+              </subNodes>
+            </li>
+
+            <li Class="ThinkNode_ChancePerHour_Constant">
+              <mtbHours>1</mtbHours>
+              <subNodes>
+                <li Class="ThinkNode_ConditionalRequireCapacities">
+                  <requiredCapacities>
+                    <li>Manipulation</li>
+                  </requiredCapacities>
+                  <subNodes>
+                    <!-- Trained behavior: Haul-->
+                    <li Class="ThinkNode_ConditionalTrainableCompleted">
+                      <trainable>Haul</trainable>
+                      <subNodes>
+                        <li Class="ThinkNode_Tagger">
+                          <tagToGive>TrainedAnimalBehavior</tagToGive>
+                          <subNodes>
+                            <li Class="JobGiver_Haul" />
+                          </subNodes>
+                        </li>
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <!-- Idle -->
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderNearConnectedTree">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+              <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+            </li>
+          </subNodes>
+        </li>
+
+        <li Class="JobGiver_IdleError"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</Defs>

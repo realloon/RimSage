@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<LanguageData>
-
-  <ScenPart_StartingMech>Start with mech</ScenPart_StartingMech>
-  <Mechanoid>Mechanoid</Mechanoid>
-  <RandomMech>random mech</RandomMech>
-  <StartOverseenChance>Overseen chance</StartOverseenChance>
-
-</LanguageData>

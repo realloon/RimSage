@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<Defs>
-
-  <RitualPatternDef Abstract="True" Name="SpeechPatternBase">
-    <ritualOutcomeEffect>AttendedSpeech</ritualOutcomeEffect>
-  </RitualPatternDef>
-  
-</Defs>

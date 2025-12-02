@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>Hermit82</defName>
+    <title>hermit</title>
+    <titleShort>hermit</titleShort>
+    <description>Worn out by the pressures of social interaction, [PAWN_nameDef] left [PAWN_possessive] crowded city to live a simple life in the wilderness. There, [PAWN_pronoun] spent [PAWN_possessive] days alone, tending [PAWN_possessive] garden and crafting the simple tools [PAWN_pronoun] needed to survive.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Social</li>
+    </workDisables>
+    <skillGains>
+      <Plants>4</Plants>
+      <Crafting>3</Crafting>
+      <Construction>1</Construction>
+    </skillGains>
+    <spawnCategories>
+      <li>Outsider</li>
+      <li>Cult</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>PlantWork</li>
+      <li>ManualDumb</li>
+      <li>Crafting</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <forcedTraits>
+      <Ascetic>0</Ascetic>
+    </forcedTraits>
+  </BackstoryDef>
+
+</Defs>

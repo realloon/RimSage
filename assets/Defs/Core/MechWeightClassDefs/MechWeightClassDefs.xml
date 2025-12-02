@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MechWeightClassDef>
+    <defName>Light</defName>
+    <label>light</label>
+  </MechWeightClassDef>
+
+  <MechWeightClassDef>
+    <defName>Medium</defName>
+    <label>medium</label>
+  </MechWeightClassDef>
+
+  <MechWeightClassDef>
+    <defName>Heavy</defName>
+    <label>heavy</label>
+  </MechWeightClassDef>
+
+  <MechWeightClassDef>
+    <defName>UltraHeavy</defName>
+    <label>ultraheavy</label>
+    <canResurrect>false</canResurrect>
+  </MechWeightClassDef>
+
+</Defs>

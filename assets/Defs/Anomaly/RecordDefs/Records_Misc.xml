@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RecordDef>
+        <defName>KillsEntities</defName>
+        <label>kills (entities)</label>
+        <description>The number of entities I have killed.</description>
+        <type>Int</type>
+        <displayOrder>0</displayOrder>
+    </RecordDef>
+
+    <RecordDef>
+        <defName>PawnsDownedEntities</defName>
+        <label>enemies downed (entities)</label>
+        <description>The number of entities I have downed.</description>
+        <type>Int</type>
+        <displayOrder>1</displayOrder>
+    </RecordDef>
+</Defs>

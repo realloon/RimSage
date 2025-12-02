@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PitGateIncidentDef>
+    <defName>FleshbeastEmergence</defName>
+    <label>fleshbeast emergence</label>
+    <workerClass>PitGateIncidentWorker_Fleshbeast</workerClass>
+    <baseChance>1</baseChance>
+    <durationRangeTicks>600</durationRangeTicks> <!-- 10 seconds -->
+    <usesThreatPoints>true</usesThreatPoints>
+    <disableEnteringTicks>600</disableEnteringTicks> <!-- 10 seconds -->
+    <disableEnteringReason>fleshbeasts are emerging</disableEnteringReason>
+    <letterLabel>Fleshbeast emergence</letterLabel>
+    <letterText>A horde of fleshbeasts is emerging from the pit gate. Get ready!</letterText>
+  </PitGateIncidentDef>
+</Defs>

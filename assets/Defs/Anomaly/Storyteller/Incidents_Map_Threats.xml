@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IncidentDef Abstract="True" Name="EntitySwarmBase" ParentName="AnomalyIncidentBase">
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <letterDef>ThreatBig</letterDef>
+    <tale>Raid</tale>
+  </IncidentDef>
+  
+  <IncidentDef Name="EntityAttackBase" ParentName="AnomalyIncidentBase" Abstract="True">
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="EntitySwarmBase">
+    <defName>ShamblerSwarm</defName>
+    <label>shambler swarm</label>
+    <workerClass>IncidentWorker_ShamblerSwarm</workerClass>
+    <baseChance>2</baseChance>
+    <earliestDay>0</earliestDay>
+    <minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+  </IncidentDef>
+
+  <IncidentDef ParentName="EntitySwarmBase">
+    <defName>ShamblerSwarmAnimals</defName>
+    <label>shambler swarm</label>
+    <workerClass>IncidentWorker_ShamblerSwarmAnimals</workerClass>
+    <baseChance>0.25</baseChance>
+    <earliestDay>0</earliestDay>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+  </IncidentDef>
+
+  <IncidentDef ParentName="EntitySwarmBase">
+    <defName>SmallShamblerSwarm</defName>
+    <label>shambler swarm</label>
+    <workerClass>IncidentWorker_ShamblerSwarmSmall</workerClass>
+    <baseChance>1</baseChance>
+    <category>ThreatSmall</category>
+    <letterLabel>Shamblers approach</letterLabel>
+    <letterText>A small group of {0} shambling corpses is approaching. The inhuman force that animates them is fading, so they will collapse within a day.\n\nIf you can capture one, you can study it for anomaly knowledge. Otherwise, they might not notice you if you leave them alone.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="EntitySwarmBase">
+    <defName>SightstealerSwarm</defName>
+    <label>sightstealer swarm</label>
+    <workerClass>IncidentWorker_SightstealerSwarm</workerClass>
+    <baseChance>1</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <earliestDay>0</earliestDay>
+    <letterLabel>Distant shriek</letterLabel>
+    <letterText>Your colonists hear inhuman shrieks in the distance.\n\nSomething is out there.</letterText>
+    <hidden>true</hidden>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>ShamblerAssault</defName>
+    <label>shambler assault</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_ShamblerAssault</workerClass>
+    <baseChance>2</baseChance>
+    <minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+    <earliestDay>20</earliestDay>
+    <minRefireDays>10</minRefireDays>
+    <category>ThreatBig</category>
+    <minThreatPoints>250</minThreatPoints>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>Raid</tale>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>GhoulAttack</defName>
+    <label>Ghoul attacking</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GhoulAttack</workerClass>
+    <baseChance>0.2</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <earliestDay>15</earliestDay>
+    <category>ThreatSmall</category>
+    <tale>Raid</tale>
+    <letterLabel>Ghoul attacking</letterLabel>
+    <letterText>A vicious humanoid ghoul is attacking!\n\nIt is intent on inhuman savagery and it cannot feel pain. Prepare to defend.</letterText>
+  </IncidentDef>
+
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>Revenant</defName>
+    <label>revenant</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_Revenant</workerClass>
+    <baseChance>1</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <minPopulation>5</minPopulation>
+    <minThreatPoints>300</minThreatPoints>
+    <earliestDay>30</earliestDay>
+    <category>ThreatBig</category>
+    <minRefireDays>90</minRefireDays>
+    <hidden>true</hidden>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>SightstealerArrival</defName>
+    <label>sightstealer arrival</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_SightstealerArrival</workerClass>
+    <baseChance>2</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <pointsScaleable>true</pointsScaleable>
+    <category>ThreatBig</category>
+    <hidden>true</hidden>
+  </IncidentDef>
+
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>PsychicRitualSiege</defName>
+    <label>psychic ritual siege</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_PsychicRitualSiege</workerClass>
+    <baseChance>2.5</baseChance>
+    <minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+    <minThreatPoints>200</minThreatPoints>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>Raid</tale>
+  </IncidentDef>
+  
+  <IncidentDef ParentName="AnomalyIncidentBase">
+    <defName>HateChanters</defName>
+    <label>hate chanters</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_HateChanters</workerClass>
+    <baseChance>1.5</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <minThreatPoints>200</minThreatPoints>
+    <minRefireDays>10</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+  
+  <IncidentDef>
+    <defName>FrenziedAnimals</defName>
+    <label>frenzied animals</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_AggressiveAnimals</workerClass>
+    <baseChance>0</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+
+  <IncidentDef ParentName="EntityAttackBase">
+    <defName>FleshbeastAttack</defName>
+    <label>fleshbeast attack</label>
+    <workerClass>IncidentWorker_FleshbeastAttack</workerClass>
+    <baseChance>2</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <letterLabel>fleshbeast attack</letterLabel>
+    <letterText>The ground seems to be giving way. The sounds of writhing flesh and cracking bones can be heard from below.</letterText>
+    <letterTextPlural>Several sinkholes have started appearing. The sounds of writhing flesh and cracking bones can be heard from below.</letterTextPlural>
+    <letterDef>ThreatBig</letterDef>
+    <earliestDay>15</earliestDay>
+  </IncidentDef>
+
+  <IncidentDef ParentName="EntityAttackBase">
+    <defName>GorehulkAssault</defName>
+    <label>gorehulk assault</label>
+    <workerClass>IncidentWorker_GorehulkAssault</workerClass>
+    <baseChance>1.5</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <letterLabel>Gorehulk assault</letterLabel>
+    <letterText>A group of monstrous, human-like abominations are attacking! Their bodies are ravaged by thick keratin spines which they can launch at a distance. However, their fleshy forms can do little damage at close range.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <earliestDay>15</earliestDay>
+  </IncidentDef>
+
+  <IncidentDef ParentName="EntityAttackBase" Name="DevourerAssault">
+    <defName>DevourerAssault</defName>
+    <label>devourer assault</label>
+    <workerClass>IncidentWorker_DevourerAssault</workerClass>
+    <baseChance>1.5</baseChance>
+    <minThreatPoints>350</minThreatPoints>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <letterLabel>Devourer attack</letterLabel>
+    <letterText>A swarm of huge gape-mawed monsters are attacking!\n\nThese creatures' jaws are massive enough to swallow a human whole. Keep your distance!</letterText>
+    <letterDef>ThreatBig</letterDef>
+  </IncidentDef>
+
+  <IncidentDef ParentName="DevourerAssault">
+    <defName>DevourerWaterAssault</defName>
+    <workerClass>IncidentWorker_DevourerWaterAssault</workerClass>
+    <baseChance>1</baseChance>
+    <minThreatPoints>500</minThreatPoints>
+  </IncidentDef>
+
+  <IncidentDef ParentName="EntityAttackBase">
+    <defName>ChimeraAssault</defName>
+    <label>chimera assault</label>
+    <workerClass>IncidentWorker_ChimeraAssault</workerClass>
+    <baseChance>2</baseChance>
+    <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    <minThreatPoints>300</minThreatPoints>
+  </IncidentDef>
+</Defs>

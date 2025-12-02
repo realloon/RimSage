@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RaidAgeRestrictionDef>
+    <defName>Children</defName>
+    <developmentStage>Child</developmentStage>
+    <threatPointsFactor>1.2</threatPointsFactor>
+    <earliestDay>15</earliestDay>
+    <ageRange>9~12</ageRange>
+    <chance>0.025</chance>
+    <arrivalTextExtra>All the {PAWNSPLURAL} appear to be children!</arrivalTextExtra>
+    <workerClass>RaidAgeRestrictionWorker_Children</workerClass>
+  </RaidAgeRestrictionDef>
+
+</Defs>

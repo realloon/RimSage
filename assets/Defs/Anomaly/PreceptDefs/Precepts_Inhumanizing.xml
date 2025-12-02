@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef>
+    <defName>Inhumanizing</defName>
+    <label>inhumanizing</label>
+    <iconPath>UI/Issues/Inhumanizing</iconPath>
+    <forceWriteLabelInPreceptFloatMenuOption>true</forceWriteLabelInPreceptFloatMenuOption>
+  </IssueDef>
+  
+  <PreceptDef>
+    <defName>Inhumanizing_Required</defName>
+    <issue>Inhumanizing</issue>
+    <label>required</label>
+    <description>Human morality and feeling are a distraction. We must leave humanity behind.\n\nMental breaks will cause followers to become inhumanized.</description>
+    <impact>High</impact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Inhumanizing_Required_Human</thought>
+      </li>
+      <li Class="PreceptComp_MentalBreak">
+        <mentalBreakDef>HumanityBreak</mentalBreakDef>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>Inhumanizing_Required_Human</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_NonImhumanized</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>human shame</label>
+        <description>I'm ashamed of my humanity. I want to embrace the void but I fear it.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
+

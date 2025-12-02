@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PreceptDef>
+    <defName>DrugUse_Essential</defName>
+    <issue>DrugUse</issue>
+    <label>essential</label>
+    <description>Exotic states of mind are central to a good life.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <enabledForNPCFactions>false</enabledForNPCFactions>
+    <requiredMemes>
+      <li>HighLife</li>
+    </requiredMemes>
+    <associatedMemes>
+      <li>HighLife</li>
+    </associatedMemes>
+    <statFactors>
+      <DrugHarvestYield>1.5</DrugHarvestYield>
+      <DrugSynthesisSpeed>1.5</DrugSynthesisSpeed>
+    </statFactors>
+    <statOffsets>
+      <DrugSellPriceImprovement>0.1</DrugSellPriceImprovement>
+    </statOffsets>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>HighLife</thought>
+        <description>Drugs taken every {DAYSSATISIFED} days</description>
+        <tooltipShowMoodRange>true</tooltipShowMoodRange>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>HighLife</defName>
+    <thoughtClass>Thought_Situational_Precept_HighLife</thoughtClass>
+    <workerClass>ThoughtWorker_Precept_HighLife</workerClass>
+    <minExpectationForNegativeThought>Low</minExpectationForNegativeThought>
+    <nullifyingTraitDegrees>
+      <DrugDesire>-1</DrugDesire>
+    </nullifyingTraitDegrees>
+    <stages>
+      <li>
+        <label>high life</label>
+        <description>The right path goes through altered consciousness, and I am walking it.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>high life</label>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>high life missing</label>
+        <description>I should be altering my consciousness. It's not right to be sober so long.</description>
+      </li>
+      <li>
+        <label>high life missing</label>
+        <description>I should be altering my consciousness. It's not right to be sober so long.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

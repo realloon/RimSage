@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <IncidentDef>
+    <defName>CaravanArrivalTributeCollector</defName>
+    <label>tribute collector caravan arrival</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_CaravanArrivalTributeCollector</workerClass>
+    <category>FactionArrival</category>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>AnimaTreeSpawn</defName>
+    <label>anima tree</label>
+    <category>Special</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_AnimaTreeSpawn</workerClass>
+    <treeDef>Plant_TreeAnima</treeDef>
+    <treeGenStepDef>AnimaTrees</treeGenStepDef>
+    <treeGrowth>0.05</treeGrowth>
+    <letterLabel>Anima tree</letterLabel>
+    <letterText>An anima tree has sprouted nearby.\n\nTribal peoples can use this as a powerful meditation focus, but only if artificial structures are not placed nearby.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+  </IncidentDef>
+  
+</Defs>

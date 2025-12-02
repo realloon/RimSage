@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartGroupDef>
+    <defName>LeftPowerClaw</defName>
+    <label>left power claw</label>
+    <labelShort>power claw</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>RightPowerClaw</defName>
+    <label>right power claw</label>
+    <labelShort>power claw</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>BulbTurret</defName>
+    <label>bulb turret</label>
+  </BodyPartGroupDef>
+
+</Defs>

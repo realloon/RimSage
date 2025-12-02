@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TerrainDef ParentName="BurnedFloorBase">
+    <defName>BurnedBioferritePlate</defName>
+    <label>burned bioferrite plate</label>
+    <renderPrecedence>251</renderPrecedence>
+    <description>Burned-out bioferrite plating.</description>
+    <texturePath>Terrain/Surfaces/BurnedBioferritePlateFloor</texturePath>
+    <edgeType>Hard</edgeType>
+    <color>(100, 80, 80)</color>
+  </TerrainDef>
+  
+</Defs>

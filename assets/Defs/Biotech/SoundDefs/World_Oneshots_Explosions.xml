@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>Explosion_MechBandShockwave</defName>
+    <context>MapOnly</context> 
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Explosion/Mechband_Shockwave_Explosion_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

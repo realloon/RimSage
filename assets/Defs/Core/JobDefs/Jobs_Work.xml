@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!--============= Item hauling ===============-->
+
+  <JobDef>
+    <defName>HaulToCell</defName>
+    <driverClass>JobDriver_HaulToCell</driverClass>
+    <reportString>hauling TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>HaulToContainer</defName>
+    <driverClass>JobDriver_HaulToContainer</driverClass>
+    <reportString>hauling TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!--============= Special hauling ===============-->
+
+  <JobDef>
+    <defName>Steal</defName>
+    <driverClass>JobDriver_TakeAndExitMap</driverClass>
+    <reportString>stealing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
+
+  <JobDef>
+    <defName>Kidnap</defName>
+    <driverClass>JobDriver_Kidnap</driverClass>
+    <reportString>kidnapping TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryDownedPawnToExit</defName>
+    <driverClass>JobDriver_Kidnap</driverClass>
+    <reportString>carrying TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryDownedPawnToPortal</defName>
+    <driverClass>JobDriver_TakeAndEnterPortal</driverClass>
+    <reportString>carrying TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <!--============= Pawn hauling ===============-->
+
+  <JobDef>
+    <defName>Rescue</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>rescuing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryToCryptosleepCasket</defName>
+    <driverClass>JobDriver_CarryToCryptosleepCasket</driverClass>
+    <reportString>carrying TargetA to cryptosleep casket.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <taleOnCompletion>PutIntoCryptosleep</taleOnCompletion>
+  </JobDef>
+
+  <JobDef>
+    <defName>Capture</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>capturing TargetA.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <makeTargetPrisoner>true</makeTargetPrisoner>
+    <casualInterruptible>false</casualInterruptible>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>Arrest</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>arresting TargetA.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <makeTargetPrisoner>true</makeTargetPrisoner>
+    <casualInterruptible>false</casualInterruptible>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>ReleasePrisoner</defName>
+    <driverClass>JobDriver_ReleasePrisoner</driverClass>
+    <reportString>releasing TargetA.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>EscortPrisonerToBed</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>escorting prisoner TargetA.</reportString>
+    <makeTargetPrisoner>true</makeTargetPrisoner>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>TakeWoundedPrisonerToBed</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>taking wounded prisoner TargetA.</reportString>
+    <makeTargetPrisoner>true</makeTargetPrisoner>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>TakeToBedToOperate</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>taking TargetA to bed.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>TakeDownedPawnToBedDrafted</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>taking TargetA to bed.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryDownedPawnDrafted</defName>
+    <driverClass>JobDriver_CarryDownedPawn</driverClass>
+    <reportString>carrying TargetA.</reportString>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryToCryptosleepCasketDrafted</defName>
+    <driverClass>JobDriver_CarryToCryptosleepCasket</driverClass>
+    <reportString>carrying TargetA to cryptosleep casket.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <taleOnCompletion>PutIntoCryptosleep</taleOnCompletion>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <JobDef>
+    <defName>CarryToPrisonerBedDrafted</defName>
+    <driverClass>JobDriver_TakeToBed</driverClass>
+    <reportString>arresting TargetA.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <makeTargetPrisoner>true</makeTargetPrisoner>
+    <casualInterruptible>false</casualInterruptible>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
+
+  <!--============= Animal handling ===============-->
+
+  <JobDef>
+    <defName>Slaughter</defName>
+    <driverClass>JobDriver_Slaughter</driverClass>
+    <reportString>slaughtering TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Milk</defName>
+    <driverClass>JobDriver_Milk</driverClass>
+    <reportString>milking TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>Shear</defName>
+    <driverClass>JobDriver_Shear</driverClass>
+    <reportString>shearing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Tame</defName>
+    <driverClass>JobDriver_Tame</driverClass>
+    <reportString>taming TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Train</defName>
+    <driverClass>JobDriver_Train</driverClass>
+    <reportString>training TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RopeToPen</defName>
+    <driverClass>JobDriver_RopeToPen</driverClass>
+    <reportString>leading TargetA to TargetC.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RopeRoamerToUnenclosedPen</defName>
+    <driverClass>JobDriver_RopeRoamerToUnenclosedPen</driverClass>
+    <reportString>leading TargetA to TargetC.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RopeRoamerToHitchingPost</defName>
+    <driverClass>JobDriver_RopeRoamerToHitchingPost</driverClass>
+    <reportString>leading TargetA to hitching spot.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Unrope</defName>
+    <driverClass>JobDriver_Unrope</driverClass>
+    <reportString>unroping TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>ReleaseAnimalToWild</defName>
+    <driverClass>JobDriver_ReleaseAnimalToWild</driverClass>
+    <reportString>releasing TargetA into the wild.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!--============= Construction and repair ===============-->
+
+  <JobDef>
+    <defName>PlaceNoCostFrame</defName>
+    <driverClass>JobDriver_PlaceNoCostFrame</driverClass>
+    <reportString>building TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Replant</defName>
+    <driverClass>JobDriver_Replant</driverClass>
+    <reportString>replanting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>FinishFrame</defName>
+    <driverClass>JobDriver_ConstructFinishFrame</driverClass>
+    <reportString>building TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>DeconstructForBlueprint</defName>
+    <driverClass>JobDriver_DeconstructForBlueprint</driverClass>
+    <reportString>deconstructing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Deconstruct</defName>
+    <driverClass>JobDriver_Deconstruct</driverClass>
+    <reportString>deconstructing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Uninstall</defName>
+    <driverClass>JobDriver_Uninstall</driverClass>
+    <reportString>uninstalling TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>ExtractTree</defName>
+    <driverClass>JobDriver_ExtractTree</driverClass>
+    <reportString>extracting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>FillIn</defName>
+    <driverClass>JobDriver_FillIn</driverClass>
+    <reportString>filling in TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>Repair</defName>
+    <driverClass>JobDriver_Repair</driverClass>
+    <reportString>repairing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>FixBrokenDownBuilding</defName>
+    <driverClass>JobDriver_FixBrokenDownBuilding</driverClass>
+    <reportString>replacing broken components in TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>BuildRoof</defName>
+    <driverClass>JobDriver_BuildRoof</driverClass>
+    <reportString>building roof.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RemoveRoof</defName>
+    <driverClass>JobDriver_RemoveRoof</driverClass>
+    <reportString>removing roof.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>PaintBuilding</defName>
+    <driverClass>JobDriver_PaintBuilding</driverClass>
+    <reportString>painting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>PaintFloor</defName>
+    <driverClass>JobDriver_PaintFloor</driverClass>
+    <reportString>painting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RemovePaintBuilding</defName>
+    <driverClass>JobDriver_RemovePaintBuilding</driverClass>
+    <reportString>removing paint from TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RemovePaintFloor</defName>
+    <driverClass>JobDriver_RemovePaintFloor</driverClass>
+    <reportString>removing paint from TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!--============= Medical ===============-->
+
+  <JobDef>
+    <defName>FeedPatient</defName>
+    <driverClass>JobDriver_FoodFeedPatient</driverClass>
+    <reportString>feeding TargetA to TargetB.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>TendPatient</defName>
+    <driverClass>JobDriver_TendPatient</driverClass>
+    <reportString>tending to TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  
+  <!--============= Misc ===============-->
+
+  <JobDef>
+    <defName>DeliverFood</defName>
+    <driverClass>JobDriver_FoodDeliver</driverClass>
+    <reportString>feeding TargetA to TargetB.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>DoBill</defName>
+    <driverClass>JobDriver_DoBill</driverClass>
+    <reportString>doing bill at TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>OperateDeepDrill</defName>
+    <driverClass>JobDriver_OperateDeepDrill</driverClass>
+    <reportString>drilling at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>OperateScanner</defName>
+    <driverClass>JobDriver_OperateScanner</driverClass>
+    <reportString>scanning at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Clean</defName>
+    <driverClass>JobDriver_CleanFilth</driverClass>
+    <reportString>cleaning TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Research</defName>
+    <driverClass>JobDriver_Research</driverClass>
+    <reportString>researching.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Hunt</defName>
+    <driverClass>JobDriver_Hunt</driverClass>
+    <reportString>hunting TargetA.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>UseCommsConsole</defName>
+    <driverClass>JobDriver_UseCommsConsole</driverClass>
+    <reportString>using comms console.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Mine</defName>
+    <driverClass>JobDriver_Mine</driverClass>
+    <reportString>digging at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>SmoothFloor</defName>
+    <driverClass>JobDriver_SmoothFloor</driverClass>
+    <reportString>smoothing floor.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>RemoveFloor</defName>
+    <driverClass>JobDriver_RemoveFloor</driverClass>
+    <reportString>removing floor.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <displayAsAreaInFloatMenu>false</displayAsAreaInFloatMenu>
+  </JobDef>
+
+  <JobDef>
+    <defName>RemoveFoundation</defName>
+    <driverClass>JobDriver_RemoveFoundation</driverClass>
+    <reportString>removing bridges.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <displayAsAreaInFloatMenu>false</displayAsAreaInFloatMenu>
+  </JobDef>
+
+  <JobDef>
+    <defName>SmoothWall</defName>
+    <driverClass>JobDriver_SmoothWall</driverClass>
+    <reportString>smoothing wall.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Sow</defName>
+    <driverClass>JobDriver_PlantSow</driverClass>
+    <reportString>sowing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Harvest</defName>
+    <driverClass>JobDriver_PlantHarvest</driverClass>
+    <reportString>harvesting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>HarvestDesignated</defName>
+    <driverClass>JobDriver_PlantHarvest_Designated</driverClass>
+    <reportString>harvesting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>CutPlant</defName>
+    <driverClass>JobDriver_PlantCut</driverClass>
+    <reportString>cutting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>CutPlantDesignated</defName>
+    <driverClass>JobDriver_PlantCut_Designated</driverClass>
+    <reportString>cutting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>PrisonerAttemptRecruit</defName>
+    <driverClass>JobDriver_ChatWithPrisoner</driverClass>
+    <reportString>attempting to recruit TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>PrisonerExecution</defName>
+    <driverClass>JobDriver_Execute</driverClass>
+    <reportString>executing TargetA.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>GuiltyColonistExecution</defName>
+    <driverClass>JobDriver_ExecuteGuiltyColonist</driverClass>
+    <reportString>executing TargetA.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>PlantSeed</defName>
+    <driverClass>JobDriver_PlantSeed</driverClass>
+    <reportString>planting TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>StudyItem</defName>
+    <driverClass>JobDriver_StudyItem</driverClass>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <reportString>Studying TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>ExtractSkull</defName>
+    <driverClass>JobDriver_ExtractSkull</driverClass>
+    <reportString>extracting skull from TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>StudyInteract</defName>
+    <driverClass>JobDriver_StudyInteract</driverClass>
+    <reportString>Studying TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>AnalyzeItem</defName>
+    <driverClass>JobDriver_AnalyzeItem</driverClass>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <reportString>Analyzing TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>Hack</defName>
+    <driverClass>JobDriver_Hack</driverClass>
+    <reportString>hacking TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+</Defs>

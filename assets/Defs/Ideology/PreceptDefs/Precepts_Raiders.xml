@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue -->
+
+  <IssueDef>
+    <defName>Raiding</defName>
+    <label>raiding</label>
+    <iconPath>UI/Issues/Raiding</iconPath>
+  </IssueDef>
+
+  <HistoryEventDef>
+    <defName>Raided</defName>
+    <label>raided</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>PlayerRaidedSomeone</defName>
+    <label>raided someone</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>Raided_BanditCamp</defName>
+    <label>raided bandit camp</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>Raided_WorkSite</defName>
+    <label>raided work site</label>
+  </HistoryEventDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef Abstract="True" Name="RaidingBase">
+    <approvesOfRaiding>true</approvesOfRaiding>
+    <comps>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>PlayerRaidedSomeone</eventDef>
+        <points>1</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>Raided_BanditCamp</eventDef>
+        <points>2</points>
+      </li>
+      <li Class="PreceptComp_DevelopmentPoints">
+        <eventDef>Raided_WorkSite</eventDef>
+        <points>2</points>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RaidingBase">
+    <defName>Raiding_Respected</defName>
+    <issue>Raiding</issue>
+    <label>respected</label>
+    <description>We don't work like common laborers, we take from the weak as the strong should. Failing to do so is a mark of shame.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <statOffsets>
+      <WorkSpeedGlobal>-0.08</WorkSpeedGlobal>
+    </statOffsets>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RecentConquest_Respected</thought>
+        <thoughtStageDescriptions>
+          <li>Less than {DAYSSINCELASTRAIDTHRESHOLD} days since our last raid</li>
+          <li>More than {DAYSSINCELASTRAIDTHRESHOLD} days since our last raid</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <thought>ParticipatedInRaid_Respected</thought>
+        <eventDef>Raided</eventDef>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RaidingBase">
+    <defName>Raiding_Required</defName>
+    <issue>Raiding</issue>
+    <label>required</label>
+    <description>We don't work like common laborers, we take from the weak as the strong should. Failing to do so is a tremendous shame.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <statOffsets>
+      <WorkSpeedGlobal>-0.16</WorkSpeedGlobal>
+    </statOffsets>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RecentConquest_Required</thought>
+        <thoughtStageDescriptions>
+          <li>Less than {DAYSSINCELASTRAIDTHRESHOLD} days since our last raid</li>
+          <li>More than {DAYSSINCELASTRAIDTHRESHOLD} days since our last raid</li>
+        </thoughtStageDescriptions>
+      </li>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <thought>ParticipatedInRaid_Required</thought>
+        <eventDef>Raided</eventDef>
+      </li>
+    </comps>
+  </PreceptDef>
+
+</Defs>

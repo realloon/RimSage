@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PsychicRitualSpot</defName>
+    <label>psychic ritual spot</label>
+    <description>A spot for performing psychic rituals. Rituals can only be cast if the area around the ritual spot is unobstructed.</description>
+    <tickerType>Normal</tickerType>
+    <passability>Standable</passability>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <building>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <uiOrder>200</uiOrder>
+    <graphicData>
+      <texPath>Things/Building/PsychicRitualSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <size>(3, 3)</size>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <researchPrerequisites>
+      <li>BasicPsychicRituals</li>
+    </researchPrerequisites>
+    <inspectorTabs>
+      <li>ITab_Entity</li>
+    </inspectorTabs>
+    <designationCategory>Anomaly</designationCategory>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <MeditationFocusStrength>0.08</MeditationFocusStrength>
+    </statBases>
+    <useHitPoints>false</useHitPoints>
+    <placeWorkers>
+      <li>PlaceWorker_NeverAdjacentUnstandableRadial</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>True</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="CompProperties_PsychicRitualSpot"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ShardBeacon</li>
+          <li>VoidSculpture</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Void</li>
+        </focusTypes>
+        <offsets>
+          <li Class="FocusStrengthOffset_BuildingDefs">
+            <defs>
+              <li>ShardBeacon</li>
+            </defs>
+            <offsetPerBuilding>0.02</offsetPerBuilding>
+            <radius>9.9</radius>
+            <maxBuildings>4</maxBuildings>
+            <explanationKey>MeditationFocusPerBuilding</explanationKey>
+            <explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
+          </li>
+          <li Class="FocusStrengthOffset_BuildingDefs">
+            <defs>
+              <li>VoidSculpture</li>
+            </defs>
+            <offsetPerBuilding>0.02</offsetPerBuilding>
+            <radius>9.9</radius>
+            <maxBuildings>6</maxBuildings>
+            <explanationKey>MeditationFocusPerBuilding</explanationKey>
+            <explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
+          </li>
+        </offsets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TorchBase">
+    <defName>ShardBeacon</defName>
+    <label>shard beacon</label>
+    <description>A shard of dark archotechnology mounted on a bioferrite pedestal. The shard, focused by the bioferrite, shapes nearby dark psychic flows. When placed near a psychic ritual spot, it improves the ritual quality.\n\nA ritual can benefit from up to four shard beacons.</description>
+    <uiOrder>210</uiOrder>
+    <graphicData>
+      <texPath>Things/Building/ShardBeacon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <researchPrerequisites>
+      <li>AdvancedPsychicRituals</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>10</Mass>
+    </statBases>
+    <costList Inherit="False">
+      <Bioferrite>30</Bioferrite>
+      <Shard>1</Shard>
+    </costList>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>false</drawPlaceWorkersWhileSelected>
+    <building>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <comps Inherit="False">
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <PsychicRitualQuality>0.08</PsychicRitualQuality>
+        </statOffsets>
+        <maxSimultaneous>4</maxSimultaneous>
+        <maxDistance>10</maxDistance>
+      </li>
+    </comps>
+    <designationCategory>Anomaly</designationCategory>
+  </ThingDef>
+
+  <ThingDef ParentName="SculptureBase">
+    <defName>VoidSculpture</defName>
+    <label>void sculpture</label>
+    <description>An unsettling sculpture made from bioferrite. The psychic properties of bioferrite enhance the quality of any psychic rituals performed nearby.\n\nUp to six void sculptures can connect to a psychic ritual spot.</description>
+    <genericMarketSellable>false</genericMarketSellable>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/VoidSculpture</texPath>
+    </graphicData>
+    <fillPercent>0.35</fillPercent>
+    <rotatable>false</rotatable>
+    <tradeability>None</tradeability>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>3</Mass>
+      <Beauty>60</Beauty>
+      <WorkToMake>24000</WorkToMake>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">10</StyleDominance>
+    </statBases>
+    <comps Inherit="False">
+      <!-- From ArtBuildingBase to override art comp -->
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Styleable" />
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Artistic</li>
+        </focusTypes>
+        <offsets>
+          <li Class="FocusStrengthOffset_Quality">
+            <curve>
+              <points>
+                <li>(0,0.12)</li> <!-- awful -->
+                <li>(1,0.16)</li> <!-- poor -->
+                <li>(2,0.20)</li> <!-- normal -->
+                <li>(3,0.22)</li> <!-- good -->
+                <li>(4,0.24)</li> <!-- excellent -->
+                <li>(5,0.26)</li> <!-- masterwork -->
+                <li>(6,0.28)</li> <!-- legendary -->
+              </points>
+            </curve>
+          </li>
+          <li Class="FocusStrengthOffset_BuildingDefsWithQuality">
+            <defs>
+              <li>SculptureSmall</li>
+              <li>SculptureLarge</li>
+              <li>SculptureGrand</li>
+            </defs>
+            <radius>9.9</radius>
+            <maxBuildings>8</maxBuildings>
+            <focusPerQuality>
+              <points>
+                <li>(0,0.0)</li> <!-- awful -->
+                <li>(1,0.0)</li> <!-- poor -->
+                <li>(2,0.01)</li> <!-- normal -->
+                <li>(3,0.01)</li> <!-- good -->
+                <li>(4,0.01)</li> <!-- excellent -->
+                <li>(5,0.02)</li> <!-- masterwork -->
+                <li>(6,0.02)</li> <!-- legendary -->
+              </points>
+            </focusPerQuality>
+            <explanationKey>MeditationFocusPerSculpture</explanationKey>
+            <explanationKeyAbstract>MeditationFocusPerSculptureAbstract</explanationKeyAbstract>
+          </li>
+        </offsets>
+      </li>
+
+      <!-- Void sculpture comps -->
+
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtVoidSculpture</nameMaker>
+        <descriptionMaker>ArtDescription_VoidSculpture</descriptionMaker>
+        <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+      </li>
+      <li Class="CompProperties_FacilityQualityBased">
+        <maxSimultaneous>6</maxSimultaneous>
+        <maxDistance>10</maxDistance>
+        <statOffsetsPerQuality>
+          <li>
+            <key>PsychicRitualQuality</key>
+            <value>
+              <li><key>Awful</key><value>0.01</value></li>
+              <li><key>Poor</key><value>0.01</value></li>
+              <li><key>Normal</key><value>0.02</value></li>
+              <li><key>Good</key><value>0.02</value></li>
+              <li><key>Excellent</key><value>0.03</value></li>
+              <li><key>Masterwork</key><value>0.03</value></li>
+              <li><key>Legendary</key><value>0.05</value></li>
+            </value>
+          </li>
+        </statOffsetsPerQuality>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <recipeMaker>
+      <researchPrerequisite>VoidSculptures</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Bioferrite>50</Bioferrite>
+    </costList>
+  </ThingDef>
+</Defs>

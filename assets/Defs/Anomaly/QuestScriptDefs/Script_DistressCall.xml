@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>OpportunitySite_DistressCall</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <autoAccept>true</autoAccept>
+    <isRootSpecial>true</isRootSpecial>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Distress signal</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->You've intercepted a distress signal from a nearby camp of [faction_name].\n\nThe frantic voice begged for immediate assistance defending against a threat, and offered everything at their camp, including recently discovered shards of archotechnology, to whoever is willing to come help.\n\nAs the speaker tried to explain the nature of the threat, the signal went dead.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questDescriptionAndNameRules>
+      <rulesStrings>
+      </rulesStrings>
+    </questDescriptionAndNameRules>
+    <root Class="QuestNode_Root_DistressCall" />
+  </QuestScriptDef>
+</Defs>

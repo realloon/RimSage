@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SitePartDef Name="DistressCallBase" Abstract="True">
+    <label>{FACTION_name} distress signal</label>
+    <description>You've intercepted a distress signal from this outpost. The threat is unknown, but the caller offered everything in the camp as a reward for help.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/DistressCall</expandingIconTexture>
+    <approachOrderString>Investigate {0}</approachOrderString>
+    <approachingReportString>Investigating {0}.</approachingReportString>
+    <requiresFaction>true</requiresFaction>
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags>
+      <li>DistressCall</li>
+    </tags>
+
+  </SitePartDef>
+
+  <!-- Variant: Fleshbeasts -->
+
+  <SitePartDef ParentName="DistressCallBase">
+    <defName>DistressCall_Fleshbeasts</defName>
+    <workerClass>SitePartWorker_DistressCall_Fleshbeasts</workerClass>
+    <selectionWeight>4</selectionWeight>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DistressCall_Settlement</defName>
+    <linkWithSite>DistressCall_Fleshbeasts</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Settlement">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <generatePawns>false</generatePawns>
+      <postProcessSettlementParams>
+        <clearBuildingFaction>true</clearBuildingFaction>
+      </postProcessSettlementParams>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>DistressCall_Fleshmass</defName>
+    <linkWithSite>DistressCall_Fleshbeasts</linkWithSite>
+    <order>410</order>
+    <genStep Class="GenStep_Fleshmass">
+      <fleshFrequency>0.07</fleshFrequency>
+      <fleshThreshold>0.4</fleshThreshold>
+      <fleshTerrainThreshold>0.35</fleshTerrainThreshold>
+      <fleshmassCanReplaceBuildings>true</fleshmassCanReplaceBuildings>
+      <fleshmassFalloffRadius>20</fleshmassFalloffRadius>
+      <bloodFrequency>0</bloodFrequency>
+      <bloodThreshold>0</bloodThreshold>
+      <noiseOctaves>2</noiseOctaves>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>DistressCall_FleshSacks</defName>
+    <linkWithSite>DistressCall_Fleshbeasts</linkWithSite>
+    <order>411</order>
+    <genStep Class="GenStep_FleshSacks">
+      <forceAtLeastOneShard>true</forceAtLeastOneShard>
+      <spawnSurroundingFleshmass>false</spawnSurroundingFleshmass>
+      <trySpawnInRoom>true</trySpawnInRoom>
+      <sackClumpSize>15</sackClumpSize>
+      <numFleshSacksFromPoints>
+        <points>
+          <li>(0, 1)</li>
+          <li>(500, 2)</li>
+          <li>(1500, 3)</li>
+          <li>(2000, 4)</li>
+        </points>
+      </numFleshSacksFromPoints>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <order>412</order>
+    <defName>DistressCall_Fleshbulbs</defName>
+    <linkWithSite>DistressCall_Fleshbeasts</linkWithSite>
+    <genStep Class="GenStep_ScatterGroup">
+      <minSpacing>20</minSpacing>
+      <count>5</count>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <affordance>Light</affordance>
+        </li>
+        <li Class="ScattererValidator_TerrainDef">
+          <terrainDef>Flesh</terrainDef>
+        </li>
+      </validators>
+      <groups>
+        <li>
+          <things>
+            <Fleshbulb>1</Fleshbulb>
+          </things>
+          <coveredCellsPer10Cells>0.5~1.5</coveredCellsPer10Cells>
+          <clusterRectRadius>2~3</clusterRectRadius>
+        </li>
+      </groups>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>DistressCall_PitBurrows</defName>
+    <linkWithSite>DistressCall_Fleshbeasts</linkWithSite>
+    <order>413</order>
+    <genStep Class="GenStep_PitBurrows" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>DistressCall_BurntPatches</defName>
+    <linkWithSite>DistressCall_Fleshbeasts</linkWithSite>
+    <order>950</order>
+    <genStep Class="GenStep_BurntPatches" />
+  </GenStepDef>
+
+</Defs>

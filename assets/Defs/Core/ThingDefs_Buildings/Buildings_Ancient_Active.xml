@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AncientCryptosleepCasket">
+    <defName>AncientCryptosleepPod</defName>
+    <label>ancient cryptosleep pod</label>
+    <thingClass>Building_AncientCryptosleepPod</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <description>A single-use pod for preserving one person in a state of suspended animation. Unlike cryptosleep caskets, cryptosleep pods can only be used once.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientCryptosleepPod</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+    </building>
+    <researchPrerequisites Inherit="False" />
+    <hasInteractionCell>false</hasInteractionCell>
+    <statBases>
+      <WorkToBuild>2000</WorkToBuild>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <designationCategory Inherit="False" />
+    <costList Inherit="False" />
+    <comps Inherit="False" />
+  </ThingDef>
+
+  <ThingDef ParentName="CrateBase">
+    <defName>AncientHermeticCrate</defName>
+    <label>hermetic crate</label>
+    <description>A self-powered hermetically-sealed crate for preserving valuable items. These can preserve their contents for a long time.</description>
+    <size>(1, 2)</size>
+    <fillPercent>0.40</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientHermeticCrate</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1, 2)</drawSize>
+      <shadowData>
+        <volume>(1, 0.45, 2)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+    </statBases>
+    <building>
+      <openingEffect>HermeticCrateOpened</openingEffect>
+    </building>
+    <comps>
+      <li Class="CompProperties_EmptyStateGraphic">
+        <graphicData>
+          <texPath>Things/Building/Ruins/AncientHermeticCrateOpen</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(1, 2)</drawSize>
+        </graphicData>
+      </li>
+      <li Class="CompProperties_ThrownFleckEmitter">
+        <fleck>TerminalScreenLensFlare</fleck>
+        <offsetMin>(-0.3,0,-0.7)</offsetMin>
+        <offsetMax>(0.3,0,-0.7)</offsetMax>
+        <emissionInterval>90</emissionInterval>
+        <scale>1~1.1</scale>
+        <colorA>(239,133,50,255)</colorA>
+        <colorB>(239,133,50,255)</colorB>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(239,133,50,0)</glowColor>
+      </li>
+    </comps>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AncientFuelNode</defName>
+    <label>ancient unstable fuel node</label>
+    <description>An ancient, unstable fuel node once used to charge machines with fuel. It has become unstable over the years due to lack of maintenance.</description>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientFuelNode</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.7, 0.5, 0.7)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(1, 1)</size>
+    <fillPercent>0.30</fillPercent>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>3000</WorkToBuild>
+      <Flammability>1.5</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>480</wickTicks>
+        <explosiveRadius>6.9</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <explodeOnKilled>true</explodeOnKilled>
+        <startWickHitPointsPercent>0.99</startWickHitPointsPercent>
+        <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>0.25</preExplosionSpawnChance>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Bases -->
+
+  <HeadTypeDef Name="AverageBase" Abstract="True">
+    <hairMeshSize>(1.5, 1.5)</hairMeshSize>
+    <beardMeshSize>(1.5, 1.5)</beardMeshSize>
+  </HeadTypeDef>
+
+  <HeadTypeDef Name="NarrowBase" Abstract="True">
+    <hairMeshSize>(1.3, 1.5)</hairMeshSize>
+    <beardMeshSize>(1.2, 1.5)</beardMeshSize>
+    <beardOffset>(0, 0, -0.05)</beardOffset>
+    <beardOffsetXEast>-0.05</beardOffsetXEast>
+    <eyeOffsetEastWest>(0.10, 0, 0.17)</eyeOffsetEastWest>
+    <narrow>true</narrow>
+  </HeadTypeDef>
+
+  <!-- Unisex -->
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Skull</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/None_Average_Skull</graphicPath>
+    <selectionWeight>0</selectionWeight>
+    <randomChosen>false</randomChosen>
+    <gender>None</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Stump</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/None_Average_Stump</graphicPath>
+    <selectionWeight>0</selectionWeight>
+    <randomChosen>false</randomChosen>
+    <gender>None</gender>
+  </HeadTypeDef>
+
+  <!-- Male -->
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Male_AverageNormal</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Male/Male_Average_Normal</graphicPath>
+    <gender>Male</gender>
+    <eyeOffsetEastWest>(0.18, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Male_AveragePointy</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Male/Male_Average_Pointy</graphicPath>
+    <eyeOffsetEastWest>(0.18, 0, 0.17)</eyeOffsetEastWest>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Male_AverageWide</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Male/Male_Average_Wide</graphicPath>
+    <gender>Male</gender>
+    <eyeOffsetEastWest>(0.18, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="NarrowBase">
+    <defName>Male_NarrowNormal</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Male/Male_Narrow_Normal</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="NarrowBase">
+    <defName>Male_NarrowPointy</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Male/Male_Narrow_Pointy</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="NarrowBase">
+    <defName>Male_NarrowWide</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Male/Male_Narrow_Wide</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+
+  <!-- Female -->
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Female_AverageNormal</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Female/Female_Average_Normal</graphicPath>
+    <gender>Female</gender>
+    <eyeOffsetEastWest>(0.13, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Female_AveragePointy</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Female/Female_Average_Pointy</graphicPath>
+    <gender>Female</gender>
+    <eyeOffsetEastWest>(0.13, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Female_AverageWide</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Female/Female_Average_Wide</graphicPath>
+    <gender>Female</gender>
+    <eyeOffsetEastWest>(0.13, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="NarrowBase">
+    <defName>Female_NarrowNormal</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Normal</graphicPath>
+    <gender>Female</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="NarrowBase">
+    <defName>Female_NarrowPointy</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Pointy</graphicPath>
+    <gender>Female</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="NarrowBase">
+    <defName>Female_NarrowWide</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Wide</graphicPath>
+    <gender>Female</gender>
+  </HeadTypeDef>
+
+</Defs>

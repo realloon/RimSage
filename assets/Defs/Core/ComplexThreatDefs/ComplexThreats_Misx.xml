@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ComplexThreatDef Abstract="True" Name="DelayedThreat">
+    <delayChance>0.25</delayChance>
+    <delayTickOptions>
+      <li>1800</li><!--  30s -->
+      <li>3600</li><!--  1m -->
+      <li>7200</li><!--  2m -->
+      <li>10800</li><!-- 3m -->
+      <li>14800</li><!-- 4m -->
+      <li>21600</li><!-- 6m -->
+      <li>28800</li><!-- 8m -->
+      <li>36000</li><!-- 10m -->
+    </delayTickOptions>
+    <threatFactorOverDelayTicksCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1800, 1.2)</li>
+        <li>(36000, 1.5)</li>
+      </points>
+    </threatFactorOverDelayTicksCurve>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef Abstract="True" Name="SleepingThreat" ParentName="DelayedThreat">
+    <postSpawnPassiveThreatFactor>0.5</postSpawnPassiveThreatFactor>
+    <spawnInOtherRoomChance>0.5</spawnInOtherRoomChance>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef Name="SleepingMechanoids" ParentName="SleepingThreat">
+    <defName>SleepingMechanoids</defName>
+    <workerClass>ComplexThreatWorker_SleepingMechanoids</workerClass>
+    <faction>Mechanoid</faction>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef ParentName="DelayedThreat">
+    <defName>MechDrop</defName>
+    <workerClass>ComplexThreatWorker_Ambush</workerClass>
+    <signalActionAmbushType>Mechanoids</signalActionAmbushType>
+    <spawnAroundComplex>true</spawnAroundComplex>
+    <useDropPods>true</useDropPods>
+  </ComplexThreatDef>
+
+</Defs>

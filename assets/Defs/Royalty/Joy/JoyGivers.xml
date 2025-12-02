@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JoyGiverDef>
+    <defName>Play_MusicalInstrument</defName>
+    <giverClass>JoyGiver_InteractBuildingInteractionCell</giverClass>
+    <baseChance>2</baseChance>
+    <requireChair>false</requireChair>
+    <thingDefs>
+      <li>Harp</li>
+      <li>Harpsichord</li>
+      <li>Piano</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Drum</li>
+    </thingDefs>
+    <jobDef>Play_MusicalInstrument</jobDef>
+    <joyKind>HighCulture</joyKind>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+</Defs>

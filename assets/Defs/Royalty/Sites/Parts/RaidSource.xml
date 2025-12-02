@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>RaidSource</defName>
+    <label>raid source</label>
+    <description>A guarded military staging area which sends periodic raids.</description>
+    <workerClass>SitePartWorker_RaidSource</workerClass>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/RaidSource</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <approachOrderString>Attack {0}</approachOrderString>
+    <approachingReportString>Attacking {0}.</approachingReportString>
+    <arrivedLetter>There is an enemy outpost in this area.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <tags>
+      <li>QuestActiveThreat</li>
+    </tags>
+    <excludesTags>
+      <li>Outpost</li>
+      <li>MechCluster</li>
+      <li>MechClusterForceNoConditionCauser</li>
+      <li>SleepingMechanoids</li>
+      <li>Manhunters</li>
+    </excludesTags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>RaidSourceOutpost</defName>
+    <linkWithSite>RaidSource</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>RaidSourceOutpostPower</defName>
+    <linkWithSite>RaidSource</linkWithSite>
+    <order>401</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+
+</Defs>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SoundDef>
+    <defName>PlayStatic</defName>
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Childcare/Play</clipFolderPath>
+          </li>
+        </grains>
+        <muteWhenPaused>true</muteWhenPaused>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>1~4</sustainIntervalRange>
+        <volumeRange>20~30</volumeRange>
+        <distRange>5~20</distRange>
+        <repeatMode>NeverTwice</repeatMode>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

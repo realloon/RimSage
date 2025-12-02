@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <OptionCategoryDef>
+    <defName>General</defName>
+    <label>general</label>
+    <texPath>UI/Icons/Options/OptionsGeneral</texPath>
+  </OptionCategoryDef>
+  
+  <OptionCategoryDef>
+    <defName>Graphics</defName>
+    <label>graphics</label>
+    <texPath>UI/Icons/Options/OptionsVideo</texPath>
+  </OptionCategoryDef>
+  
+  <OptionCategoryDef>
+    <defName>Audio</defName>
+    <label>audio</label>
+    <texPath>UI/Icons/Options/OptionsAudio</texPath>
+  </OptionCategoryDef>
+  
+  <OptionCategoryDef>
+    <defName>Gameplay</defName>
+    <label>gameplay</label>
+    <texPath>UI/Icons/Options/OptionsGameplay</texPath>
+  </OptionCategoryDef>
+  
+  <OptionCategoryDef>
+    <defName>Interface</defName>
+    <label>interface</label>
+    <texPath>UI/Icons/Options/OptionsUI</texPath>
+  </OptionCategoryDef>
+  
+  <OptionCategoryDef>
+    <defName>Controls</defName>
+    <label>controls</label>
+    <texPath>UI/Icons/Options/OptionsControls</texPath>
+  </OptionCategoryDef>
+  
+  <OptionCategoryDef>
+    <defName>Dev</defName>
+    <label>dev</label>
+    <texPath>UI/Icons/Options/OptionsDev</texPath>
+    <isDev>true</isDev>
+  </OptionCategoryDef>
+  
+  <OptionCategoryDef>
+    <defName>Mods</defName>
+    <label>mod options</label>
+    <texPath>UI/Icons/Options/OptionsMod</texPath>
+  </OptionCategoryDef>
+</Defs>

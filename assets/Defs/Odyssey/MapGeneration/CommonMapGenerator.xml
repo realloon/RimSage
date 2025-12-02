@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GenStepDef ParentName="AncientMiscDebris" Name="QuarryDebris" Abstract="True">
+    <order>1650</order> <!-- after quarry (mutator final) -->
+    <genStep Class="GenStep_ScatterThings">
+      <terrainValidationRadius>1</terrainValidationRadius>
+      <terrainValidationAllowed>
+        <li>NaturalRock</li>
+      </terrainValidationAllowed>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef ParentName="QuarryDebris">
+    <defName>AncientMiningCharge</defName>
+    <genStep Class="GenStep_ScatterThings">
+      <thingDef>AncientMiningCharge</thingDef>
+      <countPer10kCellsRange>5~10</countPer10kCellsRange>
+      <minSpacing>5</minSpacing>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef ParentName="QuarryDebris">
+    <defName>AncientExplosivesCrate</defName>
+    <genStep Class="GenStep_ScatterThings">
+      <thingDef>AncientExplosivesCrate</thingDef>
+      <countPer10kCellsRange>1~2</countPer10kCellsRange>
+      <minSpacing>10</minSpacing>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef ParentName="QuarryDebris">
+    <defName>AncientExcavator</defName>
+    <genStep Class="GenStep_ScatterThings">
+      <thingDef>AncientExcavator</thingDef>
+      <countPer10kCellsRange>0.25~0.5</countPer10kCellsRange>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef ParentName="QuarryDebris">
+    <defName>AncientDrillPlatform</defName>
+    <genStep Class="GenStep_ScatterThings">
+      <thingDef>AncientDrillPlatform</thingDef>
+      <countPer10kCellsRange>0.25~0.5</countPer10kCellsRange>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>AncientTuneller</defName>
+    <order>1650</order> <!-- after quarry (mutator final) -->
+    <genStep Class="GenStep_ScatterGroup">
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <isJunk>true</isJunk>
+      <minSpacing>35</minSpacing>
+      <countPer10kCellsRange>0.5~1</countPer10kCellsRange>
+      <spotMustBeStandable>true</spotMustBeStandable>
+      <allowRoofed>false</allowRoofed>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <radius>5</radius>
+          <affordance>Heavy</affordance>
+        </li>
+      </validators>
+      <groups>
+        <li>
+          <things>
+            <AncientTunnelerClaw>0.4</AncientTunnelerClaw>
+            <AncientTunnelerClaw>0.2</AncientTunnelerClaw>
+            <ChunkMechanoidSlag>0.8</ChunkMechanoidSlag>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>3~5</clusterRectRadius>
+        </li>
+      </groups>
+    </genStep>
+  </GenStepDef>
+  
+  <GenStepDef>
+    <order>950</order>
+    <defName>ScarlandsJunkPrefabs</defName>
+    <genStep Class="GenStep_ScatterGroupPrefabs">
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <isJunk>true</isJunk>
+      <minSpacing>85</minSpacing>
+      <countPer10kCellsRange>0.4~0.6</countPer10kCellsRange>
+      <spotMustBeStandable>true</spotMustBeStandable>
+      <allowRoofed>false</allowRoofed>
+      <groups>
+        <Exterior_AncientContainerForklift>
+          <weight>1.0</weight>
+          <indoorRuin>false</indoorRuin>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <max>1</max>
+        </Exterior_AncientContainerForklift>
+        <Exterior_CrashedCrane>
+          <weight>0.5</weight>
+          <indoorRuin>false</indoorRuin>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <max>1</max>
+        </Exterior_CrashedCrane>
+        <Exterior_FourSmallBuildings>
+          <weight>0.5</weight>
+          <indoorRuin>false</indoorRuin>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <max>3</max>
+        </Exterior_FourSmallBuildings>
+        <Exterior_MilitaryBlockade>
+          <weight>1.0</weight>
+          <indoorRuin>false</indoorRuin>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <max>4</max>
+        </Exterior_MilitaryBlockade>
+        <Exterior_ContainerSite>
+          <weight>1.0</weight>
+          <indoorRuin>false</indoorRuin>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <max>1</max>
+        </Exterior_ContainerSite>
+        <Exterior_AncientRoad_Short>
+          <weight>1.0</weight>
+          <indoorRuin>false</indoorRuin>
+          <filthDef>Filth_RubbleRock</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <max>1</max>
+        </Exterior_AncientRoad_Short>
+        <Exterior_AncientRoad_Long>
+          <weight>2.0</weight>
+          <indoorRuin>false</indoorRuin>
+          <filthDef>Filth_RubbleRock</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <max>1</max>
+        </Exterior_AncientRoad_Long>
+      </groups>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <order>960</order>
+    <defName>ScarlandsJunkClusters</defName>
+    <preventsGenSteps>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AncientJunkClusters</li>
+    </preventsGenSteps>
+    <genStep Class="GenStep_ScatterGroup">
+      <allowInWaterBiome>false</allowInWaterBiome>
+      <isJunk>true</isJunk>
+      <minSpacing>85</minSpacing>
+      <countPer10kCellsRange>0.3~0.6</countPer10kCellsRange>
+      <spotMustBeStandable>true</spotMustBeStandable>
+      <allowRoofed>false</allowRoofed>
+      <warnOnFail>false</warnOnFail>
+      <validators>
+        <li Class="ScattererValidator_Buildable">
+          <radius>5</radius>
+          <affordance>Heavy</affordance>
+        </li>
+      </validators>
+      <groups>
+        <li>
+          <things>
+            <AncientWindTurbineBody>0.05</AncientWindTurbineBody>
+            <AncientMetalCrate>0.0833</AncientMetalCrate>
+            <AncientIndustrialTruck>0.05</AncientIndustrialTruck>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>0.1~0.15</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>10~14</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientMilitaryCrate>0.0221</AncientMilitaryCrate>
+            <AncientSpacerCrate>0.0221</AncientSpacerCrate>
+            <AncientCratePallet>0.0221</AncientCratePallet>
+            <AncientWoodenCrate>0.0221</AncientWoodenCrate>
+            <AncientMetalCrate>0.0221</AncientMetalCrate>
+            <AncientChembarrelPallet>0.0221</AncientChembarrelPallet>
+            <AncientTableTailorHand>0.1</AncientTableTailorHand>
+            <AncientTableTailorElectric>0.1</AncientTableTailorElectric>
+            <AncientTableStoveElectric>0.1</AncientTableStoveElectric>
+            <AncientBed>0.25</AncientBed>
+            <AncientIndustrialShelf>0.25</AncientIndustrialShelf>
+          </things>
+          <indoorRuin>true</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>3~5</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientIndustrialTruck>0.2</AncientIndustrialTruck>
+            <AncientMetalCrate>0.2</AncientMetalCrate>
+            <AncientSmallContainer>0.1</AncientSmallContainer>
+            <AncientOpenContainer>0.1</AncientOpenContainer>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>0.5~1</coveredCellsPer10Cells>
+          <filthDef>Filth_OilSmear</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.05</filthChance>
+          <clusterRectRadius>12~16</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientChembarrelPallet>0.2</AncientChembarrelPallet>
+            <AncientChembarrel>0.3</AncientChembarrel>
+            <AncientChemtruck>0.2</AncientChemtruck>
+            <AncientPipe>0.2</AncientPipe>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>1~1.25</coveredCellsPer10Cells>
+          <filthDef>Filth_OilSmear</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.05</filthChance>
+          <clusterRectRadius>10~14</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientCraneBase>0.1</AncientCraneBase>
+            <AncientCraneColumn>1</AncientCraneColumn>
+            <AncientSmallContainer>0.5</AncientSmallContainer>
+            <AncientOpenContainer>0.5</AncientOpenContainer>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>0.1~0.1</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.2</filthChance>
+          <clusterRectRadius>12~16</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientTableStoveElectric>0.1</AncientTableStoveElectric>
+            <AncientIndustrialShelf>0.3</AncientIndustrialShelf>
+            <AncientPlantPot>0.2</AncientPlantPot>
+            <AncientWoodenCrate>0.3</AncientWoodenCrate>
+            <AncientMetalCrate>0.2</AncientMetalCrate>
+          </things>
+          <indoorRuin>true</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>4~6</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientMilitaryCrate>0.3</AncientMilitaryCrate>
+            <AncientAmmoStack>0.3</AncientAmmoStack>
+            <AncientMilitaryGeneratorSmall>0.1</AncientMilitaryGeneratorSmall>
+            <AncientMediumContainer>0.15</AncientMediumContainer>
+          </things>
+          <indoorRuin>true</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.3</filthChance>
+          <clusterRectRadius>5~7</clusterRectRadius>
+        </li>
+        <li>
+          <things>
+            <AncientMediumContainer>0.2</AncientMediumContainer>
+            <AncientOpenContainer>0.3</AncientOpenContainer>
+            <AncientCratePallet>0.1</AncientCratePallet>
+            <AncientWoodenCrate>0.3</AncientWoodenCrate>
+          </things>
+          <indoorRuin>false</indoorRuin>
+          <coveredCellsPer10Cells>1.5~2.5</coveredCellsPer10Cells>
+          <filthDef>Filth_MachineBits</filthDef>
+          <filthExpandBy>1</filthExpandBy>
+          <filthChance>0.4</filthChance>
+          <clusterRectRadius>12~16</clusterRectRadius>
+        </li>
+      </groups>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

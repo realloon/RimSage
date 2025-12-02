@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RitualOutcomeEffectDef Name="AttendedFuneralBase" Abstract="True">
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_FromQuality</workerClass>
+    <allowAttachableOutcome>false</allowAttachableOutcome>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleFuneral</memory>
+        <description>The {0} was a terrible! Everyone felt insulted for having had to endure it.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Lackluster</label>
+        <chance>0.15</chance>
+        <memory>LacklusterFuneral</memory>
+        <description>The {0} was lackluster. The speech was long-winded and failed to resolve any emotions.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Good</label>
+        <chance>0.6</chance>
+        <memory>GoodFuneral</memory>
+        <description>The {0} was good. The speaker's final words provided a path for everyone move on.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Heartwarming</label>
+        <chance>0.2</chance>
+        <memory>HeartwarmingFuneral</memory>
+        <description>The {0} was heartwarming. The speech was captivating and heartfelt, and everyone came away focused on good memories.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="AttendedFuneralBase">
+    <defName>AttendedFuneral</defName>
+    <comps>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>moralist</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.3</qualityOffset>
+        <disableInClassicMode>true</disableInClassicMode>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.5)</li>
+            <li>(10, 0.7)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+  
+  <RitualOutcomeEffectDef ParentName="AttendedFuneralBase">
+    <defName>AttendedFuneralNoCorpse</defName>
+    <comps>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>moralist</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.2</qualityOffset>
+        <disableInClassicMode>true</disableInClassicMode>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.4)</li>
+            <li>(10, 0.6)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>CelebratedDate</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_FromQuality</workerClass>
+    <comps>
+      <li Class="RitualOutcomeComp_BuildingOfDefUsed">
+        <def>Lectern</def>
+        <qualityOffset>0.15</qualityOffset>
+        <maxHorDistFromTarget>5</maxHorDistFromTarget>
+      </li>
+      <li Class="RitualOutcomeComp_RitualSeatPresent">
+        <qualityOffset>0.15</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>leader</roleId>
+        <label>leader present</label>
+        <qualityOffset>0.25</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.15)</li>
+            <li>(10, 0.25)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <allowAltars>true</allowAltars>
+        <label>started at altar</label>
+        <qualityOffset>0.2</qualityOffset>
+        <expectedThingLabelTip>an altar</expectedThingLabelTip>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleFestival</memory>
+        <description>The {0} was terrible! Participants endured hours of jaw-clenching small talk while waiting for it to end.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>BoringFestival</memory>
+        <description>The {0} was boring. Everyone felt too awkward to open up and laugh.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Fun</label>
+        <chance>0.6</chance>
+        <memory>FunFestival</memory>
+        <description>The {0} was fun. Everyone appreciated the chance to relax and have fun together.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Unforgettable</label>
+        <chance>0.2</chance>
+        <memory>UnforgettableFestival</memory>
+        <description>The {0} was unforgettable! Everyone learned about each other and felt like a family.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>Execution</defName>
+    <description>Spectating slaves will be 100% suppressed. Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_Execution</workerClass>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.18)</li>
+            <li>(4, 0.4)</li>
+            <li>(7, 0.65)</li>
+            <li>(10, 0.8)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <defs>
+          <li>Ideogram</li>
+        </defs>
+        <allowAltars>true</allowAltars>
+        <autoApplyInClassicMode>true</autoApplyInClassicMode>
+        <label>started at altar or ideogram</label>
+        <qualityOffset>0.2</qualityOffset>
+        <expectedThingLabelTip>an altar or an ideogram</expectedThingLabelTip>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Awkward</label>
+        <chance>0.15</chance>
+        <memory>AwkwardExecution</memory>
+        <positivityIndex>-1</positivityIndex>
+        <description>The {0} was awkward. The speech dragged on and when it came time to strike, the executioner slipped and barely recovered. None of it felt justified.</description>
+      </li>
+      <li>
+        <label>Satisfying</label>
+        <chance>0.65</chance>
+        <memory>SatisfyingExecution</memory>
+        <description>The {0} was satisfying. Everyone could feel that justice was being upheld.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Spectacular</label>
+        <chance>0.2</chance>
+        <memory>SpectacularExecution</memory>
+        <description>The {0} was spectacular! One smooth strike was all it took, and everyone felt a rush of justice and power.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>Sacrifice</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_Consumable</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>If the {0} is satisfying, one of the participants might gain an inspiration.</li>
+    </extraPredictedOutcomeDescriptions>
+    <comps>
+      <li Class="RitualOutcomeComp_BuildingOfDefUsed">
+        <def>Lectern</def>
+        <qualityOffset>0.15</qualityOffset>
+        <maxHorDistFromTarget>5</maxHorDistFromTarget>
+      </li>
+      <li Class="RitualOutcomeComp_RitualSeatPresent">
+        <qualityOffset>0.15</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>moralist</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.25</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.18)</li>
+            <li>(10, 0.25)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <allowAltars>true</allowAltars>
+        <label>started at altar</label>
+        <qualityOffset>0.2</qualityOffset>
+        <expectedThingLabelTip>an altar</expectedThingLabelTip>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleSacrifice</memory>
+        <description>The {0} was terrible! The speech was stuttering and incoherent, and the killing technique was botched. The victim took far too long to die - everyone was waiting for it to end.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>BoringSacrifice</memory>
+        <description>The {0} was boring. The speech was repetitive and the killing technique was noticeably flawed. It just didn't feel dignified.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Satisfying</label>
+        <chance>0.6</chance>
+        <memory>SatisfyingSacrifice</memory>
+        <description>The {0} was satisfying. The speech felt meaningful, and the killing technique was precise and dignified.</description>
+        <potentialExtraOutcomeDesc>There's a 5% chance that a random participant gets an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Spectacular</label>
+        <chance>0.2</chance>
+        <memory>SpectacularSacrifice</memory>
+        <description>The {0} was spectacular! The speech brought everyone to the edge of a frenzy just as the blade came down perfectly, and the spurting blood was like cleansing waters for the spirit.</description>
+        <potentialExtraOutcomeDesc>There's a 10% chance that a random participant gets an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef Abstract="True" Name="CelebrationPartyDance">
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_DanceParty</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>If the {0} is fun or unforgettable, participants may gain increased work speed for a while.</li>
+    </extraPredictedOutcomeDescriptions>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.02)</li>
+            <li>(3,  0.12)</li>
+            <li>(6,  0.25)</li>
+            <li>(10, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.1</li>
+            <li>120, 0.2</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleParty</memory>
+        <description>The {0} was terrible! Awkward conversation, bad jokes, atrocious dancing, and dull music.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>BoringParty</memory>
+        <description>The {0} was boring. Bad dancing and so-so music made the whole thing feel like a waste of time.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Fun</label>
+        <chance>0.6</chance>
+        <memory>FunParty</memory>
+        <description>The {0} was fun. Everyone enjoyed the break from everyday life and got in some good dancing together.</description>
+        <potentialExtraOutcomeDesc>Everyone felt refreshed after their trance-like dancing experience. Participants will work faster for a while.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Unforgettable</label>
+        <chance>0.2</chance>
+        <memory>UnforgettableParty</memory>
+        <description>The {0} was unforgettable! The dancers forgot themselves in the music, and the experience brought everyone together.</description>
+        <potentialExtraOutcomeDesc>Everyone felt refreshed after their trance-like dancing experience. Participants will work faster for a while.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+  
+  <RitualOutcomeEffectDef ParentName="CelebrationPartyDance">
+    <defName>CelebrationPartyDanceTech</defName>
+    <comps>
+      <li Class="RitualOutcomeComp_NumActiveLoudspeakers">
+        <label>active speaker count</label>
+        <maxDistance>12</maxDistance>
+        <curve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(1, 0.1)</li>
+            <li>(2, 0.17)</li>
+            <li>(4, 0.25)</li>
+            <li>(6, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <defs>
+          <li>LightBall</li>
+        </defs>
+        <label>started at lightball</label>
+        <qualityOffset>0.2</qualityOffset>
+        <autoPoweredNeedsToBeOn>true</autoPoweredNeedsToBeOn>
+        <expectedThingLabelTip>a lightball</expectedThingLabelTip>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="CelebrationPartyDance">
+    <defName>CelebrationPartyDanceDrum</defName>
+    <comps>
+      <li Class="RitualOutcomeComp_NumPlayedDrums">
+        <label>played drum count</label>
+        <maxDistance>12</maxDistance>
+        <curve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(1, 0.1)</li>
+            <li>(2, 0.17)</li>
+            <li>(4, 0.25)</li>
+            <li>(6, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <defs>
+          <li>Campfire</li>
+        </defs>
+        <label>started at campfire</label>
+        <expectedThingLabelTip>a campfire</expectedThingLabelTip>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>CelebrationSkyLanterns</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_Skylantern</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>If the {0} is beautiful or unforgettable, the skylanterns might attract a group of friendly visitors.</li>
+    </extraPredictedOutcomeDescriptions>
+    <extraInfoLines>
+      <li>Each participant will make a lantern out of 4 wood.</li>
+    </extraInfoLines>
+    <comps>
+      <li Class="RitualOutcomeComp_NumParticipantsWithTag">
+        <label>participant count</label>
+        <tag>LaunchedSkyLantern</tag>
+        <curve>
+          <points>
+            <li>(1, 0.20)</li>
+            <li>(4, 0.5)</li>
+            <li>(7, 0.8)</li>
+            <li>(10, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleSkyLanterns</memory>
+        <description>The {0} was terrible! People kept getting annoyed making the lanterns and they looked like garbage on the wind.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Unimpressive</label>
+        <chance>0.15</chance>
+        <memory>UnimpressiveSkyLanterns</memory>
+        <description>The {0} was unimpressive. Lantern-making took too long and it all felt rather pointless.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Beautiful</label>
+        <chance>0.6</chance>
+        <memory>BeautifulSkyLanterns</memory>
+        <description>The {0} was beautiful. The drifting lanterns made everyone feel at peace.</description>
+        <potentialExtraOutcomeDesc>The skylanterns lifted high and bright. Friendly visitors might see them and arrive with a gift.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Unforgettable</label>
+        <chance>0.2</chance>
+        <memory>UnforgettableSkyLanterns</memory>
+        <description>The {0} was unforgettable! Making the lanterns was a time of laughter, and everyone's spirits rose with them.</description>
+        <potentialExtraOutcomeDesc>The skylanterns lifted high and bright. Friendly visitors might see them and arrive with a gift.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef Name="ConsumableOutcomeBase" Abstract="True">
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.6)</li>
+            <li>(10, 0.8)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <chance>0.05</chance>
+        <label>Terrible</label>
+        <memory>TerribleFestival</memory>
+        <description>The {0} was terrible! Participants endured hours of jaw-clenching small talk while waiting for it to end.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <chance>0.15</chance>
+        <label>Boring</label>
+        <memory>BoringFestival</memory>
+        <description>The {0} was boring. Everyone felt too awkward to open up and laugh.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <chance>0.6</chance>
+        <label>Fun</label>
+        <memory>FunFestival</memory>
+        <description>The {0} was good. Everyone appreciated the chance to relax and have fun together.</description>
+        <potentialExtraOutcomeDesc>There's a 5% chance that a random participant gains an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <chance>0.2</chance>
+        <label>Unforgettable</label>
+        <memory>UnforgettableFestival</memory>
+        <description>The {0} was unforgettable! Everyone learned about each other and felt like a family.</description>
+        <potentialExtraOutcomeDesc>There's a 10% chance a random participant gains an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef Name="ConsumableOutcomeBaseWithRoom" ParentName="ConsumableOutcomeBase" Abstract="True">
+    <comps>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.1</li>
+            <li>120, 0.2</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="ConsumableOutcomeBaseWithRoom">
+    <defName>CelebratedDate_Consumable</defName>
+    <workerClass>RitualOutcomeEffectWorker_Consumable</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>If the {0} is satisfying, one participant might gain an inspiration.</li>
+    </extraPredictedOutcomeDescriptions>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef Name="DestroyConsumableBuilding" ParentName="ConsumableOutcomeBaseWithRoom">
+    <defName>DestroyConsumableBuilding</defName>
+    <description>The ritual target will be destroyed.</description>
+    <workerClass>RitualOutcomeEffectWorker_RemoveConsumableBuilding</workerClass>
+    <comps>
+      <li Class="RitualOutcomeComp_DestroyConsumableBuilding" />
+    </comps>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="DestroyConsumableBuilding">
+    <defName>DestroyConsumableBuilding_ChristmasTree</defName>
+    <effecter>VanishChristmasTree</effecter>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="DestroyConsumableBuilding">
+    <defName>DestroyConsumableBuilding_Pyre</defName>
+    <effecter>VanishBurnable</effecter>
+    <filthDefToSpawn>Filth_Ash</filthDefToSpawn>
+    <filthCountToSpawn>2~4</filthCountToSpawn>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="ConsumableOutcomeBase">
+    <defName>DestroyConsumableBuilding_CannibalPlatter</defName>
+    <description>The ritual target will be destroyed.</description>
+    <workerClass>RitualOutcomeEffectWorker_RemoveConsumableBuilding</workerClass>
+    <comps>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.1</li>
+            <li>120, 0.2</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_DestroyConsumableBuilding" />
+    </comps>
+    <fleckDef>BloodSplashLong</fleckDef>
+    <flecksPerCell>15</flecksPerCell>
+    <fleckVelocitySpeed>0.1~1.5</fleckVelocitySpeed>
+    <fleckVelocityAngle>-55~55</fleckVelocityAngle>
+    <fleckScaleRange>1~2.5</fleckScaleRange>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="DestroyConsumableBuilding">
+    <defName>DestroyConsumableBuilding_Burnbong</defName>
+    <effecter>VanishBurnbong</effecter>
+    <filthDefToSpawn>Filth_Ash</filthDefToSpawn>
+    <filthCountToSpawn>2~4</filthCountToSpawn>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>GladiatorDuel</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_Duel</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>Duelists and viewers will gain melee combat experience.</li>
+      <li>Spectators will gain a mood boost and fill their recreation bars.</li>
+    </extraPredictedOutcomeDescriptions>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.15)</li>
+            <li>(10, 0.2)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>leader</roleId>
+        <label>leader present</label>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_DuelistDied">
+        <label>duelist dies</label>
+        <qualityOffset>1</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_WeaponUsed">
+        <label>weapon used</label>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <chance>0.05</chance>
+        <label>Terrible</label>
+        <memory>TerribleDuel</memory>
+        <roleIdsNotGainingMemory>
+          <li>duelist</li>
+        </roleIdsNotGainingMemory>
+        <description>The duel was terrible! The fighters bumbled around, ineptly avoiding each other in a extended display of cowardice and weakness. Watching it just made people sad.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <chance>0.15</chance>
+        <label>Boring</label>
+        <memory>BoringDuel</memory>
+        <roleIdsNotGainingMemory>
+          <li>duelist</li>
+        </roleIdsNotGainingMemory>
+        <description>The duel was boring. The fighters wouldn't commit, so there were no exciting moments.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <chance>0.6</chance>
+        <label>Good</label>
+        <memory>GoodDuel</memory>
+        <roleIdsNotGainingMemory>
+          <li>duelist</li>
+        </roleIdsNotGainingMemory>
+        <description>The duel was good. The fighters went for blood and showed real heart.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <chance>0.2</chance>
+        <label>Unforgettable</label>
+        <memory>UnforgettableDuel</memory>
+        <roleIdsNotGainingMemory>
+          <li>duelist</li>
+        </roleIdsNotGainingMemory>
+        <description>The duel was unforgettable! Both fighters gave all they had, and the death showed their dedication.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef Name="TrialOutcomeBase">
+    <defName>Trial</defName>
+    <description>The trial quality determines the chance that the defendant will be convicted.</description>
+    <workerClass>RitualOutcomeEffectWorker_Trial</workerClass>
+    <startingQuality>0.5</startingQuality>
+    <minQuality>0.1</minQuality>
+    <maxQuality>0.9</maxQuality>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(0,  0.0)</li>
+            <li>(4,  0.2)</li>
+            <li>(10, 0.4)</li>
+            <li>(20, 0.6)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_PawnStatScaled">
+        <label>{PAWN_labelShort}'s negotiation ability</label>
+        <labelAbstract>Leader's negotiation ability</labelAbstract>
+        <statDef>NegotiationAbility</statDef>
+        <roleId>leader</roleId>
+        <scaledBy>0.25</scaledBy>
+      </li>
+      <li Class="RitualOutcomeComp_PawnStatScaled">
+        <label>{PAWN_labelShort}'s negotiation ability</label>
+        <labelAbstract>Defendant's negotiation ability</labelAbstract>
+        <statDef>NegotiationAbility</statDef>
+        <roleId>convict</roleId>
+        <scaledBy>-0.25</scaledBy>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>exonerated</label>
+        <chance>0.5</chance>
+        <description>The prosecutor {PROSECUTOR_labelShort}'s arguments failed to convince anyone. {PAWN_labelShort} was exonerated.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>convicted</label>
+        <chance>0.5</chance>
+        <description>The prosecution convinced everyone of {PAWN_labelShort}'s guilt. {PAWN_labelShort} was convicted and can now be punished. You may execute or banish {PAWN_objective} and nobody will mind.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+  
+  <RitualOutcomeEffectDef ParentName="TrialOutcomeBase">
+    <defName>TrialMentalState</defName>
+    <comps Inherit="False">
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(0,  0.0)</li>
+            <li>(4,  0.2)</li>
+            <li>(10, 0.4)</li>
+            <li>(20, 0.6)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_PawnStatScaled">
+        <label>{PAWN_labelShort}'s negotiation ability</label>
+        <labelAbstract>Leader's negotiation ability</labelAbstract>
+        <statDef>NegotiationAbility</statDef>
+        <roleId>leader</roleId>
+        <scaledBy>0.25</scaledBy>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>ScarificationCeremony</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_FromQuality</workerClass>
+    <allowAttachableOutcome>false</allowAttachableOutcome>
+    <comps>
+      <li Class="RitualOutcomeComp_BuildingOfDefUsed">
+        <def>Lectern</def>
+        <qualityOffset>0.15</qualityOffset>
+        <maxHorDistFromTarget>5</maxHorDistFromTarget>
+      </li>
+      <li Class="RitualOutcomeComp_RitualSeatPresent">
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>doer</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.17)</li>
+            <li>(10, 0.25)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <allowAltars>true</allowAltars>
+        <label>started at altar</label>
+        <expectedThingLabelTip>an altar</expectedThingLabelTip>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleScarification</memory>
+        <description>The {0} was terrible! The speech was stuttering and incoherent, and the scarification technique was botched. Everyone was waiting for it to end.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>BoringScarification</memory>
+        <description>The {0} was boring. The speech was repetitive and the scarification technique was noticeably flawed. It just didn't feel dignified.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Satisfying</label>
+        <chance>0.6</chance>
+        <memory>SatisfyingScarification</memory>
+        <description>The {0} was satisfying. The speech felt meaningful, and the scarification technique was precise and dignified.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Spectacular</label>
+        <chance>0.2</chance>
+        <memory>SpectacularScarification</memory>
+        <description>The {0} was spectacular! The speech brought everyone to the edge of a frenzy as the bladeholder artfully rended living flesh.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>BlindingCeremony</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_Blinding</workerClass>
+    <extraPredictedOutcomeDescriptions MayRequire="Ludeon.RimWorld.Royalty">
+      <li>If the {0} is satisfying, the blinded person might get a psylink upgrade or unlock new psychic powers.</li>
+    </extraPredictedOutcomeDescriptions>
+    <allowAttachableOutcome>false</allowAttachableOutcome>
+    <comps>
+      <li Class="RitualOutcomeComp_BuildingOfDefUsed">
+        <def>Lectern</def>
+        <qualityOffset>0.15</qualityOffset>
+        <maxHorDistFromTarget>5</maxHorDistFromTarget>
+      </li>
+      <li Class="RitualOutcomeComp_RitualSeatPresent">
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>doer</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.17)</li>
+            <li>(10, 0.25)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualTargetDefs">
+        <allowAltars>true</allowAltars>
+        <label>started at altar</label>
+        <expectedThingLabelTip>an altar</expectedThingLabelTip>
+        <qualityOffset>0.2</qualityOffset>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>TerribleBlinding</memory>
+        <description>The {0} was terrible! The speech was stuttering and incoherent. The blinding technique was botched. Everyone was waiting for it to end.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>BoringBlinding</memory>
+        <description>The {0} was boring. The speech was repetitive and the blinding technique was noticeably flawed. It just didn't feel dignified.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Satisfying</label>
+        <chance>0.6</chance>
+        <memory>SatisfyingBlinding</memory>
+        <description>The {0} was satisfying. The speech felt meaningful, and the blinding technique was precise and dignified.</description>
+        <potentialExtraOutcomeDesc>The blinded person will get a psylink upgrade or unlock a new psychic power.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Spectacular</label>
+        <chance>0.2</chance>
+        <memory>SpectacularBlinding</memory>
+        <description>The {0} was spectacular! The speech brought everyone to the edge of a frenzy just as the eye came out with a satisfying wet noise.</description>
+        <potentialExtraOutcomeDesc>The blinded person will get a psylink upgrade or unlock a new psychic power.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>Conversion</defName>
+    <description>If it goes well, target's ideoligion certainty will be reduced or they will convert. If it goes badly, they will gain certainty in their old beliefs.</description>
+    <workerClass>RitualOutcomeEffectWorker_Conversion</workerClass>
+    <comps>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.1</li>
+            <li>120, 0.2</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.3)</li>
+            <li>(10, 0.4)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_PawnStatScaled">
+        <label>{PAWN_labelShort}'s social impact</label>
+        <labelAbstract>speaker's social impact</labelAbstract>
+        <roleId>moralist</roleId>
+        <statDef>SocialImpact</statDef>
+        <curve>
+          <points>
+            <li>(0.2,  0.0)</li>
+            <li>(0.6,  0.18)</li>
+            <li>(1.0, 0.25)</li>
+            <li>(1.5, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_PawnExpectations">
+        <roleId>convertee</roleId>
+        <label>{PAWN_labelShort}'s expectations</label>
+        <labelAbstract>convertee's expectations</labelAbstract>
+        <offsetForSlave>0</offsetForSlave>
+        <offsetPerExpectation>
+          <ExtremelyLow>0.1</ExtremelyLow>
+          <VeryLow>0.05</VeryLow>
+          <Low>0</Low>
+          <Moderate>-0.1</Moderate>
+          <High>-0.2</High>
+          <SkyHigh>-0.3</SkyHigh>
+          <Noble>-0.3</Noble>
+          <Royal>-0.3</Royal>
+          <RoleElite>-0.3</RoleElite>
+          <RoleSupreme>-0.3</RoleSupreme>
+        </offsetPerExpectation>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <ideoCertaintyOffset>0.2</ideoCertaintyOffset>
+        <description>The {0} was terrible! From the first word, it was a fruitless back-and-forth argument. It dragged on for a cringe-inducingly long time.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Ineffective</label>
+        <chance>0.15</chance>
+        <ideoCertaintyOffset>0.12</ideoCertaintyOffset>
+        <description>The {0} was ineffective. Most of the arguments were unclear, and the convertee countered those that made sense.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Effective</label>
+        <chance>0.6</chance>
+        <ideoCertaintyOffset>-0.3</ideoCertaintyOffset>
+        <memory>EffectiveConversion</memory>
+        <description>The {0} was effective. The speech not only delivered solid arguments and visibly swayed the convertee's thoughts, but kept the crowd entertained as well.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Masterful</label>
+        <chance>0.2</chance>
+        <ideoCertaintyOffset>-1</ideoCertaintyOffset>
+        <memory>MasterfulConversion</memory>
+        <description>The {0} was masterful! Old beliefs seemed to dissolve effortlessly and inevitably, and our true knowledge was accepted.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>ConnectToTree</defName>
+    <description>The connector will connect to the tree.</description>
+    <workerClass>RitualOutcomeEffectWorker_ConnectToTree</workerClass>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <extraPredictedOutcomeDescriptions>
+      <li>The connector will start with 25-45% connection strength, depending on ritual quality.</li>
+      <li>Every 2% increase in quality will grow a patch of Gauranlen moss around the tree, beautifying the area.</li>
+    </extraPredictedOutcomeDescriptions>
+    <warnOnLowQuality>false</warnOnLowQuality>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.1)</li>
+            <li>(4,  0.4)</li>
+            <li>(7,  0.7)</li>
+            <li>(10, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>RoleChange</defName>
+    <description>A new role will be assigned to a colonist.</description>
+    <workerClass>RitualOutcomeEffectWorker_RoleChange</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>The required number of spectators must attend for the role change to apply.</li>
+    </extraPredictedOutcomeDescriptions>
+    <comps>
+      <li Class="RitualOutcomeComp_RoleChangeParticipants">
+        <label>required spectator count</label>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Failed</label>
+        <chance>0.5</chance>
+        <description>The role change was not attended by enough {IDEO_memberNamePlural}.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Successful</label>
+        <chance>0.5</chance>
+        <description>The role change ritual was completed.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+</Defs>

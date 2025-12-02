@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Gaunt -->
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Gaunt</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Genes/None_Gaunt_Average</graphicPath>
+    <randomChosen>false</randomChosen>
+    <gender>None</gender>
+    <requiredGenes>
+      <li>Head_Gaunt</li>
+    </requiredGenes>
+    <eyeOffsetEastWest>(0.15, 0, 0.175)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+
+  <!-- Heavy jaw -->
+
+  <HeadTypeDef Name="HeavyJawBase" Abstract="True">
+    <hairMeshSize>(1.5, 1.5)</hairMeshSize>
+    <beardMeshSize>(1.7, 1.5)</beardMeshSize>
+    <randomChosen>false</randomChosen>
+    <requiredGenes>
+      <li>Jaw_Heavy</li>
+    </requiredGenes>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="HeavyJawBase">
+    <defName>Male_HeavyJawNormal</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Male/Male_HeavyJaw_Normal</graphicPath>
+    <gender>Male</gender>
+    <eyeOffsetEastWest>(0.16, 0, 0.175)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="HeavyJawBase">
+    <defName>Female_HeavyJawNormal</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/Female/Female_HeavyJaw_Normal</graphicPath>
+    <gender>Female</gender>
+    <eyeOffsetEastWest>(0.16, 0, 0.175)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+
+  <!-- Furskin -->
+
+  <!-- Average -->
+  <HeadTypeDef Name="FurskinAverageBase" ParentName="AverageBase" Abstract="True">
+    <randomChosen>false</randomChosen>
+    <gender>None</gender>
+    <requiredGenes>
+      <li>Furskin</li>
+    </requiredGenes>
+    <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinAverageBase">
+    <defName>Furskin_Average1</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Average1_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinAverageBase">
+    <defName>Furskin_Average2</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Average2_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinAverageBase">
+    <defName>Furskin_Average3</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Average3_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <!-- Gaunt -->
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Furskin_Gaunt</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Gaunt_Normal</graphicPath>
+    <randomChosen>false</randomChosen>
+    <gender>None</gender>
+    <selectionWeight>99999</selectionWeight>
+    <requiredGenes>
+      <li>Furskin</li>
+      <li>Head_Gaunt</li>
+    </requiredGenes>
+    <eyeOffsetEastWest>(0.15, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <!-- Narrow -->
+  <HeadTypeDef Name="FurskinNarrowBase" ParentName="NarrowBase" Abstract="True">
+    <randomChosen>false</randomChosen>
+    <gender>None</gender>
+    <requiredGenes>
+      <li>Furskin</li>
+    </requiredGenes>
+    <eyeOffsetEastWest>(0.15, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinNarrowBase">
+    <defName>Furskin_Narrow1</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Narrow1_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinNarrowBase">
+    <defName>Furskin_Narrow2</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Narrow2_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinNarrowBase">
+    <defName>Furskin_Narrow3</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Narrow3_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <!-- Heavy -->
+  <HeadTypeDef Name="FurskinHeavyBase" ParentName="HeavyJawBase" Abstract="True">
+    <randomChosen>false</randomChosen>
+    <gender>None</gender>
+    <selectionWeight>99999</selectionWeight>
+    <requiredGenes>
+      <li>Furskin</li>
+      <li>Jaw_Heavy</li>
+    </requiredGenes>
+    <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinHeavyBase">
+    <defName>Furskin_Heavy1</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Wide1_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinHeavyBase">
+    <defName>Furskin_Heavy2</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Wide2_Normal</graphicPath>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="FurskinHeavyBase">
+    <defName>Furskin_Heavy3</defName>
+    <graphicPath>Things/Pawn/Humanlike/Heads/FurCovered_Wide3_Normal</graphicPath>
+  </HeadTypeDef>
+
+</Defs>

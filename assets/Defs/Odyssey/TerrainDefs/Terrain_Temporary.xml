@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TerrainDef ParentName="WaterShallow">
+    <defName>ShallowFloodwater</defName>
+    <label>shallow floodwater</label>
+    <temporary>true</temporary>
+    <tags>
+      <li>Flood</li>
+    </tags>
+    <canFreeze>false</canFreeze> <!-- Thin ice and floodwater are both temp terrain, this means we can't support frozen floodwater -->
+    <driesTo /> <!-- We don't want moisture pumps to turn temp terrain into stony soil -->
+    <floodTerrain>ShallowFloodwater</floodTerrain>
+  </TerrainDef>
+
+  <TerrainDef ParentName="MarshBase">
+    <defName>MarshFlood</defName>
+    <label>shallow floodwater</label>
+    <temporary>true</temporary>
+    <tags>
+      <li>Flood</li>
+    </tags>
+    <canFreeze>false</canFreeze> <!-- Thin ice and floodwater are both temp terrain, this means we can't support frozen floodwater -->
+    <driesTo /> <!-- We don't want moisture pumps to turn temp terrain into stony soil -->
+    <floodTerrain>MarshFlood</floodTerrain>
+  </TerrainDef>
+
+  <TerrainDef ParentName="ToxicWaterShallowBase">
+    <defName>ToxicFlood</defName>
+    <label>shallow floodwater</label>
+    <temporary>true</temporary>
+    <tags>
+      <li>Flood</li>
+    </tags>
+    <canFreeze>false</canFreeze> <!-- Thin ice and floodwater are both temp terrain, this means we can't support frozen floodwater -->
+    <driesTo /> <!-- We don't want moisture pumps to turn temp terrain into stony soil -->
+    <floodTerrain>ToxicFlood</floodTerrain>
+    <renderPrecedence>325</renderPrecedence>
+  </TerrainDef>
+
+  <TerrainDef ParentName="HotSpring">
+    <defName>SpringFlood</defName>
+    <label>shallow floodwater</label>
+    <temporary>true</temporary>
+    <tags>
+      <li>Flood</li>
+    </tags>
+    <canFreeze>false</canFreeze> <!-- Thin ice and floodwater are both temp terrain, this means we can't support frozen floodwater -->
+    <driesTo /> <!-- We don't want moisture pumps to turn temp terrain into stony soil -->
+    <floodTerrain>SpringFlood</floodTerrain>
+  </TerrainDef>
+
+  <TerrainDef ParentName="Ice">
+    <defName>ThinIce</defName>
+    <label>thin ice</label>
+    <texturePath>Terrain/Surfaces/ThinIce</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/ThinIce</pollutedTexturePath>
+    <temporary>true</temporary>
+    <tempTerrain>
+      <removedByExplosions>true</removedByExplosions>
+      <replaceableByBridge>true</replaceableByBridge>
+    </tempTerrain>
+    <affordances Inherit="false">
+      <li>Walkable</li>
+      <li>Bridgeable</li>
+      <li>ShallowWater</li>
+    </affordances>
+  </TerrainDef>
+
+  <TerrainDef ParentName="LavaBase">
+    <defName>LavaShallow</defName>
+    <label>shallow lava</label>
+    <texturePath>Terrain/Surfaces/ShallowLava</texturePath>
+    <customShader>ShallowLava</customShader>
+    <customShaderParameters>
+      <_NoiseTex>/Other/Perlin</_NoiseTex>
+      <_MaskTex>/Terrain/Surfaces/ShallowLavaMask</_MaskTex>
+    </customShaderParameters>
+    <pollutedTexturePath>Terrain/Surfaces/PollutedShallowLava</pollutedTexturePath>
+    <pathCost>300</pathCost>
+    <temporary>true</temporary>
+    <tempTerrain>
+      <terrainOnRemoved>CooledLava</terrainOnRemoved>
+      <destroysFloors>true</destroysFloors>
+    </tempTerrain>
+  </TerrainDef>
+
+</Defs>

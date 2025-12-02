@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef>
+    <defName>VacuumResistance_Total</defName>
+    <label>breathless</label>
+    <labelShortAdj>breathless</labelShortAdj>
+    <description>Carriers of this gene can store concentrated oxygen in their bodies. Their cells consume much less oxygen, meaning they rarely need to breathe. These adaptations make them immune to the harmful effects of space, as well as environmental toxins, tox gas, acidic smog, and rot stink.</description>
+    <iconPath>UI/Icons/Genes/Gene_Breathless</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <immuneToToxGasExposure>true</immuneToToxGasExposure>
+    <immuneToVacuumBurns>true</immuneToVacuumBurns>
+    <displayCategory MayRequire="Ludeon.RimWorld.Biotech">Archite</displayCategory>
+    <exclusionTags>
+      <li>ToxicEnvironmentResistance</li>
+      <li>VacuumResistance</li>
+    </exclusionTags>
+    <customEffectDescriptions>
+      <li>Tox gas immunity</li>
+    </customEffectDescriptions>
+    <statOffsets>
+      <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <VacuumResistance>1</VacuumResistance>
+    </statOffsets>
+    <biostatCpx>3</biostatCpx>
+    <biostatArc>1</biostatArc>
+  </GeneDef>
+  
+  <GeneDef>
+    <defName>VacuumResistance_Partial</defName>
+    <label>vacuum resistant</label>
+    <labelShortAdj>vacuum-resistant</labelShortAdj>
+    <description>Carriers of this gene have skin that releases a waxy substance when air pressure is low, preventing vacuum burns and allowing them to survive longer when exposed to vacuum.</description>
+    <iconPath>UI/Icons/Genes/Gene_VacuumResistance</iconPath>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <exclusionTags>
+      <li>VacuumResistance</li>
+    </exclusionTags>
+    <immuneToVacuumBurns>true</immuneToVacuumBurns>
+    <displayCategory MayRequire="Ludeon.RimWorld.Biotech">ResistanceAndWeakness</displayCategory>
+    <statOffsets>
+      <VacuumResistance>0.45</VacuumResistance>
+    </statOffsets>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+  </GeneDef>
+</Defs>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SpecialThingFilterDef>
+    <defName>AllowCorpsesSlave</defName>
+    <label>allow slave corpses</label>
+    <description>Allow the dead bodies of slaves.</description>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesSlave</saveKey>
+    <workerClass>SpecialThingFilterWorker_CorpsesSlave</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowVegetarian</defName>
+    <label>allow vegetarian food</label>
+    <description>Allow food that is acceptable to vegetarians but unacceptable to those that only eat meat. This accounts for meals whose classification depends on their ingredients.</description>
+    <parentCategory>Foods</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowVegetarian</saveKey>
+    <workerClass>SpecialThingFilterWorker_Vegetarian</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowCarnivore</defName>
+    <label>allow food with appetizing meat</label>
+    <description>Allow food that is generally acceptable to meat eaters but unacceptable to vegetarians. This accounts for meals whose classification depends on their ingredients. This does not control human and insect meat.</description>
+    <parentCategory>Foods</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowWithMeat</saveKey>
+    <workerClass>SpecialThingFilterWorker_Carnivore</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowCannibal</defName>
+    <label>allow food with human meat</label>
+    <description>Allow food that is acceptable to cannibals (i.e. it contains human meat). This accounts for meals whose classification depends on their ingredients.</description>
+    <parentCategory>Foods</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowCannibal</saveKey>
+    <workerClass>SpecialThingFilterWorker_Cannibal</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowInsectMeat</defName>
+    <label>allow food with insect meat</label>
+    <description>Allow food that contains insect meat. This accounts for meals whose classification depends on their ingredients.</description>
+    <parentCategory>Foods</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowInsectMeat</saveKey>
+    <workerClass>SpecialThingFilterWorker_InsectMeat</workerClass>
+  </SpecialThingFilterDef>
+
+</Defs>

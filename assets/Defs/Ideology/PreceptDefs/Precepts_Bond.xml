@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Issue -->
+
+  <IssueDef>
+    <defName>Bonding</defName>
+    <label>bonding</label>
+    <iconPath>UI/Issues/Bonding</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Bonding_Disapproved</defName>
+    <issue>Bonding</issue>
+    <label>disapproved</label>
+    <description>To emotionally bond with a lower being is a shameful act.</description>
+    <impact>Low</impact>
+    <requiredMemes>
+      <li>HumanPrimacy</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo">
+        <eventDef>Bonded</eventDef>
+      </li>
+    </comps>
+  </PreceptDef>
+
+</Defs>

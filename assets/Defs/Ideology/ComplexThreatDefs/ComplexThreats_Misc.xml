@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ComplexThreatDef Name="SleepingInsects" ParentName="SleepingThreat">
+    <defName>SleepingInsects</defName>
+    <workerClass>ComplexThreatWorker_SleepingInsects</workerClass>
+    <faction>Insect</faction>
+    <minPoints>100</minPoints>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef Name="CryptosleepPods" ParentName="DelayedThreat">
+    <defName>CryptosleepPods</defName>
+    <workerClass>ComplexThreatWorker_CryptosleepPods</workerClass>
+    <postSpawnPassiveThreatFactor>0.25</postSpawnPassiveThreatFactor>
+    <spawnInOtherRoomChance>0.5</spawnInOtherRoomChance>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef>
+    <defName>Ambush</defName>
+    <workerClass>ComplexThreatWorker_Ambush</workerClass>
+    <signalActionAmbushType>Normal</signalActionAmbushType>
+    <allowPassive>false</allowPassive>
+    <minPoints>100</minPoints>
+    <fallbackToRoomEnteredTrigger>false</fallbackToRoomEnteredTrigger>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef>
+    <defName>RaidTerminal</defName>
+    <workerClass>ComplexThreatWorker_RaidTerminal</workerClass>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef ParentName="DelayedThreat">
+    <defName>FuelNode</defName>
+    <workerClass>ComplexThreatWorker_FuelNode</workerClass>
+    <postSpawnPassiveThreatFactor>0.1</postSpawnPassiveThreatFactor>
+    <spawnInOtherRoomChance>0.5</spawnInOtherRoomChance>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef ParentName="DelayedThreat">
+    <defName>Infestation</defName>
+    <workerClass>ComplexThreatWorker_Infestations</workerClass>
+    <allowPassive>false</allowPassive>
+    <minPoints>200</minPoints>
+    <spawnInOtherRoomChance>0.5</spawnInOtherRoomChance>
+  </ComplexThreatDef>
+
+  <ComplexThreatDef>
+    <defName>SecurityCrate</defName>
+    <workerClass>ComplexThreatWorker_SecurityCrate</workerClass>
+  </ComplexThreatDef>
+
+</Defs>

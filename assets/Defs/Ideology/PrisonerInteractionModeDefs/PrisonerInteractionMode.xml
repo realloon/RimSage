@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PrisonerInteractionModeDef>
+    <defName>Enslave</defName>
+    <label>enslave</label>
+    <listOrder>25</listOrder>
+    <description>Wardens will threaten the prisoner to reduce their will. Once they have no will left, the warden will enslave them.</description>
+    <allowOnWildMan>false</allowOnWildMan>
+  </PrisonerInteractionModeDef>
+
+  <PrisonerInteractionModeDef>
+    <defName>ReduceWill</defName>
+    <label>reduce will only</label>
+    <isChildInteraction>true</isChildInteraction>
+    <listOrder>26</listOrder>
+    <description>Wardens will threaten the prisoner to reduce their will, but won't enslave them.</description>
+    <allowOnWildMan>false</allowOnWildMan>
+  </PrisonerInteractionModeDef>
+
+  <PrisonerInteractionModeDef>
+    <defName>Convert</defName>
+    <label>convert</label>
+    <listOrder>28</listOrder>
+    <description>Wardens will attempt to convert the prisoner to their ideoligion.</description>
+    <allowInClassicIdeoMode>false</allowInClassicIdeoMode>
+  </PrisonerInteractionModeDef>
+
+</Defs>

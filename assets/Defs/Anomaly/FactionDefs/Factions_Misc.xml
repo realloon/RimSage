@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>HoraxCult</defName>
+    <label>horax cult</label>
+    <pawnsPlural>cultists</pawnsPlural>
+    <permanentEnemy>true</permanentEnemy>
+    <categoryTag>HoraxCult</categoryTag>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <configurationListOrderPriority>2000</configurationListOrderPriority>
+    <fixedName>The Servants of Horax</fixedName>
+    <factionIconPath>World/WorldObjects/Expanding/HoraxCult</factionIconPath>
+    <techLevel>Spacer</techLevel>
+    <hidden>true</hidden>
+    <autoFlee>false</autoFlee>
+    <humanlikeFaction>true</humanlikeFaction>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+    <raidsForbidden>true</raidsForbidden>
+    <canPsychicRitualSiege>true</canPsychicRitualSiege>
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    <colorSpectrum>
+      <li>(0.11, 0.478, 0.4)</li>
+    </colorSpectrum>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Cult</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(200,20)</li>
+        <li>(100000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <fixedIdeo>true</fixedIdeo>
+    <ideoName>Nightmare Deep</ideoName>
+    <ideoDescription>You see space as a grid, pure and mathematical. We know it is only the glassy surface of a black ocean of nightmares buried under every place and every moment. We know the mind who reigns from the deep. Its thoughts reach up from the boiling darkness and reward those who serve its will.</ideoDescription>
+    <hiddenIdeo>true</hiddenIdeo>
+    <deityPresets>
+      <li>
+        <nameType>
+          <name>Horax</name><type>God of the Void</type>
+        </nameType>
+        <gender>Male</gender>
+        <iconPath>UI/Deities/DeityGeneric</iconPath>
+      </li>
+    </deityPresets>
+    <styles>
+      <li>Horaxian</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Morbid</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Techist</li>
+    </styles>
+    <forcedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Archist</li>
+      <li>Inhuman</li>
+      <li>Ritualist</li>
+    </forcedMemes>
+    <requiredPreceptsOnly>true</requiredPreceptsOnly>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">ApparelDesired_Strong_Subordinate</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">ApparelDesired_Soft_Subordinate</li>
+    </disallowedPrecepts>
+    <pawnGroupMakers Inherit="False">
+      <li>
+        <!-- Cultists -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Horaxian_Underthrall>9</Horaxian_Underthrall>
+          <Horaxian_Highthrall>1</Horaxian_Highthrall>
+        </options>
+      </li>
+      
+      <li>
+        <kindDef>PsychicRitualSiege</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Horaxian_Underthrall>8</Horaxian_Underthrall>
+          <Horaxian_Highthrall>1</Horaxian_Highthrall>
+          <Horaxian_Gunner>2</Horaxian_Gunner>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>Entities</defName>
+    <label>entities</label>
+    <fixedName>Dark entities</fixedName>
+    <pawnSingular>entity</pawnSingular>
+    <pawnsPlural>entities</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <humanlikeFaction>false</humanlikeFaction>
+    <hidden>true</hidden>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <autoFlee>false</autoFlee>
+    <canUseAvoidGrid>false</canUseAvoidGrid>
+    <techLevel>Animal</techLevel>
+    <permanentEnemyToEveryoneExcept>
+      <li>Insect</li>
+    </permanentEnemyToEveryoneExcept>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <allowedArrivalTemperatureRange>-100~100</allowedArrivalTemperatureRange>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>1000</configurationListOrderPriority>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(400,200)</li>
+        <li>(900,300)</li>
+        <li>(100000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Cult</li> <!-- Just in case -->
+        </categories>
+      </li>
+    </backstoryFilters>
+    <pawnGroupMakers Inherit="False">
+      <!-- Fleshbeasts -->
+      <li>
+        <kindDef>Fleshbeasts</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Bulbfreak>1</Bulbfreak>
+          <Toughspike>5</Toughspike>
+          <Trispike>5</Trispike>
+          <Fingerspike>10</Fingerspike>
+        </options>
+      </li>
+      <li>
+        <kindDef>FleshbeastsWithDreadmeld</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Bulbfreak>3</Bulbfreak>
+          <Toughspike>5</Toughspike>
+          <Trispike>5</Trispike>
+          <Fingerspike>10</Fingerspike>
+          <Dreadmeld>1</Dreadmeld>
+        </options>
+      </li>
+
+      <li>
+        <!-- Shamblers -->
+        <kindDef>Shamblers</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <ShamblerSwarmer>50</ShamblerSwarmer>
+          <ShamblerSoldier>2.5</ShamblerSoldier>
+          <ShamblerGorehulk>1</ShamblerGorehulk>
+        </options>
+      </li>
+
+      <li>
+        <!-- Sightstealers -->
+        <kindDef>Sightstealers</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Sightstealer>1</Sightstealer>
+        </options>
+      </li>
+
+      <li>
+        <!-- Metalhorrors -->
+        <kindDef>Metalhorrors</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Metalhorror>1</Metalhorror>
+        </options>
+      </li>
+      
+      <li>
+        <!-- Gorehulks -->
+        <kindDef>Gorehulks</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Gorehulk>1</Gorehulk>
+        </options>
+      </li>
+      
+      <li>
+        <!-- Devourers -->
+        <kindDef>Devourers</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Devourer>1</Devourer>
+        </options>
+      </li>
+      
+      <li>
+        <!-- Noctols -->
+        <kindDef>Noctols</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Noctol>1</Noctol>
+        </options>
+      </li>
+
+      <!-- Void Awakening -->
+      <li>
+        <kindDef>SightstealersNoctols</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Sightstealer>1</Sightstealer>
+          <Noctol>1</Noctol>
+        </options>
+      </li>
+
+      <li>
+        <!-- Chimeras -->
+        <kindDef>Chimeras</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Chimera>1</Chimera>
+        </options>
+      </li>
+
+    </pawnGroupMakers>
+  </FactionDef>
+
+</Defs>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=================== Children ===================-->
+
+  <ThoughtDef Abstract="True" Name="ThoughtAboutChildBase">
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="ThoughtAboutChildBase">
+    <defName>MyChildHappy</defName>
+    <workerClass>ThoughtWorker_MyChildHappy</workerClass>
+    <stages>
+      <li>
+        <label>my child {CHILD_nameDef} is happy</label>
+        <description>Nothing makes me feel better than my kid being happy.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="ThoughtAboutChildBase">
+    <defName>MyChildrenHappy</defName>
+    <workerClass>ThoughtWorker_MyChildrenHappy</workerClass>
+    <stages>
+      <li>
+        <label>my children are happy</label>
+        <description>Nothing makes me feel better than my kids being happy.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="ThoughtAboutChildBase">
+    <defName>MyChildSad</defName>
+    <workerClass>ThoughtWorker_MyChildSad</workerClass>
+    <stages>
+      <li>
+        <label>my child {CHILD_nameDef} is unhappy</label> 
+        <description>I worry about my child. If they're not happy, I'm not happy.</description> 
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="ThoughtAboutChildBase">
+    <defName>MyChildrenSad</defName>
+    <workerClass>ThoughtWorker_MyChildrenSad</workerClass>
+    <stages>
+      <li>
+        <label>my children are unhappy</label> 
+        <description>I worry about my children. If they're not happy, I'm not happy.</description> 
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="ThoughtAboutChildBase">
+    <defName>YoungstersHappy</defName>
+    <workerClass>ThoughtWorker_YoungstersHappy</workerClass>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>happy youngsters</label>
+        <description>It's nice to see that the young folk are doing well.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="ThoughtAboutChildBase">
+    <defName>YoungstersSad</defName>
+    <workerClass>ThoughtWorker_YoungstersSad</workerClass>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>sad youngsters</label>
+        <description>It's sad to see that the young folk are struggling.</description> 
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="ThoughtAboutChildBase">
+    <defName>EnslavedChild</defName>
+    <workerClass>ThoughtWorker_MyChildEnslaved</workerClass>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>enslaved child</label>
+        <description>It breaks my heart to see my child forced to serve others.</description> 
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!--=================== Babies ===================-->
+
+  <ThoughtDef>
+    <defName>BabySick</defName>
+    <workerClass>ThoughtWorker_BabySick</workerClass>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>my baby {BABY_nameDef} is sick</label>
+        <description>My baby is sick. I'm terrified something bad will happen to my baby.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+      <li>
+        <label>my babies are sick</label>
+        <description>My babies are sick. I'm terrified something bad will happen to them.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+
+
+  <!--=================== Misc ===================-->
+
+  <ThoughtDef>
+    <defName>ChildInGrowthVat</defName>
+    <stackLimit>3</stackLimit>
+    <workerClass>ThoughtWorker_ChildInGrowthVat</workerClass>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <nullifyingPrecepts>
+      <li>GrowthVat_Essential</li>
+      <li>GrowthVat_Prohibited</li>
+    </nullifyingPrecepts>
+    <stages>
+      <li>
+        <label>my child is in a growth vat</label>
+        <description>I miss my child. It's hard knowing they're floating in that machine, bypassing their childhood.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef Name="ParentHappyBase" Abstract="True">
+    <stackLimit>1</stackLimit>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child</developmentalStageFilter>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="ParentHappyBase">
+    <defName>MyParentHappy</defName>
+    <workerClass>ThoughtWorker_MyParentHappy</workerClass>
+    <stages>
+      <li>
+        <label>parent is happy</label>
+        <description>I'm happy when my parents are happy.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="ParentHappyBase">
+    <defName>MyParentsHappy</defName>
+    <workerClass>ThoughtWorker_MyParentsHappy</workerClass>
+    <stages>
+      <li>
+        <label>parents are happy</label>
+        <description>I'm happy when my parents are happy.</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CribQuality</defName>
+    <workerClass>ThoughtWorker_CribQuality</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby</developmentalStageFilter>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li IsNull="True" /><!-- awful -->
+      <li IsNull="True" /><!-- poor -->
+      <li IsNull="True" /><!-- normal -->
+      <li>
+        <label>good crib</label>
+        <description>This crib is comfy.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>excellent crib</label>
+        <description>This crib is very comfy.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>masterwork crib</label>
+        <description>This crib is amazing. So comfortable.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>legendary crib</label>
+        <description>This crib is wonderful. So very comfortable. Perfect for naps.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

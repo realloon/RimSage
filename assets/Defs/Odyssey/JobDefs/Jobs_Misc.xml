@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>InspectGravEngine</defName>
+    <driverClass>JobDriver_InspectGravEngine</driverClass>
+    <reportString>inspecting TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>Fish</defName>
+    <driverClass>JobDriver_Fish</driverClass>
+    <reportString>fishing.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>FishAnimal</defName>
+    <driverClass>JobDriver_FishAnimal</driverClass>
+    <reportString>fishing.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>Deactivated</defName>
+    <driverClass>JobDriver_LayDownDeactivated</driverClass>
+    <reportString>deactivated.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+
+  <JobDef>
+    <defName>PilotConsole</defName>
+    <driverClass>JobDriver_PilotConsole</driverClass>
+    <reportString>operating TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>GotoOxygenatedArea</defName>
+    <driverClass>JobDriver_Goto</driverClass>
+    <reportString>seeking oxygen.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>GotoPatrolDest</defName>
+    <driverClass>JobDriver_GotoPatrolDest</driverClass>
+    <reportString>patrolling.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>GotoShip</defName>
+    <driverClass>JobDriver_StandAndBeSociallyActive</driverClass>
+    <reportString>going to ship.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>UseOutfitStand</defName>
+    <driverClass>JobDriver_UseOutfitStand</driverClass>
+    <reportString>swapping outfit with TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>Forage</defName>
+    <driverClass>JobDriver_Forage</driverClass>
+    <reportString>foraging for food.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>Seal</defName>
+    <driverClass>JobDriver_Seal</driverClass>
+    <reportString>sealing TargetA.</reportString>
+  </JobDef>
+  
+  <JobDef>
+    <defName>PutApparelOnOutfitStand</defName>
+    <driverClass>JobDriver_PutApparelOnOutfitStand</driverClass>
+    <reportString>putting TargetA on TargetB.</reportString>
+  </JobDef>
+
+</Defs>

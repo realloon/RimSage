@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>ArriveToCell</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+
+        <!-- Goto my spot -->
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+
+        <!-- Stand -->
+        <li Class="JobGiver_Idle">
+          <ticks>60</ticks>
+        </li>
+
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>GoToBed</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalInBed">
+          <subNodes>
+            <li Class="JobGiver_KeepLyingDown">
+              <useBed>true</useBed>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="ThinkNode_ConditionalDowned">
+          <subNodes>
+            <li Class="JobGiver_KeepLyingDown">
+              <useBed>true</useBed>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_GotoTravelDestination">
+          <exactCell>true</exactCell>
+          <jobDef>LayDown</jobDef>
+          <destinationFocusIndex>3</destinationFocusIndex>
+          <locomotionUrgency>Jog</locomotionUrgency>
+          <ritualTagOnArrival>Arrived</ritualTagOnArrival>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>DeliverPawnToCell</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_DeliverPawnToCell">
+          <exactCell>true</exactCell>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+</Defs>

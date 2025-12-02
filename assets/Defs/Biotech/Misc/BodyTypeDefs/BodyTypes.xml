@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyTypeDef Abstract="True" Name="Juvenile">
+    <headOffset>(0.04, 0.34)</headOffset>
+    <bedOffset>-0.08</bedOffset>
+    <bodyNakedGraphicPath>Things/Pawn/Humanlike/Bodies/Naked_Child</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Child</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef ParentName="Juvenile">
+    <defName>Baby</defName>
+    <woundScale>0.5</woundScale>
+    <bodyGraphicScale>(0.5, 0.5)</bodyGraphicScale>
+    <woundAnchors>
+      <li>
+        <rotation>South</rotation>
+        <group>Torso</group>
+        <offset>(0,0,-0.04)</offset>
+        <range>0.1</range>
+        <debugColor>(1,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>LeftLeg</tag>
+        <offset>(0.04,0,-0.08)</offset>
+        <range>0.02</range>
+        <debugColor>(0,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>RightLeg</tag>
+        <offset>(-0.04,0,-0.08)</offset>
+        <range>0.02</range>
+        <debugColor>(0,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>LeftShoulder</tag>
+        <offset>(0.04,0,0.075)</offset>
+        <range>0.06</range>
+        <debugColor>(1,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>RightShoulder</tag>
+        <offset>(-0.04,0,0.075)</offset>
+        <range>0.06</range>
+        <debugColor>(1,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <group>FullHead</group>
+        <offset>(0, 0, 0.15)</offset>
+        <range>0.07</range>
+        <layer>Head</layer>
+        <debugColor>(0,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>RightEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(-0.0455, 0, 0.215)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(1,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>LeftEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(0.0455, 0, 0.215)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(0,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <group>FullHead</group>
+        <offset>(-0.025, 0, 0.18)</offset>
+        <range>0.06</range>
+        <layer>Head</layer>
+        <debugColor>(0,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <group>Torso</group>
+        <offset>(0,0,-0.07)</offset>
+        <range>0.1</range>
+        <debugColor>(1,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>LeftShoulder</tag>
+        <offset>(-0.03,0,0.065)</offset>
+        <range>0.03</range>
+        <canMirror>false</canMirror>
+        <debugColor>(1,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>LeftLeg</tag>
+        <offset>(-0.03,0,-0.1)</offset>
+        <range>0.03</range>
+        <canMirror>false</canMirror>
+        <debugColor>(0,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>RightShoulder</tag>
+        <offset>(0.03,0,0.065)</offset>
+        <range>0.03</range>
+        <canMirror>false</canMirror>
+        <debugColor>(1,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>RightLeg</tag>
+        <offset>(0.05,0,-0.1)</offset>
+        <range>0.03</range>
+        <canMirror>false</canMirror>
+        <debugColor>(0,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>RightEye</tag>
+        <canMirror>false</canMirror>
+        <narrowCrown>true</narrowCrown>
+        <offset>(0.008, 0, 0.19)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(1,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>LeftEye</tag>
+        <canMirror>false</canMirror>
+        <narrowCrown>true</narrowCrown>
+        <offset>(-0.008, 0, 0.19)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(0,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>RightEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(0.06, 0, 0.2)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(1,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>LeftEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(-0.06, 0, 0.2)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(0,0,0,1)</debugColor>
+      </li>
+    </woundAnchors>
+    <attachPoints>
+      <li>
+        <offset>(-.1, 0, .25)</offset>
+        <type>PlatformRestraint0</type>
+      </li>
+      <li>
+        <offset>(.1, 0, .25)</offset>
+        <type>PlatformRestraint1</type>
+      </li>
+      <li>
+        <offset>(.1, 0, -.2)</offset>
+        <type>PlatformRestraint2</type>
+      </li>
+      <li>
+        <offset>(-.1, 0, -.2)</offset>
+        <type>PlatformRestraint3</type>
+      </li>
+    </attachPoints>
+    <attachPointsDessicated>
+      <li>
+        <offset>(-.1, 0, .25)</offset>
+        <type>PlatformRestraint0</type>
+      </li>
+      <li>
+        <offset>(.1, 0, .25)</offset>
+        <type>PlatformRestraint1</type>
+      </li>
+      <li>
+        <offset>(.1, 0, -.2)</offset>
+        <type>PlatformRestraint2</type>
+      </li>
+      <li>
+        <offset>(-.1, 0, -.2)</offset>
+        <type>PlatformRestraint3</type>
+      </li>
+    </attachPointsDessicated>
+  </BodyTypeDef>
+
+  <BodyTypeDef ParentName="Juvenile">
+    <defName>Child</defName>
+    <woundScale>0.7</woundScale>
+    <bodyGraphicScale>(0.6, 0.65)</bodyGraphicScale>
+    <woundAnchors>
+      <li>
+        <rotation>South</rotation>
+        <group>Torso</group>
+        <offset>(0,0,-0.07)</offset>
+        <range>0.1</range>
+        <debugColor>(1,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>LeftLeg</tag>
+        <offset>(0.05,0,-0.12)</offset>
+        <range>0.03</range>
+        <debugColor>(0,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>RightLeg</tag>
+        <offset>(-0.05,0,-0.12)</offset>
+        <range>0.03</range>
+        <debugColor>(0,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>LeftShoulder</tag>
+        <offset>(0.06,0,0.025)</offset>
+        <range>0.07</range>
+        <debugColor>(1,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>RightShoulder</tag>
+        <offset>(-0.06,0,0.025)</offset>
+        <range>0.07</range>
+        <debugColor>(1,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <group>FullHead</group>
+        <offset>(0, 0, 0.2)</offset>
+        <range>0.1</range>
+        <layer>Head</layer>
+        <debugColor>(0,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>RightEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(-0.073, 0, 0.18)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(1,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>South</rotation>
+        <tag>LeftEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(0.073, 0, 0.18)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(0,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <group>FullHead</group>
+        <offset>(-0.12, 0, 0.21)</offset>
+        <range>0.12</range>
+        <layer>Head</layer>
+        <debugColor>(0,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <group>Torso</group>
+        <offset>(0,0,-0.07)</offset>
+        <range>0.12</range>
+        <debugColor>(1,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>LeftShoulder</tag>
+        <offset>(-0.03,0,0.1)</offset>
+        <range>0.066</range>
+        <canMirror>false</canMirror>
+        <debugColor>(1,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>LeftLeg</tag>
+        <offset>(-0.03,0,-0.13)</offset>
+        <range>0.03</range>
+        <canMirror>false</canMirror>
+        <debugColor>(0,1,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>RightShoulder</tag>
+        <offset>(0.035,0,0.007)</offset>
+        <range>0.066</range>
+        <canMirror>false</canMirror>
+        <debugColor>(1,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>RightLeg</tag>
+        <offset>(0.05,0,-0.15)</offset>
+        <range>0.03</range>
+        <canMirror>false</canMirror>
+        <debugColor>(0,0,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>RightEye</tag>
+        <canMirror>false</canMirror>
+        <narrowCrown>true</narrowCrown>
+        <offset>(0.08, 0, 0.2)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(1,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>LeftEye</tag>
+        <canMirror>false</canMirror>
+        <narrowCrown>true</narrowCrown>
+        <offset>(-0.08, 0, 0.2)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(0,0,0,1)</debugColor>
+      </li>
+      <li>
+        <rotation>East</rotation>
+        <tag>RightEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(0.11, 0, 0.2)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(1,1,1,1)</debugColor>
+      </li>
+      <li>
+        <rotation>West</rotation>
+        <tag>LeftEye</tag>
+        <canMirror>false</canMirror>
+        <offset>(-0.11, 0, 0.2)</offset>
+        <range>0</range>
+        <layer>Head</layer>
+        <debugColor>(0,0,0,1)</debugColor>
+      </li>
+    </woundAnchors>
+    <attachPoints>
+      <li>
+        <offset>(-.22, 0, .1)</offset>
+        <type>PlatformRestraint0</type>
+      </li>
+      <li>
+        <offset>(.22, 0, .1)</offset>
+        <type>PlatformRestraint1</type>
+      </li>
+      <li>
+        <offset>(.1, 0, -.4)</offset>
+        <type>PlatformRestraint2</type>
+      </li>
+      <li>
+        <offset>(-.1, 0, -.4)</offset>
+        <type>PlatformRestraint3</type>
+      </li>
+    </attachPoints>
+    <attachPointsDessicated>
+      <li>
+        <offset>(-.22, 0, .1)</offset>
+        <type>PlatformRestraint0</type>
+      </li>
+      <li>
+        <offset>(.22, 0, .1)</offset>
+        <type>PlatformRestraint1</type>
+      </li>
+      <li>
+        <offset>(.1, 0, -.4)</offset>
+        <type>PlatformRestraint2</type>
+      </li>
+      <li>
+        <offset>(-.1, 0, -.4)</offset>
+        <type>PlatformRestraint3</type>
+      </li>
+    </attachPointsDessicated>
+  </BodyTypeDef>
+
+</Defs>

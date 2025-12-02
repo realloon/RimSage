@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+  <ThingDef ParentName="SkyfallerBase" >
+    <defName>SpacedroneIncoming</defName>
+    <label>spacedrone (incoming)</label>
+    <thingClass>Skyfaller</thingClass>
+    <size>(5,3)</size>
+    <graphicData>
+      <texPath>Things/Building/Misc/Spacedrone</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(6,3)</drawSize>
+      <color>(158,158,158)</color>
+    </graphicData>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+      <shadowSize>(5.5,3.5)</shadowSize>
+      <motesPerCell>1</motesPerCell>
+      <anticipationSound>Spacedrone_Landing</anticipationSound>
+      <anticipationSoundTicks>300</anticipationSoundTicks>
+      <ticksToImpactRange>250~300</ticksToImpactRange>
+      <angleCurve>
+        <points>
+          <li>(0,-25)</li>
+          <li>(0.98, 0)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,-15)</li>
+          <li>(0.95,0)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0.90,1.5)</li>
+          <li>(1,0)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0.6,0.5)</li>
+          <li>(0.98,0.05)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>SkyLantern</defName>
+    <thingClass>Skyfaller</thingClass>
+    <label>skylantern</label>
+    <tickerType>Normal</tickerType>
+    <size>(1, 1)</size>
+    <graphicData>
+      <texPath>Things/Ethereal/SkyLanterns</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutFlying01</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Accelerate</movementType>
+      <reversed>true</reversed>
+      <shadowSize>(0.8,0.8)</shadowSize>
+      <motesPerCell>1</motesPerCell>
+      <ticksToDiscardInReverse>2700~3600</ticksToDiscardInReverse>
+      <ticksToImpactRange>-15</ticksToImpactRange>
+      <fadeOutTicks>40</fadeOutTicks>
+      <hitRoof>false</hitRoof>
+      <floatingSound>SkylanternFloating</floatingSound>
+      <rotationCurve>
+        <points>
+          <li>(0,-15)</li>
+          <li>(0.95,0)</li>
+        </points>
+      </rotationCurve>
+      <speedCurve>
+        <points>
+          <li>(0.0, 0.007)</li>
+          <li>(0.1, 0.015)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+    <comps>
+      <li Class="CompProperties_MoteEmitterRandomColor">
+        <saveKeysPrefix>ranCol</saveKeysPrefix>
+        <mote>Mote_SkyLanternGlow</mote>
+        <emissionInterval>25</emissionInterval>
+        <ticksSinceLastEmittedMaxOffset>17</ticksSinceLastEmittedMaxOffset>
+        <colors>
+          <li>(1, 0.9, 0.7)</li>
+          <li>(1, 0.75, 0.6)</li>
+          <li>(0.9, 0.75, 0.5)</li>
+          <li>(0.9, 0.85, 0.7)</li>
+        </colors>
+      </li>
+      <li Class="CompProperties_MoteEmitter">
+        <mote>Mote_SkyLanternOuterGlow</mote>
+        <saveKeysPrefix>outerGlow</saveKeysPrefix>
+        <emissionInterval>6</emissionInterval>
+        <offsetMin>(-0.2, 0, -0.2)</offsetMin>
+        <offsetMax>(0.2, 0, 0.2)</offsetMax>
+      </li>
+      <li Class="CompProperties_ThrownMoteEmitter">
+        <mote>Mote_SkyLanternSmoke</mote>
+        <emissionInterval>8</emissionInterval>
+        <offsetMin>(-0.3, 0, -0.3)</offsetMin>
+        <offsetMax>(0.3, 0, 0.3)</offsetMax>
+        <rotationRate>-180~180</rotationRate>
+      </li>
+      <li Class="CompProperties_SkyfallerRandomizeDirection">
+        <directionChangeInterval>150~500</directionChangeInterval>
+        <maxDeviationFromStartingAngle>35</maxDeviationFromStartingAngle>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs> 

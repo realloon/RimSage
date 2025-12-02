@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BodyDef>
+    <defName>Snail</defName>
+    <label>snail</label>
+    <corePart>
+      <def>AnimalShell</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>Stomach</def>
+          <coverage>0.04</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Heart</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Lung</def>
+          <coverage>0.025</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>left nephridia</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Kidney</def>
+          <customLabel>right nephridia</customLabel>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Liver</def>
+          <customLabel>hepatopancreas</customLabel>
+          <coverage>0.05</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Head</def>
+          <coverage>0.15</coverage>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>Brain</def>
+              <coverage>0.60</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>EyeStalk</def>
+              <customLabel>left eyestalk</customLabel>
+              <coverage>0.05</coverage>
+            </li>
+            <li>
+              <def>EyeStalk</def>
+              <customLabel>right eyestalk</customLabel>
+              <coverage>0.05</coverage>
+            </li>
+            <li>
+              <def>InsectMouth</def>
+              <coverage>0.10</coverage>
+              <groups>
+                <li>Mouth</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>SnailFoot</def>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+</Defs>

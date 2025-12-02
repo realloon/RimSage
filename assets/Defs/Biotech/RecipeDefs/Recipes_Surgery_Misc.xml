@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>ExtractHemogenPack</defName>
+    <label>extract hemogen pack</label>
+    <description>Extract a hemogen pack from the target. The operation will fail to produce a hemogen pack if the target does not have enough blood.\n\nHemogen packs can be administered to others to reduce blood loss or to satiate those who feed on blood.</description>
+    <workerClass>Recipe_ExtractHemogen</workerClass>
+    <jobString>Extracting hemogen pack.</jobString>
+    <workAmount>500</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>true</isViolation>
+    <descriptionHyperlinks>
+      <ThingDef>HemogenPack</ThingDef>
+    </descriptionHyperlinks>
+    <uiIconThing>HemogenPack</uiIconThing>
+    <anesthetize>false</anesthetize>
+    <workSkillLearnFactor>2</workSkillLearnFactor>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>ImplantXenogerm</defName>
+    <label>implant xenogerm</label>
+    <description>Implant a xenogerm into a patient. This replaces any previous xenogerm they may have had.</description>
+    <jobString>Implanting xenogerm.</jobString>
+    <workerClass>Recipe_ImplantXenogerm</workerClass>
+    <workAmount>2000</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>true</isViolation>
+    <surgeryOutcomeEffect>ImplantXenogerm</surgeryOutcomeEffect>
+    <uiIconThing>Xenogerm</uiIconThing>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>TerminatePregnancy</defName>
+    <label>terminate pregnancy</label>
+    <description>Terminate the pregnancy of an animal or human.</description>
+    <workerClass>Recipe_TerminatePregnancy</workerClass>
+    <jobString>terminating TargetA's pregnancy.</jobString>
+    <deathOnFailedSurgeryChance>0.02</deathOnFailedSurgeryChance>
+    <surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+    <genderPrerequisite>Female</genderPrerequisite>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>true</isViolation>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef Abstract="True" Name="FertilitySurgery" ParentName="SurgeryFlesh">
+    <workAmount>500</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <isViolation>true</isViolation>
+    <targetsBodyPart>false</targetsBodyPart>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+    <researchPrerequisites>
+      <li>FertilityProcedures</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FertilitySurgery">
+    <defName>ExtractOvum</defName>
+    <label>extract ovum for IVF</label>
+    <description>Extract an ovum into a storage capsule. It can then be fertilized by a man, and finally implanted into a mother to start a pregnancy.</description>
+    <jobString>extracting ovum from TargetA.</jobString>
+    <workerClass>Recipe_ExtractOvum</workerClass>
+    <addsHediff>OvumExtracted</addsHediff>
+    <surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+    <genderPrerequisite>Female</genderPrerequisite>
+    <mustBeFertile>true</mustBeFertile>
+    <allowedForQuestLodgers>false</allowedForQuestLodgers>
+    <minAllowedAge>16</minAllowedAge>
+    <incompatibleWithHediffTags><li>OvumExtracted</li></incompatibleWithHediffTags>
+    <uiIconThing>HumanOvum</uiIconThing>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FertilitySurgery">
+    <defName>ImplantEmbryo</defName>
+    <label>implant embryo</label>
+    <description>Implant an embryo in a surrogate mother to begin a pregnancy.</description>
+    <jobString>Implanting embryo in TargetA.</jobString>
+    <workerClass>Recipe_ImplantEmbryo</workerClass>
+    <surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+    <uiIconThing>HumanEmbryo</uiIconThing>
+  </RecipeDef>
+
+  <RecipeDef Abstract="True" Name="SterilizeHuman" ParentName="FertilitySurgery">
+    <description>Permanently render a patient sterile and unable to reproduce.</description>
+    <workerClass>Recipe_AddHediff</workerClass>
+    <addsHediff>Sterilized</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SterilizeHuman">
+    <defName>TubalLigation</defName>
+    <label>perform tubal ligation</label>
+    <jobString>performing tubal ligation on TargetA.</jobString>
+    <successfullyRemovedHediffMessage>{0} has successfully performed tubal ligation on {1}.</successfullyRemovedHediffMessage>
+    <genderPrerequisite>Female</genderPrerequisite>
+    <addsHediff>TubalLigation</addsHediff>
+    <minAllowedAge>13</minAllowedAge>
+    <incompatibleWithHediffTags>
+      <li>Sterilized</li>
+    </incompatibleWithHediffTags>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SterilizeHuman">
+    <defName>Vasectomy</defName>
+    <label>perform vasectomy</label>
+    <description>Cut the vas deferens to render the patient unable to reproduce. If the surgery goes wrong the patient will be left permanently sterile.</description>
+    <jobString>performing a vasectomy on TargetA.</jobString>
+    <successfullyRemovedHediffMessage>{0} has successfully performed a vasectomy on {1}.</successfullyRemovedHediffMessage>
+    <genderPrerequisite>Male</genderPrerequisite>
+    <addsHediff>Vasectomy</addsHediff>
+    <addsHediffOnFailure>Sterilized</addsHediffOnFailure>
+    <minAllowedAge>13</minAllowedAge>
+    <incompatibleWithHediffTags>
+      <li>Sterilized</li>
+    </incompatibleWithHediffTags>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FertilitySurgery">
+    <defName>ReverseVasectomy</defName>
+    <label>reverse vasectomy</label>
+    <description>Attempt to reverse the vasectomy and make a man capable of fathering children again. Most vasectomy reversals succeed, but if the surgery goes wrong the man will be left permanently sterile.</description>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <jobString>performing a vasectomy reversal on TargetA.</jobString>
+    <successfullyRemovedHediffMessage>{0} has successfully performed a vasectomy reversal on {1}.</successfullyRemovedHediffMessage>
+    <removesHediff>Vasectomy</removesHediff>
+    <addsHediffOnFailure>Sterilized</addsHediffOnFailure>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SterilizeHuman">
+    <defName>ImplantIUD</defName>
+    <label>implant IUD</label>
+    <description>Implant a small metal device in the uterus to prevent pregnancies. It can later be removed, but there is a small chance of leaving the patient permanently sterile. This surgery terminates pregnancies in the first trimester.</description>
+    <jobString>implanting a IUD in TargetA.</jobString>
+    <successfullyRemovedHediffMessage>{0} has successfully implanted an IUD in {1}.</successfullyRemovedHediffMessage>
+    <genderPrerequisite>Female</genderPrerequisite>
+    <workerClass>Recipe_ImplantIUD</workerClass>
+    <addsHediff>ImplantedIUD</addsHediff>
+    <addsHediffOnFailure>Sterilized</addsHediffOnFailure>
+    <incompatibleWithHediffTags>
+      <li>Sterilized</li>
+    </incompatibleWithHediffTags>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FertilitySurgery">
+    <defName>RemoveIUD</defName>
+    <label>remove IUD</label>
+    <description>Remove an implanted intrauterine device to allow normal pregnancy. If the surgery goes wrong, the patient will be rendered permanently sterile.</description>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <jobString>removing IUD from TargetA.</jobString>
+    <successfullyRemovedHediffMessage>{0} has successfully removed {1}'s IUD.</successfullyRemovedHediffMessage>
+    <removesHediff>ImplantedIUD</removesHediff>
+    <addsHediffOnFailure>Sterilized</addsHediffOnFailure>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>BloodTransfusion</defName>
+    <label>blood transfusion</label>
+    <description>Use hemogen packs to reduce the effects of blood loss. Each hemogen pack used recovers 35% blood loss. The operation will also restore hemogen to hemogenic individuals.</description>
+    <jobString>performing blood transfusion on TargetA.</jobString>
+    <workAmount>800</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+    <workerClass>Recipe_BloodTransfusion</workerClass>
+    <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>HemogenPack</li>
+          </thingDefs>
+        </filter>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>HemogenPack</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+</Defs>

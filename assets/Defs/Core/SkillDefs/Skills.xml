@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SkillDef>
+    <defName>Shooting</defName>
+    <description>Ranged combat, with both high-tech and low-tech weapons.</description>
+    <skillLabel>shooting</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <disablingWorkTags>Violent</disablingWorkTags>
+    <neverDisabledBasedOnWorkTypes>true</neverDisabledBasedOnWorkTypes>
+    <listOrder>120</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonShooting</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->guns</li>
+        <li>subject->weapons</li>
+        <li>subject->aiming</li>
+        <li>subject->shooting</li>
+        <li>subject->gunplay</li>
+        <li>subject->marksmanship</li>
+        <li>subject->firearms</li>
+        <li>subject->sniping</li>
+        <li>subject->ballistics</li>
+        <li>subject->long-range combat</li>
+        <li>subject->precision shooting</li>
+        <li>subject->rifle mastery</li>
+        <li>subject->target practice</li>
+        <li>subject->sharpshooting</li>
+        <li>subject->ranged tactics</li>
+        <li>subject->shot placement</li>
+        <li>subject->gun handling</li>
+        <li>subject->distance shooting</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Melee</defName>
+    <description>Melee combat, both armed and unarmed.</description>
+    <skillLabel>melee</skillLabel>
+    <disablingWorkTags>Violent</disablingWorkTags>
+    <neverDisabledBasedOnWorkTypes>true</neverDisabledBasedOnWorkTypes>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <listOrder>110</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonMelee</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->fighting</li>
+        <li>subject->melee</li>
+        <li>subject->combat</li>
+        <li>subject->martial arts</li>
+        <li>subject->swordplay</li>
+        <li>subject->weaponry</li>
+        <li>subject->brawling</li>
+        <li>subject->pugilism</li>
+        <li>subject->fencing</li>
+        <li>subject->knighthood</li>
+        <li>subject->dueling</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Construction</defName>
+    <description>Constructing and deconstructing structures and furniture.</description>
+    <skillLabel>construction</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <listOrder>100</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonConstruction</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->construction</li>
+        <li>subject->building</li>
+        <li>subject->architecture</li>
+        <li>subject->engineering</li>
+        <li>subject->design</li>
+        <li>subject->renovation</li>
+        <li>subject->structures</li>
+        <li>subject->foundation</li>
+        <li>subject->carpentry</li>
+        <li>subject->infrastructure</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Mining</defName>
+    <description>Digging tunnels and extracting buried resources.</description>
+    <skillLabel>mining</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <listOrder>90</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonMining</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->mining</li>
+        <li>subject->digging</li>
+        <li>subject->quarrying</li>
+        <li>subject->strip-mining</li>
+        <li>subject->excavation</li>
+        <li>subject->prospecting</li>
+        <li>subject->ore</li>
+        <li>subject->tunneling</li>
+        <li>subject->drilling</li>
+        <li>subject->minerals</li>
+        <li>subject->gemology</li>
+        <li>subject->geology</li>
+        <li>subject->earthmoving</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Cooking</defName>
+    <description>Creating meals from raw ingredients quickly and without accidental food poisoning.</description>
+    <skillLabel>cooking</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <listOrder>80</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonCooking</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->cooking</li>
+        <li>subject->food</li>
+        <li>subject->baking</li>
+        <li>subject->cuisine</li>
+        <li>subject->recipes</li>
+        <li>subject->gastronomy</li>
+        <li>subject->flavors</li>
+        <li>subject->ingredients</li>
+        <li>subject->spices</li>
+        <li>subject->nutrition</li>
+        <li>subject->taste</li>
+        <li>subject->sauces</li>
+        <li>subject->meals</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Plants</defName>
+    <description>Sowing, caring for and harvesting crops, and foraging for food while traveling.</description>
+    <skillLabel>plants</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <listOrder>70</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonPlants</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->plants</li>
+        <li>subject->herbs</li>
+        <li>subject->vegetables</li>
+        <li>subject->flora</li>
+        <li>subject->cultivation</li>
+        <li>subject->horticulture</li>
+        <li>subject->agriculture</li>
+        <li>subject->gardening</li>
+        <li>subject->farming</li>
+        <li>subject->harvesting</li>
+        <li>subject->permaculture</li>
+        <li>subject->botany</li>
+        <li>subject->crop management</li>
+        <li>subject->soil enrichment</li>
+        <li>subject->organic farming</li>
+        <li>subject->food production</li>
+        <li>subject->crop science</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Animals</defName>
+    <description>Taming, training, and controlling animals.</description>
+    <skillLabel>animals</skillLabel>
+    <usuallyDefinedInBackstories>false</usuallyDefinedInBackstories>
+    <listOrder>60</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonAnimals</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->animals</li>
+        <li>subject->herding</li>
+        <li>subject->taming</li>
+        <li>subject->livestock</li>
+        <li>subject->breeding</li>
+        <li>subject->zoology</li>
+        <li>subject->husbandry</li>
+        <li>subject->herding</li>
+        <li>subject->domestication</li>
+        <li>subject->fauna</li>
+        <li>subject->wildlife</li>
+        <li>subject->poultry</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Crafting</defName>
+    <description>Crafting general items including weapons, components, and refined resources.</description>
+    <skillLabel>crafting</skillLabel>
+    <listOrder>50</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonCrafting</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->crafting</li>
+        <li>subject->assembly</li>
+        <li>subject->manufacturing</li>
+        <li>subject->handcrafting</li>
+        <li>subject->fabrication</li>
+        <li>subject->production</li>
+        <li>subject->craftsmanship</li>
+        <li>subject->machining</li>
+        <li>subject->artisanry</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Artistic</defName>
+    <description>Crafting art.</description>
+    <skillLabel>artistic</skillLabel>
+    <listOrder>40</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonArtistic</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->art</li>
+        <li>subject->pottery</li>
+        <li>subject->sculpting</li>
+        <li>subject->painting</li>
+        <li>subject->creativity</li>
+        <li>subject->expression</li>
+        <li>subject->aesthetics</li>
+        <li>subject->design</li>
+        <li>subject->sculpture</li>
+        <li>subject->impressionism</li>
+        <li>subject->artistry</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Medicine</defName>
+    <description>Tending wounds and diseases and performing surgery.</description>
+    <skillLabel>medical</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <listOrder>30</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonMedicine</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->medicine</li>
+        <li>subject->surgery</li>
+        <li>subject->bacteria</li>
+        <li>subject->skin repair</li>
+        <li>subject->healthcare</li>
+        <li>subject->medical science</li>
+        <li>subject->physiology</li>
+        <li>subject->pharmacology</li>
+        <li>subject->treatment</li>
+        <li>subject->diagnosis</li>
+        <li>subject->surgery</li>
+        <li>subject->anatomy</li>
+        <li>subject->bacteria</li>
+        <li>subject->pathology</li>
+        <li>subject->disease management</li>
+        <li>subject->patient care</li>
+        <li>subject->emergency medicine</li>
+        <li>subject->nursing</li>
+        <li>subject->medical research</li>
+        <li>subject->public health</li>
+        <li>subject->virology</li>
+        <li>subject->health sciences</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Social</defName>
+    <description>Negotiating, convincing, manipulating, leading, and cheering up others.</description>
+    <skillLabel>social</skillLabel>
+    <listOrder>20</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonSocial</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->communication</li>
+        <li>subject->networking</li>
+        <li>subject->conflict resolution</li>
+        <li>subject->collaboration</li>
+        <li>subject->leadership</li>
+        <li>subject->empathy</li>
+        <li>subject->negotiation</li>
+        <li>subject->trade</li>
+        <li>subject->listening</li>
+        <li>subject->diplomacy</li>
+        <li>subject->teamwork</li>
+        <li>subject->etiquette</li>
+        <li>subject->charisma</li>
+        <li>subject->social intelligence</li>
+        <li>subject->assertiveness</li>
+        <li>subject->emotional intelligence</li>
+        <li>subject->communication skills</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+  <SkillDef>
+    <defName>Intellectual</defName>
+    <description>Researching and drug synthesis.</description>
+    <skillLabel>intellectual</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <listOrder>10</listOrder>
+    <lessonInteraction MayRequire="Ludeon.RimWorld.Biotech">LessonIntellectual</lessonInteraction>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->physics</li>
+        <li>subject->chemistry</li>
+        <li>subject->orbital dynamics</li>
+        <li>subject->mathematics</li>
+        <li>subject->biology</li>
+        <li>subject->science</li>
+        <li>subject->research</li>
+        <li>subject->innovation</li>
+        <li>subject->discovery</li>
+        <li>subject->analysis</li>
+        <li>subject->experimentation</li>
+        <li>subject->knowledge</li>
+        <li>subject->exploration</li>
+        <li>subject->physics</li>
+        <li>subject->chemistry</li>
+        <li>subject->data analysis</li>
+        <li>subject->scientific inquiry</li>
+        <li>subject->intellectual growth</li>
+        <li>subject->academic pursuits</li>
+        <li>subject->quantitative analysis</li>
+        <li>subject->experiment design</li>
+        <li>subject->research methods</li>
+        <li>subject->intellectual inquiry</li>
+      </rulesStrings>
+    </generalRules>
+  </SkillDef>
+
+</Defs>

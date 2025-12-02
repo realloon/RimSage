@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>Terror</defName>
+    <workerClass>StatWorker_Terror</workerClass>
+    <label>terror</label>
+    <description>The intensity of terror this person is experiencing.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <hideAtValue>0</hideAtValue>
+    <maxValue>100</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnPawns>false</showOnPawns>
+    <displayPriorityInCategory>3600</displayPriorityInCategory>
+    <showIfUndefined>false</showIfUndefined>
+  </StatDef>
+
+</Defs>

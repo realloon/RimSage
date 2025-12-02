@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  
+  <PawnRenderNodeTagDef>
+    <defName>Root</defName>
+  </PawnRenderNodeTagDef>
+  
+  <PawnRenderNodeTagDef>
+    <defName>Head</defName>
+  </PawnRenderNodeTagDef>
+
+  <PawnRenderNodeTagDef>
+    <defName>ApparelHead</defName>
+  </PawnRenderNodeTagDef>
+  
+  <PawnRenderNodeTagDef>
+    <defName>Body</defName>
+  </PawnRenderNodeTagDef>
+
+  <PawnRenderNodeTagDef>
+    <defName>ApparelBody</defName>
+  </PawnRenderNodeTagDef>
+  
+</Defs>

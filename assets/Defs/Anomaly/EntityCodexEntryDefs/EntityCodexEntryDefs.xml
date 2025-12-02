@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Basic -->
+
+  <EntityCodexEntryDef>
+    <defName>VoidMonolith</defName>
+    <label>void monolith</label>
+    <category>Basic</category>
+    <useDescriptionFrom>VoidMonolith</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/VoidMonolith</uiIconPath>
+    <startDiscovered>true</startDiscovered>
+    <allowDiscoveryWhileMapGenerating>true</allowDiscoveryWhileMapGenerating>
+    <orderInCategory>0</orderInCategory>
+    <linkedThings>
+      <li>VoidMonolith</li>
+    </linkedThings>
+    <hideInPlaystyles>
+      <li>AmbientHorror</li>
+    </hideInPlaystyles>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>HarbingerTree</defName>
+    <label>harbinger tree</label>
+    <category>Basic</category>
+    <uiIconPath>UI/CodexEntries/HarbingerTree</uiIconPath>
+    <useDescriptionFrom>Plant_TreeHarbinger</useDescriptionFrom>
+    <linkedThings>
+      <li>Plant_TreeHarbinger</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>HarbingerTreeProvoked</li>
+    </provocationIncidents>
+    <orderInCategory>100</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Fleshbeasts</defName>
+    <label>fleshbeast</label>
+    <description>Hideous creatures composed of masses of cancerous flesh. Some contain multiple nervous systems, allowing them to split into smaller fleshbeasts.</description>
+    <uiIconPath>UI/CodexEntries/Fleshbeasts</uiIconPath>
+    <category>Basic</category>
+    <linkedThings>
+      <li>Fingerspike</li>
+      <li>Trispike</li>
+      <li>Toughspike</li>
+      <li>Bulbfreak</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>SummonFleshbeastsPlayer</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>FleshbeastAttack</li>
+    </provocationIncidents>
+    <orderInCategory>200</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Sightstealer</defName>
+    <label>sightstealer</label>
+    <category>Basic</category>
+    <uiIconPath>UI/CodexEntries/Sightstealer</uiIconPath>
+    <useDescriptionFrom>Sightstealer</useDescriptionFrom>
+    <discoveryType>BecameVisible</discoveryType>
+    <linkedThings>
+      <li>Sightstealer</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>ProximityDetector</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>SightstealerArrival</li>
+    </provocationIncidents>
+    <orderInCategory>300</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Shambler</defName>
+    <label>shambler</label>
+    <description>Corpses reanimated by microscopic archites. Shamblers are slow, mindless, and will attack relentlessly. Unless captured, shamblers die from metabolic exhaustion after several days.</description>
+    <uiIconPath>UI/CodexEntries/Shambler</uiIconPath>
+    <category>Basic</category>
+    <discoveredResearchProjects>
+      <li>SummonShamblers</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>ShamblerSwarmAnimals</li>
+      <li>SmallShamblerSwarm</li>
+      <li>ShamblerSwarm</li>
+      <li>ShamblerAssault</li>
+    </provocationIncidents>
+    <orderInCategory>400</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Ghoul</defName>
+    <label>ghoul</label>
+    <description>A person implanted with an archotech shard and twisted by dark psychic influences into a jittering murder machine.</description>
+    <uiIconPath>UI/CodexEntries/Ghoul</uiIconPath>
+    <category>Basic</category>
+    <discoveredResearchProjects>
+      <li>GhoulInfusion</li>
+      <li>GhoulEnhancements</li>
+      <li>GhoulResurrection</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>GhoulAttack</li>
+    </provocationIncidents>
+    <orderInCategory>500</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Gorehulk</defName>
+    <label>gorehulk</label>
+    <category>Basic</category>
+    <useDescriptionFrom>Gorehulk</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Gorehulk</uiIconPath>
+    <linkedThings>
+      <li>Gorehulk</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>BlissLobotomy</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>GorehulkAssault</li>
+    </provocationIncidents>
+    <orderInCategory>600</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Deathpall</defName>
+    <label>deathpall</label>
+    <description>A corpse-gray cloud composed of microscopic self-powered archites created by some unknown superintelligence. When they land on dead flesh, they enter the body and reanimate it to create a shambling imitation of life.</description>
+    <category>Basic</category>
+    <uiIconPath>UI/CodexEntries/DeathPall</uiIconPath>
+    <linkedIncidents>
+      <li>DeathPall</li>
+    </linkedIncidents>
+    <discoveredResearchProjects>
+      <li>DeadlifeDust</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>DeathPall</li>
+    </provocationIncidents>
+    <orderInCategory>700</orderInCategory>
+  </EntityCodexEntryDef>
+
+
+  <!-- Advanced -->
+
+  <EntityCodexEntryDef>
+    <defName>PitGate</defName>
+    <label>pit gate</label>
+    <useDescriptionFrom>PitGate</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/PitGate</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>PitGate</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>PitGate</li>
+    </provocationIncidents>
+    <orderInCategory>0</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Dreadmeld</defName>
+    <label>dreadmeld</label>
+    <category>Advanced</category>
+    <useDescriptionFrom>Dreadmeld</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Dreadmeld</uiIconPath>
+    <discoveryType>Unfog</discoveryType>
+    <linkedThings>
+      <li>Dreadmeld</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>SummonPitGate</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>PitGate</li>
+    </provocationIncidents>
+    <orderInCategory>100</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>FleshmassHeart</defName>
+    <label>fleshmass heart</label>
+    <useDescriptionFrom>FleshmassHeart</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/FleshmassHeart</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>FleshmassHeart</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>FleshmassHeart</li>
+    </provocationIncidents>
+    <orderInCategory>200</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>FleshmassNucleus</defName>
+    <label>fleshmass nucleus</label>
+    <useDescriptionFrom>FleshmassNucleus</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/FleshmassNucleus</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>FleshmassNucleus</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>MutationWeaponry</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>FleshmassHeart</li>
+    </provocationIncidents>
+    <orderInCategory>300</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Chimera</defName>
+    <label>chimera</label>
+    <useDescriptionFrom>Chimera</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Chimera</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>Chimera</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>JuggernautSerum</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>ChimeraAssault</li>
+    </provocationIncidents>
+    <orderInCategory>400</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Devourer</defName>
+    <label>devourer</label>
+    <useDescriptionFrom>Devourer</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Devourer</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>Devourer</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>DevourerAssault</li>
+      <li>DevourerWaterAssault</li>
+    </provocationIncidents>
+    <orderInCategory>500</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Noctolith</defName>
+    <label>noctolith</label>
+    <useDescriptionFrom>Noctolith</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Noctolith</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>Noctolith</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>UnnaturalDarkness</li>
+    </provocationIncidents>
+    <orderInCategory>600</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Noctol</defName>
+    <label>noctol</label>
+    <useDescriptionFrom>Noctol</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Noctol</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>Noctol</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>UnnaturalDarkness</li>
+    </provocationIncidents>
+    <orderInCategory>700</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Revenant</defName>
+    <label>revenant</label>
+    <useDescriptionFrom>Revenant</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Revenant</uiIconPath>
+    <category>Advanced</category>
+    <discoveryType>BecameVisible</discoveryType>
+    <linkedThings>
+      <li>Revenant</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>RevenantInvisibility</li>
+      <li>Brainwipe</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>Revenant</li>
+    </provocationIncidents>
+    <orderInCategory>800</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Metalhorror</defName>
+    <label>metalhorror</label>
+    <useDescriptionFrom>Metalhorror</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Metalhorror</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>Metalhorror</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>CreepJoinerJoin_Metalhorror</li>
+    </provocationIncidents>
+    <discoveredResearchProjects>
+      <li>MetalbloodSerum</li>
+    </discoveredResearchProjects>
+    <orderInCategory>900</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>Nociosphere</defName>
+    <label>nociosphere</label>
+    <useDescriptionFrom>Nociosphere</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Nociosphere</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>Nociosphere</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>InsanityWeaponry</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>Nociosphere</li>
+    </provocationIncidents>
+    <orderInCategory>1000</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>BloodRain</defName>
+    <label>blood rain</label>
+    <description>A turgid blood-like psychofluid that falls from the sky. Anyone exposed to it feels a growing anger that eventually becomes a berserk rage.</description>
+    <category>Advanced</category>
+    <uiIconPath>UI/CodexEntries/BloodRain</uiIconPath>
+    <linkedIncidents>
+      <li>BloodRain</li>
+    </linkedIncidents>
+    <discoveredResearchProjects>
+      <li>BloodRain</li>
+      <li>NeurosisPulse</li>
+    </discoveredResearchProjects>
+    <provocationIncidents>
+      <li>BloodRain</li>
+    </provocationIncidents>
+    <orderInCategory>1100</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>TwistedObelisk</defName>
+    <label>twisted obelisk</label>
+    <useDescriptionFrom>WarpedObelisk_Mutator</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Obelisk_Twisted</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>WarpedObelisk_Mutator</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>WarpedObelisk_Mutator</li>
+    </provocationIncidents>
+    <orderInCategory>1200</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>CorruptedObelisk</defName>
+    <label>corrupted obelisk</label>
+    <useDescriptionFrom>WarpedObelisk_Duplicator</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Obelisk_Corrupted</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>WarpedObelisk_Duplicator</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>WarpedObelisk_Duplicator</li>
+    </provocationIncidents>
+    <orderInCategory>1300</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>WarpedObelisk</defName>
+    <label>warped obelisk</label>
+    <useDescriptionFrom>WarpedObelisk_Abductor</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/Obelisk_Warped</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>WarpedObelisk_Abductor</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>WarpedObelisk_Abductor</li>
+    </provocationIncidents>
+    <orderInCategory>1400</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>GoldenCube</defName>
+    <label>golden cube</label>
+    <useDescriptionFrom>GoldenCube</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/GoldenCube</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>GoldenCube</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>GoldenCubeArrival</li>
+    </provocationIncidents>
+    <discoveredResearchProjects>
+      <li>PleasurePulse</li>
+    </discoveredResearchProjects>
+    <orderInCategory>1500</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>UnnaturalCorpse</defName>
+    <label>unnatural corpse</label>
+    <description>An odd corpse that feels waxy and warm to the touch. Something is deeply unsettling about it.</description>
+    <uiIconPath>UI/CodexEntries/UnnaturalCorpse</uiIconPath>
+    <category>Advanced</category>
+    <provocationIncidents>
+      <li>UnnaturalCorpseArrival</li>
+    </provocationIncidents>
+    <discoveredResearchProjects>
+      <li>DeathRefusal</li>
+    </discoveredResearchProjects>
+    <orderInCategory>1600</orderInCategory>
+  </EntityCodexEntryDef>
+
+
+  <!-- Ultimate -->
+
+  <EntityCodexEntryDef>
+    <defName>VoidStructure</defName>
+    <label>void structure</label>
+    <useDescriptionFrom>VoidStructure</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/VoidStructure</uiIconPath>
+    <category>Ultimate</category>
+    <linkedThings>
+      <li>VoidStructure</li>
+    </linkedThings>
+    <hideInPlaystyles>
+      <li>AmbientHorror</li>
+    </hideInPlaystyles>
+    <orderInCategory>0</orderInCategory>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>VoidNode</defName>
+    <label>void node</label>
+    <useDescriptionFrom>VoidNode</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/VoidNode</uiIconPath>
+    <category>Ultimate</category>
+    <allowDiscoveryWhileMapGenerating>true</allowDiscoveryWhileMapGenerating>
+    <linkedThings>
+      <li>VoidNode</li>
+    </linkedThings>
+    <hideInPlaystyles>
+      <li>AmbientHorror</li>
+    </hideInPlaystyles>
+    <orderInCategory>100</orderInCategory>
+  </EntityCodexEntryDef>
+
+</Defs>

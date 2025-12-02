@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <IncidentDef>
+    <defName>GiveQuest_Beggars</defName>
+    <category>GiveQuest</category>
+    <label>beggars arrive</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <letterLabel>beggars arrive</letterLabel>
+    <questScriptDef>Beggars</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>GiveQuest_ReliquaryPilgrims</defName>
+    <category>GiveQuest</category>
+    <label>pilgrims arrive</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <letterLabel>pilgrims arrive</letterLabel>
+    <questScriptDef>ReliquaryPilgrims</questScriptDef>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>GauranlenPodSpawn</defName>
+    <label>Gauranlen pod sprout</label>
+    <category>Special</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_GauranlenPodSpawn</workerClass>
+    <letterLabel>Gauranlen pod sprout</letterLabel>
+    <letterText>A Gauranlen pod has sprouted nearby!\n\nHarvest it to collect a Gauranlen seed. This special seed can be used to plant the majestic Gauranlen tree.\n\nYour colonists can connect with Gauranlen trees and make them spawn resources and helpful dryads to work or fight for you.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <disallowedBiomes>
+      <li>SeaIce</li>
+      <li>IceSheet</li>
+    </disallowedBiomes>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>Infestation_Jelly</defName>
+    <label>insect jelly</label>
+    <category>Special</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_InsectJelly</workerClass>
+    <baseChance>0</baseChance> <!-- created by ritual effect worker -->
+    <letterLabel>Insect jelly</letterLabel>
+    <letterText>Giant insects have tunneled up from underneath and deposited some surplus insect jelly on the surface.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>WanderersSkylantern</defName>
+    <label>Wanderers</label>
+    <category>Special</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_WanderersSkylanterns</workerClass>
+    <baseChance>0</baseChance> <!-- created by ritual effect worker -->
+    <letterLabel>Friendly visitors</letterLabel>
+    <letterText>Your skylanterns have attracted some friendly travelers. The travelers were amazed by the spectacle you created and hope they'll get to participate next time.\n\nThey will visit and leave a gift.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+  </IncidentDef>
+  
+</Defs>

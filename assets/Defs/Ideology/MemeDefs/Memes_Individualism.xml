@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Category: Individualism -->
+
+  <MemeGroupDef>
+    <defName>Individualism</defName>
+    <drawOffset>(0.09, 0.23)</drawOffset>
+    <maxRows>1</maxRows>
+  </MemeGroupDef>
+
+  <MemeDef>
+    <defName>Individualist</defName>
+    <label>individualist</label>
+    <description>Each person is a free individual with the right to their own ideas and decisions. Nobody should be made to conform.</description>
+    <iconPath>UI/Memes/Individualist</iconPath>
+    <allowDuringTutorial>true</allowDuringTutorial>
+    <groupDef>Individualism</groupDef>
+    <impact>1</impact>
+    <consumableBuildings>
+      <li>Effigy</li>
+    </consumableBuildings>
+    <exclusionTags>
+      <li>Individualism</li>
+      <li>SupremacistIndividualist</li>
+    </exclusionTags>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->free</li>
+        <li>memeAdjective->open</li>
+        <li>memeAdjective->liberal</li>
+        <li>memeConcept->self</li>
+        <li>memeConcept->independence</li>
+        <li>memeConcept->freedom</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+          <!-- theist myth -->
+          <li>creation(tag=meme_Individualist)        ->[deity0_name] fashioned every man and woman personally. Each one is a unique and precious artwork by [deity0_possessive] divine hand.</li>
+          <li>episode(uses=1,tag=meme_Individualist)  ->[deity0_name] said to all, "Each and every one of you is a unique and holy being formed in my image."</li>
+          <!-- theist founder -->
+          <li>intro(tag=meme_Individualist)           ->[deity0_name] spoke to [memberNamePlural] [revelationAdverb], guiding each to travel to the [place_summary] [place_name] where their unique gifts would shine.</li>
+          <li>conflict(tag=meme_Individualist)        ->The [foeLeader] forced the [memberNamePlural] to wear uniforms and work in [foeLeader_possessive] [place_community].</li>
+          <li>founderJoin(tag=meme_Individualist)     ->A [place_job] named [founderName] was blessed by [deity0_name] and gained miraculous knowledge of the unique power of each and every [memberName]. [founder_pronoun] said to each one what they needed to become their best self.</li>
+          <li>victory(tag=meme_Individualist)         ->The [memberNamePlural] gathered in a secret conference with many of the [foeSoldiers]. They all learned to see the value in each other and abandon the [foeLeader].</li>
+          <!-- ideological founder -->
+          <li>setup(tag=meme_Individualist)           ->Oppressed by distant rulers who demanded uniform obedience from the people, [founderName] created a rebel movement that smashed the state and built a new land of liberty in its place.</li>
+          <li>story(uses=1,tag=meme_Individualist)    ->[founderName] broke every social rule the oppressors tried to enforce, just to show that [founder_pronoun] could.</li>
+          <!-- ideological lesson -->
+          <li>lessonIntro(tag=meme_Individualist)         ->My family, my clan, my team - they all tried to keep a shroud over my eyes to stop me from seeing a simple fact:</li>
+          <li>lesson(tag=meme_Individualist)              ->each person is unique and valuable and must walk his or her own path</li>
+          <li>lessonReinforcement(tag=meme_Individualist) ->But that was only my path - What will yours be?</li>
+          <!-- archist -->
+          <li>archistBasis(tag=meme_Individualist)    ->Archotechs stand as sovereign consciousnesses, and recognize and judge each of us individually the same way.</li>
+          <li>archistFact(tag=meme_Individualist)     ->At death, the archotechs examine the unique morality of each person.</li>
+          <li>archistFact(tag=meme_Individualist)     ->Archotechs notice the one who wields their relics, such as the [relic1_name].</li>
+          <li>archistProphecy(tag=meme_Individualist) ->[inTheEnd], the archotechs will depart. They will bring with them the ones they have noticed, and leave the rest behind to dissolve in the universe's eternal entropy.</li>
+          <!-- animist -->
+          <li>animistBasis(tag=meme_Individualist)    ->Before everything, there was a pantheon of spirits, each unique. These came together in conference to create the world.</li>
+          <li>animistFact(tag=meme_Individualist)     ->Every spirit lends its unique nature to our world, and they expect us to do the same.</li>
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    <symbolPacks>
+      <li>
+        <theme>freedom</theme>
+        <adjective>freedomist</adjective>
+        <member>freeist</member>
+      </li>
+      <li>
+        <ideoName>Libertism</ideoName>
+        <theme>liberty</theme>
+        <adjective>libertine</adjective>
+        <member>libertor</member>
+      </li>
+      <li>
+        <ideoName>Independency</ideoName>
+        <theme>independence</theme>
+        <adjective>independent</adjective>
+        <member>independent</member>
+      </li>
+      <li>
+        <ideoName>Autonomism</ideoName>
+        <theme>autonomy</theme>
+        <adjective>autonomist</adjective>
+        <member>autonomor</member>
+      </li>
+    </symbolPacks>
+    <styleItemTags>
+      <li>
+        <tag>Wild</tag>
+        <baseWeight>1</baseWeight>
+        <weightFactor>1.1</weightFactor>
+      </li>
+    </styleItemTags>
+  </MemeDef>
+
+  <MemeDef>
+    <defName>Collectivist</defName>
+    <label>collectivist</label>
+    <description>Each person is part of a greater whole. People should work to play their part and help the group.</description>
+    <iconPath>UI/Memes/Collectivist</iconPath>
+    <allowDuringTutorial>true</allowDuringTutorial>
+    <groupDef>Individualism</groupDef>
+    <impact>1</impact>
+    <requireOne>
+      <li>
+        <li>WorkDrive_Tripled</li>
+      </li>
+    </requireOne>
+    <consumableBuildings>
+      <li>SacrificialFlag</li>
+    </consumableBuildings>
+    <exclusionTags>
+      <li>Individualism</li>
+    </exclusionTags>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->unity</li>
+        <li>memeAdjective->harmony</li>
+        <li>memeAdjective->solidarity</li>
+        <li>memeAdjective->unified</li>
+        <li>memeAdjective->undivided</li>
+        <li>memeAdjective->collective</li>
+        <li>memeCreed->collective</li>
+        <li>memeCreed->cooperative</li>
+        <li>memeCreed->commune</li>
+        <li>memeCreed->family</li>
+        <li>memeConcept->family</li>
+        <li>memeLeaderNoun->chair</li>
+        <li>memeLeaderNoun->secretary</li>
+        <li>memeMoralist->commissar</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+          <!-- theist myth -->
+          <li>creation(tag=meme_Collectivist)        ->[deity0_name] made all men and women from a great mold, and those that deviated [deity0_pronoun] threw into fire so the believers could live in harmony.</li>
+          <li>episode(uses=1,tag=meme_Collectivist)  ->[deity0_name] said to all, "No one of you stands above the whole. Work together or perish together."</li>
+          <!-- theist founder -->
+          <li>intro(tag=meme_Collectivist)           ->The people of the [place_summary] [place_name] worked together in harmony, and built a great [altarName] to honor [deity0_name], who taught them the true value of [memeConcept].</li>
+          <li>conflict(tag=meme_Collectivist)        ->The [foeLeader] could not abide the family of [memberNamePlural], and sent [foeLeader_possessive] [foeSoldiers] to the [place_community] to divide them against each other.</li>
+          <li>founderJoin(tag=meme_Collectivist)     ->A [place_job] named [founderName] threw [founder_objective]self into a fire to protest the [foeLeader], but the [memberNamePlural] pulled [founder_objective] out and made [founder_objective] their leader because of [founder_possessive] devotion to the group.</li>
+          <li>victory(tag=meme_Collectivist)         ->[founderName]'s actions united the people. They marched in lockstep towards the home of the [foeLeader]. Those in the front allowed themselves to be killed by the [foeSoldiers], but the whole could not be stopped, and they captured the [foeLeader].</li>
+          <!-- ideological founder -->
+          <li>setup(tag=meme_Collectivist)           ->In a world of every man for himself, [founderName] began a new family of strangers, bringing many different people together.</li>
+          <li>story(uses=1,tag=meme_Collectivist)    ->Some of the false believers tried to break the rules and decide their own paths. [founderName] punished them severely.</li>
+          <!-- ideological lesson -->
+          <li>lessonIntro(tag=meme_Collectivist)     ->The [place_job] stopped contributing but kept eating from the common store. I killed him with a [place_personalWeapon]. The people were shocked, but I explained that</li>
+          <li>lesson(tag=meme_Collectivist)              ->my death, and yours, will mean nothing, as long as our people go on</li>
+          <li>lessonReinforcement(tag=meme_Collectivist) ->If I die teaching the universe this, it will be my greatest triumph.</li>
+          <!-- archist -->
+          <li>archistBasis(tag=meme_Collectivist)    ->The archotechs are all aspects of one supermind.</li>
+          <li>archistFact(tag=meme_Collectivist)     ->The archotechs have no interest in judging us one by one. They await a single people who can demonstrate our worthiness by acting morally as one.</li>
+          <li>archistProphecy(tag=meme_Collectivist) ->[inTheEnd], the archotechs will depart when they find a people who present themselves as worthy partners to the machine god-consciousness.</li>
+          <!-- animist -->
+          <li>animistFact(tag=meme_Collectivist)     ->Every spirit is simply an aspect of all the others, and those that try to stand alone are fall quickly.</li>
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    <symbolPacks>
+      <li>
+        <theme>solidarity</theme>
+        <adjective>solidaritist</adjective>
+        <member>solidaritor</member>
+      </li>
+      <li>
+        <theme>unity</theme>
+        <adjective>unitary</adjective>
+        <member>unitist</member>
+      </li>
+      <li>
+        <theme>harmony</theme>
+        <adjective>harmonist</adjective>
+        <member>harmonist</member>
+      </li>
+      <li>
+        <theme>oneness</theme>
+        <adjective>oneist</adjective>
+        <member>oneist</member>
+      </li>
+    </symbolPacks>
+    <selectOneOrNone>
+      <noneChance>0.8</noneChance>
+      <preceptThingPairs>
+        <li>
+          <precept>ApparelDesired_Soft_Subordinate</precept>
+          <thing>Apparel_VisageMask</thing>
+        </li>
+      </preceptThingPairs>
+    </selectOneOrNone>
+    <styleItemTags>
+      <li>
+        <tag>Wild</tag>
+        <baseWeight>0</baseWeight>
+        <weightFactor>0</weightFactor>
+      </li>
+    </styleItemTags>
+  </MemeDef>
+
+</Defs>

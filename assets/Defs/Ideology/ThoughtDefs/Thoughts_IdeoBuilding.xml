@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>IdeoBuildingMissing</defName>
+    <thoughtClass>Thought_IdeoMissingBuilding</thoughtClass>
+    <stages>
+      <li>
+        <label>Missing {BUILDING_label}</label>
+        <description>We must have {BUILDING_labelIndef}.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>IdeoBuildingDisrespected</defName>
+    <thoughtClass>Thought_IdeoDisrespectedBuilding</thoughtClass>
+    <stages>
+      <li>
+        <label>{BUILDING_labelCap} disrespected</label>
+        <description>We have {BUILDING_labelIndef}, but it needs to be placed in a room that satisfies the proper requirements.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

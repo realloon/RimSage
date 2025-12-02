@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AncientMechBuildingBase">
+    <defName>AncientToxifierGenerator</defName>
+    <label>ancient toxifier generator</label>
+    <description>An ancient toxifier generator. Valuable parts are missing, and everything else is degraded to uselessness.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientToxifierGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1.8, 2, 1.8)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>450</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+
+  <ThingDef ParentName="AncientMechBuildingBase">
+    <defName>AncientBandNode</defName>
+    <label>ancient band node</label>
+    <description>An ancient band node. Valuable parts are missing, and everything else is degraded to uselessness.</description>
+    <graphicData>
+      <texPath>Things/Building/Ruins/AncientBandNode</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(0.9, 1, 0.9)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+
+</Defs>
