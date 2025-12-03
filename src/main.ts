@@ -1,17 +1,17 @@
-#!/usr/bin/env bun
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
-import { PathSandbox } from './security/path-sandbox'
+import { PathSandbox } from './utils/path-sandbox'
 import { searchSource } from './tools/search'
 import { readRimWorldFile } from './tools/read-file'
 import { listDirectory } from './tools/list-directory'
+import { getDefDetails } from './tools/get-def-details'
 
 const sandbox = new PathSandbox('assets/')
 
 const server = new McpServer({
   name: 'rimworld-source',
-  version: '0.5.0',
+  version: '0.6.0',
 })
 
 // tool: search
@@ -114,6 +114,37 @@ server.registerTool(
 
     return {
       content: [{ type: 'text', text: finalOutput }],
+    }
+  }
+)
+
+// tool：get def details
+server.registerTool(
+  'get_def_details',
+  {
+    description:
+      'Get fully resolved Def data. Merges properties from ParentName inheritance.',
+    inputSchema: {
+      defName: z.string().describe('Exact defName (e.g. `Gun_Revolver`).'),
+    },
+  },
+  async ({ defName }) => {
+    const def = getDefDetails(defName)
+
+    if (!def) {
+      return {
+        isError: true,
+        content: [
+          {
+            type: 'text',
+            text: `Def '${defName}' not found. Try using 'search_rimworld_source' to search for the specific <defName> tag.`,
+          },
+        ],
+      }
+    }
+
+    return {
+      content: [{ type: 'text', text: JSON.stringify(def) }],
     }
   }
 )
