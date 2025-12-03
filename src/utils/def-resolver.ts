@@ -6,7 +6,7 @@ export interface Def extends Record<string, unknown> {
   label?: string
   '@_Name'?: string
   '@_ParentName'?: string
-  '@_Abstract'?: string | boolean
+  '@_Abstract'?: string
   '@_Inherit'?: string
 }
 
