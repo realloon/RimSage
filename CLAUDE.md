@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Model Context Protocol (MCP) server that provides RimWorld source code search and browsing capabilities. It exposes three MCP tools for searching, reading, and listing files within a configured RimWorld source directory.
+This is a Model Context Protocol (MCP) server that provides RimWorld source code search and browsing capabilities. It exposes four MCP tools for searching, reading, listing files, and retrieving resolved RimWorld Def data within a configured RimWorld source directory.
 
 **Runtime**: Bun (not Node.js)
 **Language**: TypeScript with ESNext modules
@@ -29,7 +29,7 @@ bun run dev
 
 **MCP Server** (`src/main.ts`):
 - Main entry point that sets up the MCP server using `@modelcontextprotocol/sdk`
-- Registers three tools: `search_rimworld_source`, `read_rimworld_file`, `list_directory`
+- Registers four tools: `search_rimworld_source`, `read_rimworld_file`, `list_directory`, `get_def_details`
 - Uses stdio transport (`StdioServerTransport`) for communication with MCP clients
 - Hardcoded to use `assets/` directory as the base path for file operations
 - All file operations are protected by the PathSandbox
@@ -58,6 +58,13 @@ bun run dev
 - Lists files and subdirectories using Node.js `readdir` with `withFileTypes`
 - Returns entries sorted by type (directories first) then by name
 - Returns entries with type indicators (file/directory) and relative paths
+- Supports pagination with configurable limit parameter
+
+**Get Def Details Tool** (`src/tools/get-def-details.ts`):
+- Retrieves fully resolved RimWorld Def data by defName
+- Merges properties from ParentName inheritance
+- Returns structured JSON data for analysis
+- Useful for understanding complex Def hierarchies
 
 ### Configuration
 
@@ -82,6 +89,7 @@ This prevents attacks like `../../../etc/passwd` from escaping the configured di
 - **Output Limits**: Search results capped at 400 lines or 100KB, file reads at 200KB to prevent LLM context overflow
 - **Module System**: Uses ESNext modules (`type: "module"` in package.json), all imports need `.js` extensions for SDK imports
 - **Cross-platform Paths**: `path.join()` handles both Windows backslashes and POSIX forward slashes automatically
+- **Fourth Tool**: `get_def_details` tool for retrieving resolved RimWorld Def data with inheritance support
 
 ## Testing the Server
 
