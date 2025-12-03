@@ -1,6 +1,6 @@
 import { readdir } from 'fs/promises'
 import { join } from 'path'
-import { PathSandbox } from '../security/path-sandbox'
+import { PathSandbox } from '../utils/path-sandbox'
 
 export async function listDirectory(
   sandbox: PathSandbox,

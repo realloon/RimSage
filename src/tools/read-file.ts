@@ -1,4 +1,4 @@
-import { PathSandbox } from '../security/path-sandbox'
+import { PathSandbox } from '../utils/path-sandbox'
 
 export async function readRimWorldFile(
   sandbox: PathSandbox,

@@ -1,5 +1,5 @@
 import { $ } from 'bun'
-import { PathSandbox } from '../security/path-sandbox'
+import { PathSandbox } from '../utils/path-sandbox'
 
 const MAX_OUTPUT_SIZE = 100 * 1024 // 100KB limit
 const MAX_RESULT_LINES = 400
