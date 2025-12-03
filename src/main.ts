@@ -144,7 +144,7 @@ server.registerTool(
     }
 
     return {
-      content: [{ type: 'text', text: JSON.stringify(def) }],
+      content: [{ type: 'text', text: def }],
     }
   }
 )
