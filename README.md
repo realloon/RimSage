@@ -24,11 +24,12 @@ Replace `/path/to/this/repo` with the actual path to this repository on your sys
 
 ## Available Tools
 
-Once configured, the server provides three tools:
+Once configured, the server provides four tools:
 
 - `search_rimworld_source` - Search through RimWorld source code
-- `read_rimworld_file` - Read specific files
-- `list_directory` - List directory contents
+- `read_rimworld_file` - Read specific files with pagination
+- `list_directory` - List directory contents with pagination
+- `get_def_details` - Get resolved RimWorld Def data by defName
 
 ## Requirements
 
@@ -40,6 +41,9 @@ Once configured, the server provides three tools:
 ```sh
 # Install dependencies
 bun install
+
+# Build the Def database (required before first run)
+bun run src/scripts/build-db.ts
 
 # Run development server with auto-reload
 bun run dev
