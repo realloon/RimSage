@@ -2,21 +2,30 @@ import { db } from '../utils/db'
 import { builder } from '../utils/xml-utils'
 
 interface DefRow {
+  defType: string
   payload: string
 }
 
-export function getDefDetails(defName: string): string | null {
-  const query = db.query<DefRow, { $name: string }>(
-    'SELECT payload FROM defs WHERE defName = $name'
-  )
+export function getDefDetails(defName: string, defType?: string): string[] {
+  let queryStr = 'SELECT defType, payload FROM defs WHERE defName = $name'
+  const params: any = { $name: defName }
 
-  const row = query.get({ $name: defName })
-  if (!row) return null
+  if (defType) {
+    queryStr += ' AND defType = $type'
+    params.$type = defType
+  }
 
-  const obj = JSON.parse(row.payload)
-  const { defType } = obj
+  const query = db.query<DefRow, any>(queryStr)
+  const rows = query.all(params)
 
-  delete obj.defType
+  if (rows.length === 0) return []
 
-  return builder.build({ [defType]: obj })
+  return rows.map(row => {
+    const type = row.defType
+    const obj = JSON.parse(row.payload)
+
+    delete obj.defType
+
+    return builder.build({ [type]: obj })
+  })
 }

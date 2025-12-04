@@ -123,28 +123,34 @@ server.registerTool(
   'get_def_details',
   {
     description:
-      'Get fully resolved Def data. Merges properties from ParentName inheritance.',
+      'Get fully resolved XML of Def. Merges properties from ParentName inheritance.',
     inputSchema: {
       defName: z.string().describe('Exact defName (e.g. `Gun_Revolver`).'),
+      defType: z
+        .string()
+        .optional()
+        .describe('Type filter (e.g. `ThingDef`, `JobDef`).'),
     },
   },
-  async ({ defName }) => {
-    const def = getDefDetails(defName)
+  async ({ defName, defType }) => {
+    const results = getDefDetails(defName, defType)
 
-    if (!def) {
+    if (results.length === 0) {
       return {
         isError: true,
         content: [
           {
             type: 'text',
-            text: `Def '${defName}' not found. Try using 'search_rimworld_source' to search for the specific <defName> tag.`,
+            text: `Def \`${defName}\`${
+              defType ? ` (type: ${defType})` : ''
+            } not found. Try using 'search_rimworld_source' to verify the exact name.`,
           },
         ],
       }
     }
 
     return {
-      content: [{ type: 'text', text: def }],
+      content: [{ type: 'text', text: results.join('\n\n') }],
     }
   }
 )

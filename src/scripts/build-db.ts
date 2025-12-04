@@ -51,10 +51,11 @@ async function build() {
 
   db.run(`
     CREATE TABLE IF NOT EXISTS defs (
-      defName TEXT PRIMARY KEY,
+      defName TEXT,
       defType TEXT,
       label TEXT,
-      payload JSON
+      payload JSON,
+      PRIMARY KEY (defName, defType)
     );
   `)
 
