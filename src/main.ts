@@ -180,7 +180,7 @@ server.registerTool(
         content: [
           {
             type: 'text',
-            text: `No results found for "${query}". Try a shorter keyword or use 'search_rimworld_source' for code search.`,
+            text: `No results found for "${query}". Try a shorter keyword.`,
           },
         ],
       }
