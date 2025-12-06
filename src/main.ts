@@ -180,7 +180,7 @@ server.registerTool(
         content: [
           {
             type: 'text',
-            text: `No results found for "${query}". Try a shorter keyword.`,
+            text: 'No results found. Try a shorter keyword.',
           },
         ],
       }
