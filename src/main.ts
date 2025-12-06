@@ -56,7 +56,7 @@ server.registerTool(
       relative_path: z
         .string()
         .describe(
-          'Path (e.g. `Sources/RimWorld/AbilityDef.cs`, `Defs/Core/AbilityDefs/AbilityDefs.xml`).'
+          'Path (e.g. `Source/RimWorld/AbilityDef.cs`, `Defs/Core/AbilityDefs/AbilityDefs.xml`).'
         ),
       start_line: z
         .number()
