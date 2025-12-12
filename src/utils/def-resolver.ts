@@ -2,7 +2,7 @@ type Primitive = string | number | boolean | null | undefined
 type XmlNode = Primitive | XmlNode[] | { [key: string]: XmlNode }
 type XmlObject = Record<string, XmlNode>
 
-interface Def extends XmlObject {
+export interface Def extends XmlObject {
   defType?: string
   defName?: string
   label?: string

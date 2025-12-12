@@ -2,21 +2,18 @@ import { Database } from 'bun:sqlite'
 import { file } from 'bun'
 import { readdir, mkdir } from 'fs/promises'
 import { join } from 'path'
+import { defsPath, dbPath } from '../utils/env'
 import { parser } from '../utils/xml-utils'
 import { type Def, processDefs } from '../utils/def-resolver'
 
-const dbPath = join(import.meta.dir, '../../dist/defs.db')
-const defsRoot = join(import.meta.dir, '../../assets/Defs')
-
-async function build() {
+async function main() {
   console.log('Starting build process...')
 
   // 1. read xmls
   console.log('Scanning XML files...')
-  const paths = await readdir(defsRoot, { recursive: true })
-  const xmlPaths = paths.filter(path => path.endsWith('.xml'))
+  const paths = await readdir(defsPath, { recursive: true })
   const xmls = await Promise.all(
-    xmlPaths.map(async path => file(join(defsRoot, path)).text())
+    paths.map(async path => file(join(defsPath, path)).text())
   )
 
   // 2. flat defs
@@ -83,4 +80,4 @@ async function build() {
   db.close()
 }
 
-build().catch(console.error)
+main().catch(console.error)

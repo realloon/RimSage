@@ -1,5 +1,5 @@
 import { Database } from 'bun:sqlite'
-import { join } from 'path'
+import { dbPath } from './env'
 
 export interface DefsTable {
   defName: string
@@ -7,7 +7,5 @@ export interface DefsTable {
   label: string | null
   payload: string // JSON
 }
-
-const dbPath = join(import.meta.dir, '../../dist/defs.db')
 
 export const db = new Database(dbPath, { readonly: true })

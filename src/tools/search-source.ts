@@ -29,7 +29,7 @@ export async function searchSource(
 
   try {
     // exec search from the base directory
-    const res = await $`cd ${sandbox.getBasePath()} && rg ${args} .`.text()
+    const res = await $`cd ${sandbox.basePath} && rg ${args} .`.text()
     const result = res.trim()
 
     if (result.length === 0) {
