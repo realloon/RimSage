@@ -11,7 +11,9 @@ async function main() {
 
   // 1. read xmls
   console.log('Scanning XML files...')
-  const paths = await readdir(defsPath, { recursive: true })
+  const paths = (await readdir(defsPath, { recursive: true })).filter(path =>
+    path.endsWith('.xml')
+  )
   const xmls = await Promise.all(
     paths.map(async path => file(join(defsPath, path)).text())
   )
