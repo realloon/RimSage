@@ -10,7 +10,7 @@ import {
   searchDefs,
 } from './tools'
 
-const sandbox = new PathSandbox('assets/')
+const sandbox = new PathSandbox('dist/assets')
 
 const server = new McpServer({
   name: 'rimworld-source',
