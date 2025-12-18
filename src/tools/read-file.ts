@@ -5,7 +5,7 @@ export async function readFile(
   sandbox: PathSandbox,
   relativePath: string,
   startLine: number = 0,
-  lineCount: number = 1000
+  lineCount: number = 400
 ): Promise<string> {
   const fullPath = sandbox.validateAndResolve(relativePath)
 
