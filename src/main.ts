@@ -51,7 +51,7 @@ server.registerTool(
 server.registerTool(
   'read_rimworld_file',
   {
-    description: 'Read source file. Defaults to first 1000 lines.',
+    description: 'Read source file. Defaults to first 400 lines.',
     inputSchema: {
       relative_path: z
         .string()
@@ -66,7 +66,7 @@ server.registerTool(
       line_count: z
         .number()
         .optional()
-        .default(1000)
+        .default(400)
         .describe('Max lines to return.'),
     },
   },
