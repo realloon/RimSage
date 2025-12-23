@@ -1,11 +1,14 @@
 {
   "name": "rimcp",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
     "start": "bun run src/main.ts",
-    "index": "bun run src/scripts/index-defs.ts"
+    "index:defs": "bun run src/scripts/index-defs.ts",
+    "index:csharp": "bun run src/scripts/index-csharp.ts",
+    "clean": "bun run src/scripts/clean-db.ts",
+    "build": "bun run clean && bun run index:defs && bun run index:csharp"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.24.3",
