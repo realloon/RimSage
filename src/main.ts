@@ -8,6 +8,7 @@ import {
   listDirectory,
   getDefDetails,
   searchDefs,
+  readCsharpType,
 } from './tools'
 
 const sandbox = new PathSandbox('dist/assets')
@@ -205,6 +206,22 @@ server.registerTool(
     }
   }
 )
+
+server.registerTool(
+  'read_csharp_type',
+  {
+    description: 'Read the C# class/struct/interface definition.',
+    inputSchema: {
+      typeName: z
+        .string()
+        .describe('Exact type name (e.g. "WeaponTraitDef", "JobDriver").'),
+    },
+  },
+  async ({ typeName }) => {
+    return await readCsharpType(typeName)
+  }
+)
+
 async function main() {
   const transport = new StdioServerTransport()
   await server.connect(transport)
@@ -212,7 +229,9 @@ async function main() {
   console.error('\x1b[32m%s\x1b[0m', 'RimWorld Source MCP running...')
 }
 
-main().catch(error => {
+try {
+  main()
+} catch (error) {
   console.error('Fatal error:', error)
   process.exit(1)
-})
+}
