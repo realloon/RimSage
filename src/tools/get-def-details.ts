@@ -1,4 +1,4 @@
-import { type DefsTable, db } from '../utils/db'
+import { getDb, type DefsRow } from '../utils/db'
 import { builder } from '../utils/xml-utils'
 
 interface Params {
@@ -6,19 +6,17 @@ interface Params {
   $type?: string
 }
 
-type ResultRow = Pick<DefsTable, 'defType' | 'payload'>
-
 export function getDefDetails(defName: string, defType?: string): string[] {
-  let queryStr = 'SELECT defType, payload FROM defs WHERE defName = $name'
+  const db = getDb()
   const params: Params = { $name: defName }
+  let queryStr = 'SELECT defType, payload FROM defs WHERE defName = $name'
 
   if (defType) {
     queryStr += ' AND defType = $type'
     params.$type = defType
   }
 
-  const query = db.query<ResultRow, any>(queryStr)
-  const rows = query.all(params)
+  const rows = db.query<DefsRow, any>(queryStr).all(params)
 
   if (rows.length === 0) return []
 

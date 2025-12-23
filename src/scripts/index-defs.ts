@@ -4,7 +4,8 @@ import { readdir, mkdir } from 'fs/promises'
 import { join } from 'path'
 import { defsPath, dbPath } from '../utils/env'
 import { parser } from '../utils/xml-utils'
-import { type Def, processDefs } from '../utils/def-resolver'
+import { processDefs, type Def } from '../utils/def-resolver'
+import { createBuilderDb, type DefsRow } from '../utils/db'
 
 async function main() {
   console.log('Starting build process...')
@@ -37,16 +38,7 @@ async function main() {
 
   // 4. write in sqlite
   console.log(`Writing to ${dbPath}...`)
-  let db: Database
-
-  try {
-    db = new Database(dbPath, { create: true })
-  } catch (error: any) {
-    if (error.code !== 'SQLITE_CANTOPEN') throw error
-
-    await mkdir(join(import.meta.dir, '../../dist'))
-    db = new Database(dbPath, { create: true })
-  }
+  const db = createBuilderDb()
 
   db.run(`
     CREATE TABLE IF NOT EXISTS defs (
