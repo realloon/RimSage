@@ -1,4 +1,4 @@
-import { type DefsTable, db } from '../utils/db'
+import { getDb, type DefsRow } from '../utils/db'
 
 interface Params {
   $q: string
@@ -6,13 +6,14 @@ interface Params {
   $limit?: number
 }
 
-type ResultRow = Pick<DefsTable, 'defName' | 'defType' | 'label'>
+type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
 
 export function searchDefs(
   query: string,
   defType?: string,
   limit: number = 20
 ): { results: ResultRow[]; total: number } {
+  const db = getDb()
   let whereClause = '(defName LIKE $q OR label LIKE $q)'
 
   const params: Params = { $q: `%${query}%` }

@@ -1,6 +1,6 @@
 import { file } from 'bun'
 import { join } from 'path'
-import { db } from '../utils/db'
+import { getDb } from '../utils/db'
 import { sourcePath } from '../utils/env'
 
 const MAX_LINES_THRESHOLD = 400
@@ -12,6 +12,7 @@ interface IndexRow {
 }
 
 export async function readCsharpType(typeName: string) {
+  const db = getDb()
   const rows = db
     .query<IndexRow, any>(
       'SELECT filePath, startLine, typeKind FROM csharp_index WHERE typeName = $name'
