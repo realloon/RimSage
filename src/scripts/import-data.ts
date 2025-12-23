@@ -1,6 +1,5 @@
-import { resolve, join } from 'path'
-import { argv, file, write } from 'bun'
-import { readdir } from 'fs/promises'
+import { argv, file, write, Glob } from 'bun'
+import { resolve, join, sep } from 'path'
 import { versionPath, defsPath } from '../utils/env'
 
 const path = argv.at(2)
@@ -22,23 +21,16 @@ if (!(await version.exists())) {
 const versionText = await version.text()
 await write(versionPath, versionText)
 
-const dataDir = (
-  await readdir(join(root, 'Data'), { withFileTypes: true })
-).filter(dirent => dirent.isDirectory())
+const glob = new Glob('Data/*/Defs/**/*.xml')
 
-dataDir.forEach(async dirent => {
-  const category = dirent.name
-  const gameDefsPath = join(dirent.parentPath, dirent.name, 'Defs')
+for await (const relativePath of glob.scan({ cwd: root, onlyFiles: true })) {
+  const parts = relativePath.split(/[/\\]/)
+  const category = parts[1]
+  const defRelativePath = parts.slice(3).join(sep)
+  const output = join(defsPath, category, defRelativePath)
+  const source = file(join(root, relativePath))
 
-  const defs = (await readdir(gameDefsPath, { recursive: true })).filter(item =>
-    item.endsWith('.xml')
-  )
+  await write(output, source)
+}
 
-  defs.forEach(async def => {
-    const output = join(defsPath, category, def)
-    const content = await file(join(gameDefsPath, def)).text()
-    await write(output, content)
-  })
-})
-
-console.log('done')
+console.log(`Done!`)
