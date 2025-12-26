@@ -35,17 +35,8 @@ server.registerTool(
         .describe('Enforce exact case matching.'),
     },
   },
-  async ({ query, file_pattern, case_sensitive }) => {
-    const result = await searchSource(
-      sandbox,
-      query,
-      case_sensitive,
-      file_pattern
-    )
-    return {
-      content: [{ type: 'text', text: result }],
-    }
-  }
+  async ({ query, file_pattern, case_sensitive }) =>
+    searchSource(sandbox, query, case_sensitive, file_pattern)
 )
 
 // tool: read file
@@ -71,17 +62,8 @@ server.registerTool(
         .describe('Max lines to return.'),
     },
   },
-  async ({ relative_path, start_line, line_count }) => {
-    const content = await readFile(
-      sandbox,
-      relative_path,
-      start_line,
-      line_count
-    )
-    return {
-      content: [{ type: 'text', text: content }],
-    }
-  }
+  async ({ relative_path, start_line, line_count }) =>
+    await readFile(sandbox, relative_path, start_line, line_count)
 )
 
 // tool: list dir
@@ -97,29 +79,8 @@ server.registerTool(
       limit: z.number().default(100).describe('Max items to return.'),
     },
   },
-  async ({ relative_path, limit }) => {
-    const { entries, total } = await listDirectory(
-      sandbox,
-      relative_path,
-      limit
-    )
-
-    const formatted = entries
-      .map(e => (e.type === 'directory' ? `${e.name}/` : e.name))
-      .join('\n')
-
-    let finalOutput = formatted || 'Directory is empty'
-
-    if (entries.length < total) {
-      finalOutput += `\n[TRUNCATED] Showing ${entries.length}/${total} items.`
-      finalOutput +=
-        '\n(Tip: Increase `limit` or use `search_rimworld_source`.)'
-    }
-
-    return {
-      content: [{ type: 'text', text: finalOutput }],
-    }
-  }
+  async ({ relative_path, limit }) =>
+    listDirectory(sandbox, relative_path, limit)
 )
 
 // tool：get def details
@@ -136,27 +97,7 @@ server.registerTool(
         .describe('Type filter (e.g. `ThingDef`, `JobDef`).'),
     },
   },
-  async ({ defName, defType }) => {
-    const results = getDefDetails(defName, defType)
-
-    if (results.length === 0) {
-      return {
-        isError: true,
-        content: [
-          {
-            type: 'text',
-            text: `Def \`${defName}\`${
-              defType ? ` (type: ${defType})` : ''
-            } not found. Try using 'search_rimworld_source' to verify the exact name.`,
-          },
-        ],
-      }
-    }
-
-    return {
-      content: [{ type: 'text', text: results.join('\n\n') }],
-    }
-  }
+  async ({ defName, defType }) => getDefDetails(defName, defType)
 )
 
 // tool: search defs
@@ -173,40 +114,10 @@ server.registerTool(
       limit: z.number().default(20).describe('Max results to return.'),
     },
   },
-  async ({ query, defType, limit }) => {
-    const { results, total } = searchDefs(query, defType, limit)
-
-    if (results.length === 0) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: 'No results found. Try a shorter keyword.',
-          },
-        ],
-      }
-    }
-
-    const formatted = results
-      .map(r => {
-        const labelStr = r.label ? ` (label: "${r.label}")` : ''
-        return `[${r.defType}] ${r.defName}${labelStr}`
-      })
-      .join('\n')
-
-    let finalOutput = formatted
-
-    if (results.length < total) {
-      finalOutput += `\n\n[TRUNCATED] Showing ${results.length}/${total} results.`
-      finalOutput += '\n(Tip: Increase `limit` or refine query.)'
-    }
-
-    return {
-      content: [{ type: 'text', text: finalOutput }],
-    }
-  }
+  async ({ query, defType, limit }) => searchDefs(query, defType, limit)
 )
 
+// tool: read csharp type
 server.registerTool(
   'read_csharp_type',
   {
@@ -217,9 +128,7 @@ server.registerTool(
         .describe('Exact type name (e.g. "WeaponTraitDef", "JobDriver").'),
     },
   },
-  async ({ typeName }) => {
-    return await readCsharpType(typeName)
-  }
+  async ({ typeName }) => await readCsharpType(typeName)
 )
 
 async function main() {
