@@ -6,7 +6,7 @@ export async function readFile(
   relativePath: string,
   startLine: number = 0,
   lineCount: number = 400
-): Promise<string> {
+) {
   const fullPath = sandbox.validateAndResolve(relativePath)
 
   try {
@@ -15,7 +15,14 @@ export async function readFile(
     const totalLines = lines.length
 
     if (startLine >= totalLines) {
-      return `[Error] Start line ${startLine} is out of bounds (File has ${totalLines} lines).`
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: `[Error] Start line ${startLine} is out of bounds (File has ${totalLines} lines).`,
+          },
+        ],
+      }
     }
 
     const endLine = Math.min(startLine + lineCount, totalLines)
@@ -30,7 +37,9 @@ export async function readFile(
       )
     }
 
-    return outputLines.join('\n')
+    return {
+      content: [{ type: 'text' as const, text: outputLines.join('\n') }],
+    }
   } catch (error: any) {
     if (error.code === 'ENOENT' || error.message?.includes('No such file')) {
       throw new Error(`File not found: ${relativePath}`)
