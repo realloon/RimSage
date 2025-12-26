@@ -9,7 +9,7 @@ export async function searchSource(
   query: string,
   caseSensitive: boolean = false,
   filePattern?: string
-): Promise<string> {
+) {
   const args = ['--line-number', '--heading', '--color', 'never']
 
   // case sensitive
@@ -33,7 +33,14 @@ export async function searchSource(
     const result = res.trim()
 
     if (result.length === 0) {
-      return 'No results found. Try adjusting your search query or file pattern.'
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: 'No results found. Try adjusting your search query or file pattern.',
+          },
+        ],
+      }
     }
 
     // lines limited
@@ -46,7 +53,9 @@ export async function searchSource(
       truncated.push(
         '(Tip: Refine your search query or add a more specific `file_pattern`.)'
       )
-      return truncated.join('\n')
+      return {
+        content: [{ type: 'text' as const, text: truncated.join('\n') }],
+      }
     }
 
     // size limited
@@ -55,13 +64,24 @@ export async function searchSource(
       truncated += '\n\n[TRUNCATED] Output size exceeded 100KB.'
       truncated +=
         '\n(Tip: Refine your search query or add a more specific `file_pattern`.)'
-      return truncated
+      return {
+        content: [{ type: 'text' as const, text: truncated }],
+      }
     }
 
-    return result
+    return {
+      content: [{ type: 'text' as const, text: result }],
+    }
   } catch (error: any) {
     if (error.exitCode === 1) {
-      return 'No results found. Try adjusting your search query or file pattern.'
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: 'No results found. Try adjusting your search query or file pattern.',
+          },
+        ],
+      }
     }
 
     const errorMessage = error.stderr ? error.stderr.toString() : error.message

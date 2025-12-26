@@ -6,7 +6,7 @@ interface Params {
   $type?: string
 }
 
-export function getDefDetails(defName: string, defType?: string): string[] {
+export function getDefDetails(defName: string, defType?: string) {
   const db = getDb()
   const params: Params = { $name: defName }
   let queryStr = 'SELECT defType, payload FROM defs WHERE defName = $name'
@@ -18,9 +18,21 @@ export function getDefDetails(defName: string, defType?: string): string[] {
 
   const rows = db.query<DefsRow, any>(queryStr).all(params)
 
-  if (rows.length === 0) return []
+  if (rows.length === 0) {
+    return {
+      isError: true,
+      content: [
+        {
+          type: 'text' as const,
+          text: `Def \`${defName}\`${
+            defType ? ` (type: ${defType})` : ''
+          } not found. Try using 'search_rimworld_source' to verify the exact name.`,
+        },
+      ],
+    }
+  }
 
-  return rows.map(row => {
+  const buildedXml = rows.map(row => {
     const type = row.defType
     const obj = JSON.parse(row.payload)
 
@@ -28,4 +40,8 @@ export function getDefDetails(defName: string, defType?: string): string[] {
 
     return builder.build({ [type]: obj })
   })
+
+  return {
+    content: [{ type: 'text' as const, text: buildedXml.join('\n\n') }],
+  }
 }

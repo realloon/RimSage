@@ -32,10 +32,22 @@ export async function listDirectory(
         } as const)
     )
 
+    // Format output
+    const formatted = entries
+      .map(e => (e.type === 'directory' ? `${e.name}/` : e.name))
+      .join('\n')
+
+    let finalOutput = formatted || 'Directory is empty'
+
+    if (entries.length < total) {
+      finalOutput += `\n[TRUNCATED] Showing ${entries.length}/${total} items.`
+      finalOutput +=
+        '\n(Tip: Increase `limit` or use `search_rimworld_source`.)'
+    }
+
     return {
-      entries,
-      total,
-    } as const
+      content: [{ type: 'text' as const, text: finalOutput }],
+    }
   } catch (error: any) {
     if (error.code === 'ENOENT') {
       throw new Error(`Directory not found: ${relativePath || '/'}`)

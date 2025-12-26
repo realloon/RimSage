@@ -12,7 +12,7 @@ export function searchDefs(
   query: string,
   defType?: string,
   limit: number = 20
-): { results: ResultRow[]; total: number } {
+) {
   const db = getDb()
   let whereClause = '(defName LIKE $q OR label LIKE $q)'
 
@@ -28,12 +28,19 @@ export function searchDefs(
   const total = countRow?.count ?? 0
 
   if (total === 0) {
-    return { results: [], total: 0 }
+    return {
+      content: [
+        {
+          type: 'text' as const,
+          text: 'No results found. Try a shorter keyword.',
+        },
+      ],
+    }
   }
 
   const dataSql = `
-    SELECT defName, defType, label 
-    FROM defs 
+    SELECT defName, defType, label
+    FROM defs
     WHERE ${whereClause}
     LIMIT $limit
   `
@@ -41,5 +48,21 @@ export function searchDefs(
     .query<ResultRow, any>(dataSql)
     .all({ ...params, $limit: limit })
 
-  return { results, total }
+  const formatted = results
+    .map(r => {
+      const labelStr = r.label ? ` (label: "${r.label}")` : ''
+      return `[${r.defType}] ${r.defName}${labelStr}`
+    })
+    .join('\n')
+
+  let finalOutput = formatted
+
+  if (results.length < total) {
+    finalOutput += `\n\n[TRUNCATED] Showing ${results.length}/${total} results.`
+    finalOutput += '\n(Tip: Increase `limit` or refine query.)'
+  }
+
+  return {
+    content: [{ type: 'text' as const, text: finalOutput }],
+  }
 }
