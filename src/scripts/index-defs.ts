@@ -1,20 +1,22 @@
-import { Database } from 'bun:sqlite'
-import { file } from 'bun'
-import { readdir, mkdir } from 'fs/promises'
+import { file, Glob } from 'bun'
 import { join } from 'path'
 import { defsPath, dbPath } from '../utils/env'
 import { parser } from '../utils/xml-utils'
 import { processDefs, type Def } from '../utils/def-resolver'
-import { createBuilderDb, type DefsRow } from '../utils/db'
+import { createBuilderDb } from '../utils/db'
 
 async function main() {
   console.log('Starting build process...')
 
   // 1. read xmls
   console.log('Scanning XML files...')
-  const paths = (await readdir(defsPath, { recursive: true })).filter(path =>
-    path.endsWith('.xml')
-  )
+  const glob = new Glob('**/*.xml')
+  const paths: string[] = []
+
+  for await (const path of glob.scan({ cwd: defsPath })) {
+    paths.push(path)
+  }
+
   const xmls = await Promise.all(
     paths.map(async path => file(join(defsPath, path)).text())
   )
