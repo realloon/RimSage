@@ -34,3 +34,9 @@ src/
 3. 在 `src/tools/index.ts` 中导出
 4. 在 `src/main.ts` 中使用 `server.registerTool()` 注册
 5. 在 `test/tools/` 中编写测试
+
+## 测试
+
+```
+bun test
+```
