@@ -2,34 +2,65 @@ import { readdir } from 'fs/promises'
 import { join } from 'path'
 import { PathSandbox } from '../utils/path-sandbox'
 
+export interface DirectoryEntry {
+  name: string
+  type: 'directory' | 'file'
+  path: string
+}
+
+export interface ListDirectoryResult {
+  entries: DirectoryEntry[]
+  total: number
+}
+
+/**
+ * Internal implementation: List directory contents
+ */
+export async function listDirectoryImpl(
+  sandbox: PathSandbox,
+  relativePath: string = '',
+  limit: number = 100
+): Promise<ListDirectoryResult> {
+  const fullPath = sandbox.validateAndResolve(relativePath)
+
+  const files = (await readdir(fullPath, { withFileTypes: true }))
+    .filter(f => !f.name.startsWith('.'))
+    .sort((a, b) => {
+      if (a.isDirectory() !== b.isDirectory()) {
+        return a.isDirectory() ? -1 : 1
+      }
+
+      return a.name.localeCompare(b.name)
+    })
+
+  const total = files.length
+  const slicedFiles = files.slice(0, limit)
+
+  const entries: DirectoryEntry[] = slicedFiles.map(
+    entry =>
+      ({
+        name: entry.name,
+        type: entry.isDirectory() ? 'directory' : 'file',
+        path: relativePath ? join(relativePath, entry.name) : entry.name,
+      } as const)
+  )
+
+  return { entries, total }
+}
+
+/**
+ * External adapter: Convert ListDirectoryResult to MCP response format
+ */
 export async function listDirectory(
   sandbox: PathSandbox,
   relativePath: string = '',
   limit: number = 100
 ) {
-  const fullPath = sandbox.validateAndResolve(relativePath)
-
   try {
-    const files = (await readdir(fullPath, { withFileTypes: true }))
-      .filter(f => !f.name.startsWith('.'))
-      .sort((a, b) => {
-        if (a.isDirectory() !== b.isDirectory()) {
-          return a.isDirectory() ? -1 : 1
-        }
-
-        return a.name.localeCompare(b.name)
-      })
-
-    const total = files.length
-    const slicedFiles = files.slice(0, limit)
-
-    const entries = slicedFiles.map(
-      entry =>
-        ({
-          name: entry.name,
-          type: entry.isDirectory() ? 'directory' : 'file',
-          path: relativePath ? join(relativePath, entry.name) : entry.name,
-        } as const)
+    const { entries, total } = await listDirectoryImpl(
+      sandbox,
+      relativePath,
+      limit
     )
 
     // Format output
