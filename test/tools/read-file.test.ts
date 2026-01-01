@@ -2,9 +2,72 @@ import { describe, test, expect, beforeEach, afterEach } from 'bun:test'
 import { mkdir, writeFile, rm } from 'fs/promises'
 import { join } from 'path'
 import { PathSandbox } from '../../src/utils/path-sandbox'
-import { readFile } from '../../src/tools/read-file'
+import { readFile, readFileImpl } from '../../src/tools/read-file'
 
 const testDir = join(process.cwd(), 'test-temp')
+
+describe('readFileImpl', () => {
+  let sandbox: PathSandbox
+
+  beforeEach(async () => {
+    await mkdir(testDir, { recursive: true })
+    sandbox = new PathSandbox('test-temp')
+  })
+
+  afterEach(async () => {
+    await rm(testDir, { recursive: true, force: true })
+  })
+
+  test('should return raw file content', async () => {
+    const content = 'line1\nline2\nline3'
+    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+
+    const result = await readFileImpl(sandbox, 'test.txt', 0, 10)
+    expect(result.content).toBe(content)
+    expect(result.totalLines).toBe(3)
+    expect(result.startLine).toBe(0)
+    expect(result.endLine).toBe(3)
+  })
+
+  test('should read file content from specific line', async () => {
+    const content = 'line1\nline2\nline3\nline4\nline5'
+    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+
+    const result = await readFileImpl(sandbox, 'test.txt', 2, 2)
+    expect(result.content).toContain('line3')
+    expect(result.content).toContain('line4')
+    expect(result.startLine).toBe(2)
+    expect(result.endLine).toBe(4)
+  })
+
+  test('should limit number of lines returned', async () => {
+    const content = 'line1\nline2\nline3\nline4\nline5'
+    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+
+    const result = await readFileImpl(sandbox, 'test.txt', 0, 3)
+    const lines = result.content.split('\n')
+    expect(lines).toHaveLength(3)
+    expect(lines).toEqual(['line1', 'line2', 'line3'])
+  })
+
+  test('should handle empty files', async () => {
+    await writeFile(join(testDir, 'empty.txt'), '', 'utf-8')
+
+    const result = await readFileImpl(sandbox, 'empty.txt')
+    expect(result.content).toBe('')
+    expect(result.totalLines).toBe(1) // Empty file is counted as 1 line
+  })
+
+  test('should handle files with Windows line endings', async () => {
+    const content = 'line1\r\nline2\r\nline3'
+    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+
+    const result = await readFileImpl(sandbox, 'test.txt')
+    expect(result.content).toContain('line1')
+    expect(result.content).toContain('line2')
+    expect(result.totalLines).toBe(3)
+  })
+})
 
 describe('readFile', () => {
   let sandbox: PathSandbox
