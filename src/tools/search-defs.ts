@@ -8,11 +8,19 @@ interface Params {
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
 
-export function searchDefs(
+export interface SearchDefsResult {
+  results: ResultRow[]
+  total: number
+}
+
+/**
+ * Internal implementation: Query defs from database
+ */
+export function searchDefsImpl(
   query: string,
   defType?: string,
   limit: number = 20
-) {
+): SearchDefsResult {
   const db = getDb()
   let whereClause = '(defName LIKE $q OR label LIKE $q)'
 
@@ -28,14 +36,7 @@ export function searchDefs(
   const total = countRow?.count ?? 0
 
   if (total === 0) {
-    return {
-      content: [
-        {
-          type: 'text' as const,
-          text: 'No results found. Try a shorter keyword.',
-        },
-      ],
-    }
+    return { results: [], total: 0 }
   }
 
   const dataSql = `
@@ -47,6 +48,30 @@ export function searchDefs(
   const results = db
     .query<ResultRow, any>(dataSql)
     .all({ ...params, $limit: limit })
+
+  return { results, total }
+}
+
+/**
+ * External adapter: Convert SearchDefsResult to MCP response format
+ */
+export function searchDefs(
+  query: string,
+  defType?: string,
+  limit: number = 20
+) {
+  const { results, total } = searchDefsImpl(query, defType, limit)
+
+  if (total === 0) {
+    return {
+      content: [
+        {
+          type: 'text' as const,
+          text: 'No results found. Try a shorter keyword.',
+        },
+      ],
+    }
+  }
 
   const formatted = results
     .map(r => {

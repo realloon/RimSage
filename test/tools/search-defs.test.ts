@@ -1,5 +1,41 @@
 import { describe, test, expect } from 'bun:test'
-import { searchDefs } from '../../src/tools/search-defs'
+import { searchDefs, searchDefsImpl } from '../../src/tools/search-defs'
+
+describe('searchDefsImpl', () => {
+  test('should return search results with data', () => {
+    const result = searchDefsImpl('Gun')
+    expect(result).toHaveProperty('results')
+    expect(result).toHaveProperty('total')
+    expect(Array.isArray(result.results)).toBe(true)
+    expect(typeof result.total).toBe('number')
+  })
+
+  test('should return empty results when no matches found', () => {
+    const result = searchDefsImpl('NonExistentDefNameThatDoesNotExist12345')
+    expect(result.results).toEqual([])
+    expect(result.total).toBe(0)
+  })
+
+  test('should filter by defType', () => {
+    const result = searchDefsImpl('Gun', 'ThingDef')
+    expect(result.results.length).toBeGreaterThan(0)
+    if (result.results.length > 0) {
+      expect(result.results[0].defType).toBe('ThingDef')
+    }
+  })
+
+  test('should limit results', () => {
+    const result1 = searchDefsImpl('', 'ThingDef', 2)
+    const result2 = searchDefsImpl('', 'ThingDef', 10)
+    expect(result1.results.length).toBeLessThanOrEqual(2)
+    expect(result2.results.length).toBeLessThanOrEqual(10)
+  })
+
+  test('should have total count matching or exceeding results', () => {
+    const result = searchDefsImpl('Gun')
+    expect(result.total).toBeGreaterThanOrEqual(result.results.length)
+  })
+})
 
 describe('searchDefs', () => {
   test('should search defs by name', () => {
