@@ -2,9 +2,56 @@ import { describe, test, expect, beforeEach, afterEach } from 'bun:test'
 import { mkdir, writeFile, rm } from 'fs/promises'
 import { join } from 'path'
 import { PathSandbox } from '../../src/utils/path-sandbox'
-import { searchSource } from '../../src/tools/search-source'
+import { searchSource, searchSourceImpl } from '../../src/tools/search-source'
 
 const testDir = join(process.cwd(), 'test-temp')
+
+describe('searchSourceImpl', () => {
+  let sandbox: PathSandbox
+
+  beforeEach(async () => {
+    await mkdir(testDir, { recursive: true })
+    sandbox = new PathSandbox('test-temp')
+  })
+
+  afterEach(async () => {
+    await rm(testDir, { recursive: true, force: true })
+  })
+
+  test('should return raw search results', async () => {
+    await writeFile(join(testDir, 'test.ts'), 'hello world\nfoo bar', 'utf-8')
+
+    const result = await searchSourceImpl(sandbox, 'hello')
+    expect(typeof result).toBe('string')
+    expect(result).toContain('hello')
+  })
+
+  test('should return empty string when no results found', async () => {
+    await writeFile(join(testDir, 'test.ts'), 'foo bar', 'utf-8')
+
+    const result = await searchSourceImpl(sandbox, 'xyz')
+    expect(result).toBe('')
+  })
+
+  test('should support case-sensitive search', async () => {
+    await writeFile(join(testDir, 'test.ts'), 'Hello\nhello', 'utf-8')
+
+    const result1 = await searchSourceImpl(sandbox, 'Hello', true)
+    expect(result1).toContain('Hello')
+
+    const result2 = await searchSourceImpl(sandbox, 'hello', true)
+    expect(result2).toContain('hello')
+  })
+
+  test('should filter by file pattern', async () => {
+    await writeFile(join(testDir, 'test.ts'), 'hello world', 'utf-8')
+    await writeFile(join(testDir, 'test.js'), 'hello world', 'utf-8')
+
+    const result = await searchSourceImpl(sandbox, 'hello', false, '*.ts')
+    expect(result).toContain('test.ts')
+    expect(result).not.toContain('test.js')
+  })
+})
 
 describe('searchSource', () => {
   let sandbox: PathSandbox
