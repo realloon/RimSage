@@ -11,7 +11,19 @@ interface IndexRow {
 
 const MAX_LINES_THRESHOLD = 400
 
-export async function readCsharpType(typeName: string) {
+export interface CSharpTypeResult {
+  filePath: string
+  startLine: number
+  lineCount: number
+  code: string
+  isTruncated: boolean
+  fileExists: boolean
+}
+
+/**
+ * Internal implementation: Query and read C# type definitions
+ */
+export async function readCsharpTypeImpl(typeName: string): Promise<CSharpTypeResult[]> {
   const db = getDb()
   const rows = db
     .query<IndexRow, any>(
@@ -19,7 +31,49 @@ export async function readCsharpType(typeName: string) {
     )
     .all({ $name: typeName })
 
-  if (rows.length === 0) {
+  const results: CSharpTypeResult[] = []
+
+  for (const row of rows) {
+    const fullPath = join(sourcePath, row.filePath)
+
+    if (!(await file(fullPath).exists())) {
+      results.push({
+        filePath: row.filePath,
+        startLine: row.startLine,
+        lineCount: 0,
+        code: `// Error: Source file not found: ${row.filePath}`,
+        isTruncated: false,
+        fileExists: false,
+      })
+      continue
+    }
+
+    const content = await file(fullPath).text()
+    const allLines = content.split(/\r?\n/)
+
+    const { code, lineCount } = extractCodeBlock(allLines, row.startLine)
+    const isTruncated = lineCount > MAX_LINES_THRESHOLD
+
+    results.push({
+      filePath: row.filePath,
+      startLine: row.startLine,
+      lineCount,
+      code,
+      isTruncated,
+      fileExists: true,
+    })
+  }
+
+  return results
+}
+
+/**
+ * External adapter: Convert CSharpTypeResult[] to MCP response format
+ */
+export async function readCsharpType(typeName: string) {
+  const results = await readCsharpTypeImpl(typeName)
+
+  if (results.length === 0) {
     return {
       content: [
         {
@@ -33,27 +87,15 @@ export async function readCsharpType(typeName: string) {
   const parts: string[] = []
   let isTruncatedMode = false
 
-  for (const row of rows) {
-    const fullPath = join(sourcePath, row.filePath)
-
-    if (!(await file(fullPath).exists())) {
-      parts.push(`// Error: Source file not found: ${row.filePath}`)
-      continue
-    }
-
-    const content = await file(fullPath).text()
-    const allLines = content.split(/\r?\n/)
-
-    const { code, lineCount } = extractCodeBlock(allLines, row.startLine)
-
-    let finalCode = code
-    let header = `// File: ${row.filePath} (Lines ${row.startLine + 1}-${
-      row.startLine + lineCount
+  for (const result of results) {
+    let finalCode = result.code
+    let header = `// File: ${result.filePath} (Lines ${result.startLine + 1}-${
+      result.startLine + result.lineCount
     })`
 
-    if (lineCount > MAX_LINES_THRESHOLD) {
+    if (result.isTruncated) {
       isTruncatedMode = true
-      finalCode = generateSignature(code)
+      finalCode = generateSignature(result.code)
       header += ` [AUTO-SUMMARY: Hidden method bodies due to size]`
     }
 
