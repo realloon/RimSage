@@ -24,10 +24,16 @@ gemini mcp add rimworld-source bun run /path/to/this/repo
 
 **Replace** `/path/to/this/repo` with the actual path to this repository on your system.
 
-3. Build Defs index
+3. Build index
 
 ```sh
-bun run index
+# 1
+bun run src/scripts/import-data /path/to/your/rimworld/root/path
+
+# 2 import RimWorld C# Source
+
+# 3
+bun run build
 ```
 
 ## Available Tools
@@ -39,6 +45,7 @@ Once configured, the server provides four tools:
 - `list_directory` - List directory contents with pagination
 - `get_def_details` - Get resolved RimWorld Def data by defName
 - `search_defs` - Search through RimWorld Defs
+- `read_csharp_type` - Read the C# class/struct/interface definition
 
 ## Requirements
 
@@ -48,6 +55,5 @@ Once configured, the server provides four tools:
 ## Development
 
 ```sh
-# Run production server
 bun run start
 ```
