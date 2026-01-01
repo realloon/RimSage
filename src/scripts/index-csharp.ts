@@ -71,7 +71,9 @@ async function main() {
   console.log(`Found ${fileCount} files. Writing ${typeCount} types to DB...`)
 
   const transaction = db.transaction((entries: any[]) => {
-    entries.forEach(insert.run)
+    for (const entry of entries) {
+      insert.run(entry)
+    }
   })
 
   transaction(batch)
