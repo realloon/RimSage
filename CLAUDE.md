@@ -33,3 +33,4 @@ src/
 2. 若涉及相关功能，应使用 path-sandbox、db 或 env 模块
 3. 在 `src/tools/index.ts` 中导出
 4. 在 `src/main.ts` 中使用 `server.registerTool()` 注册
+5. 在 `test/tools/` 中编写测试

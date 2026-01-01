@@ -8,8 +8,7 @@
     "clean": "bun run src/scripts/clean-db.ts",
     "index:defs": "bun run src/scripts/index-defs.ts",
     "index:csharp": "bun run src/scripts/index-csharp.ts",
-    "build": "bun run clean && bun run index:defs && bun run index:csharp",
-    "test": "bun test"
+    "build": "bun run clean && bun run index:defs && bun run index:csharp"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.24.3",
