@@ -12,19 +12,7 @@ A MCP server that provides RimWorld source code search and browsing capabilities
 bun install
 ```
 
-2. Add this MCP server:
-
-```sh
-# Claude Code
-claude mcp add --transport stdio rimworld-source -- bun run /path/to/this/repo
-
-# Gemini CLI
-gemini mcp add rimworld-source bun run /path/to/this/repo
-```
-
-**Replace** `/path/to/this/repo` with the actual path to this repository on your system.
-
-3. Build index
+2. Build index
 
 ```sh
 # 1
@@ -35,6 +23,18 @@ bun run src/scripts/import-data /path/to/your/rimworld/root/path
 # 3
 bun run build
 ```
+
+3. Add this MCP server:
+
+```sh
+# Claude Code
+claude mcp add --transport stdio rimworld-source -- bun run /path/to/this/repo
+
+# Gemini CLI
+gemini mcp add rimworld-source bun run /path/to/this/repo
+```
+
+**Replace** `/path/to/this/repo` with the actual path to this repository on your system.
 
 ## Available Tools
 
