@@ -19,6 +19,13 @@ export function getDb(): Database {
   return _runtimeDb
 }
 
+export function closeDb(): void {
+  if (_runtimeDb) {
+    _runtimeDb.close()
+    _runtimeDb = null
+  }
+}
+
 export function createBuilderDb(): Database {
   const db = new Database(dbPath, { create: true })
 

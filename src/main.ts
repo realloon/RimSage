@@ -2,6 +2,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
 import { PathSandbox } from './utils/path-sandbox'
+import { closeDb } from './utils/db'
 import {
   searchSource,
   readFile,
@@ -136,6 +137,15 @@ async function main() {
   await server.connect(transport)
 
   console.error('\x1b[32m%s\x1b[0m', 'RimWorld Source MCP running...')
+
+  const cleanup = () => {
+    console.error('Shutting down...')
+    closeDb()
+    process.exit(0)
+  }
+
+  process.on('SIGINT', cleanup)
+  process.on('SIGTERM', cleanup)
 }
 
 try {
