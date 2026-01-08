@@ -15,12 +15,8 @@ bun install
 2. Build index
 
 ```sh
-# 1
-bun run src/scripts/import-data /path/to/your/rimworld/root/path
-
-# 2 import RimWorld C# Source
-
-# 3
+bun run src/scripts/import-defs /path/to/your/rimworld/root/path
+bun run src/scripts/import-csharp /path/to/decompiled/source/root/path
 bun run build
 ```
 
