@@ -42,38 +42,41 @@ async function main() {
   console.log(`Writing to ${dbPath}...`)
   const db = createBuilderDb()
 
-  db.run(`
-    CREATE TABLE IF NOT EXISTS defs (
-      defName TEXT,
-      defType TEXT,
-      label TEXT,
-      payload JSON,
-      PRIMARY KEY (defName, defType)
-    );
-  `)
+  try {
+    db.run(`
+      CREATE TABLE IF NOT EXISTS defs (
+        defName TEXT,
+        defType TEXT,
+        label TEXT,
+        payload JSON,
+        PRIMARY KEY (defName, defType)
+      );
+    `)
 
-  const insert = db.prepare(`
-    INSERT OR REPLACE INTO defs (defName, defType, label, payload)
-    VALUES ($defName, $defType, $label, $payload)
-  `)
+    const insert = db.prepare(`
+      INSERT OR REPLACE INTO defs (defName, defType, label, payload)
+      VALUES ($defName, $defType, $label, $payload)
+    `)
 
-  const transaction = db.transaction((defs: Def[]) => {
-    defs
-      .filter(def => def.defName)
-      .forEach(def => {
-        insert.run({
-          $defType: def.defType ?? 'Unknown',
-          $defName: def.defName!,
-          $label: def.label ?? null,
-          $payload: JSON.stringify(def),
+    const transaction = db.transaction((defs: Def[]) => {
+      defs
+        .filter(def => def.defName)
+        .forEach(def => {
+          insert.run({
+            $defType: def.defType ?? 'Unknown',
+            $defName: def.defName!,
+            $label: def.label ?? null,
+            $payload: JSON.stringify(def),
+          })
         })
-      })
-  })
+    })
 
-  transaction(finalDefs)
+    transaction(finalDefs)
 
-  console.log(`Build complete!`)
-  db.close()
+    console.log(`Build complete!`)
+  } finally {
+    db.close()
+  }
 }
 
 main().catch(console.error)

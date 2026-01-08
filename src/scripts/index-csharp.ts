@@ -11,75 +11,77 @@ async function main() {
 
   const db = new Database(dbPath)
 
-  db.run(`
-    CREATE TABLE IF NOT EXISTS csharp_index (
-      typeName TEXT,
-      filePath TEXT,
-      startLine INTEGER,
-      typeKind TEXT,
-      PRIMARY KEY (typeName, filePath) 
-    );
-  `)
+  try {
+    db.run(`
+      CREATE TABLE IF NOT EXISTS csharp_index (
+        typeName TEXT,
+        filePath TEXT,
+        startLine INTEGER,
+        typeKind TEXT,
+        PRIMARY KEY (typeName, filePath) 
+      );
+    `)
 
-  const insert = db.prepare(`
-    INSERT OR REPLACE INTO csharp_index (typeName, filePath, startLine, typeKind)
-    VALUES ($typeName, $filePath, $startLine, $typeKind)
-  `)
+    const insert = db.prepare(`
+      INSERT OR REPLACE INTO csharp_index (typeName, filePath, startLine, typeKind)
+      VALUES ($typeName, $filePath, $startLine, $typeKind)
+    `)
 
-  const glob = new Glob('**/*.cs')
+    const glob = new Glob('**/*.cs')
 
-  let fileCount = 0
-  let typeCount = 0
-  const batch: any[] = []
+    let fileCount = 0
+    let typeCount = 0
+    const batch: any[] = []
 
-  for await (const relativePath of glob.scan({
-    cwd: sourcePath,
-    onlyFiles: true,
-  })) {
-    fileCount += 1
+    for await (const relativePath of glob.scan({
+      cwd: sourcePath,
+      onlyFiles: true,
+    })) {
+      fileCount += 1
 
-    const absolutePath = join(sourcePath, relativePath)
+      const absolutePath = join(sourcePath, relativePath)
 
-    try {
-      const content = await file(absolutePath).text()
-      const lines = content.split(/\r?\n/)
+      try {
+        const content = await file(absolutePath).text()
+        const lines = content.split(/\r?\n/)
 
-      const normalizedPath = relativePath.replaceAll('\\', '/')
+        const normalizedPath = relativePath.replaceAll('\\', '/')
 
-      lines.forEach((line, index) => {
-        if (line.length < 10) return
+        lines.forEach((line, index) => {
+          if (line.length < 10) return
 
-        const match = line.match(typeRegex)
-        if (match) {
-          const typeKind = match[1]
-          const typeName = match[2]
+          const match = line.match(typeRegex)
+          if (match) {
+            const typeKind = match[1]
+            const typeName = match[2]
 
-          batch.push({
-            $typeName: typeName,
-            $filePath: normalizedPath,
-            $startLine: index, // 0-indexed
-            $typeKind: typeKind,
-          })
-          typeCount++
-        }
-      })
-    } catch (error) {
-      console.warn(`Failed to read ${relativePath}:`, error)
+            batch.push({
+              $typeName: typeName,
+              $filePath: normalizedPath,
+              $startLine: index, // 0-indexed
+              $typeKind: typeKind,
+            })
+            typeCount++
+          }
+        })
+      } catch (error) {
+        console.warn(`Failed to read ${relativePath}:`, error)
+      }
     }
+
+    console.log(`Found ${fileCount} files. Writing ${typeCount} types to DB...`)
+
+    const transaction = db.transaction((entries: any[]) => {
+      for (const entry of entries) {
+        insert.run(entry)
+      }
+    })
+
+    transaction(batch)
+    console.log(`Indexing complete.`)
+  } finally {
+    db.close()
   }
-
-  console.log(`Found ${fileCount} files. Writing ${typeCount} types to DB...`)
-
-  const transaction = db.transaction((entries: any[]) => {
-    for (const entry of entries) {
-      insert.run(entry)
-    }
-  })
-
-  transaction(batch)
-  db.close()
-
-  console.log(`Indexing complete.`)
 }
 
 try {
