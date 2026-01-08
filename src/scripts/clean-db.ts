@@ -3,21 +3,24 @@ import { unlink } from 'node:fs/promises'
 import { dbPath } from '../utils/env'
 
 async function main() {
-  const dbFile = file(dbPath)
+  const filesToClean = [dbPath, `${dbPath}-shm`, `${dbPath}-wal`]
 
-  if (await dbFile.exists()) {
-    console.log(`Removing database file: ${dbPath}`)
-    try {
-      await unlink(dbPath)
-      console.log('Database successfully deleted.')
-      console.log('Run "bun run build" to rebuild.')
-    } catch (error) {
-      console.error('Failed to delete database:', error)
-      process.exit(1)
+  for (const path of filesToClean) {
+    const dbFile = file(path)
+
+    if (await dbFile.exists()) {
+      console.log(`Removing file: ${path}`)
+      try {
+        await unlink(path)
+        console.log(`Successfully deleted ${path}`)
+      } catch (error) {
+        console.error(`Failed to delete ${path}:`, error)
+      }
     }
-  } else {
-    console.log(`No database found at ${dbPath}. Nothing to clean.`)
   }
+
+  console.log('Clean complete.')
+  console.log('Run "bun run build" to rebuild.')
 }
 
 main().catch(console.error)
