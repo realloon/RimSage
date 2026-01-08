@@ -25,6 +25,9 @@ src/
 │   ├── def-resolver.ts
 │   └── xml-utils.ts
 └── scripts/             # 用户脚本
+test/
+├── tools/
+└── utils/
 ```
 
 ## 添加新工具
