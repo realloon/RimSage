@@ -1,5 +1,6 @@
 import { describe, test, expect, beforeEach, afterEach } from 'bun:test'
-import { mkdir, writeFile, rm } from 'fs/promises'
+import { mkdir, rm } from 'node:fs/promises'
+import { write } from 'bun'
 import { join } from 'path'
 import { PathSandbox } from '../../src/utils/path-sandbox'
 import { listDirectory, listDirectoryImpl } from '../../src/tools/list-directory'
@@ -19,8 +20,8 @@ describe('listDirectoryImpl', () => {
   })
 
   test('should return directory entries', async () => {
-    await writeFile(join(testDir, 'file1.txt'), 'content', 'utf-8')
-    await writeFile(join(testDir, 'file2.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'file1.txt'), 'content')
+    await write(join(testDir, 'file2.txt'), 'content')
 
     const result = await listDirectoryImpl(sandbox, '')
     expect(result.entries).toHaveLength(2)
@@ -31,7 +32,7 @@ describe('listDirectoryImpl', () => {
 
   test('should list directories first, then files', async () => {
     await mkdir(join(testDir, 'subdir'), { recursive: true })
-    await writeFile(join(testDir, 'file.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'file.txt'), 'content')
 
     const result = await listDirectoryImpl(sandbox, '')
     expect(result.entries[0].type).toBe('directory')
@@ -49,8 +50,8 @@ describe('listDirectoryImpl', () => {
   })
 
   test('should hide dotfiles', async () => {
-    await writeFile(join(testDir, '.hidden'), 'content', 'utf-8')
-    await writeFile(join(testDir, 'visible.txt'), 'content', 'utf-8')
+    await write(join(testDir, '.hidden'), 'content')
+    await write(join(testDir, 'visible.txt'), 'content')
 
     const result = await listDirectoryImpl(sandbox, '')
     expect(result.entries.length).toBe(1)
@@ -59,7 +60,7 @@ describe('listDirectoryImpl', () => {
 
   test('should limit number of results', async () => {
     for (let i = 0; i < 10; i++) {
-      await writeFile(join(testDir, `file${i}.txt`), 'content', 'utf-8')
+      await write(join(testDir, `file${i}.txt`), 'content')
     }
 
     const result = await listDirectoryImpl(sandbox, '', 5)
@@ -74,12 +75,11 @@ describe('listDirectoryImpl', () => {
   })
 
   test('should list subdirectory contents', async () => {
-    await mkdir(join(testDir, 'subdir'), { recursive: true })
-    await writeFile(join(testDir, 'subdir', 'nested.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'subdir', 'nested.txt'), 'content')
 
     const result = await listDirectoryImpl(sandbox, 'subdir')
     expect(result.entries[0].name).toBe('nested.txt')
-    expect(result.entries[0].path).toBe('subdir/nested.txt')
+    expect(result.entries[0].path).toBe(join('subdir', 'nested.txt'))
   })
 })
 
@@ -96,8 +96,8 @@ describe('listDirectory', () => {
   })
 
   test('should list files in directory', async () => {
-    await writeFile(join(testDir, 'file1.txt'), 'content', 'utf-8')
-    await writeFile(join(testDir, 'file2.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'file1.txt'), 'content')
+    await write(join(testDir, 'file2.txt'), 'content')
 
     const result = await listDirectory(sandbox, '')
     expect(result.content[0].text).toContain('file1.txt')
@@ -106,7 +106,7 @@ describe('listDirectory', () => {
 
   test('should list directories first, then files', async () => {
     await mkdir(join(testDir, 'subdir'), { recursive: true })
-    await writeFile(join(testDir, 'file.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'file.txt'), 'content')
 
     const result = await listDirectory(sandbox, '')
     const lines = result.content[0].text.split('\n')
@@ -123,8 +123,8 @@ describe('listDirectory', () => {
   })
 
   test('should hide dotfiles', async () => {
-    await writeFile(join(testDir, '.hidden'), 'content', 'utf-8')
-    await writeFile(join(testDir, 'visible.txt'), 'content', 'utf-8')
+    await write(join(testDir, '.hidden'), 'content')
+    await write(join(testDir, 'visible.txt'), 'content')
 
     const result = await listDirectory(sandbox, '')
     expect(result.content[0].text).not.toContain('.hidden')
@@ -133,7 +133,7 @@ describe('listDirectory', () => {
 
   test('should limit number of results', async () => {
     for (let i = 0; i < 10; i++) {
-      await writeFile(join(testDir, `file${i}.txt`), 'content', 'utf-8')
+      await write(join(testDir, `file${i}.txt`), 'content')
     }
 
     const result = await listDirectory(sandbox, '', 5)
@@ -147,20 +147,19 @@ describe('listDirectory', () => {
   })
 
   test('should list subdirectory contents', async () => {
-    await mkdir(join(testDir, 'subdir'), { recursive: true })
-    await writeFile(join(testDir, 'subdir', 'nested.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'subdir', 'nested.txt'), 'content')
 
     const result = await listDirectory(sandbox, 'subdir')
     expect(result.content[0].text).toContain('nested.txt')
   })
 
   test('should throw error for non-existent directory', async () => {
-    await expect(listDirectory(sandbox, 'nonexistent')).rejects.toThrow('Directory not found')
+    expect(listDirectory(sandbox, 'nonexistent')).rejects.toThrow('Directory not found')
   })
 
   test('should throw error when path is a file', async () => {
-    await writeFile(join(testDir, 'file.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'file.txt'), 'content')
 
-    await expect(listDirectory(sandbox, 'file.txt')).rejects.toThrow('not a directory')
+    expect(listDirectory(sandbox, 'file.txt')).rejects.toThrow('not a directory')
   })
 })

@@ -1,5 +1,6 @@
 import { describe, test, expect, beforeEach, afterEach } from 'bun:test'
-import { mkdir, writeFile, rm } from 'fs/promises'
+import { mkdir, rm } from 'node:fs/promises'
+import { write } from 'bun'
 import { join } from 'path'
 import { PathSandbox } from '../../src/utils/path-sandbox'
 import { searchSource, searchSourceImpl } from '../../src/tools/search-source'
@@ -19,7 +20,7 @@ describe('searchSourceImpl', () => {
   })
 
   test('should return raw search results', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'hello world\nfoo bar', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'hello world\nfoo bar')
 
     const result = await searchSourceImpl(sandbox, 'hello')
     expect(typeof result).toBe('string')
@@ -27,14 +28,14 @@ describe('searchSourceImpl', () => {
   })
 
   test('should return empty string when no results found', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'foo bar', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'foo bar')
 
     const result = await searchSourceImpl(sandbox, 'xyz')
     expect(result).toBe('')
   })
 
   test('should support case-sensitive search', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'Hello\nhello', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'Hello\nhello')
 
     const result1 = await searchSourceImpl(sandbox, 'Hello', true)
     expect(result1).toContain('Hello')
@@ -44,8 +45,8 @@ describe('searchSourceImpl', () => {
   })
 
   test('should filter by file pattern', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'hello world', 'utf-8')
-    await writeFile(join(testDir, 'test.js'), 'hello world', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'hello world')
+    await write(join(testDir, 'test.js'), 'hello world')
 
     const result = await searchSourceImpl(sandbox, 'hello', false, '*.ts')
     expect(result).toContain('test.ts')
@@ -66,21 +67,21 @@ describe('searchSource', () => {
   })
 
   test('should find search results in files', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'hello world\nfoo bar', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'hello world\nfoo bar')
 
     const result = await searchSource(sandbox, 'hello')
     expect(result.content[0].text).toContain('hello')
   })
 
   test('should support case-insensitive search by default', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'Hello World', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'Hello World')
 
     const result = await searchSource(sandbox, 'hello')
     expect(result.content[0].text).toContain('Hello')
   })
 
   test('should support case-sensitive search', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'Hello\nhello', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'Hello\nhello')
 
     const result1 = await searchSource(sandbox, 'Hello', true)
     expect(result1.content[0].text).toContain('Hello')
@@ -90,8 +91,8 @@ describe('searchSource', () => {
   })
 
   test('should filter by file pattern', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'hello world', 'utf-8')
-    await writeFile(join(testDir, 'test.js'), 'hello world', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'hello world')
+    await write(join(testDir, 'test.js'), 'hello world')
 
     const result = await searchSource(sandbox, 'hello', false, '*.ts')
     expect(result.content[0].text).toContain('test.ts')
@@ -99,7 +100,7 @@ describe('searchSource', () => {
   })
 
   test('should return no results message when search finds nothing', async () => {
-    await writeFile(join(testDir, 'test.ts'), 'foo bar', 'utf-8')
+    await write(join(testDir, 'test.ts'), 'foo bar')
 
     const result = await searchSource(sandbox, 'xyz')
     expect(result.content[0].text).toBe('No results found. Try adjusting your search query or file pattern.')
@@ -107,7 +108,7 @@ describe('searchSource', () => {
 
   test('should truncate results when output size exceeds 100KB', async () => {
     const largeContent = 'x'.repeat(200 * 1024)
-    await writeFile(join(testDir, 'large.txt'), largeContent, 'utf-8')
+    await write(join(testDir, 'large.txt'), largeContent)
 
     const result = await searchSource(sandbox, 'x')
     expect(result.content[0].text).toContain('[TRUNCATED]')

@@ -1,5 +1,6 @@
 import { describe, test, expect, beforeEach, afterEach } from 'bun:test'
-import { mkdir, writeFile, rm } from 'fs/promises'
+import { mkdir, rm } from 'node:fs/promises'
+import { write } from 'bun'
 import { join } from 'path'
 import { PathSandbox } from '../../src/utils/path-sandbox'
 import { readFile, readFileImpl } from '../../src/tools/read-file'
@@ -20,7 +21,7 @@ describe('readFileImpl', () => {
 
   test('should return raw file content', async () => {
     const content = 'line1\nline2\nline3'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFileImpl(sandbox, 'test.txt', 0, 10)
     expect(result.content).toBe(content)
@@ -31,7 +32,7 @@ describe('readFileImpl', () => {
 
   test('should read file content from specific line', async () => {
     const content = 'line1\nline2\nline3\nline4\nline5'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFileImpl(sandbox, 'test.txt', 2, 2)
     expect(result.content).toContain('line3')
@@ -42,7 +43,7 @@ describe('readFileImpl', () => {
 
   test('should limit number of lines returned', async () => {
     const content = 'line1\nline2\nline3\nline4\nline5'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFileImpl(sandbox, 'test.txt', 0, 3)
     const lines = result.content.split('\n')
@@ -51,7 +52,7 @@ describe('readFileImpl', () => {
   })
 
   test('should handle empty files', async () => {
-    await writeFile(join(testDir, 'empty.txt'), '', 'utf-8')
+    await write(join(testDir, 'empty.txt'), '')
 
     const result = await readFileImpl(sandbox, 'empty.txt')
     expect(result.content).toBe('')
@@ -60,7 +61,7 @@ describe('readFileImpl', () => {
 
   test('should handle files with Windows line endings', async () => {
     const content = 'line1\r\nline2\r\nline3'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFileImpl(sandbox, 'test.txt')
     expect(result.content).toContain('line1')
@@ -83,7 +84,7 @@ describe('readFile', () => {
 
   test('should read file content from start', async () => {
     const content = 'line1\nline2\nline3'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFile(sandbox, 'test.txt', 0, 10)
     expect(result.content[0].text).toBe(content)
@@ -91,7 +92,7 @@ describe('readFile', () => {
 
   test('should read file content from specific line', async () => {
     const content = 'line1\nline2\nline3\nline4\nline5'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFile(sandbox, 'test.txt', 2, 2)
     expect(result.content[0].text).toContain('line3')
@@ -100,7 +101,7 @@ describe('readFile', () => {
 
   test('should limit number of lines returned', async () => {
     const content = 'line1\nline2\nline3\nline4\nline5'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFile(sandbox, 'test.txt', 0, 3)
     const lines = result.content[0].text.split('\n')
@@ -114,7 +115,7 @@ describe('readFile', () => {
 
   test('should add truncation message when file is not fully read', async () => {
     const content = 'line1\nline2\nline3\nline4\nline5'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFile(sandbox, 'test.txt', 0, 3)
     expect(result.content[0].text).toContain('[TRUNCATED]')
@@ -122,7 +123,7 @@ describe('readFile', () => {
 
   test('should return error when start line is out of bounds', async () => {
     const content = 'line1\nline2'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFile(sandbox, 'test.txt', 10, 10)
     expect(result.content[0].text).toContain('out of bounds')
@@ -133,13 +134,13 @@ describe('readFile', () => {
   })
 
   test('should throw error when path is a directory', async () => {
-    await writeFile(join(testDir, 'test.txt'), 'content', 'utf-8')
+    await write(join(testDir, 'test.txt'), 'content')
 
     await expect(readFile(sandbox, '')).rejects.toThrow()
   })
 
   test('should handle empty files', async () => {
-    await writeFile(join(testDir, 'empty.txt'), '', 'utf-8')
+    await write(join(testDir, 'empty.txt'), '')
 
     const result = await readFile(sandbox, 'empty.txt')
     expect(result.content[0].text).toBe('')
@@ -147,7 +148,7 @@ describe('readFile', () => {
 
   test('should handle files with Windows line endings', async () => {
     const content = 'line1\r\nline2\r\nline3'
-    await writeFile(join(testDir, 'test.txt'), content, 'utf-8')
+    await write(join(testDir, 'test.txt'), content)
 
     const result = await readFile(sandbox, 'test.txt')
     expect(result.content[0].text).toContain('line1')
