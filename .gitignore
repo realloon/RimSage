@@ -1,9 +1,8 @@
 node_modules/
-.env
-.claude
+.claude/
 
-assets/
 dist/
+
 tmp/
 
 .DS_Store
