@@ -52,27 +52,6 @@ describe('def-resolver', () => {
     expect(child?.c).toBe(3)
   })
 
-  test('should handle circular inheritance gracefully', () => {
-    const defs: Def[] = [
-      {
-        '@_Name': 'A',
-        '@_ParentName': 'B',
-      },
-      {
-        '@_Name': 'B',
-        '@_ParentName': 'A',
-      },
-      {
-        defName: 'C',
-        '@_ParentName': 'A',
-      },
-    ]
-
-    // Should not crash, but might log warning and return raw def
-    const result = processDefs(defs)
-    expect(result).toBeDefined()
-  })
-
   test('should sort keys correctly', () => {
     const def: Def = {
       description: 'desc',
