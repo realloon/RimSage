@@ -30,6 +30,19 @@ claude mcp add --transport stdio rimworld-source -- bun run /path/to/this/repo
 gemini mcp add rimworld-source bun run /path/to/this/repo
 ```
 
+`mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "rimworld-source": {
+      "command": "bun",
+      "args": ["run", "/path/to/this/repo"]
+    }
+  }
+}
+```
+
 **Replace** `/path/to/this/repo` with the actual path to this repository on your system.
 
 ## Available Tools
