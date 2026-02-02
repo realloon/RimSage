@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-该文件为 AGENTS 在与本仓库代码协作时提供指导。
+该文件为 Agent 在与本仓库代码协作时提供指导。
 
 ## 项目简介
 
@@ -10,7 +10,6 @@ RimSage 是一个 MCP Server，为 Agent 提供 RimWorld 源码检索工具。
 
 - Bun
 - Ripgrep
-- bun:sqlite
 
 ## 项目结构
 
