@@ -31,6 +31,8 @@ bun run src/scripts/import-csharp /path/to/decompiled/source/root/path
 bun run build
 ```
 
+You need local RimWorld files and a decompiled C# project.
+
 3. Add this MCP server:
 
 ```sh
@@ -41,7 +43,7 @@ claude mcp add --transport stdio rimworld-source -- bun run /path/to/this/repo
 gemini mcp add rimworld-source bun run /path/to/this/repo
 ```
 
-`mcp.json`
+Most Agent clients support `mcp.json` configuration:
 
 ```json
 {
