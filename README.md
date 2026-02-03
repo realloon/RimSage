@@ -17,7 +17,7 @@ The server provides these tools:
 
 ## Get started
 
-1. Install dependencies:
+1. Install dependencies
 
 ```sh
 bun install
@@ -33,7 +33,7 @@ bun run build
 
 You'll need local RimWorld files and a decompiled C# project, which is allowed under the [RimWorld EULA](https://rimworldgame.com/eula).
 
-3. Add this MCP server:
+3. Add this MCP server
 
 ```sh
 # Claude Code
