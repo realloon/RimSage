@@ -31,7 +31,7 @@ bun run src/scripts/import-csharp /path/to/decompiled/source/root/path
 bun run build
 ```
 
-You need local RimWorld files and a decompiled C# project.
+You'll need local RimWorld files and a decompiled C# project, which is allowed under the [RimWorld EULA](https://rimworldgame.com/eula).
 
 3. Add this MCP server:
 
