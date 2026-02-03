@@ -4,6 +4,17 @@
 
 An MCP server that provides RimWorld source code search and browsing capabilities.
 
+## Available Tools
+
+The server provides these tools:
+
+- `search_rimworld_source` - Search through RimWorld source code
+- `read_rimworld_file` - Read specific files with pagination
+- `list_directory` - List directory contents with pagination
+- `get_def_details` - Get resolved RimWorld Def data by defName
+- `search_defs` - Search through RimWorld Defs
+- `read_csharp_type` - Read the C# class/struct/interface definition
+
 ## Get started
 
 1. Install dependencies:
@@ -45,17 +56,6 @@ gemini mcp add rimworld-source bun run /path/to/this/repo
 
 **Replace** `/path/to/this/repo` with the actual path to this repository on your system.
 
-## Available Tools
-
-Once configured, the server provides four tools:
-
-- `search_rimworld_source` - Search through RimWorld source code
-- `read_rimworld_file` - Read specific files with pagination
-- `list_directory` - List directory contents with pagination
-- `get_def_details` - Get resolved RimWorld Def data by defName
-- `search_defs` - Search through RimWorld Defs
-- `read_csharp_type` - Read the C# class/struct/interface definition
-
 ## Requirements
 
 - [Bun runtime](https://bun.com/)
@@ -66,4 +66,3 @@ Once configured, the server provides four tools:
 ```sh
 bun run start
 ```
-
