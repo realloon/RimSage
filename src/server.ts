@@ -1,8 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
 import { PathSandbox } from './utils/path-sandbox'
-import { closeDb } from './utils/db'
 import {
   searchSource,
   readFile,
@@ -14,7 +12,7 @@ import {
 
 const sandbox = new PathSandbox('dist/assets')
 
-const server = new McpServer({
+export const server = new McpServer({
   name: 'rimworld-source',
   version: '0.7.0',
 })
@@ -37,7 +35,7 @@ server.registerTool(
     },
   },
   async ({ query, file_pattern, case_sensitive }) =>
-    searchSource(sandbox, query, case_sensitive, file_pattern)
+    searchSource(sandbox, query, case_sensitive, file_pattern),
 )
 
 // tool: read file
@@ -49,7 +47,7 @@ server.registerTool(
       relative_path: z
         .string()
         .describe(
-          'Path (e.g. `Source/RimWorld/AbilityDef.cs`, `Defs/Core/AbilityDefs/AbilityDefs.xml`).'
+          'Path (e.g. `Source/RimWorld/AbilityDef.cs`, `Defs/Core/AbilityDefs/AbilityDefs.xml`).',
         ),
       start_line: z
         .number()
@@ -64,7 +62,7 @@ server.registerTool(
     },
   },
   async ({ relative_path, start_line, line_count }) =>
-    await readFile(sandbox, relative_path, start_line, line_count)
+    await readFile(sandbox, relative_path, start_line, line_count),
 )
 
 // tool: list dir
@@ -81,7 +79,7 @@ server.registerTool(
     },
   },
   async ({ relative_path, limit }) =>
-    listDirectory(sandbox, relative_path, limit)
+    listDirectory(sandbox, relative_path, limit),
 )
 
 // tool：get def details
@@ -98,7 +96,7 @@ server.registerTool(
         .describe('Type filter (e.g. `ThingDef`, `JobDef`).'),
     },
   },
-  async ({ defName, defType }) => getDefDetails(defName, defType)
+  async ({ defName, defType }) => getDefDetails(defName, defType),
 )
 
 // tool: search defs
@@ -115,7 +113,7 @@ server.registerTool(
       limit: z.number().default(20).describe('Max results to return.'),
     },
   },
-  async ({ query, defType, limit }) => searchDefs(query, defType, limit)
+  async ({ query, defType, limit }) => searchDefs(query, defType, limit),
 )
 
 // tool: read csharp type
@@ -129,28 +127,5 @@ server.registerTool(
         .describe('Exact type name (e.g. "WeaponTraitDef", "JobDriver").'),
     },
   },
-  async ({ typeName }) => await readCsharpType(typeName)
+  async ({ typeName }) => await readCsharpType(typeName),
 )
-
-async function main() {
-  const transport = new StdioServerTransport()
-  await server.connect(transport)
-
-  console.error('\x1b[32m%s\x1b[0m', 'RimWorld Source MCP running...')
-
-  const cleanup = () => {
-    console.error('Shutting down...')
-    closeDb()
-    process.exit(0)
-  }
-
-  process.on('SIGINT', cleanup)
-  process.on('SIGTERM', cleanup)
-}
-
-try {
-  main()
-} catch (error) {
-  console.error('Fatal error:', error)
-  process.exit(1)
-}
