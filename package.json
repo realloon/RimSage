@@ -1,10 +1,11 @@
 {
-  "name": "rimcp",
-  "version": "0.7.0",
-  "main": "src/main.ts",
+  "name": "rim-sage",
+  "version": "0.8.0",
+  "main": "src/stdio.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run src/main.ts",
+    "start": "bun run src/stdio.ts",
+    "start:http": "bun run src/http.ts",
     "clean": "bun run src/scripts/clean-db.ts",
     "index:defs": "bun run src/scripts/index-defs.ts",
     "index:csharp": "bun run src/scripts/index-csharp.ts",
