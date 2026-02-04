@@ -1,0 +1,44 @@
+import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
+import { closeDb } from './utils/db'
+import { server } from './server'
+
+const transport = new WebStandardStreamableHTTPServerTransport()
+
+await server.connect(transport)
+
+Bun.serve({
+  port: 3000,
+  fetch: req => {
+    const url = new URL(req.url)
+
+    // 健康检查端点
+    if (url.pathname === '/health') {
+      return new Response(JSON.stringify({ status: 'ok' }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      })
+    }
+
+    // MCP 端点
+    if (url.pathname === '/mcp') {
+      return transport.handleRequest(req)
+    }
+
+    // 其他路径返回 404
+    return new Response('Not Found', { status: 404 })
+  },
+})
+
+console.error(
+  '\x1b[32m%s\x1b[0m',
+  'RimWorld Source MCP HTTP server listening on port 3000',
+)
+
+const cleanup = () => {
+  console.error('Shutting down...')
+  closeDb()
+  process.exit(0)
+}
+
+process.on('SIGINT', cleanup)
+process.on('SIGTERM', cleanup)
