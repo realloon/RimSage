@@ -11,7 +11,6 @@ Bun.serve({
   fetch: req => {
     const url = new URL(req.url)
 
-    // 健康检查端点
     if (url.pathname === '/health') {
       return new Response(JSON.stringify({ status: 'ok' }), {
         status: 200,
@@ -19,12 +18,10 @@ Bun.serve({
       })
     }
 
-    // MCP 端点
     if (url.pathname === '/mcp') {
       return transport.handleRequest(req)
     }
 
-    // 其他路径返回 404
     return new Response('Not Found', { status: 404 })
   },
 })
