@@ -1,4 +1,4 @@
-# RimWorld Source MCP Server
+# RimSage — RimWorld Source MCP Server
 
 [![bun](https://img.shields.io/badge/Bun-%23000000.svg?style=flat&logo=bun&logoColor=white)](https://bun.com/) [![ripgrep](https://img.shields.io/badge/ripgrep-%23000000.svg?style=flat&logo=rust&logoColor=white)](https://github.com/BurntSushi/ripgrep)
 
@@ -15,7 +15,33 @@ The server provides these tools:
 - `search_defs` - Search through RimWorld Defs
 - `read_csharp_type` - Read the C# class/struct/interface definition
 
-## Get started
+## Quick Start
+
+The easiest way to use RimSage is through the online service:
+
+```sh
+# Claude Code
+claude mcp add rimworld-source http://106.55.255.227:3000/mcp
+
+# Gemini CLI
+gemini mcp add rimworld-source http://106.55.255.227:3000/mcp
+```
+
+Most Agent clients support `mcp.json` configuration:
+
+```json
+{
+  "mcpServers": {
+    "rimworld-source": {
+      "url": "http://106.55.255.227:3000/mcp",
+    }
+  }
+}
+```
+
+## Self-Hosted
+
+RimSage also supports stdio transport for local deployment.
 
 1. Install dependencies
 
@@ -66,5 +92,6 @@ Most Agent clients support `mcp.json` configuration:
 ## Development
 
 ```sh
-bun run start
+bun run start # stdio
+bun run start:http # Streamable HTTP
 ```

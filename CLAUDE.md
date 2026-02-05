@@ -24,6 +24,9 @@ src/
 │   ├── def-resolver.ts
 │   └── xml-utils.ts
 └── scripts/             # 用户脚本
+└── server               # 注册 Tools
+└── stdio                # stdio transport
+└── http                 # Streamable HTTP transport
 test/
 ├── tools/
 └── utils/
