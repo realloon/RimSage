@@ -8,3 +8,6 @@ tmp/
 .DS_Store
 
 .env
+
+AGENTS.md
+CLAUDE.md
