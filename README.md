@@ -8,11 +8,11 @@ An MCP server that provides RimWorld source code search and browsing capabilitie
 
 The server provides these tools:
 
-- `search_rimworld_source` - Search through RimWorld source code
-- `read_rimworld_file` - Read specific files with pagination
-- `list_directory` - List directory contents with pagination
-- `get_def_details` - Get resolved RimWorld Def data by defName
+- `search_rimworld_source` - Search RimWorld source code
+- `read_rimworld_file` - Read specific files
+- `list_directory` - List directory contents
 - `search_defs` - Search through RimWorld Defs
+- `get_def_details` - Get resolved RimWorld Def data
 - `read_csharp_type` - Read the C# class/struct/interface definition
 
 ## Quick Start
@@ -33,7 +33,7 @@ Most Agent clients support `mcp.json` configuration:
 {
   "mcpServers": {
     "rimworld-source": {
-      "url": "http://106.55.255.227:3000/mcp",
+      "url": "http://rimsage.com:3000/mcp",
     }
   }
 }
