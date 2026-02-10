@@ -15,7 +15,9 @@ RimSage 是一个 MCP Server，为 Agent 提供 RimWorld 源码检索工具。
 
 ```
 src/
-├── main.ts
+├── server               # 注册 Tools
+├── stdio                # stdio transport
+├── http                 # Streamable HTTP transport
 ├── tools/               # MCP Tools
 ├── utils/               # 共享模块
 │   ├── path-sandbox.ts  # 安全沙箱
@@ -24,9 +26,6 @@ src/
 │   ├── def-resolver.ts
 │   └── xml-utils.ts
 └── scripts/             # 用户脚本
-└── server               # 注册 Tools
-└── stdio                # stdio transport
-└── http                 # Streamable HTTP transport
 test/
 ├── tools/
 └── utils/
@@ -34,10 +33,9 @@ test/
 
 ## 添加新工具
 
-1. 在 `src/tools/` 中实现函数
-2. 若涉及相关功能，应使用 path-sandbox、db 或 env 模块
+1. 在 `src/tools/` 中实现函数，若涉及相关功能，应使用 path-sandbox、db 或 env 模块
 3. 在 `src/tools/index.ts` 中导出
-4. 在 `src/main.ts` 中使用 `server.registerTool()` 注册
+4. 在 `src/server.ts` 中注册
 5. 在 `test/tools/` 中编写测试
 
 ## 测试
