@@ -129,3 +129,39 @@ server.registerTool(
   },
   async ({ typeName }) => await readCsharpType(typeName),
 )
+
+// resource: manifest (minimal resources support for clients that probe resources/*)
+server.registerResource(
+  'manifest',
+  'rimsage://manifest',
+  {
+    title: 'RimSage Manifest',
+    description: 'Server metadata and available capabilities.',
+    mimeType: 'application/json',
+  },
+  async () => ({
+    contents: [
+      {
+        uri: 'rimsage://manifest',
+        mimeType: 'application/json',
+        text: JSON.stringify(
+          {
+            name: 'rimworld-source',
+            version: '0.9.0',
+            resources: ['rimsage://manifest'],
+            tools: [
+              'search_rimworld_source',
+              'read_rimworld_file',
+              'list_directory',
+              'get_def_details',
+              'search_defs',
+              'read_csharp_type',
+            ],
+          },
+          null,
+          2,
+        ),
+      },
+    ],
+  }),
+)
