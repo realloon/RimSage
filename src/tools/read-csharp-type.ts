@@ -78,7 +78,7 @@ export async function readCsharpType(typeName: string) {
       content: [
         {
           type: 'text' as const,
-          text: `Type '${typeName}' not found in index. Please check the name or try 'search_csharp_types' (if available).`,
+          text: `Type '${typeName}' not found in index. Please check the name.`,
         },
       ],
     }
