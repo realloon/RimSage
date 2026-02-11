@@ -21,12 +21,12 @@ The easiest way to use RimSage is through the online service:
 
 ```sh
 # Claude Code
-claude mcp add rimworld-source https://mcp.rimsage.com/mcp
+claude mcp add rimworld-source --transport http https://mcp.rimsage.com/mcp
 
 # Gemini CLI
-gemini mcp add rimworld-source https://mcp.rimsage.com/mcp
+gemini mcp add rimworld-source --transport http https://mcp.rimsage.com/mcp
 ```
-
+ 
 Most Agent clients support `mcp.json` configuration:
 
 ```json
