@@ -10,11 +10,12 @@ import {
   readCsharpType,
 } from './tools'
 
+const version = '0.9.0'
 const sandbox = new PathSandbox('dist/assets')
 
 export const server = new McpServer({
   name: 'rimworld-source',
-  version: '0.8.0',
+  version,
 })
 
 // tool: search
@@ -147,7 +148,7 @@ server.registerResource(
         text: JSON.stringify(
           {
             name: 'rimworld-source',
-            version: '0.9.0',
+            version,
             resources: ['rimsage://manifest'],
             tools: [
               'search_rimworld_source',
