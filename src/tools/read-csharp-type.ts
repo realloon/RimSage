@@ -23,12 +23,15 @@ export interface CSharpTypeResult {
 /**
  * Internal implementation: Query and read C# type definitions
  */
-export async function readCsharpTypeImpl(typeName: string): Promise<CSharpTypeResult[]> {
+export async function readCsharpTypeImpl(
+  typeName: string,
+): Promise<CSharpTypeResult[]> {
   const db = getDb()
   const rows = db
-    .query<IndexRow, any>(
-      'SELECT filePath, startLine, typeKind FROM csharp_index WHERE typeName = $name'
-    )
+    .query<
+      IndexRow,
+      any
+    >('SELECT filePath, startLine, typeKind FROM csharp_index WHERE typeName = $name')
     .all({ $name: typeName })
 
   const results: CSharpTypeResult[] = []
@@ -74,11 +77,19 @@ export async function readCsharpType(typeName: string) {
   const results = await readCsharpTypeImpl(typeName)
 
   if (results.length === 0) {
+    const health = getCsharpIndexHealth()
+    let extraHint = ''
+
+    if (!health.available) {
+      extraHint =
+        " Note: C# index is unavailable or empty. Run 'bun run index:csharp' to rebuild it."
+    }
+
     return {
       content: [
         {
           type: 'text' as const,
-          text: `Type '${typeName}' not found in index. Please check the name.`,
+          text: `Type '${typeName}' not found in index. Please check the name.${extraHint}`,
         },
       ],
     }
@@ -176,6 +187,32 @@ function generateSignature(code: string): string {
   }
 
   return output.join('\n')
+}
+
+function getCsharpIndexHealth() {
+  const db = getDb()
+
+  const tableRow = db
+    .query<
+      { name: string },
+      any
+    >("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'csharp_index'")
+    .get()
+
+  if (!tableRow) {
+    return { available: false }
+  }
+
+  const countRow = db
+    .query<
+      { rowCount: number },
+      any
+    >('SELECT COUNT(*) AS rowCount FROM csharp_index')
+    .get()
+
+  return {
+    available: (countRow?.rowCount ?? 0) > 0,
+  }
 }
 
 // #endregion
