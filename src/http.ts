@@ -10,15 +10,16 @@ Bun.serve({
   port: 3000,
   fetch: req => {
     const url = new URL(req.url)
+    const pathname = normalizePath(url.pathname)
 
-    if (url.pathname === '/health') {
+    if (pathname === '/health') {
       return new Response(JSON.stringify({ status: 'ok' }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       })
     }
 
-    if (url.pathname === '/mcp') {
+    if (pathname === '/mcp') {
       return transport.handleRequest(req)
     }
 
@@ -39,3 +40,8 @@ const cleanup = () => {
 
 process.on('SIGINT', cleanup)
 process.on('SIGTERM', cleanup)
+
+function normalizePath(pathname: string) {
+  if (!pathname.endsWith('/')) return pathname
+  return pathname.slice(0, -1) || '/'
+}
