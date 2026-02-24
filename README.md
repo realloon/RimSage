@@ -23,7 +23,7 @@ The easiest way to use RimSage is through the online service:
 https://mcp.rimsage.com/mcp
 ```
 
-You can find the integration methods for different Agent clients in the [wiki](./wiki).
+You can find the integration methods for different Agent clients in the [wiki](https://github.com/realloon/RimSage/wiki).
  
 Most clients support `mcp.json` configuration:
 
