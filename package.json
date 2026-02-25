@@ -12,11 +12,11 @@
     "build": "bun run clean && bun run index:defs && bun run index:csharp"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.3",
-    "fast-xml-parser": "^5.3.4",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "fast-xml-parser": "^5.3.8",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@types/bun": "^1.3.8"
+    "@types/bun": "^1.3.9"
   }
 }

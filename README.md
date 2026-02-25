@@ -30,7 +30,7 @@ Most clients support `mcp.json` configuration:
 ```json
 {
   "mcpServers": {
-    "rimworld-source": {
+    "rimsage": {
       "url": "https://mcp.rimsage.com/mcp",
     }
   }
@@ -66,7 +66,7 @@ Most Agent clients support `mcp.json` configuration:
 ```json
 {
   "mcpServers": {
-    "rimworld-source": {
+    "rimsage": {
       "command": "bun",
       "args": ["run", "/path/to/this/repo"]
     }
