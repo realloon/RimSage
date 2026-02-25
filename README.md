@@ -59,13 +59,7 @@ You'll need local RimWorld files and a decompiled C# project, which is allowed u
 
 3. Add this MCP server
 
-```sh
-# Claude Code
-claude mcp add --transport stdio rimworld-source -- bun run /path/to/this/repo
-
-# Gemini CLI
-gemini mcp add rimworld-source bun run /path/to/this/repo
-```
+You can find the integration methods for different Agent clients in the [wiki](https://github.com/realloon/RimSage/wiki).
 
 Most Agent clients support `mcp.json` configuration:
 
