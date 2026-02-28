@@ -1,17 +1,18 @@
-import { join } from 'path'
+import { resolve, sep } from 'path'
 import { root } from './env'
 
 export class PathSandbox {
   readonly #basePath: string
 
   constructor(basePath: string) {
-    this.#basePath = join(root, basePath)
+    this.#basePath = resolve(root, basePath)
   }
 
   validateAndResolve(relativePath: string): string {
-    const fullPath = join(this.#basePath, relativePath)
+    const fullPath = resolve(this.#basePath, relativePath)
+    const allowedPrefix = `${this.#basePath}${sep}`
 
-    if (!fullPath.startsWith(this.#basePath)) {
+    if (fullPath !== this.#basePath && !fullPath.startsWith(allowedPrefix)) {
       throw new Error(
         `Path traversal detected: "${relativePath}" attempts to escape base directory`
       )

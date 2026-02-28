@@ -6,7 +6,6 @@ describe('xml-utils', () => {
     test('should parse XML into object', () => {
       const xml = '<Defs><ThingDef><a>1</a></ThingDef></Defs>'
       const result = parser.parse(xml)
-      // Under our isArray rule, children of Defs are always arrays
       expect(result.Defs.ThingDef[0].a).toBe(1)
     })
 
@@ -17,8 +16,6 @@ describe('xml-utils', () => {
         </Defs>
       `
       const result = parser.parse(xml)
-      // isArray rule: parts.length === 2 && parts.at(0) === 'Defs'
-      // This means Defs.ThingDef should be an array
       expect(Array.isArray(result.Defs.ThingDef)).toBe(true)
       expect(result.Defs.ThingDef[0].li[0]).toBe(1)
     })
@@ -32,18 +29,15 @@ describe('xml-utils', () => {
   })
 
   describe('builder', () => {
-    test('should build XML from object', () => {
+    test('should preserve structure in build-parse round trip', () => {
       const obj = {
         Defs: {
-          ThingDef: {
-            defName: 'Test',
-          },
+          ThingDef: [{ defName: 'Test', li: ['a', 'b'] }],
         },
       }
-      const xml = builder.build(obj)
-      expect(xml).toContain('<Defs>')
-      expect(xml).toContain('<ThingDef>')
-      expect(xml).toContain('<defName>Test</defName>')
+
+      const parsed = parser.parse(builder.build(obj))
+      expect(parsed).toEqual(obj)
     })
   })
 })

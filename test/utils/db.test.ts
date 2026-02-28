@@ -23,9 +23,12 @@ describe('db', () => {
   test('closeDb should clear the singleton instance', () => {
     const db1 = getDb()
     closeDb()
-    // We can't easily check internal state, but calling getDb again should create a new one
-    // or at least not fail.
     const db2 = getDb()
     expect(db1).not.toBe(db2)
+  })
+
+  test('closeDb should be idempotent', () => {
+    closeDb()
+    expect(() => closeDb()).not.toThrow()
   })
 })

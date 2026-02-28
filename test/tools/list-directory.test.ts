@@ -5,161 +5,88 @@ import { join } from 'path'
 import { PathSandbox } from '../../src/utils/path-sandbox'
 import { listDirectory, listDirectoryImpl } from '../../src/tools/list-directory'
 
-const testDir = join(process.cwd(), 'test-temp')
+const testDir = join(process.cwd(), 'test-temp-list-directory')
 
-describe('listDirectoryImpl', () => {
+describe('list-directory', () => {
   let sandbox: PathSandbox
 
   beforeEach(async () => {
     await mkdir(testDir, { recursive: true })
-    sandbox = new PathSandbox('test-temp')
+    sandbox = new PathSandbox('test-temp-list-directory')
   })
 
   afterEach(async () => {
     await rm(testDir, { recursive: true, force: true })
   })
 
-  test('should return directory entries', async () => {
-    await write(join(testDir, 'file1.txt'), 'content')
-    await write(join(testDir, 'file2.txt'), 'content')
+  describe('listDirectoryImpl', () => {
+    test('sorts directories first, hides dotfiles, and builds relative paths', async () => {
+      await mkdir(join(testDir, 'subdir'), { recursive: true })
+      await write(join(testDir, 'a.txt'), 'content')
+      await write(join(testDir, '.hidden'), 'hidden')
+      await write(join(testDir, 'subdir', 'nested.txt'), 'nested')
 
-    const result = await listDirectoryImpl(sandbox, '')
-    expect(result.entries).toHaveLength(2)
-    expect(result.total).toBe(2)
-    expect(result.entries[0].name).toBe('file1.txt')
-    expect(result.entries[0].type).toBe('file')
+      const rootResult = await listDirectoryImpl(sandbox, '')
+      expect(rootResult.total).toBe(2)
+      expect(rootResult.entries.map(e => `${e.type}:${e.name}`)).toEqual([
+        'directory:subdir',
+        'file:a.txt',
+      ])
+
+      const subdirResult = await listDirectoryImpl(sandbox, 'subdir')
+      expect(subdirResult.entries[0]).toEqual({
+        name: 'nested.txt',
+        type: 'file',
+        path: join('subdir', 'nested.txt'),
+      })
+    })
+
+    test('applies limit without losing total count', async () => {
+      for (let i = 0; i < 5; i++) {
+        await write(join(testDir, `file${i}.txt`), 'content')
+      }
+
+      const result = await listDirectoryImpl(sandbox, '', 2)
+      expect(result.entries).toHaveLength(2)
+      expect(result.total).toBe(5)
+    })
+
+    test('returns empty result for empty directory', async () => {
+      const result = await listDirectoryImpl(sandbox, '')
+      expect(result).toEqual({ entries: [], total: 0 })
+    })
   })
 
-  test('should list directories first, then files', async () => {
-    await mkdir(join(testDir, 'subdir'), { recursive: true })
-    await write(join(testDir, 'file.txt'), 'content')
+  describe('listDirectory', () => {
+    test('formats directories with trailing slash', async () => {
+      await mkdir(join(testDir, 'subdir'), { recursive: true })
+      await write(join(testDir, 'a.txt'), 'content')
 
-    const result = await listDirectoryImpl(sandbox, '')
-    expect(result.entries[0].type).toBe('directory')
-    expect(result.entries[0].name).toBe('subdir')
-    expect(result.entries[1].type).toBe('file')
-    expect(result.entries[1].name).toBe('file.txt')
-  })
+      const result = await listDirectory(sandbox, '')
+      expect(result.content[0].text).toBe('subdir/\na.txt')
+    })
 
-  test('should mark directories with correct type', async () => {
-    await mkdir(join(testDir, 'subdir'), { recursive: true })
+    test('appends truncation hint when limited', async () => {
+      for (let i = 0; i < 3; i++) {
+        await write(join(testDir, `file${i}.txt`), 'content')
+      }
 
-    const result = await listDirectoryImpl(sandbox, '')
-    expect(result.entries[0].type).toBe('directory')
-    expect(result.entries[0].name).toBe('subdir')
-  })
+      const result = await listDirectory(sandbox, '', 1)
+      expect(result.content[0].text).toContain('[TRUNCATED] Showing 1/3 items.')
+    })
 
-  test('should hide dotfiles', async () => {
-    await write(join(testDir, '.hidden'), 'content')
-    await write(join(testDir, 'visible.txt'), 'content')
+    test('maps missing directory to friendly error', async () => {
+      await expect(listDirectory(sandbox, 'missing')).rejects.toThrow(
+        'Directory not found'
+      )
+    })
 
-    const result = await listDirectoryImpl(sandbox, '')
-    expect(result.entries.length).toBe(1)
-    expect(result.entries[0].name).toBe('visible.txt')
-  })
+    test('maps file path to not-a-directory error', async () => {
+      await write(join(testDir, 'file.txt'), 'content')
 
-  test('should limit number of results', async () => {
-    for (let i = 0; i < 10; i++) {
-      await write(join(testDir, `file${i}.txt`), 'content')
-    }
-
-    const result = await listDirectoryImpl(sandbox, '', 5)
-    expect(result.entries).toHaveLength(5)
-    expect(result.total).toBe(10)
-  })
-
-  test('should return empty array for empty directory', async () => {
-    const result = await listDirectoryImpl(sandbox, '')
-    expect(result.entries).toEqual([])
-    expect(result.total).toBe(0)
-  })
-
-  test('should list subdirectory contents', async () => {
-    await write(join(testDir, 'subdir', 'nested.txt'), 'content')
-
-    const result = await listDirectoryImpl(sandbox, 'subdir')
-    expect(result.entries[0].name).toBe('nested.txt')
-    expect(result.entries[0].path).toBe(join('subdir', 'nested.txt'))
-  })
-})
-
-describe('listDirectory', () => {
-  let sandbox: PathSandbox
-
-  beforeEach(async () => {
-    await mkdir(testDir, { recursive: true })
-    sandbox = new PathSandbox('test-temp')
-  })
-
-  afterEach(async () => {
-    await rm(testDir, { recursive: true, force: true })
-  })
-
-  test('should list files in directory', async () => {
-    await write(join(testDir, 'file1.txt'), 'content')
-    await write(join(testDir, 'file2.txt'), 'content')
-
-    const result = await listDirectory(sandbox, '')
-    expect(result.content[0].text).toContain('file1.txt')
-    expect(result.content[0].text).toContain('file2.txt')
-  })
-
-  test('should list directories first, then files', async () => {
-    await mkdir(join(testDir, 'subdir'), { recursive: true })
-    await write(join(testDir, 'file.txt'), 'content')
-
-    const result = await listDirectory(sandbox, '')
-    const lines = result.content[0].text.split('\n')
-    const subdirIndex = lines.findIndex(l => l.includes('subdir'))
-    const fileIndex = lines.findIndex(l => l.includes('file.txt'))
-    expect(subdirIndex).toBeLessThan(fileIndex)
-  })
-
-  test('should mark directories with trailing slash', async () => {
-    await mkdir(join(testDir, 'subdir'), { recursive: true })
-
-    const result = await listDirectory(sandbox, '')
-    expect(result.content[0].text).toContain('subdir/')
-  })
-
-  test('should hide dotfiles', async () => {
-    await write(join(testDir, '.hidden'), 'content')
-    await write(join(testDir, 'visible.txt'), 'content')
-
-    const result = await listDirectory(sandbox, '')
-    expect(result.content[0].text).not.toContain('.hidden')
-    expect(result.content[0].text).toContain('visible.txt')
-  })
-
-  test('should limit number of results', async () => {
-    for (let i = 0; i < 10; i++) {
-      await write(join(testDir, `file${i}.txt`), 'content')
-    }
-
-    const result = await listDirectory(sandbox, '', 5)
-    expect(result.content[0].text).toContain('[TRUNCATED]')
-    expect(result.content[0].text).toContain('Showing 5/10')
-  })
-
-  test('should return empty message for empty directory', async () => {
-    const result = await listDirectory(sandbox, '')
-    expect(result.content[0].text).toContain('Directory is empty')
-  })
-
-  test('should list subdirectory contents', async () => {
-    await write(join(testDir, 'subdir', 'nested.txt'), 'content')
-
-    const result = await listDirectory(sandbox, 'subdir')
-    expect(result.content[0].text).toContain('nested.txt')
-  })
-
-  test('should throw error for non-existent directory', async () => {
-    expect(listDirectory(sandbox, 'nonexistent')).rejects.toThrow('Directory not found')
-  })
-
-  test('should throw error when path is a file', async () => {
-    await write(join(testDir, 'file.txt'), 'content')
-
-    expect(listDirectory(sandbox, 'file.txt')).rejects.toThrow('not a directory')
+      await expect(listDirectory(sandbox, 'file.txt')).rejects.toThrow(
+        'Path is not a directory'
+      )
+    })
   })
 })

@@ -1,6 +1,6 @@
 import { expect, test, describe } from 'bun:test'
 import { PathSandbox } from '../../src/utils/path-sandbox'
-import { join, normalize } from 'path'
+import { join } from 'path'
 import { root } from '../../src/utils/env'
 
 describe('PathSandbox', () => {
@@ -18,15 +18,15 @@ describe('PathSandbox', () => {
     }).toThrow('Path traversal detected')
   })
 
-  test('should throw error for complex path traversal', () => {
+  test('should throw error for sibling prefix bypass', () => {
     expect(() => {
-      sandbox.validateAndResolve('Defs/../../../outside.txt')
+      sandbox.validateAndResolve('../test-assets-evil/outside.txt')
     }).toThrow('Path traversal detected')
   })
 
-  test('should handle nested valid paths', () => {
-    const nested = 'Sub/Folder/File.cs'
-    const resolved = sandbox.validateAndResolve(nested)
-    expect(resolved).toBe(join(root, 'test-assets', nested))
+  test('should throw error for absolute path', () => {
+    expect(() => {
+      sandbox.validateAndResolve('/etc/passwd')
+    }).toThrow('Path traversal detected')
   })
 })
