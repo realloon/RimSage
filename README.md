@@ -31,7 +31,7 @@ Most clients support `mcp.json` configuration:
 {
   "mcpServers": {
     "rimsage": {
-      "url": "https://mcp.rimsage.com/mcp",
+      "url": "https://mcp.rimsage.com/mcp"
     }
   }
 }
