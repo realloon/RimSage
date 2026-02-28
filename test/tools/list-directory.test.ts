@@ -55,6 +55,7 @@ describe('list-directory', () => {
       const result = await listDirectoryImpl(sandbox, '')
       expect(result).toEqual({ entries: [], total: 0 })
     })
+
   })
 
   describe('listDirectory', () => {
@@ -86,6 +87,12 @@ describe('list-directory', () => {
 
       await expect(listDirectory(sandbox, 'file.txt')).rejects.toThrow(
         'Path is not a directory'
+      )
+    })
+
+    test('propagates sandbox traversal errors', async () => {
+      await expect(listDirectory(sandbox, '../outside')).rejects.toThrow(
+        'Path traversal detected'
       )
     })
   })

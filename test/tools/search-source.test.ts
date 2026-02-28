@@ -49,6 +49,16 @@ describe('search-source', () => {
   })
 
   describe('searchSource', () => {
+    test('returns short search output without truncation', async () => {
+      await write(join(testDir, 'short.txt'), 'alpha\nbeta')
+
+      const raw = await searchSourceImpl(sandbox, 'alpha')
+      const result = await searchSource(sandbox, 'alpha')
+
+      expect(result.content[0].text).toBe(raw)
+      expect(result.content[0].text).not.toContain('[TRUNCATED]')
+    })
+
     test('returns no-results guidance message', async () => {
       await write(join(testDir, 'test.ts'), 'foo bar')
 
@@ -75,6 +85,11 @@ describe('search-source', () => {
       expect(result.content[0].text).toContain(
         '[TRUNCATED] Output size exceeded 100KB.'
       )
+    })
+
+    test('propagates rg errors for invalid regex', async () => {
+      await write(join(testDir, 'test.ts'), 'hello')
+      await expect(searchSource(sandbox, '[abc')).rejects.toThrow()
     })
   })
 })

@@ -25,6 +25,7 @@ describe('search-defs', () => {
       const result = searchDefsImpl('NonExistentDefNameThatDoesNotExist12345')
       expect(result).toEqual({ results: [], total: 0 })
     })
+
   })
 
   describe('searchDefs', () => {

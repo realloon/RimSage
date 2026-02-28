@@ -73,7 +73,10 @@ function registerToolsAndResources(server: McpServer) {
           .string()
           .default('')
           .describe('Path (e.g. `Source/Verse`). Empty for root.'),
-        limit: z.number().default(100).describe('Max items to return.'),
+        limit: z
+          .number()
+          .default(100)
+          .describe('Max items to return.'),
       },
     },
     async ({ relative_path, limit }) =>
@@ -108,7 +111,10 @@ function registerToolsAndResources(server: McpServer) {
           .string()
           .optional()
           .describe('Filter by type (e.g. "ThingDef", "JobDef").'),
-        limit: z.number().default(20).describe('Max results to return.'),
+        limit: z
+          .number()
+          .default(20)
+          .describe('Max results to return.'),
       },
     },
     async ({ query, defType, limit }) => searchDefs(query, defType, limit),

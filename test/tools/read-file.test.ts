@@ -48,6 +48,7 @@ describe('read-file', () => {
       expect(result.totalLines).toBe(1)
       expect(result.content).toBe('')
     })
+
   })
 
   describe('readFile', () => {
@@ -79,6 +80,12 @@ describe('read-file', () => {
       await mkdir(join(testDir, 'subdir'), { recursive: true })
       await expect(readFile(sandbox, 'subdir')).rejects.toThrow(
         'Path is a directory'
+      )
+    })
+
+    test('propagates sandbox traversal errors', async () => {
+      await expect(readFile(sandbox, '../outside.txt')).rejects.toThrow(
+        'Path traversal detected'
       )
     })
   })
