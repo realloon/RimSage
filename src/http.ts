@@ -1,15 +1,11 @@
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
 import { closeDb } from './utils/db'
-import { server } from './server'
-
-const transport = new WebStandardStreamableHTTPServerTransport()
-
-await server.connect(transport)
+import { createServer } from './server'
 
 Bun.serve({
   port: 3000,
   idleTimeout: 120,
-  fetch: req => {
+  fetch: async req => {
     const url = new URL(req.url)
     const pathname = normalizePath(url.pathname)
 
@@ -21,7 +17,7 @@ Bun.serve({
     }
 
     if (pathname === '/mcp') {
-      return transport.handleRequest(req)
+      return handleMcpRequest(req)
     }
 
     return new Response('Not Found', { status: 404 })
@@ -45,4 +41,12 @@ process.on('SIGTERM', cleanup)
 function normalizePath(pathname: string) {
   if (!pathname.endsWith('/')) return pathname
   return pathname.slice(0, -1) || '/'
+}
+
+async function handleMcpRequest(req: Request) {
+  const server = createServer()
+  const transport = new WebStandardStreamableHTTPServerTransport()
+
+  await server.connect(transport)
+  return transport.handleRequest(req)
 }
