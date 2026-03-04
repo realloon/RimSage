@@ -20,7 +20,6 @@ let _runtimeDb: Database | null = null
 export function getDb(): Database {
   if (!_runtimeDb) {
     _runtimeDb = new Database(dbPath, { readonly: true })
-    _runtimeDb.run('PRAGMA journal_mode = WAL;')
   }
 
   return _runtimeDb
