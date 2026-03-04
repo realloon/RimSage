@@ -11,7 +11,7 @@ import {
 } from './tools'
 
 const name = 'rimsage'
-const version = '0.10.0'
+const version = '0.10.1'
 const sandbox = new PathSandbox('dist/assets')
 
 function registerToolsAndResources(server: McpServer) {
