@@ -39,7 +39,15 @@ async function shutdown() {
   isShuttingDown = true
 
   console.error('Shutting down...')
-  await server.stop(true)
-  closeDb()
-  process.exit(0)
+  let exitCode = 0
+
+  try {
+    await server.stop(true)
+  } catch (error) {
+    exitCode = 1
+    console.error('Failed to stop HTTP server cleanly:', error)
+  } finally {
+    closeDb()
+    process.exit(exitCode)
+  }
 }
