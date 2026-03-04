@@ -3,6 +3,52 @@ import { PathSandbox } from '../utils/path-sandbox'
 
 const MAX_OUTPUT_SIZE = 100 * 1024 // 100KB limit
 const MAX_RESULT_LINES = 400
+const STDERR_CAPTURE_SIZE = 8 * 1024
+
+interface StreamReadResult {
+  text: string
+  exceeded: boolean
+}
+
+export interface SearchSourceRawResult {
+  output: string
+  exceededOutputLimit: boolean
+}
+
+async function readStreamWithLimit(
+  stream: ReadableStream<Uint8Array>,
+  maxBytes: number,
+  onLimitReached?: () => void,
+): Promise<StreamReadResult> {
+  const reader = stream.getReader()
+  const decoder = new TextDecoder()
+  let totalBytes = 0
+  let text = ''
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    if (!value) continue
+
+    const nextBytes = totalBytes + value.byteLength
+    if (nextBytes > maxBytes) {
+      const remaining = maxBytes - totalBytes
+      if (remaining > 0) {
+        text += decoder.decode(value.subarray(0, remaining), { stream: true })
+      }
+      text += decoder.decode()
+      onLimitReached?.()
+      await reader.cancel()
+      return { text, exceeded: true }
+    }
+
+    totalBytes = nextBytes
+    text += decoder.decode(value, { stream: true })
+  }
+
+  text += decoder.decode()
+  return { text, exceeded: false }
+}
 
 /**
  * Internal implementation: Execute rg search and return raw result
@@ -12,7 +58,7 @@ export async function searchSourceImpl(
   query: string,
   caseSensitive: boolean = false,
   filePattern?: string,
-): Promise<string> {
+): Promise<SearchSourceRawResult> {
   const args = ['--line-number', '--heading', '--color', 'never']
 
   // case sensitive
@@ -36,22 +82,48 @@ export async function searchSourceImpl(
     stderr: 'pipe',
   })
 
+  let stoppedByLimit = false
+  const stopProcess = () => {
+    if (stoppedByLimit) return
+    stoppedByLimit = true
+    try {
+      process.kill()
+    } catch {
+      // Process may already be exiting; ignore.
+    }
+  }
+
+  const stdoutPromise = process.stdout
+    ? readStreamWithLimit(process.stdout, MAX_OUTPUT_SIZE + 1, stopProcess)
+    : Promise.resolve({ text: '', exceeded: false })
+  const stderrPromise = process.stderr
+    ? readStreamWithLimit(process.stderr, STDERR_CAPTURE_SIZE)
+    : Promise.resolve({ text: '', exceeded: false })
+
   const [exitCode, stdout, stderr] = await Promise.all([
     process.exited,
-    process.stdout ? new Response(process.stdout).text() : Promise.resolve(''),
-    process.stderr ? new Response(process.stderr).text() : Promise.resolve(''),
+    stdoutPromise,
+    stderrPromise,
   ])
 
+  const trimmedStdout = stdout.text.trimEnd()
+  if (stdout.exceeded || stoppedByLimit) {
+    return {
+      output: trimmedStdout,
+      exceededOutputLimit: true,
+    }
+  }
+
   if (exitCode === 0) {
-    return stdout.trim()
+    return { output: trimmedStdout, exceededOutputLimit: false }
   }
 
   // rg returns exit code 1 when no results found
   if (exitCode === 1) {
-    return ''
+    return { output: '', exceededOutputLimit: false }
   }
 
-  const stderrText = stderr.trim()
+  const stderrText = stderr.text.trim()
   if (stderrText.length > 0) {
     throw new Error(`rg failed with exit code ${exitCode}: ${stderrText}`)
   }
@@ -67,14 +139,14 @@ export async function searchSource(
   caseSensitive: boolean = false,
   filePattern?: string,
 ) {
-  const result = await searchSourceImpl(
+  const { output, exceededOutputLimit } = await searchSourceImpl(
     sandbox,
     query,
     caseSensitive,
     filePattern,
   )
 
-  if (result.length === 0) {
+  if (output.length === 0 && !exceededOutputLimit) {
     return {
       content: [
         {
@@ -85,8 +157,18 @@ export async function searchSource(
     }
   }
 
+  if (exceededOutputLimit) {
+    let truncated = output.substring(0, MAX_OUTPUT_SIZE)
+    truncated += '\n\n[TRUNCATED] Output size exceeded 100KB.'
+    truncated +=
+      '\n(Tip: Refine your search query or add a more specific `file_pattern`.)'
+    return {
+      content: [{ type: 'text' as const, text: truncated }],
+    }
+  }
+
   // lines limited
-  const lines = result.split(/\r?\n/)
+  const lines = output.split(/\r?\n/)
   if (lines.length > MAX_RESULT_LINES) {
     const truncated = lines.slice(0, MAX_RESULT_LINES)
     truncated.push(
@@ -101,8 +183,8 @@ export async function searchSource(
   }
 
   // size limited
-  if (result.length > MAX_OUTPUT_SIZE) {
-    let truncated = result.substring(0, MAX_OUTPUT_SIZE)
+  if (output.length > MAX_OUTPUT_SIZE) {
+    let truncated = output.substring(0, MAX_OUTPUT_SIZE)
     truncated += '\n\n[TRUNCATED] Output size exceeded 100KB.'
     truncated +=
       '\n(Tip: Refine your search query or add a more specific `file_pattern`.)'
@@ -112,6 +194,6 @@ export async function searchSource(
   }
 
   return {
-    content: [{ type: 'text' as const, text: result }],
+    content: [{ type: 'text' as const, text: output }],
   }
 }

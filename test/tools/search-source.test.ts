@@ -24,12 +24,14 @@ describe('search-source', () => {
       await write(join(testDir, 'test.ts'), 'Hello\nhello')
 
       const caseInsensitive = await searchSourceImpl(sandbox, 'hello')
-      expect(caseInsensitive).toContain('Hello')
-      expect(caseInsensitive).toContain('hello')
+      expect(caseInsensitive.output).toContain('Hello')
+      expect(caseInsensitive.output).toContain('hello')
+      expect(caseInsensitive.exceededOutputLimit).toBe(false)
 
       const caseSensitive = await searchSourceImpl(sandbox, 'hello', true)
-      expect(caseSensitive).toContain('hello')
-      expect(caseSensitive).not.toContain('Hello')
+      expect(caseSensitive.output).toContain('hello')
+      expect(caseSensitive.output).not.toContain('Hello')
+      expect(caseSensitive.exceededOutputLimit).toBe(false)
     })
 
     test('filters results by file pattern', async () => {
@@ -37,14 +39,22 @@ describe('search-source', () => {
       await write(join(testDir, 'test.js'), 'needle')
 
       const result = await searchSourceImpl(sandbox, 'needle', false, '*.ts')
-      expect(result).toContain('test.ts')
-      expect(result).not.toContain('test.js')
+      expect(result.output).toContain('test.ts')
+      expect(result.output).not.toContain('test.js')
     })
 
     test('returns empty string when nothing matches', async () => {
       await write(join(testDir, 'test.ts'), 'foo bar')
       const result = await searchSourceImpl(sandbox, 'does-not-exist')
-      expect(result).toBe('')
+      expect(result.output).toBe('')
+      expect(result.exceededOutputLimit).toBe(false)
+    })
+
+    test('flags output overflow when command output exceeds cap', async () => {
+      await write(join(testDir, 'large.txt'), 'x'.repeat(140 * 1024))
+
+      const result = await searchSourceImpl(sandbox, 'x')
+      expect(result.exceededOutputLimit).toBe(true)
     })
   })
 
@@ -55,7 +65,7 @@ describe('search-source', () => {
       const raw = await searchSourceImpl(sandbox, 'alpha')
       const result = await searchSource(sandbox, 'alpha')
 
-      expect(result.content[0].text).toBe(raw)
+      expect(result.content[0].text).toBe(raw.output)
       expect(result.content[0].text).not.toContain('[TRUNCATED]')
     })
 
