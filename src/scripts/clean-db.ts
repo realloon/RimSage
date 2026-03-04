@@ -23,4 +23,7 @@ async function main() {
   console.log('Run "bun run build" to rebuild.')
 }
 
-main().catch(console.error)
+await main().catch(error => {
+  console.error('Fatal error:', error)
+  process.exit(1)
+})

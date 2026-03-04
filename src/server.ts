@@ -49,11 +49,17 @@ function registerToolsAndResources(server: McpServer) {
           ),
         start_line: z
           .number()
+          .int()
+          .min(0)
+          .max(2_000_000)
           .optional()
           .default(0)
           .describe('0-indexed start line.'),
         line_count: z
           .number()
+          .int()
+          .min(1)
+          .max(2_000)
           .optional()
           .default(400)
           .describe('Max lines to return.'),
@@ -75,6 +81,9 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Path (e.g. `Source/Verse`). Empty for root.'),
         limit: z
           .number()
+          .int()
+          .min(1)
+          .max(500)
           .default(100)
           .describe('Max items to return.'),
       },
@@ -113,6 +122,9 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Filter by type (e.g. "ThingDef", "JobDef").'),
         limit: z
           .number()
+          .int()
+          .min(1)
+          .max(100)
           .default(20)
           .describe('Max results to return.'),
       },

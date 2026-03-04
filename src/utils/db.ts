@@ -8,6 +8,13 @@ export interface CSharpIndexRow {
   typeKind: string // 'class' | 'struct' | 'interface' | 'enum'
 }
 
+export interface DefsRow {
+  defName: string
+  defType: string
+  label: string | null
+  payload: string
+}
+
 let _runtimeDb: Database | null = null
 
 export function getDb(): Database {

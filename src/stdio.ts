@@ -19,9 +19,7 @@ async function main() {
   process.on('SIGTERM', cleanup)
 }
 
-try {
-  main()
-} catch (error) {
+await main().catch(error => {
   console.error('Fatal error:', error)
   process.exit(1)
-}
+})

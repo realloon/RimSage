@@ -79,4 +79,7 @@ async function main() {
   }
 }
 
-main().catch(console.error)
+await main().catch(error => {
+  console.error('Fatal error:', error)
+  process.exit(1)
+})
