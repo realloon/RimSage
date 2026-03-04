@@ -1,10 +1,5 @@
 import { getDb, type DefsRow } from '../utils/db'
-
-interface Params {
-  $q: string
-  $type?: string
-  $limit?: number
-}
+import { type SqlNamedParams } from '../types'
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
 
@@ -24,7 +19,7 @@ export function searchDefsImpl(
   const db = getDb()
   let whereClause = '(defName LIKE $q OR label LIKE $q)'
 
-  const params: Params = { $q: `%${query}%` }
+  const params: SqlNamedParams = { $q: `%${query}%` }
 
   if (defType) {
     whereClause += ' AND defType = $type'
@@ -32,7 +27,9 @@ export function searchDefsImpl(
   }
 
   const countSql = `SELECT COUNT(*) as count FROM defs WHERE ${whereClause}`
-  const countRow = db.query<{ count: number }, any>(countSql).get(params)
+  const countRow = db
+    .query<{ count: number }, SqlNamedParams>(countSql)
+    .get(params)
   const total = countRow?.count ?? 0
 
   if (total === 0) {
@@ -45,9 +42,10 @@ export function searchDefsImpl(
     WHERE ${whereClause}
     LIMIT $limit
   `
+  const queryParams: SqlNamedParams = { ...params, $limit: limit }
   const results = db
-    .query<ResultRow, any>(dataSql)
-    .all({ ...params, $limit: limit })
+    .query<ResultRow, SqlNamedParams>(dataSql)
+    .all(queryParams)
 
   return { results, total }
 }

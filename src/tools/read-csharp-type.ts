@@ -2,11 +2,11 @@ import { file } from 'bun'
 import { join } from 'path'
 import { getDb } from '../utils/db'
 import { sourcePath } from '../utils/env'
+import { type SqlNamedParams } from '../types'
 
 interface IndexRow {
   filePath: string
   startLine: number
-  typeKind: string
 }
 
 const MAX_LINES_THRESHOLD = 400
@@ -28,10 +28,9 @@ export async function readCsharpTypeImpl(
 ): Promise<CSharpTypeResult[]> {
   const db = getDb()
   const rows = db
-    .query<
-      IndexRow,
-      any
-    >('SELECT filePath, startLine, typeKind FROM csharp_index WHERE typeName = $name')
+    .query<IndexRow, SqlNamedParams>(
+      'SELECT filePath, startLine FROM csharp_index WHERE typeName = $name',
+    )
     .all({ $name: typeName })
 
   const results: CSharpTypeResult[] = []
@@ -193,10 +192,9 @@ function getCsharpIndexHealth() {
   const db = getDb()
 
   const tableRow = db
-    .query<
-      { name: string },
-      any
-    >("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'csharp_index'")
+    .query<{ name: string }, []>(
+      "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'csharp_index'",
+    )
     .get()
 
   if (!tableRow) {
@@ -204,10 +202,7 @@ function getCsharpIndexHealth() {
   }
 
   const countRow = db
-    .query<
-      { rowCount: number },
-      any
-    >('SELECT COUNT(*) AS rowCount FROM csharp_index')
+    .query<{ rowCount: number }, []>('SELECT COUNT(*) AS rowCount FROM csharp_index')
     .get()
 
   return {

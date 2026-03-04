@@ -1,24 +1,15 @@
-import { getDb } from '../utils/db'
+import { getDb, type DefsRow } from '../utils/db'
 import { builder } from '../utils/xml-utils'
+import { type SqlNamedParams } from '../types'
 
-interface DefsRow {
-  defName: string
-  defType: string
-  label: string | null
-  payload: string // JSON
-}
-
-interface Params {
-  $name: string
-  $type?: string
-}
+type DefDetailRow = Pick<DefsRow, 'defType' | 'payload'>
 
 export function getDefDetailsImpl(
   defName: string,
   defType?: string
-): DefsRow[] {
+): DefDetailRow[] {
   const db = getDb()
-  const params: Params = { $name: defName }
+  const params: SqlNamedParams = { $name: defName }
   let queryStr = 'SELECT defType, payload FROM defs WHERE defName = $name'
 
   if (defType) {
@@ -26,7 +17,7 @@ export function getDefDetailsImpl(
     params.$type = defType
   }
 
-  return db.query<DefsRow, any>(queryStr).all(params)
+  return db.query<DefDetailRow, SqlNamedParams>(queryStr).all(params)
 }
 
 export function getDefDetails(defName: string, defType?: string) {
