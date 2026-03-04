@@ -41,7 +41,7 @@ class DefResolver {
       console.warn(
         `[DefResolver] Error resolving ${def.defName ?? 'unnamed'}: ${
           error.message
-        }`
+        }`,
       )
       return def
     }
@@ -52,7 +52,7 @@ class DefResolver {
 
     if (stack.has(name)) {
       throw new Error(
-        `Circular inheritance: ${Array.from(stack).join(' -> ')} -> ${name}`
+        `Circular inheritance: ${Array.from(stack).join(' -> ')} -> ${name}`,
       )
     }
 
@@ -77,7 +77,7 @@ class DefResolver {
   }
 }
 
-// #region Helper
+// #region Helpers
 function stripParentMeta(def: Def): Def {
   const { '@_Name': _n, '@_Abstract': _a, '@_ParentName': _p, ...rest } = def
   return rest
@@ -131,4 +131,4 @@ function sortDefKeys(def: Def): Def {
 function isXmlObject(item: unknown): item is XmlObject {
   return Boolean(item) && typeof item === 'object' && !Array.isArray(item)
 }
-// #endregion Helper
+// #endregion

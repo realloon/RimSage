@@ -125,7 +125,7 @@ export async function readCsharpType(typeName: string) {
   }
 }
 
-// #region Helper
+// #region Helpers
 
 function extractCodeBlock(lines: string[], startLine: number) {
   let buffer: string[] = []
