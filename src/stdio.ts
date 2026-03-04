@@ -7,7 +7,7 @@ async function main() {
   const transport = new StdioServerTransport()
   await server.connect(transport)
 
-  console.error('\x1b[32m%s\x1b[0m', 'RimWorld Source MCP running...')
+  console.error('\x1b[32m%s\x1b[0m', 'RimSage MCP running...')
 
   const cleanup = () => {
     console.error('Shutting down...')

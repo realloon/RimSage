@@ -6,30 +6,25 @@ import { closeDb } from './utils/db'
 let isShuttingDown = false
 
 const server = serve({
-  idleTimeout: 120,
+  idleTimeout: 60,
   routes: {
     '/health': Response.json({ status: 'ok' }),
-    '/health/': Response.json({ status: 'ok' }),
-    '/mcp': handleMcpRoute,
-    '/mcp/': handleMcpRoute,
+    '/mcp': (req, server) => {
+      // MCP responses may stay open for streaming; disable idle timeout per request.
+      server.timeout(req, 0)
+      return handleMcpRequest(req)
+    },
     '/*': new Response('Not Found', { status: 404 }),
   },
 })
 
 console.error(
   '\x1b[32m%s\x1b[0m',
-  `RimWorld Source MCP HTTP server listening on ${server.url}`,
+  `RimSage MCP HTTP server listening on ${server.url}`,
 )
 
 process.on('SIGINT', () => shutdown())
 process.on('SIGTERM', () => shutdown())
-
-// #region Helpers
-function handleMcpRoute(req: Request, server: Bun.Server<undefined>) {
-  // MCP responses may stay open for streaming; disable idle timeout per request.
-  server.timeout(req, 0)
-  return handleMcpRequest(req)
-}
 
 async function handleMcpRequest(req: Request) {
   const server = createServer()
@@ -48,4 +43,3 @@ async function shutdown() {
   closeDb()
   process.exit(0)
 }
-// #endregion
