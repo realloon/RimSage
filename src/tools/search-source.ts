@@ -182,17 +182,6 @@ export async function searchSource(
     }
   }
 
-  // size limited
-  if (output.length > MAX_OUTPUT_SIZE) {
-    let truncated = output.substring(0, MAX_OUTPUT_SIZE)
-    truncated += '\n\n[TRUNCATED] Output size exceeded 100KB.'
-    truncated +=
-      '\n(Tip: Refine your search query or add a more specific `file_pattern`.)'
-    return {
-      content: [{ type: 'text' as const, text: truncated }],
-    }
-  }
-
   return {
     content: [{ type: 'text' as const, text: output }],
   }
