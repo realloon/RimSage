@@ -71,12 +71,14 @@ export async function readFile(
     }
 
     return textResponse(outputContent)
-  } catch (error: any) {
-    if (error.code === 'ENOENT' || error.message?.includes('No such file')) {
+  } catch (error: unknown) {
+    const fsError = error as NodeJS.ErrnoException
+
+    if (fsError.code === 'ENOENT' || fsError.message?.includes('No such file')) {
       throw new Error(`File not found: ${relativePath}`)
     }
 
-    if (error.code === 'EISDIR') {
+    if (fsError.code === 'EISDIR') {
       throw new Error(
         `Path is a directory: ${relativePath}. Use \`list_directory\` instead.`
       )

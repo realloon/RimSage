@@ -78,12 +78,14 @@ export async function listDirectory(
     }
 
     return textResponse(finalOutput)
-  } catch (error: any) {
-    if (error.code === 'ENOENT') {
+  } catch (error: unknown) {
+    const fsError = error as NodeJS.ErrnoException
+
+    if (fsError.code === 'ENOENT') {
       throw new Error(`Directory not found: ${relativePath || '/'}`)
     }
 
-    if (error.code === 'ENOTDIR') {
+    if (fsError.code === 'ENOTDIR') {
       throw new Error(
         `Path is not a directory: ${relativePath}. Use read_rimworld_file tool instead.`
       )
