@@ -12,7 +12,8 @@ export interface DefsRow {
   defName: string
   defType: string
   label: string | null
-  payload: string
+  rawPayload: string
+  mergedPayload: string
 }
 
 let _runtimeDb: Database | null = null

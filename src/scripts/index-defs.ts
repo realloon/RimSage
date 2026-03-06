@@ -36,42 +36,48 @@ async function main() {
 
   // 3. process defs
   console.log(`Resolving inheritance for ${defs.length} defs...`)
-  const finalDefs = processDefs(defs)
+  const mergedDefs = processDefs(defs)
 
   // 4. write in sqlite
   console.log(`Writing to ${indexDbPath}...`)
   const db = createBuilderDb()
 
   try {
+    db.run('DROP TABLE IF EXISTS defs;')
+
     db.run(`
-      CREATE TABLE IF NOT EXISTS defs (
+      CREATE TABLE defs (
         defName TEXT,
         defType TEXT,
         label TEXT,
-        payload JSON,
+        rawPayload JSON,
+        mergedPayload JSON,
         PRIMARY KEY (defName, defType)
       );
     `)
 
     const insert = db.prepare(`
-      INSERT OR REPLACE INTO defs (defName, defType, label, payload)
-      VALUES ($defName, $defType, $label, $payload)
+      INSERT OR REPLACE INTO defs (defName, defType, label, rawPayload, mergedPayload)
+      VALUES ($defName, $defType, $label, $rawPayload, $mergedPayload)
     `)
 
-    const transaction = db.transaction((defs: Def[]) => {
-      defs
-        .filter(def => def.defName)
-        .forEach(def => {
-          insert.run({
-            $defType: def.defType ?? 'Unknown',
-            $defName: def.defName!,
-            $label: def.label ?? null,
-            $payload: JSON.stringify(def),
-          })
+    const transaction = db.transaction((rawDefs: Def[], resolvedDefs: Def[]) => {
+      rawDefs.forEach((rawDef, index) => {
+        const resolvedDef = resolvedDefs[index]
+
+        if (!resolvedDef?.defName) return
+
+        insert.run({
+          $defType: resolvedDef.defType ?? 'Unknown',
+          $defName: resolvedDef.defName,
+          $label: resolvedDef.label ?? null,
+          $rawPayload: JSON.stringify(rawDef),
+          $mergedPayload: JSON.stringify(resolvedDef),
         })
+      })
     })
 
-    transaction(finalDefs)
+    transaction(defs, mergedDefs)
 
     console.log(`Build complete!`)
   } finally {
