@@ -1,7 +1,7 @@
 import { Database } from 'bun:sqlite'
 import { file, Glob } from 'bun'
 import { join } from 'path'
-import { dbPath, sourcePath } from '../utils/env'
+import { indexDbPath, sourcePath } from '../utils/env'
 import { type SqlNamedParams } from '../types'
 
 const typeRegex =
@@ -18,7 +18,7 @@ type CsharpIndexInsertParams = SqlNamedParams & CsharpIndexInsertRow
 async function main() {
   console.log(`Scanning C# source in: ${sourcePath}`)
 
-  const db = new Database(dbPath)
+  const db = new Database(indexDbPath)
 
   try {
     db.run(`
