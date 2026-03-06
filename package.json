@@ -10,7 +10,7 @@
     "index:defs": "bun run src/scripts/index-defs.ts",
     "index:csharp": "bun run src/scripts/index-csharp.ts",
     "build": "bun run clean && bun run index:defs && bun run index:csharp",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "bunx tsc --noEmit --target ESNext --module Preserve --erasableSyntaxOnly $(rg --files src test -g '*.ts')"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
