@@ -1,5 +1,6 @@
 import { getDb, type DefsRow } from '../utils/db'
 import { type SqlNamedParams } from '../types'
+import { textResponse } from '../utils/mcp-response'
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
 
@@ -61,14 +62,7 @@ export function searchDefs(
   const { results, total } = searchDefsImpl(query, defType, limit)
 
   if (total === 0) {
-    return {
-      content: [
-        {
-          type: 'text' as const,
-          text: 'No results found. Try a shorter keyword.',
-        },
-      ],
-    }
+    return textResponse('No results found. Try a shorter keyword.')
   }
 
   const formatted = results
@@ -85,7 +79,5 @@ export function searchDefs(
     finalOutput += '\n(Tip: Increase `limit` or refine query.)'
   }
 
-  return {
-    content: [{ type: 'text' as const, text: finalOutput }],
-  }
+  return textResponse(finalOutput)
 }

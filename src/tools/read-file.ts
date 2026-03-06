@@ -1,5 +1,6 @@
 import { file } from 'bun'
 import { PathSandbox } from '../utils/path-sandbox'
+import { textResponse } from '../utils/mcp-response'
 
 export interface ReadFileResult {
   content: string
@@ -51,14 +52,9 @@ export async function readFile(
     )
 
     if (startLine >= result.totalLines) {
-      return {
-        content: [
-          {
-            type: 'text' as const,
-            text: `[Error] Start line ${startLine} is out of bounds (File has ${result.totalLines} lines).`,
-          },
-        ],
-      }
+      return textResponse(
+        `[Error] Start line ${startLine} is out of bounds (File has ${result.totalLines} lines).`
+      )
     }
 
     let outputContent = result.content
@@ -74,9 +70,7 @@ export async function readFile(
       outputContent = lines.join('\n')
     }
 
-    return {
-      content: [{ type: 'text' as const, text: outputContent }],
-    }
+    return textResponse(outputContent)
   } catch (error: any) {
     if (error.code === 'ENOENT' || error.message?.includes('No such file')) {
       throw new Error(`File not found: ${relativePath}`)

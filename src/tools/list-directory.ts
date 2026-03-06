@@ -1,6 +1,7 @@
 import { readdir } from 'fs/promises'
 import { join } from 'path'
 import { PathSandbox } from '../utils/path-sandbox'
+import { textResponse } from '../utils/mcp-response'
 
 export interface DirectoryEntry {
   name: string
@@ -76,9 +77,7 @@ export async function listDirectory(
         '\n(Tip: Increase `limit` or use `search_rimworld_source`.)'
     }
 
-    return {
-      content: [{ type: 'text' as const, text: finalOutput }],
-    }
+    return textResponse(finalOutput)
   } catch (error: any) {
     if (error.code === 'ENOENT') {
       throw new Error(`Directory not found: ${relativePath || '/'}`)
