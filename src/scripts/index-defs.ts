@@ -1,6 +1,6 @@
 import { file, Glob } from 'bun'
 import { join } from 'path'
-import { defsPath, dbPath } from '../utils/env'
+import { defsPath, indexDbPath } from '../utils/env'
 import { parser } from '../utils/xml-utils'
 import { processDefs, type Def } from '../utils/def-resolver'
 import { createBuilderDb } from '../utils/db'
@@ -39,7 +39,7 @@ async function main() {
   const finalDefs = processDefs(defs)
 
   // 4. write in sqlite
-  console.log(`Writing to ${dbPath}...`)
+  console.log(`Writing to ${indexDbPath}...`)
   const db = createBuilderDb()
 
   try {

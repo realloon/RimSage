@@ -1,5 +1,5 @@
 import { Database } from 'bun:sqlite'
-import { dbPath } from './env'
+import { indexDbPath } from './env'
 
 export interface CSharpIndexRow {
   typeName: string
@@ -19,7 +19,7 @@ let _runtimeDb: Database | null = null
 
 export function getDb(): Database {
   if (!_runtimeDb) {
-    _runtimeDb = new Database(dbPath, { readonly: true })
+    _runtimeDb = new Database(indexDbPath, { readonly: true })
   }
 
   return _runtimeDb
@@ -33,7 +33,7 @@ export function closeDb(): void {
 }
 
 export function createBuilderDb(): Database {
-  const db = new Database(dbPath, { create: true })
+  const db = new Database(indexDbPath, { create: true })
 
   db.run('PRAGMA journal_mode = WAL;')
   db.run('PRAGMA synchronous = NORMAL;')

@@ -1,9 +1,13 @@
 import { file } from 'bun'
 import { unlink } from 'node:fs/promises'
-import { dbPath } from '../utils/env'
+import { indexDbPath } from '../utils/env'
 
 async function main() {
-  const filesToClean = [dbPath, `${dbPath}-shm`, `${dbPath}-wal`]
+  const filesToClean = [
+    indexDbPath,
+    `${indexDbPath}-shm`,
+    `${indexDbPath}-wal`,
+  ]
 
   for (const path of filesToClean) {
     const dbFile = file(path)
