@@ -3,18 +3,25 @@ import { builder } from '../utils/xml-utils'
 import { type SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
-type DefDetailRow = Pick<DefsRow, 'defType' | 'payload'>
+export type DefInheritanceMode = 'merged' | 'raw'
+
+type DefDetailRow = {
+  defType: DefsRow['defType']
+  payload: string
+}
 type GetDefDetailsResponse = ReturnType<typeof textResponse> & {
   isError?: boolean
 }
 
 export function getDefDetailsImpl(
   defName: string,
-  defType?: string
+  defType?: string,
+  inheritance: DefInheritanceMode = 'merged',
 ): DefDetailRow[] {
   const db = getDb()
   const params: SqlNamedParams = { $name: defName }
-  let queryStr = 'SELECT defType, payload FROM defs WHERE defName = $name'
+  const payloadColumn = inheritance === 'raw' ? 'rawPayload' : 'mergedPayload'
+  let queryStr = `SELECT defType, ${payloadColumn} AS payload FROM defs WHERE defName = $name`
 
   if (defType) {
     queryStr += ' AND defType = $type'
@@ -27,8 +34,9 @@ export function getDefDetailsImpl(
 export function getDefDetails(
   defName: string,
   defType?: string,
+  inheritance: DefInheritanceMode = 'merged',
 ): GetDefDetailsResponse {
-  const rows = getDefDetailsImpl(defName, defType)
+  const rows = getDefDetailsImpl(defName, defType, inheritance)
 
   if (rows.length === 0) {
     const errorText = `Def \`${defName}\`${

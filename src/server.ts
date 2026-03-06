@@ -96,17 +96,21 @@ function registerToolsAndResources(server: McpServer) {
   server.registerTool(
     'get_def_details',
     {
-      description:
-        'Get fully resolved XML of Def. Merges properties from ParentName inheritance.',
+      description: 'Get XML of a Def.',
       inputSchema: {
         defName: z.string().describe('Exact defName (e.g. `Gun_Revolver`).'),
         defType: z
           .string()
           .optional()
           .describe('Type filter (e.g. `ThingDef`, `JobDef`).'),
+        inheritance: z
+          .enum(['merged', 'raw'])
+          .default('merged')
+          .describe('Return merged inheritance or the raw indexed Def.'),
       },
     },
-    async ({ defName, defType }) => getDefDetails(defName, defType),
+    async ({ defName, defType, inheritance }) =>
+      getDefDetails(defName, defType, inheritance),
   )
 
   // tool: search defs
