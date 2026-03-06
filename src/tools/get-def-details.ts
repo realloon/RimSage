@@ -1,8 +1,12 @@
 import { getDb, type DefsRow } from '../utils/db'
 import { builder } from '../utils/xml-utils'
 import { type SqlNamedParams } from '../types'
+import { textResponse } from '../utils/mcp-response'
 
 type DefDetailRow = Pick<DefsRow, 'defType' | 'payload'>
+type GetDefDetailsResponse = ReturnType<typeof textResponse> & {
+  isError?: boolean
+}
 
 export function getDefDetailsImpl(
   defName: string,
@@ -20,20 +24,20 @@ export function getDefDetailsImpl(
   return db.query<DefDetailRow, SqlNamedParams>(queryStr).all(params)
 }
 
-export function getDefDetails(defName: string, defType?: string) {
+export function getDefDetails(
+  defName: string,
+  defType?: string,
+): GetDefDetailsResponse {
   const rows = getDefDetailsImpl(defName, defType)
 
   if (rows.length === 0) {
+    const errorText = `Def \`${defName}\`${
+      defType ? ` (type: ${defType})` : ''
+    } not found. Try using 'search_rimworld_source' to verify the exact name.`
+
     return {
       isError: true,
-      content: [
-        {
-          type: 'text' as const,
-          text: `Def \`${defName}\`${
-            defType ? ` (type: ${defType})` : ''
-          } not found. Try using 'search_rimworld_source' to verify the exact name.`,
-        },
-      ],
+      ...textResponse(errorText),
     }
   }
 
@@ -46,7 +50,5 @@ export function getDefDetails(defName: string, defType?: string) {
     return builder.build({ [type]: obj })
   })
 
-  return {
-    content: [{ type: 'text' as const, text: buildedXml.join('\n\n') }],
-  }
+  return textResponse(buildedXml.join('\n\n'))
 }

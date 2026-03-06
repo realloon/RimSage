@@ -3,6 +3,7 @@ import { join } from 'path'
 import { getDb } from '../utils/db'
 import { sourcePath } from '../utils/env'
 import { type SqlNamedParams } from '../types'
+import { textResponse } from '../utils/mcp-response'
 
 interface IndexRow {
   filePath: string
@@ -85,12 +86,9 @@ export async function readCsharpType(typeName: string) {
     }
 
     return {
-      content: [
-        {
-          type: 'text' as const,
-          text: `Type '${typeName}' not found in index. Please check the name.${extraHint}`,
-        },
-      ],
+      ...textResponse(
+        `Type '${typeName}' not found in index. Please check the name.${extraHint}`,
+      ),
     }
   }
 
@@ -119,9 +117,7 @@ export async function readCsharpType(typeName: string) {
     output += `\nTo read the implementation of a specific method, use the 'read_rimworld_file' tool with the specific line numbers shown above.`
   }
 
-  return {
-    content: [{ type: 'text' as const, text: output }],
-  }
+  return textResponse(output)
 }
 
 // #region Helpers

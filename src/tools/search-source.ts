@@ -1,5 +1,6 @@
 import { spawn } from 'bun'
 import { PathSandbox } from '../utils/path-sandbox'
+import { textResponse } from '../utils/mcp-response'
 
 const MAX_OUTPUT_SIZE = 100 * 1024 // 100KB limit
 const MAX_RESULT_LINES = 400
@@ -147,14 +148,9 @@ export async function searchSource(
   )
 
   if (output.length === 0 && !exceededOutputLimit) {
-    return {
-      content: [
-        {
-          type: 'text' as const,
-          text: 'No results found. Try adjusting your search query or file pattern.',
-        },
-      ],
-    }
+    return textResponse(
+      'No results found. Try adjusting your search query or file pattern.',
+    )
   }
 
   if (exceededOutputLimit) {
@@ -162,9 +158,7 @@ export async function searchSource(
     truncated += '\n\n[TRUNCATED] Output size exceeded 100KB.'
     truncated +=
       '\n(Tip: Refine your search query or add a more specific `file_pattern`.)'
-    return {
-      content: [{ type: 'text' as const, text: truncated }],
-    }
+    return textResponse(truncated)
   }
 
   // lines limited
@@ -177,12 +171,8 @@ export async function searchSource(
     truncated.push(
       '(Tip: Refine your search query or add a more specific `file_pattern`.)',
     )
-    return {
-      content: [{ type: 'text' as const, text: truncated.join('\n') }],
-    }
+    return textResponse(truncated.join('\n'))
   }
 
-  return {
-    content: [{ type: 'text' as const, text: output }],
-  }
+  return textResponse(output)
 }
