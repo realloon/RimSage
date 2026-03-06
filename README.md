@@ -13,7 +13,7 @@ The server provides these tools:
 - `list_directory` - List directory contents
 - `search_defs` - Search through RimWorld Defs
 - `get_def_details` - Get raw or merged RimWorld Def XML
-- `read_csharp_type` - Read the C# class/struct/interface definition
+- `read_csharp_symbol` - Read a C# type or method definition
 
 ## Quick Start
 

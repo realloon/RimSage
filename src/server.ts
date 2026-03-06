@@ -7,7 +7,7 @@ import {
   listDirectory,
   getDefDetails,
   searchDefs,
-  readCsharpType,
+  readCsharpSymbol,
 } from './tools'
 
 const name = 'rimsage'
@@ -136,18 +136,23 @@ function registerToolsAndResources(server: McpServer) {
     async ({ query, defType, limit }) => searchDefs(query, defType, limit),
   )
 
-  // tool: read csharp type
+  // tool: read csharp symbol
   server.registerTool(
-    'read_csharp_type',
+    'read_csharp_symbol',
     {
-      description: 'Read the C# class/struct/interface definition.',
+      description: 'Read a C# type or method definition.',
       inputSchema: {
         typeName: z
           .string()
-          .describe('Exact type name (e.g. "WeaponTraitDef", "JobDriver").'),
+          .describe('Exact type name (e.g. "ThingDef", "JobDriver").'),
+        memberName: z
+          .string()
+          .optional()
+          .describe('Optional method name within the type (e.g. "ExposeData", "ConfigErrors").'),
       },
     },
-    async ({ typeName }) => await readCsharpType(typeName),
+    async ({ typeName, memberName }) =>
+      await readCsharpSymbol(typeName, memberName),
   )
 
   // resource: manifest (minimal resources support for clients that probe resources/*)
@@ -175,7 +180,7 @@ function registerToolsAndResources(server: McpServer) {
                 'list_directory',
                 'get_def_details',
                 'search_defs',
-                'read_csharp_type',
+                'read_csharp_symbol',
               ],
             },
             null,
