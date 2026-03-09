@@ -17,7 +17,7 @@ const sandbox = new PathSandbox('dist/assets')
 function registerToolsAndResources(server: McpServer) {
   // tool: search
   server.registerTool(
-    'search_rimworld_source',
+    'search_source',
     {
       description: 'Search RimWorld source code using regex.',
       inputSchema: {
@@ -38,9 +38,9 @@ function registerToolsAndResources(server: McpServer) {
 
   // tool: read file
   server.registerTool(
-    'read_rimworld_file',
+    'read_file',
     {
-      description: 'Read source file. Defaults to first 400 lines.',
+      description: 'Read source file.',
       inputSchema: {
         relative_path: z
           .string()
@@ -175,8 +175,8 @@ function registerToolsAndResources(server: McpServer) {
               version,
               resources: ['rimsage://manifest'],
               tools: [
-                'search_rimworld_source',
-                'read_rimworld_file',
+                'search_source',
+                'read_file',
                 'list_directory',
                 'get_def_details',
                 'search_defs',

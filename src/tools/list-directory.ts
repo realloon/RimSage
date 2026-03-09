@@ -74,7 +74,7 @@ export async function listDirectory(
     if (entries.length < total) {
       finalOutput += `\n[TRUNCATED] Showing ${entries.length}/${total} items.`
       finalOutput +=
-        '\n(Tip: Increase `limit` or use `search_rimworld_source`.)'
+        '\n(Tip: Increase `limit` or use `search_source`.)'
     }
 
     return textResponse(finalOutput)
@@ -87,7 +87,7 @@ export async function listDirectory(
 
     if (fsError.code === 'ENOTDIR') {
       throw new Error(
-        `Path is not a directory: ${relativePath}. Use read_rimworld_file tool instead.`
+        `Path is not a directory: ${relativePath}. Use read_file tool instead.`
       )
     }
 
