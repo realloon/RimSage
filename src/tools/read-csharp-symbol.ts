@@ -122,7 +122,7 @@ export async function readCsharpSymbol(typeName: string, memberName?: string) {
 
   if (isTruncatedMode) {
     output += `\n\n[SYSTEM NOTE] Some code was automatically summarized because it exceeded the output limit.`
-    output += `\nTo read the implementation of a specific method, use the 'read_rimworld_file' tool with the specific line numbers shown above.`
+    output += `\nTo read the implementation of a specific method, use the 'read_file' tool with the specific line numbers shown above.`
   }
 
   return textResponse(output)

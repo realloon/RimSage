@@ -41,7 +41,7 @@ export function getDefDetails(
   if (rows.length === 0) {
     const errorText = `Def \`${defName}\`${
       defType ? ` (type: ${defType})` : ''
-    } not found. Try using 'search_rimworld_source' to verify the exact name.`
+    } not found. Try using 'search_source' to verify the exact name.`
 
     return {
       isError: true,

@@ -8,8 +8,8 @@ An MCP server that provides RimWorld source code search and browsing capabilitie
 
 The server provides these tools:
 
-- `search_rimworld_source` - Search RimWorld source code
-- `read_rimworld_file` - Read specific files
+- `search_source` - Search RimWorld source code
+- `read_file` - Read specific files
 - `list_directory` - List directory contents
 - `search_defs` - Search through RimWorld Defs
 - `get_def_details` - Get raw or merged RimWorld Def XML
