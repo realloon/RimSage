@@ -1,6 +1,6 @@
 {
   "name": "rim-sage",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "main": "src/stdio.ts",
   "type": "module",
   "scripts": {
