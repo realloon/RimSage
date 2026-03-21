@@ -15,19 +15,26 @@ interface CsharpIndexInsertRow {
 }
 type CsharpIndexInsertParams = SqlNamedParams & CsharpIndexInsertRow
 
-async function main() {
-  console.log(`Scanning C# source in: ${sourcePath}`)
+export async function rebuildCsharpIndex(
+  dbPath = indexDbPath,
+  csharpSourcePath = sourcePath,
+) {
+  console.log(`Scanning C# source in: ${csharpSourcePath}`)
 
-  const db = new Database(indexDbPath)
+  const db = new Database(dbPath)
 
   try {
     db.run(`
-      CREATE TABLE IF NOT EXISTS csharp_index (
+      DROP TABLE IF EXISTS csharp_index;
+    `)
+
+    db.run(`
+      CREATE TABLE csharp_index (
         typeName TEXT,
         filePath TEXT,
         startLine INTEGER,
         typeKind TEXT,
-        PRIMARY KEY (typeName, filePath) 
+        PRIMARY KEY (typeName, filePath)
       );
     `)
 
@@ -43,12 +50,12 @@ async function main() {
     const batch: CsharpIndexInsertParams[] = []
 
     for await (const relativePath of glob.scan({
-      cwd: sourcePath,
+      cwd: csharpSourcePath,
       onlyFiles: true,
     })) {
       fileCount += 1
 
-      const absolutePath = join(sourcePath, relativePath)
+      const absolutePath = join(csharpSourcePath, relativePath)
 
       try {
         const content = await file(absolutePath).text()
@@ -93,7 +100,9 @@ async function main() {
   }
 }
 
-await main().catch(error => {
-  console.error('Fatal error:', error)
-  process.exit(1)
-})
+if (import.meta.main) {
+  await rebuildCsharpIndex().catch(error => {
+    console.error('Fatal error:', error)
+    process.exit(1)
+  })
+}
