@@ -20,13 +20,34 @@ describe('xml-utils', () => {
       expect(Array.isArray(result.Defs.ThingDef[0].li)).toBe(true)
       expect(result.Defs.ThingDef[0].li).toHaveLength(2)
     })
+
+    test('should preserve def inheritance attributes', () => {
+      const xml =
+        '<Defs><ThingDef Name="Base"><defName>BaseThing</defName></ThingDef><ThingDef ParentName="Base" Inherit="false"><defName>ChildThing</defName></ThingDef></Defs>'
+      const result = parser.parse(xml)
+
+      expect(result.Defs.ThingDef[0]['@_Name']).toBe('Base')
+      expect(result.Defs.ThingDef[1]['@_ParentName']).toBe('Base')
+      expect(result.Defs.ThingDef[1]['@_Inherit']).toBe('false')
+    })
   })
 
   describe('builder', () => {
     test('should preserve structure in build-parse round trip', () => {
       const obj = {
         Defs: {
-          ThingDef: [{ defName: 'Test', li: ['a', 'b'] }],
+          ThingDef: [
+            {
+              '@_Name': 'Base',
+              defName: 'Test',
+              li: ['a', 'b'],
+            },
+            {
+              '@_ParentName': 'Base',
+              '@_Inherit': 'false',
+              defName: 'Child',
+            },
+          ],
         },
       }
 

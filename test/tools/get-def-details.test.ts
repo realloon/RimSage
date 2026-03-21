@@ -16,6 +16,14 @@ describe('get-def-details', () => {
       expect(unmatched).toEqual([])
     })
 
+    test('returns all defs that share the same defName when defType is omitted', () => {
+      const rows = getDefDetailsImpl('Nociosphere')
+
+      expect(rows.length).toBeGreaterThan(1)
+      expect(rows.some(row => row.defType === 'BodyDef')).toBe(true)
+      expect(rows.some(row => row.defType === 'ThingDef')).toBe(true)
+    })
+
     test('supports raw and merged payload modes', () => {
       const rawRows = getDefDetailsImpl('Gun_Revolver', 'ThingDef', 'raw')
       const mergedRows = getDefDetailsImpl('Gun_Revolver', 'ThingDef', 'merged')
@@ -56,6 +64,15 @@ describe('get-def-details', () => {
       expect(text).toContain('<defName>Gun_Revolver</defName>')
       expect(text).toContain('ParentName="BaseHumanMakeableGun"')
       expect(text).not.toContain('<alwaysHaulable>true</alwaysHaulable>')
+    })
+
+    test('renders multiple XML blocks for ambiguous def names', () => {
+      const result = getDefDetails('Nociosphere')
+      const text = result.content[0].text
+
+      expect(text).toContain('<BodyDef>')
+      expect(text).toContain('<ThingDef')
+      expect(text.split('\n\n').length).toBeGreaterThan(1)
     })
   })
 })

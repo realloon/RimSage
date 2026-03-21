@@ -9,6 +9,16 @@ describe('search-defs', () => {
       expect(result.results.some(r => r.defName === 'Gun_Revolver')).toBe(true)
     })
 
+    test('matches labels with case-insensitive keywords', () => {
+      const result = searchDefsImpl('CHALICE')
+      expect(result.total).toBeGreaterThan(0)
+      expect(
+        result.results.some(
+          r => r.defName === 'RelicInertCup' && r.label === 'chalice',
+        ),
+      ).toBe(true)
+    })
+
     test('applies defType filter to all rows', () => {
       const result = searchDefsImpl('Gun', 'ThingDef', 10)
       expect(result.results.length).toBeGreaterThan(0)
@@ -32,6 +42,12 @@ describe('search-defs', () => {
     test('formats rows as MCP text output', () => {
       const result = searchDefs('Gun_Revolver')
       expect(result.content[0].text).toContain('[ThingDef] Gun_Revolver')
+    })
+
+    test('renders label-only matches in MCP text output', () => {
+      const result = searchDefs('chalice')
+      expect(result.content[0].text).toContain('[ThingDef] RelicInertCup')
+      expect(result.content[0].text).toContain('(label: "chalice")')
     })
 
     test('includes truncation hint when limited', () => {

@@ -39,6 +39,15 @@ describe.serial('read-csharp-symbol', () => {
       expect(result).toEqual([])
     })
 
+    test('returns every indexed match for duplicate type names', async () => {
+      const result = await readCsharpSymbolImpl('Option')
+
+      expect(result.length).toBeGreaterThan(1)
+      expect(result.every(row => row.fileExists)).toBe(true)
+      expect(result.every(row => row.filePath.endsWith('.cs'))).toBe(true)
+      expect(result.every(row => row.code.includes('Option'))).toBe(true)
+    })
+
     test('marks large type definitions as truncated candidates', async () => {
       const result = await readCsharpSymbolImpl('ThingDef')
       expect(result[0].isTruncated).toBe(true)
@@ -104,6 +113,21 @@ describe.serial('read-csharp-symbol', () => {
 
       expect(text).toContain('// File: Verse/Thing.cs')
       expect(text).toContain('public virtual void ExposeData()')
+    })
+
+    test('renders abstract members that end with semicolons', async () => {
+      const result = await readCsharpSymbol('Alert', 'GetReport')
+      const text = result.content[0].text
+
+      expect(text).toContain('// File: RimWorld/Alert.cs')
+      expect(text).toContain('public abstract AlertReport GetReport();')
+    })
+
+    test('renders multiple file headers for duplicate type names', async () => {
+      const result = await readCsharpSymbol('Option')
+      const text = result.content[0].text
+
+      expect(text.match(/^\/\/ File:/gm)?.length ?? 0).toBeGreaterThan(1)
     })
 
     test('adds summary note when large output is auto-summarized', async () => {
