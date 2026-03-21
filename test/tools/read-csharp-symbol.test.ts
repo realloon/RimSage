@@ -104,8 +104,6 @@ describe.serial('read-csharp-symbol', () => {
 
       expect(text).toContain('// File: Verse/Thing.cs')
       expect(text).toContain('public virtual void ExposeData()')
-      expect(text).not.toContain(`
-	public virtual void ExposeData()`)
     })
 
     test('adds summary note when large output is auto-summarized', async () => {

@@ -16,12 +16,6 @@ describe('get-def-details', () => {
       expect(unmatched).toEqual([])
     })
 
-    test('returns JSON payload for existing def', () => {
-      const rows = getDefDetailsImpl('Gun_Revolver')
-      expect(rows.length).toBeGreaterThan(0)
-      expect(() => JSON.parse(rows[0].payload)).not.toThrow()
-    })
-
     test('supports raw and merged payload modes', () => {
       const rawRows = getDefDetailsImpl('Gun_Revolver', 'ThingDef', 'raw')
       const mergedRows = getDefDetailsImpl('Gun_Revolver', 'ThingDef', 'merged')

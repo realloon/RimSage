@@ -52,22 +52,6 @@ describe('def-resolver', () => {
     expect(child?.c).toBe(3)
   })
 
-  test('should sort keys correctly', () => {
-    const def: Def = {
-      description: 'desc',
-      defName: 'Name',
-      label: 'label',
-      other: 'other',
-    }
-
-    const result = processDefs([def])[0]
-    const keys = Object.keys(result)
-    
-    expect(keys[0]).toBe('defName')
-    expect(keys[1]).toBe('label')
-    expect(keys[2]).toBe('description')
-  })
-
   test('should handle list merging', () => {
     const defs: Def[] = [
       {

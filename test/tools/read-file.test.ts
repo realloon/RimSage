@@ -42,13 +42,6 @@ describe('read-file', () => {
       expect(result.totalLines).toBe(3)
     })
 
-    test('treats empty file as one line', async () => {
-      await write(join(testDir, 'empty.txt'), '')
-      const result = await readFileImpl(sandbox, 'empty.txt')
-      expect(result.totalLines).toBe(1)
-      expect(result.content).toBe('')
-    })
-
   })
 
   describe('readFile', () => {

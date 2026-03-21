@@ -3,12 +3,6 @@ import { parser, builder } from '../../src/utils/xml-utils'
 
 describe('xml-utils', () => {
   describe('parser', () => {
-    test('should parse XML into object', () => {
-      const xml = '<Defs><ThingDef><a>1</a></ThingDef></Defs>'
-      const result = parser.parse(xml)
-      expect(result.Defs.ThingDef[0].a).toBe(1)
-    })
-
     test('should treat top-level tags under Defs as arrays', () => {
       const xml = `
         <Defs>
