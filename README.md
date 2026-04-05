@@ -41,19 +41,24 @@ Most clients support `mcp.json` configuration:
 
 RimSage also supports stdio transport for local deployment.
 
-1. Clone the repository
+1. Install dependencies
+
+- [Bun runtime](https://bun.com/)
+- [Ripgrep](https://github.com/BurntSushi/ripgrep)
+
+2. Clone the repository
 
 ```sh
 git clone https://github.com/realloon/RimSage.git
 ```
 
-2. Install dependencies
+3. Install package dependencies
 
 ```sh
 bun install
 ```
 
-3. Build index
+4. Build index
 
 ```sh
 bun run src/scripts/import-defs /path/to/your/rimworld/root/path
@@ -63,7 +68,7 @@ bun run build
 
 You'll need local RimWorld files and a decompiled C# project, which is allowed under the [RimWorld EULA](https://rimworldgame.com/eula).
 
-4. Add this MCP server
+5. Add this MCP server
 
 You can find the integration methods for different Agent clients in the [wiki](https://github.com/realloon/RimSage/wiki).
 
@@ -81,11 +86,6 @@ Most Agent clients support `mcp.json` configuration:
 ```
 
 **Replace** `/path/to/this/repo` with the actual path to this repository on your system.
-
-## Requirements
-
-- [Bun runtime](https://bun.com/)
-- [Ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Development
 
