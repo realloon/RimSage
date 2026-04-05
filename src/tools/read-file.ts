@@ -14,11 +14,11 @@ export interface ReadFileResult {
  */
 export async function readFileImpl(
   sandbox: PathSandbox,
-  relativePath: string,
+  path: string,
   startLine: number = 0,
   lineCount: number = 400
 ): Promise<ReadFileResult> {
-  const fullPath = sandbox.validateAndResolve(relativePath)
+  const fullPath = sandbox.validateAndResolve(path)
   const content = await file(fullPath).text()
   const lines = content.split(/\r?\n/)
   const totalLines = lines.length
@@ -39,17 +39,12 @@ export async function readFileImpl(
  */
 export async function readFile(
   sandbox: PathSandbox,
-  relativePath: string,
+  path: string,
   startLine: number = 0,
   lineCount: number = 400
 ) {
   try {
-    const result = await readFileImpl(
-      sandbox,
-      relativePath,
-      startLine,
-      lineCount
-    )
+    const result = await readFileImpl(sandbox, path, startLine, lineCount)
 
     if (startLine >= result.totalLines) {
       return textResponse(
@@ -75,13 +70,11 @@ export async function readFile(
     const fsError = error as NodeJS.ErrnoException
 
     if (fsError.code === 'ENOENT' || fsError.message?.includes('No such file')) {
-      throw new Error(`File not found: ${relativePath}`)
+      throw new Error(`File not found: ${path}`)
     }
 
     if (fsError.code === 'EISDIR') {
-      throw new Error(
-        `Path is a directory: ${relativePath}. Use \`list_directory\` instead.`
-      )
+      throw new Error(`Path is a directory: ${path}. Use \`list_directory\` instead.`)
     }
 
     throw error

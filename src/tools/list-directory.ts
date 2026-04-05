@@ -19,10 +19,10 @@ export interface ListDirectoryResult {
  */
 export async function listDirectoryImpl(
   sandbox: PathSandbox,
-  relativePath: string = '',
+  path: string = '',
   limit: number = 100
 ): Promise<ListDirectoryResult> {
-  const fullPath = sandbox.validateAndResolve(relativePath)
+  const fullPath = sandbox.validateAndResolve(path)
 
   const files = (await readdir(fullPath, { withFileTypes: true }))
     .filter(f => !f.name.startsWith('.'))
@@ -42,7 +42,7 @@ export async function listDirectoryImpl(
       ({
         name: entry.name,
         type: entry.isDirectory() ? 'directory' : 'file',
-        path: relativePath ? join(relativePath, entry.name) : entry.name,
+        path: path ? join(path, entry.name) : entry.name,
       } as const)
   )
 
@@ -54,15 +54,11 @@ export async function listDirectoryImpl(
  */
 export async function listDirectory(
   sandbox: PathSandbox,
-  relativePath: string = '',
+  path: string = '',
   limit: number = 100
 ) {
   try {
-    const { entries, total } = await listDirectoryImpl(
-      sandbox,
-      relativePath,
-      limit
-    )
+    const { entries, total } = await listDirectoryImpl(sandbox, path, limit)
 
     // Format output
     const formatted = entries
@@ -82,13 +78,11 @@ export async function listDirectory(
     const fsError = error as NodeJS.ErrnoException
 
     if (fsError.code === 'ENOENT') {
-      throw new Error(`Directory not found: ${relativePath || '/'}`)
+      throw new Error(`Directory not found: ${path || '/'}`)
     }
 
     if (fsError.code === 'ENOTDIR') {
-      throw new Error(
-        `Path is not a directory: ${relativePath}. Use read_file tool instead.`
-      )
+      throw new Error(`Path is not a directory: ${path}. Use read_file tool instead.`)
     }
 
     throw error

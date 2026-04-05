@@ -11,7 +11,7 @@ import {
 } from './tools'
 
 const name = 'rimsage'
-const version = '0.12.0'
+const version = '0.12.1'
 const sandbox = new PathSandbox('dist/assets')
 
 function registerToolsAndResources(server: McpServer) {
@@ -42,7 +42,7 @@ function registerToolsAndResources(server: McpServer) {
     {
       description: 'Read source file.',
       inputSchema: {
-        relative_path: z
+        path: z
           .string()
           .describe(
             'Path (e.g. `Source/RimWorld/AbilityDef.cs`, `Defs/Core/AbilityDefs/AbilityDefs.xml`).',
@@ -65,8 +65,8 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Max lines to return.'),
       },
     },
-    async ({ relative_path, start_line, line_count }) =>
-      await readFile(sandbox, relative_path, start_line, line_count),
+    async ({ path, start_line, line_count }) =>
+      await readFile(sandbox, path, start_line, line_count),
   )
 
   // tool: list dir
@@ -75,7 +75,7 @@ function registerToolsAndResources(server: McpServer) {
     {
       description: 'List contents of a directory.',
       inputSchema: {
-        relative_path: z
+        path: z
           .string()
           .default('')
           .describe('Path (e.g. `Source/Verse`). Empty for root.'),
@@ -88,8 +88,7 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Max items to return.'),
       },
     },
-    async ({ relative_path, limit }) =>
-      listDirectory(sandbox, relative_path, limit),
+    async ({ path, limit }) => listDirectory(sandbox, path, limit),
   )
 
   // tool：get def details
@@ -148,7 +147,9 @@ function registerToolsAndResources(server: McpServer) {
         memberName: z
           .string()
           .optional()
-          .describe('Optional method name within the type (e.g. "ExposeData", "ConfigErrors").'),
+          .describe(
+            'Optional method name within the type (e.g. "ExposeData", "ConfigErrors").',
+          ),
       },
     },
     async ({ typeName, memberName }) =>

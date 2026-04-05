@@ -8,13 +8,13 @@ export class PathSandbox {
     this.#basePath = resolve(root, basePath)
   }
 
-  validateAndResolve(relativePath: string): string {
-    const fullPath = resolve(this.#basePath, relativePath)
+  validateAndResolve(path: string): string {
+    const fullPath = resolve(this.#basePath, path)
     const allowedPrefix = `${this.#basePath}${sep}`
 
     if (fullPath !== this.#basePath && !fullPath.startsWith(allowedPrefix)) {
       throw new Error(
-        `Path traversal detected: "${relativePath}" attempts to escape base directory`
+        `Path traversal detected: "${path}" attempts to escape base directory`
       )
     }
 

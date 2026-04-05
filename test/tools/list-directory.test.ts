@@ -20,7 +20,7 @@ describe('list-directory', () => {
   })
 
   describe('listDirectoryImpl', () => {
-    test('sorts directories first, hides dotfiles, and builds relative paths', async () => {
+    test('sorts directories first, hides dotfiles, and builds entry paths', async () => {
       await mkdir(join(testDir, 'subdir'), { recursive: true })
       await write(join(testDir, 'a.txt'), 'content')
       await write(join(testDir, '.hidden'), 'hidden')

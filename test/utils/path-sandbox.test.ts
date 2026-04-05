@@ -6,10 +6,10 @@ import { root } from '../../src/utils/env'
 describe('PathSandbox', () => {
   const sandbox = new PathSandbox('test-assets')
 
-  test('should resolve valid relative paths', () => {
-    const relative = 'Defs/Thing.xml'
-    const resolved = sandbox.validateAndResolve(relative)
-    expect(resolved).toBe(join(root, 'test-assets', relative))
+  test('should resolve valid paths', () => {
+    const path = 'Defs/Thing.xml'
+    const resolved = sandbox.validateAndResolve(path)
+    expect(resolved).toBe(join(root, 'test-assets', path))
   })
 
   test('should throw error for path traversal (..)', () => {
