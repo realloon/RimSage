@@ -1,4 +1,4 @@
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
+import { McpServer } from '@modelcontextprotocol/server'
 import { z } from 'zod'
 import { PathSandbox } from './utils/path-sandbox'
 import {
@@ -11,7 +11,7 @@ import {
 } from './tools'
 
 const name = 'rimsage'
-const version = '0.13.0'
+const version = '0.14.0'
 const sandbox = new PathSandbox('dist/assets')
 
 function registerToolsAndResources(server: McpServer) {
@@ -20,7 +20,7 @@ function registerToolsAndResources(server: McpServer) {
     'search_source',
     {
       description: 'Search RimWorld source code using regex.',
-      inputSchema: {
+      inputSchema: z.object({
         query: z.string().describe('Regex pattern.'),
         file_pattern: z
           .string()
@@ -30,7 +30,7 @@ function registerToolsAndResources(server: McpServer) {
           .boolean()
           .default(false)
           .describe('Enforce exact case matching.'),
-      },
+      }),
     },
     async ({ query, file_pattern, case_sensitive }) =>
       searchSource(sandbox, query, case_sensitive, file_pattern),
@@ -41,7 +41,7 @@ function registerToolsAndResources(server: McpServer) {
     'read_file',
     {
       description: 'Read source file.',
-      inputSchema: {
+      inputSchema: z.object({
         path: z
           .string()
           .describe(
@@ -63,7 +63,7 @@ function registerToolsAndResources(server: McpServer) {
           .optional()
           .default(400)
           .describe('Max lines to return.'),
-      },
+      }),
     },
     async ({ path, start_line, line_count }) =>
       await readFile(sandbox, path, start_line, line_count),
@@ -74,7 +74,7 @@ function registerToolsAndResources(server: McpServer) {
     'list_directory',
     {
       description: 'List contents of a directory.',
-      inputSchema: {
+      inputSchema: z.object({
         path: z
           .string()
           .default('')
@@ -86,7 +86,7 @@ function registerToolsAndResources(server: McpServer) {
           .max(500)
           .default(100)
           .describe('Max items to return.'),
-      },
+      }),
     },
     async ({ path, limit }) => listDirectory(sandbox, path, limit),
   )
@@ -96,7 +96,7 @@ function registerToolsAndResources(server: McpServer) {
     'get_def_details',
     {
       description: 'Get XML of a Def.',
-      inputSchema: {
+      inputSchema: z.object({
         defName: z.string().describe('Exact defName (e.g. `Gun_Revolver`).'),
         defType: z
           .string()
@@ -106,7 +106,7 @@ function registerToolsAndResources(server: McpServer) {
           .enum(['merged', 'raw'])
           .default('merged')
           .describe('Return merged inheritance or the raw indexed Def.'),
-      },
+      }),
     },
     async ({ defName, defType, inheritance }) =>
       getDefDetails(defName, defType, inheritance),
@@ -117,7 +117,7 @@ function registerToolsAndResources(server: McpServer) {
     'search_defs',
     {
       description: 'Search Def indices by partial name or label.',
-      inputSchema: {
+      inputSchema: z.object({
         query: z.string().describe('Case-insensitive keyword.'),
         defType: z
           .string()
@@ -130,7 +130,7 @@ function registerToolsAndResources(server: McpServer) {
           .max(100)
           .default(20)
           .describe('Max results to return.'),
-      },
+      }),
     },
     async ({ query, defType, limit }) => searchDefs(query, defType, limit),
   )
@@ -140,7 +140,7 @@ function registerToolsAndResources(server: McpServer) {
     'read_csharp_symbol',
     {
       description: 'Read a C# type or method definition.',
-      inputSchema: {
+      inputSchema: z.object({
         typeName: z
           .string()
           .describe('Exact type name (e.g. "ThingDef", "JobDriver").'),
@@ -150,7 +150,7 @@ function registerToolsAndResources(server: McpServer) {
           .describe(
             'Optional method name within the type (e.g. "ExposeData", "ConfigErrors").',
           ),
-      },
+      }),
     },
     async ({ typeName, memberName }) =>
       await readCsharpSymbol(typeName, memberName),

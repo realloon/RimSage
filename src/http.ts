@@ -1,5 +1,5 @@
 import { serve } from 'bun'
-import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
+import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/server'
 import { createServer } from './server'
 import { closeDb } from './utils/db'
 
