@@ -10,7 +10,7 @@ const server = serve({
   routes: {
     '/health': Response.json({ status: 'ok' }),
     '/mcp': (req, server) => {
-      // MCP responses may stay open for streaming; disable idle timeout per request.
+      // streaming MCP responses can exceed the default request idle timeout.
       server.timeout(req, 0)
       return handleMcpRequest(req)
     },

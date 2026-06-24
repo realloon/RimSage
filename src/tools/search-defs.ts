@@ -4,9 +4,6 @@ import { textResponse } from '../utils/mcp-response'
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
 
-/**
- * Internal implementation: Query defs from database
- */
 export function searchDefsImpl(
   query: string,
   defType?: string,
@@ -44,9 +41,6 @@ export function searchDefsImpl(
   return { results, total }
 }
 
-/**
- * External adapter: Convert SearchDefsResult to MCP response format
- */
 export function searchDefs(
   query: string,
   defType?: string,

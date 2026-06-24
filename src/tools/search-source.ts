@@ -6,9 +6,6 @@ const MAX_OUTPUT_SIZE = 100 * 1024
 const MAX_RESULT_LINES = 400
 const STDERR_CAPTURE_SIZE = 8 * 1024
 
-/**
- * Internal implementation: Execute rg search and return raw result
- */
 export async function searchSourceImpl(
   sandbox: PathSandbox,
   query: string,
@@ -17,14 +14,12 @@ export async function searchSourceImpl(
 ) {
   const args = ['--line-number', '--heading', '--color', 'never']
 
-  // case sensitive
   if (caseSensitive) {
     args.push('-s')
   } else {
     args.push('-i')
   }
 
-  // filter pattern
   if (filePattern) {
     args.push('-g', filePattern)
   }
@@ -82,9 +77,6 @@ export async function searchSourceImpl(
   throw new Error(`rg failed with exit code ${exitCode}`)
 }
 
-/**
- * External adapter: Convert search result to MCP response format
- */
 export async function searchSource(
   sandbox: PathSandbox,
   query: string,
@@ -112,7 +104,6 @@ export async function searchSource(
     return textResponse(truncated)
   }
 
-  // lines limited
   const lines = output.split(/\r?\n/)
   if (lines.length > MAX_RESULT_LINES) {
     const truncated = lines.slice(0, MAX_RESULT_LINES)

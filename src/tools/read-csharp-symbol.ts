@@ -27,9 +27,6 @@ interface CSharpSymbolResult {
 
 const MAX_LINES_THRESHOLD = 400
 
-/**
- * Internal implementation: Query and read C# type or method definitions
- */
 export async function readCsharpSymbolImpl(
   typeName: string,
   memberName?: string,
@@ -79,9 +76,6 @@ export async function readCsharpSymbolImpl(
   return results
 }
 
-/**
- * External adapter: Convert CSharpSymbolResult[] to MCP response format
- */
 export async function readCsharpSymbol(typeName: string, memberName?: string) {
   const results = await readCsharpSymbolImpl(typeName, memberName)
 
@@ -134,7 +128,6 @@ export async function readCsharpSymbol(typeName: string, memberName?: string) {
 }
 
 // #region Helpers
-
 function getCsharpIndexRows(typeName: string): IndexRow[] {
   const db = getDb()
 
@@ -310,5 +303,4 @@ function getCsharpIndexHealth() {
     available: (countRow?.rowCount ?? 0) > 0,
   }
 }
-
 // #endregion

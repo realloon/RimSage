@@ -12,12 +12,12 @@ export interface Def extends XmlObject {
   '@_Inherit'?: string
 }
 
-// main
 export function processDefs(defs: Def[]): Def[] {
   const resolver = new DefResolver(defs)
   return defs.map(def => resolver.resolve(def))
 }
 
+// #region Helpers
 class DefResolver {
   private readonly defMap = new Map<string, Def>()
   private readonly memo = new Map<string, Def>()
@@ -77,7 +77,6 @@ class DefResolver {
   }
 }
 
-// #region Helpers
 function stripParentMeta(def: Def): Def {
   const { '@_Name': _n, '@_Abstract': _a, '@_ParentName': _p, ...rest } = def
   return rest

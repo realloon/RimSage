@@ -2,9 +2,6 @@ import { file } from 'bun'
 import { PathSandbox } from '../utils/path-sandbox'
 import { textResponse } from '../utils/mcp-response'
 
-/**
- * Internal implementation: Read file content
- */
 export async function readFileImpl(
   sandbox: PathSandbox,
   path: string,
@@ -27,9 +24,6 @@ export async function readFileImpl(
   }
 }
 
-/**
- * External adapter: Convert ReadFileResult to MCP response format
- */
 export async function readFile(
   sandbox: PathSandbox,
   path: string,

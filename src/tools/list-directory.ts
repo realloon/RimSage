@@ -14,9 +14,6 @@ interface ListDirectoryResult {
   total: number
 }
 
-/**
- * Internal implementation: List directory contents
- */
 export async function listDirectoryImpl(
   sandbox: PathSandbox,
   path: string = '',
@@ -49,9 +46,6 @@ export async function listDirectoryImpl(
   return { entries, total }
 }
 
-/**
- * External adapter: Convert ListDirectoryResult to MCP response format
- */
 export async function listDirectory(
   sandbox: PathSandbox,
   path: string = '',
@@ -60,7 +54,6 @@ export async function listDirectory(
   try {
     const { entries, total } = await listDirectoryImpl(sandbox, path, limit)
 
-    // Format output
     const formatted = entries
       .map(e => (e.type === 'directory' ? `${e.name}/` : e.name))
       .join('\n')

@@ -22,8 +22,8 @@ describe('def-resolver', () => {
     const child = result.find(d => d.defName === 'Child')
 
     expect(child).toBeDefined()
-    expect(child?.label).toBe('child label') // overridden
-    expect(child?.description).toBe('base desc') // inherited
+    expect(child?.label).toBe('child label')
+    expect(child?.description).toBe('base desc')
   })
 
   test('should resolve multi-level inheritance', () => {

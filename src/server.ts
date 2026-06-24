@@ -154,7 +154,7 @@ function registerToolsAndResources(server: McpServer) {
       await readCsharpSymbol(typeName, memberName),
   )
 
-  // resource: manifest (minimal resources support for clients that probe resources/*)
+  // some clients probe resources/* before using tools.
   server.registerResource(
     'manifest',
     'rimsage://manifest',
