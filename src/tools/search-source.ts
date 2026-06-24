@@ -2,25 +2,15 @@ import { spawn } from 'bun'
 import { PathSandbox } from '../utils/path-sandbox'
 import { textResponse } from '../utils/mcp-response'
 
-const MAX_OUTPUT_SIZE = 100 * 1024 // 100KB limit
+const MAX_OUTPUT_SIZE = 100 * 1024
 const MAX_RESULT_LINES = 400
 const STDERR_CAPTURE_SIZE = 8 * 1024
-
-interface StreamReadResult {
-  text: string
-  exceeded: boolean
-}
-
-export interface SearchSourceRawResult {
-  output: string
-  exceededOutputLimit: boolean
-}
 
 async function readStreamWithLimit(
   stream: ReadableStream<Uint8Array>,
   maxBytes: number,
   onLimitReached?: () => void,
-): Promise<StreamReadResult> {
+) {
   const reader = stream.getReader()
   const decoder = new TextDecoder()
   let totalBytes = 0
@@ -59,7 +49,7 @@ export async function searchSourceImpl(
   query: string,
   caseSensitive: boolean = false,
   filePattern?: string,
-): Promise<SearchSourceRawResult> {
+) {
   const args = ['--line-number', '--heading', '--color', 'never']
 
   // case sensitive
@@ -76,7 +66,7 @@ export async function searchSourceImpl(
 
   // search pattern
   args.push('-e', query)
-  const process = spawn({
+  const rgProcess = spawn({
     cmd: ['rg', ...args, '.'],
     cwd: sandbox.basePath,
     stdout: 'pipe',
@@ -87,22 +77,18 @@ export async function searchSourceImpl(
   const stopProcess = () => {
     if (stoppedByLimit) return
     stoppedByLimit = true
-    try {
-      process.kill()
-    } catch {
-      // Process may already be exiting; ignore.
-    }
+    rgProcess.kill()
   }
 
-  const stdoutPromise = process.stdout
-    ? readStreamWithLimit(process.stdout, MAX_OUTPUT_SIZE + 1, stopProcess)
+  const stdoutPromise = rgProcess.stdout
+    ? readStreamWithLimit(rgProcess.stdout, MAX_OUTPUT_SIZE + 1, stopProcess)
     : Promise.resolve({ text: '', exceeded: false })
-  const stderrPromise = process.stderr
-    ? readStreamWithLimit(process.stderr, STDERR_CAPTURE_SIZE)
+  const stderrPromise = rgProcess.stderr
+    ? readStreamWithLimit(rgProcess.stderr, STDERR_CAPTURE_SIZE)
     : Promise.resolve({ text: '', exceeded: false })
 
   const [exitCode, stdout, stderr] = await Promise.all([
-    process.exited,
+    rgProcess.exited,
     stdoutPromise,
     stderrPromise,
   ])
