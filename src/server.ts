@@ -1,14 +1,12 @@
 import { McpServer } from '@modelcontextprotocol/server'
 import { z } from 'zod'
 import { PathSandbox } from './utils/path-sandbox'
-import {
-  searchSource,
-  readFile,
-  listDirectory,
-  getDefDetails,
-  searchDefs,
-  readCsharpSymbol,
-} from './tools'
+import { searchSource } from './tools/search-source'
+import { readFile } from './tools/read-file'
+import { listDirectory } from './tools/list-directory'
+import { getDefDetails } from './tools/get-def-details'
+import { searchDefs } from './tools/search-defs'
+import { readCsharpSymbol } from './tools/read-csharp-symbol'
 
 const name = 'rimsage'
 const version = '0.14.0'
