@@ -16,9 +16,7 @@ interface CodeBlock {
   code: string
 }
 
-const MAX_LINES_THRESHOLD = 400
-
-export interface CSharpSymbolResult {
+interface CSharpSymbolResult {
   filePath: string
   startLine: number
   lineCount: number
@@ -26,6 +24,8 @@ export interface CSharpSymbolResult {
   isTruncated: boolean
   fileExists: boolean
 }
+
+const MAX_LINES_THRESHOLD = 400
 
 /**
  * Internal implementation: Query and read C# type or method definitions
@@ -56,7 +56,12 @@ export async function readCsharpSymbolImpl(
     const allLines = content.split(/\r?\n/)
     const typeBlock = extractScopedBlock(allLines, row.startLine)
     const blocks = memberName
-      ? extractNamedMethods(allLines, row.startLine, typeBlock.lineCount, memberName)
+      ? extractNamedMethods(
+          allLines,
+          row.startLine,
+          typeBlock.lineCount,
+          memberName,
+        )
       : [typeBlock]
 
     for (const block of blocks) {
@@ -134,9 +139,10 @@ function getCsharpIndexRows(typeName: string): IndexRow[] {
   const db = getDb()
 
   return db
-    .query<IndexRow, SqlNamedParams>(
-      'SELECT filePath, startLine FROM csharp_index WHERE typeName = $name',
-    )
+    .query<
+      IndexRow,
+      SqlNamedParams
+    >('SELECT filePath, startLine FROM csharp_index WHERE typeName = $name')
     .all({ $name: typeName })
 }
 
@@ -225,7 +231,9 @@ function dedentCode(code: string): string {
   }
 
   return lines
-    .map(line => (line.startsWith(commonIndent) ? line.slice(commonIndent.length) : line))
+    .map(line =>
+      line.startsWith(commonIndent) ? line.slice(commonIndent.length) : line,
+    )
     .join('\n')
 }
 
@@ -281,9 +289,10 @@ function getCsharpIndexHealth() {
   const db = getDb()
 
   const tableRow = db
-    .query<{ name: string }, []>(
-      "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'csharp_index'",
-    )
+    .query<
+      { name: string },
+      []
+    >("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'csharp_index'")
     .get()
 
   if (!tableRow) {
@@ -291,7 +300,10 @@ function getCsharpIndexHealth() {
   }
 
   const countRow = db
-    .query<{ rowCount: number }, []>('SELECT COUNT(*) AS rowCount FROM csharp_index')
+    .query<
+      { rowCount: number },
+      []
+    >('SELECT COUNT(*) AS rowCount FROM csharp_index')
     .get()
 
   return {

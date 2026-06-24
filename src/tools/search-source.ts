@@ -6,41 +6,6 @@ const MAX_OUTPUT_SIZE = 100 * 1024
 const MAX_RESULT_LINES = 400
 const STDERR_CAPTURE_SIZE = 8 * 1024
 
-async function readStreamWithLimit(
-  stream: ReadableStream<Uint8Array>,
-  maxBytes: number,
-  onLimitReached?: () => void,
-) {
-  const reader = stream.getReader()
-  const decoder = new TextDecoder()
-  let totalBytes = 0
-  let text = ''
-
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    if (!value) continue
-
-    const nextBytes = totalBytes + value.byteLength
-    if (nextBytes > maxBytes) {
-      const remaining = maxBytes - totalBytes
-      if (remaining > 0) {
-        text += decoder.decode(value.subarray(0, remaining), { stream: true })
-      }
-      text += decoder.decode()
-      onLimitReached?.()
-      await reader.cancel()
-      return { text, exceeded: true }
-    }
-
-    totalBytes = nextBytes
-    text += decoder.decode(value, { stream: true })
-  }
-
-  text += decoder.decode()
-  return { text, exceeded: false }
-}
-
 /**
  * Internal implementation: Execute rg search and return raw result
  */
@@ -162,3 +127,40 @@ export async function searchSource(
 
   return textResponse(output)
 }
+
+// #region Helper
+async function readStreamWithLimit(
+  stream: ReadableStream<Uint8Array>,
+  maxBytes: number,
+  onLimitReached?: () => void,
+) {
+  const reader = stream.getReader()
+  const decoder = new TextDecoder()
+  let totalBytes = 0
+  let text = ''
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    if (!value) continue
+
+    const nextBytes = totalBytes + value.byteLength
+    if (nextBytes > maxBytes) {
+      const remaining = maxBytes - totalBytes
+      if (remaining > 0) {
+        text += decoder.decode(value.subarray(0, remaining), { stream: true })
+      }
+      text += decoder.decode()
+      onLimitReached?.()
+      await reader.cancel()
+      return { text, exceeded: true }
+    }
+
+    totalBytes = nextBytes
+    text += decoder.decode(value, { stream: true })
+  }
+
+  text += decoder.decode()
+  return { text, exceeded: false }
+}
+// #endregion

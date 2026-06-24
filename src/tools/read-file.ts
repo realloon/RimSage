@@ -2,13 +2,6 @@ import { file } from 'bun'
 import { PathSandbox } from '../utils/path-sandbox'
 import { textResponse } from '../utils/mcp-response'
 
-export interface ReadFileResult {
-  content: string
-  totalLines: number
-  startLine: number
-  endLine: number
-}
-
 /**
  * Internal implementation: Read file content
  */
@@ -16,8 +9,8 @@ export async function readFileImpl(
   sandbox: PathSandbox,
   path: string,
   startLine: number = 0,
-  lineCount: number = 400
-): Promise<ReadFileResult> {
+  lineCount: number = 400,
+) {
   const fullPath = sandbox.validateAndResolve(path)
   const content = await file(fullPath).text()
   const lines = content.split(/\r?\n/)
@@ -41,14 +34,14 @@ export async function readFile(
   sandbox: PathSandbox,
   path: string,
   startLine: number = 0,
-  lineCount: number = 400
+  lineCount: number = 400,
 ) {
   try {
     const result = await readFileImpl(sandbox, path, startLine, lineCount)
 
     if (startLine >= result.totalLines) {
       return textResponse(
-        `[Error] Start line ${startLine} is out of bounds (File has ${result.totalLines} lines).`
+        `[Error] Start line ${startLine} is out of bounds (File has ${result.totalLines} lines).`,
       )
     }
 
@@ -57,10 +50,10 @@ export async function readFile(
     if (result.endLine < result.totalLines) {
       const lines = result.content.split('\n')
       lines.push(
-        `\n[TRUNCATED] Showing ${lines.length}/${result.totalLines} lines.`
+        `\n[TRUNCATED] Showing ${lines.length}/${result.totalLines} lines.`,
       )
       lines.push(
-        `(Tip: Continue reading using \`start_line\`: ${result.endLine})`
+        `(Tip: Continue reading using \`start_line\`: ${result.endLine})`,
       )
       outputContent = lines.join('\n')
     }
@@ -69,12 +62,17 @@ export async function readFile(
   } catch (error: unknown) {
     const fsError = error as NodeJS.ErrnoException
 
-    if (fsError.code === 'ENOENT' || fsError.message?.includes('No such file')) {
+    if (
+      fsError.code === 'ENOENT' ||
+      fsError.message?.includes('No such file')
+    ) {
       throw new Error(`File not found: ${path}`)
     }
 
     if (fsError.code === 'EISDIR') {
-      throw new Error(`Path is a directory: ${path}. Use \`list_directory\` instead.`)
+      throw new Error(
+        `Path is a directory: ${path}. Use \`list_directory\` instead.`,
+      )
     }
 
     throw error

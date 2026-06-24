@@ -3,12 +3,13 @@ import { builder } from '../utils/xml-utils'
 import { type SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
-export type DefInheritanceMode = 'merged' | 'raw'
+type DefInheritanceMode = 'merged' | 'raw'
 
 type DefDetailRow = {
   defType: DefsRow['defType']
   payload: string
 }
+
 type GetDefDetailsResponse = ReturnType<typeof textResponse> & {
   isError?: boolean
 }

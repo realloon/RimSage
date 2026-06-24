@@ -1,13 +1,6 @@
 import { Database } from 'bun:sqlite'
 import { indexDbPath } from './env'
 
-export interface CSharpIndexRow {
-  typeName: string
-  filePath: string
-  startLine: number
-  typeKind: string // 'class' | 'struct' | 'interface' | 'enum'
-}
-
 export interface DefsRow {
   defName: string
   defType: string

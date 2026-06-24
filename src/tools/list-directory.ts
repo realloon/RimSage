@@ -3,13 +3,13 @@ import { join } from 'path'
 import { PathSandbox } from '../utils/path-sandbox'
 import { textResponse } from '../utils/mcp-response'
 
-export interface DirectoryEntry {
+interface DirectoryEntry {
   name: string
   type: 'directory' | 'file'
   path: string
 }
 
-export interface ListDirectoryResult {
+interface ListDirectoryResult {
   entries: DirectoryEntry[]
   total: number
 }
@@ -20,7 +20,7 @@ export interface ListDirectoryResult {
 export async function listDirectoryImpl(
   sandbox: PathSandbox,
   path: string = '',
-  limit: number = 100
+  limit: number = 100,
 ): Promise<ListDirectoryResult> {
   const fullPath = sandbox.validateAndResolve(path)
 
@@ -43,7 +43,7 @@ export async function listDirectoryImpl(
         name: entry.name,
         type: entry.isDirectory() ? 'directory' : 'file',
         path: path ? join(path, entry.name) : entry.name,
-      } as const)
+      }) as const,
   )
 
   return { entries, total }
@@ -55,7 +55,7 @@ export async function listDirectoryImpl(
 export async function listDirectory(
   sandbox: PathSandbox,
   path: string = '',
-  limit: number = 100
+  limit: number = 100,
 ) {
   try {
     const { entries, total } = await listDirectoryImpl(sandbox, path, limit)
@@ -69,8 +69,7 @@ export async function listDirectory(
 
     if (entries.length < total) {
       finalOutput += `\n[TRUNCATED] Showing ${entries.length}/${total} items.`
-      finalOutput +=
-        '\n(Tip: Increase `limit` or use `search_source`.)'
+      finalOutput += '\n(Tip: Increase `limit` or use `search_source`.)'
     }
 
     return textResponse(finalOutput)
@@ -82,7 +81,9 @@ export async function listDirectory(
     }
 
     if (fsError.code === 'ENOTDIR') {
-      throw new Error(`Path is not a directory: ${path}. Use read_file tool instead.`)
+      throw new Error(
+        `Path is not a directory: ${path}. Use read_file tool instead.`,
+      )
     }
 
     throw error

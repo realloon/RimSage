@@ -4,19 +4,14 @@ import { textResponse } from '../utils/mcp-response'
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
 
-export interface SearchDefsResult {
-  results: ResultRow[]
-  total: number
-}
-
 /**
  * Internal implementation: Query defs from database
  */
 export function searchDefsImpl(
   query: string,
   defType?: string,
-  limit: number = 20
-): SearchDefsResult {
+  limit: number = 20,
+) {
   const db = getDb()
   let whereClause = '(defName LIKE $q OR label LIKE $q)'
 
@@ -44,9 +39,7 @@ export function searchDefsImpl(
     LIMIT $limit
   `
   const queryParams: SqlNamedParams = { ...params, $limit: limit }
-  const results = db
-    .query<ResultRow, SqlNamedParams>(dataSql)
-    .all(queryParams)
+  const results = db.query<ResultRow, SqlNamedParams>(dataSql).all(queryParams)
 
   return { results, total }
 }
@@ -57,7 +50,7 @@ export function searchDefsImpl(
 export function searchDefs(
   query: string,
   defType?: string,
-  limit: number = 20
+  limit: number = 20,
 ) {
   const { results, total } = searchDefsImpl(query, defType, limit)
 
