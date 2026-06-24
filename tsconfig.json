@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "module": "preserve",
+    "types": ["bun"],
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "erasableSyntaxOnly": true
+  }
+}

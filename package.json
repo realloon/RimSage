@@ -10,7 +10,7 @@
     "index:defs": "bun src/scripts/index-defs.ts",
     "index:csharp": "bun src/scripts/index-csharp.ts",
     "build": "bun run clean && bun run index:defs && bun run index:csharp",
-    "type-check": "tsc --noEmit --target ESNext --module Preserve --erasableSyntaxOnly --skipLibCheck $(rg --files src test -g '*.ts')"
+    "type-check": "tsc"
   },
   "dependencies": {
     "@cfworker/json-schema": "^4.1.1",
