@@ -1,6 +1,6 @@
 # RimSage
 
-[![bun](https://img.shields.io/badge/Bun-%23000000.svg?style=flat&logo=bun&logoColor=white)](https://bun.com/) [![ripgrep](https://img.shields.io/badge/ripgrep-%23000000.svg?style=flat&logo=rust&logoColor=white)](https://github.com/BurntSushi/ripgrep)
+[![MCP Server](https://badge.mcpx.dev?type=server)](https://modelcontextprotocol.io/introduction) [![bun](https://img.shields.io/badge/Bun-%23000000.svg?style=flat&logo=bun)](https://bun.com/) [![ripgrep](https://img.shields.io/badge/ripgrep-%23000000.svg?style=flat&logo=rust)](https://github.com/BurntSushi/ripgrep)
 
 An MCP server that provides RimWorld source code search and browsing capabilities.
 
@@ -23,8 +23,6 @@ The easiest way to use RimSage is through the online service:
 https://mcp.rimsage.com/mcp
 ```
 
-You can find the integration methods for different Agent clients in the [wiki](https://github.com/realloon/RimSage/wiki).
- 
 Most clients support `mcp.json` configuration:
 
 ```json
@@ -36,6 +34,8 @@ Most clients support `mcp.json` configuration:
   }
 }
 ```
+
+You can find the integration methods for different Agent clients in the [wiki](https://github.com/realloon/RimSage/wiki).
 
 ## Self-Hosted
 
