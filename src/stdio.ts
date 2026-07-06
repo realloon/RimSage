@@ -1,4 +1,4 @@
-import { StdioServerTransport } from '@modelcontextprotocol/server'
+import { StdioServerTransport } from '@modelcontextprotocol/server/stdio'
 import { closeDb } from './utils/db'
 import { createServer } from './server'
 
