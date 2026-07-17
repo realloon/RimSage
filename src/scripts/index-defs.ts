@@ -1,9 +1,9 @@
 import { file, Glob } from 'bun'
+import { Database } from 'bun:sqlite'
 import { join } from 'node:path'
 import { defsPath, indexDbPath } from '../utils/env'
 import { parser } from '../utils/xml-utils'
 import { processDefs, type Def } from '../utils/def-resolver'
-import { createBuilderDb } from '../utils/db'
 
 export async function rebuildDefsIndex(
   dbPath = indexDbPath,
@@ -43,7 +43,7 @@ export async function rebuildDefsIndex(
 
   // 4. write in sqlite
   console.log(`Writing to ${dbPath}...`)
-  const db = createBuilderDb(dbPath)
+  const db = new Database(dbPath)
 
   try {
     db.run('DROP TABLE IF EXISTS defs;')

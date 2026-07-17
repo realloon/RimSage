@@ -1,6 +1,6 @@
-import { getDb, type DefsRow } from '../utils/db'
+import { db, type DefsRow } from '../utils/db'
 import { builder } from '../utils/xml-utils'
-import { type SqlNamedParams } from '../types'
+import type { SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
 type DefInheritanceMode = 'merged' | 'raw'
@@ -19,7 +19,6 @@ export function getDefDetailsImpl(
   defType?: string,
   inheritance: DefInheritanceMode = 'merged',
 ): DefDetailRow[] {
-  const db = getDb()
   const params: SqlNamedParams = { $name: defName }
   const payloadColumn = inheritance === 'raw' ? 'rawPayload' : 'mergedPayload'
   let queryStr = `SELECT defType, ${payloadColumn} AS payload FROM defs WHERE defName = $name`

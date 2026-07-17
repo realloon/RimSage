@@ -1,4 +1,4 @@
-import { getDb, type DefsRow } from '../utils/db'
+import { db, type DefsRow } from '../utils/db'
 import { type SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
@@ -9,7 +9,6 @@ export function searchDefsImpl(
   defType?: string,
   limit: number = 20,
 ) {
-  const db = getDb()
   let whereClause = '(defName LIKE $q OR label LIKE $q)'
 
   const params: SqlNamedParams = { $q: `%${query}%` }

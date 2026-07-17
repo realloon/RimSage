@@ -1,7 +1,6 @@
 import { serve } from 'bun'
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/server'
 import { createServer } from './server'
-import { closeDb } from './utils/db'
 
 let isShuttingDown = false
 
@@ -47,7 +46,6 @@ async function shutdown() {
     exitCode = 1
     console.error('Failed to stop HTTP server cleanly:', error)
   } finally {
-    closeDb()
     process.exit(exitCode)
   }
 }

@@ -1,8 +1,8 @@
 import { file } from 'bun'
 import { join } from 'node:path'
-import { getDb } from '../utils/db'
+import { db } from '../utils/db'
 import { sourcePath } from '../utils/env'
-import { type SqlNamedParams } from '../types'
+import type { SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
 interface IndexRow {
@@ -121,8 +121,6 @@ export async function readCsharpSymbol(typeName: string, memberName?: string) {
 
 // #region Helpers
 function getCsharpIndexRows(typeName: string): IndexRow[] {
-  const db = getDb()
-
   return db
     .query<
       IndexRow,

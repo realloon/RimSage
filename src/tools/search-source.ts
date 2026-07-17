@@ -38,7 +38,10 @@ export async function searchSourceImpl(
     MAX_OUTPUT_SIZE + 1,
     () => rgProcess.kill(),
   )
-  const stderrPromise = readStreamWithLimit(rgProcess.stderr, STDERR_CAPTURE_SIZE)
+  const stderrPromise = readStreamWithLimit(
+    rgProcess.stderr,
+    STDERR_CAPTURE_SIZE,
+  )
 
   const [exitCode, stdout, stderr] = await Promise.all([
     rgProcess.exited,

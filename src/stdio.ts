@@ -1,5 +1,4 @@
 import { StdioServerTransport } from '@modelcontextprotocol/server/stdio'
-import { closeDb } from './utils/db'
 import { createServer } from './server'
 
 async function main() {
@@ -8,15 +7,6 @@ async function main() {
   await server.connect(transport)
 
   console.error('\x1b[32m%s\x1b[0m', 'RimSage MCP running...')
-
-  const cleanup = () => {
-    console.error('Shutting down...')
-    closeDb()
-    process.exit(0)
-  }
-
-  process.on('SIGINT', cleanup)
-  process.on('SIGTERM', cleanup)
 }
 
 await main().catch(error => {
