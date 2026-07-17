@@ -1,4 +1,5 @@
-import { XMLParser, XMLBuilder } from 'fast-xml-parser'
+import { XMLParser } from 'fast-xml-parser'
+import XMLBuilder from 'fast-xml-builder'
 
 export const parser = new XMLParser({
   ignoreAttributes: false,
