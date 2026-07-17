@@ -1,18 +1,18 @@
 import { afterEach, beforeEach, describe, expect, test } from 'bun:test'
 import { write } from 'bun'
-import { mkdir, rm } from 'node:fs/promises'
+import { mkdir, mkdtemp, rm } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { listDirectory } from '../../src/tools/list-directory'
 import { PathSandbox } from '../../src/utils/path-sandbox'
 
-const testDir = join(process.cwd(), 'test-temp-list-directory')
-
 describe('list-directory', () => {
+  let testDir: string
   let sandbox: PathSandbox
 
   beforeEach(async () => {
-    await mkdir(testDir, { recursive: true })
-    sandbox = new PathSandbox('test-temp-list-directory')
+    testDir = await mkdtemp(join(tmpdir(), 'rimsage-list-directory-'))
+    sandbox = new PathSandbox(testDir)
   })
 
   afterEach(async () => {
