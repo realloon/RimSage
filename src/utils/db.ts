@@ -26,8 +26,8 @@ export function closeDb(): void {
   }
 }
 
-export function createBuilderDb(): Database {
-  const db = new Database(indexDbPath, { create: true })
+export function createBuilderDb(dbPath = indexDbPath): Database {
+  const db = new Database(dbPath, { create: true })
 
   db.run('PRAGMA journal_mode = WAL;')
   db.run('PRAGMA synchronous = NORMAL;')

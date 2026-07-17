@@ -5,7 +5,10 @@ import { parser } from '../utils/xml-utils'
 import { processDefs, type Def } from '../utils/def-resolver'
 import { createBuilderDb } from '../utils/db'
 
-async function main() {
+export async function rebuildDefsIndex(
+  dbPath = indexDbPath,
+  defsSourcePath = defsPath,
+) {
   console.log('Starting build process...')
 
   // 1. read xmls
@@ -13,12 +16,12 @@ async function main() {
   const glob = new Glob('**/*.xml')
   const paths: string[] = []
 
-  for await (const path of glob.scan({ cwd: defsPath })) {
+  for await (const path of glob.scan({ cwd: defsSourcePath })) {
     paths.push(path)
   }
 
   const xmls = await Promise.all(
-    paths.map(async path => file(join(defsPath, path)).text()),
+    paths.map(async path => file(join(defsSourcePath, path)).text()),
   )
 
   // 2. flat defs
@@ -39,8 +42,8 @@ async function main() {
   const mergedDefs = processDefs(defs)
 
   // 4. write in sqlite
-  console.log(`Writing to ${indexDbPath}...`)
-  const db = createBuilderDb()
+  console.log(`Writing to ${dbPath}...`)
+  const db = createBuilderDb(dbPath)
 
   try {
     db.run('DROP TABLE IF EXISTS defs;')
@@ -87,7 +90,9 @@ async function main() {
   }
 }
 
-await main().catch(error => {
-  console.error('Fatal error:', error)
-  process.exit(1)
-})
+if (import.meta.main) {
+  await rebuildDefsIndex().catch(error => {
+    console.error('Fatal error:', error)
+    process.exit(1)
+  })
+}
