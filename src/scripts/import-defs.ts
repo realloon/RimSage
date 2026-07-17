@@ -1,5 +1,5 @@
 import { argv, file, write, Glob } from 'bun'
-import { resolve, join, sep } from 'path'
+import { resolve, join, sep } from 'node:path'
 import { versionPath, defsPath } from '../utils/env'
 
 const path = argv.at(2)

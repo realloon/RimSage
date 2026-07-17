@@ -1,6 +1,6 @@
 import { expect, test, describe } from 'bun:test'
 import { PathSandbox } from '../../src/utils/path-sandbox'
-import { join } from 'path'
+import { join } from 'node:path'
 import { root } from '../../src/utils/env'
 
 describe('PathSandbox', () => {

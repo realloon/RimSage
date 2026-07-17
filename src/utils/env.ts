@@ -1,4 +1,4 @@
-import { join } from 'path'
+import { join } from 'node:path'
 
 export const root = join(import.meta.dir, '../../')
 const distPath = join(root, 'dist')

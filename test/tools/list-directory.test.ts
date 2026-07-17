@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, test } from 'bun:test'
 import { write } from 'bun'
 import { mkdir, rm } from 'node:fs/promises'
-import { join } from 'path'
+import { join } from 'node:path'
 import { listDirectory } from '../../src/tools/list-directory'
 import { PathSandbox } from '../../src/utils/path-sandbox'
 

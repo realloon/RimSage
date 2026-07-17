@@ -1,5 +1,5 @@
 import { file, Glob } from 'bun'
-import { join } from 'path'
+import { join } from 'node:path'
 import { defsPath, indexDbPath } from '../utils/env'
 import { parser } from '../utils/xml-utils'
 import { processDefs, type Def } from '../utils/def-resolver'

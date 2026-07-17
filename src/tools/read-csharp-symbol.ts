@@ -1,5 +1,5 @@
 import { file } from 'bun'
-import { join } from 'path'
+import { join } from 'node:path'
 import { getDb } from '../utils/db'
 import { sourcePath } from '../utils/env'
 import { type SqlNamedParams } from '../types'

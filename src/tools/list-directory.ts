@@ -1,5 +1,5 @@
-import { readdir } from 'fs/promises'
-import { join } from 'path'
+import { readdir } from 'node:fs/promises'
+import { join } from 'node:path'
 import { PathSandbox } from '../utils/path-sandbox'
 import { textResponse } from '../utils/mcp-response'
 

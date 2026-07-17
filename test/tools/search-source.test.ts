@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, test } from 'bun:test'
 import { write } from 'bun'
 import { mkdir, rm } from 'node:fs/promises'
-import { join } from 'path'
+import { join } from 'node:path'
 import { searchSource, searchSourceImpl } from '../../src/tools/search-source'
 import { PathSandbox } from '../../src/utils/path-sandbox'
 

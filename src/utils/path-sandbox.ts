@@ -1,4 +1,4 @@
-import { resolve, sep } from 'path'
+import { resolve, sep } from 'node:path'
 import { root } from './env'
 
 export class PathSandbox {

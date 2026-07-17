@@ -1,6 +1,6 @@
-import { Database } from 'bun:sqlite'
 import { file, Glob } from 'bun'
-import { join } from 'path'
+import { Database } from 'bun:sqlite'
+import { join } from 'node:path'
 import { indexDbPath, sourcePath } from '../utils/env'
 import { type SqlNamedParams } from '../types'
 
