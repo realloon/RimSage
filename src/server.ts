@@ -50,7 +50,6 @@ function registerToolsAndResources(server: McpServer) {
           .int()
           .min(0)
           .max(2_000_000)
-          .optional()
           .default(0)
           .describe('0-indexed start line.'),
         line_count: z
@@ -58,7 +57,6 @@ function registerToolsAndResources(server: McpServer) {
           .int()
           .min(1)
           .max(2_000)
-          .optional()
           .default(400)
           .describe('Max lines to return.'),
       }),

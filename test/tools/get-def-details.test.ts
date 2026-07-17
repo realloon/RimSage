@@ -1,10 +1,15 @@
 import { describe, test, expect } from 'bun:test'
-import { getDefDetails, getDefDetailsImpl } from '../../src/tools/get-def-details'
+import {
+  getDefDetails,
+  getDefDetailsImpl,
+} from '../../src/tools/get-def-details'
 
 describe('get-def-details', () => {
   describe('getDefDetailsImpl', () => {
     test('returns empty array when def is missing', () => {
-      const result = getDefDetailsImpl('NonExistentDefNameThatDoesNotExist12345')
+      const result = getDefDetailsImpl(
+        'NonExistentDefNameThatDoesNotExist12345',
+      )
       expect(result).toEqual([])
     })
 

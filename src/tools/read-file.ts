@@ -56,10 +56,7 @@ export async function readFile(
   } catch (error: unknown) {
     const fsError = error as NodeJS.ErrnoException
 
-    if (
-      fsError.code === 'ENOENT' ||
-      fsError.message?.includes('No such file')
-    ) {
+    if (fsError.code === 'ENOENT') {
       throw new Error(`File not found: ${path}`)
     }
 

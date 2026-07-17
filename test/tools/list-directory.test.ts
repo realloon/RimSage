@@ -3,7 +3,10 @@ import { mkdir, rm } from 'node:fs/promises'
 import { write } from 'bun'
 import { join } from 'path'
 import { PathSandbox } from '../../src/utils/path-sandbox'
-import { listDirectory, listDirectoryImpl } from '../../src/tools/list-directory'
+import {
+  listDirectory,
+  listDirectoryImpl,
+} from '../../src/tools/list-directory'
 
 const testDir = join(process.cwd(), 'test-temp-list-directory')
 
@@ -55,7 +58,6 @@ describe('list-directory', () => {
       const result = await listDirectoryImpl(sandbox, '')
       expect(result).toEqual({ entries: [], total: 0 })
     })
-
   })
 
   describe('listDirectory', () => {
@@ -77,22 +79,22 @@ describe('list-directory', () => {
     })
 
     test('maps missing directory to friendly error', async () => {
-      await expect(listDirectory(sandbox, 'missing')).rejects.toThrow(
-        'Directory not found'
+      expect(listDirectory(sandbox, 'missing')).rejects.toThrow(
+        'Directory not found',
       )
     })
 
     test('maps file path to not-a-directory error', async () => {
       await write(join(testDir, 'file.txt'), 'content')
 
-      await expect(listDirectory(sandbox, 'file.txt')).rejects.toThrow(
-        'Path is not a directory'
+      expect(listDirectory(sandbox, 'file.txt')).rejects.toThrow(
+        'Path is not a directory',
       )
     })
 
     test('propagates sandbox traversal errors', async () => {
-      await expect(listDirectory(sandbox, '../outside')).rejects.toThrow(
-        'Path traversal detected'
+      expect(listDirectory(sandbox, '../outside')).rejects.toThrow(
+        'Path traversal detected',
       )
     })
   })

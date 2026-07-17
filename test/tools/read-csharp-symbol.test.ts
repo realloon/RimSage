@@ -1,5 +1,8 @@
 import { describe, test, expect, mock } from 'bun:test'
-import { readCsharpSymbol, readCsharpSymbolImpl } from '../../src/tools/read-csharp-symbol'
+import {
+  readCsharpSymbol,
+  readCsharpSymbolImpl,
+} from '../../src/tools/read-csharp-symbol'
 import * as realDbModule from '../../src/utils/db'
 
 const originalDbModule = { ...realDbModule }
@@ -35,7 +38,10 @@ describe.serial('read-csharp-symbol', () => {
     })
 
     test('returns empty array when method is missing from an indexed type', async () => {
-      const result = await readCsharpSymbolImpl('Thing', 'MethodThatDoesNotExist12345')
+      const result = await readCsharpSymbolImpl(
+        'Thing',
+        'MethodThatDoesNotExist12345',
+      )
       expect(result).toEqual([])
     })
 
@@ -76,9 +82,8 @@ describe.serial('read-csharp-symbol', () => {
       }))
 
       try {
-        const { readCsharpSymbolImpl: mockedReadCsharpSymbolImpl } = await import(
-          '../../src/tools/read-csharp-symbol'
-        )
+        const { readCsharpSymbolImpl: mockedReadCsharpSymbolImpl } =
+          await import('../../src/tools/read-csharp-symbol')
         const result = await mockedReadCsharpSymbolImpl('GhostType')
 
         expect(result).toHaveLength(1)
@@ -93,13 +98,20 @@ describe.serial('read-csharp-symbol', () => {
 
   describe('readCsharpSymbol', () => {
     test('returns helpful message when type is not found', async () => {
-      const result = await readCsharpSymbol('NonExistentTypeNameThatDoesNotExist12345')
+      const result = await readCsharpSymbol(
+        'NonExistentTypeNameThatDoesNotExist12345',
+      )
       expect(result.content[0].text).toContain('not found in index')
     })
 
     test('returns helpful message when method is not found', async () => {
-      const result = await readCsharpSymbol('Thing', 'MethodThatDoesNotExist12345')
-      expect(result.content[0].text).toContain("Method 'MethodThatDoesNotExist12345' in type 'Thing' not found in index")
+      const result = await readCsharpSymbol(
+        'Thing',
+        'MethodThatDoesNotExist12345',
+      )
+      expect(result.content[0].text).toContain(
+        "Method 'MethodThatDoesNotExist12345' in type 'Thing' not found in index",
+      )
     })
 
     test('renders file header for existing type', async () => {
@@ -137,27 +149,29 @@ describe.serial('read-csharp-symbol', () => {
       expect(text).toContain('[SYSTEM NOTE]')
     })
 
-    test('adds rebuild hint when C# index is unavailable', async () => {
+    test('propagates missing C# index errors', async () => {
       mock.module('../../src/utils/db', () => ({
         ...originalDbModule,
         getDb: () =>
           ({
             query: (sql: string) => ({
-              all: () => [],
-              get: () =>
-                sql.includes("sqlite_master WHERE type = 'table' AND name = 'csharp_index'")
-                  ? undefined
-                  : { rowCount: 0 },
+              all: () => {
+                if (sql.includes('FROM csharp_index')) {
+                  throw new Error('no such table: csharp_index')
+                }
+                return []
+              },
+              get: () => undefined,
             }),
           }) as any,
       }))
 
       try {
-        const { readCsharpSymbol: mockedReadCsharpSymbol } = await import(
-          '../../src/tools/read-csharp-symbol'
+        const { readCsharpSymbol: mockedReadCsharpSymbol } =
+          await import('../../src/tools/read-csharp-symbol')
+        expect(mockedReadCsharpSymbol('Anything')).rejects.toThrow(
+          'no such table: csharp_index',
         )
-        const result = await mockedReadCsharpSymbol('Anything')
-        expect(result.content[0].text).toContain('index is unavailable or empty')
       } finally {
         mock.module('../../src/utils/db', () => originalDbModule)
       }

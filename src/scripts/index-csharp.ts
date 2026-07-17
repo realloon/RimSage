@@ -64,8 +64,6 @@ export async function rebuildCsharpIndex(
         const normalizedPath = relativePath.replaceAll('\\', '/')
 
         lines.forEach((line, index) => {
-          if (line.length < 10) return
-
           const match = line.match(typeRegex)
           if (match) {
             const typeKind = match[1]

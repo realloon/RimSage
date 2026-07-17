@@ -18,7 +18,7 @@ async function main() {
   }
 
   const xmls = await Promise.all(
-    paths.map(async path => file(join(defsPath, path)).text())
+    paths.map(async path => file(join(defsPath, path)).text()),
   )
 
   // 2. flat defs
@@ -30,7 +30,7 @@ async function main() {
     const defsForFile = parsed.Defs as Record<string, Array<Def>>
 
     return Object.entries(defsForFile).flatMap(([defType, defsForType]) =>
-      defsForType.map(def => Object.assign({ defType }, def))
+      defsForType.map(def => Object.assign({ defType }, def)),
     )
   })
 
@@ -61,21 +61,23 @@ async function main() {
       VALUES ($defName, $defType, $label, $rawPayload, $mergedPayload)
     `)
 
-    const transaction = db.transaction((rawDefs: Def[], resolvedDefs: Def[]) => {
-      rawDefs.forEach((rawDef, index) => {
-        const resolvedDef = resolvedDefs[index]
+    const transaction = db.transaction(
+      (rawDefs: Def[], resolvedDefs: Def[]) => {
+        rawDefs.forEach((rawDef, index) => {
+          const resolvedDef = resolvedDefs[index]
 
-        if (!resolvedDef?.defName) return
+          if (!resolvedDef.defName) return
 
-        insert.run({
-          $defType: resolvedDef.defType ?? 'Unknown',
-          $defName: resolvedDef.defName,
-          $label: resolvedDef.label ?? null,
-          $rawPayload: JSON.stringify(rawDef),
-          $mergedPayload: JSON.stringify(resolvedDef),
+          insert.run({
+            $defType: resolvedDef.defType ?? 'Unknown',
+            $defName: resolvedDef.defName,
+            $label: resolvedDef.label ?? null,
+            $rawPayload: JSON.stringify(rawDef),
+            $mergedPayload: JSON.stringify(resolvedDef),
+          })
         })
-      })
-    })
+      },
+    )
 
     transaction(defs, mergedDefs)
 

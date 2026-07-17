@@ -23,11 +23,7 @@ export function searchDefsImpl(
   const countRow = db
     .query<{ count: number }, SqlNamedParams>(countSql)
     .get(params)
-  const total = countRow?.count ?? 0
-
-  if (total === 0) {
-    return { results: [], total: 0 }
-  }
+  const total = countRow!.count
 
   const dataSql = `
     SELECT defName, defType, label

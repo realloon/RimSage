@@ -74,13 +74,13 @@ describe('search-source', () => {
 
       const result = await searchSource(sandbox, 'does-not-exist')
       expect(result.content[0].text).toBe(
-        'No results found. Try adjusting your search query or file pattern.'
+        'No results found. Try adjusting your search query or file pattern.',
       )
     })
 
     test('truncates by result line count when matches exceed limit', async () => {
       const content = Array.from({ length: 450 }, (_, i) => `hit ${i}`).join(
-        '\n'
+        '\n',
       )
       await write(join(testDir, 'many.txt'), content)
 
@@ -93,13 +93,13 @@ describe('search-source', () => {
 
       const result = await searchSource(sandbox, 'x')
       expect(result.content[0].text).toContain(
-        '[TRUNCATED] Output size exceeded 100KB.'
+        '[TRUNCATED] Output size exceeded 100KB.',
       )
     })
 
     test('propagates rg errors for invalid regex', async () => {
       await write(join(testDir, 'test.ts'), 'hello')
-      await expect(searchSource(sandbox, '[abc')).rejects.toThrow()
+      expect(searchSource(sandbox, '[abc')).rejects.toThrow()
     })
   })
 })

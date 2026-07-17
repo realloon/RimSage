@@ -80,21 +80,13 @@ export async function readCsharpSymbol(typeName: string, memberName?: string) {
   const results = await readCsharpSymbolImpl(typeName, memberName)
 
   if (results.length === 0) {
-    const health = getCsharpIndexHealth()
-    let extraHint = ''
-
-    if (!health.available) {
-      extraHint =
-        " Note: C# index is unavailable or empty. Run 'bun run index:csharp' to rebuild it."
-    }
-
     const symbolLabel = memberName
       ? `Method '${memberName}' in type '${typeName}'`
       : `Type '${typeName}'`
 
     return {
       ...textResponse(
-        `${symbolLabel} not found in index. Please check the name.${extraHint}`,
+        `${symbolLabel} not found in index. Please check the name.`,
       ),
     }
   }
@@ -207,7 +199,7 @@ function dedentCode(code: string): string {
   for (const line of lines) {
     if (!line.trim()) continue
 
-    const indent = line.match(/^\s*/)?.[0] ?? ''
+    const indent = line.match(/^\s*/)![0]
 
     if (commonIndent === null) {
       commonIndent = indent
@@ -268,7 +260,7 @@ function generateSignature(code: string): string {
         output.push(line)
       }
     } else if (depth + currentLineDepthChange <= 1) {
-      const indent = line.match(/^\s*/)?.[0] || ''
+      const indent = line.match(/^\s*/)![0]
       output.push(`${indent}}`)
     }
 
@@ -278,29 +270,4 @@ function generateSignature(code: string): string {
   return output.join('\n')
 }
 
-function getCsharpIndexHealth() {
-  const db = getDb()
-
-  const tableRow = db
-    .query<
-      { name: string },
-      []
-    >("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'csharp_index'")
-    .get()
-
-  if (!tableRow) {
-    return { available: false }
-  }
-
-  const countRow = db
-    .query<
-      { rowCount: number },
-      []
-    >('SELECT COUNT(*) AS rowCount FROM csharp_index')
-    .get()
-
-  return {
-    available: (countRow?.rowCount ?? 0) > 0,
-  }
-}
 // #endregion

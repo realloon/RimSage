@@ -35,7 +35,6 @@ describe('search-defs', () => {
       const result = searchDefsImpl('NonExistentDefNameThatDoesNotExist12345')
       expect(result).toEqual({ results: [], total: 0 })
     })
-
   })
 
   describe('searchDefs', () => {
@@ -57,7 +56,9 @@ describe('search-defs', () => {
 
     test('returns guidance when no results found', () => {
       const result = searchDefs('NonExistentDefNameThatDoesNotExist12345')
-      expect(result.content[0].text).toBe('No results found. Try a shorter keyword.')
+      expect(result.content[0].text).toBe(
+        'No results found. Try a shorter keyword.',
+      )
     })
   })
 })

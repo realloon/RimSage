@@ -41,7 +41,6 @@ describe('read-file', () => {
       expect(result.content).toBe('line1\nline2')
       expect(result.totalLines).toBe(3)
     })
-
   })
 
   describe('readFile', () => {
@@ -64,21 +63,17 @@ describe('read-file', () => {
     })
 
     test('throws friendly error for missing file', async () => {
-      await expect(readFile(sandbox, 'missing.txt')).rejects.toThrow(
-        'File not found'
-      )
+      expect(readFile(sandbox, 'missing.txt')).rejects.toThrow('File not found')
     })
 
     test('throws friendly error when path is directory', async () => {
       await mkdir(join(testDir, 'subdir'), { recursive: true })
-      await expect(readFile(sandbox, 'subdir')).rejects.toThrow(
-        'Path is a directory'
-      )
+      expect(readFile(sandbox, 'subdir')).rejects.toThrow('Path is a directory')
     })
 
     test('propagates sandbox traversal errors', async () => {
-      await expect(readFile(sandbox, '../outside.txt')).rejects.toThrow(
-        'Path traversal detected'
+      expect(readFile(sandbox, '../outside.txt')).rejects.toThrow(
+        'Path traversal detected',
       )
     })
   })

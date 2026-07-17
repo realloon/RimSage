@@ -33,19 +33,12 @@ export async function searchSourceImpl(
     stderr: 'pipe',
   })
 
-  let stoppedByLimit = false
-  const stopProcess = () => {
-    if (stoppedByLimit) return
-    stoppedByLimit = true
-    rgProcess.kill()
-  }
-
-  const stdoutPromise = rgProcess.stdout
-    ? readStreamWithLimit(rgProcess.stdout, MAX_OUTPUT_SIZE + 1, stopProcess)
-    : Promise.resolve({ text: '', exceeded: false })
-  const stderrPromise = rgProcess.stderr
-    ? readStreamWithLimit(rgProcess.stderr, STDERR_CAPTURE_SIZE)
-    : Promise.resolve({ text: '', exceeded: false })
+  const stdoutPromise = readStreamWithLimit(
+    rgProcess.stdout,
+    MAX_OUTPUT_SIZE + 1,
+    () => rgProcess.kill(),
+  )
+  const stderrPromise = readStreamWithLimit(rgProcess.stderr, STDERR_CAPTURE_SIZE)
 
   const [exitCode, stdout, stderr] = await Promise.all([
     rgProcess.exited,
@@ -54,7 +47,7 @@ export async function searchSourceImpl(
   ])
 
   const trimmedStdout = stdout.text.trimEnd()
-  if (stdout.exceeded || stoppedByLimit) {
+  if (stdout.exceeded) {
     return {
       output: trimmedStdout,
       exceededOutputLimit: true,
@@ -133,7 +126,6 @@ async function readStreamWithLimit(
   while (true) {
     const { done, value } = await reader.read()
     if (done) break
-    if (!value) continue
 
     const nextBytes = totalBytes + value.byteLength
     if (nextBytes > maxBytes) {
