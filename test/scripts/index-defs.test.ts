@@ -1,3 +1,4 @@
+import type { DefsRow } from '../../src/types'
 import { expect, test } from 'bun:test'
 import { write } from 'bun'
 import { Database } from 'bun:sqlite'
@@ -5,7 +6,6 @@ import { mkdir, mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { rebuildDefsIndex } from '../../src/scripts/index-defs'
-import { type DefsRow } from '../../src/utils/db'
 
 test('builds raw and merged Def payloads', async () => {
   const tempRoot = await mkdtemp(join(tmpdir(), 'rimsage-index-defs-'))

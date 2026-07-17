@@ -1,16 +1,4 @@
-type Primitive = string | number | boolean | null | undefined
-type XmlNode = Primitive | XmlNode[] | { [key: string]: XmlNode }
-type XmlObject = Record<string, XmlNode>
-
-export interface Def extends XmlObject {
-  defType?: string
-  defName?: string
-  label?: string
-  '@_Name'?: string
-  '@_ParentName'?: string
-  '@_Abstract'?: string
-  '@_Inherit'?: string
-}
+import type { Def, XmlNode, XmlObject } from '../types'
 
 export function processDefs(defs: Def[]): Def[] {
   const resolver = new DefResolver(defs)

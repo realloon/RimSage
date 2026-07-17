@@ -1,5 +1,6 @@
+import type { Def } from '../../src/types'
 import { describe, expect, test } from 'bun:test'
-import { processDefs, type Def } from '../../src/utils/def-resolver'
+import { processDefs } from '../../src/utils/def-resolver'
 
 describe('def-resolver', () => {
   test('resolves multi-level inheritance and child overrides', () => {

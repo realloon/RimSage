@@ -1,6 +1,6 @@
-import { db, type DefsRow } from '../utils/db'
+import type { DefsRow, SqlNamedParams } from '../types'
+import { db } from '../utils/db'
 import { builder } from '../utils/xml-utils'
-import type { SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
 type DefInheritanceMode = 'merged' | 'raw'

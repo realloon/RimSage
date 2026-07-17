@@ -1,5 +1,5 @@
-import { db, type DefsRow } from '../utils/db'
-import { type SqlNamedParams } from '../types'
+import type { DefsRow, SqlNamedParams } from '../types'
+import { db } from '../utils/db'
 import { textResponse } from '../utils/mcp-response'
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>

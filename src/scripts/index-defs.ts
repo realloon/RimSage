@@ -1,9 +1,10 @@
+import type { Def } from '../types'
 import { file, Glob } from 'bun'
 import { Database } from 'bun:sqlite'
 import { join } from 'node:path'
 import { defsPath, indexDbPath } from '../utils/env'
 import { parser } from '../utils/xml-utils'
-import { processDefs, type Def } from '../utils/def-resolver'
+import { processDefs } from '../utils/def-resolver'
 
 export async function rebuildDefsIndex(
   dbPath = indexDbPath,

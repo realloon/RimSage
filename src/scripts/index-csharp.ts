@@ -1,19 +1,20 @@
+import type { CsharpIndexRow, SqlNamedParams } from '../types'
 import { file, Glob } from 'bun'
 import { Database } from 'bun:sqlite'
 import { join } from 'node:path'
 import { indexDbPath, sourcePath } from '../utils/env'
-import { type SqlNamedParams } from '../types'
+
+interface CsharpIndexInsertRow {
+  $typeName: CsharpIndexRow['typeName']
+  $filePath: CsharpIndexRow['filePath']
+  $startLine: CsharpIndexRow['startLine']
+  $typeKind: CsharpIndexRow['typeKind']
+}
+
+type CsharpIndexInsertParams = SqlNamedParams & CsharpIndexInsertRow
 
 const typeRegex =
   /^\s*(?:public|private|protected|internal|abstract|sealed|static|partial|readonly|unsafe|\s)*\s+(class|struct|interface|enum)\s+([a-zA-Z0-9_]+)/
-
-interface CsharpIndexInsertRow {
-  $typeName: string
-  $filePath: string
-  $startLine: number
-  $typeKind: string
-}
-type CsharpIndexInsertParams = SqlNamedParams & CsharpIndexInsertRow
 
 export async function rebuildCsharpIndex(
   dbPath = indexDbPath,

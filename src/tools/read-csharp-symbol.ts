@@ -1,14 +1,11 @@
+import type { CsharpIndexRow, SqlNamedParams } from '../types'
 import { file } from 'bun'
 import { join } from 'node:path'
 import { db } from '../utils/db'
 import { sourcePath } from '../utils/env'
-import type { SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
-interface IndexRow {
-  filePath: string
-  startLine: number
-}
+type IndexRow = Pick<CsharpIndexRow, 'filePath' | 'startLine'>
 
 interface CodeBlock {
   startLine: number
