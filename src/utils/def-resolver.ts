@@ -33,18 +33,9 @@ class DefResolver {
   public resolve(def: Def): Def {
     if (!def['@_ParentName']) return sortDefKeys(def)
 
-    try {
-      const parentResolved = this.resolveByName(def['@_ParentName'], new Set())
-      const merged = mergeNodes(stripParentMeta(parentResolved), def) as Def
-      return sortDefKeys(merged)
-    } catch (error: any) {
-      console.warn(
-        `[DefResolver] Error resolving ${def.defName ?? 'unnamed'}: ${
-          error.message
-        }`,
-      )
-      return def
-    }
+    const parentResolved = this.resolveByName(def['@_ParentName'], new Set())
+    const merged = mergeNodes(stripParentMeta(parentResolved), def) as Def
+    return sortDefKeys(merged)
   }
 
   private resolveByName(name: string, stack: Set<string>): Def {
