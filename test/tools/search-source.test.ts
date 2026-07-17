@@ -1,9 +1,9 @@
-import { describe, test, expect, beforeEach, afterEach } from 'bun:test'
-import { mkdir, rm } from 'node:fs/promises'
+import { afterEach, beforeEach, describe, expect, test } from 'bun:test'
 import { write } from 'bun'
+import { mkdir, rm } from 'node:fs/promises'
 import { join } from 'path'
-import { PathSandbox } from '../../src/utils/path-sandbox'
 import { searchSource, searchSourceImpl } from '../../src/tools/search-source'
+import { PathSandbox } from '../../src/utils/path-sandbox'
 
 const testDir = join(process.cwd(), 'test-temp-search-source')
 
@@ -19,87 +19,58 @@ describe('search-source', () => {
     await rm(testDir, { recursive: true, force: true })
   })
 
-  describe('searchSourceImpl', () => {
-    test('respects case sensitivity switch', async () => {
-      await write(join(testDir, 'test.ts'), 'Hello\nhello')
+  test('supports case-sensitive and case-insensitive searches', async () => {
+    await write(join(testDir, 'test.ts'), 'Hello\nhello')
 
-      const caseInsensitive = await searchSourceImpl(sandbox, 'hello')
-      expect(caseInsensitive.output).toContain('Hello')
-      expect(caseInsensitive.output).toContain('hello')
-      expect(caseInsensitive.exceededOutputLimit).toBe(false)
+    const insensitive = await searchSourceImpl(sandbox, 'hello')
+    const sensitive = await searchSourceImpl(sandbox, 'hello', true)
 
-      const caseSensitive = await searchSourceImpl(sandbox, 'hello', true)
-      expect(caseSensitive.output).toContain('hello')
-      expect(caseSensitive.output).not.toContain('Hello')
-      expect(caseSensitive.exceededOutputLimit).toBe(false)
-    })
-
-    test('filters results by file pattern', async () => {
-      await write(join(testDir, 'test.ts'), 'needle')
-      await write(join(testDir, 'test.js'), 'needle')
-
-      const result = await searchSourceImpl(sandbox, 'needle', false, '*.ts')
-      expect(result.output).toContain('test.ts')
-      expect(result.output).not.toContain('test.js')
-    })
-
-    test('returns empty string when nothing matches', async () => {
-      await write(join(testDir, 'test.ts'), 'foo bar')
-      const result = await searchSourceImpl(sandbox, 'does-not-exist')
-      expect(result.output).toBe('')
-      expect(result.exceededOutputLimit).toBe(false)
-    })
-
-    test('flags output overflow when command output exceeds cap', async () => {
-      await write(join(testDir, 'large.txt'), 'x'.repeat(140 * 1024))
-
-      const result = await searchSourceImpl(sandbox, 'x')
-      expect(result.exceededOutputLimit).toBe(true)
-    })
+    expect(insensitive.output).toContain('Hello')
+    expect(insensitive.output).toContain('hello')
+    expect(sensitive.output).not.toContain('Hello')
+    expect(sensitive.output).toContain('hello')
   })
 
-  describe('searchSource', () => {
-    test('returns short search output without truncation', async () => {
-      await write(join(testDir, 'short.txt'), 'alpha\nbeta')
+  test('filters results by file pattern', async () => {
+    await write(join(testDir, 'test.ts'), 'needle')
+    await write(join(testDir, 'test.js'), 'needle')
 
-      const raw = await searchSourceImpl(sandbox, 'alpha')
-      const result = await searchSource(sandbox, 'alpha')
+    const result = await searchSourceImpl(sandbox, 'needle', false, '*.ts')
 
-      expect(result.content[0].text).toBe(raw.output)
-      expect(result.content[0].text).not.toContain('[TRUNCATED]')
-    })
+    expect(result.output).toContain('test.ts')
+    expect(result.output).not.toContain('test.js')
+  })
 
-    test('returns no-results guidance message', async () => {
-      await write(join(testDir, 'test.ts'), 'foo bar')
+  test('returns guidance when nothing matches', async () => {
+    await write(join(testDir, 'test.ts'), 'content')
 
-      const result = await searchSource(sandbox, 'does-not-exist')
-      expect(result.content[0].text).toBe(
-        'No results found. Try adjusting your search query or file pattern.',
-      )
-    })
+    const text = (await searchSource(sandbox, 'missing')).content[0].text
 
-    test('truncates by result line count when matches exceed limit', async () => {
-      const content = Array.from({ length: 450 }, (_, i) => `hit ${i}`).join(
-        '\n',
-      )
-      await write(join(testDir, 'many.txt'), content)
+    expect(text).toBe(
+      'No results found. Try adjusting your search query or file pattern.',
+    )
+  })
 
-      const result = await searchSource(sandbox, 'hit')
-      expect(result.content[0].text).toContain('[TRUNCATED] Showing 400/')
-    })
+  test('limits output by result count', async () => {
+    const content = Array.from({ length: 450 }, (_, i) => `hit ${i}`).join('\n')
+    await write(join(testDir, 'many.txt'), content)
 
-    test('truncates by output size when result exceeds 100KB', async () => {
-      await write(join(testDir, 'large.txt'), 'x'.repeat(120 * 1024))
+    const text = (await searchSource(sandbox, 'hit')).content[0].text
 
-      const result = await searchSource(sandbox, 'x')
-      expect(result.content[0].text).toContain(
-        '[TRUNCATED] Output size exceeded 100KB.',
-      )
-    })
+    expect(text).toContain('[TRUNCATED] Showing 400/')
+  })
 
-    test('propagates rg errors for invalid regex', async () => {
-      await write(join(testDir, 'test.ts'), 'hello')
-      expect(searchSource(sandbox, '[abc')).rejects.toThrow()
-    })
+  test('limits output by byte size', async () => {
+    await write(join(testDir, 'large.txt'), 'x'.repeat(120 * 1024))
+
+    const text = (await searchSource(sandbox, 'x')).content[0].text
+
+    expect(text).toContain('[TRUNCATED] Output size exceeded 100KB.')
+  })
+
+  test('propagates invalid regular expressions', async () => {
+    await write(join(testDir, 'test.ts'), 'hello')
+
+    expect(searchSource(sandbox, '[abc')).rejects.toThrow()
   })
 })

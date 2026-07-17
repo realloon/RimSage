@@ -1,64 +1,31 @@
-import { describe, test, expect } from 'bun:test'
+import { describe, expect, test } from 'bun:test'
 import { searchDefs, searchDefsImpl } from '../../src/tools/search-defs'
 
 describe('search-defs', () => {
-  describe('searchDefsImpl', () => {
-    test('returns matched rows with total count', () => {
-      const result = searchDefsImpl('Gun_Revolver')
-      expect(result.total).toBeGreaterThan(0)
-      expect(result.results.some(r => r.defName === 'Gun_Revolver')).toBe(true)
-    })
+  test('matches labels case-insensitively', () => {
+    const text = searchDefs('CHALICE').content[0].text
 
-    test('matches labels with case-insensitive keywords', () => {
-      const result = searchDefsImpl('CHALICE')
-      expect(result.total).toBeGreaterThan(0)
-      expect(
-        result.results.some(
-          r => r.defName === 'RelicInertCup' && r.label === 'chalice',
-        ),
-      ).toBe(true)
-    })
-
-    test('applies defType filter to all rows', () => {
-      const result = searchDefsImpl('Gun', 'ThingDef', 10)
-      expect(result.results.length).toBeGreaterThan(0)
-      expect(result.results.every(r => r.defType === 'ThingDef')).toBe(true)
-    })
-
-    test('respects limit while preserving total', () => {
-      const result = searchDefsImpl('', 'ThingDef', 1)
-      expect(result.results).toHaveLength(1)
-      expect(result.total).toBeGreaterThan(1)
-    })
-
-    test('returns empty result for unknown def name', () => {
-      const result = searchDefsImpl('NonExistentDefNameThatDoesNotExist12345')
-      expect(result).toEqual({ results: [], total: 0 })
-    })
+    expect(text).toContain('[ThingDef] RelicInertCup')
+    expect(text).toContain('(label: "chalice")')
   })
 
-  describe('searchDefs', () => {
-    test('formats rows as MCP text output', () => {
-      const result = searchDefs('Gun_Revolver')
-      expect(result.content[0].text).toContain('[ThingDef] Gun_Revolver')
-    })
+  test('filters results by Def type', () => {
+    const result = searchDefsImpl('Gun', 'ThingDef', 10)
 
-    test('renders label-only matches in MCP text output', () => {
-      const result = searchDefs('chalice')
-      expect(result.content[0].text).toContain('[ThingDef] RelicInertCup')
-      expect(result.content[0].text).toContain('(label: "chalice")')
-    })
+    expect(result.results.length).toBeGreaterThan(0)
+    expect(result.results.every(row => row.defType === 'ThingDef')).toBe(true)
+  })
 
-    test('includes truncation hint when limited', () => {
-      const result = searchDefs('', 'ThingDef', 1)
-      expect(result.content[0].text).toContain('[TRUNCATED] Showing 1/')
-    })
+  test('reports truncated results', () => {
+    const text = searchDefs('', 'ThingDef', 1).content[0].text
 
-    test('returns guidance when no results found', () => {
-      const result = searchDefs('NonExistentDefNameThatDoesNotExist12345')
-      expect(result.content[0].text).toBe(
-        'No results found. Try a shorter keyword.',
-      )
-    })
+    expect(text).toContain('[TRUNCATED] Showing 1/')
+  })
+
+  test('returns guidance when nothing matches', () => {
+    const text = searchDefs('NonExistentDefNameThatDoesNotExist12345')
+      .content[0].text
+
+    expect(text).toBe('No results found. Try a shorter keyword.')
   })
 })

@@ -6,27 +6,21 @@ import { root } from '../../src/utils/env'
 describe('PathSandbox', () => {
   const sandbox = new PathSandbox('test-assets')
 
-  test('should resolve valid paths', () => {
+  test('resolves paths inside the sandbox', () => {
     const path = 'Defs/Thing.xml'
     const resolved = sandbox.validateAndResolve(path)
     expect(resolved).toBe(join(root, 'test-assets', path))
   })
 
-  test('should throw error for path traversal (..)', () => {
-    expect(() => {
-      sandbox.validateAndResolve('../outside.txt')
-    }).toThrow('Path traversal detected')
-  })
-
-  test('should throw error for sibling prefix bypass', () => {
-    expect(() => {
-      sandbox.validateAndResolve('../test-assets-evil/outside.txt')
-    }).toThrow('Path traversal detected')
-  })
-
-  test('should throw error for absolute path', () => {
-    expect(() => {
-      sandbox.validateAndResolve('/etc/passwd')
-    }).toThrow('Path traversal detected')
+  test('rejects paths outside the sandbox', () => {
+    for (const path of [
+      '../outside.txt',
+      '../test-assets-evil/outside.txt',
+      '/etc/passwd',
+    ]) {
+      expect(() => sandbox.validateAndResolve(path)).toThrow(
+        'Path traversal detected',
+      )
+    }
   })
 })
