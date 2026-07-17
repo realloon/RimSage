@@ -43,8 +43,8 @@ RimSage also supports stdio transport for local deployment.
 
 1. Install dependencies
 
-- [Bun runtime](https://bun.com/)
-- [Ripgrep](https://github.com/BurntSushi/ripgrep)
+- [bun](https://bun.com/)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 2. Clone the repository
 
