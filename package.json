@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@cfworker/json-schema": "^4.1.1",
-    "@modelcontextprotocol/server": "^2.0.0-beta.3",
-    "fast-xml-parser": "^5.10.0",
+    "@modelcontextprotocol/server": "^2.0.0-beta.4",
+    "fast-xml-parser": "^5.10.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {
