@@ -1,6 +1,6 @@
 {
   "name": "rimsage",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "main": "src/stdio.ts",
   "type": "module",
   "scripts": {
