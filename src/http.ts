@@ -2,16 +2,18 @@ import { serve } from 'bun'
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/server'
 import { createServer } from './server'
 
-let isShuttingDown = false
-
-const server = serve({
-  idleTimeout: 60,
+const httpServer = serve({
   routes: {
     '/health': Response.json({ status: 'ok' }),
-    '/mcp': (req, server) => {
+    '/mcp': async (req, bunServer) => {
       // streaming MCP responses can exceed the default request idle timeout.
-      server.timeout(req, 0)
-      return handleMcpRequest(req)
+      bunServer.timeout(req, 0)
+
+      const mcpServer = createServer()
+      const transport = new WebStandardStreamableHTTPServerTransport()
+
+      await mcpServer.connect(transport)
+      return transport.handleRequest(req)
     },
     '/*': new Response('Not Found', { status: 404 }),
   },
@@ -19,33 +21,5 @@ const server = serve({
 
 console.error(
   '\x1b[32m%s\x1b[0m',
-  `RimSage MCP HTTP server listening on ${server.url}`,
+  `RimSage MCP HTTP server listening on ${httpServer.url}`,
 )
-
-process.on('SIGINT', () => shutdown())
-process.on('SIGTERM', () => shutdown())
-
-async function handleMcpRequest(req: Request) {
-  const server = createServer()
-  const transport = new WebStandardStreamableHTTPServerTransport()
-
-  await server.connect(transport)
-  return transport.handleRequest(req)
-}
-
-async function shutdown() {
-  if (isShuttingDown) return
-  isShuttingDown = true
-
-  console.error('Shutting down...')
-  let exitCode = 0
-
-  try {
-    await server.stop(true)
-  } catch (error) {
-    exitCode = 1
-    console.error('Failed to stop HTTP server cleanly:', error)
-  } finally {
-    process.exit(exitCode)
-  }
-}
