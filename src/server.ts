@@ -154,7 +154,7 @@ function registerToolsAndResources(server: McpServer) {
       await readCsharpSymbol(db, sourcePath, typeName, memberName),
   )
 
-  // some clients probe resources/* before using tools.
+  // Some clients probe resources/* before using tools.
   server.registerResource(
     'manifest',
     'rimsage://manifest',
