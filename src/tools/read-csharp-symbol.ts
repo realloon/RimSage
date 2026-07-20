@@ -1,8 +1,7 @@
+import type { Database } from 'bun:sqlite'
 import type { CsharpIndexRow, SqlNamedParams } from '../types'
 import { file } from 'bun'
 import { join } from 'node:path'
-import { db } from '../utils/db'
-import { sourcePath } from '../utils/env'
 import { textResponse } from '../utils/mcp-response'
 
 type IndexRow = Pick<CsharpIndexRow, 'filePath' | 'startLine'>
@@ -25,10 +24,12 @@ interface CSharpSymbolResult {
 const MAX_LINES_THRESHOLD = 400
 
 export async function readCsharpSymbolImpl(
+  db: Database,
+  sourcePath: string,
   typeName: string,
   memberName?: string,
 ): Promise<CSharpSymbolResult[]> {
-  const rows = getCsharpIndexRows(typeName)
+  const rows = getCsharpIndexRows(db, typeName)
   const results: CSharpSymbolResult[] = []
 
   for (const row of rows) {
@@ -73,8 +74,18 @@ export async function readCsharpSymbolImpl(
   return results
 }
 
-export async function readCsharpSymbol(typeName: string, memberName?: string) {
-  const results = await readCsharpSymbolImpl(typeName, memberName)
+export async function readCsharpSymbol(
+  db: Database,
+  sourcePath: string,
+  typeName: string,
+  memberName?: string,
+) {
+  const results = await readCsharpSymbolImpl(
+    db,
+    sourcePath,
+    typeName,
+    memberName,
+  )
 
   if (results.length === 0) {
     const symbolLabel = memberName
@@ -117,7 +128,7 @@ export async function readCsharpSymbol(typeName: string, memberName?: string) {
 }
 
 // #region Helpers
-function getCsharpIndexRows(typeName: string): IndexRow[] {
+function getCsharpIndexRows(db: Database, typeName: string): IndexRow[] {
   return db
     .query<
       IndexRow,

@@ -1,6 +1,8 @@
 import { McpServer } from '@modelcontextprotocol/server'
 import { z } from 'zod'
 import { PathSandbox } from './utils/path-sandbox'
+import { db } from './utils/db'
+import { sourcePath } from './utils/env'
 import { searchSource } from './tools/search-source'
 import { readFile } from './tools/read-file'
 import { listDirectory } from './tools/list-directory'
@@ -105,7 +107,7 @@ function registerToolsAndResources(server: McpServer) {
       }),
     },
     async ({ defName, defType, inheritance }) =>
-      getDefDetails(defName, defType, inheritance),
+      getDefDetails(db, defName, defType, inheritance),
   )
 
   // tool: search defs
@@ -128,7 +130,7 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Max results to return.'),
       }),
     },
-    async ({ query, defType, limit }) => searchDefs(query, defType, limit),
+    async ({ query, defType, limit }) => searchDefs(db, query, defType, limit),
   )
 
   // tool: read csharp symbol
@@ -149,7 +151,7 @@ function registerToolsAndResources(server: McpServer) {
       }),
     },
     async ({ typeName, memberName }) =>
-      await readCsharpSymbol(typeName, memberName),
+      await readCsharpSymbol(db, sourcePath, typeName, memberName),
   )
 
   // some clients probe resources/* before using tools.

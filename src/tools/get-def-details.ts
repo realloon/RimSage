@@ -1,5 +1,5 @@
+import type { Database } from 'bun:sqlite'
 import type { DefsRow, SqlNamedParams } from '../types'
-import { db } from '../utils/db'
 import { builder } from '../utils/xml-utils'
 import { textResponse } from '../utils/mcp-response'
 
@@ -15,6 +15,7 @@ type GetDefDetailsResponse = ReturnType<typeof textResponse> & {
 }
 
 export function getDefDetailsImpl(
+  db: Database,
   defName: string,
   defType?: string,
   inheritance: DefInheritanceMode = 'merged',
@@ -32,11 +33,12 @@ export function getDefDetailsImpl(
 }
 
 export function getDefDetails(
+  db: Database,
   defName: string,
   defType?: string,
   inheritance: DefInheritanceMode = 'merged',
 ): GetDefDetailsResponse {
-  const rows = getDefDetailsImpl(defName, defType, inheritance)
+  const rows = getDefDetailsImpl(db, defName, defType, inheritance)
 
   if (rows.length === 0) {
     const errorText = `Def \`${defName}\`${

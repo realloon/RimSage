@@ -1,10 +1,11 @@
+import type { Database } from 'bun:sqlite'
 import type { DefsRow, SqlNamedParams } from '../types'
-import { db } from '../utils/db'
 import { textResponse } from '../utils/mcp-response'
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
 
 export function searchDefsImpl(
+  db: Database,
   query: string,
   defType?: string,
   limit: number = 20,
@@ -37,11 +38,12 @@ export function searchDefsImpl(
 }
 
 export function searchDefs(
+  db: Database,
   query: string,
   defType?: string,
   limit: number = 20,
 ) {
-  const { results, total } = searchDefsImpl(query, defType, limit)
+  const { results, total } = searchDefsImpl(db, query, defType, limit)
 
   if (total === 0) {
     return textResponse('No results found. Try a shorter keyword.')
