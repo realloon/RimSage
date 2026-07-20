@@ -18,7 +18,6 @@ interface CSharpSymbolResult {
   lineCount: number
   code: string
   isTruncated: boolean
-  fileExists: boolean
 }
 
 const MAX_LINES_THRESHOLD = 400
@@ -34,19 +33,6 @@ export async function readCsharpSymbolImpl(
 
   for (const row of rows) {
     const fullPath = join(sourcePath, row.filePath)
-
-    if (!(await file(fullPath).exists())) {
-      results.push({
-        filePath: row.filePath,
-        startLine: row.startLine,
-        lineCount: 0,
-        code: `// Error: Source file not found: ${row.filePath}`,
-        isTruncated: false,
-        fileExists: false,
-      })
-      continue
-    }
-
     const content = await file(fullPath).text()
     const allLines = content.split(/\r?\n/)
     const typeBlock = extractScopedBlock(allLines, row.startLine)
@@ -66,7 +52,6 @@ export async function readCsharpSymbolImpl(
         lineCount: block.lineCount,
         code: memberName ? dedentCode(block.code) : block.code,
         isTruncated: block.lineCount > MAX_LINES_THRESHOLD,
-        fileExists: true,
       })
     }
   }
@@ -148,17 +133,11 @@ function extractNamedMethods(
   const typeEndLine = typeStartLine + typeLineCount
   let depth = 0
 
+  // Decompiled sources contain no comments; depth and name matching are sufficient.
   for (let i = typeStartLine; i < typeEndLine; i++) {
     const line = lines[i]
-    const trimmed = line.trim()
 
-    if (
-      i > typeStartLine &&
-      depth === 1 &&
-      trimmed &&
-      !trimmed.startsWith('//') &&
-      memberPattern.test(line)
-    ) {
+    if (i > typeStartLine && depth === 1 && memberPattern.test(line)) {
       blocks.push(extractScopedBlock(lines, i))
     }
 

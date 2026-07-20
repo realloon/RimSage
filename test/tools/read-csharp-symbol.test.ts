@@ -16,7 +16,6 @@ beforeAll(async () => {
       typeName TEXT,
       filePath TEXT,
       startLine INTEGER,
-      typeKind TEXT,
       PRIMARY KEY (typeName, filePath)
     )
   `)
@@ -55,8 +54,8 @@ ${Array.from({ length: 400 }, (_, index) => `    public int Field${index};`).joi
   ])
 
   const insert = db.prepare(`
-    INSERT INTO csharp_index (typeName, filePath, startLine, typeKind)
-    VALUES ($typeName, $filePath, 0, 'class')
+    INSERT INTO csharp_index (typeName, filePath, startLine)
+    VALUES ($typeName, $filePath, 0)
   `)
 
   for (const [filePath, content] of sources) {

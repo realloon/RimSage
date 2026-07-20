@@ -8,13 +8,12 @@ interface CsharpIndexInsertRow {
   $typeName: CsharpIndexRow['typeName']
   $filePath: CsharpIndexRow['filePath']
   $startLine: CsharpIndexRow['startLine']
-  $typeKind: CsharpIndexRow['typeKind']
 }
 
 type CsharpIndexInsertParams = SqlNamedParams & CsharpIndexInsertRow
 
 const typeRegex =
-  /^\s*(?:public|private|protected|internal|abstract|sealed|static|partial|readonly|unsafe|\s)*\s+(class|struct|interface|enum)\s+([a-zA-Z0-9_]+)/
+  /^\s*(?:public|private|protected|internal|abstract|sealed|static|partial|readonly|unsafe|\s)*\s+(?:class|struct|interface|enum)\s+([a-zA-Z0-9_]+)/
 
 export async function rebuildCsharpIndex(
   dbPath = indexDbPath,
@@ -34,14 +33,13 @@ export async function rebuildCsharpIndex(
         typeName TEXT,
         filePath TEXT,
         startLine INTEGER,
-        typeKind TEXT,
         PRIMARY KEY (typeName, filePath)
       );
     `)
 
     const insert = db.prepare<unknown, CsharpIndexInsertParams>(`
-      INSERT OR REPLACE INTO csharp_index (typeName, filePath, startLine, typeKind)
-      VALUES ($typeName, $filePath, $startLine, $typeKind)
+      INSERT OR REPLACE INTO csharp_index (typeName, filePath, startLine)
+      VALUES ($typeName, $filePath, $startLine)
     `)
 
     const glob = new Glob('**/*.cs')
@@ -57,31 +55,25 @@ export async function rebuildCsharpIndex(
       fileCount += 1
 
       const absolutePath = join(csharpSourcePath, relativePath)
+      // A partial index is invalid, so source read errors must abort the rebuild.
+      const content = await file(absolutePath).text()
+      const lines = content.split(/\r?\n/)
 
-      try {
-        const content = await file(absolutePath).text()
-        const lines = content.split(/\r?\n/)
+      const normalizedPath = relativePath.replaceAll('\\', '/')
 
-        const normalizedPath = relativePath.replaceAll('\\', '/')
+      lines.forEach((line, index) => {
+        const match = line.match(typeRegex)
+        if (match) {
+          const typeName = match[1]
 
-        lines.forEach((line, index) => {
-          const match = line.match(typeRegex)
-          if (match) {
-            const typeKind = match[1]
-            const typeName = match[2]
-
-            batch.push({
-              $typeName: typeName,
-              $filePath: normalizedPath,
-              $startLine: index, // 0-indexed
-              $typeKind: typeKind,
-            })
-            typeCount++
-          }
-        })
-      } catch (error) {
-        console.warn(`Failed to read ${relativePath}:`, error)
-      }
+          batch.push({
+            $typeName: typeName,
+            $filePath: normalizedPath,
+            $startLine: index, // 0-indexed
+          })
+          typeCount++
+        }
+      })
     }
 
     console.log(`Found ${fileCount} files. Writing ${typeCount} types to DB...`)

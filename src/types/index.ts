@@ -26,7 +26,6 @@ export interface CsharpIndexRow {
   typeName: string
   filePath: string
   startLine: number
-  typeKind: string
 }
 
 type SqlParamValue =

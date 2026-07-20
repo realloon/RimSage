@@ -1,12 +1,10 @@
 import { readdir } from 'node:fs/promises'
-import { join } from 'node:path'
 import { PathSandbox } from '../utils/path-sandbox'
 import { textResponse } from '../utils/mcp-response'
 
 interface DirectoryEntry {
   name: string
   type: 'directory' | 'file'
-  path: string
 }
 
 interface ListDirectoryResult {
@@ -39,7 +37,6 @@ export async function listDirectoryImpl(
       ({
         name: entry.name,
         type: entry.isDirectory() ? 'directory' : 'file',
-        path: path ? join(path, entry.name) : entry.name,
       }) as const,
   )
 
