@@ -64,8 +64,12 @@ describe('search-source', () => {
     await write(join(testDir, 'large.txt'), 'x'.repeat(120 * 1024))
 
     const text = (await searchSource(sandbox, 'x')).content[0].text
+    const output = text.split('\n\n[TRUNCATED]')[0]
 
     expect(text).toContain('[TRUNCATED] Output size exceeded 100KB.')
+    expect(new TextEncoder().encode(output).byteLength).toBeLessThanOrEqual(
+      100 * 1024,
+    )
   })
 
   test('propagates invalid regular expressions', async () => {

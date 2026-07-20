@@ -32,7 +32,7 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Enforce exact case matching.'),
       }),
     },
-    async ({ query, file_pattern, case_sensitive }) =>
+    ({ query, file_pattern, case_sensitive }) =>
       searchSource(sandbox, query, case_sensitive, file_pattern),
   )
 
@@ -63,8 +63,8 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Max lines to return.'),
       }),
     },
-    async ({ path, start_line, line_count }) =>
-      await readFile(sandbox, path, start_line, line_count),
+    ({ path, start_line, line_count }) =>
+      readFile(sandbox, path, start_line, line_count),
   )
 
   // tool: list dir
@@ -86,7 +86,7 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Max items to return.'),
       }),
     },
-    async ({ path, limit }) => listDirectory(sandbox, path, limit),
+    ({ path, limit }) => listDirectory(sandbox, path, limit),
   )
 
   // tool：get def details
@@ -106,7 +106,7 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Return merged inheritance or the raw indexed Def.'),
       }),
     },
-    async ({ defName, defType, inheritance }) =>
+    ({ defName, defType, inheritance }) =>
       getDefDetails(db, defName, defType, inheritance),
   )
 
@@ -130,7 +130,7 @@ function registerToolsAndResources(server: McpServer) {
           .describe('Max results to return.'),
       }),
     },
-    async ({ query, defType, limit }) => searchDefs(db, query, defType, limit),
+    ({ query, defType, limit }) => searchDefs(db, query, defType, limit),
   )
 
   // tool: read csharp symbol
@@ -150,8 +150,8 @@ function registerToolsAndResources(server: McpServer) {
           ),
       }),
     },
-    async ({ typeName, memberName }) =>
-      await readCsharpSymbol(db, sourcePath, typeName, memberName),
+    ({ typeName, memberName }) =>
+      readCsharpSymbol(db, sourcePath, typeName, memberName),
   )
 
   // Some clients probe resources/* before using tools.

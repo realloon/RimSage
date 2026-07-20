@@ -92,8 +92,5 @@ export async function rebuildCsharpIndex(
 }
 
 if (import.meta.main) {
-  await rebuildCsharpIndex().catch(error => {
-    console.error('Fatal error:', error)
-    process.exit(1)
-  })
+  await rebuildCsharpIndex()
 }

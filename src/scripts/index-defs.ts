@@ -27,11 +27,9 @@ export async function rebuildDefsIndex(
 
   // 2. flat defs
   console.log(`Parsing ${xmls.length} files...`)
+  // Imported files are trusted RimWorld Def XML with a Defs root and tag-derived defType.
   const defs = xmls.flatMap(xml => {
-    const parsed = parser.parse(xml)
-    if (!parsed || !parsed.Defs) return []
-
-    const defsForFile = parsed.Defs as Record<string, Array<Def>>
+    const defsForFile = parser.parse(xml).Defs as Record<string, Array<Def>>
 
     return Object.entries(defsForFile).flatMap(([defType, defsForType]) =>
       defsForType.map(def => Object.assign({ defType }, def)),
@@ -73,7 +71,7 @@ export async function rebuildDefsIndex(
           if (!resolvedDef.defName) return
 
           insert.run({
-            $defType: resolvedDef.defType ?? 'Unknown',
+            $defType: resolvedDef.defType!,
             $defName: resolvedDef.defName,
             $label: resolvedDef.label ?? null,
             $rawPayload: JSON.stringify(rawDef),
@@ -92,8 +90,5 @@ export async function rebuildDefsIndex(
 }
 
 if (import.meta.main) {
-  await rebuildDefsIndex().catch(error => {
-    console.error('Fatal error:', error)
-    process.exit(1)
-  })
+  await rebuildDefsIndex()
 }

@@ -35,7 +35,7 @@ export async function searchSourceImpl(
 
   const stdoutPromise = readStreamWithLimit(
     rgProcess.stdout,
-    MAX_OUTPUT_SIZE + 1,
+    MAX_OUTPUT_SIZE,
     () => rgProcess.kill(),
   )
   const stderrPromise = readStreamWithLimit(
@@ -93,7 +93,7 @@ export async function searchSource(
   }
 
   if (exceededOutputLimit) {
-    let truncated = output.substring(0, MAX_OUTPUT_SIZE)
+    let truncated = output
     truncated += '\n\n[TRUNCATED] Output size exceeded 100KB.'
     truncated +=
       '\n(Tip: Refine your search query or add a more specific `file_pattern`.)'

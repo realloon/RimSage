@@ -1,3 +1,5 @@
+import type { SQLQueryBindings } from 'bun:sqlite'
+
 type Primitive = string | number | boolean | null | undefined
 
 export type XmlNode = Primitive | XmlNode[] | { [key: string]: XmlNode }
@@ -28,12 +30,4 @@ export interface CsharpIndexRow {
   startLine: number
 }
 
-type SqlParamValue =
-  | string
-  | number
-  | bigint
-  | boolean
-  | NodeJS.TypedArray
-  | null
-
-export type SqlNamedParams = Record<string, SqlParamValue>
+export type SqlNamedParams = Extract<SQLQueryBindings, Record<string, unknown>>

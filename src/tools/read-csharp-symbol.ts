@@ -229,11 +229,7 @@ function generateSignature(code: string): string {
   let depth = 0
 
   for (const line of lines) {
-    let currentLineDepthChange = 0
-    for (const char of line) {
-      if (char === '{') currentLineDepthChange++
-      if (char === '}') currentLineDepthChange--
-    }
+    const currentLineDepthChange = countBraceDelta(line)
 
     if (depth <= 1) {
       if (depth === 1 && currentLineDepthChange > 0) {

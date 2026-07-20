@@ -3,6 +3,7 @@ import type { DefsRow, SqlNamedParams } from '../types'
 import { textResponse } from '../utils/mcp-response'
 
 type ResultRow = Pick<DefsRow, 'defName' | 'defType' | 'label'>
+type QueryRow = ResultRow & { total: number }
 
 export function searchDefsImpl(
   db: Database,
@@ -12,27 +13,22 @@ export function searchDefsImpl(
 ) {
   let whereClause = '(defName LIKE $q OR label LIKE $q)'
 
-  const params: SqlNamedParams = { $q: `%${query}%` }
+  const params: SqlNamedParams = { $q: `%${query}%`, $limit: limit }
 
   if (defType) {
     whereClause += ' AND defType = $type'
     params.$type = defType
   }
 
-  const countSql = `SELECT COUNT(*) as count FROM defs WHERE ${whereClause}`
-  const countRow = db
-    .query<{ count: number }, SqlNamedParams>(countSql)
-    .get(params)
-  const total = countRow!.count
-
-  const dataSql = `
-    SELECT defName, defType, label
+  const sql = `
+    SELECT defName, defType, label, COUNT(*) OVER() AS total
     FROM defs
     WHERE ${whereClause}
     LIMIT $limit
   `
-  const queryParams: SqlNamedParams = { ...params, $limit: limit }
-  const results = db.query<ResultRow, SqlNamedParams>(dataSql).all(queryParams)
+  const rows = db.query<QueryRow, SqlNamedParams>(sql).all(params)
+  const total = rows[0]?.total ?? 0
+  const results = rows.map(({ total: _, ...row }) => row)
 
   return { results, total }
 }
