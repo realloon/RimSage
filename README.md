@@ -1,6 +1,7 @@
 # RimSage
 
 [![MCP Server](https://badge.mcpx.dev?type=server)](https://modelcontextprotocol.io/introduction) [![bun](https://img.shields.io/badge/Bun-%23000000.svg?style=flat&logo=bun)](https://bun.com/) [![ripgrep](https://img.shields.io/badge/ripgrep-%23000000.svg?style=flat&logo=rust)](https://github.com/BurntSushi/ripgrep)
+[![MCP status](https://mcpvitals.com/badge/05b5aba5ce.svg)](https://mcpvitals.com/status/05b5aba5ce)
 
 An MCP server that provides RimWorld source code search and browsing capabilities.
 
