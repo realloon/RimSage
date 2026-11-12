@@ -69,7 +69,7 @@ export async function rebuildCsharpIndex(
           batch.push({
             $typeName: typeName,
             $filePath: normalizedPath,
-            $startLine: index, // 0-indexed
+            $startLine: index, // 0-based
           })
           typeCount++
         }
