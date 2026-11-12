@@ -1,6 +1,6 @@
 {
   "name": "rimsage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An MCP server that enables searching and browsing of RimWorld source code.",
   "main": "src/stdio.ts",
   "type": "module",
