@@ -51,7 +51,7 @@ function registerTools(server: McpServer) {
         path: z
           .string()
           .describe(
-            'Path (e.g. `Source/RimWorld/AbilityDef.cs`, `Defs/Core/AbilityDefs/AbilityDefs.xml`).',
+            'Path from the sandbox root (e.g. `Defs/Core/AbilityDefs/AbilityDefs.xml`).',
           ),
         start_line: z
           .number()
@@ -82,7 +82,7 @@ function registerTools(server: McpServer) {
         path: z
           .string()
           .default('')
-          .describe('Path (e.g. `Source/Verse`). Empty for root.'),
+          .describe('Path (e.g. `Defs/Core`). Empty for root.'),
         limit: z
           .number()
           .int()
