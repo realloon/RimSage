@@ -56,10 +56,10 @@ function registerTools(server: McpServer) {
         start_line: z
           .number()
           .int()
-          .min(0)
+          .min(1)
           .max(2_000_000)
-          .default(0)
-          .describe('0-indexed start line.'),
+          .default(1)
+          .describe('1-based start line.'),
         line_count: z
           .number()
           .int()

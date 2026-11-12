@@ -5,7 +5,7 @@ import { textResponse } from '../utils/mcp-response'
 export async function readFileImpl(
   sandbox: PathSandbox,
   path: string,
-  startLine: number = 0,
+  startLine: number = 1,
   lineCount: number = 400,
 ) {
   const fullPath = sandbox.validateAndResolve(path)
@@ -13,27 +13,28 @@ export async function readFileImpl(
   const lines = content.split(/\r?\n/)
   const totalLines = lines.length
 
-  const endLine = Math.min(startLine + lineCount, totalLines)
-  const outputLines = lines.slice(startLine, endLine)
+  const startIndex = startLine - 1
+  const endIndex = Math.min(startIndex + lineCount, totalLines)
+  const outputLines = lines.slice(startIndex, endIndex)
 
   return {
     content: outputLines.join('\n'),
     totalLines,
     startLine,
-    endLine,
+    endLine: startIndex + outputLines.length,
   }
 }
 
 export async function readFile(
   sandbox: PathSandbox,
   path: string,
-  startLine: number = 0,
+  startLine: number = 1,
   lineCount: number = 400,
 ) {
   try {
     const result = await readFileImpl(sandbox, path, startLine, lineCount)
 
-    if (startLine >= result.totalLines) {
+    if (startLine > result.totalLines) {
       return textResponse(
         `[Error] Start line ${startLine} is out of bounds (File has ${result.totalLines} lines).`,
       )
@@ -47,7 +48,7 @@ export async function readFile(
         `\n[TRUNCATED] Showing ${lines.length}/${result.totalLines} lines.`,
       )
       lines.push(
-        `(Tip: Continue reading using \`start_line\`: ${result.endLine})`,
+        `(Tip: Continue reading using \`start_line\`: ${result.endLine + 1})`,
       )
       outputContent = lines.join('\n')
     }

@@ -22,10 +22,10 @@ describe('read-file', () => {
   test('reads a line range and normalizes line endings', async () => {
     await write(join(testDir, 'test.txt'), 'line1\r\nline2\r\nline3\r\nline4')
 
-    expect(await readFileImpl(sandbox, 'test.txt', 1, 2)).toEqual({
+    expect(await readFileImpl(sandbox, 'test.txt', 2, 2)).toEqual({
       content: 'line2\nline3',
       totalLines: 4,
-      startLine: 1,
+      startLine: 2,
       endLine: 3,
     })
   })
@@ -33,10 +33,10 @@ describe('read-file', () => {
   test('reports truncation and the continuation offset', async () => {
     await write(join(testDir, 'test.txt'), 'line1\nline2\nline3\nline4')
 
-    const text = (await readFile(sandbox, 'test.txt', 0, 2)).content[0].text
+    const text = (await readFile(sandbox, 'test.txt', 1, 2)).content[0].text
 
     expect(text).toContain('[TRUNCATED] Showing 2/4 lines.')
-    expect(text).toContain('`start_line`: 2')
+    expect(text).toContain('`start_line`: 3')
   })
 
   test('reports an out-of-bounds starting line', async () => {
