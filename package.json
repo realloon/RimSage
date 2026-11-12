@@ -16,6 +16,8 @@
   "scripts": {
     "start": "bun src/stdio.ts",
     "start:http": "bun src/http.ts",
+    "import:defs": "bun src/scripts/import-defs.ts",
+    "import:csharp": "bun src/scripts/import-csharp.ts",
     "index:defs": "bun src/scripts/index-defs.ts",
     "index:csharp": "bun src/scripts/index-csharp.ts",
     "build": "bun run index:defs && bun run index:csharp",

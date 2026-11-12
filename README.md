@@ -49,8 +49,8 @@ bun install
 4. Build index
 
 ```sh
-bun run src/scripts/import-defs /path/to/your/rimworld/root/path
-bun run src/scripts/import-csharp /path/to/decompiled/source/root/path
+bun run import:defs /path/to/your/rimworld/root/path
+bun run import:csharp /path/to/decompiled/source/root/path
 bun run build
 ```
 
