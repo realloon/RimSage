@@ -13,7 +13,7 @@ interface CsharpIndexInsertRow {
 type CsharpIndexInsertParams = SqlNamedParams & CsharpIndexInsertRow
 
 const typeRegex =
-  /^\s*(?:public|private|protected|internal|abstract|sealed|static|partial|readonly|unsafe|\s)*\s+(?:class|struct|interface|enum)\s+([a-zA-Z0-9_]+)/
+  /^\s*(?:(?:public|private|protected|internal|abstract|sealed|static|partial|readonly|unsafe)\s+)*(?:class|struct|interface|enum)\s+([a-zA-Z0-9_]+)/
 
 export async function rebuildCsharpIndex(
   dbPath = indexDbPath,
@@ -43,40 +43,54 @@ export async function rebuildCsharpIndex(
     `)
 
     const glob = new Glob('**/*.cs')
-
-    let fileCount = 0
-    let typeCount = 0
-    const batch: CsharpIndexInsertParams[] = []
+    const paths: string[] = []
 
     for await (const relativePath of glob.scan({
       cwd: csharpSourcePath,
       onlyFiles: true,
     })) {
-      fileCount += 1
-
-      const absolutePath = join(csharpSourcePath, relativePath)
-      // A partial index is invalid, so source read errors must abort the rebuild.
-      const content = await file(absolutePath).text()
-      const lines = content.split(/\r?\n/)
-
-      const normalizedPath = relativePath.replaceAll('\\', '/')
-
-      lines.forEach((line, index) => {
-        const match = line.match(typeRegex)
-        if (match) {
-          const typeName = match[1]
-
-          batch.push({
-            $typeName: typeName,
-            $filePath: normalizedPath,
-            $startLine: index, // 0-based
-          })
-          typeCount++
-        }
-      })
+      paths.push(relativePath)
     }
 
-    console.log(`Found ${fileCount} files. Writing ${typeCount} types to DB...`)
+    const CONCURRENCY = 32
+    const batch: CsharpIndexInsertParams[] = []
+    let fileCount = 0
+
+    for (let i = 0; i < paths.length; i += CONCURRENCY) {
+      const chunk = paths.slice(i, i + CONCURRENCY)
+
+      const entries = await Promise.all(
+        chunk.map(async relativePath => {
+          const content = await file(join(csharpSourcePath, relativePath)).text()
+          const lines = content.split(/\r?\n/)
+          const normalizedPath = relativePath.replaceAll('\\', '/')
+          const rows: CsharpIndexInsertParams[] = []
+
+          lines.forEach((line, index) => {
+            const match = line.match(typeRegex)
+            if (match) {
+              rows.push({
+                $typeName: match[1],
+                $filePath: normalizedPath,
+                $startLine: index, // 0-based
+              })
+            }
+          })
+
+          return rows
+        }),
+      )
+
+      for (const rows of entries) {
+        batch.push(...rows)
+      }
+
+      fileCount += chunk.length
+    }
+
+    console.log(
+      `Found ${fileCount} files. Writing ${batch.length} types to DB...`,
+    )
 
     const transaction = db.transaction((entries: CsharpIndexInsertParams[]) => {
       for (const entry of entries) {
