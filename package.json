@@ -16,10 +16,9 @@
   "scripts": {
     "start": "bun src/stdio.ts",
     "start:http": "bun src/http.ts",
-    "clean": "bun src/scripts/clean-db.ts",
     "index:defs": "bun src/scripts/index-defs.ts",
     "index:csharp": "bun src/scripts/index-csharp.ts",
-    "build": "bun run clean && bun run index:defs && bun run index:csharp",
+    "build": "bun run index:defs && bun run index:csharp",
     "type-check": "tsc"
   },
   "dependencies": {
