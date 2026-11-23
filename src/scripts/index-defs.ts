@@ -3,6 +3,7 @@ import { file, Glob } from 'bun'
 import { Database } from 'bun:sqlite'
 import { join } from 'node:path'
 import { defsPath, indexDbPath } from '../utils/env'
+import { formatCount, formatDuration } from '../utils/format'
 import { parser } from '../utils/xml-utils'
 import { processDefs } from '../utils/def-resolver'
 
@@ -10,10 +11,7 @@ export async function rebuildDefsIndex(
   dbPath = indexDbPath,
   defsSourcePath = defsPath,
 ) {
-  console.log('Starting build process...')
-
   // 1. read xmls
-  console.log('Scanning XML files...')
   const glob = new Glob('**/*.xml')
   const paths: string[] = []
 
@@ -26,7 +24,6 @@ export async function rebuildDefsIndex(
   )
 
   // 2. flat defs
-  console.log(`Parsing ${xmls.length} files...`)
   // Imported files are trusted RimWorld Def XML with a Defs root and tag-derived defType.
   const defs = xmls.flatMap(xml => {
     const defsForFile = parser.parse(xml).Defs as Record<string, Array<Def>>
@@ -37,11 +34,9 @@ export async function rebuildDefsIndex(
   })
 
   // 3. process defs
-  console.log(`Resolving inheritance for ${defs.length} defs...`)
   const mergedDefs = processDefs(defs)
 
   // 4. write in sqlite
-  console.log(`Writing to ${dbPath}...`)
   const db = new Database(dbPath)
 
   try {
@@ -63,6 +58,8 @@ export async function rebuildDefsIndex(
       VALUES ($defName, $defType, $label, $rawPayload, $mergedPayload)
     `)
 
+    let defCount = 0
+
     const transaction = db.transaction(
       (rawDefs: Def[], resolvedDefs: Def[]) => {
         rawDefs.forEach((rawDef, index) => {
@@ -77,18 +74,27 @@ export async function rebuildDefsIndex(
             $rawPayload: JSON.stringify(rawDef),
             $mergedPayload: JSON.stringify(resolvedDef),
           })
+          defCount += 1
         })
       },
     )
 
     transaction(defs, mergedDefs)
 
-    console.log(`Build complete!`)
+    return {
+      fileCount: paths.length,
+      defCount,
+    }
   } finally {
     db.close()
   }
 }
 
 if (import.meta.main) {
-  await rebuildDefsIndex()
+  const startedAt = performance.now()
+  const { fileCount, defCount } = await rebuildDefsIndex()
+
+  console.log(
+    `Indexed ${formatCount(defCount)} defs from ${formatCount(fileCount)} files (${formatDuration(performance.now() - startedAt)})`,
+  )
 }

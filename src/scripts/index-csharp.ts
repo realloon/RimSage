@@ -3,6 +3,7 @@ import { file, Glob } from 'bun'
 import { Database } from 'bun:sqlite'
 import { join } from 'node:path'
 import { indexDbPath, sourcePath } from '../utils/env'
+import { formatCount, formatDuration } from '../utils/format'
 
 interface CsharpIndexInsertRow {
   $typeName: CsharpIndexRow['typeName']
@@ -19,8 +20,6 @@ export async function rebuildCsharpIndex(
   dbPath = indexDbPath,
   csharpSourcePath = sourcePath,
 ) {
-  console.log(`Scanning C# source in: ${csharpSourcePath}`)
-
   const db = new Database(dbPath)
 
   try {
@@ -54,7 +53,6 @@ export async function rebuildCsharpIndex(
 
     const CONCURRENCY = 32
     const batch: CsharpIndexInsertParams[] = []
-    let fileCount = 0
 
     for (let i = 0; i < paths.length; i += CONCURRENCY) {
       const chunk = paths.slice(i, i + CONCURRENCY)
@@ -84,13 +82,7 @@ export async function rebuildCsharpIndex(
       for (const rows of entries) {
         batch.push(...rows)
       }
-
-      fileCount += chunk.length
     }
-
-    console.log(
-      `Found ${fileCount} files. Writing ${batch.length} types to DB...`,
-    )
 
     const transaction = db.transaction((entries: CsharpIndexInsertParams[]) => {
       for (const entry of entries) {
@@ -99,12 +91,21 @@ export async function rebuildCsharpIndex(
     })
 
     transaction(batch)
-    console.log(`Indexing complete.`)
+
+    return {
+      fileCount: paths.length,
+      typeCount: batch.length,
+    }
   } finally {
     db.close()
   }
 }
 
 if (import.meta.main) {
-  await rebuildCsharpIndex()
+  const startedAt = performance.now()
+  const { fileCount, typeCount } = await rebuildCsharpIndex()
+
+  console.log(
+    `Indexed ${formatCount(typeCount)} types from ${formatCount(fileCount)} files (${formatDuration(performance.now() - startedAt)})`,
+  )
 }

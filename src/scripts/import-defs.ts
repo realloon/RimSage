@@ -2,22 +2,22 @@ import { argv, file, write, Glob } from 'bun'
 import { rm } from 'node:fs/promises'
 import { resolve, join, sep } from 'node:path'
 import { versionPath, defsPath } from '../utils/env'
+import { formatCount, formatDuration } from '../utils/format'
 
 const path = argv.at(2)
 
 if (!path) {
-  console.error('please input path')
+  console.error('Usage: bun run import:defs <path>')
   process.exit(1)
 }
 
-console.log(`Importing Defs files...`)
-
+const startedAt = performance.now()
 const root = resolve(path)
 
 const version = file(join(root, 'Version.txt'))
 
 if (!(await version.exists())) {
-  console.error('"Version.txt" not found, please check the path')
+  console.error(`Version.txt not found in ${root}`)
   process.exit(1)
 }
 
@@ -29,7 +29,7 @@ for await (const relativePath of glob.scan({ cwd: root, onlyFiles: true })) {
 }
 
 if (paths.length === 0) {
-  console.error('no Def XML files found, aborting')
+  console.error(`No def XML files found in ${root}`)
   process.exit(1)
 }
 
@@ -56,4 +56,6 @@ for (let i = 0; i < paths.length; i += CONCURRENCY) {
   )
 }
 
-console.log(`Done!`)
+console.log(
+  `Imported ${formatCount(paths.length)} def files (${formatDuration(performance.now() - startedAt)})`,
+)
