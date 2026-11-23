@@ -11,7 +11,7 @@ import { searchDefs } from './tools/search-defs'
 import { readCsharpSymbol } from './tools/read-csharp-symbol'
 
 const name = 'rimsage'
-const version = '1.1.0'
+const version = '1.1.1'
 const sandbox = new PathSandbox('dist/assets')
 
 export function createServer() {
